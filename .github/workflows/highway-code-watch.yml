@@ -1,0 +1,65 @@
+name: highway-code-watch
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Fetch Highway Code updates page and compare date
+        id: check
+        run: |
+          python3 - <<'PY'
+          import os, re, urllib.request
+          from datetime import datetime
+          from pathlib import Path
+
+          url = "https://www.gov.uk/guidance/the-highway-code/updates"
+          req = urllib.request.Request(url, headers={"User-Agent": "LToLocal-HighwayCodeWatch/1.0"})
+          html = urllib.request.urlopen(req, timeout=30).read().decode("utf-8", errors="replace")
+
+          # GOV.UK updates tables / headings contain dates like "22 October 2025"
+          dates = re.findall(
+              r"\b(\d{1,2}\s+(?:January|February|March|April|May|June|July|August|September|October|November|December)\s+20\d{2})\b",
+              html,
+          )
+          parsed = []
+          for d in dates:
+              try:
+                  parsed.append(datetime.strptime(d, "%d %B %Y").date())
+              except ValueError:
+                  pass
+          if not parsed:
+              raise SystemExit("Could not parse any update dates from GOV.UK updates page")
+
+          newest = max(parsed).isoformat()
+          recorded = Path("content/countries/gb/highway-code-version.txt").read_text(encoding="utf-8").strip()
+          changed = str(newest != recorded).lower()
+
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as out:
+              out.write(f"newest={newest}\n")
+              out.write(f"recorded={recorded}\n")
+              out.write(f"changed={changed}\n")
+          print(f"Newest on GOV.UK: {newest}, recorded: {recorded}, changed: {changed}")
+          PY
+      - name: Open issue if Highway Code updated
+        if: steps.check.outputs.changed == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const newest = '${{ steps.check.outputs.newest }}';
+            const recorded = '${{ steps.check.outputs.recorded }}';
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: `Highway Code update detected (${newest})`,
+              body: `GOV.UK Highway Code updates page shows newest date **${newest}** (recorded: **${recorded}**).\n\nReview https://www.gov.uk/guidance/the-highway-code/updates and update \`docs/02-rules-catalogue.md\`, \`content/countries/gb/highway-code-version.txt\`, and \`content/countries/gb/rules.yaml\`.`
+            });

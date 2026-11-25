@@ -19,7 +19,7 @@
 | WORKS | Road works, level crossings, tramways (288–307) | https://www.gov.uk/guidance/the-highway-code/road-works-level-crossings-and-tramways-288-to-307 |
 | LIGHTS | Light signals controlling traffic | https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic |
 | MARK | Road markings | https://www.gov.uk/guidance/the-highway-code/road-markings |
-| SIGNS | Traffic signs (*not yet read*) | https://www.gov.uk/guidance/the-highway-code/traffic-signs |
+| SIGNS | Traffic signs | https://www.gov.uk/guidance/the-highway-code/traffic-signs |
 | UPD | Updates log | https://www.gov.uk/guidance/the-highway-code/updates |
 | SD-PDF | Typical stopping distances (PDF) | https://assets.publishing.service.gov.uk/media/65f97642aa9b760011fbda4e/the-highway-code-stopping-distances.pdf |
 
@@ -68,8 +68,8 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.SIG.MISLEADING | Don't give misleading signals | GEN 103 · should · ✅ | Indicator direction ≠ executed connector; indicator left on near a junction and an AI vehicle emerges because of it | D → S if an AI emerges | Shows the side-road driver's view of your signal | M |
 | GB.SIG.HEADLIGHT_FLASH | Flash headlights only to show you are there. Never assume someone's flash means "go" | GEN 110–111 · should · ✅ | Scripted: an AI flashes, and the player proceeds without an observation check | D → S on conflict | Big habit gap for persona P1 | V1 |
 | GB.SIG.HORN | No horn while stationary, or in a built-up area 23:30–07:00, unless avoiding danger | GEN 112 · MUST NOT · ✅ | Horn use while stationary, or in a built-up area at night with no hazard present | D | Habit gap for persona P1 | V1 |
-| GB.POS.KEEP_LEFT | Drive on the left unless signs or markings say otherwise | ROAD 160 · should · ⚠️ (number not seen) | Ego in an opposing lane outside an overtake or obstruction context | S → X if oncoming traffic is present | Core rule for persona P2 | P |
-| GB.POS.AFTER_TURN | After turning, end up on the left side of the new road | derived from ROAD 160 · ⚠️ | After a turn, ego enters the offside half of the new road for > 1 s | S → X if oncoming traffic | Persona P2's most common mistake; replay is a bird's-eye diagram | P |
+| GB.POS.KEEP_LEFT | Drive on the left unless signs or markings say otherwise | ROAD 160 · should · ✅ | Ego in an opposing lane outside an overtake or obstruction context | S → X if oncoming traffic is present | Core rule for persona P2 | P |
+| GB.POS.AFTER_TURN | After turning, end up on the left side of the new road | derived from ROAD 160 · ✅ | After a turn, ego enters the offside half of the new road for > 1 s | S → X if oncoming traffic | Persona P2's most common mistake; replay is a bird's-eye diagram | P |
 | GB.POS.LANE_FOR_ROUTE | Choose your lane early and follow lane arrows | GEN 133–134, MARK · should · ⚠️ | Connector taken ≠ lane-arrow permission; late lane change over a solid line or hatching | D → S if it causes a conflict | Shows the arrows you missed 100 m back | M |
 | GB.POS.DUAL_KEEP_LEFT | On a 2-lane dual carriageway use the left lane; the right lane is for overtaking or turning right | GEN 137 · should · ✅ | In the right lane > 15 s with no slower vehicle within 150 m ahead in the left lane and no right turn within 500 m | D | "Overtake, then move back left." | M |
 | GB.POS.THREE_LANE_SINGLE | On a 3-lane single carriageway, the middle lane is only for overtaking or turning right | GEN 135 · should · ✅ | In the middle lane > 10 s with no overtake or right turn | D → S if oncoming traffic is in the middle lane | | V1 |
@@ -82,7 +82,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.SPD.BUILT_UP | Built-up area: 30 mph in England and Scotland, **20 mph in Wales** (since 17 Sep 2023) | GEN 124, UPD · MUST · ✅ | Region overlay sets the default for `restricted_road` | as OVER_LIMIT | A regional difference worth teaching explicitly | M |
 | GB.SPD.STREET_LIGHTING | Street lights with no other signs usually means the built-up limit applies | GEN 124 · ⚠️ (wording not confirmed) | Teaching via an in-drive prompt: "What's the limit here?" | i / D | Repeater-sign logic | M |
 | GB.SPD.APPROPRIATE | The limit is a maximum, not a target. Slow down for bends, pedestrians, cyclists, weather and the dark | GEN 125 · should · ✅ | `speed` > safe speed, where stopping distance must fit inside `sight_dist_m`, adjusted for wet roads, pedestrians near the kerb and night | D → S | Shows a visibility cone against the stopping distance | M |
-| GB.SPD.PROGRESS | Don't hold up traffic without reason (undue hesitation) | DVSA practical-test assessment · ❌ `UNVERIFIED` source URL | Speed < 60% of the limit for > 20 s on a clear road; waiting at a clear junction > 5 s | D | Balances the "too cautious" habits of persona P3 | M |
+| GB.SPD.PROGRESS | Don't hold up traffic without reason (undue hesitation) | DVSA practical-test assessment (GOV.UK DL25) · should · ✅ | Speed < 60% of the limit for > 20 s on a clear road; waiting at a clear junction > 5 s | D | Balances the "too cautious" habits of persona P3 | M |
 | GB.SPD.WORKS_TEMP | Obey temporary speed limits at roadworks | WORKS 288 · MUST · ✅ | OVER_LIMIT detector in a `works` zone | S | | M |
 | GB.SPD.VARIABLE | Obey red-circle variable limits on gantries | MWAY 261 · MUST · ✅ | OVER_LIMIT detector with the limit taken from the active gantry state | S | Smart motorway lesson | M |
 
@@ -91,7 +91,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 |---|---|---|---|---|---|---|
 | GB.GAP.TWO_SECOND | Never closer than your stopping distance; at least 2 s on high-speed roads and in tunnels | GEN 126 · should · ✅ | Speed ≥ 40 mph and `headway_s` < 2.0 for > 3 s; in town, `headway_s` < 1.0 for > 3 s | D → S (< 1 s at ≥ 50 mph) | Live "2-second" timer overlay at the lead car's marker point | P |
 | GB.GAP.WET_ICY | Double the gap in the wet; up to 10× on ice | GEN 126, WX 227/230 · should · ✅ | Threshold × 2 when `surface = wet`, × 5 (`ASSUMPTION`) when icy | D → S | | V1 |
-| GB.GAP.STOPPING_TABLE | Typical stopping distances | GEN 126 + SD-PDF · i · ⚠️ | Learn card and a braking challenge. Values 12 / 23 / 36 / 53 / 73 / 96 m at 20–70 mph are `UNVERIFIED` until read from the PDF | i | | M |
+| GB.GAP.STOPPING_TABLE | Typical stopping distances | GEN 126 + SD-PDF · i · ✅ | Learn card and a braking challenge. Verified values (m): 12 / 23 / 36 / 53 / 73 / 96 at 20–70 mph | i | | M |
 | GB.GAP.CUT_IN | If someone cuts in ahead, drop back to a 2-second gap | ROAD 168 · should · ✅ | Scripted `car_cut_in`: headway not restored to ≥ 2 s within 6 s, or the player accelerates | D | | M |
 
 ### D. Junctions and priority (JCT)
@@ -133,6 +133,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.RBT.LONG_VEHICLES | Long vehicles may take a different course; give them room | ROAD 187 · should · ✅ | Entering beside an articulated lorry on the circulatory road | D → S | | V1 |
 | GB.RBT.MINI | Drive around the central marking of a mini-roundabout (unless your vehicle is too big); avoid U-turns | ROAD 188 · MUST · ✅ | Wheel path over the central disc polygon | S | | M |
 | GB.RBT.DOUBLE_MINI | Double or multiple mini-roundabouts: treat each separately and give way to the right at each | ROAD 189–190 · should · ✅ | GIVE_WAY_RIGHT applied per node | S | | M |
+| GB.RBT.WRONG_WAY | Circulate clockwise around a roundabout in the UK | ROAD 185–186 · MUST · ✅ | Heading against the clockwise circulatory direction on a roundabout link | X | "In the UK, always go clockwise around roundabouts." | P |
 
 ### G. Pedestrian crossings (XNG)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
@@ -156,14 +157,14 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.VRU.CYCLE_LANE_SOLID | Don't drive or park in a cycle lane marked with a solid white line during its hours ("mandatory") | GEN 140 · MUST NOT · ✅ | > 50% of the footprint inside the lane polygon in operating hours, other than a legal crossing | S | The Code doesn't say "mandatory"; it describes the solid line | M |
 | GB.VRU.CYCLE_LANE_BROKEN | Broken-line ("advisory") cycle lane: don't drive or park in it unless it's unavoidable | GEN 140 · should · ✅ | Same, when no obstruction makes it necessary | D | | M |
 | GB.VRU.CHILDREN | Watch for children, older and disabled people; at 20 mph a pedestrian has about a 1-in-20 chance of death if hit | CARE 204–207 · should · ⚠️ (207 ✅) | Scripted hazards (see School area) | via SCH rules | | M |
-| GB.VRU.DUTCH_REACH | Open your door with the hand furthest from it, and check for cyclists | PARK 239 · ❌ `UNVERIFIED` number | Post-parking choice prompt | i | | L |
+| GB.VRU.DUTCH_REACH | Open your door with the hand furthest from it, and check for cyclists | PARK 239 · MUST (not hit anyone) / should (far-hand reach) · ✅ | Post-parking choice prompt | i | | L |
 
 ### I. Bus lanes and buses (BUS)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
 |---|---|---|---|---|---|---|
 | GB.BUS.LANE_HOURS | Don't drive in a bus lane during its operating times unless signs allow it; you may enter to stop, load or unload where permitted | GEN 141 · should (+ signed TRO) · ✅ | Ego centre in a bus-lane polygon > 20 m during the schedule, excluding a permitted near-turn entry | S | Sign-reading drill: the time plate decides | M |
-| GB.BUS.ONLY_ROADS | "Buses and cycles only" signs (the "only" plate is no longer needed, Oct 2025) | UPD 2025-10-22, SIGNS · MUST · ✅ (update) / ⚠️ (sign text) | Entering a bus-gate link | S | | V1 |
-| GB.BUS.PULLING_OUT | Give priority to buses signalling to pull out from stops, when it's safe | CARE 223 · should · ⚠️ | Scripted bus indicates; ego closes the gap | D | | V1 |
+| GB.BUS.ONLY_ROADS | "Buses and cycles only" signs (the "only" plate is no longer needed, Oct 2025) | UPD 2025-10-22, SIGNS · MUST · ✅ | Entering a bus-gate link | S | | V1 |
+| GB.BUS.PULLING_OUT | Give priority to buses signalling to pull out from stops, when it's safe | CARE 223 · should · ✅ | Scripted bus indicates; ego closes the gap | D | | V1 |
 
 ### J. School areas (SCH)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
@@ -184,7 +185,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
 |---|---|---|---|---|---|---|
 | GB.OVT.UNSAFE_PLACE | Don't overtake where you can't see far enough (bends, hill brows, hump bridges), or near junctions, crossings or level crossings | ROAD 166–167 · should · ✅ | Overtake started with `sight_dist_m` < required overtaking distance, or a junction or crossing within 50 m | S → X if oncoming traffic must brake | | M |
-| GB.OVT.DOUBLE_WHITE | Don't cross double white lines where the line nearest you is solid | ROAD 165 · MUST NOT · ✅ (exceptions, e.g. passing a slow cyclist at ≤ 10 mph, ⚠️ rule 129 not read) | Crossing the line polygon outside the exception conditions | S | | M |
+| GB.OVT.DOUBLE_WHITE | Don't cross double white lines where the line nearest you is solid | ROAD 165, GEN 129 · MUST NOT · ✅ | Crossing the line polygon outside the exception conditions (entering premises/side road, passing stationary vehicle, or overtaking cycle/horse/works vehicle ≤ 10 mph) | S | | M |
 | GB.OVT.NO_OVERTAKING | Don't overtake after a No Overtaking sign until it's cancelled | ROAD 165 · MUST NOT · ✅ | Overtake event inside the zone | S | | V1 |
 | GB.OVT.INTO_LANE | Don't overtake into a bus, tram or cycle lane while it's in operation | ROAD 165 · MUST NOT · ✅ | Overtake path through an active lane polygon | S | | M |
 
@@ -196,7 +197,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.MWY.KEEP_LEFT | Keep in the left lane unless overtaking | MWAY 264 · should · ✅ | In lane ≥ 2 for > 20 s while lane 1 is clear for 300 m ahead | D (repeated → S) | "Middle-lane hogging" | M |
 | GB.MWY.OVERTAKE_RIGHT | Overtake only on the right, and move back left after | MWAY 267 · should · ✅ | Overtake via the nearside | S | | M |
 | GB.MWY.NO_UNDERTAKE | Don't overtake on the left, except in congested queues | MWAY 268 · should · ✅ | Passing on the nearside at > 30 mph, not in congestion | S | | M |
-| GB.MWY.RED_X | Don't drive in a lane closed by a red X; move to an open lane; if all lanes are closed, stop before the sign | MWAY 258 · MUST NOT · ✅ | Passing a gantry with a red X over the ego's lane, or staying in that lane | S → X if a hazard is in the lane | Camera enforcement, £100 + 3 points (GOV.UK press release; `UNVERIFIED` current amount) | P |
+| GB.MWY.RED_X | Don't drive in a lane closed by a red X; move to an open lane; if all lanes are closed, stop before the sign | MWAY 258 · MUST NOT · ✅ | Passing a gantry with a red X over the ego's lane, or staying in that lane | S → X if a hazard is in the lane | Camera enforcement, £100 + 3 points (GOV.UK / National Highways, verified 2026-11-25) | P |
 | GB.MWY.AMBER_FLASH | Amber flashing lights: slow down until past a non-flashing signal, national limit sign or END | MWAY 257 · should · ✅ | Speed not reduced by ≥ 10% within 300 m | D | | M |
 | GB.MWY.HARD_SHOULDER | Don't use the hard shoulder except in an emergency or when directed; it's a running lane only when a speed limit is shown above it | MWAY 269 · MUST NOT · ✅ | Driving on the hard shoulder without an active gantry limit over it | S | Dynamic hard-shoulder lesson | M |
 | GB.MWY.EMERGENCY_AREA | Emergency areas (blue sign, orange SOS) are only for emergencies | MWAY 270–271 · MUST · ✅ | Stopping in an emergency area outside a breakdown script | S | 150+ extra emergency areas completed by March 2025 (National Highways) | M |
@@ -204,7 +205,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.MWY.NO_REVERSE | Never reverse, cross the central reservation or drive against traffic; if you miss your exit, go to the next one | MWAY 263 · MUST NOT · ✅ | Negative speed or a wrong-way heading on motorway links | X | | M |
 | GB.MWY.LEAVE | Leave by the left slip road, signal in good time, and check your speed on the slip | MWAY 273–274 · should · ✅ | Indicator onset < 300 yd marker (`ASSUMPTION`); slip-road speed above the advisory | D | | M |
 | GB.MWY.RIGHT_LANE_LIMITS | No towing or heavy vehicles in the right lane of 3+ lanes | MWAY 265 · MUST · ✅ | Vehicle-class constraint | — | Vans and towing pack | L |
-| GB.MWY.SMART_TYPES | Context card: all-lane running, dynamic hard shoulder, controlled motorways; new smart motorway schemes were cancelled in 2023 | MWAY 258/261/269/270; the Code doesn't use the term "smart motorway" · ❌ `UNVERIFIED` (2023 cancellation not checked this session) | Info card | i | | M |
+| GB.MWY.SMART_TYPES | Context card: all-lane running, dynamic hard shoulder, controlled motorways; new smart motorway schemes were cancelled in Apr 2023 | MWAY 258/261/269/270; GOV.UK Apr 2023 policy · info · ✅ | Info card | i | | M |
 
 ### N. Breakdowns (BRK)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
@@ -232,7 +233,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.PRK.JUNCTION_10M | Don't park within 10 m of a junction (unless in an authorised space), at a bus stop, or on a bend | PARK 243 · should · ✅ | Park action within 10 m of a junction node | D | | M |
 | GB.PRK.NIGHT_FACING | At night, don't park facing against the traffic flow unless in a recognised space | PARK 248 · MUST NOT · ✅ | Park heading against the lane direction at night | D | | V1 |
 | GB.PRK.SCOTLAND_PAVEMENT | **Scotland**: no parking on pavements or at dropped kerbs | PARK 243–244, UPD 2025-04-10 · MUST NOT · ✅ | Region overlay `GB-SCT`; footprint over the footway polygon | D | A regional difference | V1 |
-| GB.PRK.BAYS | Permit, disabled, loading and pay-and-display bays follow their signs | SIGNS · ❌ `UNVERIFIED` | Sign-reading quiz | i | | V1 |
+| GB.PRK.BAYS | Permit, disabled, loading and pay-and-display bays follow their signs | SIGNS · MUST · ✅ | Sign-reading quiz | i | | V1 |
 
 ### Q. Lights and weather (WX)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
@@ -253,7 +254,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 ### S. Driver conduct (DRV), mostly information
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |
 |---|---|---|---|---|---|---|
-| GB.DRV.PHONE | Never use a hand-held phone while driving, including when stopped in traffic (exceptions: 999 calls when you can't stop; contactless payment while stationary) | GEN 149 · MUST NOT · ✅ | Scripted "phone buzzes" prompt; choosing to pick it up | X | Penalty amount `UNVERIFIED` this session | M |
+| GB.DRV.PHONE | Never use a hand-held phone while driving, including when stopped in traffic (exceptions: 999 calls when you can't stop; contactless payment while stationary) | GEN 149 · MUST NOT · ✅ | Scripted "phone buzzes" prompt; choosing to pick it up | X | £200 fine + 6 points (up to £1,000 in court; licence revoked if passed within 2 years, GOV.UK verified 2026-11-25) | M |
 | GB.DRV.SEATBELT | Wear a seat belt; the driver is responsible for passengers under 14 | DRV 99–100 · MUST · ✅ | Pre-drive check; moving off unbelted | S | | M |
 | GB.DRV.DRINK_DRUGS | Alcohol limits are lower in Scotland (22 µg/100 ml breath) than in England and Wales (35 µg) | DRV 95–96 · MUST NOT · ✅ | Info card | i | | M |
 | GB.DRV.FATIGUE | Take at least a 15-minute break every 2 hours; never rest on the hard shoulder | DRV 91 · should · ✅ | Info card | i | | V1 |
@@ -267,7 +268,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.ZON.CAZ | Clean Air Zones in other English cities | GOV.UK · ❌ `UNVERIFIED` | L |
 | GB.ZON.TOLLS | Dartford Crossing (Dart Charge), M6 Toll | GOV.UK / operator · ❌ `UNVERIFIED` | L |
 
-**Totals:** 129 entries. 112 are detected in the simulation; 17 are information only (`i` severity plus the 4 rows in table T). Prototype: 21 entries. MVP (prototype + M): 90 entries, of which 84 are detected in the simulation.
+**Totals:** 130 entries. 113 are detected in the simulation; 17 are information only (`i` severity plus the 4 rows in table T). Prototype: 22 entries. MVP (prototype + M): 91 entries, of which 85 are detected in the simulation.
 
 ## 3. Rule-pack representation (preview; full detail in doc 04, section 6)
 ```yaml
@@ -329,12 +330,12 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 **A caveat on "80%".** Covering a situation is not the same as the user mastering it. The product metric is *weighted rule mastery* (doc 01, section 7): each user's mastered rules are multiplied by these weights. That is what we report against the 80% goal.
 
 ## 5. Open verification list (to clear before MVP content lock)
-1. **Stopping-distance values**: read them from SD-PDF (the table is an image there).
-2. **Rule 160** (keep left) and **rule 129** (exceptions for double white lines): not seen this session.
-3. **Rule 239** (door opening, "Dutch reach") and the **Traffic signs** page: not read.
-4. **Smart motorways policy** (cancellation of new schemes in 2023; current names for motorway types): check GOV.UK and National Highways.
-5. **Penalty amounts** (red X camera fines, phone offences): informational only, but must be correct or left out.
-6. **DVSA practical-test fault guidance**: confirm the public source for the D/S/X model and the "progress" wording.
-7. **Rules 222–223** (buses): the number for "give priority to buses pulling out" wasn't confirmed.
+1. **Stopping-distance values**: ✅ Verified 2026-11-25 against GOV.UK Rule 126 (12 / 23 / 36 / 53 / 73 / 96 m at 20–70 mph).
+2. **Rule 160** (keep left) and **rule 129** (exceptions for double white lines): ✅ Verified 2026-11-25 against GOV.UK Highway Code.
+3. **Rule 239** (door opening, "Dutch reach") and the **Traffic signs** page: ✅ Verified 2026-11-25 against GOV.UK Highway Code.
+4. **Smart motorways policy**: ✅ Verified 2026-11-25 against GOV.UK (new ALR and DHS conversion schemes cancelled April 2023; £900m safety upgrade package for existing network).
+5. **Penalty amounts**: ✅ Verified 2026-11-25 against GOV.UK & National Highways (Red X: £100 + 3 points; hand-held phone: £200 + 6 points).
+6. **DVSA practical-test fault guidance**: ✅ Verified 2026-11-25 against GOV.UK DL25 fault categories (Driving / Serious / Dangerous) and "Progress" (appropriate speed, undue hesitation).
+7. **Rules 222–223** (buses): ✅ Verified 2026-11-25 against GOV.UK (Rule 223: give priority to buses, coaches and trams pulling away from stops when safe).
 8. Every severity threshold marked `ASSUMPTION` goes to the **ADI review** (doc 06).
-9. Set up an **update watcher**: a weekly CI job diffs the GOV.UK updates page and opens an issue on any change.
+9. **Update watcher**: ✅ Implemented in `.github/workflows/highway-code-watch.yml`, comparing `https://www.gov.uk/guidance/the-highway-code/updates` against `content/countries/gb/highway-code-version.txt`.

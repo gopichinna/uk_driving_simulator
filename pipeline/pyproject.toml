@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ltl_pipeline"
+version = "0.1.0"
+description = "OSM to RoadPack v0 and GB rule pack pipeline for L to Local"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "osmium>=4.0.0",
+    "shapely>=2.0.0",
+    "pyproj>=3.6.0",
+    "jsonschema>=4.20.0",
+    "pyyaml>=6.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "ruff>=0.6.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ltl_pipeline*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]

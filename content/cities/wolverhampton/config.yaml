@@ -1,0 +1,35 @@
+pack_id: gb-wolverhampton-centre
+display_name: "Wolverhampton City Centre"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# Origin centred on Wolverhampton city centre (matches content/samples/roadpack.sample.json)
+origin:
+  lat: 52.5862
+  lon: -2.1288
+
+# ~1.0 km x 1.0 km bounding box [min_lon, min_lat, max_lon, max_lat]
+# Covers Wolverhampton city centre inside and along the A4150 Ring Road,
+# including Ring Road roundabouts (e.g. St George's / St John's / Chapel Ash),
+# signalised junctions, T-junctions, and pedestrian crossings.
+bbox: [-2.1362, 52.5817, -2.1214, 52.5907]
+
+bbox_reason: >
+  Covers roughly 1.0 km x 1.0 km (1.00 km east-west by 1.00 km north-south)
+  of Wolverhampton city centre bounded by and including parts of the A4150
+  Ring Road, providing signalised junctions, T-junctions, pedestrian
+  crossings, and ring-road roundabouts.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+# Exclude West Midlands Metro tram streets (trams are out of scope for v1).
+# Any way tagged railway=tram, or sharing carriageway nodes with a railway=tram way,
+# is excluded and recorded in the output `excluded` list.
+exclude:
+  railway_types:
+    - tram
+  reason: "West Midlands Metro tramway street excluded (trams out of scope)"
