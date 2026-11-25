@@ -52,17 +52,17 @@ Tick each box with a one-line note.
   - Bump `packFormatVersion` to `0.6`. **Don't rename or remove fields.**
 
 ## D. Progression: from lessons to a course
-- [ ] D1. `content/schemas/progression.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/progression.json`:
+- [x] D1. `content/schemas/progression.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/progression.json`: (`progression.v0.schema.json` + `progression.json`: Stages 0–5, 1–3 stars, 1/3/7/14-day review cap 3/day, freeTier lessons 1–3.)
   - `stages[]` = `{ stage, title, lessonIds[], unlockAfter: { stage, minStars } }`;
   - `stars`: rules for 1–3 stars from a lesson attempt, e.g. 1 = finished, 2 = test-style pass (from `test_marking.yaml`), 3 = no faults and the quiz all correct;
   - `review`: a spaced-repetition schedule for rules the player got wrong (e.g. review after 1, 3, 7 and 14 days), with a cap of 3 review drives per day;
   - `freeTier`: lesson ids 1–3 (must match `lesson.freeTier`).
-- [ ] D2. Tests:
+- [x] D2. Tests: (`pipeline/tests/test_progression.py`)
   - every lesson appears exactly once;
   - unlocks reference earlier stages only (no cycles);
   - the free lessons match the lesson files;
   - star rules reference `test_marking.yaml` fields that exist.
-- [ ] D3. Plain-English UI strings for the progression screens in `ui.json` (with en-XA regenerated):
+- [x] D3. Plain-English UI strings for the progression screens in `ui.json` (with en-XA regenerated): (Added all 11 `progress.*` and `lesson.*` keys to `ui.json`, `en-XA`, and `test_readability.py`.)
   - `progress.title`
   - `progress.stage_locked`, `progress.unlock_hint` ("Get {stars} stars in Stage {stage} to unlock")
   - `progress.stars`

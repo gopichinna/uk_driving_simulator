@@ -34,7 +34,7 @@ ALLOWED_COURSE_ANCHORS: dict[str, set[str]] = {
 
 
 def test_lessons_validate_and_match_constraints() -> None:
-    lesson_files = sorted(p for p in LESSONS_DIR.glob("*.json") if p.name != "rule_index.json")
+    lesson_files = sorted(LESSONS_DIR.glob("[01][0-9]-*.json"))
     assert len(lesson_files) == 18
 
     rules_data = yaml.safe_load(RULES_YAML.read_text(encoding="utf-8"))
