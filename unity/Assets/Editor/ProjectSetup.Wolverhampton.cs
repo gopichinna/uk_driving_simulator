@@ -245,7 +245,7 @@ namespace LToLocal.EditorTools
                     double halfPanel = System.Math.Max(2.7, 0.75 + longest * 0.15) / 2;
                     var original = at;
                     // Keep the whole board (not just the post) clear of the road.
-                    if (!PushOffRoad(g, laneWidth, 1.2 + halfPanel, ref at) || (at - original).Length > 10) { skipped++; continue; }
+                    if (!PushOffRoad(g, laneWidth, 1.8 + halfPanel, ref at) || (at - original).Length > 10) { skipped++; continue; }
                     DirectionSign(root, at, heading, rows.ToArray(), m, black, (s["style"] as string) == "primary");
                 }
             }
