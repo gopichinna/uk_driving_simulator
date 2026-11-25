@@ -240,7 +240,12 @@ namespace LToLocal.EditorTools
                     }
                     double heading = MiniJson.Num(s["heading"]) * System.Math.PI / 180;
                     var at = new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"]));
-                    if (!PushOffRoad(g, laneWidth, 2.0, ref at)) { skipped++; continue; }
+                    int longest = 0;
+                    foreach (var (t, _) in rows) longest = System.Math.Max(longest, t.Length);
+                    double halfPanel = System.Math.Max(2.7, 0.75 + longest * 0.15) / 2;
+                    var original = at;
+                    // Keep the whole board (not just the post) clear of the road.
+                    if (!PushOffRoad(g, laneWidth, 1.2 + halfPanel, ref at) || (at - original).Length > 10) { skipped++; continue; }
                     DirectionSign(root, at, heading, rows.ToArray(), m, black, (s["style"] as string) == "primary");
                 }
             }
@@ -255,7 +260,10 @@ namespace LToLocal.EditorTools
                     var plate = new GameObject($"StreetName {name}").transform;
                     plate.SetParent(root, false);
                     var at = new Vec2(MiniJson.Num(p["x"]), MiniJson.Num(p["z"]));
-                    if (!PushOffRoad(g, laneWidth, 1.6, ref at)) { skipped++; Object.DestroyImmediate(plate.gameObject); continue; }
+                    var original = at;
+                    float pw = 0.6f + name.Length * 0.13f;
+                    // Moved far (e.g. onto a roundabout island) means there's no sensible spot: leave it out.
+                    if (!PushOffRoad(g, laneWidth, 1.4 + pw / 2, ref at) || (at - original).Length > 8) { skipped++; Object.DestroyImmediate(plate.gameObject); continue; }
                     plate.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)MiniJson.Num(p["heading"]), 0));
                     float w = 0.6f + name.Length * 0.13f;
                     foreach (float x in new[] { -w / 2 + 0.1f, w / 2 - 0.1f }) Prim(PrimitiveType.Cube, "Leg", plate, new Vector3(x, 0.45f, 0.03f), new Vector3(0.06f, 0.9f, 0.06f), black);
