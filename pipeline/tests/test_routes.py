@@ -77,3 +77,15 @@ def test_routes_valid_connected_and_legal() -> None:
     assert "signals" in all_features
     assert "roundabout" in all_features
     assert any(x in all_features for x in ("zebra", "pelican", "puffin", "toucan"))
+
+    # Every route step must lie in the main network, and every spawn point must be on main network
+    for route in routes:
+        for step in route["links"]:
+            assert links_by_id[step["linkId"]].get("inMainNetwork") is True, (
+                f"{route['id']}: link {step['linkId']} is outside mainNetwork"
+            )
+
+    spawns = pack.get("spawnPoints", [])
+    assert len(spawns) >= 10
+    for sp in spawns:
+        assert links_by_id[sp["linkId"]].get("inMainNetwork") is True

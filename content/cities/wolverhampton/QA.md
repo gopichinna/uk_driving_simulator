@@ -1,6 +1,6 @@
 # RoadPack QA Report: Wolverhampton City Centre
 
-- **Pack ID:** `gb-wolverhampton-centre` (format `0.3`)
+- **Pack ID:** `gb-wolverhampton-centre` (format `0.4`)
 - **Extract:** `geofabrik west-midlands-latest.osm.pbf` (`2026-11-24T21:21:23Z`)
 - **Totals:** 953 nodes, 1079 links, 119 crossings, 13 turn restrictions
 
@@ -43,3 +43,8 @@
 ## Buildings
 - **Total buildings (>= 15 m²):** 568
 - **Height sources:** tagged=0, levels=10, default=558
+
+## Main AI network (strongly connected)
+- **Main network:** 596 links, 483 nodes
+- **Excluded dead-end / disconnected links:** 483 / 1079
+- **Spawn points:** 12

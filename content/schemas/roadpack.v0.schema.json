@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3"] },
+    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -36,6 +36,16 @@
     "restrictions": { "type": "array", "items": { "$ref": "#/$defs/restriction" }, "default": [] },
     "junctionPriority": { "type": "array", "items": { "$ref": "#/$defs/junctionPriority" }, "default": [] },
     "signalPlans": { "type": "array", "items": { "$ref": "#/$defs/signalPlan" }, "default": [] },
+    "mainNetwork": {
+      "type": "object",
+      "required": ["linkCount", "nodeCount"],
+      "additionalProperties": false,
+      "properties": {
+        "linkCount": { "type": "integer", "minimum": 0 },
+        "nodeCount": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "spawnPoints": { "type": "array", "items": { "$ref": "#/$defs/spawnPoint" }, "default": [] },
     "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
   },
   "$defs": {
@@ -85,6 +95,7 @@
         "widthSource": { "enum": ["tagged", "estimated"] },
         "sidewalk": { "enum": ["left", "right", "both", "none"] },
         "sidewalkSource": { "enum": ["tagged", "default"] },
+        "inMainNetwork": { "type": "boolean" },
         "osmWayId": { "type": "integer" }
       }
     },
@@ -159,6 +170,17 @@
         "redAmberS": { "type": "number" },
         "confidence": { "$ref": "#/$defs/confidence" },
         "confidenceNotes": { "type": "string" }
+      }
+    },
+    "spawnPoint": {
+      "type": "object",
+      "required": ["id", "linkId", "offsetM", "heading"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "linkId": { "type": "string" },
+        "offsetM": { "type": "number", "minimum": 0 },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 }
       }
     }
   }

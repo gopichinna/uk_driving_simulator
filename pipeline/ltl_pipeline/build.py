@@ -422,6 +422,163 @@ def _infer_junction_priority_and_signals(
     return (priorities, signal_plans)
 
 
+def _link_length_m(geom: list[list[float]]) -> float:
+    return sum(
+        math.hypot(geom[i + 1][0] - geom[i][0], geom[i + 1][1] - geom[i][1])
+        for i in range(len(geom) - 1)
+    )
+
+
+def _heading_at_offset(geom: list[list[float]], offset_m: float) -> float:
+    """Return compass heading in degrees [0, 360) at offset_m along geom."""
+    acc = 0.0
+    for i in range(len(geom) - 1):
+        dx = geom[i + 1][0] - geom[i][0]
+        dz = geom[i + 1][1] - geom[i][1]
+        seg = math.hypot(dx, dz)
+        if acc + seg >= offset_m or i == len(geom) - 2:
+            return round(math.degrees(math.atan2(dx, dz)) % 360.0, 1)
+        acc += seg
+    return 0.0
+
+
+def _compute_main_network_and_spawns(
+    links: list[dict[str, Any]],
+    restrictions: list[dict[str, Any]],
+    target_spawns: int = 12,
+) -> tuple[dict[str, int], list[dict[str, Any]]]:
+    """Compute largest SCC of directed line graph (respecting oneway & restrictions)."""
+    links_by_id = {lk["id"]: lk for lk in links}
+    forbidden: dict[tuple[str, str], set[str]] = defaultdict(set)
+    only: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for r in restrictions:
+        key = (r["fromLink"], r["viaNode"])
+        if r["type"].startswith("no_"):
+            forbidden[key].add(r["toLink"])
+        elif r["type"].startswith("only_"):
+            only[key].add(r["toLink"])
+
+    # Directed traversals: (linkId, direction)
+    states: list[tuple[str, str]] = []
+    by_start_node: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for lk in links:
+        lid = lk["id"]
+        states.append((lid, "forward"))
+        by_start_node[lk["from"]].append((lid, "forward"))
+        if not lk["oneway"]:
+            states.append((lid, "backward"))
+            by_start_node[lk["to"]].append((lid, "backward"))
+
+    def neighbors(st: tuple[str, str]) -> list[tuple[str, str]]:
+        lid, d = st
+        lk = links_by_id[lid]
+        via = lk["to"] if d == "forward" else lk["from"]
+        res = []
+        for nxt_lid, nxt_d in by_start_node.get(via, []):
+            if nxt_lid == lid:
+                continue
+            key = (lid, via)
+            if key in forbidden and nxt_lid in forbidden[key]:
+                continue
+            if key in only and nxt_lid not in only[key]:
+                continue
+            res.append((nxt_lid, nxt_d))
+        return res
+
+    # Iterative Tarjan's SCC
+    index_counter = 0
+    indices: dict[tuple[str, str], int] = {}
+    lowlink: dict[tuple[str, str], int] = {}
+    on_stack: set[tuple[str, str]] = set()
+    stack: list[tuple[str, str]] = []
+    sccs: list[list[tuple[str, str]]] = []
+
+    for root in states:
+        if root in indices:
+            continue
+        call_stack: list[tuple[tuple[str, str], list[tuple[str, str]], int]] = [
+            (root, neighbors(root), 0)
+        ]
+        indices[root] = lowlink[root] = index_counter
+        index_counter += 1
+        stack.append(root)
+        on_stack.add(root)
+
+        while call_stack:
+            v, nbrs, idx = call_stack[-1]
+            if idx < len(nbrs):
+                w = nbrs[idx]
+                call_stack[-1] = (v, nbrs, idx + 1)
+                if w not in indices:
+                    indices[w] = lowlink[w] = index_counter
+                    index_counter += 1
+                    stack.append(w)
+                    on_stack.add(w)
+                    call_stack.append((w, neighbors(w), 0))
+                elif w in on_stack:
+                    lowlink[v] = min(lowlink[v], indices[w])
+            else:
+                call_stack.pop()
+                if call_stack:
+                    parent = call_stack[-1][0]
+                    lowlink[parent] = min(lowlink[parent], lowlink[v])
+                if lowlink[v] == indices[v]:
+                    comp: list[tuple[str, str]] = []
+                    while True:
+                        w = stack.pop()
+                        on_stack.remove(w)
+                        comp.append(w)
+                        if w == v:
+                            break
+                    sccs.append(comp)
+
+    largest_scc = max(sccs, key=len, default=[])
+    main_link_ids = {lid for lid, _ in largest_scc}
+    main_node_ids: set[str] = set()
+    for lk in links:
+        in_main = lk["id"] in main_link_ids
+        lk["inMainNetwork"] = in_main
+        if in_main:
+            main_node_ids.add(lk["from"])
+            main_node_ids.add(lk["to"])
+
+    main_network = {"linkCount": len(main_link_ids), "nodeCount": len(main_node_ids)}
+
+    # Pick ~12 spawnPoints at edges of main network on links >= 50 m (midpoint >= 25 m from ends)
+    candidates: list[tuple[float, dict[str, Any], float]] = []
+    for lk in links:
+        if not lk["inMainNetwork"] or lk.get("junctionRoundabout"):
+            continue
+        length = _link_length_m(lk["geometry"])
+        if length < 50.0:
+            continue
+        mid_pt = lk["geometry"][len(lk["geometry"]) // 2]
+        edge_dist = max(abs(mid_pt[0]), abs(mid_pt[1]))
+        candidates.append((edge_dist, lk, length))
+
+    candidates.sort(key=lambda item: (-item[0], item[1]["id"]))
+    spawns: list[dict[str, Any]] = []
+    chosen_pts: list[tuple[float, float]] = []
+    for _, lk, length in candidates:
+        if len(spawns) >= target_spawns:
+            break
+        mid_pt = lk["geometry"][len(lk["geometry"]) // 2]
+        if any(math.hypot(mid_pt[0] - x, mid_pt[1] - z) < 60.0 for x, z in chosen_pts):
+            continue
+        offset = round(length / 2.0, 1)
+        spawns.append(
+            {
+                "id": f"sp_{len(spawns) + 1:02d}",
+                "linkId": lk["id"],
+                "offsetM": offset,
+                "heading": _heading_at_offset(lk["geometry"], offset),
+            }
+        )
+        chosen_pts.append((mid_pt[0], mid_pt[1]))
+
+    return (main_network, spawns)
+
+
 def build_roadpack(
     extracted: ExtractedOsm,
     config: dict[str, Any],
@@ -644,6 +801,7 @@ def build_roadpack(
             )
     restrictions.sort(key=lambda item: item["id"])
     junction_priority, signal_plans = _infer_junction_priority_and_signals(nodes, links)
+    main_network, spawn_points = _compute_main_network_and_spawns(links, restrictions)
 
     excluded_list = [
         {
@@ -655,7 +813,7 @@ def build_roadpack(
     ]
 
     pack: dict[str, Any] = {
-        "packFormatVersion": "0.3",
+        "packFormatVersion": "0.4",
         "packId": config["pack_id"],
         "displayName": config["display_name"],
         "country": config["country"],
@@ -678,6 +836,8 @@ def build_roadpack(
         "restrictions": restrictions,
         "junctionPriority": junction_priority,
         "signalPlans": signal_plans,
+        "mainNetwork": main_network,
+        "spawnPoints": spawn_points,
         "excluded": excluded_list,
     }
     validate_roadpack(pack)

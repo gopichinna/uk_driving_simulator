@@ -33,11 +33,11 @@ The round-4 draft claims things the app doesn't do yet: an in-app lesson player 
 - [x] A2. Rebuild `listing.md` from the `shipped` claims only, and keep a "Coming soon" section, clearly labelled, for `planned` ones. Add a test that every feature bullet in the listing matches a shipped claim id (use an HTML comment per bullet, e.g. `<!-- claim: debrief -->`). (`content/store/en/listing.md` + `test_listing_bullets_match_claims_yaml`)
 
 ## B. Wolverhampton network AI can drive (roadpack v0.4, additive, pre-agreed)
-- [ ] B1. Compute the **largest strongly connected component** of the directed drivable graph, respecting one-way and turn restrictions. Add `inMainNetwork: true|false` to each link, and a top-level `mainNetwork { linkCount, nodeCount }`.
+- [x] B1. Compute the **largest strongly connected component** of the directed drivable graph, respecting one-way and turn restrictions. Add `inMainNetwork: true|false` to each link, and a top-level `mainNetwork { linkCount, nodeCount }`. (`build.py` Tarjan SCC over directed line graph + `QA.md` dead-end report.)
   - AI traffic will only spawn and route inside it.
   - Report the excluded dead ends in `QA.md`.
-- [ ] B2. Add top-level `spawnPoints[]`: `{ id, linkId, offsetM, heading }`. Use about 12, at the edges of the main network, on links ≥ 40 m long and away from junctions (≥ 25 m). They're where AI traffic enters.
-- [ ] B3. Bump `packFormatVersion` to `0.4`, update the sample, and add tests:
+- [x] B2. Add top-level `spawnPoints[]`: `{ id, linkId, offsetM, heading }`. Use about 12, at the edges of the main network, on links ≥ 40 m long and away from junctions (≥ 25 m). They're where AI traffic enters. (12 spawn points on main-network edge links >= 50 m.)
+- [x] B3. Bump `packFormatVersion` to `0.4`, update the sample, and add tests: (`roadpack.v0.schema.json`, `roadpack.sample.json`, `test_routes.py`)
   - every route in `routes.json` lies entirely in the main network;
   - every spawn point is on a main-network link.
 
