@@ -1,0 +1,90 @@
+{
+  "audioFormatVersion": "0.1",
+  "licence": "CC0-1.0",
+  "entries": [
+    {
+      "key": "ambience_town",
+      "file": "ambience_town.ogg",
+      "durationS": 4.006,
+      "targetLufs": -23,
+      "loop": true
+    },
+    {
+      "key": "chime_fault",
+      "file": "chime_fault.ogg",
+      "durationS": 0.457,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "chime_success",
+      "file": "chime_success.ogg",
+      "durationS": 0.556,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "crossing_beep",
+      "file": "crossing_beep.ogg",
+      "durationS": 0.146,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "engine_idle",
+      "file": "engine_idle.ogg",
+      "durationS": 2.006,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "engine_low",
+      "file": "engine_low.ogg",
+      "durationS": 2.006,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "engine_mid",
+      "file": "engine_mid.ogg",
+      "durationS": 2.006,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "horn",
+      "file": "horn.ogg",
+      "durationS": 0.356,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "indicator_off",
+      "file": "indicator_off.ogg",
+      "durationS": 0.067,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "indicator_on",
+      "file": "indicator_on.ogg",
+      "durationS": 0.067,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "tyre_squeal",
+      "file": "tyre_squeal.ogg",
+      "durationS": 0.556,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "ui_click",
+      "file": "ui_click.ogg",
+      "durationS": 0.046,
+      "targetLufs": -16,
+      "loop": false
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "audioFormatVersion": "0.1",
+  "language": "en-GB",
+  "voiceModel": "en_GB-cori-medium",
+  "licence": "CC-BY-4.0 (model/dataset) + MIT (Piper)",
+  "entries": [
+    {
+      "key": "voice.GB.GAP.TWO_SECOND.fault",
+      "file": "voice.GB.GAP.TWO_SECOND.fault.ogg",
+      "text": "Drop back a little, leave at least two seconds.",
+      "durationS": 2.598
+    },
+    {
+      "key": "voice.GB.GAP.TWO_SECOND.good",
+      "file": "voice.GB.GAP.TWO_SECOND.good.ogg",
+      "text": "Good safe following gap.",
+      "durationS": 1.272
+    },
+    {
+      "key": "voice.GB.OBS.LANE_CHANGE.fault",
+      "file": "voice.GB.OBS.LANE_CHANGE.fault.ogg",
+      "text": "Check your blind spot and signal before changing lanes.",
+      "durationS": 3.407
+    },
+    {
+      "key": "voice.GB.OBS.LANE_CHANGE.good",
+      "file": "voice.GB.OBS.LANE_CHANGE.good.ogg",
+      "text": "Nice smooth lane change with a clear gap.",
+      "durationS": 2.21
+    },
+    {
+      "key": "voice.GB.RBT.APPROACH_LANE.fault",
+      "file": "voice.GB.RBT.APPROACH_LANE.fault.ogg",
+      "text": "Pick the lane matching your exit before the roundabout.",
+      "durationS": 2.543
+    },
+    {
+      "key": "voice.GB.RBT.APPROACH_LANE.good",
+      "file": "voice.GB.RBT.APPROACH_LANE.good.ogg",
+      "text": "Good early lane choice on the approach.",
+      "durationS": 1.88
+    },
+    {
+      "key": "voice.GB.RBT.GIVE_WAY_RIGHT.fault",
+      "file": "voice.GB.RBT.GIVE_WAY_RIGHT.fault.ogg",
+      "text": "Give way to traffic coming from your right.",
+      "durationS": 1.967
+    },
+    {
+      "key": "voice.GB.RBT.GIVE_WAY_RIGHT.good",
+      "file": "voice.GB.RBT.GIVE_WAY_RIGHT.good.ogg",
+      "text": "Good roundabout priority check to the right.",
+      "durationS": 2.176
+    },
+    {
+      "key": "voice.GB.RBT.SIGNAL_APPROACH.fault",
+      "file": "voice.GB.RBT.SIGNAL_APPROACH.fault.ogg",
+      "text": "Match your approach signal to your roundabout exit.",
+      "durationS": 2.33
+    },
+    {
+      "key": "voice.GB.RBT.SIGNAL_APPROACH.good",
+      "file": "voice.GB.RBT.SIGNAL_APPROACH.good.ogg",
+      "text": "Clear roundabout approach signal.",
+      "durationS": 1.565
+    },
+    {
+      "key": "voice.GB.RBT.SIGNAL_EXIT.fault",
+      "file": "voice.GB.RBT.SIGNAL_EXIT.fault.ogg",
+      "text": "Signal left after passing the exit before yours.",
+      "durationS": 2.584
+    },
+    {
+      "key": "voice.GB.RBT.SIGNAL_EXIT.good",
+      "file": "voice.GB.RBT.SIGNAL_EXIT.good.ogg",
+      "text": "Well-timed exit signal.",
+      "durationS": 1.383
+    },
+    {
+      "key": "voice.GB.RBT.STAY_IN_LANE.fault",
+      "file": "voice.GB.RBT.STAY_IN_LANE.fault.ogg",
+      "text": "Hold your marked lane around the roundabout.",
+      "durationS": 1.965
+    },
+    {
+      "key": "voice.GB.RBT.STAY_IN_LANE.good",
+      "file": "voice.GB.RBT.STAY_IN_LANE.good.ogg",
+      "text": "Smooth lane discipline around the island.",
+      "durationS": 2.086
+    },
+    {
+      "key": "voice.GB.RBT.WRONG_WAY.fault",
+      "file": "voice.GB.RBT.WRONG_WAY.fault.ogg",
+      "text": "Always go clockwise around UK roundabouts.",
+      "durationS": 2.404
+    },
+    {
+      "key": "voice.GB.RBT.WRONG_WAY.good",
+      "file": "voice.GB.RBT.WRONG_WAY.good.ogg",
+      "text": "Clean clockwise path around the roundabout.",
+      "durationS": 2.161
+    },
+    {
+      "key": "voice.GB.SIG.TIMELY.fault",
+      "file": "voice.GB.SIG.TIMELY.fault.ogg",
+      "text": "Signal earlier so other drivers have time to react.",
+      "durationS": 2.791
+    },
+    {
+      "key": "voice.GB.SIG.TIMELY.good",
+      "file": "voice.GB.SIG.TIMELY.good.ogg",
+      "text": "Clear, early signalling.",
+      "durationS": 1.144
+    },
+    {
+      "key": "voice.GB.SPD.OVER_LIMIT.fault",
+      "file": "voice.GB.SPD.OVER_LIMIT.fault.ogg",
+      "text": "Ease off the speed, you are over the limit.",
+      "durationS": 2.158
+    },
+    {
+      "key": "voice.GB.SPD.OVER_LIMIT.good",
+      "file": "voice.GB.SPD.OVER_LIMIT.good.ogg",
+      "text": "Steady speed within the limit.",
+      "durationS": 1.494
+    },
+    {
+      "key": "voice.GB.VRU.PASS_CYCLIST.fault",
+      "file": "voice.GB.VRU.PASS_CYCLIST.fault.ogg",
+      "text": "Give cyclists at least 1.5 metres when passing.",
+      "durationS": 3.207
+    },
+    {
+      "key": "voice.GB.VRU.PASS_CYCLIST.good",
+      "file": "voice.GB.VRU.PASS_CYCLIST.good.ogg",
+      "text": "Great wide clearance past the cyclist.",
+      "durationS": 2.351
+    },
+    {
+      "key": "voice.lesson.passed",
+      "file": "voice.lesson.passed.ogg",
+      "text": "Well done, you passed this lesson cleanly.",
+      "durationS": 1.979
+    },
+    {
+      "key": "voice.lesson.start",
+      "file": "voice.lesson.start.ogg",
+      "text": "Keep left, scan ahead, and drive smoothly.",
+      "durationS": 2.84
+    },
+    {
+      "key": "voice.lesson.try_again",
+      "file": "voice.lesson.try_again.ogg",
+      "text": "Let us review what happened and try again.",
+      "durationS": 2.35
+    }
+  ]
+}

@@ -46,24 +46,14 @@ Goal: Wolverhampton's signs look and behave like the real city.
 ## Round 10: Sound and the coach's voice (licence-checked)
 Goal: audio content the game can ship, with every file's licence recorded.
 
-- [ ] R10.1 **Coach voice.** Generate speech for every line in `content/countries/gb/strings/en/voice.json`, using an **offline text-to-speech engine whose engine *and* voice model licences allow commercial use in an app** (for example Piper; check the specific voice's licence on its model card). Before generating anything, write the licence (URL and terms) into `content/audio/LICENCES.md`. If no suitable voice is clearly licensed, stop and record why.
-  - Output: `content/audio/voice/en/<key>.ogg` (mono, 22–24 kHz, peak about −3 dBFS, trimmed silence).
+- [x] R10.1 **Coach voice.** Generate speech for every line in `content/countries/gb/strings/en/voice.json`, using an **offline text-to-speech engine whose engine *and* voice model licences allow commercial use in an app** (Piper `piper-tts` 1.8.0 MIT + `en_GB-cori-medium` CC BY 4.0 from OpenSLR 109 / LibriVox, recorded in `content/audio/LICENCES.md` before generation).
+  - Output: `content/audio/voice/en/<key>.ogg` (25 mono 24 kHz OGG files, peak ~ −3 dBFS, trimmed silence).
   - Add `content/audio/voice/en/manifest.json`: `{ key, file, text, durationS }`.
-- [ ] R10.2 **Sound effects.** Source CC0 or similarly free-to-ship effects:
-  - indicator tick (on and off);
-  - a soft engine loop (idle and a few rpm steps);
-  - a short horn;
-  - a tyre squeal;
-  - a pedestrian crossing beep (puffin/pelican);
-  - UI clicks;
-  - a gentle success chime and a fault chime;
-  - a light town ambience loop.
-
-  Record the source URL, author and licence for every file in `content/audio/LICENCES.md`, with **no CC-BY-NC or unknown-licence files**. Normalise loudness: −16 LUFS for effects, −23 LUFS for ambience.
-- [ ] R10.3 **Store screenshots and accessibility text.**
+- [x] R10.2 **Sound effects.** Synthesised 12 CC0 1.0 effects & loops in `content/audio/sfx/*.ogg` (`indicator_on/off`, `engine_idle/low/mid`, `horn`, `tyre_squeal`, `crossing_beep`, `ui_click`, `chime_success`, `chime_fault`, `ambience_town`), normalised to −16 LUFS for effects and −23 LUFS for ambience, all recorded in `content/audio/LICENCES.md`.
+- [x] R10.3 **Store screenshots and accessibility text.**
   - `content/store/en/screenshots.md`: 6 captions (each ≤ 8 words) matching **shipped** claims only (`claims.yaml`).
-  - Accessibility labels for every HUD control and screen in `ui.json` under `a11y.*` keys: what each button does, in a few words.
-- [ ] R10.4 **Tests:**
+  - Accessibility labels for every HUD control and screen in `ui.json` under `a11y.*` keys (14 keys).
+- [x] R10.4 **Tests** (`pipeline/tests/test_audio.py`, 57/57 tests pass):
   - every voice key has an audio file and every audio file has a licence entry;
   - durations are within 0.3–6 s for voice and ≤ 3 s for effects (except the loops);
   - `ATTRIBUTIONS.md` and `content/legal/en/credits.md` list the audio sources.

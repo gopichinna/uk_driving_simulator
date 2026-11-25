@@ -14,3 +14,8 @@
 - **Source:** Department for Transport, GOV.UK — https://www.gov.uk/guidance/traffic-sign-images
 - **Licence:** Contains public sector information licensed under the Open Government Licence v3.0 (© Crown copyright).
 - **Conditions:** Sign reproductions in `content/countries/gb/signs/` must remain accurate, must not be used in a misleading context, and must not be used as manufacturing templates.
+
+## Coach Voice & Sound Effects (`content/audio/`)
+- **TTS Engine:** Piper (`rhasspy/piper`) — MIT Licence.
+- **Coach Voice Model:** `en_GB-cori-medium` (`rhasspy/piper-voices`) — **CC BY 4.0**, trained on the NVIDIA Hi-Fi Multi-Speaker English TTS Dataset (OpenSLR 109) from Cori Samuel's public-domain LibriVox recordings.
+- **Sound Effects (`content/audio/sfx/`):** Procedurally synthesised for L to Local — **CC0 1.0 Universal**.
