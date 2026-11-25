@@ -1,82 +1,94 @@
-# Tasks: Google Hydrogen, round 4, branch `hydrogen/wolverhampton-world`
+# Tasks: Google Hydrogen, round 5, branch `hydrogen/lesson-scenarios`
 
-**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 4 and §3 ownership), then this file. You own:
+**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 5 and §3 ownership), then this file. You own:
 - `pipeline/**`;
-- `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`, `content/store/**`;
+- `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/scenarios/**`, `content/legal/**`, `content/store/**`;
 - `content/ATTRIBUTIONS.md`;
 - the pipeline CI workflows;
 - edits to `docs/02-rules-catalogue.md`.
 
 Don't edit `core/**` or `unity/**`.
 
-**Goal (round 4):** make Wolverhampton **look and drive like Wolverhampton**, and link faults to practice. This covers:
-- real building footprints and street widths;
-- sat-nav style instructions for routes, plus a mock-test route;
-- a rule → lesson index, so the debrief can say "practise this";
-- a draft store listing and privacy text for the owner to review.
-
-**Why this order:** Claude is building the debrief now (A feeds its "Practise this" button), then the Wolverhampton beta course (B and C feed it).
+**Goal (round 5):** the data that makes **lessons playable**:
+- scripted situations for each lesson scenario (a pedestrian steps up to the zebra, a car pulls out, the lights change as you arrive);
+- top-down learn-card diagrams;
+- a Wolverhampton road network that AI traffic can drive forever without getting stuck;
+- a store listing that only claims what the app really does.
 
 **Done when:**
 - `pytest`, `ruff` and the readability linter pass;
-- every new file validates against its schema;
+- every new file validates;
 - CI is green.
 
 Tick each box with a one-line note.
 
 ## Done before
-- Round 1 (PR #1): pipeline, Wolverhampton pack, `rules.yaml`, verification, CI.
-- Round 2 (PR #2): strings, glossary, signs, Stages 0–2 lessons, QA, turn restrictions, routes.
-- Round 3 (PR #3, `ab1549e`): test marking (15 driving faults; any serious or dangerous fault fails), UI strings and pseudo-locale, Stages 3–5 lessons, `junctionPriority[]` and `signalPlans[]`, credits.
+- Rounds 1–4 (PRs #1–#4, last merge `8ecc4a0`): pipeline, Wolverhampton pack v0.3 with buildings, `rules.yaml`, strings, glossary, signs, test marking, UI strings, 18 lessons, rule index, routes with directions, credits and store drafts.
 
-## A. Rule → lesson index (needed by Claude's debrief now)
-- [ ] A1. `content/schemas/ruleindex.v0.schema.json` (new, pre-agreed) and the generated `content/lessons/gb/rule_index.json`. It maps each rule id to the lessons that train it: `{ ruleId: [{ lessonId, scenarioId, title }] }`, ordered by curriculum order. It includes every rule in `rules.yaml` that has an `implementation`.
-- [ ] A2. CI regenerates the file and fails on any diff. A test checks that every implemented rule maps to at least one lesson, and lists the gaps if not.
-- [ ] A3. New implemented rules from Claude's branch: `GB.POS.KEEP_LEFT` (wrong side of the road) and `GB.SIG.TIMELY` (moving out without a signal) are being added in `core/Rules.Core/KeepLeftRule.cs`. Once that merges, make sure `rules.yaml` picks them up. They already exist in `docs/02`, so the scan should find them.
+## A. Store listing must match what ships
+The round-4 draft claims things the app doesn't do yet: an in-app lesson player for the 18 lessons, a Wolverhampton drive, and debrief links to lessons.
+- [ ] A1. `content/store/en/claims.yaml`: each feature claim has `id`, `text` and `status: shipped | planned`. Start from the "Current state" section of `AGENTS.md` on `main`.
+  - **Shipped today:** 4 courses (town centre, two-lane roundabout, single-lane roundabout, 40 mph dual carriageway); live feedback on the rules listed there and the town rules; the end-of-drive debrief with replays and a practice pass/fail; Settings.
+  - **Planned:** the lessons, Wolverhampton (beta), "practise this lesson".
+- [ ] A2. Rebuild `listing.md` from the `shipped` claims only, and keep a "Coming soon" section, clearly labelled, for `planned` ones. Add a test that every feature bullet in the listing matches a shipped claim id (use an HTML comment per bullet, e.g. `<!-- claim: debrief -->`).
 
-## B. Wolverhampton v0.3: what it looks like
-- [ ] B1. Additive roadpack **v0.3** (pre-agreed) link fields:
-  - `widthM`: carriageway width, from the `width` tag or estimated as lanes × 3.25 m. Say which in `confidenceNotes`.
-  - `sidewalk`: `"left" | "right" | "both" | "none"`, from `sidewalk*` tags or a default by road class. Record the source.
+## B. Wolverhampton network AI can drive (roadpack v0.4, additive, pre-agreed)
+- [ ] B1. Compute the **largest strongly connected component** of the directed drivable graph, respecting one-way and turn restrictions. Add `inMainNetwork: true|false` to each link, and a top-level `mainNetwork { linkCount, nodeCount }`.
+  - AI traffic will only spawn and route inside it.
+  - Report the excluded dead ends in `QA.md`.
+- [ ] B2. Add top-level `spawnPoints[]`: `{ id, linkId, offsetM, heading }`. Use about 12, at the edges of the main network, on links ≥ 40 m long and away from junctions (≥ 25 m). They're where AI traffic enters.
+- [ ] B3. Bump `packFormatVersion` to `0.4`, update the sample, and add tests:
+  - every route in `routes.json` lies entirely in the main network;
+  - every spawn point is on a main-network link.
 
-  Bump `packFormatVersion` to `0.3`. **Don't rename or remove any field.** Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer.
-- [ ] B2. `content/schemas/buildings.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/buildings.json`, from OSM `building=*` inside the pack bbox. For each building:
-  - `id`, `footprint` (`[[x, z], …]`, same origin as the pack, anticlockwise, simplified to ≤ 0.5 m error);
-  - `heightM`: from `height`, else `building:levels` × 3.0, else a default by building type. Record the source;
-  - `kind` (shop / house / office / church / civic / other);
-  - `name` if tagged;
-  - `osmId`.
+  **Don't rename or remove fields.**
 
-  ODbL source block as in the road pack. Keep the file under about 3 MB: drop buildings under 15 m², and simplify geometry.
-- [ ] B3. Extend `QA.md` with building counts, how the heights were sourced, and width/sidewalk coverage.
+## C. Scripted situations for lesson scenarios (pre-agreed vocabulary)
+- [ ] C1. `content/schemas/scenario.v0.schema.json` and one file per lesson scenario in `content/scenarios/gb/<scenarioId>.json`. Each file has:
+  - `scenarioId` (it must match a lesson's `scenarios[].id`);
+  - `course` and `anchor`;
+  - `durationS` (60–180);
+  - `events[]`, using **only** this vocabulary (Claude will implement exactly these):
 
-## C. Directions and a mock-test route
-- [ ] C1. Additive `route.v0` field (pre-agreed): `instructions[]` = `{ atLinkIndex, distanceBeforeM, text, maneuver }`.
-  - `maneuver` ∈ `turn_left`, `turn_right`, `straight_on`, `roundabout_exit_1` … `roundabout_exit_4`, `bear_left`, `bear_right`, `arrive`.
-  - Generate the instructions from the route geometry and `junctionPriority`.
-  - Plain English, e.g. "At the traffic lights, turn right." or "At the roundabout, take the second exit." Use the street name when it's known.
-- [ ] C2. Add the instructions to the 3 existing routes, and add a **mock-test route** of about 10 minutes (loops are fine). It covers signals, a roundabout, a crossing and at least one give-way junction, and must pass the existing route validator (connected, legal one-way, no restricted turns).
-- [ ] C3. The readability linter covers the instruction text.
+  | type | fields |
+  |---|---|
+  | `pedestrian_waits` | `crossing`: `zebra` \| `mill_lane_mouth` \| `church_st_mouth`; `whenPlayerWithinM` |
+  | `pedestrian_steps_out` | `crossing`; `whenPlayerWithinM` (they start crossing when the player gets this close) |
+  | `car_emerges` | `junction`: `tjunction_north` \| `tjunction_south`; `whenPlayerWithinM`; `gapS` (how tight a gap it takes) |
+  | `parked_car` | `anchor`; `offsetM` (metres along the lane from the anchor) |
+  | `cyclist_ahead` | `anchor`; `offsetM`; `speedMph` |
+  | `lights_turn_amber` | `whenPlayerWithinM` (the crossroads lights facing the player go amber) |
+  | `traffic_density` | `value` (0–1) |
+  | `finish_at` | `anchor`; `offsetM` (where the scenario ends successfully) |
 
-## D. Store listing and privacy, as drafts for the owner
-- [ ] D1. `content/store/en/listing.md`: a draft Play Store / App Store listing.
-  - Title "L to Local", short tagline "Keep Left".
-  - Short description (≤ 80 characters) and a full description (≤ 4000 characters).
-  - Plain English, and **only claims the app actually supports today** (list them from `AGENTS.md` §5 and this branch). No "pass your test guaranteed", and no DVSA endorsement.
-  - Mark the file **DRAFT: owner review needed**.
-- [ ] D2. `content/store/en/privacy-draft.md`: a draft privacy notice for v1. v1 is offline: no account and no analytics yet. Settings and progress are stored only on the device. Mark it **DRAFT: owner and legal review needed**, and list the open questions (analytics consent later, ads in the free tier later).
+  The courses and anchors are the ones used in round 2 (`town`: `start`, `crossroads_signals`, `tjunction_north`, `tjunction_south`, `zebra`, `box_junction`, `school_street`; other courses: `start`).
+- [ ] C2. Write scenarios for **every scenario in lessons 1–10** (Stages 0–2). Each one sets up the situation its `rulesJudged` are about. For example, the zebra lesson has `pedestrian_waits` at the zebra, and the amber lesson has `lights_turn_amber` at a distance where stopping is comfortable (about 40–50 m at 30 mph). Use the GOV.UK stopping distances you verified: the 30 mph typical stopping distance is 23 m.
+- [ ] C3. Tests:
+  - every lesson 1–10 scenario has a file;
+  - the event types and fields come only from the table above;
+  - anchors and crossings are valid for the course;
+  - `finish_at` is present.
+
+## D. Learn-card diagrams
+- [ ] D1. For each lesson 1–18, generate a simple **top-down diagram** (pipeline code, not hand-drawn), as SVG plus a 1024×1024 PNG, in `content/lessons/gb/diagrams/<lessonId>.svg|png`:
+  - left-hand traffic;
+  - the player's car in blue with an arrow showing the correct path;
+  - other road users in grey;
+  - markings drawn to match the town course (stop line and cycle box, give-way lines and triangle, zebra and zig-zags, yellow box).
+
+  No text inside the images: captions come from strings, so diagrams work in every language.
+- [ ] D2. Add `learnCard.diagram` (a path) to each lesson. This is an additive `lesson.v0` field and is pre-agreed. Add a test that every referenced file exists.
 
 ## E. Hand-off
-- [ ] E1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: rule index, Wolverhampton buildings and widths, directions, store drafts". Use `gh` on the `gopichinna/uk_driving_simulator` repo. A draft PR after A is welcome.
+- [ ] E1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: playable lesson scenarios, diagrams, main network, honest listing". Do C first and open a draft PR early: Claude builds the scenario player against it.
 
 ## Requests from Claude
-- Pre-agreed for round 4:
-  - new schemas `ruleindex.v0` and `buildings.v0`;
-  - additive roadpack **v0.3** link fields `widthM` and `sidewalk`;
-  - additive `route.v0` field `instructions[]`.
+- Pre-agreed for round 5:
+  - new schema `scenario.v0` with exactly the event vocabulary in C1;
+  - additive roadpack **v0.4**: `inMainNetwork`, `mainNetwork` and `spawnPoints[]`;
+  - additive `lesson.v0` field `learnCard.diagram`.
 
   Anything else needs a note here and in `docs/tasks/claude-branch.md` first.
-- The PR link in your last summary pointed to `gopiparthiban/…`; the repo is `gopichinna/uk_driving_simulator`. Please double-check links in notes.
 
 ## Requests from Hydrogen (to Claude)
 *(none yet)*

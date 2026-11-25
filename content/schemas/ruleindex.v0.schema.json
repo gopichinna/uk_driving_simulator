@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/ruleindex.v0.schema.json",
+  "title": "L to Local Rule to Lesson Index v0",
+  "description": "Maps each rule ID to the lessons and scenarios that train it, ordered by curriculum order. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["ruleIndexVersion", "country", "rules"],
+  "additionalProperties": false,
+  "properties": {
+    "ruleIndexVersion": { "const": "0.1" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "rules": {
+      "type": "object",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^GB\\.[A-Z]+\\.[A-Z0-9_]+$": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["lessonId", "scenarioId", "title"],
+            "additionalProperties": false,
+            "properties": {
+              "lessonId": { "type": "string", "minLength": 1 },
+              "scenarioId": { "type": "string", "minLength": 1 },
+              "title": { "type": "string", "minLength": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}

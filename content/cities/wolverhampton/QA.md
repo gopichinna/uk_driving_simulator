@@ -1,6 +1,6 @@
 # RoadPack QA Report: Wolverhampton City Centre
 
-- **Pack ID:** `gb-wolverhampton-centre` (format `0.2`)
+- **Pack ID:** `gb-wolverhampton-centre` (format `0.3`)
 - **Extract:** `geofabrik west-midlands-latest.osm.pbf` (`2026-11-24T21:21:23Z`)
 - **Totals:** 953 nodes, 1079 links, 119 crossings, 13 turn restrictions
 
@@ -35,3 +35,11 @@
 | `roundabout` | 8 |
 | `signals` | 73 |
 | `uncontrolled` | 533 |
+
+## Width & sidewalk coverage
+- **Tagged carriageway width:** 0 / 1079 (rest estimated at 3.25 m/lane)
+- **Tagged sidewalk:** 448 / 1079 (rest inferred from roadClass)
+
+## Buildings
+- **Total buildings (>= 15 m²):** 568
+- **Height sources:** tagged=0, levels=10, default=558
