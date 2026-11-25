@@ -17,7 +17,7 @@ Claude has built the game side (in `claude/town-centre-junctions`):
 What's missing is the **data** for Wolverhampton's signs and destinations.
 
 ## A. Destinations from OSM (ODbL)
-- [ ] A1. `content/schemas/pois.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/pois.json`. Each POI has:
+- [x] A1. `content/schemas/pois.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/pois.json` (149 POIs including 6 in the ~500 m buffer and Queen Square `city_centre`). Each POI has:
   - `id`, `name`;
   - `kind`: `railway_station` | `bus_station` | `school` | `hospital` | `city_centre` | `car_park` | `shopping` | `university` | `police` | `other`;
   - `x`, `z` (pack origin);
@@ -25,7 +25,7 @@ What's missing is the **data** for Wolverhampton's signs and destinations.
   - `osmId`.
 
   Source the tags: `railway=station`, `amenity=bus_station`, `amenity=school`, `amenity=hospital`, `amenity=parking`, `shop=mall`, `amenity=university`, `amenity=police`. Add one `city_centre` point (Queen Square) and record the reason. Include POIs up to about 500 m outside the bbox if they are signed from inside it, with `outsideArea: true`.
-- [ ] A2. Tests: every `accessLinkId` is a main-network link; names are present; the ODbL source block is included.
+- [x] A2. Tests: every `accessLinkId` is a main-network link; names are present; the ODbL source block is included (`pipeline/tests/test_pois.py`, 48/48 tests pass).
 
 ## B. Direction signs at junctions
 - [ ] B1. `content/schemas/signs-placed.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/direction_signs.json`. Place a sign on the approach to each major junction (signals or roundabout, plus primary/trunk give-way junctions), 30–50 m before the junction, on the **nearside verge**. Each sign has:
