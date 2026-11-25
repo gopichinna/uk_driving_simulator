@@ -1,6 +1,6 @@
-# Tasks: Google Hydrogen, round 6, branch `hydrogen/lessons-complete`
+# Tasks: Google Hydrogen, round 7, branch `hydrogen/city-life-and-progression`
 
-**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 6 and §3 ownership), then this file. You own:
+**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 7 and §3 ownership), then this file. You own:
 - `pipeline/**`;
 - `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/scenarios/**`, `content/legal/**`, `content/store/**`;
 - `content/ATTRIBUTIONS.md`;
@@ -9,86 +9,76 @@
 
 Don't edit `core/**` or `unity/**`.
 
-**Goal (round 6):** make **all 18 lessons complete and correct**:
-- diagrams that teach the right thing;
-- scenarios for lessons 11–18;
-- a short knowledge check after each lesson;
-- coach voice lines;
-- lane-level turn data for Wolverhampton.
+**Goal (round 7):**
+- a cleaner Wolverhampton network;
+- people walking its streets and using its crossings;
+- crossing lights that give pedestrians a turn;
+- the progression data (unlocks, stars, review schedule) that turns 18 lessons into a course.
+
+**Context from play-testing:** Wolverhampton (beta) is on the phone. Roads are now drawn from the lane graph, but the pack has **113 links shorter than 10 m**, mostly where OSM splits a way at every tagged node. They make junctions fiddly and turn paths kinked.
 
 **Done when:**
 - `pytest`, `ruff` and the readability linter pass;
 - every new file validates;
-- CI is green;
-- you have **looked at** every diagram (see A2).
+- CI is green.
 
 Tick each box with a one-line note.
 
 ## Done before
-- Rounds 1–5 (PRs #1–#5, last merge `396fcbb`).
+- Rounds 1–6 (PRs #1–#6, last merge `551fb08`).
 
-## A. Fix the learn-card diagrams (top priority: they teach)
-Review of round 5 found two problems:
-- **Roundabout lane-choice diagram (`gb-s3-12…`):** the blue path goes **straight through the central island**. Paths must go **clockwise round** the island. The diagram should show a 2-lane approach with lane arrows: left lane for left and ahead, right lane for right.
-- **Zebra diagram:** the dashed centre line runs **through** the zebra. On the approaches it should be zig-zag lines (kerbs and centre), as in the town course.
+## A. Simplify the Wolverhampton network
+- [ ] A1. In `build.py`, merge chains of links joined at **plain degree-2 nodes**: same direction rules, same lanes, same speed limit, same name/ref, and a node that is not a crossing, signal, give-way or restriction via-node. A merged link keeps the first link's id. Its `geometry` is the joined polyline, and `confidence` is the minimum of the parts.
+- [ ] A2. Rewrite every reference so it stays consistent: `crossings[].linkId`, `restrictions`, `junctionPriority.majorLinks`, `signalPlans.stages`, `laneConnections`, `spawnPoints` and `routes.json`. Add tests for:
+  - no dangling references;
+  - every route still connected and legal;
+  - link count reduced, with before and after numbers in `QA.md`.
+- [ ] A3. Report the remaining links under 10 m in `QA.md`, and why each stays (for example, a real short link between two signal junctions).
 
-- [x] A1. Fix the generator so every diagram meets these checks: (`pipeline/ltl_pipeline/diagrams.py`: clockwise roundabout arcs exiting into left lane, zebra zig-zags with no centre line through stripes, T-junction right turn into left lane.)
-  1. Vehicles are on the **left** of each road.
-  2. Every path follows lanes, with curves through junctions and **clockwise round roundabouts**, and never crosses an island, kerb or footway.
-  3. Markings match the town course (cycle box at the lights, give-way lines and triangle, zebra with zig-zags, yellow box hatch).
-  4. Turns finish in the **left** side of the new road.
-- [x] A2. Generate a **contact sheet** (`content/lessons/gb/diagrams/_contact_sheet.png`, all 18 diagrams in a grid) and **look at it** yourself. In your PR description, list each diagram with one line: "checked: path clockwise / left lane / markings OK". Add tests for what code can check: path points never fall inside island polygons; for left-hand traffic, path points sit to the left of each road's centreline. (`_contact_sheet.png` visually inspected + `pipeline/tests/test_diagrams.py`.)
+## B. Pedestrians in Wolverhampton
+- [ ] B1. `content/schemas/pedroutes.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/pedestrians.json`: 20–40 walking routes. Each route has:
+  - `id`;
+  - `points` (`[[x, z], …]`, the same origin as the pack, along footways at about 1.5 m outside the carriageway edge; use link `widthM` and `sidewalk`);
+  - `crossings[]` = `{ crossingId, fromIndex, toIndex }` (the route points that walk across the road at a crossing from the pack).
+- [ ] B2. Routes cross roads **only at mapped crossings** (zebra, pelican, puffin, toucan, or uncontrolled with confidence ≥ 0.7). Also include some routes that walk across **side-road mouths** (rule H2): add `mouthCrossings[]` = `{ nodeId, fromIndex, toIndex }` where a route crosses the end of a minor road at a give-way junction.
+- [ ] B3. Tests:
+  - points are within 6 m of a footway edge, except while crossing;
+  - every crossing reference exists;
+  - routes avoid building footprints (`buildings.json`).
 
-## B. Scenarios for lessons 11–18
-- [x] B1. Extend `scenario.v0` **additively** (pre-agreed) with two event types for courses without town anchors: (`scenario.v0.schema.json`: `take_exit` and `finish_after_s`.)
-  - `take_exit` `{ exitNumber: 1–4 }`: the roundabout exit the player must take. The scenario ends when they leave by it.
-  - `finish_after_s` `{ seconds }`: the scenario ends after this many seconds of driving.
+## C. Pedestrian stages at signal crossings (roadpack v0.6, additive, pre-agreed)
+- [ ] C1. For `signalPlans` at nodes that are signal-controlled pedestrian crossings (pelican, puffin or toucan crossings, or a crossing node with `traffic_signals`), add `pedestrianStageS` (e.g. 8), and `crossingIds[]` for the crossings it serves.
+  - Keep confidence ≤ 0.5 (inferred).
+  - Bump `packFormatVersion` to `0.6`. **Don't rename or remove fields.**
 
-  Use them together with the existing `traffic_density`, `cyclist_ahead` (anchor `start`) and `finish_at`.
-- [x] B2. Write a scenario file for every scenario in lessons 11–18, and extend the C3 tests from round 5 to cover them. (All 36 scenario files across lessons 1–18 validated by `test_scenarios.py`.)
-  - **Roundabout lessons:** vary `take_exit` across the scenarios (1st, 2nd, 3rd) so lane choice and signals are practised.
-  - **Dual carriageway:** use `finish_after_s`.
+## D. Progression: from lessons to a course
+- [ ] D1. `content/schemas/progression.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/progression.json`:
+  - `stages[]` = `{ stage, title, lessonIds[], unlockAfter: { stage, minStars } }`;
+  - `stars`: rules for 1–3 stars from a lesson attempt, e.g. 1 = finished, 2 = test-style pass (from `test_marking.yaml`), 3 = no faults and the quiz all correct;
+  - `review`: a spaced-repetition schedule for rules the player got wrong (e.g. review after 1, 3, 7 and 14 days), with a cap of 3 review drives per day;
+  - `freeTier`: lesson ids 1–3 (must match `lesson.freeTier`).
+- [ ] D2. Tests:
+  - every lesson appears exactly once;
+  - unlocks reference earlier stages only (no cycles);
+  - the free lessons match the lesson files;
+  - star rules reference `test_marking.yaml` fields that exist.
+- [ ] D3. Plain-English UI strings for the progression screens in `ui.json` (with en-XA regenerated):
+  - `progress.title`
+  - `progress.stage_locked`, `progress.unlock_hint` ("Get {stars} stars in Stage {stage} to unlock")
+  - `progress.stars`
+  - `progress.review_due` ("{count, plural, one {# review drive} other {# review drives}} ready")
+  - `lesson.start`, `lesson.next`, `lesson.retry`, `lesson.quiz_title`, `lesson.correct`, `lesson.incorrect`
 
-## C. Knowledge check after each lesson (original questions only)
-- [x] C1. `content/schemas/quiz.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/quiz/<lessonId>.json`. Each lesson gets 2–3 multiple-choice questions. Each question has: (`quiz.v0.schema.json` + 18 quiz files, 2 original questions each.)
-  - `id`, `question`;
-  - `options` (3–4);
-  - `answerIndex`;
-  - `explanation` (1–2 sentences);
-  - `ruleId` (it must exist in `rules.yaml`);
-  - `diagram` (optional).
-- [x] C2. **Write every question yourself from the Highway Code rule text** (our paraphrase). **Never copy or adapt DVSA theory-test questions or any question bank** (`AGENTS.md` §4, rule 2). Plain English B1, and the readability linter covers it. (Original B1 questions, checked by `test_quizzes.py`.)
-- [x] C3. Tests: (`pipeline/tests/test_quizzes.py`)
-  - every lesson has a quiz;
-  - `answerIndex` is in range;
-  - the options are unique;
-  - `ruleId` exists.
-
-## D. Coach voice lines (for text-to-speech later)
-- [x] D1. Extend `strings.v0` additively (pre-agreed) with `kind: "voice"`: `entries` of `key → line` (≤ 12 words, spoken English, B1). Create `content/countries/gb/strings/en/voice.json` with: (`strings.v0.schema.json` + `voice.json`: 25 spoken lines <= 12 words.)
-  - `voice.<ruleId>.fault` and `voice.<ruleId>.good` for every implemented rule (see `rule_index.json`);
-  - `voice.lesson.start`, `voice.lesson.passed`, `voice.lesson.try_again`.
-- [x] D2. The readability linter checks voice lines, including the 12-word limit. The en-XA pseudo-locale includes them. (`readability.py` `lint_voice_strings` + `pseudolocale.py` + `en-XA/voice.json`.)
-
-## E. Wolverhampton lane connections (roadpack v0.5, additive, pre-agreed)
-- [x] E1. For links with `turn:lanes` or more than one lane, add top-level `laneConnections[]`: `{ nodeId, fromLink, fromLane, toLink, toLane, confidence }`. (`build.py` `_build_lane_connections`: lane 0 = nearside, turn:lanes + default fallback, respects `restrictions[]`.)
-  - Lane 0 is the **nearside** (left in the UK).
-  - Derive them from `turn:lanes` arrows when tagged; otherwise use a default: nearside lane for left and ahead, offside lane for right and ahead.
-  - Respect `restrictions[]`.
-- [x] E2. Bump `packFormatVersion` to `0.5`, update the sample with one example, and add a QA section with counts and confidence. **Don't rename or remove fields.** (`roadpack.v0.schema.json`, `roadpack.sample.json`, `qa.py`, `roadpack.json`.)
-
-## F. Hand-off
-- [x] F1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: correct diagrams, lessons 11–18 scenarios, quizzes, voice lines, lane connections". Include the A2 diagram checklist in the PR description. Do A first and open a draft PR early. (Note added to `docs/08` §6; PR #6 marked ready with diagram checklist.)
+## E. Hand-off
+- [ ] E1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: simpler Wolverhampton, pedestrians, crossing stages, progression". Do D first (Claude builds the lesson flow next) and open a draft PR early. Double-check that the PR link in your summary uses `gopichinna`.
 
 ## Requests from Claude
-- Pre-agreed for round 6:
-  - `scenario.v0` event types `take_exit` and `finish_after_s`;
-  - new schema `quiz.v0`;
-  - an additive `strings.v0` branch, `kind: "voice"`;
-  - additive roadpack **v0.5** `laneConnections[]`.
+- Pre-agreed for round 7:
+  - new schemas `pedroutes.v0` and `progression.v0`;
+  - roadpack **v0.6** `pedestrianStageS` and `crossingIds[]` on signal plans;
+  - link merging in A, as long as every reference is rewritten consistently.
 
-  Anything else needs a note here and in `docs/tasks/claude-branch.md` first.
-- Claude is building the scenario player against `scenario.v0` now. Please don't change existing event fields.
+  Claude's loader doesn't hard-code link ids. Anything else needs a note here and in `docs/tasks/claude-branch.md` first.
 
 ## Requests from Hydrogen (to Claude)
 *(none yet)*
