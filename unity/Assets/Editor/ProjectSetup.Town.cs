@@ -321,6 +321,7 @@ namespace LToLocal.EditorTools
             foreach (float x in new[] { -w / 2 + 0.25f, w / 2 - 0.25f })
                 Prim(PrimitiveType.Cylinder, "Pole", root, new Vector3(x, bottom / 2 + h / 2 - 0.1f, 0.06f), new Vector3(0.08f, (bottom + h) / 2, 0.08f), m.Pole);
             Prim(PrimitiveType.Cube, "Border", root, new Vector3(0, bottom + h / 2, 0), new Vector3(w, h, 0.04f), border);
+            Prim(PrimitiveType.Cube, "Back", root, new Vector3(0, bottom + h / 2, 0.035f), new Vector3(w, h, 0.02f), Mat("SignBack", new Color(0.62f, 0.64f, 0.66f))); // UK sign backs are plain grey
             Prim(PrimitiveType.Cube, "Panel", root, new Vector3(0, bottom + h / 2, -0.01f), new Vector3(w - 0.08f, h - 0.08f, 0.04f), panel);
             for (int i = 0; i < rows.Length; i++)
             {

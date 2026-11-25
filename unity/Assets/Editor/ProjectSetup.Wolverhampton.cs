@@ -268,6 +268,7 @@ namespace LToLocal.EditorTools
                     float w = 0.6f + name.Length * 0.13f;
                     foreach (float x in new[] { -w / 2 + 0.1f, w / 2 - 0.1f }) Prim(PrimitiveType.Cube, "Leg", plate, new Vector3(x, 0.45f, 0.03f), new Vector3(0.06f, 0.9f, 0.06f), black);
                     Prim(PrimitiveType.Cube, "Border", plate, new Vector3(0, 1.05f, 0), new Vector3(w, 0.42f, 0.04f), black);
+                    Prim(PrimitiveType.Cube, "Back", plate, new Vector3(0, 1.05f, 0.035f), new Vector3(w, 0.42f, 0.02f), Mat("SignBack", new Color(0.62f, 0.64f, 0.66f)));
                     Prim(PrimitiveType.Cube, "Plate", plate, new Vector3(0, 1.05f, -0.01f), new Vector3(w - 0.06f, 0.36f, 0.04f), m.White);
                     Text(plate, name, new Vector3(0, 1.05f, -0.04f), 0.024f, Color.black, TextAnchor.MiddleCenter);
                 }
@@ -345,6 +346,17 @@ namespace LToLocal.EditorTools
                 var link = pack.Links.Find(x => x.Id == kv.Key)!;
                 foreach (int id in fwd) roads.Strip(g.Segments[id].Path.Points, w + 0.3f, 0.012f);
                 foreach (int id in back) roads.Strip(g.Segments[id].Path.Points, w + 0.3f, 0.012f);
+
+                // One continuous surface over the whole carriageway, node to node, so curves and joins leave no
+                // grass between lanes. Two-way: forward lanes on the left of the centreline, backward on the right.
+                int nF = fwd.Count, nB = back.Count;
+                double span = (nF + nB) * w + 0.4;
+                double centre = link.OneWay ? 0 : (nF - nB) * w / 2.0;
+                roads.Strip(centre == 0 ? link.Geometry : Geo2.Offset(link.Geometry, centre), (float)span, 0.0112f);
+                // Small patch where pieces of the same street join, filling the wedge on the outside of the bend.
+                foreach (var end in new[] { link.Geometry[0], link.Geometry[link.Geometry.Count - 1] })
+                    roads.Disc(end, (float)(span / 2), 0.0111f, 20);
+                for (int i = 1; i < link.Geometry.Count - 1; i++) roads.Disc(link.Geometry[i], (float)(span / 2), 0.0111f, 20);
 
                 // Footways along the outer edges.
                 if (link.Sidewalk != "none")
