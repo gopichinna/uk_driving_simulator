@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/pois.v0.schema.json",
+  "title": "L to Local City POIs v0",
+  "description": "Destinations extracted from OpenStreetMap for direction signing and mock-test guidance. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["poisFormatVersion", "packId", "origin", "source", "pois"],
+  "additionalProperties": false,
+  "properties": {
+    "poisFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "origin": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind", "licence", "attribution"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["osm", "hand-authored"] },
+        "extract": { "type": "string" },
+        "extractTimestamp": { "type": "string", "format": "date-time" },
+        "bbox": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 },
+        "licence": { "type": "string" },
+        "attribution": { "type": "string" },
+        "generator": { "type": "string" }
+      }
+    },
+    "pois": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/poi" }
+    }
+  },
+  "$defs": {
+    "poi": {
+      "type": "object",
+      "required": ["id", "name", "kind", "x", "z", "accessLinkId", "osmId"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "kind": {
+          "enum": [
+            "railway_station",
+            "bus_station",
+            "school",
+            "hospital",
+            "city_centre",
+            "car_park",
+            "shopping",
+            "university",
+            "police",
+            "other"
+          ]
+        },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "accessLinkId": { "type": "string", "minLength": 1 },
+        "osmId": { "type": "integer" },
+        "outsideArea": { "type": "boolean" },
+        "reason": { "type": "string" }
+      }
+    }
+  }
+}

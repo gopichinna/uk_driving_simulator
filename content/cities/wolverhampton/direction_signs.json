@@ -1,0 +1,277 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-centre",
+  "origin": {
+    "lat": 52.5862,
+    "lon": -2.1288
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "signs": [
+    {
+      "id": "ds_001",
+      "nodeId": "n_18834324",
+      "approachLinkId": "l_22779053_5",
+      "x": 341.011,
+      "z": 136.451,
+      "heading": 343.41,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "left"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "right"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_002",
+      "nodeId": "n_18855081",
+      "approachLinkId": "l_38791087_0",
+      "x": 76.088,
+      "z": 110.375,
+      "heading": 279.71,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "ahead"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_003",
+      "nodeId": "n_438598",
+      "approachLinkId": "l_38791087_1",
+      "x": 153.298,
+      "z": 104.057,
+      "heading": 90.93,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "ahead"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_004",
+      "nodeId": "n_438598",
+      "approachLinkId": "l_85548593_2",
+      "x": 230.763,
+      "z": 119.724,
+      "heading": 246.62,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "left"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "left"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "left"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_005",
+      "nodeId": "n_438598",
+      "approachLinkId": "l_85550386_0",
+      "x": 202.584,
+      "z": 69.745,
+      "heading": 327.5,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "right"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "right"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "right"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "id": "ds_006",
+      "nodeId": "n_438627",
+      "approachLinkId": "l_645715020_0",
+      "x": -194.184,
+      "z": -163.01,
+      "heading": 178.55,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "ahead"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_007",
+      "nodeId": "n_438627",
+      "approachLinkId": "l_7984145_0",
+      "x": -214.705,
+      "z": -235.76,
+      "heading": 13.91,
+      "distanceBeforeJunctionM": 35.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "ahead"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "ahead"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_008",
+      "nodeId": "n_8115254332",
+      "approachLinkId": "l_871187631_0",
+      "x": -8.927,
+      "z": 193.779,
+      "heading": 145.15,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre (Queen Square)",
+          "poiId": "poi_city_centre_queen_square",
+          "direction": "left"
+        },
+        {
+          "text": "Wolverhampton",
+          "poiId": "poi_railway_station_6634567442",
+          "direction": "left"
+        },
+        {
+          "text": "Wolverhampton Interchange",
+          "poiId": "poi_bus_station_140385467",
+          "direction": "left"
+        },
+        {
+          "text": "West Park Hospital",
+          "poiId": "poi_hospital_47660665",
+          "direction": "left"
+        }
+      ]
+    }
+  ]
+}

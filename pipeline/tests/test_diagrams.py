@@ -10,7 +10,7 @@ from ltl_pipeline.diagrams import DIAGRAMS_DIR, LESSONS_DIR, _render_lesson_diag
 
 def test_diagrams_avoid_islands_and_stay_left() -> None:
     lesson_files = sorted(LESSONS_DIR.glob("[01][0-9]-*.json"))
-    assert len(lesson_files) == 18
+    assert len(lesson_files) == 19
 
     for lf in lesson_files:
         lesson = json.loads(lf.read_text(encoding="utf-8"))
