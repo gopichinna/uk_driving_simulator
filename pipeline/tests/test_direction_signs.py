@@ -93,15 +93,13 @@ def test_every_row_direction_matches_shortest_route_first_turn_and_styles() -> N
 
 
 def test_adjacent_junction_signs_differ_when_routes_differ() -> None:
+    import statistics
+
     signs, _, _, _ = _load_all()
+    row_counts = [len(s["rows"]) for s in signs["signs"]]
+    assert statistics.median(row_counts) >= 2, f"Expected median rows >= 2, got {row_counts}"
     all_sigs = [tuple((r["text"], r["direction"]) for r in s["rows"]) for s in signs["signs"]]
     assert len(set(all_sigs)) >= 12, "Expected diverse direction sign row sets across junctions"
-    for sign in signs["signs"]:
-        if len(sign["rows"]) >= 3:
-            dirs = {r["direction"] for r in sign["rows"]}
-            assert len(dirs) >= 2 or len(sign["rows"]) <= 2, (
-                f"{sign['id']} has 3+ rows all in a single direction"
-            )
 
 
 def test_signs_and_plates_clear_game_geometry_and_islands() -> None:

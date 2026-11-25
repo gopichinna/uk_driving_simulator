@@ -503,12 +503,11 @@ def build_direction_signs_and_street_names(
                     break
                 _try_add(it, max_per_dir=2)
 
-            # Add at most 1 ahead destination when there are multiple exits or turning rows
-            if ahead_candidates and len(chosen_rows) < 4:
-                if turning_candidates or len(turn_dir_by_out) >= 2:
-                    _try_add(ahead_candidates[0], max_per_dir=1)
-                elif not chosen_rows:
-                    _try_add(ahead_candidates[0], max_per_dir=1)
+            # Fill to 2-4 rows with main/local ahead destinations when this approach leads to them
+            for it in ahead_candidates:
+                if len(chosen_rows) >= 4:
+                    break
+                _try_add(it, max_per_dir=3)
 
             if not chosen_rows:
                 continue

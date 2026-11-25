@@ -9,7 +9,7 @@
     "blocks": [
       "An ASL box at traffic lights gives cyclists space ahead of cars.",
       "You must stop at the first white line on red or amber.",
-      "Leave cyclists plenty of room when moving off on green."
+      "Leave cyclists plenty of room when pulling away on green."
     ],
     "ruleIds": [
       "GB.TL.ASL",
@@ -69,6 +69,6 @@
   ],
   "recap": [
     "Always stop at the first white line before the bike box.",
-    "Watch for cyclists moving off beside you when the light turns green."
+    "Watch for cyclists pulling away beside you when the light turns green."
   ]
 }

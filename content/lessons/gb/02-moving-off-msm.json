@@ -3,11 +3,11 @@
   "id": "gb-s0-02-moving-off-msm",
   "stage": 0,
   "order": 2,
-  "title": "Moving off and MSM",
+  "title": "Pulling away and MSM",
   "freeTier": true,
   "learnCard": {
     "blocks": [
-      "Use the MSM routine before moving off or changing speed.",
+      "Check your mirrors and signal before pulling away or changing speed.",
       "Only pull out when the road behind and beside you is clear.",
       "Signal early enough for other drivers to react, then cancel promptly."
     ],
@@ -24,7 +24,7 @@
       "id": "s0_02_move_off_town",
       "course": "town",
       "anchor": "start",
-      "goal": "Move off from the kerb without forcing following traffic to brake.",
+      "goal": "Pull away from the side of the road only when it is safe. The cars behind you should not have to slow down.",
       "rulesJudged": [
         "GB.OBS.MOVE_OFF_CHECKS",
         "GB.SIG.TIMELY"
@@ -68,7 +68,7 @@
     }
   ],
   "recap": [
-    "Wait for a safe gap before moving off from the kerb.",
+    "Wait for a safe gap before pulling away from the side of the road.",
     "Signal early so following drivers have plenty of time to react."
   ]
 }
