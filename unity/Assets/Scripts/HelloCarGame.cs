@@ -29,7 +29,13 @@ namespace LToLocal.Game
         public float camLookAhead = 6f;
 
         [Header("Driver's seat camera (UK: driver sits on the RIGHT)")]
-        public Vector3 cockpitOffset = new Vector3(0.37f, 1.18f, 0.15f);
+        public Vector3 cockpitOffset = new Vector3(0.37f, 1.2f, -0.15f);
+        public float cockpitPitch = 0.5f;
+        public float cockpitFov = 50f;
+
+        [Header("Shoulder check (blind spot)")]
+        public float shoulderYaw = 120f;
+        public float shoulderTurnSpeed = 6f;
 
         private enum View { Chase, Cockpit }
 
@@ -41,6 +47,8 @@ namespace LToLocal.Game
 
         private View _view = View.Chase;
         private bool _showMap = true;
+        private float _lookBlend;          // -1..1, eased toward the held look direction
+        private GameObject[] _mirrorHousings = new GameObject[0];
         private int _indicator;            // -1 left, 0 off, +1 right
         private float _indicatorStartX;
         private float _indicatorTime;
@@ -59,6 +67,9 @@ namespace LToLocal.Game
             Application.targetFrameRate = 60;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             _controls = GetComponent<TouchControls>();
+            var housings = new System.Collections.Generic.List<GameObject>();
+            foreach (Transform c in car) if (c.name.StartsWith("Mirror")) housings.Add(c.gameObject);
+            _mirrorHousings = housings.ToArray();
             _traffic = new TrafficSim(Lanes, new TrafficParams { CarsPerLane = new[] { 5, 3, 4, 4 } }, seed: 2026);
             ResetDrive();
         }
@@ -119,21 +130,48 @@ namespace LToLocal.Game
         {
             if (chaseCamera == null) return;
             Transform cam = chaseCamera.transform;
+
+            // Door-mirror housings block the view from the driver's seat; the HUD mirrors replace them.
+            bool inside = _view == View.Cockpit || Mathf.Abs(_lookBlend) > 0.05f;
+            foreach (var h in _mirrorHousings) if (h.activeSelf == inside) h.SetActive(!inside);
+
+            // 1. Normal pose for the current view
+            Vector3 pos;
+            Quaternion rot;
             if (_view == View.Cockpit)
             {
                 chaseCamera.nearClipPlane = 0.05f;
-                chaseCamera.fieldOfView = 62f;
-                cam.SetPositionAndRotation(car.TransformPoint(cockpitOffset), car.rotation * Quaternion.Euler(5f, 0f, 0f));
-                return;
+                chaseCamera.fieldOfView = cockpitFov;
+                pos = car.TransformPoint(cockpitOffset);
+                rot = car.rotation * Quaternion.Euler(cockpitPitch, 0f, 0f);
+            }
+            else
+            {
+                chaseCamera.nearClipPlane = Mathf.Abs(_lookBlend) > 0.05f ? 0.05f : 0.3f;
+                chaseCamera.fieldOfView = 60f;
+                Vector3 fwd = car.forward;
+                Vector3 target = car.position - fwd * camDistance + Vector3.up * camHeight;
+                _chasePos = Vector3.Lerp(_chasePos == Vector3.zero ? target : _chasePos, target, 1f - Mathf.Exp(-8f * Time.deltaTime));
+                pos = _chasePos;
+                rot = Quaternion.LookRotation(car.position + fwd * camLookAhead + Vector3.up * 1.0f - pos);
             }
 
-            chaseCamera.nearClipPlane = 0.3f;
-            chaseCamera.fieldOfView = 60f;
-            Vector3 fwd = car.forward;
-            Vector3 target = car.position - fwd * camDistance + Vector3.up * camHeight;
-            cam.position = Vector3.Lerp(cam.position, target, 1f - Mathf.Exp(-8f * Time.deltaTime));
-            cam.LookAt(car.position + fwd * camLookAhead + Vector3.up * 1.0f);
+            // 2. Shoulder check: turn the driver's head toward the blind spot while "Look" is held
+            _lookBlend = Mathf.MoveTowards(_lookBlend, _controls.Look, shoulderTurnSpeed * Time.deltaTime);
+            if (Mathf.Abs(_lookBlend) > 0.001f)
+            {
+                float t = Mathf.SmoothStep(0f, 1f, Mathf.Abs(_lookBlend));
+                Vector3 headPos = car.TransformPoint(cockpitOffset);
+                Quaternion headRot = car.rotation * Quaternion.Euler(6f, Mathf.Sign(_lookBlend) * shoulderYaw, 0f);
+                pos = Vector3.Lerp(pos, headPos, t);
+                rot = Quaternion.Slerp(rot, headRot, t);
+                chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, 60f, t);
+            }
+
+            cam.SetPositionAndRotation(pos, rot);
         }
+
+        private Vector3 _chasePos;
 
         // ---------------- HUD ----------------
 
@@ -154,7 +192,7 @@ namespace LToLocal.Game
 
             // Speed limit (below the nearside mirror)
             GUI.color = _curr.SpeedMph > speedLimitMph + 0.5 ? new Color(1f, 0.5f, 0.5f) : Color.white;
-            GUI.Box(new Rect(W * 0.02f, H * 0.36f, H * 0.14f, H * 0.14f), speedLimitMph.ToString(), _signStyle);
+            GUI.Box(new Rect(W * 0.02f, H * 0.47f, H * 0.14f, H * 0.14f), speedLimitMph.ToString(), _signStyle);
             GUI.color = Color.white;
 
             // Indicators either side of the rear-view mirror
@@ -175,6 +213,10 @@ namespace LToLocal.Game
                 _showMap = !_showMap;
             if (GUI.Button(new Rect(W * 0.5f + bw * 0.55f, by, bw, bh), "Reset", _buttonStyle))
                 ResetDrive();
+
+            if (Mathf.Abs(_lookBlend) > 0.6f)
+                GUI.Box(new Rect(W * 0.5f - H * 0.4f, H * 0.62f, H * 0.8f, H * 0.1f),
+                    _lookBlend < 0 ? "Checking left blind spot" : "Checking right blind spot", _buttonStyle);
 
             if (_showMap) DrawMiniMap(new Rect(W * 0.30f, H * 0.50f, W * 0.11f, H * 0.46f));
         }

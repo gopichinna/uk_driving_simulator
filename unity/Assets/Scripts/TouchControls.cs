@@ -22,8 +22,17 @@ namespace LToLocal.Game
         private Vector2 _steerAnchor;
         private float _steer;
         private bool _go, _brake;
+        private int _look; // -1 over left shoulder, +1 over right shoulder, 0 ahead
 
         public CarControls Read() => new CarControls(_steer, _go ? 1 : 0, _brake ? 1 : 0);
+
+        /// <summary>Shoulder check being held: -1 left, +1 right, 0 none.</summary>
+        public int Look => _look;
+
+        // Under each door mirror (mirrors are drawn by MirrorRig at the top corners).
+        private static float MirrorBottom => Screen.height * 0.04f + Screen.width * 0.17f / 1.55f;
+        public static Rect LookLeftRect => new Rect(Screen.width * 0.015f, MirrorBottom + Screen.height * 0.025f, Screen.width * 0.17f, Screen.height * 0.11f);
+        public static Rect LookRightRect => new Rect(Screen.width * 0.815f, MirrorBottom + Screen.height * 0.025f, Screen.width * 0.17f, Screen.height * 0.11f);
 
         private Rect GoRect => new Rect(Screen.width * 0.86f, Screen.height * 0.45f, Screen.width * 0.12f, Screen.height * 0.45f);
         private Rect BrakeRect => new Rect(Screen.width * 0.72f, Screen.height * 0.62f, Screen.width * 0.12f, Screen.height * 0.28f);
@@ -33,12 +42,15 @@ namespace LToLocal.Game
             bool steering = false;
             _go = false;
             _brake = false;
+            _look = 0;
 
             for (int i = 0; i < Input.touchCount; i++)
             {
                 Touch t = Input.GetTouch(i);
                 Vector2 gui = new Vector2(t.position.x, Screen.height - t.position.y); // IMGUI has y pointing down
 
+                if (LookLeftRect.Contains(gui)) { _look = -1; continue; }
+                if (LookRightRect.Contains(gui)) { _look = 1; continue; }
                 if (GoRect.Contains(gui)) { _go = true; continue; }
                 if (BrakeRect.Contains(gui)) { _brake = true; continue; }
 
@@ -70,6 +82,8 @@ namespace LToLocal.Game
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) key -= 1;
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) key += 1;
             if (key != 0) { _steer = Mathf.MoveTowards(_steer, key, 3f * Time.deltaTime); steering = true; }
+            if (Input.GetKey(KeyCode.Q)) _look = -1;
+            if (Input.GetKey(KeyCode.E)) _look = 1;
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) _go = true;
             if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.Space)) _brake = true;
 
@@ -84,6 +98,12 @@ namespace LToLocal.Game
                 alignment = TextAnchor.MiddleCenter,
                 fontStyle = FontStyle.Bold,
             };
+
+            var lookStyle = new GUIStyle(style) { fontSize = Mathf.RoundToInt(Screen.height * 0.035f) };
+            GUI.color = _look < 0 ? new Color(1f, 0.85f, 0.3f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
+            GUI.Box(LookLeftRect, "Look left (hold)", lookStyle);
+            GUI.color = _look > 0 ? new Color(1f, 0.85f, 0.3f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
+            GUI.Box(LookRightRect, "Look right (hold)", lookStyle);
 
             GUI.color = _go ? new Color(0.5f, 1f, 0.6f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
             GUI.Box(GoRect, "GO", style);
