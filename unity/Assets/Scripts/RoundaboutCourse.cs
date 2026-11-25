@@ -18,7 +18,7 @@ namespace LToLocal.Game
         private RoundaboutRule _rule;
         private readonly List<VehicleSnapshot> _snap = new List<VehicleSnapshot>();
 
-        public string DisplayName => "Roundabout (30 mph)";
+        public string DisplayName => "Single-lane roundabout (30 mph)";
 
         public CarState StartState
         {
@@ -68,6 +68,12 @@ namespace LToLocal.Game
             if (trafficView != null) trafficView.Render(_snap, alpha, blink);
         }
 
+        public void GetRoadUsers(List<RoadUser> into)
+        {
+            into.Clear();
+            foreach (var c in _traffic.Cars) into.Add(new RoadUser(c.Id, c.Position, c.Heading, c.SpeedMps, c.IsCyclist));
+        }
+
         private void Snapshot()
         {
             _snap.Clear();
@@ -75,7 +81,7 @@ namespace LToLocal.Game
                 _snap.Add(new VehicleSnapshot
                 {
                     Id = c.Id, X = c.Position.X, Z = c.Position.Z, Heading = c.Heading,
-                    Indicator = c.Indicator, Colour = c.ColourIndex,
+                    Indicator = c.Indicator, Colour = c.ColourIndex, IsCyclist = c.IsCyclist,
                 });
         }
     }

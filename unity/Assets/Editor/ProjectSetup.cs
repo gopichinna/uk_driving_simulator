@@ -24,12 +24,13 @@ namespace LToLocal.EditorTools
         private const string SettingsDir = "Assets/Settings";
         private const string MaterialsDir = "Assets/Materials";
         private const string GeneratedDir = "Assets/Generated";
+        public const string TwoLaneRoundaboutScene = "Assets/Scenes/TwoLaneRoundabout.unity";
         public const string RoundaboutScene = "Assets/Scenes/Roundabout.unity";
         public const string DualCarriagewayScene = "Assets/Scenes/DualCarriageway.unity";
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
@@ -38,6 +39,7 @@ namespace LToLocal.EditorTools
             ConfigureUrp();
             BuildDualCarriagewayScene();
             BuildRoundaboutScene();
+            BuildTwoLaneRoundaboutScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));
@@ -232,6 +234,9 @@ namespace LToLocal.EditorTools
             for (int colour = 0; colour < m.CarColours.Length; colour++)
                 for (int i = 0; i < 4; i++)
                     BuildCar($"TrafficCar{i}_c{colour}", traffic.transform, m.CarColours[colour], m.Parts, withMirrors: true);
+            var jerseys = new[] { Mat("JerseyOrange", new Color(1f, 0.5f, 0.1f)), Mat("JerseyYellow", new Color(0.95f, 0.9f, 0.2f)), Mat("JerseyPink", new Color(0.9f, 0.3f, 0.6f)) };
+            for (int i = 0; i < 6; i++)
+                BuildCyclist($"Cyclist{i}", traffic.transform, jerseys[i % jerseys.Length], m);
             var trafficView = traffic.AddComponent<TrafficView>();
 
             var game = new GameObject("Game");
@@ -274,6 +279,20 @@ namespace LToLocal.EditorTools
             foreach (var (x, z) in new[] { (-0.88f, 1.35f), (0.88f, 1.35f), (-0.88f, -1.35f), (0.88f, -1.35f) })
                 Prim(PrimitiveType.Cylinder, "Wheel", t, new Vector3(x, 0.34f, z), new Vector3(0.66f, 0.12f, 0.66f), m.Tyre, new Vector3(0, 0, 90));
             return root;
+        }
+
+        /// <summary>Low-poly bicycle and rider, forward = +Z, about 1.8 m long.</summary>
+        private static void BuildCyclist(string name, Transform parent, Material jersey, Palette m)
+        {
+            var root = new GameObject(name).transform;
+            root.SetParent(parent, false);
+            foreach (float z in new[] { -0.55f, 0.55f })
+                Prim(PrimitiveType.Cylinder, "Wheel", root, new Vector3(0, 0.34f, z), new Vector3(0.68f, 0.02f, 0.68f), m.Parts.Tyre, new Vector3(0, 0, 90));
+            Prim(PrimitiveType.Cube, "Frame", root, new Vector3(0, 0.6f, 0), new Vector3(0.05f, 0.05f, 1.0f), m.Pole);
+            Prim(PrimitiveType.Cube, "Legs", root, new Vector3(0, 0.75f, -0.05f), new Vector3(0.3f, 0.5f, 0.2f), m.Parts.Glass);
+            Prim(PrimitiveType.Cube, "Body", root, new Vector3(0, 1.25f, 0.05f), new Vector3(0.4f, 0.55f, 0.3f), jersey, new Vector3(25, 0, 0));
+            Prim(PrimitiveType.Sphere, "Helmet", root, new Vector3(0, 1.62f, 0.2f), new Vector3(0.26f, 0.24f, 0.3f), m.White);
+            Prim(PrimitiveType.Cube, "RearLight", root, new Vector3(0, 0.75f, -0.62f), new Vector3(0.06f, 0.06f, 0.02f), m.Parts.TailLight);
         }
 
         /// <summary>Dashboard edge and door lines for the driver's-seat view (a proper interior asset replaces this later).</summary>
@@ -447,6 +466,153 @@ namespace LToLocal.EditorTools
             var (game, trafficView) = BuildCommon(m, V(startPos, 0), (float)(startHeading * Mathf.Rad2Deg));
             game.AddComponent<RoundaboutCourse>().trafficView = trafficView;
             SaveScene(scene, RoundaboutScene);
+        }
+
+        // =====================================================================
+        // Course: two-lane roundabout with lane arrows (built from TwoLaneRoundaboutGeometry)
+        // =====================================================================
+
+        private static void BuildTwoLaneRoundaboutScene()
+        {
+            var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
+            var m = Palette.Create();
+            var g = new TwoLaneRoundaboutGeometry(TwoLaneRoundaboutCourse.Centre);
+            var world = new GameObject("World").transform;
+            Vector3 C = V(g.Centre, 0);
+            const float GW = (float)TwoLaneRoundaboutGeometry.GiveWayDistanceM;
+
+            Prim(PrimitiveType.Plane, "Ground", world, C, new Vector3(50, 1, 50), m.Grass);
+
+            // Circulatory carriageway (two lanes) and lane surfaces
+            float ringWidth = (float)(TwoLaneRoundaboutGeometry.OuterEdgeR - TwoLaneRoundaboutGeometry.IslandR) + 0.4f;
+            AddStrip(world, "TL_Ring", Circle(g, TwoLaneRoundaboutGeometry.DividerR - 0.05, 160), ringWidth, true, 0.012f, m.Road);
+            for (int k = 0; k < g.ArmCount; k++)
+            {
+                for (int l = 0; l < 2; l++)
+                    AddStrip(world, $"TL_Entry{k}_{l}", g.Entry[k, l].Points, 3.9f, false, 0.014f, m.Road);
+                AddStrip(world, $"TL_Exit{k}", g.Exit[k].Points, 4.4f, false, 0.014f, m.Road);
+            }
+
+            // Dashed lane line around the ring (between the inner and outer lanes)
+            var divider = new GameObject("RingLaneLine").transform;
+            divider.SetParent(world, false);
+            double rDiv = TwoLaneRoundaboutGeometry.DividerR, circ = 2 * System.Math.PI * rDiv;
+            for (double d = 0; d < circ; d += 5.5)
+            {
+                double b = d / rDiv;
+                var p = g.RingPoint(b, rDiv);
+                Prim(PrimitiveType.Cube, "Dash", divider, V(p, 0.03f), new Vector3(0.12f, 0.01f, 2.2f), m.White, new Vector3(0, (float)((b + System.Math.PI / 2) * Mathf.Rad2Deg), 0));
+            }
+            // Outer edge line
+            var edge = new GameObject("RingEdgeLine").transform;
+            edge.SetParent(world, false);
+            double rEdge = TwoLaneRoundaboutGeometry.OuterEdgeR - 0.15;
+            for (double d = 0; d < 2 * System.Math.PI * rEdge; d += 1.0)
+            {
+                double b = d / rEdge;
+                Prim(PrimitiveType.Cube, "Edge", edge, V(g.RingPoint(b, rEdge), 0.028f), new Vector3(0.12f, 0.01f, 1.05f), m.White, new Vector3(0, (float)((b + System.Math.PI / 2) * Mathf.Rad2Deg), 0));
+            }
+
+            // Central island
+            float isl = (float)TwoLaneRoundaboutGeometry.IslandR;
+            Prim(PrimitiveType.Cylinder, "IslandKerb", world, C + Vector3.up * 0.05f, new Vector3(isl * 2, 0.05f, isl * 2), m.Kerb);
+            Prim(PrimitiveType.Cylinder, "Island", world, C + Vector3.up * 0.12f, new Vector3((isl - 0.4f) * 2, 0.08f, (isl - 0.4f) * 2), m.Verge);
+            Tree(world, C + new Vector3(3f, 0.2f, 2f), m);
+            Tree(world, C + new Vector3(-3f, 0.2f, -2.5f), m);
+            Tree(world, C + new Vector3(1f, 0.2f, -4f), m);
+
+            for (int k = 0; k < g.ArmCount; k++)
+            {
+                float b = (float)TwoLaneRoundaboutGeometry.ArmBearingsDeg[k];
+                var arm = new GameObject($"Arm{k}").transform;
+                arm.SetParent(world, false);
+                arm.SetPositionAndRotation(C, Quaternion.Euler(0, b, 0));
+                // Local frame: +Z out along the arm. Inbound traffic drives toward -Z, so its left is +X:
+                // inbound lanes at x = +5.25 (left / lane 0) and +1.75 (right / lane 1); outbound lane at x = -1.825.
+                float start = GW - 2f, end = (float)g.ArmLength + 10f, mid = (start + end) / 2;
+                Prim(PrimitiveType.Cube, "Carriageway", arm, new Vector3(1.675f, 0.01f, mid), new Vector3(10.65f, 0.02f, end - start), m.Road);
+
+                // Edge lines
+                Prim(PrimitiveType.Cube, "EdgeIn", arm, new Vector3(6.85f, 0.025f, (GW + 1 + end) / 2), new Vector3(0.15f, 0.01f, end - GW - 1), m.White);
+                Prim(PrimitiveType.Cube, "EdgeOut", arm, new Vector3(-3.5f, 0.025f, (GW + 1 + end) / 2), new Vector3(0.15f, 0.01f, end - GW - 1), m.White);
+                // Lane line between the two approach lanes (dashed; longer dashes near the junction)
+                for (float z = GW + 3f; z < end; z += 6f)
+                    Prim(PrimitiveType.Cube, "LaneDash", arm, new Vector3(3.5f, 0.025f, z), new Vector3(0.12f, 0.01f, z < GW + 40 ? 4f : 2.5f), m.White);
+                // Centre line between directions, from the splitter island outward
+                for (float z = GW + 12f; z < end; z += 9f)
+                    Prim(PrimitiveType.Cube, "CentreDash", arm, new Vector3(0, 0.025f, z), new Vector3(0.12f, 0.01f, 3f), m.White);
+                Prim(PrimitiveType.Cube, "Splitter", arm, new Vector3(0, 0.08f, GW + 4f), new Vector3(1.2f, 0.16f, 10f), m.Kerb);
+
+                // Give-way: double broken lines across both approach lanes
+                foreach (float dz in new[] { 0f, 0.45f })
+                    for (float x = 0.4f; x < 6.9f; x += 0.8f)
+                        Prim(PrimitiveType.Cube, "GiveWayDash", arm, new Vector3(x, 0.03f, GW + dz), new Vector3(0.5f, 0.01f, 0.2f), m.White);
+
+                // Lane arrows (pointing toward the roundabout): left lane = left + ahead, right lane = right
+                foreach (float z in new[] { GW + 12f, GW + 32f })
+                {
+                    LaneArrow(arm, new Vector3(5.25f, 0.03f, z), straight: true, turn: -1, m.White);
+                    LaneArrow(arm, new Vector3(1.75f, 0.03f, z), straight: false, turn: +1, m.White);
+                }
+
+                // Blue roundabout sign on the approach's left verge
+                Prim(PrimitiveType.Cylinder, "SignPole", arm, new Vector3(8.6f, 1.1f, GW + 50f), new Vector3(0.1f, 1.1f, 0.1f), m.Pole);
+                Prim(PrimitiveType.Cylinder, "RoundaboutSign", arm, new Vector3(8.6f, 2.5f, GW + 49.95f), new Vector3(1.1f, 0.03f, 1.1f), m.SignBlue, new Vector3(90, 0, 0));
+            }
+
+            // Scenery in the quadrants
+            var rng = new System.Random(11);
+            var scenery = new GameObject("Scenery").transform;
+            scenery.SetParent(world, false);
+            for (int i = 0; i < 150; i++)
+            {
+                float x = (float)(rng.NextDouble() * 320 - 160), z = (float)(rng.NextDouble() * 320 - 160);
+                if (Mathf.Abs(x) < 20 || Mathf.Abs(z) < 20 || x * x + z * z < 45 * 45) continue;
+                if (rng.NextDouble() < 0.55)
+                {
+                    float w = 8 + (float)rng.NextDouble() * 10, d = 8 + (float)rng.NextDouble() * 10, h = 5 + (float)rng.NextDouble() * 12;
+                    if (Mathf.Abs(x) - w / 2 < 16 || Mathf.Abs(z) - d / 2 < 16) continue;
+                    Prim(PrimitiveType.Cube, "Building", scenery, C + new Vector3(x, h / 2, z), new Vector3(w, h, d), m.Buildings[rng.Next(m.Buildings.Length)]);
+                }
+                else Tree(scenery, C + new Vector3(x, 0, z), m);
+            }
+
+            var (startPos, startHeading) = g.Entry[TwoLaneRoundaboutCourse.StartArm, 0].Sample(25);
+            var (game, trafficView) = BuildCommon(m, V(startPos, 0), (float)(startHeading * Mathf.Rad2Deg));
+            game.AddComponent<TwoLaneRoundaboutCourse>().trafficView = trafficView;
+            SaveScene(scene, TwoLaneRoundaboutScene);
+        }
+
+        private static List<Vec2> Circle(TwoLaneRoundaboutGeometry g, double r, int steps)
+        {
+            var pts = new List<Vec2>(steps);
+            for (int i = 0; i < steps; i++) pts.Add(g.RingPoint(2 * System.Math.PI * i / steps, r));
+            return pts;
+        }
+
+        /// <summary>
+        /// Painted lane arrow in an arm's local frame. Inbound traffic travels toward local -Z, so the arrow points
+        /// that way; from the driver's point of view their left is local +X. turn: -1 = left branch, +1 = right branch.
+        /// </summary>
+        private static void LaneArrow(Transform arm, Vector3 at, bool straight, int turn, Material paint)
+        {
+            var a = new GameObject("LaneArrow").transform;
+            a.SetParent(arm, false);
+            a.localPosition = at;
+            a.localRotation = Quaternion.Euler(0, 180, 0); // arrow frame: +Z = direction of travel, +X = driver's right
+            Prim(PrimitiveType.Cube, "Shaft", a, new Vector3(0, 0, -1.2f), new Vector3(0.22f, 0.01f, 3.0f), paint);
+            if (straight)
+            {
+                Prim(PrimitiveType.Cube, "HeadL", a, new Vector3(-0.28f, 0, 0.55f), new Vector3(0.22f, 0.01f, 0.9f), paint, new Vector3(0, 35, 0));
+                Prim(PrimitiveType.Cube, "HeadR", a, new Vector3(0.28f, 0, 0.55f), new Vector3(0.22f, 0.01f, 0.9f), paint, new Vector3(0, -35, 0));
+            }
+            if (turn != 0)
+            {
+                float s = turn; // +1 right, -1 left (driver's view)
+                Prim(PrimitiveType.Cube, "Branch", a, new Vector3(s * 0.55f, 0, -0.2f), new Vector3(0.22f, 0.01f, 1.4f), paint, new Vector3(0, s * 50, 0));
+                Prim(PrimitiveType.Cube, "BranchHeadA", a, new Vector3(s * 1.15f, 0, 0.45f), new Vector3(0.22f, 0.01f, 0.75f), paint, new Vector3(0, s * 95, 0));
+                Prim(PrimitiveType.Cube, "BranchHeadB", a, new Vector3(s * 1.05f, 0, 0.05f), new Vector3(0.22f, 0.01f, 0.75f), paint, new Vector3(0, s * 5, 0));
+            }
         }
 
         private static Vector3 V(Vec2 p, float y) => new Vector3((float)p.X, y, (float)p.Z);

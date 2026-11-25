@@ -48,7 +48,7 @@ Stages unlock in order. Inside each stage, the user picks the order of topics. T
 - **Tone rules for coach copy**: plain English (CEFR B1); name the rule and give the reason; never shame; one fix per message. Example: *"You entered the roundabout as a car came from the right. Give way to traffic from your right: wait for a gap."* (Highway Code rule 185).
 
 ## 4. Controls and the observation mechanic
-- **Steering**: an on-screen wheel (left thumb) by default; tilt as an option; assisted steering at low levels (lane-keeping nudges).
+- **Steering**: an on-screen wheel (left thumb) by default; tilt as an option; assisted steering at low levels (lane-keeping nudges). **Steering sensitivity** defaults to 60% (play-test 2026-11-25: 100% felt too fast). It is saved on the device, and a **Settings** screen will let users adjust it (30–150%).
 - **Pedals**: accelerator and brake on the right; automatic gearbox; parking brake button for hill starts in V1.
 - **Indicators**: two stalk buttons at the top corners; self-cancelling after the turn (as in a real car), with manual cancel.
 - **Observation: decided 2026-11-25 after the first play-test.** Explicit mirror taps and shoulder-check buttons felt like a chore, so players are **not** asked to perform observation actions. The game judges the *outcome* instead. For example, if a car was in your blind spot or alongside, or had to brake when you changed lane, the fault message explains that a mirror check and a look over the shoulder would have shown it. The mirrors stay on screen as normal mirrors, and an optional "Look left / Look right" view remains, but nobody is marked on it. The original design is kept below for reference.

@@ -21,5 +21,7 @@ namespace LToLocal.Game
         void CapturePrevious();
         void Step(double dt, in CarState player, double simTime, int indicator, List<RuleEvent> events);
         void Render(float alpha, bool blink);
+        /// <summary>Other road users, for rules shared by all courses (e.g. passing cyclists).</summary>
+        void GetRoadUsers(List<RoadUser> into);
     }
 }

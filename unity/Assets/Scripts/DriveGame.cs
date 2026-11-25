@@ -46,6 +46,8 @@ namespace LToLocal.Game
         private readonly FixedStepClock _clock = new FixedStepClock();
         private readonly CarParams _params = new CarParams();
         private readonly SpeedRule _speedRule = new SpeedRule();
+        private readonly CyclistPassingRule _cyclistRule = new CyclistPassingRule();
+        private readonly List<RoadUser> _roadUsers = new List<RoadUser>();
         private readonly List<RuleEvent> _events = new List<RuleEvent>();
         private ICourse _course;
         private TouchControls _controls;
@@ -82,6 +84,7 @@ namespace LToLocal.Game
             _prev = _curr;
             _indicator = 0;
             _speedRule.Reset();
+            _cyclistRule.Reset();
             _course.ResetCourse();
             if (feedback != null) feedback.ResetTally();
             _chasePos = Vector3.zero;
@@ -100,7 +103,10 @@ namespace LToLocal.Game
 
                 _events.Clear();
                 _course.Step(_clock.StepSeconds, _curr, _clock.SimTime, _indicator, _events);
-                _speedRule.OnFrame(new DriverFrame(_clock.SimTime, _curr, _indicator), _course.SpeedLimitMph(_curr), _events);
+                var frame = new DriverFrame(_clock.SimTime, _curr, _indicator);
+                _speedRule.OnFrame(frame, _course.SpeedLimitMph(_curr), _events);
+                _course.GetRoadUsers(_roadUsers);
+                _cyclistRule.OnFrame(frame, _roadUsers, _events);
                 if (feedback != null) foreach (var e in _events) feedback.Push(e);
             }
 

@@ -13,6 +13,7 @@ namespace LToLocal.Game
         /// <summary>-1 left, 0 off, +1 right.</summary>
         public int Indicator;
         public int Colour;
+        public bool IsCyclist;
     }
 
     /// <summary>
@@ -25,6 +26,7 @@ namespace LToLocal.Game
         private readonly Dictionary<int, Transform> _assigned = new Dictionary<int, Transform>();
         private readonly Dictionary<int, VehicleSnapshot> _prev = new Dictionary<int, VehicleSnapshot>();
         private readonly List<Transform>[] _freeByColour = new List<Transform>[8];
+        private readonly List<Transform> _freeCyclists = new List<Transform>();
         private readonly Dictionary<Transform, (GameObject[] left, GameObject[] right)> _lamps = new Dictionary<Transform, (GameObject[], GameObject[])>();
         private readonly HashSet<int> _seen = new HashSet<int>();
         private readonly List<int> _toRelease = new List<int>();
@@ -34,8 +36,9 @@ namespace LToLocal.Game
             for (int i = 0; i < _freeByColour.Length; i++) _freeByColour[i] = new List<Transform>();
             foreach (Transform t in transform)
             {
-                _freeByColour[ColourOf(t)].Add(t);
                 t.gameObject.SetActive(false);
+                if (t.name.StartsWith("Cyclist")) { _freeCyclists.Add(t); _lamps[t] = (new GameObject[0], new GameObject[0]); continue; }
+                _freeByColour[ColourOf(t)].Add(t);
 
                 var left = new List<GameObject>();
                 var right = new List<GameObject>();
@@ -70,7 +73,7 @@ namespace LToLocal.Game
                 _seen.Add(v.Id);
                 if (!_assigned.TryGetValue(v.Id, out var t))
                 {
-                    t = Acquire(v.Colour);
+                    t = v.IsCyclist ? AcquireCyclist() : Acquire(v.Colour);
                     if (t == null) continue;
                     _assigned[v.Id] = t;
                 }
@@ -118,10 +121,20 @@ namespace LToLocal.Game
             return null;
         }
 
+        private Transform AcquireCyclist()
+        {
+            if (_freeCyclists.Count == 0) return null;
+            var t = _freeCyclists[_freeCyclists.Count - 1];
+            _freeCyclists.RemoveAt(_freeCyclists.Count - 1);
+            t.gameObject.SetActive(true);
+            return t;
+        }
+
         private void Release(Transform t)
         {
             t.gameObject.SetActive(false);
-            _freeByColour[ColourOf(t)].Add(t);
+            if (t.name.StartsWith("Cyclist")) _freeCyclists.Add(t);
+            else _freeByColour[ColourOf(t)].Add(t);
         }
     }
 }

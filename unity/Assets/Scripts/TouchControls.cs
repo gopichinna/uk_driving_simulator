@@ -12,8 +12,18 @@ namespace LToLocal.Game
     /// </summary>
     public sealed class TouchControls : MonoBehaviour
     {
-        [Tooltip("Sideways drag, as a fraction of screen width, that gives full steering lock.")]
+        [Tooltip("Sideways drag, as a fraction of screen width, that gives full lock at 100% sensitivity.")]
         public float fullLockDragFraction = 0.12f;
+
+        /// <summary>
+        /// Steering sensitivity, 0.3–1.5 (1 = original). Default 0.6 after play-testing (steering felt too fast).
+        /// Saved on the device; a Settings screen will expose it.
+        /// </summary>
+        public static float SteeringSensitivity
+        {
+            get => PlayerPrefs.GetFloat("steering_sensitivity", 0.6f);
+            set { PlayerPrefs.SetFloat("steering_sensitivity", Mathf.Clamp(value, 0.3f, 1.5f)); PlayerPrefs.Save(); }
+        }
 
         [Tooltip("How fast steering returns to centre when you let go (per second).")]
         public float selfCentreRate = 3f;
@@ -71,7 +81,7 @@ namespace LToLocal.Game
                     else
                     {
                         float dx = t.position.x - _steerAnchor.x;
-                        _steer = Mathf.Clamp(dx / (Screen.width * fullLockDragFraction), -1f, 1f);
+                        _steer = Mathf.Clamp(dx * SteeringSensitivity / (Screen.width * fullLockDragFraction), -1f, 1f);
                         steering = true;
                     }
                 }
@@ -81,7 +91,7 @@ namespace LToLocal.Game
             float key = 0;
             if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A)) key -= 1;
             if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D)) key += 1;
-            if (key != 0) { _steer = Mathf.MoveTowards(_steer, key, 3f * Time.deltaTime); steering = true; }
+            if (key != 0) { _steer = Mathf.MoveTowards(_steer, key, 3f * SteeringSensitivity * Time.deltaTime); steering = true; }
             if (Input.GetKey(KeyCode.Q)) _look = -1;
             if (Input.GetKey(KeyCode.E)) _look = 1;
             if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W)) _go = true;

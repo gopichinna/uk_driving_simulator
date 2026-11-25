@@ -62,6 +62,13 @@ namespace LToLocal.Game
             if (trafficView != null) trafficView.Render(_snap, alpha, blink);
         }
 
+        public void GetRoadUsers(List<RoadUser> into)
+        {
+            into.Clear();
+            foreach (var c in _traffic.Cars)
+                into.Add(new RoadUser(c.Id, new Vec2(c.X, c.Z), _traffic.Lanes[c.Lane].Direction > 0 ? 0 : Math.PI, c.SpeedMps, c.IsCyclist));
+        }
+
         private void Snapshot()
         {
             _snap.Clear();
@@ -75,7 +82,7 @@ namespace LToLocal.Game
                 {
                     Id = c.Id, X = c.X, Z = c.Z,
                     Heading = Math.Atan2(vx, dir * Math.Max(1.0, c.SpeedMps)),
-                    Indicator = c.Indicator, Colour = c.ColourIndex,
+                    Indicator = c.Indicator, Colour = c.ColourIndex, IsCyclist = c.IsCyclist,
                 });
             }
         }
