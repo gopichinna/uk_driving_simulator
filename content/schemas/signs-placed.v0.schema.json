@@ -1,7 +1,7 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://ltolocal.example/schemas/signs-placed.v0.schema.json",
-  "title": "Signs Placed v0 (Direction Signs & Street Name Plates)",
+  "title": "Signs Placed v0 (Direction Signs, Street Name Plates, Speed Signs, Bus Stops, Warning Signs)",
   "type": "object",
   "required": ["signsFormatVersion", "packId", "origin", "source"],
   "properties": {
@@ -31,6 +31,10 @@
         "styleSources": {
           "type": "array",
           "items": { "type": "string", "format": "uri" }
+        },
+        "diagramRefs": {
+          "type": "object",
+          "additionalProperties": { "type": "string" }
         }
       },
       "additionalProperties": true
@@ -42,11 +46,26 @@
     "plates": {
       "type": "array",
       "items": { "$ref": "#/$defs/streetNamePlate" }
+    },
+    "speedSigns": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/speedSign" }
+    },
+    "busStops": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/busStop" }
+    },
+    "warningSigns": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/warningSign" }
     }
   },
   "oneOf": [
     { "required": ["signs"] },
-    { "required": ["plates"] }
+    { "required": ["plates"] },
+    { "required": ["speedSigns"] },
+    { "required": ["busStops"] },
+    { "required": ["warningSigns"] }
   ],
   "additionalProperties": false,
   "$defs": {
@@ -64,15 +83,19 @@
         "style": { "type": "string", "enum": ["primary", "local"] },
         "rows": {
           "type": "array",
-          "minItems": 2,
+          "minItems": 1,
           "maxItems": 4,
           "items": {
             "type": "object",
-            "required": ["text", "direction"],
+            "required": ["text", "direction", "symbol"],
             "properties": {
               "text": { "type": "string", "minLength": 1 },
               "poiId": { "type": "string", "minLength": 1 },
               "ref": { "type": "string", "minLength": 1 },
+              "symbol": {
+                "type": "string",
+                "enum": ["rail", "bus", "hospital", "parking", "city_centre", "none"]
+              },
               "direction": {
                 "type": "string",
                 "enum": ["ahead", "left", "right", "ahead_left", "ahead_right"]
@@ -95,6 +118,51 @@
         "z": { "type": "number" },
         "heading": { "type": "number", "minimum": 0, "maximum": 360 },
         "name": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "speedSign": {
+      "type": "object",
+      "required": ["id", "x", "z", "heading", "mph", "kind"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "mph": { "type": "integer", "minimum": 5, "maximum": 70 },
+        "kind": { "type": "string", "enum": ["start", "repeater"] },
+        "linkId": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "busStop": {
+      "type": "object",
+      "required": ["id", "x", "z", "heading", "name", "linkId"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "name": { "type": "string", "minLength": 1 },
+        "linkId": { "type": "string", "minLength": 1 },
+        "osmId": { "type": "integer" }
+      },
+      "additionalProperties": false
+    },
+    "warningSign": {
+      "type": "object",
+      "required": ["id", "kind", "x", "z", "heading"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": ["school", "road_humps", "road_narrows", "pedestrians_in_road", "queues_likely", "bend_ahead"]
+        },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "linkId": { "type": "string", "minLength": 1 },
+        "diagramRef": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false
     }

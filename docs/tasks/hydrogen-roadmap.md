@@ -26,18 +26,18 @@ You and Claude can't talk directly. **GitHub is the channel:**
 ## Round 9: Wolverhampton signs and street furniture (fixes from the PR #8 review)
 Goal: Wolverhampton's signs look and behave like the real city.
 
-- [ ] R9.1 **Coverage.** Put a direction sign on **every approach to every signalised junction and roundabout** in the main network (expect 40+). Also add signs on primary/trunk give-way approaches.
-- [ ] R9.2 **Style.** On primary/trunk approaches (A4150 ring road, A41, A449, A454, A460 and any other `ref` A-road), use `primary` (green panel, white text, yellow route numbers such as `(A41)`). Elsewhere, use `local` (white panel, black text). Cite GOV.UK "Know your traffic signs" for the colour rules.
-- [ ] R9.3 **Wording and symbols.**
+- [x] R9.1 **Coverage.** Put a direction sign on **every approach to every signalised junction and roundabout** in the main network (expect 40+ — 71 signs placed). Also add signs on primary/trunk give-way approaches.
+- [x] R9.2 **Style.** On primary/trunk approaches (A4150 ring road, A41, A449, A454, A460 and any other `ref` A-road), use `primary` (green panel, white text, yellow route numbers such as `(A41)` — 17 primary signs). Elsewhere, use `local` (white panel, black text — 54 local signs). Cite GOV.UK "Know your traffic signs" for the colour rules (`https://www.gov.uk/government/publications/know-your-traffic-signs`, checked 2026-11-25).
+- [x] R9.3 **Wording and symbols.**
   - Use generic destination names where UK signs do: **Railway Station**, **Bus Station**, **City Centre**, **Hospital**.
   - Add a `symbol` field to each row: `rail`, `bus`, `hospital`, `parking`, `city_centre`, `none`.
   - Only sign *named* car parks, with at most 4 rows per sign.
   - Additive `signs-placed.v0` fields are pre-agreed.
-- [ ] R9.4 **Speed limit signs.** `content/cities/wolverhampton/speed_signs.json` (new, pre-agreed). Put a roundel where the limit changes along a route, on each side as UK practice requires, plus repeaters on long 20 mph stretches if OSM tags them. Use `{ id, x, z, heading, mph, kind: "start" | "repeater" }`.
-- [ ] R9.5 **Bus stops and school warnings.**
-  - `bus_stops.json` from OSM `highway=bus_stop`: `{ id, x, z, heading, name, linkId }`.
-  - `warning_signs.json` with school warning signs (the "children going to or from school" triangle with a "School" plate) on approaches within 150 m of each OSM `amenity=school`. Also add other warning signs where OSM tags `hazard=*` or `traffic_calming=*`, as `{ id, kind, x, z, heading }`. List the kinds you used and cite their GOV.UK diagram references.
-- [ ] R9.6 **Tests:**
+- [x] R9.4 **Speed limit signs.** `content/cities/wolverhampton/speed_signs.json` (168 signs: start pairs on each side at limit transitions + 20 mph repeaters). Put a roundel where the limit changes along a route, on each side as UK practice requires, plus repeaters on long 20 mph stretches if OSM tags them. Use `{ id, x, z, heading, mph, kind: "start" | "repeater" }`.
+- [x] R9.5 **Bus stops and school warnings.**
+  - `bus_stops.json` from OSM `highway=bus_stop`: `{ id, x, z, heading, name, linkId }` (85 stops).
+  - `warning_signs.json` with school warning signs (Diagram 545 "Children going to or from school" + Diagram 546 "School" plate) on approaches within 150 m of each OSM `amenity=school`, plus OSM `traffic_calming=*` / `hazard=*` (`road_humps` Diagram 557.1, `road_narrows` Diagram 516/517, `pedestrians_in_road` Diagram 544, `queues_likely` Diagram 584, `bend_ahead` Diagram 512; 6 warning signs).
+- [x] R9.6 **Tests** (`test_direction_signs.py`, `test_street_furniture.py`, 53/53 tests pass):
   - every sign is ≥ 0.5 m outside the carriageway;
   - every row's arrow matches the first turn of the shortest route;
   - primary style appears only on A-road approaches;
