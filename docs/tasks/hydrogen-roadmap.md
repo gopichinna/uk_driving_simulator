@@ -150,7 +150,14 @@ R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank y
 
   Report the motorway length per carriageway in `QA.md`, and test that it's ≥ 4 km.
 - [ ] **R15.4 Test-centre address.** The GOV.UK result has no street number: drop "101" in `config.yaml`, lesson 20 and `docs/08`.
-- [ ] **R15.6 A real engine sound.** Claude listened to `engine_*.ogg` with an audio analyser: it reads as "a computer fan hum / white noise", not an engine, so the game doesn't ship it yet. Please source **recorded** small-petrol-car engine loops (idle, about 1500 rpm and about 2500 rpm; seamless loops of 2–4 s, mono) under **CC0** (e.g. Freesound filtered to CC0, or OpenGameArt CC0). Record the URL, author and licence in `LICENCES.md`, normalise to −16 LUFS, and replace the synthesised files. If you can't find suitable CC0 recordings, say so; don't ship synthetic ones.
+- [ ] **R15.6 Real recorded sounds, best quality available (owner feedback: the synthetic sounds are "like a tape recorder").** Replace **every synthesised loop and effect** with high-quality **recordings**:
+  - engine loops for a small petrol hatchback: idle, about 1500 rpm and about 2500 rpm, seamless 2–4 s loops (ideally a matched set from one car so pitch blending works), plus start-up;
+  - a UK town street ambience loop (traffic passing, distant voices; no music or speech you can make out);
+  - indicator relay ticks (a real car), a car horn, tyre squeal, and a UK puffin or pelican crossing beep.
+
+  Licence: **CC0 preferred**. CC-BY is acceptable with attribution. **No NC, ND or unknown licences.** Sources: Freesound (filter to CC0 or CC-BY), OpenGameArt, the BBC Sound Effects RemArc licence (check whether commercial use is allowed; it's probably **not**, so likely exclude it), and Sonniss GDC bundles (royalty-free; check the licence text). Rate each candidate 1–5 for realism and record that in `LICENCES.md`. **If the best free options score below 4, list 2–3 commercial packs (name, price, licence) in a short note for the owner to decide on. Don't buy anything.**
+
+  Normalise effects to −16 LUFS and ambience to −23 LUFS. Output WAV (see R15.7).
 - [ ] **R15.7 Audio format Unity can import.** All 46 `.ogg` files are **Ogg Opus**, and Unity only imports **Ogg Vorbis**: every clip failed to import and the game was silent. Claude now converts them to WAV at build time as a stopgap. Please output **WAV (16-bit PCM, mono, 44.1 kHz)** or **Ogg Vorbis** instead of Opus, update `manifest.json`, and add a test that checks each file's codec (e.g. read the Ogg header: Vorbis starts with `\x01vorbis`, Opus with `OpusHead`; or use `ffprobe`) and fails on Opus.
 - [ ] **R15.5 Hand-off.** One PR, `Hydrogen R15: plain English, sign rows, motorway section`. Base it on `main` (don't stack it).
 
