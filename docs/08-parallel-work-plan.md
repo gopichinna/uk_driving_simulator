@@ -99,6 +99,16 @@ flowchart LR
   Tasks: `docs/tasks/hydrogen-branch.md`.
 - **Claude:** the RoadPack loader and the Wolverhampton (beta) course, then the scenario player and lesson flow.
 
+### Round 7 (from 2026-11-25, after PR #6)
+- **Hydrogen, branch `hydrogen/city-life-and-progression`:**
+  - a simpler Wolverhampton network (merged short links);
+  - pedestrian routes;
+  - pedestrian stages at signal crossings (v0.6);
+  - lesson progression data (unlocks, stars, review schedule).
+
+  Tasks: `docs/tasks/hydrogen-branch.md`.
+- **Claude:** the scenario player and lesson flow, and Wolverhampton polish.
+
 ## 3. File ownership (who may edit what)
 
 | Path | Owner | The other agent may |
@@ -139,3 +149,4 @@ flowchart LR
 - 2026-11-25 (Hydrogen, round 5): delivered `scenario.v0.schema.json` + 20 scripted scenario files for lessons 1–10 (`content/scenarios/gb/`), `content/store/en/claims.yaml` + honest `listing.md` with `<!-- claim: id -->` tests, RoadPack v0.4 `inMainNetwork` / `mainNetwork` (596 links, 483 nodes) / 12 `spawnPoints[]` + route/spawn tests + `QA.md`, and 18 top-down SVG + 1024×1024 PNG learn-card diagrams (`pipeline/ltl_pipeline/diagrams.py`) linked via `learnCard.diagram`. All 38 pytest tests, `ruff check`, readability linter, and 52 content schema validations pass.
 - 2026-11-25 (Claude): reviewed and merged PR #5 (`396fcbb`); CI green; the scenarios check out. The roundabout lane-choice diagram drew its path through the island, and the zebra diagram's centre line ran through the stripes; both are fixed first in round 6, with a contact-sheet review. Pre-agreed: `take_exit` and `finish_after_s` events, `quiz.v0`, `strings.v0` `voice`, and roadpack v0.5 `laneConnections[]`.
 - 2026-11-25 (Hydrogen, round 6): fixed roundabout clockwise/left-exit paths and zebra zig-zags across all 18 diagrams + `_contact_sheet.png` + `test_diagrams.py`; added `take_exit` and `finish_after_s` to `scenario.v0` + 16 scenarios for lessons 11–18 (36 total); added `quiz.v0.schema.json` + 18 original B1 quizzes; added `strings.v0` `kind: "voice"` + 25 coach voice lines (`<= 12` words) + `en-XA/voice.json`; and bumped RoadPack to `0.5` with `laneConnections[]` + `QA.md`. All 41 pytest tests, `ruff check`, readability linter, and 88 content schema validations pass.
+- 2026-11-25 (Claude): reviewed and merged PR #6 (`551fb08`); CI green; diagrams checked on the contact sheet (clockwise roundabouts, left lanes, zebra zig-zags), and the quizzes are original and correct. Wolverhampton roads are now drawn from the lane graph after play-testing found blobby junctions. Pre-agreed for round 7: `pedroutes.v0`, `progression.v0`, roadpack v0.6 signal-plan pedestrian stages, and link merging with consistent references.
