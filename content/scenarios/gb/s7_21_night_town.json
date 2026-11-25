@@ -1,0 +1,12 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s7_21_night_town",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    { "type": "traffic_density", "value": 0.4 },
+    { "type": "conditions", "timeOfDay": "night", "weather": "clear", "visibilityM": 120 },
+    { "type": "finish_after_s", "seconds": 85 }
+  ]
+}

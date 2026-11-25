@@ -34,7 +34,7 @@ def test_every_lesson_scenario_has_valid_file() -> None:
         for sc in lesson["scenarios"]:
             expected[sc["id"]] = (sc["course"], sc["anchor"])
 
-    assert len(expected) == 40
+    assert len(expected) == 46
     for sc_id, (course, anchor) in expected.items():
         path = SCENARIOS_DIR / f"{sc_id}.json"
         assert path.is_file(), f"Missing scenario file: {path}"

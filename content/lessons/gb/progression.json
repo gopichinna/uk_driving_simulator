@@ -63,13 +63,23 @@
       "unlockAfter": { "stage": 4, "minStars": 3 }
     },
     {
+      "stage": 7,
+      "title": "Conditions",
+      "lessonIds": [
+        "gb-s7-21-night-dipped-headlights",
+        "gb-s7-22-rain-stopping-distances",
+        "gb-s7-23-fog-low-visibility"
+      ],
+      "unlockAfter": { "stage": 5, "minStars": 3 }
+    },
+    {
       "stage": 8,
       "title": "Mock driving test",
       "lessonIds": [
         "gb-s8-19-mock-driving-test",
         "gb-s8-20-roads-near-test-centre"
       ],
-      "unlockAfter": { "stage": 5, "minStars": 3 }
+      "unlockAfter": { "stage": 7, "minStars": 4 }
     }
   ],
   "stars": {

@@ -242,6 +242,7 @@ Each tick, the rules engine receives a `DriverFrame` (doc 04, section 6). These 
 | GB.WX.LOW_VISIBILITY | Use headlights when visibility is seriously reduced (generally < 100 m) | WX 226 · MUST · ✅ | `env.visibility` < 100 m and headlights off | S | | V1 |
 | GB.WX.FOG_LIGHTS | Use fog lights only when visibility is seriously reduced; switch them off when it improves | WX 236 · MUST NOT · ✅ | Fog light on with visibility > 100 m for > 20 s (`ASSUMPTION`) | D | | V1 |
 | GB.WX.NO_DAZZLE | Don't dazzle others; dip your lights | GEN 114 · MUST NOT · ✅ | High beam with oncoming traffic < 150 m, or a lead car < 100 m | D | | M |
+| GB.WX.FOG_STOPPING | In fog, be able to pull up well within the distance you can see clearly | WX 235 · should · ✅ | Stopping distance exceeds `env.visibility` | S | | V1 |
 
 ### R. Rural and rare (RUR)
 | rule_id | Rule | Source · Force · V | Detection | Severity | Teaching moment | Ph |

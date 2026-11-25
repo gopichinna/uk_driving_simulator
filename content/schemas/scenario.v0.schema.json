@@ -145,6 +145,17 @@
               "poiId": { "type": "string", "minLength": 1 },
               "instruction": { "type": "string", "minLength": 1 }
             }
+          },
+          {
+            "type": "object",
+            "required": ["type", "timeOfDay", "weather", "visibilityM"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "conditions" },
+              "timeOfDay": { "enum": ["day", "dusk", "night"] },
+              "weather": { "enum": ["clear", "rain", "fog"] },
+              "visibilityM": { "type": "number", "minimum": 10, "maximum": 5000 }
+            }
           }
         ]
       }

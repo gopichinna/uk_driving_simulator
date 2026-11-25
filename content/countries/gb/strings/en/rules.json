@@ -640,6 +640,34 @@
       "why": "Even small amounts slow your reaction time and judgement. You must never drive above the legal alcohol limit, which is lower in Scotland.",
       "tip": "Plan a safe ride home or choose zero-alcohol drinks.",
       "good": "You kept zero alcohol in your system before driving."
+    },
+    "GB.GAP.WET_ICY": {
+      "title": "Double your gap in rain",
+      "fault": "You followed too closely on a wet road.",
+      "why": "Wet roads reduce tyre grip, so stopping distances are at least double.",
+      "tip": "Leave at least a four-second gap behind the vehicle ahead in rain.",
+      "good": "You kept a safe doubled gap on the wet road."
+    },
+    "GB.WX.LOW_VISIBILITY": {
+      "title": "Use headlights in low visibility",
+      "fault": "You drove in low visibility without headlights.",
+      "why": "You must use headlights when you cannot see more than 100 metres ahead.",
+      "tip": "Switch on dipped headlights as soon as fog or heavy spray reduces your view.",
+      "good": "You switched on headlights promptly in poor visibility."
+    },
+    "GB.WX.FOG_LIGHTS": {
+      "title": "Switch fog lights off",
+      "fault": "You left fog lights on in clear visibility.",
+      "why": "Fog lights dazzle other drivers and hide brake lights once visibility improves.",
+      "tip": "Turn front and rear fog lights off as soon as the fog clears.",
+      "good": "You used fog lights only while visibility stayed below 100 metres."
+    },
+    "GB.WX.FOG_STOPPING": {
+      "title": "Stop within your sight distance",
+      "fault": "You drove too fast for the fog ahead.",
+      "why": "In fog, always stop well within the distance you can see clearly.",
+      "tip": "Slow down in fog and do not chase the tail lights ahead.",
+      "good": "You matched your speed safely to the distance you could see."
     }
   }
 }

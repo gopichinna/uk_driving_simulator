@@ -18,7 +18,7 @@ from ltl_pipeline.schema import validate_rulepack_file
 def test_rules_yaml_validates_against_schema() -> None:
     data = validate_rulepack_file(RULES_YAML_PATH)
     assert data["country"] == "GB"
-    assert len(data["rules"]) == 130
+    assert len(data["rules"]) == 131
 
 
 def test_every_catalogue_row_in_output() -> None:

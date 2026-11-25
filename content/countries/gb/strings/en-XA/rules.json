@@ -640,6 +640,34 @@
       "why": "[Évén smáll ámóúnts slów yóúr réáctíón tímé ánd júdgémént. Yóú múst névér drívé ábóvé thé légál álcóhól límít, whích ís lówér ín Scótlánd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
       "tip": "[Plán á sáfé rídé hómé ór chóósé zéró-álcóhól drínks. ~~~~~~~~~~~~~~~~~~~~~]",
       "good": "[Yóú képt zéró álcóhól ín yóúr systém béfóré drívíng. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.GAP.WET_ICY": {
+      "title": "[Dóúblé yóúr gáp ín ráín ~~~~~~~~~~]",
+      "fault": "[Yóú fóllówéd tóó clósély ón á wét róád. ~~~~~~~~~~~~~~~~]",
+      "why": "[Wét róáds rédúcé tyré gríp, só stóppíng dístáncés áré át léást dóúblé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Léávé át léást á fóúr-sécónd gáp béhínd thé véhíclé áhéád ín ráín. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt á sáfé dóúbléd gáp ón thé wét róád. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WX.LOW_VISIBILITY": {
+      "title": "[Úsé héádlíghts ín lów vísíbílíty ~~~~~~~~~~~~~]",
+      "fault": "[Yóú dróvé ín lów vísíbílíty wíthóút héádlíghts. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Yóú múst úsé héádlíghts whén yóú cánnót séé móré thán 100 métrés áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Swítch ón díppéd héádlíghts ás sóón ás fóg ór héávy spráy rédúcés yóúr víéw. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú swítchéd ón héádlíghts prómptly ín póór vísíbílíty. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WX.FOG_LIGHTS": {
+      "title": "[Swítch fóg líghts óff ~~~~~~~~~]",
+      "fault": "[Yóú léft fóg líghts ón ín cléár vísíbílíty. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fóg líghts dázzlé óthér drívérs ánd hídé bráké líghts óncé vísíbílíty ímpróvés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Túrn frónt ánd réár fóg líghts óff ás sóón ás thé fóg cléárs. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú úséd fóg líghts ónly whílé vísíbílíty stáyéd bélów 100 métrés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WX.FOG_STOPPING": {
+      "title": "[Stóp wíthín yóúr síght dístáncé ~~~~~~~~~~~~~]",
+      "fault": "[Yóú dróvé tóó fást fór thé fóg áhéád. ~~~~~~~~~~~~~~~]",
+      "why": "[Ín fóg, álwáys stóp wéll wíthín thé dístáncé yóú cán séé cléárly. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn ín fóg ánd dó nót chásé thé táíl líghts áhéád. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mátchéd yóúr spééd sáfély tó thé dístáncé yóú cóúld séé. ~~~~~~~~~~~~~~~~~~~~~~~~]"
     }
   }
 }

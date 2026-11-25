@@ -28,6 +28,18 @@
     "voice.GB.RBT.WRONG_WAY.fault": "Always go clockwise around UK roundabouts.",
     "voice.GB.RBT.WRONG_WAY.good": "Clean clockwise path around the roundabout.",
     "voice.GB.VRU.PASS_CYCLIST.fault": "Give cyclists at least 1.5 metres when passing.",
-    "voice.GB.VRU.PASS_CYCLIST.good": "Great wide clearance past the cyclist."
+    "voice.GB.VRU.PASS_CYCLIST.good": "Great wide clearance past the cyclist.",
+    "voice.GB.WX.HEADLIGHTS_NIGHT.fault": "Switch on your dipped headlights at night.",
+    "voice.GB.WX.HEADLIGHTS_NIGHT.good": "Good dipped headlight use at night.",
+    "voice.GB.WX.NO_DAZZLE.fault": "Dip your headlights so you do not dazzle others.",
+    "voice.GB.WX.NO_DAZZLE.good": "Good timely dip for oncoming traffic.",
+    "voice.GB.GAP.WET_ICY.fault": "Double your following gap on wet roads.",
+    "voice.GB.GAP.WET_ICY.good": "Safe four-second gap in the rain.",
+    "voice.GB.WX.LOW_VISIBILITY.fault": "Switch on headlights when visibility drops below 100 metres.",
+    "voice.GB.WX.LOW_VISIBILITY.good": "Good headlight use in low visibility.",
+    "voice.GB.WX.FOG_LIGHTS.fault": "Switch off fog lights now visibility has improved.",
+    "voice.GB.WX.FOG_LIGHTS.good": "Good fog-light discipline as conditions cleared.",
+    "voice.GB.WX.FOG_STOPPING.fault": "Slow down so you can stop within your view.",
+    "voice.GB.WX.FOG_STOPPING.good": "Safe speed for the visibility ahead."
   }
 }
