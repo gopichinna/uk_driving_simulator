@@ -1,0 +1,75 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s6-25-motorway-lane-discipline",
+  "stage": 6,
+  "order": 25,
+  "title": "Motorway lane discipline",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Always drive in the left lane unless you are overtaking slower traffic.",
+      "Overtake on the right, then move back left as soon as it is safe.",
+      "Do not overtake on the left unless traffic is moving in slow queues."
+    ],
+    "ruleIds": [
+      "GB.MWY.KEEP_LEFT",
+      "GB.MWY.OVERTAKE_RIGHT",
+      "GB.MWY.NO_UNDERTAKE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273",
+    "diagram": "content/lessons/gb/diagrams/gb-s6-25-motorway-lane-discipline.png"
+  },
+  "scenarios": [
+    {
+      "id": "s6_25_mwy_keep_left",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Cruise in lane 1 and return left promptly after passing slower vehicles.",
+      "rulesJudged": [
+        "GB.MWY.KEEP_LEFT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s6_25_mwy_overtake",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Overtake slower traffic on the right without undertaking on the left.",
+      "rulesJudged": [
+        "GB.MWY.OVERTAKE_RIGHT",
+        "GB.MWY.NO_UNDERTAKE",
+        "GB.OBS.LANE_CHANGE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Keep left whenever the left lane ahead is clear.",
+    "Never stay in middle or outer lanes after finishing an overtake."
+  ]
+}

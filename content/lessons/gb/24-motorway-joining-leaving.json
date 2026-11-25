@@ -1,0 +1,74 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s6-24-motorway-joining-leaving",
+  "stage": 6,
+  "order": 24,
+  "title": "Joining and leaving motorways",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Build up speed on the slip road to match traffic in the left lane.",
+      "Give way to traffic already on the motorway and never cross solid white lines.",
+      "Signal left in good time before leaving and slow down on the exit slip road."
+    ],
+    "ruleIds": [
+      "GB.MWY.JOIN",
+      "GB.MWY.LEAVE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273",
+    "diagram": "content/lessons/gb/diagrams/gb-s6-24-motorway-joining-leaving.png"
+  },
+  "scenarios": [
+    {
+      "id": "s6_24_mwy_join",
+      "course": "motorway",
+      "anchor": "join",
+      "goal": "Match motorway speed on the slip road and merge smoothly into a safe gap.",
+      "rulesJudged": [
+        "GB.MWY.JOIN",
+        "GB.OBS.LANE_CHANGE",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s6_24_mwy_leave",
+      "course": "motorway",
+      "anchor": "leave",
+      "goal": "Signal early, move to the left slip road cleanly, and slow down after leaving.",
+      "rulesJudged": [
+        "GB.MWY.LEAVE",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Give way to motorway traffic as you join and never stop unless there is no gap.",
+    "Leave by the left slip road and check your speed before the exit roundabout."
+  ]
+}

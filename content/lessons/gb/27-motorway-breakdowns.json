@@ -1,0 +1,77 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s6-27-motorway-breakdowns",
+  "stage": 6,
+  "order": 27,
+  "title": "Breakdowns and emergency areas",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Never stop on a motorway carriageway, slip road, or hard shoulder except in an emergency.",
+      "If you break down, pull into an emergency area or hard shoulder. Exit away from traffic.",
+      "Never put a warning triangle on a motorway, and wait behind the safety barrier."
+    ],
+    "ruleIds": [
+      "GB.MWY.HARD_SHOULDER",
+      "GB.MWY.EMERGENCY_AREA",
+      "GB.MWY.NO_STOP",
+      "GB.BRK.NO_TRIANGLE_MWY"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287",
+    "diagram": "content/lessons/gb/diagrams/gb-s6-27-motorway-breakdowns.png"
+  },
+  "scenarios": [
+    {
+      "id": "s6_27_mwy_breakdown",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Keep off the hard shoulder unless directed and pass stopped vehicles with care.",
+      "rulesJudged": [
+        "GB.MWY.HARD_SHOULDER",
+        "GB.MWY.NO_STOP",
+        "GB.MWY.KEEP_LEFT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s6_27_mwy_emergency_area",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Use emergency areas only for breakdowns and never stop in a live lane.",
+      "rulesJudged": [
+        "GB.MWY.EMERGENCY_AREA",
+        "GB.MWY.NO_STOP",
+        "GB.BRK.NO_TRIANGLE_MWY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Use the hard shoulder or an emergency area only in a genuine emergency.",
+    "Get out on the side away from traffic, stay behind the barrier, and never place a warning triangle."
+  ]
+}

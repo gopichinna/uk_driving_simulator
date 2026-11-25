@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s6-24-motorway-joining-leaving",
+  "questions": [
+    {
+      "id": "q_24_join",
+      "question": "Who has priority when you join a motorway from a slip road?",
+      "options": [
+        "Traffic already on the motorway",
+        "Vehicles joining from the slip road",
+        "Whichever vehicle is faster"
+      ],
+      "answerIndex": 0,
+      "explanation": "Match the speed of motorway traffic and give way before merging into a safe gap.",
+      "ruleId": "GB.MWY.JOIN"
+    },
+    {
+      "id": "q_24_leave",
+      "question": "If you miss your motorway exit, what must you do?",
+      "options": [
+        "Carry on to the next exit",
+        "Reverse along the hard shoulder",
+        "Stop and turn across the central reservation"
+      ],
+      "answerIndex": 0,
+      "explanation": "Never reverse or turn on a motorway; continue safely to the next junction.",
+      "ruleId": "GB.MWY.LEAVE"
+    }
+  ]
+}

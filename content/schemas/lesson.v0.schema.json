@@ -59,7 +59,8 @@
             "two_lane_roundabout",
             "dual_carriageway",
             "wolverhampton",
-            "wolverhampton-test-area"
+            "wolverhampton-test-area",
+            "motorway"
           ]
         },
         "anchor": {
@@ -70,7 +71,9 @@
             "zebra",
             "box_junction",
             "school_street",
-            "start"
+            "start",
+            "join",
+            "leave"
           ]
         },
         "goal": { "type": "string", "minLength": 1 },

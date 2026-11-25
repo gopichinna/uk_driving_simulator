@@ -63,6 +63,17 @@
       "unlockAfter": { "stage": 4, "minStars": 3 }
     },
     {
+      "stage": 6,
+      "title": "Motorways",
+      "lessonIds": [
+        "gb-s6-24-motorway-joining-leaving",
+        "gb-s6-25-motorway-lane-discipline",
+        "gb-s6-26-motorway-red-x-limits",
+        "gb-s6-27-motorway-breakdowns"
+      ],
+      "unlockAfter": { "stage": 5, "minStars": 3 }
+    },
+    {
       "stage": 7,
       "title": "Conditions",
       "lessonIds": [
@@ -70,7 +81,7 @@
         "gb-s7-22-rain-stopping-distances",
         "gb-s7-23-fog-low-visibility"
       ],
-      "unlockAfter": { "stage": 5, "minStars": 3 }
+      "unlockAfter": { "stage": 6, "minStars": 5 }
     },
     {
       "stage": 8,

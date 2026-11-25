@@ -1,0 +1,11 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s6_25_mwy_overtake",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    { "type": "traffic_density", "value": 0.5 },
+    { "type": "finish_after_s", "seconds": 85 }
+  ]
+}

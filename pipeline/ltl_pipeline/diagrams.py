@@ -357,8 +357,8 @@ def _render_lesson_diagram(lesson_id: str) -> _Canvas:
 
 
 def generate_contact_sheet(png_paths: list[Path], out_path: Path) -> Path:
-    """Tile all 19 1024x1024 diagrams into a 6x4 contact sheet PNG (1536x1024)."""
-    cols, rows = 6, 4
+    """Tile up to 30 1024x1024 diagrams into a 6x5 contact sheet PNG (1536x1280)."""
+    cols, rows = 6, 5
     thumb = 256
     step = SIZE // thumb
     sheet_w, sheet_h = cols * thumb, rows * thumb
