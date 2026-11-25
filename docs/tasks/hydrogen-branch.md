@@ -134,7 +134,7 @@ See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Less
   Choose routes that together cover a signalised junction, a zebra or light-controlled crossing, and a roundabout. A validator test checks that each route is connected, never drives the wrong way down a one-way link and never breaks a turn restriction.
 
 ## F. Hand-off
-- [ ] F1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: content layer (strings, glossary, signs, lessons, routes)". `gh` is installed on the Mac.
+- [x] F1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: content layer (strings, glossary, signs, lessons, routes)". `gh` is installed on the Mac. (Note added to `docs/08` §6; PR opened via `gh`.)
 
 ## Requests from Claude
 - The town course uses exactly the anchors listed in D2. Claude will tell you here if any change.
