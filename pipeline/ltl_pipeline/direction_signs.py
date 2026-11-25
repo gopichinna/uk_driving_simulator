@@ -1,0 +1,442 @@
+"""Generate UK direction signs and street-name plates for Wolverhampton junctions."""
+
+from __future__ import annotations
+
+import heapq
+import json
+import math
+from collections import defaultdict
+from pathlib import Path
+from typing import Any
+
+from shapely.geometry import LineString, Point
+
+from ltl_pipeline import __version__
+from ltl_pipeline.schema import REPO_ROOT, validate_signs_placed_file
+
+CITY_DIR = REPO_ROOT / "content" / "cities" / "wolverhampton"
+ROADPACK_PATH = CITY_DIR / "roadpack.json"
+POIS_PATH = CITY_DIR / "pois.json"
+DIRECTION_SIGNS_PATH = CITY_DIR / "direction_signs.json"
+STREET_NAMES_PATH = CITY_DIR / "street_names.json"
+
+GOV_UK_TRAFFIC_SIGNS_URL = "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+GOV_UK_KYTS_URL = "https://www.gov.uk/government/publications/know-your-traffic-signs"
+
+KIND_PRIORITY = {
+    "city_centre": 0,
+    "railway_station": 1,
+    "bus_station": 2,
+    "hospital": 3,
+    "university": 4,
+    "shopping": 5,
+    "car_park": 6,
+    "school": 7,
+    "police": 8,
+    "other": 9,
+}
+
+
+def _heading_deg(dx: float, dz: float) -> float:
+    return round(math.degrees(math.atan2(dx, dz)) % 360.0, 2)
+
+
+def _signed_turn_deg(in_dx: float, in_dz: float, out_dx: float, out_dz: float) -> float:
+    """Clockwise turn angle in degrees (-180, 180] from incoming to outgoing vector."""
+    in_h = math.atan2(in_dx, in_dz)
+    out_h = math.atan2(out_dx, out_dz)
+    diff = math.degrees(out_h - in_h)
+    while diff > 180.0:
+        diff -= 360.0
+    while diff <= -180.0:
+        diff += 360.0
+    return diff
+
+
+def _classify_turn(turn_deg: float) -> str:
+    if -25.0 <= turn_deg <= 25.0:
+        return "ahead"
+    if 25.0 < turn_deg <= 65.0:
+        return "ahead_right"
+    if 65.0 < turn_deg <= 165.0:
+        return "right"
+    if -65.0 <= turn_deg < -25.0:
+        return "ahead_left"
+    if -165.0 <= turn_deg < -65.0:
+        return "left"
+    return "ahead"
+
+
+def _polyline_length(pts: list[list[float]]) -> float:
+    total = 0.0
+    for i in range(len(pts) - 1):
+        total += math.hypot(pts[i + 1][0] - pts[i][0], pts[i + 1][1] - pts[i][1])
+    return total
+
+
+def _point_and_dir_from_end(
+    pts: list[list[float]], forward: bool, dist_before_end: float
+) -> tuple[float, float, float, float] | None:
+    """Return (x, z, dx, dz) at dist_before_end metres before the arrival node."""
+    ordered = pts if forward else list(reversed(pts))
+    total = _polyline_length(ordered)
+    if total < dist_before_end:
+        return None
+    target_along = total - dist_before_end
+    acc = 0.0
+    for i in range(len(ordered) - 1):
+        x0, z0 = ordered[i]
+        x1, z1 = ordered[i + 1]
+        seg = math.hypot(x1 - x0, z1 - z0)
+        if seg < 1e-6:
+            continue
+        if acc + seg >= target_along:
+            t = (target_along - acc) / seg
+            x = x0 + t * (x1 - x0)
+            z = z0 + t * (z1 - z0)
+            return x, z, (x1 - x0) / seg, (z1 - z0) / seg
+        acc += seg
+    return None
+
+
+def _arrival_tangent(pts: list[list[float]], forward: bool) -> tuple[float, float]:
+    ordered = pts if forward else list(reversed(pts))
+    for i in range(len(ordered) - 2, -1, -1):
+        dx = ordered[i + 1][0] - ordered[i][0]
+        dz = ordered[i + 1][1] - ordered[i][1]
+        seg = math.hypot(dx, dz)
+        if seg > 1e-4:
+            return dx / seg, dz / seg
+    return 0.0, 1.0
+
+
+def _departure_tangent(pts: list[list[float]], forward: bool) -> tuple[float, float]:
+    ordered = pts if forward else list(reversed(pts))
+    for i in range(len(ordered) - 1):
+        dx = ordered[i + 1][0] - ordered[i][0]
+        dz = ordered[i + 1][1] - ordered[i][1]
+        seg = math.hypot(dx, dz)
+        if seg > 1e-4:
+            return dx / seg, dz / seg
+    return 0.0, 1.0
+
+
+def _clean_sign_text(name: str) -> str:
+    """Keep sign row text concise and readable (<= 15 words, plain English)."""
+    text = name.replace("&", "and").strip()
+    if len(text) > 36 and "(" in text:
+        text = text.split("(")[0].strip()
+    return text
+
+
+class RoadGraph:
+    """Directed traversal graph respecting oneway, restrictions, and laneConnections."""
+
+    def __init__(self, pack: dict[str, Any]) -> None:
+        self.nodes: dict[str, dict[str, Any]] = {n["id"]: n for n in pack["nodes"]}
+        self.links: dict[str, dict[str, Any]] = {lk["id"]: lk for lk in pack["links"]}
+        self.link_lengths: dict[str, float] = {
+            lid: _polyline_length(lk["geometry"]) for lid, lk in self.links.items()
+        }
+        self.link_lines: dict[str, LineString] = {
+            lid: LineString([(p[0], p[1]) for p in lk["geometry"]])
+            for lid, lk in self.links.items()
+            if len(lk["geometry"]) >= 2
+        }
+
+        # Outgoing traversals from a node: (link_id, forward_bool, dest_node_id)
+        self.out_edges: dict[str, list[tuple[str, bool, str]]] = defaultdict(list)
+        self.in_edges: dict[str, list[tuple[str, bool, str]]] = defaultdict(list)
+        for lk in pack["links"]:
+            if not lk.get("inMainNetwork", True):
+                continue
+            lid = lk["id"]
+            u, v = lk["from"], lk["to"]
+            self.out_edges[u].append((lid, True, v))
+            self.in_edges[v].append((lid, True, u))
+            if not lk.get("oneway", False):
+                self.out_edges[v].append((lid, False, u))
+                self.in_edges[u].append((lid, False, v))
+
+        # Restrictions: (fromLink, viaNode) -> allowed/forbidden toLinks
+        self.forbidden_turns: set[tuple[str, str, str]] = set()
+        self.only_turns: dict[tuple[str, str], set[str]] = defaultdict(set)
+        for r in pack.get("restrictions", []):
+            rtype = r.get("type", "")
+            key = (r["fromLink"], r["viaNode"])
+            if rtype.startswith("no_"):
+                self.forbidden_turns.add((r["fromLink"], r["viaNode"], r["toLink"]))
+            elif rtype.startswith("only_"):
+                self.only_turns[key].add(r["toLink"])
+
+        # Lane connections: (fromLink, nodeId) -> set of allowed toLinks
+        self.lane_conns: dict[tuple[str, str], set[str]] = defaultdict(set)
+        for lc in pack.get("laneConnections", []):
+            self.lane_conns[(lc["fromLink"], lc["nodeId"])].add(lc["toLink"])
+
+    def allowed_next(
+        self, from_link: str, via_node: str
+    ) -> list[tuple[str, bool, str]]:
+        candidates = self.out_edges.get(via_node, [])
+        key = (from_link, via_node)
+        only = self.only_turns.get(key)
+        conns = self.lane_conns.get(key)
+        out: list[tuple[str, bool, str]] = []
+        for to_link, fwd, next_node in candidates:
+            if to_link == from_link:
+                continue  # disallow U-turn on same link
+            if (from_link, via_node, to_link) in self.forbidden_turns:
+                continue
+            if only and to_link not in only:
+                continue
+            if conns and to_link not in conns:
+                continue
+            out.append((to_link, fwd, next_node))
+        return out
+
+    def shortest_first_turns(
+        self, approach_link: str, approach_fwd: bool, junction_node: str
+    ) -> dict[str, tuple[float, str]]:
+        """Dijkstra from (approach_link, junction_node) -> {link_id: (dist_m, first_out_link)}."""
+        best_link: dict[str, tuple[float, str]] = {}
+        visited: set[tuple[str, str]] = set()
+        pq: list[tuple[float, str, str, str]] = []
+
+        for out_link, out_fwd, next_node in self.allowed_next(approach_link, junction_node):
+            cost = self.link_lengths.get(out_link, 1.0)
+            heapq.heappush(pq, (cost, out_link, out_link, next_node))
+
+        while pq:
+            dist, first_out, cur_link, cur_node = heapq.heappop(pq)
+            state = (cur_link, cur_node)
+            if state in visited:
+                continue
+            visited.add(state)
+            if cur_link not in best_link or dist < best_link[cur_link][0]:
+                best_link[cur_link] = (dist, first_out)
+            for nxt_link, _, nxt_node in self.allowed_next(cur_link, cur_node):
+                if (nxt_link, nxt_node) not in visited:
+                    heapq.heappush(
+                        pq,
+                        (
+                            dist + self.link_lengths.get(nxt_link, 1.0),
+                            first_out,
+                            nxt_link,
+                            nxt_node,
+                        ),
+                    )
+        return best_link
+
+    def on_carriageway(self, x: float, z: float, min_clearance_m: float = 0.5) -> bool:
+        pt = Point(x, z)
+        for lid, line in self.link_lines.items():
+            width = float(self.links[lid].get("widthM", 6.5))
+            if pt.distance(line) < (width / 2.0 + min_clearance_m):
+                return True
+        return False
+
+
+def _is_major_junction(node: dict[str, Any], graph: RoadGraph) -> bool:
+    nid = node["id"]
+    incident_links = {lid for lid, _, _ in graph.in_edges.get(nid, [])} | {
+        lid for lid, _, _ in graph.out_edges.get(nid, [])
+    }
+    if len(incident_links) < 3:
+        return False
+    if node.get("trafficSignals"):
+        return True
+    if node.get("kind") in ("roundabout", "mini_roundabout"):
+        return True
+    if node.get("giveWay") and any(
+        graph.links[lid].get("roadClass") in ("primary", "trunk") for lid in incident_links
+    ):
+        return True
+    return False
+
+
+def build_direction_signs_and_street_names(
+    roadpack_path: Path = ROADPACK_PATH,
+    pois_path: Path = POIS_PATH,
+) -> tuple[dict[str, Any], dict[str, Any]]:
+    pack = json.loads(roadpack_path.read_text(encoding="utf-8"))
+    pois_data = json.loads(pois_path.read_text(encoding="utf-8"))
+    pois = pois_data["pois"]
+    graph = RoadGraph(pack)
+
+    signs: list[dict[str, Any]] = []
+    sign_idx = 0
+
+    for node in sorted(pack["nodes"], key=lambda n: n["id"]):
+        if not _is_major_junction(node, graph):
+            continue
+        nid = node["id"]
+        for app_link, app_fwd, _ in sorted(graph.in_edges.get(nid, []), key=lambda e: e[0]):
+            lk = graph.links[app_link]
+            # Place 30-50 m before junction (prefer 40 m, fallback 30 m if link is 30-40 m)
+            placed = None
+            dist_before = 40.0
+            for candidate_dist in (40.0, 35.0, 30.0):
+                placed = _point_and_dir_from_end(lk["geometry"], app_fwd, candidate_dist)
+                if placed is not None:
+                    dist_before = candidate_dist
+                    break
+            if placed is None:
+                continue
+
+            px, pz, dx, dz = placed
+            # Nearside verge in GB = left of traffic heading: (-dz, dx)
+            verge_offset = float(lk.get("widthM", 6.5)) / 2.0 + 1.2
+            sx = round(px + (-dz) * verge_offset, 3)
+            sz = round(pz + dx * verge_offset, 3)
+            if graph.on_carriageway(sx, sz, min_clearance_m=0.5):
+                # Try slightly further onto the verge before skipping
+                verge_offset += 1.0
+                sx = round(px + (-dz) * verge_offset, 3)
+                sz = round(pz + dx * verge_offset, 3)
+                if graph.on_carriageway(sx, sz, min_clearance_m=0.5):
+                    continue
+
+            link_dists = graph.shortest_first_turns(app_link, app_fwd, nid)
+            if not link_dists:
+                continue
+
+            in_dx, in_dz = _arrival_tangent(lk["geometry"], app_fwd)
+            turn_dir_by_out: dict[str, str] = {}
+            for out_link, out_fwd, _ in graph.allowed_next(app_link, nid):
+                out_dx, out_dz = _departure_tangent(graph.links[out_link]["geometry"], out_fwd)
+                turn_dir_by_out[out_link] = _classify_turn(
+                    _signed_turn_deg(in_dx, in_dz, out_dx, out_dz)
+                )
+
+            # Rank reachable POIs: best per kind, favouring city_centre & railway_station
+            candidates: list[tuple[int, float, dict[str, Any], str, str]] = []
+            for poi in pois:
+                acc = poi["accessLinkId"]
+                if acc not in link_dists:
+                    continue
+                d_m, first_out = link_dists[acc]
+                direction = turn_dir_by_out.get(first_out)
+                if not direction:
+                    continue
+                candidates.append(
+                    (KIND_PRIORITY.get(poi["kind"], 9), d_m, poi, direction, first_out)
+                )
+
+            candidates.sort(key=lambda item: (item[0], item[1], item[2]["id"]))
+            chosen_rows: list[dict[str, Any]] = []
+            seen_kinds: set[str] = set()
+            seen_pois: set[str] = set()
+            for _, _, poi, direction, first_out in candidates:
+                if poi["id"] in seen_pois or poi["kind"] in seen_kinds:
+                    continue
+                seen_pois.add(poi["id"])
+                seen_kinds.add(poi["kind"])
+                row: dict[str, Any] = {
+                    "text": _clean_sign_text(poi["name"]),
+                    "poiId": poi["id"],
+                    "direction": direction,
+                }
+                ref = graph.links[first_out].get("ref")
+                if ref:
+                    row["ref"] = str(ref).split(";")[0].strip()
+                chosen_rows.append(row)
+                if len(chosen_rows) == 4:
+                    break
+
+            if len(chosen_rows) < 2:
+                continue
+
+            sign_idx += 1
+            style = "primary" if lk.get("roadClass") in ("primary", "trunk") else "local"
+            signs.append(
+                {
+                    "id": f"ds_{sign_idx:03d}",
+                    "nodeId": nid,
+                    "approachLinkId": app_link,
+                    "x": sx,
+                    "z": sz,
+                    "heading": _heading_deg(dx, dz),
+                    "distanceBeforeJunctionM": dist_before,
+                    "style": style,
+                    "rows": chosen_rows,
+                }
+            )
+
+    # Street-name plates at junction corners for named roads
+    plates: list[dict[str, Any]] = []
+    plate_idx = 0
+    seen_plate_keys: set[tuple[str, str]] = set()
+    for node in sorted(pack["nodes"], key=lambda n: n["id"]):
+        if node["kind"] not in ("junction", "roundabout", "mini_roundabout"):
+            continue
+        nid = node["id"]
+        incident = []
+        for lk in pack["links"]:
+            if lk["from"] == nid:
+                incident.append((lk, True))
+            elif lk["to"] == nid:
+                incident.append((lk, False))
+        if len(incident) < 3:
+            continue
+        for lk, from_node in sorted(incident, key=lambda item: item[0]["id"]):
+            name = (lk.get("name") or "").strip()
+            if not name or (nid, name) in seen_plate_keys:
+                continue
+            pts = lk["geometry"]
+            if _polyline_length(pts) < 8.0:
+                continue
+            # 6 m into the side road from the junction node
+            ordered = pts if from_node else list(reversed(pts))
+            res = _point_and_dir_from_end(list(reversed(ordered)), True, 6.0)
+            if res is None:
+                continue
+            px, pz, dx, dz = res
+            verge = float(lk.get("widthM", 6.5)) / 2.0 + 0.8
+            sx = round(px + (-dz) * verge, 3)
+            sz = round(pz + dx * verge, 3)
+            if graph.on_carriageway(sx, sz, min_clearance_m=0.5):
+                continue
+            seen_plate_keys.add((nid, name))
+            plate_idx += 1
+            plates.append(
+                {
+                    "id": f"sn_{plate_idx:03d}",
+                    "nodeId": nid,
+                    "linkId": lk["id"],
+                    "x": sx,
+                    "z": sz,
+                    "heading": _heading_deg(dx, dz),
+                    "name": name,
+                }
+            )
+
+    base_meta = {
+        "signsFormatVersion": "0.1",
+        "packId": pack["packId"],
+        "origin": pack["origin"],
+        "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+        "source": {
+            "kind": pack["source"]["kind"],
+            "licence": pack["source"]["licence"],
+            "attribution": pack["source"]["attribution"],
+            "generator": f"ltl_pipeline/{__version__}",
+            "styleSources": [GOV_UK_TRAFFIC_SIGNS_URL, GOV_UK_KYTS_URL],
+        },
+    }
+    dir_doc = {**base_meta, "signs": signs}
+    street_doc = {**base_meta, "plates": plates}
+    return dir_doc, street_doc
+
+
+def write_direction_signs_and_street_names() -> tuple[Path, Path]:
+    dir_doc, street_doc = build_direction_signs_and_street_names()
+    DIRECTION_SIGNS_PATH.write_text(json.dumps(dir_doc, indent=2) + "\n", encoding="utf-8")
+    STREET_NAMES_PATH.write_text(json.dumps(street_doc, indent=2) + "\n", encoding="utf-8")
+    validate_signs_placed_file(DIRECTION_SIGNS_PATH)
+    validate_signs_placed_file(STREET_NAMES_PATH)
+    return DIRECTION_SIGNS_PATH, STREET_NAMES_PATH
+
+
+if __name__ == "__main__":
+    d_path, s_path = write_direction_signs_and_street_names()
+    print(f"Wrote {d_path} and {s_path}")

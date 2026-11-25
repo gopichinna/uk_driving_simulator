@@ -24,6 +24,7 @@ QUIZ_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "quiz.v0.schema.json"
 PROGRESSION_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "progression.v0.schema.json"
 PEDROUTES_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "pedroutes.v0.schema.json"
 POIS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "pois.v0.schema.json"
+SIGNS_PLACED_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "signs-placed.v0.schema.json"
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -182,6 +183,17 @@ def validate_pois_file(path: Path, schema_path: Path = POIS_SCHEMA_PATH) -> dict
     return data
 
 
+def validate_signs_placed_file(
+    path: Path, schema_path: Path = SIGNS_PLACED_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load direction_signs.json or street_names.json and validate against signs-placed.v0."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -231,6 +243,14 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for pois_path in sorted(root.glob("cities/*/pois.json")):
         validate_pois_file(pois_path)
         validated.append(pois_path)
+
+    for sp_path in sorted(root.glob("cities/*/direction_signs.json")):
+        validate_signs_placed_file(sp_path)
+        validated.append(sp_path)
+
+    for sp_path in sorted(root.glob("cities/*/street_names.json")):
+        validate_signs_placed_file(sp_path)
+        validated.append(sp_path)
 
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)

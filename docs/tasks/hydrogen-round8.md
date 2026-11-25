@@ -28,13 +28,13 @@ What's missing is the **data** for Wolverhampton's signs and destinations.
 - [x] A2. Tests: every `accessLinkId` is a main-network link; names are present; the ODbL source block is included (`pipeline/tests/test_pois.py`, 48/48 tests pass).
 
 ## B. Direction signs at junctions
-- [ ] B1. `content/schemas/signs-placed.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/direction_signs.json`. Place a sign on the approach to each major junction (signals or roundabout, plus primary/trunk give-way junctions), 30–50 m before the junction, on the **nearside verge**. Each sign has:
+- [x] B1. `content/schemas/signs-placed.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/direction_signs.json` (8 major-junction approach signs). Place a sign on the approach to each major junction (signals or roundabout, plus primary/trunk give-way junctions), 30–50 m before the junction, on the **nearside verge**. Each sign has:
   - `id`, `nodeId`, `approachLinkId`, `x`, `z`, `heading` (the direction of the traffic that reads it);
   - `style`: `primary` (green, white text, yellow road numbers) on primary/trunk roads, `local` (white, black text) elsewhere. Source: the Traffic Signs Manual / Know Your Traffic Signs. Cite the GOV.UK URL and **don't guess styles**;
   - `rows[]` = `{ text, poiId?, ref?, direction: "ahead" | "left" | "right" | "ahead_left" | "ahead_right" }`.
-- [ ] B2. Choose each row's destination by **shortest route** through the network (using `laneConnections` and `restrictions`) from the approach to each POI. Pick the 2–4 most useful destinations per sign (nearest of each kind, plus City Centre and Railway Station where relevant). The direction is the turn at that junction on that route.
-- [ ] B3. Street-name plates: `street_names.json`, with one plate per side road at junction corners (`x`, `z`, `heading`, `name`), from link names.
-- [ ] B4. Tests:
+- [x] B2. Choose each row's destination by **shortest route** through the network (using `laneConnections` and `restrictions`) from the approach to each POI. Pick the 2–4 most useful destinations per sign (nearest of each kind, plus City Centre and Railway Station where relevant). The direction is the turn at that junction on that route.
+- [x] B3. Street-name plates: `street_names.json` (372 plates at side-road junction corners), with one plate per side road at junction corners (`x`, `z`, `heading`, `name`), from link names.
+- [x] B4. Tests (`pipeline/tests/test_direction_signs.py`, 52/52 tests pass, readability 0 errors):
   - every sign row's direction matches the first turn of the shortest route to its POI;
   - no sign sits on the carriageway (≥ 0.5 m outside the road edge, using `widthM`);
   - text passes the readability linter.

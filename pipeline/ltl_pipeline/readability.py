@@ -20,6 +20,9 @@ DEFAULT_BANNED = (
 )
 DEFAULT_RULES_YAML = REPO_ROOT / "content" / "countries" / "gb" / "rules.yaml"
 DEFAULT_ROUTES_JSON = REPO_ROOT / "content" / "cities" / "wolverhampton" / "routes.json"
+DEFAULT_DIRECTION_SIGNS_JSON = (
+    REPO_ROOT / "content" / "cities" / "wolverhampton" / "direction_signs.json"
+)
 
 # Match uppercase abbreviations (2+ chars, or H1/H2/H3) outside ICU {placeholders}
 ABBREV_RE = re.compile(r"\b(?:[A-Z]{2,}|H[1-3])\b")
@@ -248,6 +251,28 @@ def lint_voice_strings(
     return errors
 
 
+def lint_direction_signs(
+    signs_json: dict[str, Any],
+    glossary_data: dict[str, Any],
+    banned_phrases: list[str],
+) -> list[str]:
+    """Check direction sign row text for B1 readability."""
+    errors: list[str] = []
+    allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
+    for sign in signs_json.get("signs", []):
+        sid = sign.get("id", "<unknown>")
+        for idx, row in enumerate(sign.get("rows", [])):
+            errors.extend(
+                check_text_readability(
+                    row["text"],
+                    context=f"direction_signs.{sid}.rows[{idx}]",
+                    banned_phrases=banned_phrases,
+                    allowed_abbrevs=allowed_abbrevs,
+                )
+            )
+    return errors
+
+
 def lint_all_strings(
     rules_json_path: Path = DEFAULT_STRINGS_RULES,
     glossary_path: Path = DEFAULT_GLOSSARY,
@@ -256,6 +281,7 @@ def lint_all_strings(
     ui_json_path: Path = DEFAULT_STRINGS_UI,
     routes_json_path: Path = DEFAULT_ROUTES_JSON,
     voice_json_path: Path = DEFAULT_STRINGS_VOICE,
+    direction_signs_path: Path = DEFAULT_DIRECTION_SIGNS_JSON,
 ) -> list[str]:
     """Run all readability checks on GB English strings, UI, voice, routes, and glossary."""
     rules_json = json.loads(rules_json_path.read_text(encoding="utf-8"))
@@ -274,6 +300,9 @@ def lint_all_strings(
     if routes_json_path.is_file():
         routes_json = json.loads(routes_json_path.read_text(encoding="utf-8"))
         errors.extend(lint_route_instructions(routes_json, glossary_data, banned))
+    if direction_signs_path.is_file():
+        signs_json = json.loads(direction_signs_path.read_text(encoding="utf-8"))
+        errors.extend(lint_direction_signs(signs_json, glossary_data, banned))
     return errors
 
 
