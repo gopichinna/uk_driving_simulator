@@ -120,6 +120,8 @@ namespace LToLocal.Sim
         public int ColourIndex;
         public Vec2 Position;   // centre of the car
         public double Heading;
+        public bool IsCyclist;
+        public double LengthM = 4.3;
     }
 
     public sealed class RoundaboutTrafficParams
@@ -135,6 +137,9 @@ namespace LToLocal.Sim
         public int ColourCount = 6;
         /// <summary>Probabilities for exits 1 (left), 2 (ahead), 3 (right).</summary>
         public double[] ExitWeights = { 0.35, 0.4, 0.25 };
+        public double CyclistChance = 0.10;
+        public double CyclistLengthM = 1.8;
+        public double CyclistSpeedMps = 5.5;
     }
 
     /// <summary>
@@ -165,10 +170,12 @@ namespace LToLocal.Sim
             _cars.Clear();
         }
 
-        public RoundaboutCar AddCar(int entryArm, int exitArm, RoundaboutSegment segment, double s, double speed)
+        public RoundaboutCar AddCar(int entryArm, int exitArm, RoundaboutSegment segment, double s, double speed, bool isCyclist = false)
         {
             var c = new RoundaboutCar
             {
+                IsCyclist = isCyclist,
+                LengthM = isCyclist ? _p.CyclistLengthM : _p.CarLengthM,
                 Id = _nextId++,
                 EntryArm = entryArm,
                 ExitArm = exitArm,
@@ -257,7 +264,7 @@ namespace LToLocal.Sim
         {
             // Position of the car's centre: half a car length behind the front bumper, along the path.
             var path = PathOf(c);
-            double centreS = c.S - _p.CarLengthM / 2;
+            double centreS = c.S - c.LengthM / 2;
             if (!path.Closed && centreS < 0) centreS = 0;
             var (pos, heading) = path.Sample(centreS);
             c.Position = pos;
@@ -288,33 +295,34 @@ namespace LToLocal.Sim
             double desired = DesiredSpeed(c);
             double gap = double.PositiveInfinity, leaderSpeed = c.SpeedMps;
 
-            void Consider(double distanceAhead, double speed)
+            void Consider(double distanceAhead, double speed, double leaderLength)
             {
-                double g = distanceAhead - _p.CarLengthM;
+                double g = distanceAhead - leaderLength;
                 if (distanceAhead > 0 && g < gap) { gap = Math.Max(0, g); leaderSpeed = speed; }
             }
 
-            // Other AI cars ahead on our route
+            // Other AI vehicles ahead on our route (distances are front bumper to front bumper)
             foreach (var o in _cars)
             {
                 if (o == c) continue;
                 double d = RouteDistanceTo(c, o);
-                if (!double.IsNaN(d)) Consider(d, o.SpeedMps);
+                if (!double.IsNaN(d)) Consider(d, o.SpeedMps, o.LengthM);
             }
 
-            // The player, wherever they are on our route
+            // The player (4.3 m car), wherever they are on our route; pd is to the player's centre
             double pd = PlayerRouteDistance(c, playerPos, player, out double playerAlong);
-            if (!double.IsNaN(pd)) Consider(pd + _p.CarLengthM / 2, Math.Max(0, playerAlong));
+            if (!double.IsNaN(pd)) Consider(pd + _p.CarLengthM / 2, Math.Max(0, playerAlong), _p.CarLengthM);
 
             // Give way at the entry line until there is a safe gap
             if (c.Segment == RoundaboutSegment.Entry && c.S <= _g.GiveWayS[c.EntryArm] + 0.5 && !CanEnter(c, playerPos, player))
-                Consider(_g.GiveWayS[c.EntryArm] + 0.5 - c.S + _p.CarLengthM, 0);
+                Consider(_g.GiveWayS[c.EntryArm] + 0.5 - c.S + 1.0, 0, 1.0);
 
             return Idm.Accel(c.SpeedMps, desired, gap, leaderSpeed);
         }
 
         private double DesiredSpeed(RoundaboutCar c)
         {
+            if (c.IsCyclist) return _p.CyclistSpeedMps;
             switch (c.Segment)
             {
                 case RoundaboutSegment.Entry:
@@ -352,6 +360,14 @@ namespace LToLocal.Sim
                         if (ahead > 0.01) d = ahead;
                     }
                     else if (o.Segment == RoundaboutSegment.Exit && o.ExitArm == c.ExitArm) d = remaining + o.S;
+                    else if (o.Segment == RoundaboutSegment.Entry && o.S > _g.GiveWayS[o.EntryArm])
+                    {
+                        // A car that has committed past its give-way line will join just ahead of its merge point:
+                        // treat it as already being there, so we don't drive into it as it merges.
+                        double toMerge = _g.RingForward(c.S, _g.EntryMergeS[o.EntryArm]);
+                        double stillToGo = _g.Entry[o.EntryArm].Length - o.S;
+                        if (toMerge <= remaining + 2) d = toMerge - stillToGo;
+                    }
                     break;
                 case RoundaboutSegment.Exit:
                     if (o.Segment == RoundaboutSegment.Exit && o.ExitArm == c.ExitArm) d = o.S - c.S;
@@ -465,7 +481,8 @@ namespace LToLocal.Sim
             double r = _rng.NextDouble();
             int exitNo = r < _p.ExitWeights[0] ? 1 : r < _p.ExitWeights[0] + _p.ExitWeights[1] ? 2 : 3;
             int exitArm = (arm + exitNo) % _g.ArmCount;
-            AddCar(arm, exitArm, RoundaboutSegment.Entry, 0, _p.ApproachSpeedMps);
+            bool cyclist = _rng.NextDouble() < _p.CyclistChance;
+            AddCar(arm, exitArm, RoundaboutSegment.Entry, 0, cyclist ? _p.CyclistSpeedMps : _p.ApproachSpeedMps, cyclist);
         }
     }
 }

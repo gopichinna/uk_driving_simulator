@@ -33,6 +33,8 @@ namespace LToLocal.Sim
         public double SignalTimer;
         public int ColourIndex;
         public bool Active;
+        public bool IsCyclist;
+        public double LengthM = 4.3;
         /// <summary>Acceleration applied on the last step (negative = braking). Used by rules to spot forced braking.</summary>
         public double LastAccelMps2;
 
@@ -60,6 +62,13 @@ namespace LToLocal.Sim
         public double DespawnAheadM = 520;
         public int[] CarsPerLane = Array.Empty<int>();
         public int ColourCount = 6;
+
+        // Cyclists (they ride in the nearside lane and never change lanes)
+        public double CyclistChance = 0.10;
+        public double CyclistLengthM = 1.8;
+        public double CyclistSpeedMinMps = 5.0;  // ~11 mph
+        public double CyclistSpeedMaxMps = 7.0;  // ~16 mph
+        public double PlayerLengthM = 4.3;
     }
 
     /// <summary>
@@ -97,15 +106,17 @@ namespace LToLocal.Sim
                 {
                     double z = playerZ + _rng.Range(-_p.DespawnBehindM * 0.7, _p.DespawnAheadM * 0.8);
                     if (Math.Abs(z - playerZ) < 25) z -= 60; // never on top of the player
-                    if (IsSpaceFree(lane, z, 30)) AddCar(lane, z);
+                    if (IsSpaceFree(lane, z, 30)) AddCar(lane, z, isCyclist: RollCyclist(lane));
                 }
             }
         }
 
         /// <summary>Spawns one car at an exact place. Mainly for tests and scripted scenarios.</summary>
-        public TrafficCar AddCar(int lane, double z, double? speed = null, double? desired = null)
+        public TrafficCar AddCar(int lane, double z, double? speed = null, double? desired = null, bool isCyclist = false)
         {
-            double d = desired ?? _rng.Range(_p.DesiredSpeedMinMps, _p.DesiredSpeedMaxMps);
+            double d = desired ?? (isCyclist
+                ? _rng.Range(_p.CyclistSpeedMinMps, _p.CyclistSpeedMaxMps)
+                : _rng.Range(_p.DesiredSpeedMinMps, _p.DesiredSpeedMaxMps));
             var car = new TrafficCar
             {
                 Id = _nextId++,
@@ -117,6 +128,8 @@ namespace LToLocal.Sim
                 SpeedMps = speed ?? d,
                 ColourIndex = _rng.Range(0, Math.Max(1, _p.ColourCount)),
                 Active = true,
+                IsCyclist = isCyclist,
+                LengthM = isCyclist ? _p.CyclistLengthM : _p.CarLengthM,
             };
             _cars.Add(car);
             return car;
@@ -189,14 +202,16 @@ namespace LToLocal.Sim
             foreach (var o in _cars)
             {
                 if (o == self || !InLane(o, lane)) continue;
-                double d = dir * o.Z - selfPos - _p.CarLengthM;
-                if (d > -_p.CarLengthM * 0.5 && d < gap) { gap = Math.Max(0, d); speed = o.SpeedMps; }
+                double half = (self.LengthM + o.LengthM) / 2;
+                double d = dir * o.Z - selfPos - half;
+                if (d > -half && d < gap) { gap = Math.Max(0, d); speed = o.SpeedMps; }
             }
 
             if (PlayerInLane(player, lane))
             {
-                double d = dir * player.Z - selfPos - _p.CarLengthM;
-                if (d > -_p.CarLengthM * 0.5 && d < gap) { gap = Math.Max(0, d); speed = Math.Max(0, dir * playerForward); }
+                double half = (self.LengthM + _p.PlayerLengthM) / 2;
+                double d = dir * player.Z - selfPos - half;
+                if (d > -half && d < gap) { gap = Math.Max(0, d); speed = Math.Max(0, dir * playerForward); }
             }
         }
 
@@ -235,6 +250,7 @@ namespace LToLocal.Sim
                 return;
             }
 
+            if (c.IsCyclist) return;
             int other = AdjacentLaneSameDirection(c.Lane);
             if (other < 0) return;
 
@@ -284,25 +300,28 @@ namespace LToLocal.Sim
             int dir = _lanes[target].Direction;
             double selfPos = dir * c.Z;
 
-            bool Check(double otherPos, double otherSpeed)
+            bool Check(double otherPos, double otherSpeed, double otherLength)
             {
                 double d = otherPos - selfPos;
-                if (d >= 0) return d - _p.CarLengthM > 12 + Math.Max(0, c.SpeedMps - otherSpeed) * 2; // ahead
-                double behind = -d - _p.CarLengthM;
+                double half = (c.LengthM + otherLength) / 2;
+                if (d >= 0) return d - half > 12 + Math.Max(0, c.SpeedMps - otherSpeed) * 2; // ahead
+                double behind = -d - half;
                 return behind > 10 + Math.Max(0, otherSpeed - c.SpeedMps) * 3;                          // behind
             }
 
             foreach (var o in _cars)
             {
                 if (o == c || !InLane(o, target)) continue;
-                if (!Check(dir * o.Z, o.SpeedMps)) return false;
+                if (!Check(dir * o.Z, o.SpeedMps, o.LengthM)) return false;
             }
 
-            if (PlayerInLane(player, target) && !Check(dir * player.Z, Math.Max(0, dir * playerForward))) return false;
+            if (PlayerInLane(player, target) && !Check(dir * player.Z, Math.Max(0, dir * playerForward), _p.PlayerLengthM)) return false;
             return true;
         }
 
         // ---------- population ----------
+
+        private bool RollCyclist(int lane) => _lanes[lane].IsNearside && _rng.NextDouble() < _p.CyclistChance;
 
         private bool IsSpaceFree(int lane, double z, double clearance)
         {
@@ -334,7 +353,7 @@ namespace LToLocal.Sim
                     ? -_rng.Range(_p.DespawnBehindM * 0.6, _p.DespawnBehindM * 0.9)
                     : _rng.Range(_p.DespawnAheadM * 0.65, _p.DespawnAheadM * 0.95);
                 double z = playerZ + dir * offset;
-                if (IsSpaceFree(lane, z, 40)) AddCar(lane, z);
+                if (IsSpaceFree(lane, z, 40)) AddCar(lane, z, isCyclist: RollCyclist(lane));
             }
         }
     }

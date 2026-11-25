@@ -96,12 +96,14 @@ public class RoundaboutTests
         Assert.That(entering.Segment, Is.Not.EqualTo(RoundaboutSegment.Entry), "should enter once the gap is clear");
     }
 
-    [Test]
-    public void TenMinutesOfTrafficWithoutCollisionsOrDeadlock()
+    [TestCase(42UL)]
+    [TestCase(7UL)]
+    [TestCase(2026UL)]
+    public void TenMinutesOfTrafficWithoutCollisionsOrDeadlock(ulong seed)
     {
         var g = Geo();
         var p = new RoundaboutTrafficParams { TargetCars = 12 };
-        var t = new RoundaboutTraffic(g, p, seed: 42);
+        var t = new RoundaboutTraffic(g, p, seed);
         var completed = new HashSet<int>();
         var seen = new HashSet<int>();
 
@@ -117,7 +119,7 @@ public class RoundaboutTests
                 foreach (var b in ring)
                     if (a != b)
                     {
-                        double gap = g.RingForward(a.S, b.S) - p.CarLengthM;
+                        double gap = g.RingForward(a.S, b.S) - b.LengthM; // front-to-front minus the leader's length
                         Assert.That(gap, Is.GreaterThan(-0.5).Or.GreaterThan(g.Ring.Length - 2 * p.CarLengthM), $"overlap on the ring at tick {i}");
                     }
         }
