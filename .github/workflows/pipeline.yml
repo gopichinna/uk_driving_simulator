@@ -1,0 +1,30 @@
+name: pipeline
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: pipeline
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pipeline and dev dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -e ".[dev]"
+      - name: Lint with ruff
+        run: ruff check .
+      - name: Run pytest
+        run: pytest
+      - name: Validate all content files
+        run: python -c "from ltl_pipeline.schema import validate_all_content; files = validate_all_content(); print('Validated:', [str(p) for p in files])"
+      - name: Verify all code rule IDs exist in rules.yaml
+        run: python -c "from ltl_pipeline.rulepack import verify_code_rules_in_yaml; verify_code_rules_in_yaml()"

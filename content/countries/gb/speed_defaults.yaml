@@ -1,0 +1,36 @@
+# Great Britain default speed limits (mph)
+# Source: The Highway Code, rule 124
+# https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158
+source:
+  rule: "124"
+  url: "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+
+regions:
+  GB-ENG:
+    restricted_road_mph: 30
+    single_carriageway_mph: 60
+    dual_carriageway_mph: 70
+    motorway_mph: 70
+  GB-SCT:
+    restricted_road_mph: 30
+    single_carriageway_mph: 60
+    dual_carriageway_mph: 70
+    motorway_mph: 70
+  GB-WLS:
+    restricted_road_mph: 20
+    single_carriageway_mph: 60
+    dual_carriageway_mph: 70
+    motorway_mph: 70
+
+# Mapping from OSM highway class to default category when maxspeed is untagged.
+# Urban city-centre roads without maxspeed tags default to restricted_road_mph.
+road_class_defaults:
+  motorway: motorway_mph
+  trunk: dual_carriageway_mph
+  primary: restricted_road_mph
+  secondary: restricted_road_mph
+  tertiary: restricted_road_mph
+  unclassified: restricted_road_mph
+  residential: restricted_road_mph
+  service: restricted_road_mph
+  living_street: 20
