@@ -102,6 +102,13 @@ Goal: let learners practise roads like the ones used on real tests near Wolverha
 
   Add a test.
 - [ ] **R12.4 Mock-test scenario timings** (PR #8 review). In `s8_19_mock_test*.json`, set `durationS` to minutes × 60 and remove `finish_after_s`. Make the signs scenario about 10 minutes. Add a test that `independent_driving` never conflicts with a shorter timer.
+- [ ] **R12.6 Plain English for newcomers (owner feedback, high priority: do it straight after R12.0).** The owner couldn't understand the lesson 2 goal "Move off from the kerb without forcing following traffic to brake." It passed the linter but uses driving-school jargon. Rewrite **every** player-facing text: scenario `goal`s, learn-card `blocks`, `recap`s, quiz questions, options and explanations, `rules.json` (title/fault/why/tip/good), `ui.json` and `voice.json`. Write it as if explaining to someone who has never driven in the UK:
+  - Use everyday words: "cars behind you", not "following traffic"; "pull away", not "move off"; "slow down", not "brake"; "the main road", not "the major road"; "the left side", not "the nearside" (or explain it the first time).
+  - One idea per sentence, ideally 12 words or fewer.
+  - Say what to do, then why. For example, "Move off from the kerb without forcing following traffic to brake." becomes **"Pull away from the side of the road only when it's safe. The cars behind you should not have to slow down."**
+  - Keep the legal force: "must" only for MUST rules.
+
+  Extend the readability linter with a `jargon_phrases.txt` list (e.g. "following traffic", "priority traffic", "emerge", "nearside", "offside", "major road", "move off", "proceed", "carriageway"). A phrase on the list fails unless it's in the glossary and the same text explains it. Regenerate en-XA.
 - [ ] **R12.5 Roundabout furniture**, as `roundabout_furniture.json` (pre-agreed) per roundabout node:
   - `islandPolygon` (from the ring geometry);
   - a blue "roundabout" sign position on each approach;
