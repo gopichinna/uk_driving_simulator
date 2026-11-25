@@ -27,10 +27,10 @@ Tick each box with a one-line note.
 
 ## A. Store listing must match what ships
 The round-4 draft claims things the app doesn't do yet: an in-app lesson player for the 18 lessons, a Wolverhampton drive, and debrief links to lessons.
-- [ ] A1. `content/store/en/claims.yaml`: each feature claim has `id`, `text` and `status: shipped | planned`. Start from the "Current state" section of `AGENTS.md` on `main`.
+- [x] A1. `content/store/en/claims.yaml`: each feature claim has `id`, `text` and `status: shipped | planned`. Start from the "Current state" section of `AGENTS.md` on `main`. (`content/store/en/claims.yaml`: 6 shipped, 3 planned.)
   - **Shipped today:** 4 courses (town centre, two-lane roundabout, single-lane roundabout, 40 mph dual carriageway); live feedback on the rules listed there and the town rules; the end-of-drive debrief with replays and a practice pass/fail; Settings.
   - **Planned:** the lessons, Wolverhampton (beta), "practise this lesson".
-- [ ] A2. Rebuild `listing.md` from the `shipped` claims only, and keep a "Coming soon" section, clearly labelled, for `planned` ones. Add a test that every feature bullet in the listing matches a shipped claim id (use an HTML comment per bullet, e.g. `<!-- claim: debrief -->`).
+- [x] A2. Rebuild `listing.md` from the `shipped` claims only, and keep a "Coming soon" section, clearly labelled, for `planned` ones. Add a test that every feature bullet in the listing matches a shipped claim id (use an HTML comment per bullet, e.g. `<!-- claim: debrief -->`). (`content/store/en/listing.md` + `test_listing_bullets_match_claims_yaml`)
 
 ## B. Wolverhampton network AI can drive (roadpack v0.4, additive, pre-agreed)
 - [ ] B1. Compute the **largest strongly connected component** of the directed drivable graph, respecting one-way and turn restrictions. Add `inMainNetwork: true|false` to each link, and a top-level `mainNetwork { linkCount, nodeCount }`.
