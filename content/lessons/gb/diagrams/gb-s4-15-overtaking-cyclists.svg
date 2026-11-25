@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#d4e4c8"/>
+  <rect x="362" y="0" width="300" height="1024" fill="#444a52"/>
+  <rect x="508" y="0" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="60" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="120" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="180" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="240" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="300" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="360" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="420" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="480" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="540" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="600" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="660" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="720" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="780" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="840" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="900" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="960" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="1020" width="8" height="34" fill="#f5f7fa"/>
+  <circle cx="395" cy="420" r="18" fill="#929aa4"/>
+  <rect x="439" y="674" width="52" height="92" fill="#1d70b8"/>
+  <line x1="465" y1="660" x2="540" y2="440" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="540" y1="440" x2="549" y2="473" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="540" y1="440" x2="513" y2="461" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+</svg>

@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s0_01_town_keep_left",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.2
+    },
+    {
+      "type": "parked_car",
+      "anchor": "start",
+      "offsetM": 45
+    },
+    {
+      "type": "finish_at",
+      "anchor": "start",
+      "offsetM": 160
+    }
+  ]
+}

@@ -11,8 +11,12 @@
       "Give cyclists on the roundabout priority and plenty of room.",
       "Never overtake a cyclist only to cut across them at an exit."
     ],
-    "ruleIds": ["GB.RBT.CYCLISTS", "GB.VRU.PASS_CYCLIST"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.RBT.CYCLISTS",
+      "GB.VRU.PASS_CYCLIST"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s3-14-roundabout-cyclists.png"
   },
   "scenarios": [
     {
@@ -20,28 +24,47 @@
       "course": "roundabout",
       "anchor": "start",
       "goal": "Give priority to a cyclist circulating on the roundabout.",
-      "rulesJudged": ["GB.RBT.CYCLISTS", "GB.RBT.GIVE_WAY_RIGHT", "GB.VRU.PASS_CYCLIST"],
+      "rulesJudged": [
+        "GB.RBT.CYCLISTS",
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.VRU.PASS_CYCLIST"
+      ],
       "variations": {
-        "trafficDensity": [0.2, 0.5],
+        "trafficDensity": [
+          0.2,
+          0.5
+        ],
         "cyclistShare": 0.35,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s3_14_two_lane_rbt_cyclist",
       "course": "two_lane_roundabout",
       "anchor": "start",
       "goal": "Hold back and avoid cutting across cyclists near your exit.",
-      "rulesJudged": ["GB.RBT.CYCLISTS", "GB.VRU.PASS_CYCLIST"],
+      "rulesJudged": [
+        "GB.RBT.CYCLISTS",
+        "GB.VRU.PASS_CYCLIST"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.35,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

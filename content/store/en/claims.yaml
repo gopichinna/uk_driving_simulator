@@ -1,0 +1,29 @@
+claimsFormatVersion: "0.1"
+claims:
+  - id: courses_four
+    status: shipped
+    text: "4 playable 3D courses: a town-centre course, a two-lane roundabout, a single-lane roundabout, and a 40 mph dual carriageway."
+  - id: live_rules
+    status: shipped
+    text: "Live feedback on speed limits, lane changes, roundabouts, overtaking cyclists (1.5 m), following distance (2 s), and town-centre junction rules."
+  - id: cameras_mirrors
+    status: shipped
+    text: "Right-hand-drive seat view, chase view, live rear-view and door mirrors, and an optional look over your shoulder."
+  - id: debrief_replays
+    status: shipped
+    text: "End-of-drive debrief with replays and a practice pass or fail verdict."
+  - id: settings_screen
+    status: shipped
+    text: "Settings screen with adjustable steering sensitivity."
+  - id: offline_device
+    status: shipped
+    text: "Offline by design: no account required, and settings stay on your device."
+  - id: lessons_18
+    status: planned
+    text: "18 structured lessons across Stages 0–5 (first 3 lessons free)."
+  - id: wolverhampton_beta
+    status: planned
+    text: "Wolverhampton city-centre free-drive (beta) built from OpenStreetMap data."
+  - id: practise_this_lesson
+    status: planned
+    text: "Debrief links straight into the lesson that trains each rule."

@@ -11,8 +11,12 @@
       "Check both ways and wait until priority traffic will not brake.",
       "Creep forward slowly if parked cars block your view."
     ],
-    "ruleIds": ["GB.JCT.GIVE_WAY", "GB.JCT.EMERGE_LOOK"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.JCT.GIVE_WAY",
+      "GB.JCT.EMERGE_LOOK"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s1-04-give-way-tjunctions.png"
   },
   "scenarios": [
     {
@@ -20,28 +24,46 @@
       "course": "town",
       "anchor": "tjunction_north",
       "goal": "Give way to major road traffic and emerge into a safe gap.",
-      "rulesJudged": ["GB.JCT.GIVE_WAY", "GB.JCT.EMERGE_LOOK"],
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.EMERGE_LOOK"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.6],
+        "trafficDensity": [
+          0.3,
+          0.6
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s1_04_tjunction_south",
       "course": "town",
       "anchor": "tjunction_south",
       "goal": "Judge approaching speeds from both sides before turning out.",
-      "rulesJudged": ["GB.JCT.GIVE_WAY", "GB.JCT.TURN_FAR_GAP"],
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.TURN_FAR_GAP"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.6],
+        "trafficDensity": [
+          0.3,
+          0.6
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

@@ -11,8 +11,13 @@
       "Signal left for a left exit and right for exits past straight ahead.",
       "Signal left just after passing the exit before yours."
     ],
-    "ruleIds": ["GB.RBT.APPROACH_LANE", "GB.RBT.SIGNAL_APPROACH", "GB.RBT.SIGNAL_EXIT"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.RBT.APPROACH_LANE",
+      "GB.RBT.SIGNAL_APPROACH",
+      "GB.RBT.SIGNAL_EXIT"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s3-12-roundabout-lanes-signals.png"
   },
   "scenarios": [
     {
@@ -20,28 +25,48 @@
       "course": "two_lane_roundabout",
       "anchor": "start",
       "goal": "Pick the correct approach lane and signal clearly before exiting.",
-      "rulesJudged": ["GB.RBT.APPROACH_LANE", "GB.RBT.SIGNAL_APPROACH", "GB.RBT.SIGNAL_EXIT"],
+      "rulesJudged": [
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s3_12_right_exit",
       "course": "two_lane_roundabout",
       "anchor": "start",
       "goal": "Use the right approach lane, signal right, then signal left to exit.",
-      "rulesJudged": ["GB.RBT.APPROACH_LANE", "GB.RBT.SIGNAL_APPROACH", "GB.RBT.SIGNAL_EXIT"],
+      "rulesJudged": [
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.6],
+        "trafficDensity": [
+          0.3,
+          0.6
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

@@ -144,6 +144,8 @@ def _build_mock_test_route(pack: dict[str, Any]) -> dict[str, Any]:
 
     adj: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
     for lid, lk in links.items():
+        if not lk.get("inMainNetwork", True):
+            continue
         adj[lk["from"]].append((lk["to"], lid, "forward"))
         if not lk["oneway"]:
             adj[lk["to"]].append((lk["from"], lid, "backward"))
@@ -241,12 +243,49 @@ def update_routes_with_instructions(
     roadpack_path: Path = ROADPACK_PATH,
     routes_path: Path = ROUTES_PATH,
 ) -> Path:
-    """Add instructions[] to existing routes and ensure wolverhampton-mock-test exists."""
+    """Ensure all 4 routes lie in mainNetwork and have instructions[]."""
     pack = json.loads(roadpack_path.read_text(encoding="utf-8"))
     routes_doc = json.loads(routes_path.read_text(encoding="utf-8"))
+    links_by_id = {lk["id"]: lk for lk in pack["links"]}
 
     existing = [r for r in routes_doc["routes"] if r["id"] != "wolverhampton-mock-test"]
     for r in existing:
+        if any(not links_by_id[s["linkId"]].get("inMainNetwork", True) for s in r["links"]):
+            # Re-route from the first main-network link (or nearest main-network zebra/bus/rbt link)
+            rbt_links = [
+                lk["id"]
+                for lk in pack["links"]
+                if lk.get("junctionRoundabout") and lk.get("inMainNetwork", True)
+            ]
+            zebra_links = [
+                c["linkId"]
+                for c in pack["crossings"]
+                if c["type"] == "zebra" and links_by_id[c["linkId"]].get("inMainNetwork", True)
+            ]
+            bus_links = [
+                lk["id"]
+                for lk in pack["links"]
+                if lk.get("busLane") and lk.get("inMainNetwork", True)
+            ]
+            fallback_pool = (
+                zebra_links
+                if "zebra" in r["id"]
+                else (bus_links if "bus" in r["id"] else rbt_links)
+            )
+            if not fallback_pool:
+                fallback_pool = [
+                    lk["id"] for lk in pack["links"] if lk.get("inMainNetwork", True)
+                ]
+            rebuilt = _build_walk_route(
+                pack,
+                start_candidates=fallback_pool,
+                route_id=r["id"],
+                name=r["name"],
+                description=r["description"],
+                target_m=1500.0,
+                est_min=r.get("estimatedMinutes", 3.6),
+            )
+            r.update(rebuilt)
         r["instructions"] = generate_instructions(r, pack)
     existing.append(_build_mock_test_route(pack))
     routes_doc["routes"] = existing
@@ -254,6 +293,124 @@ def update_routes_with_instructions(
     routes_path.write_text(json.dumps(routes_doc, indent=2) + "\n", encoding="utf-8")
     validate_routes_file(routes_path)
     return routes_path
+
+
+def _build_walk_route(
+    pack: dict[str, Any],
+    start_candidates: list[str],
+    route_id: str,
+    name: str,
+    description: str,
+    target_m: float,
+    est_min: float,
+) -> dict[str, Any]:
+    nodes = {n["id"]: n for n in pack["nodes"]}
+    links = {lk["id"]: lk for lk in pack["links"]}
+    crossings_by_link = defaultdict(list)
+    for c in pack["crossings"]:
+        crossings_by_link[c["linkId"]].append(c["type"])
+
+    forbidden: dict[tuple[str, str], set[str]] = defaultdict(set)
+    only: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for r in pack.get("restrictions", []):
+        key = (r["fromLink"], r["viaNode"])
+        if r["type"].startswith("no_"):
+            forbidden[key].add(r["toLink"])
+        elif r["type"].startswith("only_"):
+            only[key].add(r["toLink"])
+
+    adj: dict[str, list[tuple[str, str, str]]] = defaultdict(list)
+    for lid, lk in links.items():
+        if not lk.get("inMainNetwork", True):
+            continue
+        adj[lk["from"]].append((lk["to"], lid, "forward"))
+        if not lk["oneway"]:
+            adj[lk["to"]].append((lk["from"], lid, "backward"))
+
+    def legal_next(prev_lid: str, cur_node: str) -> list[tuple[str, str, str]]:
+        res = []
+        for nxt_node, lid, direction in adj[cur_node]:
+            if lid == prev_lid:
+                continue
+            key = (prev_lid, cur_node)
+            if key in forbidden and lid in forbidden[key]:
+                continue
+            if key in only and lid not in only[key]:
+                continue
+            res.append((nxt_node, lid, direction))
+        return res
+
+    best_steps: list[dict[str, str]] = []
+    for start_lid in start_candidates:
+        if not links[start_lid].get("inMainNetwork", True):
+            continue
+        lk0 = links[start_lid]
+
+        def dfs(
+            cur_node: str,
+            prev_lid: str,
+            steps: list[dict[str, str]],
+            used: set[tuple[str, str]],
+            total_m: float,
+        ) -> bool:
+            nonlocal best_steps
+            if total_m >= target_m:
+                best_steps = list(steps)
+                return True
+            if len(steps) >= 90:
+                return False
+            cands = legal_next(prev_lid, cur_node)
+            cands.sort(
+                key=lambda it: (
+                    0 if (it[1], it[2]) not in used else 1,
+                    0 if links[it[1]]["roadClass"] in ("primary", "secondary", "tertiary") else 1,
+                    -len(legal_next(it[1], it[0])),
+                )
+            )
+            for nxt_n, lid, d in cands:
+                if (lid, d) in used:
+                    continue
+                steps.append({"linkId": lid, "direction": d})
+                used.add((lid, d))
+                if dfs(nxt_n, lid, steps, used, total_m + _link_length(links[lid])):
+                    return True
+                steps.pop()
+                used.discard((lid, d))
+            return False
+
+        if dfs(
+            lk0["to"],
+            start_lid,
+            [{"linkId": start_lid, "direction": "forward"}],
+            {(start_lid, "forward")},
+            _link_length(lk0),
+        ):
+            break
+
+    feats: set[str] = set()
+    for st in best_steps:
+        lk = links[st["linkId"]]
+        if nodes[lk["from"]].get("trafficSignals") or nodes[lk["to"]].get("trafficSignals"):
+            feats.add("signals")
+        if lk.get("junctionRoundabout") or nodes[lk["to"]]["kind"] == "roundabout":
+            feats.add("roundabout")
+        if lk.get("busLane"):
+            feats.add("bus_lane")
+        if lk.get("cycleLane"):
+            feats.add("cycle_lane")
+        for ct in crossings_by_link.get(st["linkId"], []):
+            if ct in ("zebra", "pelican", "puffin", "toucan"):
+                feats.add(ct)
+
+    return {
+        "id": route_id,
+        "name": name,
+        "description": description,
+        "estimatedMinutes": est_min,
+        "start": {"linkId": best_steps[0]["linkId"], "offsetM": 0},
+        "links": best_steps,
+        "features": sorted(feats),
+    }
 
 
 if __name__ == "__main__":

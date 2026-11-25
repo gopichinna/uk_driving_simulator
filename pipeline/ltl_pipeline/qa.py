@@ -147,6 +147,21 @@ def generate_qa_markdown(
                 f"levels={h_src['levels']}, default={h_src['default']}",
             ]
         )
+
+    main_net = pack.get("mainNetwork")
+    if main_net is not None:
+        dead_ends = sum(1 for lk in links if not lk.get("inMainNetwork", False))
+        spawns = pack.get("spawnPoints", [])
+        lines.extend(
+            [
+                "",
+                "## Main AI network (strongly connected)",
+                f"- **Main network:** {main_net['linkCount']} links, "
+                f"{main_net['nodeCount']} nodes",
+                f"- **Excluded dead-end / disconnected links:** {dead_ends} / {len(links)}",
+                f"- **Spawn points:** {len(spawns)}",
+            ]
+        )
     lines.append("")
     return "\n".join(lines)
 

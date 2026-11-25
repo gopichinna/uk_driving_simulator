@@ -19,6 +19,7 @@ ROUTE_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "route.v0.schema.json"
 TESTMARKING_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "testmarking.v0.schema.json"
 RULEINDEX_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "ruleindex.v0.schema.json"
 BUILDINGS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "buildings.v0.schema.json"
+SCENARIO_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "scenario.v0.schema.json"
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -124,6 +125,17 @@ def validate_buildings_file(
     return data
 
 
+def validate_scenario_file(
+    path: Path, schema_path: Path = SCENARIO_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load a scenario JSON file and validate it against scenario.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -167,5 +179,9 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)
         validated.append(tm_path)
+
+    for sc_path in sorted(root.glob("scenarios/*/*.json")):
+        validate_scenario_file(sc_path)
+        validated.append(sc_path)
 
     return validated

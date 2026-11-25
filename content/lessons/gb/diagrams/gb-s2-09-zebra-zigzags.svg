@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#d4e4c8"/>
+  <rect x="362" y="0" width="300" height="1024" fill="#444a52"/>
+  <rect x="508" y="0" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="60" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="120" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="180" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="240" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="300" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="360" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="420" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="480" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="540" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="600" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="660" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="720" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="780" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="840" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="900" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="960" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="508" y="1020" width="8" height="34" fill="#f5f7fa"/>
+  <rect x="372" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="412" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="452" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="492" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="532" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="572" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <rect x="612" y="450" width="22" height="110" fill="#f5f7fa"/>
+  <line x1="372" y1="280" x2="392" y2="330" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="392" y1="330" x2="372" y2="380" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="652" y1="280" x2="632" y2="330" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="632" y1="330" x2="652" y2="380" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="372" y1="620" x2="392" y2="670" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="392" y1="670" x2="372" y2="720" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="652" y1="620" x2="632" y2="670" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <line x1="632" y1="670" x2="652" y2="720" stroke="#f5f7fa" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="330" cy="505" r="18" fill="#f0a500"/>
+  <circle cx="694" cy="505" r="18" fill="#f0a500"/>
+  <circle cx="340" cy="480" r="14" fill="#929aa4"/>
+  <rect x="410" y="714" width="52" height="92" fill="#1d70b8"/>
+  <line x1="436" y1="700" x2="436" y2="595" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="436" y1="595" x2="455" y2="623" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="436" y1="595" x2="417" y2="623" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+</svg>
