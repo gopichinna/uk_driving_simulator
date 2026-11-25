@@ -45,16 +45,16 @@ Tick each box with a one-line note (commit hash or what changed).
 - [x] B3. Pytest: the file validates, and if it's verified, it has a gov.uk https URL. (`pipeline/tests/test_test_marking.py`)
 
 ## C. UI strings for the debrief, settings and HUD (needed by Claude now)
-- [ ] C1. Extend `strings.v0` **additively** (pre-agreed) with a third `oneOf` branch: `kind: "ui"` and an `entries` object of `key → string`. Keys match `^[a-z0-9_]+(\.[a-z0-9_]+)+$`, and placeholders use ICU MessageFormat.
-- [ ] C2. `content/countries/gb/strings/en/ui.json` with at least these keys (Claude's code will read exactly these):
+- [x] C1. Extend `strings.v0` **additively** (pre-agreed) with a third `oneOf` branch: `kind: "ui"` and an `entries` object of `key → string`. Keys match `^[a-z0-9_]+(\.[a-z0-9_]+)+$`, and placeholders use ICU MessageFormat.
+- [x] C2. `content/countries/gb/strings/en/ui.json` with at least these keys (Claude's code will read exactly these): (All 29 required keys added.)
   - `hud.finish_drive`, `hud.reset`, `hud.course`, `hud.view_seat`, `hud.view_chase`, `hud.settings`
   - `debrief.title`, `debrief.no_faults`, `debrief.tap_to_replay`, `debrief.replay_close`
   - `debrief.count.driving` (e.g. "{count, plural, one {# minor fault} other {# minor faults}}"), `debrief.count.serious`, `debrief.count.dangerous`, `debrief.count.good`
   - `debrief.result.pass`, `debrief.result.fail`, `debrief.result.note` (a short note that this is practice, not a real test)
   - `settings.title`, `settings.steering.label`, `settings.steering.hint`, `settings.units.hint` (the mph and km/h hint), `settings.reset_progress.label`, `settings.reset_progress.confirm`, `settings.close`
   - `course.town`, `course.two_lane_roundabout`, `course.roundabout`, `course.dual_carriageway`, `course.wolverhampton_beta`
-- [ ] C3. The readability linter covers `ui.json`, and its tests prove that every key in the list above exists.
-- [ ] C4. Pseudo-locale for layout testing: generate `content/countries/gb/strings/en-XA/` from the `en` files. Make every string about 40% longer, with accented letters, and keep the placeholders intact. CI regenerates it and fails on any diff.
+- [x] C3. The readability linter covers `ui.json`, and its tests prove that every key in the list above exists. (`readability.py` + `test_required_ui_keys_and_pseudolocale`.)
+- [x] C4. Pseudo-locale for layout testing: generate `content/countries/gb/strings/en-XA/` from the `en` files. Make every string about 40% longer, with accented letters, and keep the placeholders intact. CI regenerates it and fails on any diff. (`pseudolocale.py` + CI diff check.)
 
 ## D. Lessons for Stages 3–5 (data only)
 - [ ] D1. `content/lessons/gb/11-…` onwards, about 8 lessons:

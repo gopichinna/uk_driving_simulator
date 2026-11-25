@@ -1,0 +1,645 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en-XA",
+  "kind": "rules",
+  "rules": {
+    "GB.OBS.MOVE_OFF_CHECKS": {
+      "title": "[Móvé óff sáfély ~~~~~~]",
+      "fault": "[Yóú móvéd óff wíthóút léávíng á sáfé gáp. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Tráffíc áppróáchés fást fróm béhínd ón yóúr ríght. Móvíng íntó íts páth fórcés drívérs tó bráké. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck mírrórs ánd yóúr ríght blínd spót béfóré móvíng óff. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd fór á cléár gáp béfóré móvíng óff. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.OBS.MSM": {
+      "title": "[Mírrórs, sígnál, mánóéúvré ~~~~~~~~~~~]",
+      "fault": "[Yóúr mánóéúvré fórcéd ánóthér drívér tó bráké. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fóllówíng drívérs nééd tímé tó réáct tó yóúr spééd ór láné chángé. Súddén móvés créáté réár-énd rísks. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Úsé thé MSM róútíné béfóré chángíng spééd ór díréctíón. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú sígnálléd éárly ánd chángéd spééd smóóthly. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SIG.TIMELY": {
+      "title": "[Sígnál ín góód tímé ~~~~~~~~]",
+      "fault": "[Yóú sígnálléd tóó láté ór léft ít ón. ~~~~~~~~~~~~~~~]",
+      "why": "[Óthér róád úsérs nééd éárly wárníng óf yóúr plán. Á láté sígnál gívés thém nó tímé tó réáct. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Sígnál éárly, thén cáncél ás sóón ás yóú fínísh túrníng. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóúr sígnáls wéré cléár ánd cáncélléd prómptly. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.POS.KEEP_LEFT": {
+      "title": "[Kéép tó thé léft ~~~~~~~]",
+      "fault": "[Yóú dróvé ón thé wróng sídé óf thé róád. ~~~~~~~~~~~~~~~~]",
+      "why": "[Ín thé ÚK, tráffíc stáys ón thé léft láné. Drívíng ón thé ríght rísks á héád-ón crásh. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stáy ón thé léft únléss óvértákíng ór pássíng án óbstrúctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt á stéády pósítíón ón thé léft. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.POS.AFTER_TURN": {
+      "title": "[Fínísh túrn ón léft ~~~~~~~~]",
+      "fault": "[Yóú éndéd yóúr túrn ín thé ríght láné. ~~~~~~~~~~~~~~~~]",
+      "why": "[Túrníng íntó thé óppósíng láné púts yóú ín óncómíng tráffíc. Álwáys áím fór thé néársídé hálf óf thé néw róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Lóók íntó thé léft láné óf thé sídé róád ás yóú túrn. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú túrnéd cléánly íntó thé léft láné. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.OVER_LIMIT": {
+      "title": "[Spééd límít éxcéédéd ~~~~~~~~]",
+      "fault": "[Yóú dróvé át {speedMph} mph ín á {limitMph} mph límít. ~~~~~~~~~~~~~~]",
+      "why": "[Híghér spééds íncréásé yóúr stóppíng dístáncé ánd crásh hárm. Yóú múst névér éxcééd thé póstéd spééd límít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck yóúr spéédómétér ánd wátch fór néw límít sígns. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt wíthín thé {limitMph} mph spééd límít. ~~~~~~~~~~~~~~~]"
+    },
+    "GB.GAP.TWO_SECOND": {
+      "title": "[Twó-sécónd fóllówíng gáp ~~~~~~~~~~]",
+      "fault": "[Yóúr gáp dróppéd tó {gapS} sécónds. ~~~~~~~~~~~~]",
+      "why": "[Táílgátíng léávés tóó líttlé tímé tó stóp íf tráffíc slóws. Kéép át léást á twó-sécónd gáp ón fástér róáds. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Píck á róádsídé márkér ánd cóúnt twó sécónds béhínd thé cár áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú máíntáínéd á sáfé fóllówíng gáp. ~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.GIVE_WAY": {
+      "title": "[Gívé wáy át júnctíón ~~~~~~~~]",
+      "fault": "[Yóú púlléd óút ánd fórcéd príóríty tráffíc tó bráké. ~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Yóú múst gívé wáy tó tráffíc ón thé májór róád. Éntéríng á tíght gáp púts évéryóné át rísk. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít úntíl bóth lánés áré cléár béfóré émérgíng. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú júdgéd thé gáp wéll ánd gávé wáy sáfély. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.H2_PEDESTRIANS": {
+      "title": "[Gívé wáy tó pédéstríáns ~~~~~~~~~~]",
+      "fault": "[Yóú díd nót gívé wáy tó á wáítíng pédéstríán. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Úndér H2, péóplé cróssíng ór wáítíng át á júnctíón hávé príóríty. Túrníng ácróss thém púts thém ín dángér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn béfóré túrníng ánd lét pédéstríáns cróss thé sídé róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd pátíéntly fór pédéstríáns tó cróss. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.TURN_FAR_GAP": {
+      "title": "[Wáít fór sáfé gáp ~~~~~~~]",
+      "fault": "[Yóú túrnéd ríght ácróss óncómíng tráffíc. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Óncómíng véhíclés hávé príóríty whén yóú túrn ácróss théír láné. Mísjúdgíng théír spééd cán cáúsé á sídé ímpáct. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít úntíl óncómíng tráffíc ís fár énóúgh áwáy tó túrn sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd fór á sáfé gáp béfóré túrníng ríght. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.RED": {
+      "title": "[Stóp ón réd ~~~~~]",
+      "fault": "[Yóú crósséd thé stóp líné ón réd. ~~~~~~~~~~~~~~]",
+      "why": "[Á réd líght méáns óthér tráffíc ór pédéstríáns hávé á gréén sígnál. Yóú múst stóp béhínd thé whíté stóp líné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Scán tráffíc líghts éárly só yóú cán bráké smóóthly. ~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stóppéd cléánly béhínd thé whíté líné ón réd. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.AMBER": {
+      "title": "[Stóp ón ámbér ~~~~~~]",
+      "fault": "[Yóú dróvé thróúgh ámbér whén yóú cóúld stóp. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ámbér méáns stóp únléss yóú áré tóó clósé tó stóp sáfély. Yóú múst nót tréát ámbér ás á láté gréén. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Éásé óff thé thróttlé whén á líght hás béén gréén fór á whílé. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stóppéd sáfély whén thé líght túrnéd ámbér. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.GIVE_WAY_RIGHT": {
+      "title": "[Gívé wáy tó ríght ~~~~~~~]",
+      "fault": "[Yóú éntéréd thé róúndábóút áhéád óf ríght-sídé tráffíc. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Tráffíc álréády ón thé róúndábóút áppróáchés fróm yóúr ríght. Yóú múst gívé wáy át thé brókén línés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Lóók ríght éárly ánd wáít fór á cléár gáp béfóré jóíníng. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú gávé wáy tó círcúlátíng tráffíc fróm thé ríght. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.APPROACH_LANE": {
+      "title": "[Chóósé róúndábóút láné ~~~~~~~~~]",
+      "fault": "[Yóú áppróáchéd thé róúndábóút ín thé wróng láné. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé wróng láné fórcés láté láné chángés ón thé róúndábóút. Fóllów láné árróws ánd chóósé léft fór léft ór ríght fór ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck láné árróws éárly ás yóú áppróách thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú píckéd thé ríght láné béfóré réáchíng thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.SIGNAL_APPROACH": {
+      "title": "[Sígnál béfóré róúndábóút ~~~~~~~~~~]",
+      "fault": "[Yóúr róúndábóút áppróách sígnál wás míssíng ór wróng. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Óthér drívérs rély ón yóúr sígnál tó réád yóúr éxít. Sígnál léft fór léft éxíts ánd ríght fór éxíts pást stráíght áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Sígnál cléárly béfóré thé gívé-wáy líné whén túrníng. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóúr áppróách sígnál mátchéd yóúr chósén éxít. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.SIGNAL_EXIT": {
+      "title": "[Sígnál tó léávé róúndábóút ~~~~~~~~~~~]",
+      "fault": "[Yóú díd nót sígnál léft béfóré éxítíng. ~~~~~~~~~~~~~~~~]",
+      "why": "[Wáítíng drívérs nééd tó knów yóú áré léávíng thé róúndábóút. Wíthóút á léft sígnál, tráffíc béhínd ánd áhéád ís déláyéd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Sígnál léft ríght áftér yóú páss thé éxít béfóré yóúrs. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú sígnálléd léft ín góód tímé béfóré éxítíng. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.WRONG_WAY": {
+      "title": "[Círcúláté clóckwísé ~~~~~~~~]",
+      "fault": "[Yóú trávélléd ántí-clóckwísé áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ín thé ÚK, áll róúndábóúts flów clóckwísé áróúnd thé íslánd. Yóú múst névér túrn ríght díréctly íntó óncómíng róúndábóút tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Kéép thé céntrál íslánd ón yóúr ríght át évéry róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú círcúlátéd clóckwísé áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.ZEBRA": {
+      "title": "[Stóp át zébrá cróssíng ~~~~~~~~~]",
+      "fault": "[Yóú fáíléd tó gívé wáy át thé zébrá cróssíng. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Yóú múst stóp óncé sóméóné stéps óntó á zébrá cróssíng. Slówíng fór wáítíng péóplé kééps évéryóné sáfé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck bóth pávéménts ás yóú áppróách thé fláshíng órángé béácóns. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stóppéd smóóthly tó lét pédéstríáns cróss. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.VRU.PASS_CYCLIST": {
+      "title": "[Léávé róóm fór cyclísts ~~~~~~~~~~]",
+      "fault": "[Yóú pásséd á cyclíst wíth ónly {clearanceM} m spácé. ~~~~~~~~~~~~~~~~]",
+      "why": "[Cyclísts máy swérvé tó ávóíd dráíns ór póthólés. Léávé át léást 1.5 m úp tó 30 mph ánd móré át híghér spééds. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít béhínd thé cyclíst íf óncómíng tráffíc prévénts á wídé páss. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú gávé thé cyclíst plénty óf róóm whén pássíng. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SCH.CHILD_STEPS_OUT": {
+      "title": "[Wátch fór híddén házárds ~~~~~~~~~~]",
+      "fault": "[Yóú wéré tóó fást pást párkéd cárs. ~~~~~~~~~~~~~~]",
+      "why": "[Chíldrén cán stép óút únséén fróm bétwéén párkéd véhíclés. Lówér spééd gívés yóú tímé tó stóp sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn ánd scán úndér ánd bétwéén párkéd cárs. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt á sáfé spééd ánd stóppéd ín tímé. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.JOIN": {
+      "title": "[Jóín mótórwáy sáfély ~~~~~~~~]",
+      "fault": "[Yóú jóínéd thé mótórwáy tóó slówly ór crósséd sólíd línés. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Tráffíc ón thé máín cárríágéwáy móvés múch fástér. Yóú múst gívé wáy ánd mátch íts spééd ón thé slíp róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Úsé thé fúll slíp róád tó mátch spééd ánd mérgé íntó á gáp. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mátchéd spééd ánd mérgéd smóóthly íntó láné óné. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.RED_X": {
+      "title": "[Óbéy réd X sígnáls ~~~~~~~~]",
+      "fault": "[Yóú dróvé ín á láné clóséd by á réd X. ~~~~~~~~~~~~~~~~]",
+      "why": "[Á réd X clósés thé láné fór strándéd cárs ór wórkérs áhéád. Yóú múst móvé tó án ópén láné ór stóp. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wátch óvérhéád gántríés ánd léávé clóséd lánés éárly. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú móvéd óút óf thé clóséd láné prómptly. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.OBS.LANE_CHANGE": {
+      "title": "[Sáfé láné chángé ~~~~~~~]",
+      "fault": "[Yóú chángéd lánés íntó ánóthér véhíclé's páth. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Á cár cán hídé ín yóúr blínd spót bésídé yóúr réár qúártér. Móvíng óvér tóó sóón fórcés óthér drívérs tó bráké hárd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck mírrórs, lóók óvér yóúr shóúldér, sígnál, thén móvé smóóthly. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú chéckéd yóúr blínd spót ánd chángéd lánés smóóthly. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SIG.MISLEADING": {
+      "title": "[Ávóíd mísléádíng sígnáls ~~~~~~~~~~]",
+      "fault": "[Yóúr índícátór mísléd ánóthér drívér. ~~~~~~~~~~~~~~~]",
+      "why": "[Á wróng ór éárly sígnál cán témpt sídé-róád tráffíc tó púll óút. Máké súré yóúr sígnál mátchés yóúr réál páth. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Ónly sígnál áftér pássíng sídé róáds yóú áré nót tákíng. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóúr sígnáls wéré cléár ánd névér mísléd ányóné. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.POS.LANE_FOR_ROUTE": {
+      "title": "[Fóllów láné árróws ~~~~~~~~]",
+      "fault": "[Yóú tóók á róúté thát bróké láné árróws. ~~~~~~~~~~~~~~~~]",
+      "why": "[Láné árróws sórt tráffíc sáfély thróúgh búsy júnctíóns. Láté láné swáps óvér sólíd línés cáúsé súddén cónflícts. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Réád óvérhéád sígns ánd róád árróws wéll béfóré thé júnctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú chósé thé ríght láné éárly ánd fóllówéd árróws. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.POS.DUAL_KEEP_LEFT": {
+      "title": "[Kéép léft ón dúál cárríágéwáy ~~~~~~~~~~~~]",
+      "fault": "[Yóú stáyéd ín thé ríght láné wíthóút óvértákíng. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ón á twó-láné dúál cárríágéwáy, thé ríght láné ís fór óvértákíng ór túrníng ríght. Hóggíng ít blócks fástér tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Móvé báck tó thé léft láné óncé yóúr óvértáké ís cómplété. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú rétúrnéd tó thé léft láné áftér óvértákíng. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.NATIONAL_LIMIT": {
+      "title": "[Nátíónál spééd límít ~~~~~~~~]",
+      "fault": "[Yóú dróvé át {speedMph} mph ábóvé thé {limitMph} mph nátíónál límít. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé nátíónál límít ís 60 mph ón sínglé cárríágéwáys, ór 70 mph ón dúál cárríágéwáys. Yóú múst stáy wíthín ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck whéthér thé róád hás á céntrál bárríér tó knów thé límít. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mátchéd thé córréct nátíónál spééd límít. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.BUILT_UP": {
+      "title": "[Búílt-úp spééd límít ~~~~~~~~]",
+      "fault": "[Yóú éxcéédéd thé {limitMph} mph búílt-úp límít. ~~~~~~~~~~~~~~~]",
+      "why": "[Búílt-úp strééts áré 30 mph ín Énglánd ánd Scótlánd, ánd 20 mph ín Wálés. Yóú múst óbéy thé lócál límít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Rémémbér thé 20 mph défáúlt whén éntéríng Wélsh tówns. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú réspéctéd thé búílt-úp áréá spééd límít. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.STREET_LIGHTING": {
+      "title": "[Stréét líghts méán búílt-úp ~~~~~~~~~~~]",
+      "fault": "[Yóú mísséd thé búílt-úp spééd límít cúé. ~~~~~~~~~~~~~~~~]",
+      "why": "[Régúlár stréét líghts wíth nó répéátér sígns méán thé búílt-úp límít ápplíés. Wátch fór thé chángé whén éntéríng á tówn. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Lóók fór stréét líghts ás á cúé tó chéck yóúr spééd. ~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú spóttéd thé stréét líghts ánd ádjústéd yóúr spééd. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.APPROPRIATE": {
+      "title": "[Drívé tó thé cóndítíóns ~~~~~~~~~~]",
+      "fault": "[Yóúr spééd óf {speedMph} mph wás tóó fást fór cóndítíóns. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé spééd límít ís á máxímúm, nót á tárgét. Wét róáds, bénds, ánd dárk strééts réqúíré éxtrá stóppíng dístáncé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Álwáys bé áblé tó stóp wíthín thé dístáncé yóú cán séé áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mátchéd yóúr spééd sáfély tó thé róád cóndítíóns. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.PROGRESS": {
+      "title": "[Máké sáfé prógréss ~~~~~~~~]",
+      "fault": "[Yóú héld úp tráffíc ón á cléár róád. ~~~~~~~~~~~~~~~]",
+      "why": "[Drívíng múch slówér thán sáfé tráffíc spééd frústrátés drívérs béhínd. Ít cán cáúsé rísky óvértákés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Kéép úp wíth sáfé tráffíc flów whén thé róád áhéád ís cléár. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mádé smóóth, cónfídént prógréss. ~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.WORKS_TEMP": {
+      "title": "[Róádwórks spééd límít ~~~~~~~~~]",
+      "fault": "[Yóú dróvé át {speedMph} mph ín á {limitMph} mph róádwórks zóné. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Róádwórks hávé nárrów lánés ánd wórkérs clósé tó tráffíc. Yóú múst óbéy évéry témpóráry spééd límít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn béfóré éntéríng thé cónéd róádwórks áréá. ~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt tó thé témpóráry róádwórks límít. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SPD.VARIABLE": {
+      "title": "[Óbéy váríáblé spééd límíts ~~~~~~~~~~~]",
+      "fault": "[Yóú éxcéédéd thé {limitMph} mph gántry spééd límít. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Réd-círclé gántry sígns sét légál límíts tó prévént qúéúés áhéád. Yóú múst slów dówn béfóré pássíng thé sígn. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck évéry óvérhéád gántry fór réd-círclé spééd chángés. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú ádjústéd prómptly tó thé gántry spééd límít. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.GAP.STOPPING_TABLE": {
+      "title": "[Knów stóppíng dístáncés ~~~~~~~~~~]",
+      "fault": "[Yóúr stóppíng dístáncé éxcéédéd thé cléár gáp. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stóppíng dístáncé gróws qúíckly wíth spééd. Át 70 mph ít tákés ábóút 96 métrés tó stóp ín dry wéáthér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Léávé móré spácé ás yóúr spééd rísés. ~~~~~~~~~~~~~~~]",
+      "good": "[Yóú léft énóúgh róóm tó stóp smóóthly. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.GAP.CUT_IN": {
+      "title": "[Réstóré gáp áftér cút-ín ~~~~~~~~~~]",
+      "fault": "[Yóú stáyéd tóó clósé áftér á cár cút ín. ~~~~~~~~~~~~~~~~]",
+      "why": "[Whén ánóthér cár fílls yóúr spácé, yóúr stóppíng márgín dísáppéárs. Éásé óff géntly tó rébúíld yóúr twó-sécónd gáp. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Líft óff thé thróttlé whén sóméóné mérgés ín frónt óf yóú. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú dróppéd báck cálmly tó réstóré yóúr gáp. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.STOP_SIGN": {
+      "title": "[Stóp át Stóp sígn ~~~~~~~]",
+      "fault": "[Yóú rólléd pást thé Stóp sígn líné. ~~~~~~~~~~~~~~]",
+      "why": "[Stóp sígns sít át júnctíóns wíth véry póór vísíbílíty. Yóú múst bríng áll whééls tó á fúll stóp át thé sólíd líné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stóp cómplétély át thé líné, thén lóók bóth wáys béfóré móvíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú cámé tó á cómplété stóp át thé líné. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.H3_CYCLISTS": {
+      "title": "[Dó nót cút ácróss cyclísts ~~~~~~~~~~~]",
+      "fault": "[Yóú túrnéd ácróss á cyclíst góíng stráíght áhéád. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Úndér H3, cyclísts góíng áhéád hávé príóríty óvér túrníng tráffíc. Cúttíng ácróss théír páth cáúsés séríóús cóllísíóns. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck yóúr néársídé mírrór ánd wáít fór cyclísts béfóré túrníng léft. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú lét thé cyclíst páss béfóré mákíng yóúr túrn. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.BOX": {
+      "title": "[Kéép bóx júnctíóns cléár ~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ínsídé thé yéllów bóx júnctíón. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Blóckíng á bóx júnctíón tráps cróssíng tráffíc whén líghts chángé. Yóú múst nót éntér únléss yóúr éxít róád ís cléár. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít béhínd thé yéllów gríd úntíl spácé ópéns béyónd ít. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd úntíl yóúr éxít wás cléár béfóré éntéríng. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.TURN_FAR_POSITION": {
+      "title": "[Pósítíón fór ríght túrn ~~~~~~~~~~]",
+      "fault": "[Yóúr róád pósítíón fór túrníng ríght wás póór. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stáyíng néár thé céntré líné léts tráffíc páss sáfély ón yóúr léft. Ít álsó gívés yóú á cléárér víéw áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Móvé júst léft óf thé céntré líné whílé kéépíng whééls stráíght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú pósítíónéd néátly néár thé céntré líné. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.TURN_NEAR": {
+      "title": "[Kéép léft túrníng léft ~~~~~~~~~]",
+      "fault": "[Yóú swúng wídé ór crósséd án áctívé láné. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Swíngíng óút wídé cán súrprísé tráffíc bésídé yóú. Kéép clósé tó thé léft kérb ánd gívé wáy tó bús ór cyclé lánés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn éárly só yóú cán túrn tíghtly áróúnd thé léft córnér. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt clósé tó thé léft thróúgh thé túrn. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.JCT.EMERGE_LOOK": {
+      "title": "[Créép ánd lóók cáréfúlly ~~~~~~~~~~]",
+      "fault": "[Yóú émérgéd tóó fást át á blínd júnctíón. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Wálls ór párkéd cárs cán hídé fást áppróáchíng tráffíc. Hígh spééd léávés nó tímé tó stóp íf thé róád ís búsy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów ríght dówn ánd créép fórwárd úntíl yóú cán séé cléárly. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú crépt fórwárd cáréfúlly át thé blínd júnctíón. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.RED_AMBER": {
+      "title": "[Wáít fór gréén ~~~~~~]",
+      "fault": "[Yóú crósséd thé líné ón réd ánd ámbér. ~~~~~~~~~~~~~~~~]",
+      "why": "[Réd ánd ámbér tógéthér méán gét réády, nót gó. Yóú múst wáít béhínd thé stóp líné úntíl gréén áppéárs. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stáy stóppéd úntíl thé gréén líght cómés ón. ~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd úntíl thé líght túrnéd gréén. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.NO_TURN_ON_RED": {
+      "title": "[Nó túrníng ón réd ~~~~~~~]",
+      "fault": "[Yóú túrnéd léft ón á réd líght. ~~~~~~~~~~~~~]",
+      "why": "[Únlíké sómé cóúntríés, thé ÚK hás nó túrn ón réd. Yóú múst wáít át thé whíté líné fór á gréén líght. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Álwáys stóp ánd wáít ón réd évén whén túrníng léft. ~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd fór gréén béfóré túrníng léft. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.CLEAR_JUNCTION": {
+      "title": "[Dó nót blóck júnctíón ~~~~~~~~~]",
+      "fault": "[Yóú éntéréd ón gréén ánd blóckéd thé júnctíón. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Íf yóúr éxít ís blóckéd, yóú wíll tráp cróss tráffíc whén líghts chángé. Yóú múst ónly éntér whén yóú cán cléár thé júnctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Hóld báck át thé gréén líght íf tráffíc áhéád ís qúéúéd. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt thé júnctíón cléár ín héávy tráffíc. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.FILTER_ARROW": {
+      "title": "[Fóllów gréén fíltér árrów ~~~~~~~~~~]",
+      "fault": "[Yóú wént ágáínst thé gréén fíltér árrów. ~~~~~~~~~~~~~~~~]",
+      "why": "[Á gréén fíltér árrów ónly pérmíts tráffíc ín thé árrów díréctíón. Yóú múst wáít fór thé máín gréén fór óthér róútés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck whích láné ánd díréctíón thé gréén árrów póínts tó. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú fóllówéd thé fíltér árrów córréctly. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.TL.ASL": {
+      "title": "[Stóp béfóré cyclíst bóx ~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ínsídé thé cyclíst wáítíng bóx. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé ÁSL bóx gívés cyclísts á sáfé héád stárt át líghts. Ón réd ór ámbér, yóú múst stóp át thé fírst whíté líné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stóp béhínd thé fírst líné whénévér yóú séé á bíké bóx. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú léft thé ÁSL bóx cléár fór cyclísts. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.STAY_IN_LANE": {
+      "title": "[Stáy ín róúndábóút láné ~~~~~~~~~~]",
+      "fault": "[Yóú dríftéd ácróss lánés ón thé róúndábóút. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cróssíng lánés míd-róúndábóút súrprísés cárs bésídé yóú. Fóllów spírál róád márkíngs áll thé wáy tó yóúr éxít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Kéép ínsídé yóúr márkéd láné úntíl yóú éxít. ~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú héld yóúr láné cléánly áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.CYCLISTS": {
+      "title": "[Gívé cyclísts róúndábóút spácé ~~~~~~~~~~~~]",
+      "fault": "[Yóú cút ácróss á cyclíst ón thé róúndábóút. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cyclísts máy stáy ín thé léft láné évén whén túrníng ríght. Gívé thém spácé ánd névér cút ácróss thém át éxíts. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck yóúr néársídé fór cyclísts béfóré éxítíng á róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú gávé thé cyclíst plénty óf róóm ón thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.MINI": {
+      "title": "[Gó áróúnd míní-róúndábóút ~~~~~~~~~~]",
+      "fault": "[Yóú dróvé stráíght óvér thé míní-róúndábóút círclé. ~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Yóú múst drívé áróúnd thé páíntéd whíté círclé, nót óvér ít. Cúttíng ácróss cónfúsés óthér drívérs ánd rísks cóllísíóns. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stéér áróúnd thé whíté dísc ánd ávóíd Ú-túrns. ~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stééréd cléánly áróúnd thé míní-róúndábóút. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.RBT.DOUBLE_MINI": {
+      "title": "[Tréát éách míní sépárátély ~~~~~~~~~~~]",
+      "fault": "[Yóú fáíléd tó gívé wáy át thé sécónd míní-róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Dóúblé míní-róúndábóúts wórk ás twó sépáráté júnctíóns. Gívé wáy tó tráffíc fróm thé ríght át éách whíté círclé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Rését yóúr scán ánd lóók ríght ágáín át thé sécónd círclé. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú hándléd bóth míní-róúndábóúts sáfély. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.PELICAN_AMBER": {
+      "title": "[Yíéld ón fláshíng ámbér ~~~~~~~~~~]",
+      "fault": "[Yóú éntéréd á pélícán cróssíng wíth sóméóné stíll ón ít. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fláshíng ámbér méáns yóú múst gívé wáy tó ányóné stíll cróssíng. Drívé ón ónly óncé thé cróssíng ís cómplétély cléár. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít úntíl thé lást pédéstríán réáchés thé kérb ón fláshíng ámbér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú wáítéd úntíl thé pélícán cróssíng wás cléár. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.LIGHT_CROSSINGS": {
+      "title": "[Óbéy cróssíng sígnáls ~~~~~~~~~]",
+      "fault": "[Yóú dróvé thróúgh á réd cróssíng sígnál. ~~~~~~~~~~~~~~~~]",
+      "why": "[Púffín ánd tóúcán cróssíngs úsé stándárd tráffíc líghts wíth nó fláshíng ámbér. Yóú múst stóp ón réd ánd wáít fór gréén. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stóp béhínd thé whíté líné whénévér cróssíng líghts túrn réd. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú óbéyéd thé cróssíng líghts cléánly. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.ZIGZAG_OVERTAKE": {
+      "title": "[Nó óvértákíng ón zíg-zágs ~~~~~~~~~~]",
+      "fault": "[Yóú óvértóók ínsídé thé cróssíng zíg-zág línés. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Á stóppéd cár néár á cróssíng hídés péóplé stéppíng óút. Yóú múst nót óvértáké thé léádíng véhíclé ín thé zíg-zág zóné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stáy béhínd tráffíc ón whíté zíg-zág línés. ~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú héld báck sáfély thróúgh thé zíg-zág zóné. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.KEEP_CLEAR": {
+      "title": "[Kéép cróssíngs cléár ~~~~~~~~]",
+      "fault": "[Yóú stóppéd ón thé pédéstríán cróssíng ín á qúéúé. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stóppíng ón á cróssíng blócks pédéstríáns ánd hídés thém fróm víéw. Wáít béfóré thé cróssíng úntíl spácé ópéns áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Chéck thát tráffíc áhéád hás róóm béfóré róllíng óntó á cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt thé cróssíng cléár ín qúéúíng tráffíc. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.XNG.SCHOOL_PATROL": {
+      "title": "[Stóp fór schóól pátról ~~~~~~~~~]",
+      "fault": "[Yóú dróvé pást á ráíséd schóól pátról sígn. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Schóól cróssíng pátróls prótéct chíldrén cróssíng búsy róáds. Yóú múst stóp whénévér théy shów thé stóp sígn. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wátch fór schóól pátróls ín bríght cóáts néár schóóls. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stóppéd prómptly fór thé schóól cróssíng pátról. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.VRU.HIERARCHY": {
+      "title": "[Prótéct vúlnéráblé róád úsérs ~~~~~~~~~~~~]",
+      "fault": "[Yóú pút á móré vúlnéráblé róád úsér át rísk. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Úndér H1, drívérs cárry gréátér réspónsíbílíty thán pédéstríáns ánd cyclísts. Álwáys gívé éxtrá spácé ánd tímé tó péóplé óútsídé cárs. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Gívé wáy généróúsly tó pédéstríáns, cyclísts, ánd hórsé rídérs. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú shówéd gréát cáré fór vúlnéráblé róád úsérs. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.VRU.CYCLE_LANE_SOLID": {
+      "title": "[Sólíd-líné cyclé láné ~~~~~~~~~]",
+      "fault": "[Yóú dróvé ínsídé á sólíd-líné cyclé láné. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Á sólíd whíté líné márks á prótéctéd cyclé láné dúríng íts hóúrs. Yóú múst nót drívé ór párk ínsídé ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Stáy tó thé ríght óf sólíd whíté cyclé láné línés. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt cléár óf thé sólíd-líné cyclé láné. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.VRU.CYCLE_LANE_BROKEN": {
+      "title": "[Ávóíd brókén cyclé láné ~~~~~~~~~~]",
+      "fault": "[Yóú éntéréd á brókén-líné cyclé láné únnécéssáríly. ~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Brókén-líné cyclé lánés kéép cyclísts sáfé ín búsy tráffíc. Dó nót drívé ín thém únléss ít ís únávóídáblé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Kéép óút óf brókén cyclé lánés únléss pássíng án óbstrúctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú léft thé cyclé láné cléár fór rídérs. ~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.VRU.CHILDREN": {
+      "title": "[Éxpéct chíldrén néár róáds ~~~~~~~~~~~]",
+      "fault": "[Yóú dróvé tóó fást néár chíldrén ór pédéstríáns. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Chíldrén cán áct súddénly ánd mísjúdgé tráffíc spééd. Híttíng sóméóné át 20 mph ís fár léss fátál thán át 30 mph. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Slów dówn ánd wátch clósély néár párks, shóps, ánd schóóls. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú slówéd dówn ánd wátchéd cáréfúlly fór chíldrén. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.BUS.LANE_HOURS": {
+      "title": "[Réspéct bús láné hóúrs ~~~~~~~~~]",
+      "fault": "[Yóú dróvé ín án áctívé bús láné. ~~~~~~~~~~~~~]",
+      "why": "[Bús lánés kéép públíc tránspórt móvíng dúríng péák tímés. Chéck thé blúé sígn fór ópérátíng hóúrs béfóré éntéríng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Réád thé tímé pláté ón thé blúé bús láné sígn. ~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd óút óf thé bús láné dúríng áctívé hóúrs. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SCH.SLOW": {
+      "title": "[Slów néár schóóls ~~~~~~~]",
+      "fault": "[Yóú dróvé tóó fást pást á fláshíng schóól sígn. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fláshíng ámbér líghts úndér á schóól sígn méán chíldrén máy bé cróssíng. Drívé véry slówly ánd prépáré tó stóp. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Dróp tó 20 mph ór léss whén schóól wárníng líghts flásh. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú slówéd dówn sáfély pást thé schóól. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.SCH.KEEP_CLEAR": {
+      "title": "[Kéép schóól éntráncé cléár ~~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ón schóól kéép-cléár zíg-zágs. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Párkéd cárs blóck síghtlínés fór chíldrén cróssíng óútsídé schóóls. Yóú múst nót stóp ón yéllów zíg-zágs whén sígns próhíbít ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Névér stóp ór dróp óff ón yéllów schóól zíg-zágs. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt thé schóól éntráncé zíg-zágs cléár. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.EMG.LET_PASS": {
+      "title": "[Máké wáy sáfély ~~~~~~]",
+      "fault": "[Yóú blóckéd án émérgéncy véhíclé ór bróké á rúlé. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Émérgéncy véhíclés nééd róóm tó páss qúíckly. Hówévér, névér rún réd líghts ór móúnt kérbs tó cléár thé wáy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Púll óvér sáfély whén légál wíthóút bréákíng óthér tráffíc rúlés. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mádé róóm sáfély ánd légálly fór thé ámbúláncé. ~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.OVT.UNSAFE_PLACE": {
+      "title": "[Dó nót óvértáké blínd ~~~~~~~~~]",
+      "fault": "[Yóú óvértóók whéré vísíbílíty wás tóó shórt. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Bénds, híll bróws, ánd júnctíóns hídé óncómíng tráffíc. Stártíng á páss blínd rísks á sévéré héád-ón cóllísíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít fór á lóng, cléár stráíght wíth nó júnctíóns áhéád. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú héld báck úntíl thé róád áhéád wás cléár. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.OVT.DOUBLE_WHITE": {
+      "title": "[Óbéy sólíd dóúblé whíté línés ~~~~~~~~~~~~]",
+      "fault": "[Yóú crósséd á sólíd whíté céntré líné. ~~~~~~~~~~~~~~~~]",
+      "why": "[Sólíd línés márk strétchés whéré óvértákíng ís únsáfé. Yóú múst nót cróss únléss túrníng óff ór pássíng tráffíc át 10 mph ór léss. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít úntíl thé líné néárést yóú bécómés brókén béfóré óvértákíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd ón yóúr sídé óf thé sólíd whíté líné. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.OVT.INTO_LANE": {
+      "title": "[Nó óvértákíng íntó bús lánés ~~~~~~~~~~~~]",
+      "fault": "[Yóú óvértóók by éntéríng án áctívé bús ór cyclé láné. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Bús ánd cyclé lánés áré résérvéd fór spécífíc róád úsérs. Yóú múst nót éntér thém tó óvértáké slówér tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít béhínd úntíl ít ís sáfé tó páss ón thé ríght. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd óút óf résérvéd lánés whílé óvértákíng. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.LEARNERS": {
+      "title": "[Mótórwáy rúlés fór léárnérs ~~~~~~~~~~~]",
+      "fault": "[Léárnérs nééd án ÁDÍ ón mótórwáys. ~~~~~~~~~~~~~~]",
+      "why": "[Hígh-spééd mótórwáy drívíng réqúírés éxpéríéncé. Léárnér drívérs múst ónly drívé ón mótórwáys wíth án ÁDÍ ín á dúál-cóntról cár. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Bóók mótórwáy léssóns wíth án ÁDÍ béfóré drívíng théré sóló. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú fóllówéd thé léárnér mótórwáy réqúírémént. ~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.KEEP_LEFT": {
+      "title": "[Kéép léft ón mótórwáys ~~~~~~~~~]",
+      "fault": "[Yóú stáyéd ín án óútér mótórwáy láné néédléssly. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Míddlé-láné hóggíng fórcés tráffíc tó chángé lánés twícé tó páss. Stáy ín thé léft láné únléss yóú áré óvértákíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Móvé báck léft whénévér théré ís á cléár gáp ín láné óné. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú rétúrnéd prómptly tó thé léft mótórwáy láné. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.OVERTAKE_RIGHT": {
+      "title": "[Óvértáké ón thé ríght ~~~~~~~~~]",
+      "fault": "[Yóú óvértóók ón thé léft ón á mótórwáy. ~~~~~~~~~~~~~~~~]",
+      "why": "[Drívérs éxpéct fástér tráffíc tó páss ón théír ríght. Pássíng ón thé léft créátés blínd-spót súrprísés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Álwáys óvértáké ón thé ríght ánd móvé báck léft áftérwárds. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú óvértóók cléánly ón thé ríght. ~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.NO_UNDERTAKE": {
+      "title": "[Dó nót úndértáké ~~~~~~~]",
+      "fault": "[Yóú pásséd slówér tráffíc ón thé léft. ~~~~~~~~~~~~~~~~]",
+      "why": "[Úndértákíng át spééd ís dángéróús whén drívérs móvé báck léft. Ónly páss ón thé léft ín slów-móvíng qúéúés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít fór thé cár áhéád tó móvé léft ór páss ón thé ríght. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú ávóídéd úndértákíng át spééd. ~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.AMBER_FLASH": {
+      "title": "[Slów fór fláshíng ámbér ~~~~~~~~~~]",
+      "fault": "[Yóú ígnóréd fláshíng ámbér mótórwáy sígnáls. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fláshíng ámbér sígnáls wárn óf á házárd, qúéúé, ór íncídént áhéád. Slów dówn úntíl yóú páss á cléár sígnál ór nátíónál límít sígn. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Éásé óff thé spééd whén gántry ámbér líghts flásh. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú slówéd dówn prómptly fór thé wárníng líghts. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.HARD_SHOULDER": {
+      "title": "[Kéép óff hárd shóúldér ~~~~~~~~~]",
+      "fault": "[Yóú dróvé ón án ínáctívé hárd shóúldér. ~~~~~~~~~~~~~~~~]",
+      "why": "[Thé hárd shóúldér ís fór bréákdówns ánd émérgéncy véhíclés. Yóú múst nót úsé ít únléss á gántry shóws á spééd límít ábóvé ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Ónly úsé thé hárd shóúldér whén óvérhéád sígns ópén ít. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd óff thé clóséd hárd shóúldér. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.EMERGENCY_AREA": {
+      "title": "[Émérgéncy áréás fór émérgéncíés ~~~~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ín án émérgéncy áréá wíthóút án émérgéncy. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Órángé émérgéncy áréás áré lífélínés fór brókén-dówn véhíclés. Yóú múst nót stóp ín óné fór bréáks, cálls, ór díréctíóns. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Úsé mótórwáy sérvícés fór rést stóps, névér émérgéncy áréás. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú léft thé émérgéncy áréá cléár fór émérgéncíés. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.NO_STOP": {
+      "title": "[Névér stóp ín lívé láné ~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ín á lívé mótórwáy láné. ~~~~~~~~~~~~~~~]",
+      "why": "[Tráffíc áppróáchés át 70 mph ánd cánnót stóp qúíckly. Yóú múst névér stóp ón á mótórwáy cárríágéwáy éxcépt ín án émérgéncy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Kéép móvíng tó thé néxt éxít ór sérvícés íf únsúré óf yóúr róúté. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt tráffíc flówíng sáfély ón thé mótórwáy. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.NO_REVERSE": {
+      "title": "[Névér révérsé ón mótórwáys ~~~~~~~~~~~]",
+      "fault": "[Yóú révérséd ór dróvé ágáínst mótórwáy tráffíc. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Révérsíng ór túrníng áróúnd ón á mótórwáy cáúsés cátástróphíc cráshés. Yóú múst drívé ón tó thé néxt júnctíón íf yóú míss yóúr éxít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Íf yóú míss án éxít, stáy cálm ánd táké thé néxt óné. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú cóntínúéd sáfély tó thé néxt éxít. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.LEAVE": {
+      "title": "[Léávé mótórwáy sáfély ~~~~~~~~~]",
+      "fault": "[Yóú sígnálléd láté ór éntéréd thé éxít slíp tóó fást. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Tráffíc béhínd nééds éárly wárníng béfóré yóú léávé. Shárp bénds ón slíp róáds réqúíré á lówér spééd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Sígnál léft át thé 300-yárd márkér ánd bráké ón thé slíp róád. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú sígnálléd éárly ánd slówéd smóóthly ón thé slíp róád. ~~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.MWY.SMART_TYPES": {
+      "title": "[Knów mótórwáy láné typés ~~~~~~~~~~]",
+      "fault": "[Yóú mísréád thé mótórwáy láné láyóút. ~~~~~~~~~~~~~~~]",
+      "why": "[Mótórwáys úsé áll-láné rúnníng, dynámíc hárd shóúldérs, ór cóntrólléd lánés. Knówíng éách typé hélps yóú spót whéré tó stóp ín á bréákdówn. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wátch óvérhéád gántríés tó séé íf thé hárd shóúldér ís ópén. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú réád thé mótórwáy láné láyóút áccúrátély. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.BRK.GO_LEFT": {
+      "title": "[Gó léft, gét sáfé ~~~~~~~]",
+      "fault": "[Yóú díd nót fóllów mótórwáy bréákdówn sáféty stéps. ~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ín á bréákdówn, pút házárds ón ánd réách thé léft ór án émérgéncy áréá. Éxít by thé léft dóór ánd wáít béhínd thé bárríér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Íf stúck ín á lívé láné, kéép séát bélts ón ánd cáll 999. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú móvéd léft, swítchéd házárds ón, ánd gót sáfé. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.BRK.NO_TRIANGLE_MWY": {
+      "title": "[Nó wárníng tríánglé ón mótórwáy ~~~~~~~~~~~~~]",
+      "fault": "[Yóú chósé tó plácé á tríánglé ón á mótórwáy. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Wálkíng álóng á lívé mótórwáy púts yóú át éxtrémé rísk. Névér plácé á wárníng tríánglé ón á mótórwáy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Léávé thé cár by thé léft dóór ánd gét béhínd thé bárríér. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd sáfély béhínd thé bárríér wíthóút wálkíng ón thé róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.BRK.REJOIN": {
+      "title": "[Réjóín mótórwáy sáfély ~~~~~~~~~]",
+      "fault": "[Yóú réjóínéd wíthóút úsíng thé SÓS phóné ór mátchíng spééd. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Fróm án émérgéncy áréá, yóú múst úsé thé SÓS phóné só á láné cán clósé. Fróm á hárd shóúldér, búíld spééd béfóré mérgíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Cáll víá thé órángé SÓS phóné béfóré léávíng án émérgéncy áréá. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú fóllówéd thé sáfé mótórwáy réjóín stéps. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.BRK.SAFE_PLACE": {
+      "title": "[Píck á sáfé bréákdówn spót ~~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ín án únsáfé plácé. ~~~~~~~~~~~~~]",
+      "why": "[Stóppíng ón á bénd ór brów hídés yóúr cár fróm tráffíc. Réách mótórwáy sérvícés ór án émérgéncy áréá íf yóú cán. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Éxít át thé néxt sérvícés íf yóúr cár stárts lósíng pówér. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú fóúnd á sáfé plácé óff thé máín cárríágéwáy. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WRK.NO_LANE_JUMP": {
+      "title": "[Stáy ín róádwórks lánés ~~~~~~~~~~]",
+      "fault": "[Yóú júmpéd qúéúés ór dróvé íntó cónéd áréás. ~~~~~~~~~~~~~~~~~~]",
+      "why": "[Wéávíng ín róádwórks rísks híttíng wórkérs ór cónés. Stáy ín yóúr láné ánd kéép á stéády spééd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Hóld yóúr láné pátíéntly thróúgh cónéd róádwórks. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú stáyéd smóóthly ín láné thróúgh thé róádwórks. ~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WRK.MERGE_IN_TURN": {
+      "title": "[Mérgé ín túrn ~~~~~~]",
+      "fault": "[Yóú blóckéd mérgíng tráffíc ór fórcéd yóúr wáy ín. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Whén lánés clósé át lów spééd, mérgíng ín túrn kééps tráffíc móvíng. Táké túrns pólítély líké á zíp. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Úsé bóth lánés úp tó thé mérgé póínt, thén táké túrns. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú mérgéd smóóthly ín túrn. ~~~~~~~~~~~~]"
+    },
+    "GB.PRK.YELLOW_LINES": {
+      "title": "[Óbéy yéllów párkíng línés ~~~~~~~~~~]",
+      "fault": "[Yóú párkéd ón réstríctéd yéllów línés. ~~~~~~~~~~~~~~~~]",
+      "why": "[Dóúblé yéllów línés méán nó wáítíng át ány tímé. Sínglé yéllów línés ápply dúríng thé hóúrs shówn ón néárby plátés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Álwáys chéck kérb plátés béfóré párkíng néár yéllów línés. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú párkéd ónly whéré wáítíng ís pérmíttéd. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.PRK.CLEARWAY": {
+      "title": "[Nó stóppíng ón cléárwáys ~~~~~~~~~~]",
+      "fault": "[Yóú stóppéd ón á cléárwáy. ~~~~~~~~~~~]",
+      "why": "[Cléárwáys kéép fást rúrál ánd máín róáds flówíng wíthóút párkéd cárs. Yóú múst nót stóp ón thé cárríágéwáy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Wáít fór á láy-by ór sídé stréét béfóré stóppíng. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt thé cléárwáy cómplétély cléár. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.PRK.JUNCTION_10M": {
+      "title": "[Párk cléár óf júnctíóns ~~~~~~~~~~]",
+      "fault": "[Yóú párkéd wíthín 10 métrés óf á júnctíón. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Cárs párkéd néár córnérs blóck síghtlínés fór émérgíng drívérs ánd pédéstríáns. Léávé át léást 10 métrés cléár fróm ány júnctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Párk át léást twó cár léngths áwáy fróm évéry córnér. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú párkéd wéll cléár óf thé júnctíón. ~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WX.HEADLIGHTS_NIGHT": {
+      "title": "[Úsé héádlíghts át níght ~~~~~~~~~~]",
+      "fault": "[Yóúr héádlíghts wéré óff ón án únlít níght róád. ~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Sídélíghts álóné dó nót líght házárds ón dárk róáds. Yóú múst úsé díppéd héádlíghts át níght ón únlít róáds. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Swítch díppéd héádlíghts ón whénévér stréét líghts énd át níght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú úséd yóúr héádlíghts córréctly át níght. ~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.WX.NO_DAZZLE": {
+      "title": "[Díp héádlíghts fór óthérs ~~~~~~~~~~]",
+      "fault": "[Yóú dázzléd ánóthér drívér wíth fúll béám. ~~~~~~~~~~~~~~~~~]",
+      "why": "[Fúll-béám héádlíghts blínd óncómíng drívérs ánd thósé áhéád víá théír mírrórs. Yóú múst díp yóúr líghts béfóré dázzlíng ányóné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Díp tó lów béám ás sóón ás yóú séé héádlíghts ór táíl líghts. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú díppéd yóúr héádlíghts prómptly fór óthér tráffíc. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.DRV.PHONE": {
+      "title": "[Névér úsé hánd-héld phóné ~~~~~~~~~~]",
+      "fault": "[Yóú píckéd úp á hánd-héld phóné whílé drívíng. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Chéckíng á phóné tákés yóúr éyés ánd mínd óff thé róád. Yóú múst névér úsé á hánd-héld phóné, évén ín tráffíc qúéúés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Pút yóúr phóné ón sílént ánd óút óf réách béfóré drívíng. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú ígnóréd thé phóné ánd stáyéd fócúséd ón thé róád. ~~~~~~~~~~~~~~~~~~~~~~]"
+    },
+    "GB.DRV.SEATBELT": {
+      "title": "[Wéár yóúr séát bélt ~~~~~~~~]",
+      "fault": "[Yóú dróvé óff wíthóút fásténíng yóúr séát bélt. ~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Séát bélts prévént fátál ínjúríés ín súddén stóps ór cráshés. Yóú múst wéár óné ánd énsúré úndér-14 pásséngérs dó tóó. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Búcklé yóúr séát bélt béfóré stártíng thé éngíné. ~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú búckléd úp béfóré móvíng óff. ~~~~~~~~~~~~~~]"
+    },
+    "GB.DRV.DRINK_DRUGS": {
+      "title": "[Névér drínk ór drúg drívé ~~~~~~~~~~]",
+      "fault": "[Álcóhól ánd drúgs ímpáír sáfé drívíng. ~~~~~~~~~~~~~~~~]",
+      "why": "[Évén smáll ámóúnts slów yóúr réáctíón tímé ánd júdgémént. Yóú múst névér drívé ábóvé thé légál álcóhól límít, whích ís lówér ín Scótlánd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "tip": "[Plán á sáfé rídé hómé ór chóósé zéró-álcóhól drínks. ~~~~~~~~~~~~~~~~~~~~~]",
+      "good": "[Yóú képt zéró álcóhól ín yóúr systém béfóré drívíng. ~~~~~~~~~~~~~~~~~~~~~]"
+    }
+  }
+}
