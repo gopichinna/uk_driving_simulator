@@ -11,8 +11,12 @@
       "Give even more room at speeds above 30 mph.",
       "Wait behind if oncoming traffic prevents a wide, safe pass."
     ],
-    "ruleIds": ["GB.VRU.PASS_CYCLIST", "GB.OBS.LANE_CHANGE"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.VRU.PASS_CYCLIST",
+      "GB.OBS.LANE_CHANGE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s4-15-overtaking-cyclists.png"
   },
   "scenarios": [
     {
@@ -20,28 +24,47 @@
       "course": "town",
       "anchor": "start",
       "goal": "Leave at least 1.5 metres when overtaking cyclists in town.",
-      "rulesJudged": ["GB.VRU.PASS_CYCLIST", "GB.POS.KEEP_LEFT"],
+      "rulesJudged": [
+        "GB.VRU.PASS_CYCLIST",
+        "GB.POS.KEEP_LEFT"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.4,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s4_15_dual_cyclist",
       "course": "dual_carriageway",
       "anchor": "start",
       "goal": "Change lanes smoothly to give cyclists extra space at 40 mph.",
-      "rulesJudged": ["GB.VRU.PASS_CYCLIST", "GB.OBS.LANE_CHANGE", "GB.SIG.TIMELY"],
+      "rulesJudged": [
+        "GB.VRU.PASS_CYCLIST",
+        "GB.OBS.LANE_CHANGE",
+        "GB.SIG.TIMELY"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.3,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

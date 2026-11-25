@@ -28,7 +28,8 @@
           "minItems": 1,
           "items": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" }
         },
-        "govUkUrl": { "type": "string", "pattern": "^https://www\\.gov\\.uk/" }
+        "govUkUrl": { "type": "string", "pattern": "^https://www\\.gov\\.uk/" },
+        "diagram": { "type": "string", "minLength": 1 }
       }
     },
     "scenarios": {

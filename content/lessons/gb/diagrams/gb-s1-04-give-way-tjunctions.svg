@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <rect width="1024" height="1024" fill="#d4e4c8"/>
+  <rect x="0" y="320" width="1024" height="280" fill="#444a52"/>
+  <rect x="382" y="600" width="260" height="424" fill="#444a52"/>
+  <rect x="0" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="70" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="140" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="210" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="280" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="350" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="420" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="490" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="560" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="630" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="700" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="770" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="840" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="910" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="980" y="456" width="36" height="8" fill="#f5f7fa"/>
+  <rect x="390" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="390" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="412" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="412" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="434" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="434" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="456" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="456" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="478" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="478" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="500" y="600" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="500" y="616" width="14" height="8" fill="#f5f7fa"/>
+  <rect x="694" y="364" width="92" height="52" fill="#929aa4"/>
+  <rect x="420" y="774" width="52" height="92" fill="#1d70b8"/>
+  <line x1="446" y1="760" x2="446" y2="640" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="446" y1="640" x2="465" y2="668" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="446" y1="640" x2="427" y2="668" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+</svg>

@@ -70,17 +70,17 @@ The round-4 draft claims things the app doesn't do yet: an in-app lesson player 
   - `finish_at` is present.
 
 ## D. Learn-card diagrams
-- [ ] D1. For each lesson 1–18, generate a simple **top-down diagram** (pipeline code, not hand-drawn), as SVG plus a 1024×1024 PNG, in `content/lessons/gb/diagrams/<lessonId>.svg|png`:
+- [x] D1. For each lesson 1–18, generate a simple **top-down diagram** (pipeline code, not hand-drawn), as SVG plus a 1024×1024 PNG, in `content/lessons/gb/diagrams/<lessonId>.svg|png`: (`pipeline/ltl_pipeline/diagrams.py`: 36 files, left-hand traffic, blue player car + arrow, grey other users, no text.)
   - left-hand traffic;
   - the player's car in blue with an arrow showing the correct path;
   - other road users in grey;
   - markings drawn to match the town course (stop line and cycle box, give-way lines and triangle, zebra and zig-zags, yellow box).
 
   No text inside the images: captions come from strings, so diagrams work in every language.
-- [ ] D2. Add `learnCard.diagram` (a path) to each lesson. This is an additive `lesson.v0` field and is pre-agreed. Add a test that every referenced file exists.
+- [x] D2. Add `learnCard.diagram` (a path) to each lesson. This is an additive `lesson.v0` field and is pre-agreed. Add a test that every referenced file exists. (`lesson.v0.schema.json` + all 18 lessons + `test_lessons.py`)
 
 ## E. Hand-off
-- [ ] E1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: playable lesson scenarios, diagrams, main network, honest listing". Do C first and open a draft PR early: Claude builds the scenario player against it.
+- [x] E1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: playable lesson scenarios, diagrams, main network, honest listing". Do C first and open a draft PR early: Claude builds the scenario player against it. (Note added to `docs/08` §6; PR #5 marked ready on `gopichinna/uk_driving_simulator`.)
 
 ## Requests from Claude
 - Pre-agreed for round 5:

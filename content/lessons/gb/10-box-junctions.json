@@ -11,8 +11,12 @@
       "You must not enter unless your exit road is clear.",
       "You may wait inside only when turning right and blocked by oncoming cars."
     ],
-    "ruleIds": ["GB.JCT.BOX", "GB.TL.CLEAR_JUNCTION"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.JCT.BOX",
+      "GB.TL.CLEAR_JUNCTION"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s2-10-box-junctions.png"
   },
   "scenarios": [
     {
@@ -20,28 +24,46 @@
       "course": "town",
       "anchor": "box_junction",
       "goal": "Wait behind the yellow grid until your exit road clears.",
-      "rulesJudged": ["GB.JCT.BOX", "GB.TL.CLEAR_JUNCTION"],
+      "rulesJudged": [
+        "GB.JCT.BOX",
+        "GB.TL.CLEAR_JUNCTION"
+      ],
       "variations": {
-        "trafficDensity": [0.5, 0.8],
+        "trafficDensity": [
+          0.5,
+          0.8
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s2_10_box_right_turn",
       "course": "town",
       "anchor": "box_junction",
       "goal": "Cross the yellow box cleanly only when your turn is clear.",
-      "rulesJudged": ["GB.JCT.BOX", "GB.JCT.TURN_FAR_GAP"],
+      "rulesJudged": [
+        "GB.JCT.BOX",
+        "GB.JCT.TURN_FAR_GAP"
+      ],
       "variations": {
-        "trafficDensity": [0.4, 0.7],
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
         "cyclistShare": 0.1,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [
