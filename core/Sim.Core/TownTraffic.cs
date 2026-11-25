@@ -76,6 +76,7 @@ namespace LToLocal.Sim
         }
 
         public LaneGraph Graph => _g;
+        public TownTrafficParams Params => _p;
         public IReadOnlyList<TownCar> Cars => _cars;
         /// <summary>Pedestrians the traffic must give way to (optional).</summary>
         public TownPedestrians? Pedestrians { get; set; }
@@ -592,6 +593,25 @@ namespace LToLocal.Sim
         public bool Waiting(int crossing)
         {
             foreach (var p in _peds) if (p.State == PedState.Waiting && p.Crossing == crossing) return true;
+            return false;
+        }
+
+        /// <summary>
+        /// Puts someone at the kerb of a crossing (scenarios): waiting there, or already stepping out onto it.
+        /// Returns false if no walking route uses that crossing.
+        /// </summary>
+        public bool AddAtCrossing(int crossing, bool stepOut)
+        {
+            for (int r = 0; r < _routes.Count; r++)
+                foreach (var (c, from, _) in _routeCrossings[r])
+                    if (c == crossing)
+                    {
+                        var p = Add(r, Math.Max(0, from - 0.35), 1.35);
+                        if (stepOut) { p.S = from + 0.1; p.State = PedState.Crossing; p.Crossing = crossing; }
+                        else { p.State = PedState.Waiting; p.Crossing = crossing; _waited[p.Id] = -3.0; } // waits a few seconds at least
+                        Pose(p);
+                        return true;
+                    }
             return false;
         }
 

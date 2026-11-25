@@ -1,0 +1,73 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s3-11-roundabout-give-way",
+  "stage": 3,
+  "order": 11,
+  "title": "Roundabout priority",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "In the UK, all roundabouts circulate clockwise around the central island.",
+      "You must give way to traffic approaching from your right.",
+      "Enter only when there is a safe gap without forcing anyone to brake."
+    ],
+    "ruleIds": [
+      "GB.RBT.GIVE_WAY_RIGHT",
+      "GB.RBT.WRONG_WAY"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s3-11-roundabout-give-way.png"
+  },
+  "scenarios": [
+    {
+      "id": "s3_11_single_rbt_give_way",
+      "course": "roundabout",
+      "anchor": "start",
+      "goal": "Give way to circulating traffic from the right before entering.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.WRONG_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.6
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s3_11_two_lane_rbt_give_way",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Join the two-lane roundabout clockwise without cutting off circulating cars.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.WRONG_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Always look right before crossing the broken give-way line.",
+    "Always travel clockwise around every UK roundabout."
+  ]
+}

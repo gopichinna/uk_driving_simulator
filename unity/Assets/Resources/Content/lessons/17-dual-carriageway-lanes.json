@@ -1,0 +1,76 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s5-17-dual-carriageway-lanes",
+  "stage": 5,
+  "order": 17,
+  "title": "Dual carriageway lane discipline",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Drive in the left lane on a two-lane dual carriageway.",
+      "Use the right lane only to overtake slower traffic or turn right.",
+      "Signal early and check your blind spot before changing lanes."
+    ],
+    "ruleIds": [
+      "GB.POS.DUAL_KEEP_LEFT",
+      "GB.OBS.LANE_CHANGE",
+      "GB.SIG.TIMELY"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158",
+    "diagram": "content/lessons/gb/diagrams/gb-s5-17-dual-carriageway-lanes.png"
+  },
+  "scenarios": [
+    {
+      "id": "s5_17_overtake_and_return",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Overtake slower vehicles safely, then move back to the left lane.",
+      "rulesJudged": [
+        "GB.POS.DUAL_KEEP_LEFT",
+        "GB.OBS.LANE_CHANGE",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.6
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s5_17_busy_dual",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Keep left when clear and stay within the 40 mph limit.",
+      "rulesJudged": [
+        "GB.POS.DUAL_KEEP_LEFT",
+        "GB.SPD.OVER_LIMIT",
+        "GB.OBS.LANE_CHANGE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Keep in the left lane whenever you are not overtaking.",
+    "Signal in good time and check your blind spot before moving over."
+  ]
+}

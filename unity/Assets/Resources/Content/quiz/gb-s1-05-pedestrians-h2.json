@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s1-05-pedestrians-h2",
+  "questions": [
+    {
+      "id": "q_05_h2",
+      "question": "Who has priority when you turn into a side road with waiting pedestrians?",
+      "options": [
+        "The pedestrians waiting to cross",
+        "Turning drivers always go first",
+        "Only cyclists have priority"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under H2, give way to people crossing or waiting to cross.",
+      "ruleId": "GB.JCT.H2_PEDESTRIANS"
+    },
+    {
+      "id": "q_05_h1",
+      "question": "Who carries the greatest responsibility to reduce danger on the road?",
+      "options": [
+        "Drivers of larger vehicles",
+        "Pedestrians on the pavement",
+        "Cyclists in cycle lanes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Under H1, those who can cause the most harm carry more responsibility.",
+      "ruleId": "GB.VRU.HIERARCHY"
+    }
+  ]
+}

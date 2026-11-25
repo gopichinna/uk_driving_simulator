@@ -62,6 +62,7 @@ namespace LToLocal.EditorTools
             foreach (var (pos, heading, mph) in g.SpeedSigns) SpeedSign(world, pos, heading, mph, m);
 
             Buildings(g, world, m);
+            TownSigns(world, m, yellow, black);
 
             // Pedestrians (pooled; the course positions them).
             var people = new GameObject("Pedestrians").transform;
@@ -270,6 +271,143 @@ namespace LToLocal.EditorTools
             text.GetComponent<MeshRenderer>().sharedMaterial = font.material;
         }
 
+        // ---------------- signs and destinations ----------------
+
+        private static Font SignFont => Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
+        private static void Text(Transform parent, string text, Vector3 local, float size, Color colour, TextAnchor anchor = TextAnchor.MiddleLeft)
+        {
+            var go = new GameObject("Text");
+            go.transform.SetParent(parent, false);
+            go.transform.localPosition = local;
+            var tm = go.AddComponent<TextMesh>();
+            tm.text = text;
+            tm.anchor = anchor;
+            tm.fontSize = 64;
+            tm.characterSize = size;
+            tm.fontStyle = FontStyle.Bold;
+            tm.color = colour;
+            tm.font = SignFont;
+            go.GetComponent<MeshRenderer>().sharedMaterial = SignFont.material;
+        }
+
+        /// <summary>An arrow drawn with bars, in a sign's local plane (dir: -1 left, 0 ahead, +1 right).</summary>
+        private static void Arrow(Transform parent, Vector3 at, int dir, Material mat)
+        {
+            var a = new GameObject("Arrow").transform;
+            a.SetParent(parent, false);
+            a.localPosition = at;
+            a.localRotation = Quaternion.Euler(0, 0, dir == 0 ? 0 : dir < 0 ? 90 : -90);
+            Prim(PrimitiveType.Cube, "Shaft", a, new Vector3(0, -0.04f, 0), new Vector3(0.06f, 0.26f, 0.01f), mat);
+            Prim(PrimitiveType.Cube, "HeadL", a, new Vector3(-0.05f, 0.08f, 0), new Vector3(0.06f, 0.15f, 0.01f), mat, new Vector3(0, 0, -40));
+            Prim(PrimitiveType.Cube, "HeadR", a, new Vector3(0.05f, 0.08f, 0), new Vector3(0.06f, 0.15f, 0.01f), mat, new Vector3(0, 0, 40));
+        }
+
+        /// <summary>UK local direction sign: white panel, black border and text, one row per destination.</summary>
+        private static void DirectionSign(Transform parent, Vec2 at, double trafficHeading, (string text, int dir)[] rows, Palette m, Material black)
+        {
+            var root = new GameObject("DirectionSign").transform;
+            root.SetParent(parent, false);
+            root.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)(trafficHeading * Mathf.Rad2Deg), 0)); // drivers look along +Z
+            float rowH = 0.42f, w = 2.7f, h = rows.Length * rowH + 0.2f, bottom = 1.9f;
+            foreach (float x in new[] { -w / 2 + 0.25f, w / 2 - 0.25f })
+                Prim(PrimitiveType.Cylinder, "Pole", root, new Vector3(x, bottom / 2 + h / 2 - 0.1f, 0.06f), new Vector3(0.08f, (bottom + h) / 2, 0.08f), m.Pole);
+            Prim(PrimitiveType.Cube, "Border", root, new Vector3(0, bottom + h / 2, 0), new Vector3(w, h, 0.04f), black);
+            Prim(PrimitiveType.Cube, "Panel", root, new Vector3(0, bottom + h / 2, -0.01f), new Vector3(w - 0.08f, h - 0.08f, 0.04f), m.White);
+            for (int i = 0; i < rows.Length; i++)
+            {
+                float y = bottom + h - 0.1f - rowH * (i + 0.5f);
+                Arrow(root, new Vector3(-w / 2 + 0.3f, y, -0.04f), rows[i].dir, black);
+                Text(root, rows[i].text, new Vector3(-w / 2 + 0.55f, y, -0.04f), 0.028f, Color.black);
+            }
+        }
+
+        /// <summary>Red warning triangle (children / school) with a "School" plate underneath.</summary>
+        private static void SchoolSign(Transform parent, Vec2 at, double trafficHeading, Palette m, Material black)
+        {
+            var root = new GameObject("SchoolWarningSign").transform;
+            root.SetParent(parent, false);
+            root.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)(trafficHeading * Mathf.Rad2Deg), 0));
+            Prim(PrimitiveType.Cylinder, "Pole", root, new Vector3(0, 1.3f, 0.06f), new Vector3(0.08f, 1.3f, 0.08f), m.Pole);
+            // Triangle: red frame from three bars, white middle, two small figures.
+            float side = 0.9f, cy = 2.3f;
+            var tri = new GameObject("Triangle").transform;
+            tri.SetParent(root, false);
+            tri.localPosition = new Vector3(0, cy, -0.02f);
+            float r = side / Mathf.Sqrt(3f);
+            for (int i = 0; i < 3; i++)
+            {
+                float ang = 90 + i * 120, mid = ang + 60;
+                var c = new Vector3(Mathf.Cos(mid * Mathf.Deg2Rad), Mathf.Sin(mid * Mathf.Deg2Rad), 0) * (r * 0.5f);
+                Prim(PrimitiveType.Cube, "Edge", tri, c, new Vector3(side, 0.11f, 0.03f), m.SignRed, new Vector3(0, 0, mid - 90));
+            }
+            Prim(PrimitiveType.Cube, "Fill", tri, new Vector3(0, -0.05f, 0.01f), new Vector3(0.45f, 0.35f, 0.02f), m.White);
+            foreach (float x in new[] { -0.08f, 0.08f })
+            {
+                Prim(PrimitiveType.Cube, "Child", tri, new Vector3(x, -0.08f, -0.01f), new Vector3(0.06f, 0.16f, 0.01f), black);
+                Prim(PrimitiveType.Sphere, "Head", tri, new Vector3(x, 0.03f, -0.01f), new Vector3(0.06f, 0.06f, 0.01f), black);
+            }
+            Prim(PrimitiveType.Cube, "Plate", root, new Vector3(0, 1.62f, -0.01f), new Vector3(0.8f, 0.3f, 0.03f), m.White);
+            Text(root, "School", new Vector3(0, 1.62f, -0.04f), 0.022f, Color.black, TextAnchor.MiddleCenter);
+        }
+
+        /// <summary>A labelled destination building (railway station, bus station, school).</summary>
+        private static void Landmark(Transform parent, string label, Vec2 at, double facing, Vector3 size, Material wall, Palette m, Material black)
+        {
+            var root = new GameObject($"Landmark_{label}").transform;
+            root.SetParent(parent, false);
+            root.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)(facing * Mathf.Rad2Deg), 0)); // +Z faces the road
+            Prim(PrimitiveType.Cube, "Building", root, new Vector3(0, size.y / 2, 0), size, wall);
+            Prim(PrimitiveType.Cube, "NameBoard", root, new Vector3(0, size.y - 1.4f, size.z / 2 + 0.05f), new Vector3(Mathf.Min(size.x - 0.6f, label.Length * 0.75f + 1.2f), 1.6f, 0.1f), black);
+            var t = new GameObject("Face").transform;
+            t.SetParent(root, false);
+            t.localPosition = new Vector3(0, size.y - 1.4f, size.z / 2 + 0.11f);
+            t.localRotation = Quaternion.Euler(0, 180, 0); // text readable from the road
+            Text(t, label, Vector3.zero, 0.11f, Color.white, TextAnchor.MiddleCenter);
+        }
+
+        private static void TownSigns(Transform world, Palette m, Material yellow, Material black)
+        {
+            var signs = new GameObject("Signs").transform;
+            signs.SetParent(world, false);
+            const double E = System.Math.PI / 2, W = -System.Math.PI / 2, N = 0, S = System.Math.PI;
+
+            // Direction signs on the left verge before the crossroads (left of eastbound = north side, etc.).
+            DirectionSign(signs, new Vec2(-48, 6.2), E, new[] { ("Railway Station", -1), ("Bus Station", 0), ("Church St School", 1) }, m, black);
+            DirectionSign(signs, new Vec2(48, -6.2), W, new[] { ("Railway Station", 1), ("Town Centre", 0), ("Church St School", -1) }, m, black);
+            DirectionSign(signs, new Vec2(6.2, 48), S, new[] { ("Bus Station", -1), ("Church St School", 0), ("Mill Lane", 1) }, m, black);
+            DirectionSign(signs, new Vec2(-6.2, -48), N, new[] { ("Railway Station", 0), ("Bus Station", 1), ("Town Centre", -1) }, m, black);
+            DirectionSign(signs, new Vec2(-126.2, -40), N, new[] { ("Town Centre", 1), ("Bus Station", 1) }, m, black);
+
+            // School: warning signs on both approaches, and yellow SCHOOL KEEP CLEAR zig-zags outside it.
+            SchoolSign(signs, TownGeometry.C + new Vec2(TownGeometry.BendMouthM + 8, 5.4), E, m, black);
+            SchoolSign(signs, TownGeometry.D + new Vec2(-TownGeometry.TMouthM - 14, -5.4), W, m, black);
+            var marks = new GameObject("SchoolKeepClear").transform;
+            marks.SetParent(world, false);
+            for (int k = 0; k < 14; k++)
+            {
+                double x = -80 + k * 1.6;
+                Line(marks, new Vec2(x, -123.3 + (k % 2 == 0 ? 0.25 : -0.25)), new Vec2(x + 1.6, -123.3 + (k % 2 == 0 ? -0.25 : 0.25)), 0.14f, 0.026f, yellow, "SchoolZigZag");
+            }
+            Landmark(signs, "St Peter's Primary School", new Vec2(-68, -135), N, new Vector3(26, 7, 12), Mat("SchoolBrick", new Color(0.70f, 0.42f, 0.32f)), m, black);
+            Landmark(signs, "Railway Station", new Vec2(-24, 178), E, new Vector3(14, 9, 30), Mat("StationStone", new Color(0.86f, 0.83f, 0.74f)), m, black);
+            Landmark(signs, "Bus Station", new Vec2(170, -16), N, new Vector3(30, 6, 12), Mat("BusStationGlass", new Color(0.62f, 0.72f, 0.80f)), m, black);
+
+            // Bus stop on High Street (west): flag sign and the yellow BUS STOP box marking.
+            var stop = new GameObject("BusStop").transform;
+            stop.SetParent(signs, false);
+            stop.SetPositionAndRotation(new Vector3(-170, 0, 4.6f), Quaternion.Euler(0, 90, 0));
+            Prim(PrimitiveType.Cylinder, "Pole", stop, new Vector3(0, 1.4f, 0), new Vector3(0.08f, 1.4f, 0.08f), m.Pole);
+            Prim(PrimitiveType.Cylinder, "Flag", stop, new Vector3(0, 2.7f, 0), new Vector3(0.55f, 0.02f, 0.55f), m.SignRed, new Vector3(90, 0, 0));
+            Prim(PrimitiveType.Cylinder, "FlagInner", stop, new Vector3(0, 2.7f, -0.02f), new Vector3(0.38f, 0.02f, 0.38f), m.White, new Vector3(90, 0, 0));
+            Text(stop, "BUS", new Vector3(0, 2.7f, -0.05f), 0.02f, Color.black, TextAnchor.MiddleCenter);
+            Prim(PrimitiveType.Cube, "Shelter", stop, new Vector3(-3, 1.2f, 1.2f), new Vector3(4, 2.4f, 0.1f), Mat("Glass", new Color(0.16f, 0.18f, 0.23f)));
+            foreach (double z in new[] { 0.3, 3.2 }) Line(marks, new Vec2(-180, z), new Vec2(-160, z), 0.2f, 0.026f, yellow, "BusStopBox");
+            foreach (double x in new[] { -180.0, -160.0 }) Line(marks, new Vec2(x, 0.3), new Vec2(x, 3.2), 0.2f, 0.026f, yellow, "BusStopBox");
+        }
+
+        private static readonly Vec2[] Landmarks = { new Vec2(-68, -135), new Vec2(-24, 178), new Vec2(170, -16) };
+
         private static void Buildings(TownGeometry g, Transform world, Palette m)
         {
             var roads = new List<PathPolyline>();
@@ -293,6 +431,7 @@ namespace LToLocal.EditorTools
                         double w = 10 + rng.NextDouble() * 2.5, d = 8 + rng.NextDouble() * 4, height = 6 + rng.NextDouble() * 7;
                         Vec2 c = p + left * (8.3 + d / 2);
                         bool ok = true;
+                        foreach (var lm in Landmarks) if ((c - lm).Length < 26) ok = false;
                         foreach (var corner in new[] { c + f * (w / 2) + left * (d / 2), c - f * (w / 2) + left * (d / 2), c + f * (w / 2) - left * (d / 2), c - f * (w / 2) - left * (d / 2), c })
                             if (Clearance(corner) < 8.0) ok = false;
                         if (!ok) continue;

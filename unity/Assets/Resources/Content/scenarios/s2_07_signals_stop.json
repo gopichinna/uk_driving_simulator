@@ -1,0 +1,22 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s2_07_signals_stop",
+  "course": "town",
+  "anchor": "crossroads_signals",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    },
+    {
+      "type": "lights_turn_amber",
+      "whenPlayerWithinM": 45
+    },
+    {
+      "type": "finish_at",
+      "anchor": "crossroads_signals",
+      "offsetM": 60
+    }
+  ]
+}

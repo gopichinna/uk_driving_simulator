@@ -77,7 +77,12 @@ namespace LToLocal.Game
             if (interior != null) _interior = interior.gameObject;
         }
 
-        private void Start() => ResetDrive();
+        private void Start()
+        {
+            PrepareLessonStart();
+            ResetDrive();
+            if (LessonSession.OpenMenuOnLoad) { LessonSession.OpenMenuOnLoad = false; OpenLessonMenu(); }
+        }
 
         private void ResetDrive()
         {
@@ -92,6 +97,7 @@ namespace LToLocal.Game
             _chasePos = Vector3.zero;
             _titleUntil = Time.time + 3f;
             ResetRecording();
+            StartLessonPart();
         }
 
         private void Update()
@@ -115,6 +121,8 @@ namespace LToLocal.Game
                 if (feedback != null) foreach (var e in _events) feedback.Push(e);
                 _driveEvents.AddRange(_events);
                 RecordStep();
+                LessonStep(_clock.StepSeconds);
+                if (_mode != Mode.Driving) break;
             }
 
             if (_course.OutOfBounds(_curr)) ResetDrive();
@@ -235,17 +243,21 @@ namespace LToLocal.Game
             // View / reset / course / finish / settings under the rear-view mirror
             float rearMirrorBottom = H * 0.015f + W * 0.30f / 3.4f + 6f; // matches MirrorRig layout
             float bw = W * 0.082f, bh = H * 0.085f, by = rearMirrorBottom + H * 0.02f, gap = bw * 1.06f;
-            Rect Slot(int i) => new Rect(W * 0.5f + (i - 2) * gap - bw / 2, by, bw, bh);
+            bw = W * 0.072f; gap = bw * 1.06f;
+            Rect Slot(int i) => new Rect(W * 0.5f + (i - 2.5f) * gap - bw / 2, by, bw, bh);
             if (GUI.Button(Slot(0), s_view == View.Chase ? Ui.Get("hud.view_seat", "Seat") : Ui.Get("hud.view_chase", "Chase"), _buttonStyle))
                 s_view = s_view == View.Chase ? View.Cockpit : View.Chase;
             if (GUI.Button(Slot(1), Ui.Get("hud.reset", "Reset"), _buttonStyle))
                 ResetDrive();
             if (GUI.Button(Slot(2), Ui.Get("hud.course", "Course"), _buttonStyle))
                 NextCourse();
-            if (GUI.Button(Slot(3), Ui.Get("hud.finish_drive", "Finish"), _buttonStyle))
-                OpenDebrief();
-            if (GUI.Button(Slot(4), Ui.Get("hud.settings", "Settings"), _buttonStyle))
+            if (GUI.Button(Slot(3), "Lessons", _buttonStyle))
+                OpenLessonMenu();
+            if (GUI.Button(Slot(4), Ui.Get("hud.finish_drive", "Finish"), _buttonStyle))
+                if (!FinishLessonPart()) OpenDebrief();
+            if (GUI.Button(Slot(5), Ui.Get("hud.settings", "Settings"), _buttonStyle))
                 SetMode(Mode.Settings);
+            DrawLessonHud(W, H);
 
             if (Time.time < _titleUntil)
                 GUI.Box(new Rect(W * 0.5f - H * 0.5f, H * 0.62f, H * 1.0f, H * 0.1f), _course.DisplayName, _titleStyle);

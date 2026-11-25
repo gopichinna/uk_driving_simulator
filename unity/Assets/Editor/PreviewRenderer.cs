@@ -72,6 +72,12 @@ namespace LToLocal.EditorTools
             cam.fieldOfView = 60f;
             cam.transform.SetPositionAndRotation(new Vector3(-60, 160, -60), Quaternion.Euler(90, 0, 0));
             Save(cam, "Builds/Previews/town_aerial.png");
+            cam.transform.SetPositionAndRotation(new Vector3(-64, 2.2f, 1.75f), Quaternion.Euler(3, 90, 0));
+            cam.fieldOfView = 45f;
+            Save(cam, "Builds/Previews/town_direction_sign.png");
+            cam.transform.SetPositionAndRotation(new Vector3(-100, 3f, -118.25f), Quaternion.Euler(6, 90, 0));
+            Save(cam, "Builds/Previews/town_school.png");
+            cam.fieldOfView = 60f;
             var town = new LToLocal.Sim.TownGeometry();
             car = game.car;
             foreach (var (anchor, name) in new[] { ("crossroads_signals", "town_seat_lights"), ("tjunction_north", "town_seat_giveway"), ("school_street", "town_seat_school") })

@@ -32,6 +32,7 @@ namespace LToLocal.Game
         private GUIStyle _credit;
 
         public string DisplayName => "Wolverhampton city centre (beta)";
+        public LaneGraph Graph => Built.Graph;
 
         private RoadPackGraph Built
         {

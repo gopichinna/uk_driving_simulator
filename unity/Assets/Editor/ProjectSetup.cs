@@ -91,7 +91,21 @@ namespace LToLocal.EditorTools
                 if (!File.Exists(from)) { Debug.LogWarning($"[LToLocal] Content file missing: {from}"); continue; }
                 File.Copy(from, $"{dest}/{to}", overwrite: true);
             }
+            // Lessons (numbered files only), their scenarios and quizzes, and the learn-card diagrams.
+            CopyDir("../content/lessons/gb", $"{dest}/lessons", "*.json", f => char.IsDigit(Path.GetFileName(f)[0]));
+            CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
+            CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
+            CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
             AssetDatabase.Refresh();
+        }
+
+        private static void CopyDir(string from, string to, string pattern, System.Func<string, bool> keep)
+        {
+            if (!Directory.Exists(from)) { Debug.LogWarning($"[LToLocal] Content folder missing: {from}"); return; }
+            if (Directory.Exists(to)) foreach (var old in Directory.GetFiles(to)) File.Delete(old);
+            Directory.CreateDirectory(to);
+            foreach (var f in Directory.GetFiles(from, pattern))
+                if (keep(f)) File.Copy(f, Path.Combine(to, Path.GetFileName(f)), overwrite: true);
         }
 
         // =====================================================================

@@ -10,7 +10,7 @@ namespace LToLocal.Game
     /// two give-way T-junctions, a zebra crossing and pedestrians. Judges lights, give way, crossings, zig-zags,
     /// the box, keeping left and signalling when moving out. Signal heads, Belisha beacons and pedestrians in the scene are found by name.
     /// </summary>
-    public sealed class TownCourse : MonoBehaviour, ICourse
+    public sealed class TownCourse : MonoBehaviour, ICourse, IScenarioWorld
     {
         public TrafficView trafficView;
         public Transform pedestrianRoot;
@@ -26,6 +26,9 @@ namespace LToLocal.Game
         private TownRules _rules;
         private KeepLeftRule _keepLeft;
         private double _time;
+        /// <summary>Added to the clock the signals read, so a scenario can make the lights change on cue.</summary>
+        private double _signalShift;
+        private readonly List<(int id, Vec2 pos, double heading)> _parked = new List<(int, Vec2, double)>();
         private readonly List<LightState> _lights = new List<LightState> { LightState.Red, LightState.Red };
         private readonly List<VehicleSnapshot> _snap = new List<VehicleSnapshot>();
         private readonly List<RoadUser> _users = new List<RoadUser>();
@@ -92,6 +95,9 @@ namespace LToLocal.Game
             _traffic.Reset();
             _peds.Reset();
             _rules.Reset();
+            _parked.Clear();
+            _signalShift = 0;
+            _traffic.Params.TargetCars = 16;
             _keepLeft.Reset();
             // Warm up so the town is busy when the drive starts (the player is parked far away meanwhile).
             var away = new CarState { X = 5000, Z = 5000 };
@@ -115,9 +121,9 @@ namespace LToLocal.Game
         {
             _time += dt;
             _peds.Step(dt, _traffic, player);
-            _traffic.Step(dt, player, _time);
-            _lights[0] = _signals.State(0, _time);
-            _lights[1] = _signals.State(1, _time);
+            _traffic.Step(dt, player, _time + _signalShift);
+            _lights[0] = _signals.State(0, _time + _signalShift);
+            _lights[1] = _signals.State(1, _time + _signalShift);
             GetRoadUsers(_users);
             var frame = new DriverFrame(simTime, player, indicator);
             _rules.OnFrame(frame, _lights, _peds.People, _users, events);
@@ -204,11 +210,108 @@ namespace LToLocal.Game
             into.Clear();
             foreach (var c in _traffic.Cars)
                 into.Add(new RoadUser(c.Id, c.Position, c.Heading, c.SpeedMps, c.IsCyclist, c.LengthM, c.LastAccelMps2, c.BrakingForPlayer));
+            foreach (var (id, pos, heading) in _parked) into.Add(new RoadUser(id, pos, heading, 0, false));
         }
+
+        // ---------------- scenarios (IScenarioWorld) ----------------
+
+        private const int ParkedIdOffset = 2_000_000;
+
+        public bool TryLocate(string name, out Vec2 position, out double heading)
+        {
+            heading = 0;
+            position = default;
+            var g = Geometry;
+            switch (name)
+            {
+                case "zebra": position = Centroid(g.Graph.CrossingAreas[g.Zebra].Polygon); return true;
+                case "mill_lane_mouth": position = Centroid(g.Graph.CrossingAreas[g.MillLaneMouth].Polygon); return true;
+                case "church_st_mouth": position = Centroid(g.Graph.CrossingAreas[g.ChurchStMouth].Polygon); return true;
+                case "crossroads_signals_line": position = TownGeometry.A; return true;
+            }
+            if (!g.Anchors.ContainsKey(name)) return false;
+            (position, heading) = g.AnchorPose(name);
+            if (name == "tjunction_north") position = TownGeometry.B;      // the junction itself, for distances
+            else if (name == "tjunction_south") position = TownGeometry.D;
+            return true;
+        }
+
+        private static Vec2 Centroid(Vec2[] poly)
+        {
+            Vec2 c = new Vec2(0, 0);
+            foreach (var v in poly) c = c + v;
+            return c * (1.0 / poly.Length);
+        }
+
+        public void SetTrafficDensity(double v) => _traffic.Params.TargetCars = Mathf.RoundToInt(4 + Mathf.Clamp01((float)v) * 20);
+
+        private int CrossingId(string name) => name switch
+        {
+            "zebra" => Geometry.Zebra,
+            "mill_lane_mouth" => Geometry.MillLaneMouth,
+            "church_st_mouth" => Geometry.ChurchStMouth,
+            _ => -1,
+        };
+
+        public void PedestrianWaits(string crossing) { int id = CrossingId(crossing); if (id >= 0) _peds.AddAtCrossing(id, stepOut: false); }
+        public void PedestrianStepsOut(string crossing) { int id = CrossingId(crossing); if (id >= 0) _peds.AddAtCrossing(id, stepOut: true); }
+
+        /// <summary>Player in the side road: a car arrives on the main road about gapS away. Player on the main road: a car waits to pull out.</summary>
+        public void CarEmerges(string junction, double gapS, in CarState player)
+        {
+            var g = Geometry;
+            bool north = junction == "tjunction_north";
+            int minor = north ? g.Roads[6].Backward : g.Roads[7].Forward;          // Mill Lane northbound / Church St eastbound
+            int major = north ? g.Roads[0].Forward : g.Roads[5].Backward;          // High St eastbound (from the west) / Station Rd northbound (from the south)
+            var minorLane = g.Graph.Segments[minor];
+            var (ms, _, md) = minorLane.Path.Project(new Vec2(player.X, player.Z));
+            if (md < 3 && ms > 0)
+            {
+                var lane = g.Graph.Segments[major];
+                double v = lane.SpeedLimitMph / 2.236936 * 0.9;
+                _traffic.Add(major, System.Math.Max(0, lane.Length - v * gapS), v);
+            }
+            else _traffic.Add(minor, System.Math.Max(0, minorLane.Length - 4), 0);
+        }
+
+        /// <summary>A car parked half on the pavement (so traffic can pass) at an anchor, offset along the lane.</summary>
+        public void ParkedCar(string anchor, double offsetM)
+        {
+            if (!Geometry.Anchors.TryGetValue(anchor, out var a)) return;
+            var lane = Geometry.Graph.Segments[a.segment];
+            var (p, h) = lane.Path.Sample(System.Math.Max(2, System.Math.Min(lane.Length - 2, a.s + offsetM)));
+            _parked.Add((ParkedIdOffset + _parked.Count, p + Vec2.FromHeading(h).LeftNormal * 2.4, h));
+        }
+
+        public void CyclistAhead(string anchor, double offsetM, double speedMph)
+        {
+            if (!Geometry.Anchors.TryGetValue(anchor, out var a)) return;
+            var lane = Geometry.Graph.Segments[a.segment];
+            _traffic.Add(a.segment, System.Math.Max(0, System.Math.Min(lane.Length - 1, a.s + offsetM)), speedMph / 2.236936, cyclist: true);
+        }
+
+        /// <summary>Shifts the signal clock so the lights facing the player have just turned amber.</summary>
+        public bool LightsTurnAmber(in CarState player)
+        {
+            var seg = Geometry.Graph.Nearest(new Vec2(player.X, player.Z), out _, out double d, lanesOnly: true);
+            if (seg == null || d > 3 || seg.EndControl != LineControl.Signals) return false;
+            double now = _time + _signalShift;
+            for (double dt = 0; dt < _signals.CycleS; dt += 0.05)
+                if (_signals.State(seg.SignalGroup, now + dt) == LightState.Amber && _signals.State(seg.SignalGroup, now + dt - 0.05) == LightState.Green)
+                {
+                    _signalShift += dt;
+                    return true;
+                }
+            return false;
+        }
+
+        public int ExitTaken(in CarState player) => 0;
 
         private void Snapshot()
         {
             _snap.Clear();
+            foreach (var (id, pos, heading) in _parked)
+                _snap.Add(new VehicleSnapshot { Id = id, X = pos.X, Z = pos.Z, Heading = heading, Colour = id % 6 });
             foreach (var c in _traffic.Cars)
                 _snap.Add(new VehicleSnapshot
                 {

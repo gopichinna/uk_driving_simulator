@@ -6,7 +6,7 @@ using UnityEngine;
 namespace LToLocal.Game
 {
     /// <summary>Two-lane 4-arm UK roundabout with lane arrows, 30 mph. Judges lane choice, give way, signals, lane discipline.</summary>
-    public sealed class TwoLaneRoundaboutCourse : MonoBehaviour, ICourse
+    public sealed class TwoLaneRoundaboutCourse : MonoBehaviour, ICourse, IScenarioWorld
     {
         public TrafficView trafficView;
         public static readonly Vec2 Centre = new Vec2(0, 0);
@@ -34,7 +34,7 @@ namespace LToLocal.Game
 
         private void Awake()
         {
-            _traffic = new TwoLaneRoundaboutTraffic(Geometry, new TwoLaneTrafficParams { TargetCars = 14 }, seed: 2026);
+            _traffic = new TwoLaneRoundaboutTraffic(Geometry, _params, seed: 2026);
             _rule = new RoundaboutRule(new TwoLaneRoundaboutView(_traffic));
         }
 
@@ -86,6 +86,38 @@ namespace LToLocal.Game
         {
             Replay.Vehicles(frame, _replay);
             if (trafficView != null) trafficView.Render(_replay, 1f, blink);
+        }
+
+
+        // ---------------- scenarios (IScenarioWorld) ----------------
+
+        public bool TryLocate(string name, out Vec2 position, out double heading)
+        {
+            var st = StartState;
+            position = new Vec2(st.X, st.Z);
+            heading = st.Heading;
+            return name == "start";
+        }
+
+        public void PedestrianWaits(string crossing) { }
+        public void PedestrianStepsOut(string crossing) { }
+        public void CarEmerges(string junction, double gapS, in CarState player) { }
+        public void ParkedCar(string anchor, double offsetM) { }
+        public bool LightsTurnAmber(in CarState player) => false;
+        private readonly TwoLaneTrafficParams _params = new TwoLaneTrafficParams { TargetCars = 14 };
+        public void SetTrafficDensity(double v) => _params.TargetCars = Mathf.RoundToInt(4 + Mathf.Clamp01((float)v) * 16);
+        public void CyclistAhead(string anchor, double offsetM, double speedMph) { }
+
+        public int ExitTaken(in CarState player)
+        {
+            var p = new Vec2(player.X, player.Z);
+            for (int k = 0; k < Geometry.ArmCount; k++)
+                for (int l = 0; l < 2; l++)
+                {
+                    var (s, _, d) = Geometry.Exit[k, l].Project(p);
+                    if (d < 2.5 && s > 14) return Geometry.ExitNumber(StartArm, k);
+                }
+            return 0;
         }
 
         private void Snapshot()

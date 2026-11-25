@@ -11,7 +11,7 @@ namespace LToLocal.Game
     /// </summary>
     public sealed partial class DriveGame
     {
-        private enum Mode { Driving, Debrief, Replay, Settings }
+        private enum Mode { Driving, Debrief, Replay, Settings, LessonMenu, LearnCard, ScenarioDone, Quiz, LessonDone }
         private Mode _mode = Mode.Driving;
 
         private readonly DriveRecorder _recorder = new DriveRecorder();
@@ -77,6 +77,7 @@ namespace LToLocal.Game
         {
             _summary = DriveSummary.From(_driveEvents, Marking);
             _scroll = Vector2.zero;
+            _debriefReturn = Mode.Driving;
             SetMode(Mode.Debrief);
         }
 
@@ -138,6 +139,11 @@ namespace LToLocal.Game
                 case Mode.Debrief: DrawDebrief(W, H); break;
                 case Mode.Replay: DrawReplay(W, H); break;
                 case Mode.Settings: DrawSettings(W, H); break;
+                case Mode.LessonMenu: DrawLessonMenu(W, H); break;
+                case Mode.LearnCard: DrawLearnCard(W, H); break;
+                case Mode.ScenarioDone: DrawScenarioDone(W, H); break;
+                case Mode.Quiz: DrawQuiz(W, H); break;
+                case Mode.LessonDone: DrawLessonDone(W, H); break;
             }
         }
 
@@ -169,7 +175,7 @@ namespace LToLocal.Game
             float x = W * 0.08f, w = W * 0.84f, y = H * 0.04f;
             var s = _summary;
 
-            GUI.Label(new Rect(x, y, w * 0.6f, H * 0.08f), Ui.Get("debrief.title", "Drive debrief"), _bigStyle);
+            GUI.Label(new Rect(x, y, w * 0.6f, H * 0.08f), _mockDebrief ? "Mock test result" : Ui.Get("debrief.title", "Drive debrief"), _bigStyle);
             GUI.color = s.Passed ? new Color(0.5f, 1f, 0.6f) : new Color(1f, 0.5f, 0.45f);
             GUI.Label(new Rect(x + w * 0.6f, y, w * 0.4f, H * 0.08f), s.Passed ? Ui.Get("debrief.result.pass", "Practice pass") : Ui.Get("debrief.result.fail", "Practice fail"), _bigStyle);
             GUI.color = Color.white;
@@ -220,8 +226,24 @@ namespace LToLocal.Game
             }
 
             float bw = W * 0.2f, bh = H * 0.09f, by = H - bh - H * 0.03f;
-            if (GUI.Button(new Rect(W * 0.5f - bw - W * 0.01f, by, bw, bh), "Drive again", _buttonStyle)) { SetMode(Mode.Driving); ResetDrive(); }
-            if (GUI.Button(new Rect(W * 0.5f + W * 0.01f, by, bw, bh), "Keep driving", _buttonStyle)) SetMode(Mode.Driving);
+            if (_mockDebrief && s.Passed)
+            {
+                GUI.color = new Color(0.5f, 1f, 0.6f);
+                GUI.Label(new Rect(x, by - H * 0.07f, w, H * 0.06f), "You earned the Full Licence (practice) badge. Book your real test when your instructor agrees.", _smallStyle);
+                GUI.color = Color.white;
+            }
+            if (_debriefReturn != Mode.Driving)
+            {
+                if (GUI.Button(new Rect(W * 0.5f - bw / 2, by, bw, bh), "Back", _buttonStyle)) SetMode(_debriefReturn);
+                return;
+            }
+            if (_mockDebrief)
+            {
+                if (GUI.Button(new Rect(W * 0.5f - bw / 2, by, bw, bh), "Back to lessons", _buttonStyle)) { _mockDebrief = false; LessonSession.End(); SetMode(Mode.Driving); ResetDrive(); OpenLessonMenu(); }
+                return;
+            }
+            if (GUI.Button(new Rect(W * 0.5f - bw - W * 0.01f, by, bw, bh), Ui.Get("debrief.drive_again", "Drive again"), _buttonStyle)) { SetMode(Mode.Driving); ResetDrive(); }
+            if (GUI.Button(new Rect(W * 0.5f + W * 0.01f, by, bw, bh), Ui.Get("debrief.keep_driving", "Keep driving"), _buttonStyle)) SetMode(Mode.Driving);
         }
 
         private void DrawReplay(float W, float H)
@@ -292,6 +314,7 @@ namespace LToLocal.Game
             float sens = TouchControls.SteeringSensitivity;
             PlayerPrefs.DeleteAll();
             TouchControls.SteeringSensitivity = sens;
+            LessonSession.ResetAll();
         }
     }
 }

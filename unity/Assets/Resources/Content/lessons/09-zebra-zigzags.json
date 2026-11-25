@@ -1,0 +1,74 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s2-09-zebra-zigzags",
+  "stage": 2,
+  "order": 9,
+  "title": "Zebra crossings and zig-zags",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Flashing orange beacons warn you of a zebra crossing ahead.",
+      "You must give way once someone steps onto the stripes.",
+      "You must not overtake inside the white zig-zag lines."
+    ],
+    "ruleIds": [
+      "GB.XNG.ZEBRA",
+      "GB.XNG.ZIGZAG_OVERTAKE",
+      "GB.XNG.KEEP_CLEAR"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s2-09-zebra-zigzags.png"
+  },
+  "scenarios": [
+    {
+      "id": "s2_09_zebra_yield",
+      "course": "town",
+      "anchor": "zebra",
+      "goal": "Slow down and stop smoothly for pedestrians at the zebra crossing.",
+      "rulesJudged": [
+        "GB.XNG.ZEBRA",
+        "GB.XNG.KEEP_CLEAR"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.2,
+          0.4
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s2_09_zebra_zigzags",
+      "course": "town",
+      "anchor": "zebra",
+      "goal": "Hold back behind stopped cars through the zig-zag zone.",
+      "rulesJudged": [
+        "GB.XNG.ZEBRA",
+        "GB.XNG.ZIGZAG_OVERTAKE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Check both pavements as soon as you see flashing orange beacons.",
+    "Never overtake or stop on a zebra crossing in queuing traffic."
+  ]
+}

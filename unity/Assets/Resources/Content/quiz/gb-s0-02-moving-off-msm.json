@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s0-02-moving-off-msm",
+  "questions": [
+    {
+      "id": "q_02_move_off",
+      "question": "When is it safe to move off from the kerb?",
+      "options": [
+        "When mirrors and blind spot are clear",
+        "Right after switching your indicator on",
+        "Whenever you sound the horn"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wait until traffic from behind will not have to slow down.",
+      "ruleId": "GB.OBS.MOVE_OFF_CHECKS"
+    },
+    {
+      "id": "q_02_signal",
+      "question": "What should you do with your indicator after completing a turn?",
+      "options": [
+        "Cancel it promptly",
+        "Leave it on for one minute",
+        "Switch hazard lights on"
+      ],
+      "answerIndex": 0,
+      "explanation": "Leaving an indicator on can mislead other drivers.",
+      "ruleId": "GB.SIG.TIMELY"
+    }
+  ]
+}

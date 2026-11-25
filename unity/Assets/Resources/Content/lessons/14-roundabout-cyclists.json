@@ -1,0 +1,74 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s3-14-roundabout-cyclists",
+  "stage": 3,
+  "order": 14,
+  "title": "Cyclists on roundabouts",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Cyclists may stay in the left lane even when turning right.",
+      "Give cyclists on the roundabout priority and plenty of room.",
+      "Never overtake a cyclist only to cut across them at an exit."
+    ],
+    "ruleIds": [
+      "GB.RBT.CYCLISTS",
+      "GB.VRU.PASS_CYCLIST"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s3-14-roundabout-cyclists.png"
+  },
+  "scenarios": [
+    {
+      "id": "s3_14_single_rbt_cyclist",
+      "course": "roundabout",
+      "anchor": "start",
+      "goal": "Give priority to a cyclist circulating on the roundabout.",
+      "rulesJudged": [
+        "GB.RBT.CYCLISTS",
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.VRU.PASS_CYCLIST"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.2,
+          0.5
+        ],
+        "cyclistShare": 0.35,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s3_14_two_lane_rbt_cyclist",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Hold back and avoid cutting across cyclists near your exit.",
+      "rulesJudged": [
+        "GB.RBT.CYCLISTS",
+        "GB.VRU.PASS_CYCLIST"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.35,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Expect cyclists to stay left while continuing around a roundabout.",
+    "Hold back behind a cyclist until you clear the exit safely."
+  ]
+}

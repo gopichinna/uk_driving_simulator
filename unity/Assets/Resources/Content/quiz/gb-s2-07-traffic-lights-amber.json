@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s2-07-traffic-lights-amber",
+  "questions": [
+    {
+      "id": "q_07_amber",
+      "question": "What does a steady amber traffic light mean?",
+      "options": [
+        "Stop unless too close to stop safely",
+        "Speed up to clear the junction",
+        "Turn left if the road is clear"
+      ],
+      "answerIndex": 0,
+      "explanation": "You must stop on amber unless stopping safely is no longer possible.",
+      "ruleId": "GB.TL.AMBER"
+    },
+    {
+      "id": "q_07_red_turn",
+      "question": "Can you turn left on a red traffic light in the UK?",
+      "options": [
+        "No, you must wait for green",
+        "Yes, after stopping first",
+        "Yes, if no pedestrians are waiting"
+      ],
+      "answerIndex": 0,
+      "explanation": "There is no turning on red in the UK.",
+      "ruleId": "GB.TL.NO_TURN_ON_RED"
+    }
+  ]
+}

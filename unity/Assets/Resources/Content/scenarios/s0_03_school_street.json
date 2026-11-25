@@ -1,0 +1,28 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s0_03_school_street",
+  "course": "town",
+  "anchor": "school_street",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.3
+    },
+    {
+      "type": "parked_car",
+      "anchor": "school_street",
+      "offsetM": 20
+    },
+    {
+      "type": "pedestrian_waits",
+      "crossing": "church_st_mouth",
+      "whenPlayerWithinM": 35
+    },
+    {
+      "type": "finish_at",
+      "anchor": "school_street",
+      "offsetM": 120
+    }
+  ]
+}
