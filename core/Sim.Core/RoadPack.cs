@@ -195,6 +195,7 @@ namespace LToLocal.Sim
         public List<(int lane, int group)> SignalApproaches { get; } = new List<(int, int)>();
 
         public double LaneWidthM { get; }
+        private int _groups;
 
         private sealed class Arm
         {
@@ -262,6 +263,9 @@ namespace LToLocal.Sim
                         back.Add(AddLane(l, rev, false, k, l.LanesBackward, l.From, groupOf));
                 }
                 LinkLanes[l.Id] = (fwd, back);
+                int gf = _groups++, gb = _groups++;
+                foreach (int id in fwd) Graph.Segments[id].Group = gf;
+                foreach (int id in back) Graph.Segments[id].Group = gb;
 
                 Add(arrivals, l.To, new Arm { Link = l, Forward = true, Lanes = fwd, Heading = Graph.Segments[fwd[0]].Path.Sample(Graph.Segments[fwd[0]].Length).heading });
                 Add(departures, l.From, new Arm { Link = l, Forward = true, Lanes = fwd, Heading = Graph.Segments[fwd[0]].Path.Sample(0).heading });

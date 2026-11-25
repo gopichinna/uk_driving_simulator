@@ -46,6 +46,8 @@ namespace LToLocal.Sim
         public double Confidence = 1.0;
         /// <summary>Source link id (road packs), for debugging and routes.</summary>
         public string SourceId = "";
+        /// <summary>Lanes side by side going the same way share a group (you can change lane between them); -1 = none.</summary>
+        public int Group = -1;
         public readonly List<int> Next = new List<int>();
         public readonly List<int> Prev = new List<int>();
 
