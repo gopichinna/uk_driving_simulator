@@ -147,6 +147,21 @@ namespace LToLocal.Game
             PlayerPrefs.Save();
         }
 
+        /// <summary>Is the course for this lesson's drives in the app yet? (Motorways arrive later.)</summary>
+        public static bool Playable(LessonDef lesson)
+        {
+            foreach (var s in lesson.Scenarios)
+                if (!Application.CanStreamedLevelBeLoaded(SceneFor(s.Course))) return false;
+            return true;
+        }
+
+        /// <summary>Does the stage have at least one lesson whose courses are all in the app?</summary>
+        public static bool StagePlayable(int stage)
+        {
+            foreach (var l in Lessons) if (l.Stage == stage && Playable(l)) return true;
+            return false;
+        }
+
         public static string SceneFor(string course) => course switch
         {
             "town" => "Town",
@@ -154,6 +169,8 @@ namespace LToLocal.Game
             "roundabout" => "Roundabout",
             "dual_carriageway" => "DualCarriageway",
             "wolverhampton" => "Wolverhampton",
+            "wolverhampton-test-area" => "WolverhamptonTestArea",
+            "motorway" => "Motorway",
             _ => "Town",
         };
     }

@@ -1,0 +1,75 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s7-21-night-dipped-headlights",
+  "stage": 7,
+  "order": 21,
+  "title": "Night driving and headlights",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "You must switch on sidelights and rear lights between sunset and sunrise.",
+      "Use headlights at night on unlit roads and dipped headlights in built-up areas.",
+      "Dip your headlights when meeting oncoming traffic or following closely so you do not dazzle."
+    ],
+    "ruleIds": [
+      "GB.WX.HEADLIGHTS_NIGHT",
+      "GB.WX.NO_DAZZLE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158",
+    "diagram": "content/lessons/gb/diagrams/gb-s7-21-night-dipped-headlights.png"
+  },
+  "scenarios": [
+    {
+      "id": "s7_21_night_town",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Drive through town at night using dipped headlights without dazzling others.",
+      "rulesJudged": [
+        "GB.WX.HEADLIGHTS_NIGHT",
+        "GB.WX.NO_DAZZLE",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "night"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s7_21_night_dual",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Keep left on an unlit dual carriageway at night and dip headlights for traffic.",
+      "rulesJudged": [
+        "GB.WX.HEADLIGHTS_NIGHT",
+        "GB.WX.NO_DAZZLE",
+        "GB.POS.DUAL_KEEP_LEFT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "night"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Always use dipped headlights in lit built-up areas at night.",
+    "Never leave main beam on when facing or following another vehicle."
+  ]
+}

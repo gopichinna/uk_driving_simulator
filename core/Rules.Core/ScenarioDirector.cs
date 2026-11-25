@@ -58,6 +58,10 @@ namespace LToLocal.Rules
         /// <summary>"Follow the signs" destination (a POI id the course can locate), or empty.</summary>
         public string IndependentDestination { get; private set; } = "";
         public bool IsIndependentDriving => IndependentMinutes > 0;
+        /// <summary>Driving conditions for the scenario (scenario.v0 "conditions"): "day" | "dusk" | "night", "clear" | "rain" | "fog".</summary>
+        public string TimeOfDay { get; private set; } = "day";
+        public string Weather { get; private set; } = "clear";
+        public double VisibilityM { get; private set; } = 1000;
 
         public void Start(IScenarioWorld world, in CarState player)
         {
@@ -71,6 +75,12 @@ namespace LToLocal.Rules
                     case "parked_car": world.ParkedCar(e.Str("anchor"), e.Num("offsetM")); _fired[i] = true; break;
                     case "cyclist_ahead": world.CyclistAhead(e.Str("anchor"), e.Num("offsetM", 40), e.Num("speedMph", 12)); _fired[i] = true; break;
                     case "take_exit": RequiredExit = (int)e.Num("exitNumber", 1); _fired[i] = true; break;
+                    case "conditions":
+                        TimeOfDay = e.Str("timeOfDay") is { Length: > 0 } tod ? tod : "day";
+                        Weather = e.Str("weather") is { Length: > 0 } w ? w : "clear";
+                        VisibilityM = e.Num("visibilityM", 1000);
+                        _fired[i] = true;
+                        break;
                     case "independent_driving":
                         IndependentMinutes = e.Num("minutes", 35);
                         IndependentMode = e.Str("mode");

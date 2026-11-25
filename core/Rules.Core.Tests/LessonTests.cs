@@ -34,7 +34,7 @@ namespace LToLocal.Rules.Tests
                 {
                     var def = ScenarioDef.FromJson(File.ReadAllText(Path.Combine(Root(), "scenarios/gb", s.Id + ".json")));
                     Assert.That(def.Course, Is.EqualTo(s.Course), s.Id);
-                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s", "independent_driving" }));
+                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s", "independent_driving", "conditions" }));
                 }
                 var quiz = QuizDef.FromJson(File.ReadAllText(Path.Combine(Root(), "lessons/gb/quiz", l.Id + ".json")));
                 Assert.That(quiz.Questions.All(q => q.AnswerIndex >= 0 && q.AnswerIndex < q.Options.Count), l.Id);
@@ -83,12 +83,26 @@ namespace LToLocal.Rules.Tests
         }
 
         [Test]
+        public void UnplayableStagesAreSkippedWhenUnlocking()
+        {
+            var prog = Progression.FromJson("{\"stages\":[{\"stage\":5,\"lessonIds\":[\"a\"],\"unlockAfter\":null},{\"stage\":6,\"lessonIds\":[\"m\"],\"unlockAfter\":{\"stage\":5,\"minStars\":2}},{\"stage\":7,\"lessonIds\":[\"c\"],\"unlockAfter\":{\"stage\":6,\"minStars\":3}}]}");
+            var lessons = new List<LessonDef> { new LessonDef { Id = "a", Stage = 5 }, new LessonDef { Id = "m", Stage = 6 }, new LessonDef { Id = "c", Stage = 7 } };
+            var p = new LessonProgress();
+            p.Record("a", 2);
+            Assert.That(p.Unlocked(lessons[2], lessons, prog), Is.False, "normally needs motorway stars");
+            Assert.That(p.Unlocked(lessons[2], lessons, prog, stage => stage != 6), Is.True, "motorways not built: stage 5 stars (2) unlock stage 7");
+        }
+
+                [Test]
         public void IndependentDrivingRunsForItsMinutes()
         {
             var world = new FakeWorld();
             var d = new ScenarioDirector(Def("{\"scenarioId\":\"m\",\"course\":\"wolverhampton\",\"anchor\":\"start\",\"durationS\":180,\"events\":[{\"type\":\"independent_driving\",\"minutes\":35,\"mode\":\"mixed\"},{\"type\":\"finish_after_s\",\"seconds\":170}]}"));
             d.Start(world, new CarState());
             Assert.That(d.IsIndependentDriving && d.IndependentMode == "mixed");
+            var fog = new ScenarioDirector(Def("{\"scenarioId\":\"f\",\"course\":\"town\",\"anchor\":\"start\",\"durationS\":90,\"events\":[{\"type\":\"conditions\",\"timeOfDay\":\"night\",\"weather\":\"fog\",\"visibilityM\":80}]}"));
+            fog.Start(world, new CarState());
+            Assert.That((fog.TimeOfDay, fog.Weather, fog.VisibilityM), Is.EqualTo(("night", "fog", 80.0)));
             for (int i = 0; i < 50 * 200; i++) d.Step(0.02, world, new CarState());
             Assert.That(d.Finished, Is.False, "the 35 minutes win over the scenario's own short timers");
             for (int i = 0; i < 50 * 60 * 35; i++) d.Step(0.02, world, new CarState());

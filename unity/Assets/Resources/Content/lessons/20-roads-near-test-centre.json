@@ -1,0 +1,82 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s8-20-roads-near-test-centre",
+  "stage": 8,
+  "order": 20,
+  "title": "Roads near the test centre",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Expect a mix of residential streets, roundabouts, and faster main roads near a test centre.",
+      "Watch for parked cars, narrow industrial estate exits, and sudden speed-limit changes.",
+      "Official driving test routes are not published, so practise reading signs and markings early.",
+      "Keep calm and follow independent driving directions safely, even if you miss a turn."
+    ],
+    "ruleIds": [
+      "GB.POS.KEEP_LEFT",
+      "GB.POS.LANE_FOR_ROUTE",
+      "GB.SIG.TIMELY",
+      "GB.SPD.OVER_LIMIT",
+      "GB.GAP.TWO_SECOND"
+    ],
+    "govUkUrl": "https://www.gov.uk/find-driving-test-centre",
+    "diagram": "content/lessons/gb/diagrams/gb-s8-20-roads-near-test-centre.png"
+  },
+  "scenarios": [
+    {
+      "id": "s8_20_test_centre_mix",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Drive safely through residential streets, roundabouts, and main roads near the test centre.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.POS.LANE_FOR_ROUTE",
+        "GB.SIG.TIMELY",
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s8_20_test_centre_signs",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Follow the direction signs from Spring Road towards the main road network.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.POS.LANE_FOR_ROUTE",
+        "GB.SIG.TIMELY",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Scan ahead for speed-limit changes when leaving residential or industrial roads.",
+    "These practice routes build general confidence and are not official test routes."
+  ]
+}

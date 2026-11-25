@@ -17,8 +17,12 @@ namespace LToLocal.EditorTools
     public static partial class ProjectSetup
     {
         public const string WolverhamptonScene = "Assets/Scenes/Wolverhampton.unity";
-        private const string PackPath = "../content/cities/wolverhampton/roadpack.json";
-        private const string BuildingsPath = "../content/cities/wolverhampton/buildings.json";
+        public const string TestAreaScene = "Assets/Scenes/WolverhamptonTestArea.unity";
+        /// <summary>The content/cities folder being built (a city builder is shared by every real-streets course).</summary>
+        private static string s_city = "wolverhampton";
+        private static string CityFile(string name) => $"../content/cities/{s_city}/{name}";
+        private static string PackPath => CityFile("roadpack.json");
+        private static string BuildingsPath => CityFile("buildings.json");
 
         /// <summary>Collects quads and polygons into one mesh (32-bit indices).</summary>
         private sealed class MeshBuilder
@@ -222,7 +226,7 @@ namespace LToLocal.EditorTools
             int skipped = 0;
             var root = new GameObject("PlacedSigns").transform;
             root.SetParent(world, false);
-            const string signsPath = "../content/cities/wolverhampton/direction_signs.json", platesPath = "../content/cities/wolverhampton/street_names.json";
+            string signsPath = CityFile("direction_signs.json"), platesPath = CityFile("street_names.json");
             if (File.Exists(signsPath))
             {
                 var doc = MiniJson.Obj(MiniJson.Parse(File.ReadAllText(signsPath)));
@@ -274,7 +278,7 @@ namespace LToLocal.EditorTools
                 }
             }
             // Speed-limit roundels, bus stop flags and school warning signs (round 9 street furniture).
-            string cityDir = "../content/cities/wolverhampton/";
+            string cityDir = $"../content/cities/{s_city}/";
             Vec2 Pos(Dictionary<string, object> o) => new Vec2(MiniJson.Num(o["x"]), MiniJson.Num(o["z"]));
             double Rad(Dictionary<string, object> o) => MiniJson.Num(o["heading"]) * System.Math.PI / 180;
             if (File.Exists(cityDir + "speed_signs.json"))
@@ -311,8 +315,12 @@ namespace LToLocal.EditorTools
             Debug.Log($"[LToLocal] Placed signs: {skipped} skipped (no clear spot off the road).");
         }
 
-        private static void BuildWolverhamptonScene()
+        private static void BuildWolverhamptonScene() => BuildCityScene("wolverhampton", WolverhamptonScene);
+        private static void BuildTestAreaScene() => BuildCityScene("wolverhampton-test-area", TestAreaScene);
+
+        private static void BuildCityScene(string city, string scenePath)
         {
+            s_city = city;
             if (!File.Exists(PackPath)) { Debug.LogWarning("[LToLocal] Wolverhampton pack missing; scene skipped."); return; }
             var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
             var m = Palette.Create();
@@ -485,7 +493,8 @@ namespace LToLocal.EditorTools
             course.signalsRoot = signals;
             course.startLink = g.Segments[startLane].SourceId;
             course.startOffset = (float)startOffset;
-            SaveScene(scene, WolverhamptonScene);
+            course.resourcePrefix = city.Replace('-', '_');
+            SaveScene(scene, scenePath);
         }
     }
 }

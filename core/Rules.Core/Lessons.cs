@@ -226,13 +226,21 @@ namespace LToLocal.Rules
         }
 
         /// <summary>With progression data: the stage's unlock rule. Without: every lesson of the previous stage has a star.</summary>
-        public bool Unlocked(LessonDef lesson, IReadOnlyList<LessonDef> all, Progression? progression)
+        public bool Unlocked(LessonDef lesson, IReadOnlyList<LessonDef> all, Progression? progression, Func<int, bool>? stagePlayable = null)
         {
             var stage = progression?.StageOf(lesson.Stage);
             if (stage == null) return Unlocked(lesson, all);
             if (stage.UnlockAfterStage < 0) return true;
+            // A stage that can't be played yet (e.g. motorways before that course exists) is skipped: its own
+            // requirement on the stage before it applies instead.
+            var rule = stage;
             var before = progression!.StageOf(stage.UnlockAfterStage);
-            return before == null || StageStars(before) >= stage.MinStars;
+            while (before != null && stagePlayable != null && !stagePlayable(before.Number) && before.UnlockAfterStage >= 0)
+            {
+                rule = before;
+                before = progression.StageOf(before.UnlockAfterStage);
+            }
+            return before == null || StageStars(before) >= rule.MinStars;
         }
 
         /// <summary>Stage 0 is always open; a later stage opens when every lesson of the stage before has at least one star.</summary>

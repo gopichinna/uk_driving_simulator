@@ -16,6 +16,8 @@ namespace LToLocal.Game
         public Transform signalsRoot;
         public string startLink = "";
         public float startOffset = 5f;
+        /// <summary>Which city pack this course shows: Resources/Content/&lt;prefix&gt;_roadpack and _pois.</summary>
+        public string resourcePrefix = "wolverhampton";
 
         private RoadPackGraph _built;
         private TownTraffic _traffic;
@@ -31,7 +33,7 @@ namespace LToLocal.Game
         private readonly List<(int group, GameObject red, GameObject amber, GameObject green)> _heads = new List<(int, GameObject, GameObject, GameObject)>();
         private GUIStyle _credit;
 
-        public string DisplayName => "Wolverhampton city centre (beta)";
+        public string DisplayName => resourcePrefix == "wolverhampton" ? "Wolverhampton city centre (beta)" : $"{Built.Pack.DisplayName} (beta)";
         public LaneGraph Graph => Built.Graph;
 
         private RoadPackGraph Built
@@ -39,7 +41,7 @@ namespace LToLocal.Game
             get
             {
                 if (_built != null) return _built;
-                var asset = Resources.Load<TextAsset>("Content/wolverhampton_roadpack");
+                var asset = Resources.Load<TextAsset>($"Content/{resourcePrefix}_roadpack");
                 _built = new RoadPackGraph(RoadPack.Parse(asset.text));
                 if (!string.IsNullOrEmpty(_built.Pack.Attribution)) _attribution = _built.Pack.Attribution;
                 return _built;
@@ -195,7 +197,7 @@ namespace LToLocal.Game
             if (_pois == null)
             {
                 _pois = new Dictionary<string, Vec2>();
-                var asset = Resources.Load<TextAsset>("Content/wolverhampton_pois");
+                var asset = Resources.Load<TextAsset>($"Content/{resourcePrefix}_pois");
                 if (asset != null && MiniJson.Parse(asset.text) is Dictionary<string, object> root && root.TryGetValue("pois", out var list))
                     foreach (var o in MiniJson.Arr(list))
                     {

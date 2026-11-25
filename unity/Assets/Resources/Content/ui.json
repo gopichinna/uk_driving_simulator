@@ -45,6 +45,20 @@
     "lesson.retry": "Try again",
     "lesson.quiz_title": "Quick check",
     "lesson.correct": "Correct",
-    "lesson.incorrect": "Not quite"
+    "lesson.incorrect": "Not quite",
+    "a11y.hud.steer_left": "Steer left",
+    "a11y.hud.steer_right": "Steer right",
+    "a11y.hud.throttle": "Accelerate",
+    "a11y.hud.brake": "Brake",
+    "a11y.hud.indicator_left": "Signal left",
+    "a11y.hud.indicator_right": "Signal right",
+    "a11y.hud.shoulder_check": "Look over your shoulder",
+    "a11y.hud.camera_toggle": "Switch between driver seat and chase view",
+    "a11y.hud.finish_drive": "End drive and open debrief",
+    "a11y.hud.reset": "Restart the current course",
+    "a11y.hud.settings": "Open settings",
+    "a11y.screen.debrief": "Drive debrief and fault list",
+    "a11y.screen.settings": "Settings screen",
+    "a11y.screen.lessons": "Lesson list and progress"
   }
 }

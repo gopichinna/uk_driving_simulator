@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s7-22-rain-stopping-distances",
+  "questions": [
+    {
+      "id": "q_22_wet_gap",
+      "question": "How much longer is your stopping distance on a wet road?",
+      "options": [
+        "At least double",
+        "About the same",
+        "Half as long"
+      ],
+      "answerIndex": 0,
+      "explanation": "Tyres have less grip on wet roads, so stopping distances at least double.",
+      "ruleId": "GB.GAP.WET_ICY"
+    },
+    {
+      "id": "q_22_aquaplaning",
+      "question": "What should you do if your steering feels light in standing water?",
+      "options": [
+        "Ease off the accelerator and slow down gradually",
+        "Brake hard and turn sharply",
+        "Speed up to clear the puddle"
+      ],
+      "answerIndex": 0,
+      "explanation": "Light steering means aquaplaning; ease off the gas gently until tyres grip again.",
+      "ruleId": "GB.GAP.WET_ICY"
+    }
+  ]
+}

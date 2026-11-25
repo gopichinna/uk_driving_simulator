@@ -47,6 +47,7 @@ namespace LToLocal.Game
                 {
                     _director = new ScenarioDirector(def);
                     _director.Start(World, _curr);
+                    ApplyConditions(_director.TimeOfDay, _director.Weather, _director.VisibilityM);
                     // Independent driving (the mock test): sat-nav unless the player must follow the signs.
                     if (_director.IsIndependentDriving && _director.IndependentMode != "signs" && _course is WolverhamptonCourse w)
                     {
@@ -65,6 +66,58 @@ namespace LToLocal.Game
                 _mockStart = _clock.SimTime;
                 LessonSession.ScenarioPending = false;
             }
+        }
+
+        private bool _conditionsSaved;
+        private Color _fogColour, _background, _ambient;
+        private float _fogStart, _fogEnd, _sunIntensity;
+        private Light _sun, _headlights;
+
+        /// <summary>Night, dusk, rain and fog for Stage 7 lessons: darker light, headlight beams, and fog at the scenario's visibility.</summary>
+        private void ApplyConditions(string timeOfDay, string weather, double visibilityM)
+        {
+            if (!_conditionsSaved)
+            {
+                _conditionsSaved = true;
+                foreach (var l in FindObjectsByType<Light>(FindObjectsSortMode.None)) if (l.type == LightType.Directional) _sun = l;
+                _fogColour = RenderSettings.fogColor;
+                _fogStart = RenderSettings.fogStartDistance;
+                _fogEnd = RenderSettings.fogEndDistance;
+                _ambient = RenderSettings.ambientLight;
+                _background = chaseCamera.backgroundColor;
+                _sunIntensity = _sun != null ? _sun.intensity : 1f;
+            }
+            float light = timeOfDay == "night" ? 0.12f : timeOfDay == "dusk" ? 0.45f : 1f;
+            Color fog = timeOfDay == "night" ? new Color(0.06f, 0.08f, 0.14f) : timeOfDay == "dusk" ? new Color(0.55f, 0.48f, 0.52f) : _fogColour;
+            float start = _fogStart, end = _fogEnd;
+            if (weather == "fog") { fog = Color.Lerp(fog, new Color(0.78f, 0.80f, 0.82f), light); start = 2f; end = Mathf.Max(20f, (float)visibilityM); }
+            else if (weather == "rain") { fog = Color.Lerp(fog, new Color(0.55f, 0.58f, 0.62f), 0.7f * light + 0.1f); start = 10f; end = Mathf.Clamp((float)visibilityM, 80f, 350f); light *= 0.75f; }
+            else if (timeOfDay == "night") { start = 20f; end = 260f; }
+
+            RenderSettings.fog = true;
+            RenderSettings.fogMode = FogMode.Linear;
+            RenderSettings.fogColor = fog;
+            RenderSettings.fogStartDistance = start;
+            RenderSettings.fogEndDistance = end;
+            RenderSettings.ambientLight = _ambient * light;
+            chaseCamera.backgroundColor = fog;
+            if (_sun != null) _sun.intensity = _sunIntensity * light;
+
+            bool lightsOn = timeOfDay != "day" || weather != "clear";
+            if (lightsOn && _headlights == null)
+            {
+                var go = new GameObject("Headlights");
+                go.transform.SetParent(car, false);
+                go.transform.localPosition = new Vector3(0, 0.8f, 2.2f);
+                go.transform.localRotation = Quaternion.Euler(8f, 0, 0);
+                _headlights = go.AddComponent<Light>();
+                _headlights.type = LightType.Spot;
+                _headlights.spotAngle = 70f;
+                _headlights.range = 45f;
+                _headlights.intensity = 4f;
+                _headlights.color = new Color(1f, 0.96f, 0.85f);
+            }
+            if (_headlights != null) _headlights.enabled = lightsOn;
         }
 
         private void LessonStep(double dt)
@@ -189,14 +242,15 @@ namespace LToLocal.Game
                     var ps = LessonSession.Progression?.StageOf(l.Stage);
                     // Stages 6-7 (motorways, conditions) aren't built yet, so the mock test shows as the final stage.
                     string head = l.Stage == 8 ? $"Final test: {ps?.Title ?? "Mock driving test"}" : ps != null ? $"Stage {l.Stage}: {ps.Title}" : StageName(l.Stage);
-                    if (ps != null && ps.UnlockAfterStage >= 0 && !LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression))
+                    if (ps != null && ps.UnlockAfterStage >= 0 && !LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression, LessonSession.StagePlayable))
                         head += $"   (unlocks with {ps.MinStars} stars in Stage {ps.UnlockAfterStage})";
                     GUI.Label(new Rect(0, cy, w - 30, headH), head, _textStyle);
                     cy += headH;
                 }
-                bool open = LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression);
+                bool playable = LessonSession.Playable(l);
+                bool open = playable && LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression, LessonSession.StagePlayable);
                 int stars = LessonSession.Progress.StarsFor(l.Id);
-                string label = $"{l.Order}. {l.Title}{(l.FreeTier ? "  (free)" : "")}   {new string('★', stars)}{new string('☆', 3 - stars)}{(open ? "" : "   Locked")}";
+                string label = $"{l.Order}. {l.Title}{(l.FreeTier ? "  (free)" : "")}   {new string('★', stars)}{new string('☆', 3 - stars)}{(!playable ? "   Coming soon" : open ? "" : "   Locked")}";
                 GUI.enabled = open;
                 if (GUI.Button(new Rect(0, cy, w - 30, rowH), label, _rowStyle))
                 {
