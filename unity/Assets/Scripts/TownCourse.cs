@@ -7,8 +7,8 @@ namespace LToLocal.Game
 {
     /// <summary>
     /// Town centre, 30 mph with a 20 mph school street: traffic lights with cycle boxes and a yellow box,
-    /// two give-way T-junctions, a zebra crossing and pedestrians. Judges lights, give way, crossings, zig-zags
-    /// and the box. Signal heads, Belisha beacons and pedestrians in the scene are found by name.
+    /// two give-way T-junctions, a zebra crossing and pedestrians. Judges lights, give way, crossings, zig-zags,
+    /// the box, keeping left and signalling when moving out. Signal heads, Belisha beacons and pedestrians in the scene are found by name.
     /// </summary>
     public sealed class TownCourse : MonoBehaviour, ICourse
     {
@@ -24,6 +24,7 @@ namespace LToLocal.Game
         private TownTraffic _traffic;
         private TownPedestrians _peds;
         private TownRules _rules;
+        private KeepLeftRule _keepLeft;
         private double _time;
         private readonly List<LightState> _lights = new List<LightState> { LightState.Red, LightState.Red };
         private readonly List<VehicleSnapshot> _snap = new List<VehicleSnapshot>();
@@ -62,6 +63,7 @@ namespace LToLocal.Game
             _peds = new TownPedestrians(Geometry.Graph, Geometry.PedestrianRoutes, 12, seed: 2027);
             _traffic.Pedestrians = _peds;
             _rules = new TownRules(Geometry.Graph, DrivingSide.Left);
+            _keepLeft = new KeepLeftRule(Geometry.Graph, DrivingSide.Left);
 
             foreach (var t in signalsRoot != null ? signalsRoot.GetComponentsInChildren<Transform>(true) : new Transform[0])
             {
@@ -90,6 +92,7 @@ namespace LToLocal.Game
             _traffic.Reset();
             _peds.Reset();
             _rules.Reset();
+            _keepLeft.Reset();
             // Warm up so the town is busy when the drive starts (the player is parked far away meanwhile).
             var away = new CarState { X = 5000, Z = 5000 };
             for (int i = 0; i < 50 * 45; i++)
@@ -116,7 +119,9 @@ namespace LToLocal.Game
             _lights[0] = _signals.State(0, _time);
             _lights[1] = _signals.State(1, _time);
             GetRoadUsers(_users);
-            _rules.OnFrame(new DriverFrame(simTime, player, indicator), _lights, _peds.People, _users, events);
+            var frame = new DriverFrame(simTime, player, indicator);
+            _rules.OnFrame(frame, _lights, _peds.People, _users, events);
+            _keepLeft.OnFrame(frame, _users, events);
         }
 
         public void Render(float alpha, bool blink)
