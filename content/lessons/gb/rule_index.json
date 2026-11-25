@@ -146,14 +146,14 @@
       {
         "lessonId": "gb-s0-02-moving-off-msm",
         "scenarioId": "s0_02_move_off_town",
-        "title": "Moving off and MSM"
+        "title": "Pulling away and MSM"
       }
     ],
     "GB.OBS.MSM": [
       {
         "lessonId": "gb-s0-02-moving-off-msm",
         "scenarioId": "s0_02_msm_approach",
-        "title": "Moving off and MSM"
+        "title": "Pulling away and MSM"
       }
     ],
     "GB.POS.AFTER_TURN": [
@@ -344,12 +344,12 @@
       {
         "lessonId": "gb-s0-02-moving-off-msm",
         "scenarioId": "s0_02_move_off_town",
-        "title": "Moving off and MSM"
+        "title": "Pulling away and MSM"
       },
       {
         "lessonId": "gb-s0-02-moving-off-msm",
         "scenarioId": "s0_02_msm_approach",
-        "title": "Moving off and MSM"
+        "title": "Pulling away and MSM"
       },
       {
         "lessonId": "gb-s1-05-pedestrians-h2",

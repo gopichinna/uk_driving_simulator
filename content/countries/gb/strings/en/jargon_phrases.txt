@@ -1,0 +1,12 @@
+# Driving-school jargon phrases to avoid in player-facing text (R12.6 / R15.1).
+# Checked case-insensitively as whole words/phrases unless explained in the same text.
+following traffic
+priority traffic
+emerge
+nearside
+offside
+major road
+move off
+moving off
+proceed
+carriageway
