@@ -150,6 +150,7 @@ R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank y
 
   Report the motorway length per carriageway in `QA.md`, and test that it's ≥ 4 km.
 - [ ] **R15.4 Test-centre address.** The GOV.UK result has no street number: drop "101" in `config.yaml`, lesson 20 and `docs/08`.
+- [ ] **R15.6 A real engine sound.** Claude listened to `engine_*.ogg` with an audio analyser: it reads as "a computer fan hum / white noise", not an engine, so the game doesn't ship it yet. Please source **recorded** small-petrol-car engine loops (idle, about 1500 rpm and about 2500 rpm; seamless loops of 2–4 s, mono) under **CC0** (e.g. Freesound filtered to CC0, or OpenGameArt CC0). Record the URL, author and licence in `LICENCES.md`, normalise to −16 LUFS, and replace the synthesised files. If you can't find suitable CC0 recordings, say so; don't ship synthetic ones.
 - [ ] **R15.5 Hand-off.** One PR, `Hydrogen R15: plain English, sign rows, motorway section`. Base it on `main` (don't stack it).
 
 ---
