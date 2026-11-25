@@ -252,6 +252,11 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
         validate_signs_placed_file(sp_path)
         validated.append(sp_path)
 
+    for fname in ("speed_signs.json", "bus_stops.json", "warning_signs.json"):
+        for sp_path in sorted(root.glob(f"cities/*/{fname}")):
+            validate_signs_placed_file(sp_path)
+            validated.append(sp_path)
+
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)
         validated.append(tm_path)
