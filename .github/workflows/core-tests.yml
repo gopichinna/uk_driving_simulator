@@ -1,0 +1,22 @@
+name: core-tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  dotnet:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '11.0.x'
+      - name: Check the core has no Unity dependency
+        run: |
+          if grep -rn "UnityEngine" core --include=*.cs; then
+            echo "core/ must not reference UnityEngine (ADR-004)"; exit 1
+          fi
+      - name: Test
+        run: dotnet test core/LToLocal.Core.slnx --configuration Release

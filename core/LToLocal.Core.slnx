@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Sim.Core.Tests/Sim.Core.Tests.csproj" />
+  <Project Path="Sim.Core/Sim.Core.csproj" />
+</Solution>

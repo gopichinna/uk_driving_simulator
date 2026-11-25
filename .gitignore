@@ -1,0 +1,36 @@
+# macOS
+.DS_Store
+
+# .NET core
+core/**/bin/
+core/**/obj/
+*.user
+TestResults/
+
+# Unity project (unity/)
+unity/[Ll]ibrary/
+unity/[Tt]emp/
+unity/[Oo]bj/
+unity/[Bb]uild/
+unity/[Bb]uilds/
+unity/[Ll]ogs/
+unity/[Uu]ser[Ss]ettings/
+unity/[Mm]emoryCaptures/
+unity/*.csproj
+unity/*.sln
+unity/*.slnx
+unity/.vs/
+unity/.vscode/
+unity/*.apk
+unity/*.aab
+unity/*.keystore
+
+# Python pipeline
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+
+# Large downloaded data (OSM extracts are re-downloaded by the pipeline)
+*.osm.pbf
+pipeline/cache/
