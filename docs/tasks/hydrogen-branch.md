@@ -50,15 +50,15 @@ Review of round 5 found two problems:
   - **Dual carriageway:** use `finish_after_s`.
 
 ## C. Knowledge check after each lesson (original questions only)
-- [ ] C1. `content/schemas/quiz.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/quiz/<lessonId>.json`. Each lesson gets 2–3 multiple-choice questions. Each question has:
+- [x] C1. `content/schemas/quiz.v0.schema.json` (new, pre-agreed) and `content/lessons/gb/quiz/<lessonId>.json`. Each lesson gets 2–3 multiple-choice questions. Each question has: (`quiz.v0.schema.json` + 18 quiz files, 2 original questions each.)
   - `id`, `question`;
   - `options` (3–4);
   - `answerIndex`;
   - `explanation` (1–2 sentences);
   - `ruleId` (it must exist in `rules.yaml`);
   - `diagram` (optional).
-- [ ] C2. **Write every question yourself from the Highway Code rule text** (our paraphrase). **Never copy or adapt DVSA theory-test questions or any question bank** (`AGENTS.md` §4, rule 2). Plain English B1, and the readability linter covers it.
-- [ ] C3. Tests:
+- [x] C2. **Write every question yourself from the Highway Code rule text** (our paraphrase). **Never copy or adapt DVSA theory-test questions or any question bank** (`AGENTS.md` §4, rule 2). Plain English B1, and the readability linter covers it. (Original B1 questions, checked by `test_quizzes.py`.)
+- [x] C3. Tests: (`pipeline/tests/test_quizzes.py`)
   - every lesson has a quiz;
   - `answerIndex` is in range;
   - the options are unique;

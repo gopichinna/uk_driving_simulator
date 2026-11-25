@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s2-08-advanced-stop-lines",
+  "questions": [
+    {
+      "id": "q_08_asl",
+      "question": "Where must you stop on red when there is an ASL bike box?",
+      "options": [
+        "Behind the first white stop line",
+        "Inside the green cycle box",
+        "Ahead of the second white line"
+      ],
+      "answerIndex": 0,
+      "explanation": "Leave the ASL box clear so cyclists have a safe space ahead.",
+      "ruleId": "GB.TL.ASL"
+    },
+    {
+      "id": "q_08_h3",
+      "question": "What should you do if a cyclist is beside you going ahead?",
+      "options": [
+        "Wait and let the cyclist pass first",
+        "Turn quickly in front of them",
+        "Sound your horn to warn them"
+      ],
+      "answerIndex": 0,
+      "explanation": "Never cut across cyclists going ahead when you turn.",
+      "ruleId": "GB.JCT.H3_CYCLISTS"
+    }
+  ]
+}

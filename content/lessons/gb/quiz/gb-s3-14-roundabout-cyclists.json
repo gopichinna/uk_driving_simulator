@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s3-14-roundabout-cyclists",
+  "questions": [
+    {
+      "id": "q_14_cyclist",
+      "question": "Where may a cyclist ride on a roundabout even when turning right?",
+      "options": [
+        "In the left-hand lane",
+        "Across the central island",
+        "Only on the pavement"
+      ],
+      "answerIndex": 0,
+      "explanation": "Cyclists may stay in the left lane while going right; give them priority.",
+      "ruleId": "GB.RBT.CYCLISTS"
+    },
+    {
+      "id": "q_14_space",
+      "question": "What should you do if a cyclist is riding ahead near your exit?",
+      "options": [
+        "Hold back and let them pass safely",
+        "Overtake and cut across them",
+        "Sound your horn to move them"
+      ],
+      "answerIndex": 0,
+      "explanation": "Never cut across a cyclist when leaving a roundabout.",
+      "ruleId": "GB.RBT.CYCLISTS"
+    }
+  ]
+}
