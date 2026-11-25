@@ -22,6 +22,8 @@ namespace LToLocal.EditorTools
         private static string s_city = "wolverhampton";
         private static string CityFile(string name) => $"../content/cities/{s_city}/{name}";
         private static string PackPath => CityFile("roadpack.json");
+        /// <summary>Each city's merged meshes get their own asset names, so building one city never overwrites another's.</summary>
+        private static string MeshPrefix => s_city == "wolverhampton" ? "Wolv" : "City_" + s_city.Replace('-', '_');
         private static string BuildingsPath => CityFile("buildings.json");
 
         /// <summary>Collects quads and polygons into one mesh (32-bit indices).</summary>
@@ -434,10 +436,10 @@ namespace LToLocal.EditorTools
                     zebraWhite.Quad(p0, p0 + along, (float)(across.Length / n), 0.024f);
                 }
             }
-            roads.Save("Wolv_Roads", world, m.Road);
-            footways.Save("Wolv_Footways", world, pavement);
-            lines.Save("Wolv_Lines", world, m.White);
-            zebraWhite.Save("Wolv_Zebras", world, m.White);
+            roads.Save($"{MeshPrefix}_Roads", world, m.Road);
+            footways.Save($"{MeshPrefix}_Footways", world, pavement);
+            lines.Save($"{MeshPrefix}_Lines", world, m.White);
+            zebraWhite.Save($"{MeshPrefix}_Zebras", world, m.White);
 
             // Buildings (merged per colour).
             var signals = new GameObject("Signals").transform;
@@ -456,7 +458,7 @@ namespace LToLocal.EditorTools
                     float h = o.TryGetValue("heightM", out var hv) && hv is double hd ? (float)hd : 9f;
                     byColour[k++ % byColour.Length].Prism(fp, Mathf.Clamp(h, 3f, 60f));
                 }
-                for (int i = 0; i < byColour.Length; i++) byColour[i].Save($"Wolv_Buildings{i}", world, m.Buildings[i]);
+                for (int i = 0; i < byColour.Length; i++) byColour[i].Save($"{MeshPrefix}_Buildings{i}", world, m.Buildings[i]);
             }
 
             // Direction signs and street-name plates placed by the content pipeline (real destinations from OSM).
