@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/quiz.v0.schema.json",
+  "title": "L to Local Lesson Quiz v0",
+  "description": "Original multiple-choice knowledge check after each lesson (CEFR B1). Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["quizFormatVersion", "lessonId", "questions"],
+  "additionalProperties": false,
+  "properties": {
+    "quizFormatVersion": { "const": "0.1" },
+    "lessonId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "questions": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": { "$ref": "#/$defs/question" }
+    }
+  },
+  "$defs": {
+    "question": {
+      "type": "object",
+      "required": ["id", "question", "options", "answerIndex", "explanation", "ruleId"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "question": { "type": "string", "minLength": 1 },
+        "options": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 4,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "answerIndex": { "type": "integer", "minimum": 0, "maximum": 3 },
+        "explanation": { "type": "string", "minLength": 1 },
+        "ruleId": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" },
+        "diagram": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

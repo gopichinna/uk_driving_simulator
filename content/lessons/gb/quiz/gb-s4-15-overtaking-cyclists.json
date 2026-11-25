@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s4-15-overtaking-cyclists",
+  "questions": [
+    {
+      "id": "q_15_clearance",
+      "question": "How much space should you leave when passing a cyclist up to 30 mph?",
+      "options": [
+        "At least 1.5 metres",
+        "At least 0.5 metres",
+        "About 1.0 metre"
+      ],
+      "answerIndex": 0,
+      "explanation": "Leave at least 1.5 metres up to 30 mph, and more above 30 mph.",
+      "ruleId": "GB.VRU.PASS_CYCLIST"
+    },
+    {
+      "id": "q_15_wait",
+      "question": "What should you do if oncoming traffic stops you giving 1.5 metres?",
+      "options": [
+        "Wait behind the cyclist until clear",
+        "Squeeze past slowly",
+        "Flash your headlights"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wait behind the cyclist whenever there is not enough room.",
+      "ruleId": "GB.VRU.PASS_CYCLIST"
+    }
+  ]
+}

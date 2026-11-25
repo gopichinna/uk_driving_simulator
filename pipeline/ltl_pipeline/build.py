@@ -579,6 +579,118 @@ def _compute_main_network_and_spawns(
     return (main_network, spawns)
 
 
+def _build_lane_connections(
+    links: list[dict[str, Any]],
+    restrictions: list[dict[str, Any]],
+) -> list[dict[str, Any]]:
+    """Build laneConnections[] for multi-lane or turn:lanes links, respecting restrictions."""
+    forbidden: dict[tuple[str, str], set[str]] = defaultdict(set)
+    only: dict[tuple[str, str], set[str]] = defaultdict(set)
+    for r in restrictions:
+        key = (r["fromLink"], r["viaNode"])
+        if r["type"].startswith("no_"):
+            forbidden[key].add(r["toLink"])
+        elif r["type"].startswith("only_"):
+            only[key].add(r["toLink"])
+
+    # Outgoing traversals per node: (link, outgoing_lanes_count, out_angle)
+    outgoing_by_node: dict[str, list[tuple[dict[str, Any], int, float]]] = defaultdict(list)
+    for lk in links:
+        g = lk["geometry"]
+        ang_fwd = math.atan2(g[1][1] - g[0][1], g[1][0] - g[0][0])
+        outgoing_by_node[lk["from"]].append((lk, max(1, lk["lanesForward"]), ang_fwd))
+        if not lk["oneway"]:
+            ang_bwd = math.atan2(g[-2][1] - g[-1][1], g[-2][0] - g[-1][0])
+            outgoing_by_node[lk["to"]].append((lk, max(1, lk["lanesBackward"]), ang_bwd))
+
+    conns: list[dict[str, Any]] = []
+    seen: set[tuple[str, str, int, str, int]] = set()
+
+    def add_conn(nid: str, fl: str, flane: int, tl: str, tlane: int, conf: float) -> None:
+        key = (nid, fl, flane, tl, tlane)
+        if key in seen:
+            return
+        seen.add(key)
+        conns.append(
+            {
+                "nodeId": nid,
+                "fromLink": fl,
+                "fromLane": flane,
+                "toLink": tl,
+                "toLane": tlane,
+                "confidence": conf,
+            }
+        )
+
+    for lk in links:
+        g = lk["geometry"]
+        # Check forward approach (at lk["to"]) and backward approach (at lk["from"])
+        approaches: list[tuple[str, int, list[str] | None, float]] = [
+            (
+                lk["to"],
+                lk["lanesForward"],
+                lk.get("turnLanesForward"),
+                math.atan2(g[-1][1] - g[-2][1], g[-1][0] - g[-2][0]),
+            )
+        ]
+        if not lk["oneway"]:
+            approaches.append(
+                (
+                    lk["from"],
+                    lk["lanesBackward"],
+                    lk.get("turnLanesBackward"),
+                    math.atan2(g[0][1] - g[1][1], g[0][0] - g[1][0]),
+                )
+            )
+
+        for via_node, n_lanes, turn_lanes, in_ang in approaches:
+            if n_lanes <= 1 and not turn_lanes:
+                continue
+            rkey = (lk["id"], via_node)
+            outs = outgoing_by_node.get(via_node, [])
+            for out_lk, out_lanes, out_ang in outs:
+                if out_lk["id"] == lk["id"]:
+                    continue
+                if rkey in forbidden and out_lk["id"] in forbidden[rkey]:
+                    continue
+                if rkey in only and out_lk["id"] not in only[rkey]:
+                    continue
+
+                # Signed turn angle in radians: > 0 is left, < 0 is right
+                diff = math.degrees((out_ang - in_ang + math.pi) % (2 * math.pi) - math.pi)
+                if diff >= 30.0:
+                    turn_cat = "left"
+                elif diff <= -30.0:
+                    turn_cat = "right"
+                else:
+                    turn_cat = "through"
+
+                if turn_lanes and len(turn_lanes) == n_lanes:
+                    for flane, spec in enumerate(turn_lanes):
+                        tokens = set(spec.split(";"))
+                        allowed = (
+                            (turn_cat == "left" and ("left" in tokens or "slight_left" in tokens))
+                            or (
+                                turn_cat == "right"
+                                and ("right" in tokens or "slight_right" in tokens)
+                            )
+                            or (turn_cat == "through" and ("through" in tokens or "none" in tokens))
+                        )
+                        if allowed:
+                            tlane = min(flane, out_lanes - 1)
+                            add_conn(via_node, lk["id"], flane, out_lk["id"], tlane, 0.85)
+                else:
+                    # Default: lane 0 (nearside) left/ahead; lane n-1 (offside) right/ahead
+                    if turn_cat in ("left", "through"):
+                        add_conn(via_node, lk["id"], 0, out_lk["id"], 0, 0.55)
+                    if turn_cat in ("right", "through") and n_lanes >= 2:
+                        tlane = min(n_lanes - 1, out_lanes - 1)
+                        add_conn(via_node, lk["id"], n_lanes - 1, out_lk["id"], tlane, 0.55)
+
+    conns.sort(key=lambda c: (c["nodeId"], c["fromLink"], c["fromLane"], c["toLink"], c["toLane"]))
+    return conns
+
+
 def build_roadpack(
     extracted: ExtractedOsm,
     config: dict[str, Any],
@@ -802,6 +914,7 @@ def build_roadpack(
     restrictions.sort(key=lambda item: item["id"])
     junction_priority, signal_plans = _infer_junction_priority_and_signals(nodes, links)
     main_network, spawn_points = _compute_main_network_and_spawns(links, restrictions)
+    lane_connections = _build_lane_connections(links, restrictions)
 
     excluded_list = [
         {
@@ -813,7 +926,7 @@ def build_roadpack(
     ]
 
     pack: dict[str, Any] = {
-        "packFormatVersion": "0.4",
+        "packFormatVersion": "0.5",
         "packId": config["pack_id"],
         "displayName": config["display_name"],
         "country": config["country"],
@@ -838,6 +951,7 @@ def build_roadpack(
         "signalPlans": signal_plans,
         "mainNetwork": main_network,
         "spawnPoints": spawn_points,
+        "laneConnections": lane_connections,
         "excluded": excluded_list,
     }
     validate_roadpack(pack)

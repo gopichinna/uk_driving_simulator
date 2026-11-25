@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s2-09-zebra-zigzags",
+  "questions": [
+    {
+      "id": "q_09_zebra",
+      "question": "When must you stop at a zebra crossing?",
+      "options": [
+        "Once someone steps onto the crossing",
+        "Only if a traffic warden is there",
+        "Only when beacons stop flashing"
+      ],
+      "answerIndex": 0,
+      "explanation": "You must give way once someone steps onto a zebra crossing.",
+      "ruleId": "GB.XNG.ZEBRA"
+    },
+    {
+      "id": "q_09_zigzag",
+      "question": "What is banned inside the white zig-zag zone at a crossing?",
+      "options": [
+        "Overtaking the leading vehicle or parking",
+        "Slowing down for pedestrians",
+        "Checking your mirrors"
+      ],
+      "answerIndex": 0,
+      "explanation": "You must not overtake or park on crossing zig-zag lines.",
+      "ruleId": "GB.XNG.ZIGZAG_OVERTAKE"
+    }
+  ]
+}

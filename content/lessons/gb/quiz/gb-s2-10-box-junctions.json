@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s2-10-box-junctions",
+  "questions": [
+    {
+      "id": "q_10_box",
+      "question": "When may you enter a yellow box junction to go straight ahead?",
+      "options": [
+        "Only when your exit road is clear",
+        "Whenever the light is green",
+        "Whenever traffic moves slowly"
+      ],
+      "answerIndex": 0,
+      "explanation": "You must not enter a box junction unless your exit is clear.",
+      "ruleId": "GB.JCT.BOX"
+    },
+    {
+      "id": "q_10_box_right",
+      "question": "When may you wait inside a yellow box junction?",
+      "options": [
+        "Turning right and blocked by oncoming traffic",
+        "Going straight in a slow queue",
+        "Turning left behind a bus"
+      ],
+      "answerIndex": 0,
+      "explanation": "You may wait inside only when turning right and blocked by oncoming traffic.",
+      "ruleId": "GB.JCT.BOX"
+    }
+  ]
+}

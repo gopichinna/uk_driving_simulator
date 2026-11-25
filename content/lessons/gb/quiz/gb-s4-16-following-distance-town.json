@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s4-16-following-distance-town",
+  "questions": [
+    {
+      "id": "q_16_cutin",
+      "question": "What should you do if another car cuts into your gap?",
+      "options": [
+        "Ease off to rebuild a safe gap",
+        "Stay close to hold your place",
+        "Flash your headlights"
+      ],
+      "answerIndex": 0,
+      "explanation": "Drop back calmly so you have room to stop safely.",
+      "ruleId": "GB.GAP.CUT_IN"
+    },
+    {
+      "id": "q_16_tailgate",
+      "question": "Why is tailgating risky in town traffic?",
+      "options": [
+        "You have less time to react and stop",
+        "It saves fuel in queues",
+        "It helps other drivers merge"
+      ],
+      "answerIndex": 0,
+      "explanation": "Leaving space lets you see hazards ahead and brake smoothly.",
+      "ruleId": "GB.GAP.TWO_SECOND"
+    }
+  ]
+}

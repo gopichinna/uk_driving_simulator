@@ -106,6 +106,24 @@
               "anchor": { "$ref": "#/$defs/anchorEnum" },
               "offsetM": { "type": "number" }
             }
+          },
+          {
+            "type": "object",
+            "required": ["type", "exitNumber"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "take_exit" },
+              "exitNumber": { "type": "integer", "minimum": 1, "maximum": 4 }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "seconds"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "finish_after_s" },
+              "seconds": { "type": "number", "minimum": 10, "maximum": 180 }
+            }
           }
         ]
       }

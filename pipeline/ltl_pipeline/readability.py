@@ -13,6 +13,7 @@ from ltl_pipeline.schema import REPO_ROOT
 
 DEFAULT_STRINGS_RULES = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "rules.json"
 DEFAULT_STRINGS_UI = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "ui.json"
+DEFAULT_STRINGS_VOICE = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "voice.json"
 DEFAULT_GLOSSARY = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "glossary.json"
 DEFAULT_BANNED = (
     REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "banned_phrases.txt"
@@ -209,6 +210,44 @@ def lint_route_instructions(
     return errors
 
 
+def lint_voice_strings(
+    voice_json: dict[str, Any],
+    glossary_data: dict[str, Any],
+    rules_yaml: dict[str, Any],
+    banned_phrases: list[str],
+) -> list[str]:
+    """Check coach voice lines (<= 12 words, B1 readability, implemented rule coverage)."""
+    errors: list[str] = []
+    allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
+    entries = voice_json.get("entries", {})
+
+    for req in ("voice.lesson.start", "voice.lesson.passed", "voice.lesson.try_again"):
+        if req not in entries:
+            errors.append(f"voice: missing required key {req}")
+
+    for rule in rules_yaml.get("rules", []):
+        if rule.get("implementation", {}).get("status") == "implemented":
+            rid = rule["id"]
+            for suffix in ("fault", "good"):
+                k = f"voice.{rid}.{suffix}"
+                if k not in entries:
+                    errors.append(f"voice: missing key {k} for implemented rule")
+
+    for key, val in sorted(entries.items()):
+        errors.extend(
+            check_text_readability(
+                val,
+                context=f"voice.{key}",
+                banned_phrases=banned_phrases,
+                allowed_abbrevs=allowed_abbrevs,
+                max_words_per_sentence=12,
+            )
+        )
+        if count_words(val) > 12:
+            errors.append(f"voice.{key}: exceeds 12 words ({val!r})")
+    return errors
+
+
 def lint_all_strings(
     rules_json_path: Path = DEFAULT_STRINGS_RULES,
     glossary_path: Path = DEFAULT_GLOSSARY,
@@ -216,8 +255,9 @@ def lint_all_strings(
     banned_path: Path = DEFAULT_BANNED,
     ui_json_path: Path = DEFAULT_STRINGS_UI,
     routes_json_path: Path = DEFAULT_ROUTES_JSON,
+    voice_json_path: Path = DEFAULT_STRINGS_VOICE,
 ) -> list[str]:
-    """Run all readability checks on GB English strings, UI strings, routes, and glossary."""
+    """Run all readability checks on GB English strings, UI, voice, routes, and glossary."""
     rules_json = json.loads(rules_json_path.read_text(encoding="utf-8"))
     glossary_data = json.loads(glossary_path.read_text(encoding="utf-8"))
     rules_yaml = yaml.safe_load(rules_yaml_path.read_text(encoding="utf-8"))
@@ -228,6 +268,9 @@ def lint_all_strings(
     if ui_json_path.is_file():
         ui_json = json.loads(ui_json_path.read_text(encoding="utf-8"))
         errors.extend(lint_ui_strings(ui_json, glossary_data, banned))
+    if voice_json_path.is_file():
+        voice_json = json.loads(voice_json_path.read_text(encoding="utf-8"))
+        errors.extend(lint_voice_strings(voice_json, glossary_data, rules_yaml, banned))
     if routes_json_path.is_file():
         routes_json = json.loads(routes_json_path.read_text(encoding="utf-8"))
         errors.extend(lint_route_instructions(routes_json, glossary_data, banned))
