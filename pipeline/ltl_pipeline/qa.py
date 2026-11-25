@@ -41,7 +41,10 @@ def _connected_components(pack: dict[str, Any]) -> list[int]:
     return sorted(sizes, reverse=True)
 
 
-def generate_qa_markdown(pack: dict[str, Any]) -> str:
+def generate_qa_markdown(
+    pack: dict[str, Any],
+    buildings_data: dict[str, Any] | None = None,
+) -> str:
     """Build a deterministic Markdown QA report for a RoadPack dict."""
     links = pack.get("links", [])
     nodes = pack.get("nodes", [])
@@ -117,11 +120,42 @@ def generate_qa_markdown(pack: dict[str, Any]) -> str:
     )
     for ctrl in sorted(by_ctrl):
         lines.append(f"| `{ctrl}` | {by_ctrl[ctrl]} |")
+
+    w_tagged = sum(1 for lk in links if lk.get("widthSource") == "tagged")
+    sw_tagged = sum(1 for lk in links if lk.get("sidewalkSource") == "tagged")
+    lines.extend(
+        [
+            "",
+            "## Width & sidewalk coverage",
+            f"- **Tagged carriageway width:** {w_tagged} / {len(links)} "
+            "(rest estimated at 3.25 m/lane)",
+            f"- **Tagged sidewalk:** {sw_tagged} / {len(links)} (rest inferred from roadClass)",
+        ]
+    )
+
+    if buildings_data is not None:
+        bldgs = buildings_data.get("buildings", [])
+        h_src: dict[str, int] = defaultdict(int)
+        for b in bldgs:
+            h_src[b["heightSource"]] += 1
+        lines.extend(
+            [
+                "",
+                "## Buildings",
+                f"- **Total buildings (>= 15 m²):** {len(bldgs)}",
+                f"- **Height sources:** tagged={h_src['tagged']}, "
+                f"levels={h_src['levels']}, default={h_src['default']}",
+            ]
+        )
     lines.append("")
     return "\n".join(lines)
 
 
-def write_qa_report(pack: dict[str, Any], out_path: Path) -> Path:
+def write_qa_report(
+    pack: dict[str, Any],
+    out_path: Path,
+    buildings_data: dict[str, Any] | None = None,
+) -> Path:
     """Write QA.md to disk."""
-    out_path.write_text(generate_qa_markdown(pack), encoding="utf-8")
+    out_path.write_text(generate_qa_markdown(pack, buildings_data=buildings_data), encoding="utf-8")
     return out_path

@@ -14,7 +14,8 @@ def test_routes_valid_connected_and_legal() -> None:
 
     assert routes_doc["packId"] == pack["packId"]
     routes = routes_doc["routes"]
-    assert len(routes) == 3
+    assert len(routes) == 4
+    assert any(r["id"] == "wolverhampton-mock-test" for r in routes)
 
     links_by_id = {lk["id"]: lk for lk in pack["links"]}
     restrictions = pack.get("restrictions", [])
@@ -35,6 +36,8 @@ def test_routes_valid_connected_and_legal() -> None:
     for route in routes:
         steps = route["links"]
         assert route["start"]["linkId"] == steps[0]["linkId"]
+        assert len(route.get("instructions", [])) >= 2
+        assert route["instructions"][-1]["maneuver"] == "arrive"
         all_features.update(route["features"])
 
         prev_end_node: str | None = None

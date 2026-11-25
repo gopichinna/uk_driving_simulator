@@ -8,6 +8,7 @@ from pathlib import Path
 import yaml
 
 from ltl_pipeline.build import build_roadpack, write_roadpack
+from ltl_pipeline.buildings import build_buildings, write_buildings
 from ltl_pipeline.extract import extract_osm
 from ltl_pipeline.fetch import fetch_extract
 from ltl_pipeline.qa import write_qa_report
@@ -45,7 +46,13 @@ def build_city(city: str, force_fetch: bool = False) -> Path:
     )
     out_path = city_dir / "roadpack.json"
     write_roadpack(pack, out_path)
-    write_qa_report(pack, city_dir / "QA.md")
+    buildings_data = build_buildings(
+        osm_path=fetch_res.pbf_path,
+        config=config,
+        extract_timestamp=fetch_res.extract_timestamp,
+    )
+    write_buildings(buildings_data, city_dir / "buildings.json")
+    write_qa_report(pack, city_dir / "QA.md", buildings_data=buildings_data)
     return out_path
 
 

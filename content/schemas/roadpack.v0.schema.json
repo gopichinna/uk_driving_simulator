@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "enum": ["0.1", "0.2"] },
+    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -81,6 +81,10 @@
         },
         "confidence": { "$ref": "#/$defs/confidence" },
         "confidenceNotes": { "type": "string" },
+        "widthM": { "type": "number", "minimum": 1.5, "maximum": 40 },
+        "widthSource": { "enum": ["tagged", "estimated"] },
+        "sidewalk": { "enum": ["left", "right", "both", "none"] },
+        "sidewalkSource": { "enum": ["tagged", "default"] },
         "osmWayId": { "type": "integer" }
       }
     },

@@ -228,6 +228,42 @@ def _classify_crossing(node: OsmNode) -> tuple[str, float] | None:
     return None
 
 
+def _parse_width(way: OsmWay, lanes_fwd: int, lanes_bwd: int) -> tuple[float, str]:
+    raw = way.tags.get("width", "").strip().lower()
+    if raw:
+        m = re.match(r"^(\d+(?:\.\d+)?)\s*(?:m|metres?)?$", raw)
+        if m:
+            val = float(m.group(1))
+            if 1.5 <= val <= 40.0:
+                return (round(val, 2), "tagged")
+    total_lanes = max(1, lanes_fwd + lanes_bwd)
+    return (round(total_lanes * 3.25, 2), "estimated")
+
+
+def _parse_sidewalk(way: OsmWay) -> tuple[str, str]:
+    sw = (way.tags.get("sidewalk") or "").strip().lower()
+    sw_both = (way.tags.get("sidewalk:both") or "").strip().lower()
+    sw_left = (way.tags.get("sidewalk:left") or "").strip().lower()
+    sw_right = (way.tags.get("sidewalk:right") or "").strip().lower()
+
+    if sw in ("both", "yes") or sw_both == "yes":
+        return ("both", "tagged")
+    if sw in ("left", "right", "none"):
+        return (sw, "tagged")
+    if sw == "no":
+        return ("none", "tagged")
+    if sw_left == "yes" and sw_right == "yes":
+        return ("both", "tagged")
+    if sw_left == "yes":
+        return ("left", "tagged")
+    if sw_right == "yes":
+        return ("right", "tagged")
+
+    if way.road_class in ("motorway", "trunk", "service"):
+        return ("none", "default")
+    return ("both", "default")
+
+
 def _score_link_confidence(
     lanes_explicit: bool,
     has_turn_lanes: bool,
@@ -458,6 +494,9 @@ def build_roadpack(
         conf, conf_notes = _score_link_confidence(
             lanes_explicit, bool(tl_fwd or tl_bwd), speed_source
         )
+        width_m, width_src = _parse_width(w, lanes_fwd, lanes_bwd)
+        sidewalk_val, sidewalk_src = _parse_sidewalk(w)
+        conf_notes = f"{conf_notes}; {width_src} width ({width_m} m)"
 
         for idx, seg in enumerate(segments):
             if len(seg) < 2:
@@ -495,6 +534,10 @@ def build_roadpack(
                 "lanesBackward": lanes_bwd,
                 "confidence": conf,
                 "confidenceNotes": conf_notes,
+                "widthM": width_m,
+                "widthSource": width_src,
+                "sidewalk": sidewalk_val,
+                "sidewalkSource": sidewalk_src,
                 "osmWayId": w.osm_id,
             }
             if w.tags.get("name"):
@@ -612,7 +655,7 @@ def build_roadpack(
     ]
 
     pack: dict[str, Any] = {
-        "packFormatVersion": "0.2",
+        "packFormatVersion": "0.3",
         "packId": config["pack_id"],
         "displayName": config["display_name"],
         "country": config["country"],
