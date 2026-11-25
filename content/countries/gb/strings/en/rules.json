@@ -5,11 +5,11 @@
   "kind": "rules",
   "rules": {
     "GB.OBS.MOVE_OFF_CHECKS": {
-      "title": "Move off safely",
+      "title": "Pull away safely",
       "fault": "You moved off without leaving a safe gap.",
       "why": "Traffic approaches fast from behind on your right. Moving into its path forces drivers to brake.",
-      "tip": "Check mirrors and your right blind spot before moving off.",
-      "good": "You waited for a clear gap before moving off."
+      "tip": "Check mirrors and your right blind spot before pulling away.",
+      "good": "You waited for a clear gap before pulling away."
     },
     "GB.OBS.MSM": {
       "title": "Mirrors, signal, manoeuvre",
@@ -35,7 +35,7 @@
     "GB.POS.AFTER_TURN": {
       "title": "Finish turn on left",
       "fault": "You ended your turn in the right lane.",
-      "why": "Turning into the opposing lane puts you in oncoming traffic. Always aim for the nearside half of the new road.",
+      "why": "Turning into the wrong lane puts you in oncoming traffic. Always aim for the left side of the new road.",
       "tip": "Look into the left lane of the side road as you turn.",
       "good": "You turned cleanly into the left lane."
     },
@@ -55,8 +55,8 @@
     },
     "GB.JCT.GIVE_WAY": {
       "title": "Give way at junction",
-      "fault": "You pulled out and forced priority traffic to brake.",
-      "why": "You must give way to traffic on the major road. Entering a tight gap puts everyone at risk.",
+      "fault": "You pulled out and forced main-road traffic to slow down.",
+      "why": "You must give way to traffic on the main road. Entering a tight gap puts everyone at risk.",
       "tip": "Wait until both lanes are clear before emerging.",
       "good": "You judged the gap well and gave way safely."
     },
@@ -147,7 +147,7 @@
     "GB.MWY.JOIN": {
       "title": "Join motorway safely",
       "fault": "You joined the motorway too slowly or crossed solid lines.",
-      "why": "Traffic on the main carriageway moves much faster. You must give way and match its speed on the slip road.",
+      "why": "Traffic on the main motorway moves much faster. You must give way and match its speed on the slip road.",
       "tip": "Use the full slip road to match speed and merge into a gap.",
       "good": "You matched speed and merged smoothly into lane one."
     },
@@ -260,7 +260,7 @@
       "title": "Do not cut across cyclists",
       "fault": "You turned across a cyclist going straight ahead.",
       "why": "Under H3, cyclists going ahead have priority over turning traffic. Cutting across their path causes serious collisions.",
-      "tip": "Check your nearside mirror and wait for cyclists before turning left.",
+      "tip": "Check your left mirror and wait for cyclists before turning left.",
       "good": "You let the cyclist pass before making your turn."
     },
     "GB.JCT.BOX": {
@@ -337,7 +337,7 @@
       "title": "Give cyclists roundabout space",
       "fault": "You cut across a cyclist on the roundabout.",
       "why": "Cyclists may stay in the left lane even when turning right. Give them space and never cut across them at exits.",
-      "tip": "Check your nearside for cyclists before exiting a roundabout.",
+      "tip": "Check your left side for cyclists before leaving a roundabout.",
       "good": "You gave the cyclist plenty of room on the roundabout."
     },
     "GB.RBT.MINI": {
@@ -518,7 +518,7 @@
     "GB.MWY.NO_STOP": {
       "title": "Never stop in live lane",
       "fault": "You stopped in a live motorway lane.",
-      "why": "Traffic approaches at 70 mph and cannot stop quickly. You must never stop on a motorway carriageway except in an emergency.",
+      "why": "Traffic approaches at 70 mph and cannot stop quickly. You must never stop in a motorway lane except in an emergency.",
       "tip": "Keep moving to the next exit or services if unsure of your route.",
       "good": "You kept traffic flowing safely on the motorway."
     },
@@ -569,7 +569,7 @@
       "fault": "You stopped in an unsafe place.",
       "why": "Stopping on a bend or brow hides your car from traffic. Reach motorway services or an emergency area if you can.",
       "tip": "Exit at the next services if your car starts losing power.",
-      "good": "You found a safe place off the main carriageway."
+      "good": "You found a safe place off the main road."
     },
     "GB.WRK.NO_LANE_JUMP": {
       "title": "Stay in roadworks lanes",
@@ -595,7 +595,7 @@
     "GB.PRK.CLEARWAY": {
       "title": "No stopping on clearways",
       "fault": "You stopped on a clearway.",
-      "why": "Clearways keep fast rural and main roads flowing without parked cars. You must not stop on the carriageway.",
+      "why": "Clearways keep fast main roads flowing without parked cars. You must not stop on the road.",
       "tip": "Wait for a lay-by or side street before stopping.",
       "good": "You kept the clearway completely clear."
     },
@@ -632,7 +632,7 @@
       "fault": "You drove off without fastening your seat belt.",
       "why": "Seat belts prevent fatal injuries in sudden stops or crashes. You must wear one and ensure under-14 passengers do too.",
       "tip": "Buckle your seat belt before starting the engine.",
-      "good": "You buckled up before moving off."
+      "good": "You buckled up before pulling away."
     },
     "GB.DRV.DRINK_DRUGS": {
       "title": "Never drink or drug drive",

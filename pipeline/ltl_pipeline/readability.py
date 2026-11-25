@@ -18,6 +18,9 @@ DEFAULT_GLOSSARY = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en"
 DEFAULT_BANNED = (
     REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "banned_phrases.txt"
 )
+DEFAULT_JARGON = (
+    REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "jargon_phrases.txt"
+)
 DEFAULT_RULES_YAML = REPO_ROOT / "content" / "countries" / "gb" / "rules.yaml"
 DEFAULT_ROUTES_JSON = REPO_ROOT / "content" / "cities" / "wolverhampton" / "routes.json"
 DEFAULT_DIRECTION_SIGNS_JSON = (
@@ -76,15 +79,31 @@ def extract_glossary_abbreviations(glossary_data: dict[str, Any]) -> set[str]:
     return allowed
 
 
+def load_jargon_phrases(path: Path = DEFAULT_JARGON) -> list[str]:
+    """Load non-empty, non-comment jargon phrases (lowercased)."""
+    if not path.is_file():
+        return []
+    lines = path.read_text(encoding="utf-8").splitlines()
+    return [ln.strip().lower() for ln in lines if ln.strip() and not ln.strip().startswith("#")]
+
+
 def check_text_readability(
     text: str,
     context: str,
     banned_phrases: list[str],
     allowed_abbrevs: set[str],
     max_words_per_sentence: int = 15,
+    jargon_phrases: list[str] | None = None,
 ) -> list[str]:
     """Return a list of readability violation messages for a single string."""
     errors: list[str] = []
+
+    if jargon_phrases:
+        # Allow 'dual carriageway' as a standard UK road type; flag other jargon unless explained
+        cleaned_jargon = re.sub(r"\bdual carriageway\b", "", text, flags=re.IGNORECASE)
+        for jp in jargon_phrases:
+            if re.search(rf"\b{re.escape(jp)}\b", cleaned_jargon, flags=re.IGNORECASE):
+                errors.append(f"{context}: contains jargon phrase {jp!r} ({text!r})")
 
     for sent in split_sentences(text):
         wc = count_words(sent)
@@ -288,9 +307,70 @@ def lint_all_strings(
     glossary_data = json.loads(glossary_path.read_text(encoding="utf-8"))
     rules_yaml = yaml.safe_load(rules_yaml_path.read_text(encoding="utf-8"))
     banned = load_banned_phrases(banned_path)
+    jargon = load_jargon_phrases()
 
     errors = lint_rule_strings(rules_json, glossary_data, rules_yaml, banned)
     errors.extend(lint_glossary(glossary_data, banned))
+    if jargon:
+        allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
+        for rid, fields in sorted(rules_json.get("rules", {}).items()):
+            for fn, val in fields.items():
+                errors.extend(
+                    check_text_readability(
+                        val,
+                        f"rules.{rid}.{fn}",
+                        banned,
+                        allowed_abbrevs,
+                        jargon_phrases=jargon,
+                    )
+                )
+        for lf in sorted((REPO_ROOT / "content" / "lessons" / "gb").glob("[0-9][0-9]-*.json")):
+            lesson = json.loads(lf.read_text(encoding="utf-8"))
+            for idx, b in enumerate(lesson["learnCard"]["blocks"]):
+                errors.extend(
+                    check_text_readability(
+                        b, f"{lf.name}.block[{idx}]", banned, allowed_abbrevs, jargon_phrases=jargon
+                    )
+                )
+            for sc in lesson["scenarios"]:
+                errors.extend(
+                    check_text_readability(
+                        sc["goal"],
+                        f"{lf.name}.{sc['id']}.goal",
+                        banned,
+                        allowed_abbrevs,
+                        jargon_phrases=jargon,
+                    )
+                )
+            for idx, r in enumerate(lesson["recap"]):
+                errors.extend(
+                    check_text_readability(
+                        r, f"{lf.name}.recap[{idx}]", banned, allowed_abbrevs, jargon_phrases=jargon
+                    )
+                )
+        for qf in sorted((REPO_ROOT / "content" / "lessons" / "gb" / "quiz").glob("*.json")):
+            quiz = json.loads(qf.read_text(encoding="utf-8"))
+            for q in quiz["questions"]:
+                for fn in ("question", "explanation"):
+                    errors.extend(
+                        check_text_readability(
+                            q[fn],
+                            f"{qf.name}.{q['id']}.{fn}",
+                            banned,
+                            allowed_abbrevs,
+                            jargon_phrases=jargon,
+                        )
+                    )
+                for idx, opt in enumerate(q["options"]):
+                    errors.extend(
+                        check_text_readability(
+                            opt,
+                            f"{qf.name}.{q['id']}.opt[{idx}]",
+                            banned,
+                            allowed_abbrevs,
+                            jargon_phrases=jargon,
+                        )
+                    )
     if ui_json_path.is_file():
         ui_json = json.loads(ui_json_path.read_text(encoding="utf-8"))
         errors.extend(lint_ui_strings(ui_json, glossary_data, banned))

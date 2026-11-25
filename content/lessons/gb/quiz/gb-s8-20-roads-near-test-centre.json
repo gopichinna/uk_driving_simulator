@@ -35,7 +35,7 @@
         "National speed limit signs on every gate"
       ],
       "answerIndex": 0,
-      "explanation": "Parked vans and narrow exits can block your view, so emerge slowly and safely.",
+      "explanation": "Parked vans and narrow exits can block your view. Pull out slowly and safely.",
       "ruleId": "GB.SIG.TIMELY"
     }
   ]
