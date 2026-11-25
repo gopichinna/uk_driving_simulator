@@ -1,3 +1,4 @@
+#nullable enable
 using System.IO;
 using LToLocal.Game;
 using UnityEditor;
@@ -127,13 +128,10 @@ namespace LToLocal.EditorTools
             var scene = EditorSceneManager.NewScene(NewSceneSetup.DefaultGameObjects, NewSceneMode.Single);
 
             Material grass = Mat("Grass", new Color(0.55f, 0.75f, 0.42f));
+            Material verge = Mat("Verge", new Color(0.47f, 0.66f, 0.36f));
             Material road = Mat("Road", new Color(0.36f, 0.37f, 0.40f));
             Material white = Mat("LineWhite", new Color(0.95f, 0.95f, 0.95f));
-            Material carBlue = Mat("CarBlue", new Color(0.18f, 0.44f, 0.87f));
-            Material glass = Mat("Glass", new Color(0.16f, 0.18f, 0.23f));
-            Material tyre = Mat("Tyre", new Color(0.08f, 0.08f, 0.08f));
-            Material plateYellow = Mat("PlateYellow", new Color(0.97f, 0.83f, 0.09f));
-            Material lightRed = Mat("LightRed", new Color(0.89f, 0.23f, 0.23f));
+            Material barrier = Mat("Barrier", new Color(0.72f, 0.74f, 0.76f));
             Material trunk = Mat("Trunk", new Color(0.48f, 0.35f, 0.23f));
             Material leaves = Mat("Leaves", new Color(0.37f, 0.60f, 0.27f));
             Material[] buildings =
@@ -143,6 +141,27 @@ namespace LToLocal.EditorTools
                 Mat("BuildingGrey", new Color(0.81f, 0.84f, 0.87f)),
                 Mat("BuildingCream", new Color(0.93f, 0.90f, 0.82f)),
             };
+            var carParts = new CarParts
+            {
+                Glass = Mat("Glass", new Color(0.16f, 0.18f, 0.23f)),
+                Tyre = Mat("Tyre", new Color(0.08f, 0.08f, 0.08f)),
+                PlateYellow = Mat("PlateYellow", new Color(0.97f, 0.83f, 0.09f)),
+                PlateWhite = Mat("PlateWhite", new Color(0.96f, 0.96f, 0.96f)),
+                TailLight = Mat("LightRed", new Color(0.89f, 0.23f, 0.23f)),
+                HeadLight = Mat("HeadLight", new Color(1f, 0.97f, 0.85f)),
+                Indicator = Mat("IndicatorAmber", new Color(1f, 0.62f, 0.05f)),
+                MirrorHousing = Mat("MirrorHousing", new Color(0.12f, 0.12f, 0.14f)),
+            };
+            Material[] carColours =
+            {
+                Mat("CarRed", new Color(0.84f, 0.27f, 0.27f)),
+                Mat("CarSilver", new Color(0.76f, 0.78f, 0.80f)),
+                Mat("CarBlack", new Color(0.15f, 0.16f, 0.18f)),
+                Mat("CarWhite", new Color(0.93f, 0.93f, 0.93f)),
+                Mat("CarGreen", new Color(0.22f, 0.50f, 0.36f)),
+                Mat("CarYellow", new Color(0.93f, 0.75f, 0.20f)),
+            };
+            Material playerBlue = Mat("CarBlue", new Color(0.18f, 0.44f, 0.87f));
 
             // Lighting and atmosphere
             var light = GameObject.Find("Directional Light");
@@ -160,60 +179,116 @@ namespace LToLocal.EditorTools
             cam.farClipPlane = 700f;
             cam.transform.position = new Vector3(-1.8f, 3.2f, -7.5f);
 
-            // World
+            // ---- Dual carriageway along +Z. Ours: x -3.65..3.65 (lanes at -1.825 / +1.825).
+            //      Central reservation: 3.65..6.65. Oncoming: 6.65..13.95 (lanes at 8.475 / 12.125).
+            const float length = 2200f, midZ = 950f;
             var world = new GameObject("World").transform;
-            Prim(PrimitiveType.Plane, "Ground", world, new Vector3(0, 0, 450), new Vector3(200, 1, 200), grass);
-            Prim(PrimitiveType.Cube, "Road", world, new Vector3(0, 0.01f, 480), new Vector3(7.3f, 0.02f, 1100), road);
-            Prim(PrimitiveType.Cube, "EdgeLineLeft", world, new Vector3(-3.45f, 0.025f, 480), new Vector3(0.1f, 0.01f, 1100), white);
-            Prim(PrimitiveType.Cube, "EdgeLineRight", world, new Vector3(3.45f, 0.025f, 480), new Vector3(0.1f, 0.01f, 1100), white);
-            var dashes = new GameObject("CentreDashes").transform;
+            Prim(PrimitiveType.Plane, "Ground", world, new Vector3(0, 0, midZ), new Vector3(240, 1, 240), grass);
+            Prim(PrimitiveType.Cube, "CarriagewayNorth", world, new Vector3(0, 0.01f, midZ), new Vector3(7.3f, 0.02f, length), road);
+            Prim(PrimitiveType.Cube, "CarriagewaySouth", world, new Vector3(10.3f, 0.01f, midZ), new Vector3(7.3f, 0.02f, length), road);
+            Prim(PrimitiveType.Cube, "CentralReservation", world, new Vector3(5.15f, 0.05f, midZ), new Vector3(3f, 0.1f, length), verge);
+            Prim(PrimitiveType.Cube, "Barrier", world, new Vector3(5.15f, 0.45f, midZ), new Vector3(0.12f, 0.35f, length), barrier);
+            foreach (float x in new[] { -3.5f, 3.5f, 6.8f, 13.8f })
+                Prim(PrimitiveType.Cube, "EdgeLine", world, new Vector3(x, 0.025f, midZ), new Vector3(0.15f, 0.01f, length), white);
+            var dashes = new GameObject("LaneLines").transform;
             dashes.SetParent(world, false);
-            for (float z = -60; z < 1020; z += 12f)
-                Prim(PrimitiveType.Cube, "Dash", dashes, new Vector3(0, 0.025f, z), new Vector3(0.1f, 0.01f, 4f), white);
+            for (float z = midZ - length / 2; z < midZ + length / 2; z += 9f)
+            {
+                Prim(PrimitiveType.Cube, "LaneDash", dashes, new Vector3(0f, 0.025f, z), new Vector3(0.1f, 0.01f, 3f), white);
+                Prim(PrimitiveType.Cube, "LaneDash", dashes, new Vector3(10.3f, 0.025f, z), new Vector3(0.1f, 0.01f, 3f), white);
+            }
 
             var rng = new System.Random(2026);
             var scenery = new GameObject("Scenery").transform;
             scenery.SetParent(world, false);
-            for (float z = -40; z < 1000; z += 22f)
+            for (float z = -60; z < midZ + length / 2; z += 24f)
             {
                 foreach (int side in new[] { -1, 1 })
                 {
-                    if (rng.NextDouble() < 0.65)
+                    float edge = side < 0 ? -3.65f : 13.95f; // outer edge of the road on this side
+                    if (rng.NextDouble() < 0.6)
                     {
                         float w = 8 + (float)rng.NextDouble() * 10, d = 8 + (float)rng.NextDouble() * 8, h = 6 + (float)rng.NextDouble() * 14;
-                        float x = side * (14 + w / 2 + (float)rng.NextDouble() * 6);
+                        float x = edge + side * (12 + w / 2 + (float)rng.NextDouble() * 8);
                         Prim(PrimitiveType.Cube, "Building", scenery, new Vector3(x, h / 2, z), new Vector3(w, h, d), buildings[rng.Next(buildings.Length)]);
                     }
                     else
                     {
-                        float x = side * (8 + (float)rng.NextDouble() * 5);
+                        float x = edge + side * (5 + (float)rng.NextDouble() * 5);
                         Prim(PrimitiveType.Cylinder, "TreeTrunk", scenery, new Vector3(x, 1.2f, z), new Vector3(0.35f, 1.2f, 0.35f), trunk);
                         Prim(PrimitiveType.Sphere, "TreeTop", scenery, new Vector3(x, 3.4f, z), new Vector3(3f, 3.2f, 3f), leaves);
                     }
                 }
             }
 
-            // Car (low-poly placeholder): forward is +Z
-            var car = new GameObject("Car").transform;
-            car.position = new Vector3(-1.8f, 0, 0);
-            Prim(PrimitiveType.Cube, "Body", car, new Vector3(0, 0.6f, 0), new Vector3(1.8f, 0.6f, 4.2f), carBlue);
-            Prim(PrimitiveType.Cube, "Cabin", car, new Vector3(0, 1.12f, -0.25f), new Vector3(1.55f, 0.48f, 2.2f), glass);
-            Prim(PrimitiveType.Cube, "RearPlate", car, new Vector3(0, 0.55f, -2.11f), new Vector3(0.55f, 0.13f, 0.02f), plateYellow);
-            Prim(PrimitiveType.Cube, "TailLightL", car, new Vector3(-0.68f, 0.72f, -2.11f), new Vector3(0.32f, 0.14f, 0.02f), lightRed);
-            Prim(PrimitiveType.Cube, "TailLightR", car, new Vector3(0.68f, 0.72f, -2.11f), new Vector3(0.32f, 0.14f, 0.02f), lightRed);
-            foreach (var (x, z) in new[] { (-0.88f, 1.35f), (0.88f, 1.35f), (-0.88f, -1.35f), (0.88f, -1.35f) })
-                Prim(PrimitiveType.Cylinder, "Wheel", car, new Vector3(x, 0.34f, z), new Vector3(0.66f, 0.12f, 0.66f), tyre, new Vector3(0, 0, 90));
+            // ---- Player car
+            var car = BuildCar("Car", null, playerBlue, carParts, withMirrors: true).transform;
+            car.position = new Vector3(-1.825f, 0, 0);
 
-            // Game object wiring
+            // ---- Traffic pool: 4 cars per colour, hidden until used
+            var traffic = new GameObject("Traffic");
+            for (int colour = 0; colour < carColours.Length; colour++)
+                for (int i = 0; i < 4; i++)
+                    BuildCar($"TrafficCar{i}_c{colour}", traffic.transform, carColours[colour], carParts, withMirrors: true);
+            var trafficView = traffic.AddComponent<TrafficView>();
+
+            // ---- Game wiring
             var game = new GameObject("Game");
             game.AddComponent<TouchControls>();
+            var mirrors = game.AddComponent<MirrorRig>();
+            mirrors.car = car;
             var hello = game.AddComponent<HelloCarGame>();
             hello.car = car;
             hello.chaseCamera = cam;
+            hello.trafficView = trafficView;
+            hello.mirrors = mirrors;
+            hello.playerIndicatorLeft = FindChildren(car, "IndL");
+            hello.playerIndicatorRight = FindChildren(car, "IndR");
 
             Directory.CreateDirectory(Path.GetDirectoryName(ScenePath)!);
             EditorSceneManager.SaveScene(scene, ScenePath);
             EditorBuildSettings.scenes = new[] { new EditorBuildSettingsScene(ScenePath, true) };
+        }
+
+        private sealed class CarParts
+        {
+            public Material Glass = null!, Tyre = null!, PlateYellow = null!, PlateWhite = null!,
+                TailLight = null!, HeadLight = null!, Indicator = null!, MirrorHousing = null!;
+        }
+
+        /// <summary>Low-poly placeholder car, forward = +Z. UK plates: white front, yellow rear.</summary>
+        private static GameObject BuildCar(string name, Transform? parent, Material paint, CarParts m, bool withMirrors)
+        {
+            var root = new GameObject(name);
+            if (parent != null) root.transform.SetParent(parent, false);
+            var t = root.transform;
+            Prim(PrimitiveType.Cube, "Body", t, new Vector3(0, 0.6f, 0), new Vector3(1.8f, 0.6f, 4.2f), paint);
+            Prim(PrimitiveType.Cube, "Cabin", t, new Vector3(0, 1.12f, -0.25f), new Vector3(1.55f, 0.48f, 2.2f), m.Glass);
+            Prim(PrimitiveType.Cube, "RearPlate", t, new Vector3(0, 0.55f, -2.11f), new Vector3(0.55f, 0.13f, 0.02f), m.PlateYellow);
+            Prim(PrimitiveType.Cube, "FrontPlate", t, new Vector3(0, 0.5f, 2.11f), new Vector3(0.55f, 0.13f, 0.02f), m.PlateWhite);
+            Prim(PrimitiveType.Cube, "TailLightL", t, new Vector3(-0.6f, 0.72f, -2.11f), new Vector3(0.3f, 0.14f, 0.02f), m.TailLight);
+            Prim(PrimitiveType.Cube, "TailLightR", t, new Vector3(0.6f, 0.72f, -2.11f), new Vector3(0.3f, 0.14f, 0.02f), m.TailLight);
+            Prim(PrimitiveType.Cube, "HeadLightL", t, new Vector3(-0.6f, 0.68f, 2.11f), new Vector3(0.32f, 0.12f, 0.02f), m.HeadLight);
+            Prim(PrimitiveType.Cube, "HeadLightR", t, new Vector3(0.6f, 0.68f, 2.11f), new Vector3(0.32f, 0.12f, 0.02f), m.HeadLight);
+            // Indicator lamps (hidden; blink when signalling)
+            foreach (var (side, x) in new[] { ("L", -1f), ("R", 1f) })
+            {
+                Prim(PrimitiveType.Cube, $"Ind{side}Rear", t, new Vector3(x * 0.84f, 0.72f, -2.12f), new Vector3(0.14f, 0.14f, 0.03f), m.Indicator).SetActive(false);
+                Prim(PrimitiveType.Cube, $"Ind{side}Front", t, new Vector3(x * 0.84f, 0.68f, 2.12f), new Vector3(0.14f, 0.12f, 0.03f), m.Indicator).SetActive(false);
+                Prim(PrimitiveType.Cube, $"Ind{side}Side", t, new Vector3(x * 0.91f, 0.75f, 1.5f), new Vector3(0.03f, 0.08f, 0.2f), m.Indicator).SetActive(false);
+                if (withMirrors)
+                    Prim(PrimitiveType.Cube, $"Mirror{side}", t, new Vector3(x * 1.0f, 0.98f, 0.92f), new Vector3(0.18f, 0.14f, 0.1f), m.MirrorHousing);
+            }
+            foreach (var (x, z) in new[] { (-0.88f, 1.35f), (0.88f, 1.35f), (-0.88f, -1.35f), (0.88f, -1.35f) })
+                Prim(PrimitiveType.Cylinder, "Wheel", t, new Vector3(x, 0.34f, z), new Vector3(0.66f, 0.12f, 0.66f), m.Tyre, new Vector3(0, 0, 90));
+            return root;
+        }
+
+        private static GameObject[] FindChildren(Transform root, string prefix)
+        {
+            var list = new System.Collections.Generic.List<GameObject>();
+            foreach (Transform c in root) if (c.name.StartsWith(prefix)) list.Add(c.gameObject);
+            return list.ToArray();
         }
     }
 }

@@ -42,7 +42,8 @@ namespace LToLocal.Game
                 if (GoRect.Contains(gui)) { _go = true; continue; }
                 if (BrakeRect.Contains(gui)) { _brake = true; continue; }
 
-                bool leftHalf = t.position.x < Screen.width * 0.5f;
+                // Left half, below the mirrors/buttons strip (touch y is measured from the bottom).
+                bool leftHalf = t.position.x < Screen.width * 0.5f && t.position.y < Screen.height * 0.62f;
                 if (t.phase == TouchPhase.Began && leftHalf && _steerFingerId < 0)
                 {
                     _steerFingerId = t.fingerId;
