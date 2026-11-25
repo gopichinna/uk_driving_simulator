@@ -55,6 +55,13 @@ def test_lessons_validate_and_match_constraints() -> None:
         for rid in lesson["learnCard"]["ruleIds"]:
             assert rid in valid_rule_ids, f"{lf.name}: unknown ruleId {rid}"
 
+        diagram_rel = lesson["learnCard"].get("diagram")
+        assert diagram_rel, f"{lf.name}: missing learnCard.diagram"
+        diagram_png = REPO_ROOT / diagram_rel
+        diagram_svg = diagram_png.with_suffix(".svg")
+        assert diagram_png.is_file(), f"Missing diagram PNG: {diagram_png}"
+        assert diagram_svg.is_file(), f"Missing diagram SVG: {diagram_svg}"
+
         for idx, block in enumerate(lesson["learnCard"]["blocks"]):
             errs = check_text_readability(
                 block,

@@ -11,8 +11,12 @@
       "You must stop at the first white line on red or amber.",
       "Leave cyclists plenty of room when moving off on green."
     ],
-    "ruleIds": ["GB.TL.ASL", "GB.VRU.PASS_CYCLIST"],
-    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    "ruleIds": [
+      "GB.TL.ASL",
+      "GB.VRU.PASS_CYCLIST"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s2-08-advanced-stop-lines.png"
   },
   "scenarios": [
     {
@@ -20,28 +24,47 @@
       "course": "town",
       "anchor": "crossroads_signals",
       "goal": "Stop before the first white line of the cyclist box on red.",
-      "rulesJudged": ["GB.TL.ASL", "GB.TL.RED"],
+      "rulesJudged": [
+        "GB.TL.ASL",
+        "GB.TL.RED"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.25,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     },
     {
       "id": "s2_08_asl_cyclists",
       "course": "town",
       "anchor": "crossroads_signals",
       "goal": "Keep the ASL clear and give cyclists space after green.",
-      "rulesJudged": ["GB.TL.ASL", "GB.VRU.PASS_CYCLIST", "GB.JCT.H3_CYCLISTS"],
+      "rulesJudged": [
+        "GB.TL.ASL",
+        "GB.VRU.PASS_CYCLIST",
+        "GB.JCT.H3_CYCLISTS"
+      ],
       "variations": {
-        "trafficDensity": [0.3, 0.5],
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
         "cyclistShare": 0.3,
         "pedestrianIntent": "wait",
         "timeOfDay": "day"
       },
-      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

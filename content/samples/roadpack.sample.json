@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.3",
+  "packFormatVersion": "0.4",
   "packId": "sample-t-junction",
   "displayName": "Sample: T-junction with traffic lights and a zebra",
   "country": "GB",
@@ -24,6 +24,7 @@
       "oneway": false, "geometry": [[0, -120], [0, -60], [0, 0]],
       "speedLimitMph": 30, "speedLimitSource": "default", "lanesForward": 1, "lanesBackward": 1,
       "widthM": 6.5, "widthSource": "estimated", "sidewalk": "both", "sidewalkSource": "default",
+      "inMainNetwork": true,
       "confidence": 0.9, "confidenceNotes": "hand-authored"
     },
     {
@@ -71,5 +72,9 @@
       "confidence": 0.45,
       "confidenceNotes": "inferred opposing-approach stages and default town-course timings"
     }
+  ],
+  "mainNetwork": { "linkCount": 3, "nodeCount": 4 },
+  "spawnPoints": [
+    { "id": "sp_01", "linkId": "l_south", "offsetM": 60, "heading": 0 }
   ]
 }
