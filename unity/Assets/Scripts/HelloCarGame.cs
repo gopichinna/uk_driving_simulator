@@ -34,9 +34,12 @@ namespace LToLocal.Game
         public float cockpitFov = 50f;
 
         [Header("Shoulder check (blind spot)")]
-        public float shoulderYaw = 120f;      // over the right shoulder (driver's side)
-        public float shoulderYawLeft = 110f;  // across the car, over the left shoulder
-        public float shoulderPitch = 1f;
+        public float shoulderYaw = 125f;
+        public float shoulderPitch = 2f;
+        public float shoulderFov = 55f;
+        [Tooltip("Shoulder-check viewpoint, just outside each side window, so no interior is drawn.")]
+        public Vector3 lookOffsetRight = new Vector3(1.02f, 1.15f, -0.25f);
+        public Vector3 lookOffsetLeft = new Vector3(-1.02f, 1.15f, -0.25f);
         public float shoulderTurnSpeed = 6f;
 
         private enum View { Chase, Cockpit }
@@ -137,8 +140,8 @@ namespace LToLocal.Game
             Transform cam = chaseCamera.transform;
 
             // Door-mirror housings block the view from the driver's seat; the HUD mirrors replace them.
-            bool inside = _view == View.Cockpit || Mathf.Abs(_lookBlend) > 0.05f;
-            foreach (var h in _mirrorHousings) if (h.activeSelf == inside) h.SetActive(!inside);
+            bool inside = _view == View.Cockpit && Mathf.Abs(_lookBlend) < 0.05f;
+            foreach (var h in _mirrorHousings) if (h.activeSelf == (_view == View.Cockpit)) h.SetActive(_view != View.Cockpit);
             if (_interior != null && _interior.activeSelf != inside) _interior.SetActive(inside);
 
             // 1. Normal pose for the current view
@@ -167,12 +170,12 @@ namespace LToLocal.Game
             if (Mathf.Abs(_lookBlend) > 0.001f)
             {
                 float t = Mathf.SmoothStep(0f, 1f, Mathf.Abs(_lookBlend));
-                Vector3 headPos = car.TransformPoint(cockpitOffset);
-                float yawTarget = _lookBlend > 0 ? shoulderYaw : -shoulderYawLeft;
-                Quaternion headRot = car.rotation * Quaternion.Euler(shoulderPitch, yawTarget, 0f);
+                bool right = _lookBlend > 0;
+                Vector3 headPos = car.TransformPoint(right ? lookOffsetRight : lookOffsetLeft);
+                Quaternion headRot = car.rotation * Quaternion.Euler(shoulderPitch, right ? shoulderYaw : -shoulderYaw, 0f);
                 pos = Vector3.Lerp(pos, headPos, t);
                 rot = Quaternion.Slerp(rot, headRot, t);
-                chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, 60f, t);
+                chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, shoulderFov, t);
             }
 
             cam.SetPositionAndRotation(pos, rot);
@@ -219,6 +222,7 @@ namespace LToLocal.Game
             if (GUI.Button(new Rect(W * 0.5f + bw * 0.03f, by, bw, bh), "Reset", _buttonStyle))
                 ResetDrive();
 
+            if (Mathf.Abs(_lookBlend) > 0.6f) DrawWindowFrame(W, H, Mathf.Abs(_lookBlend));
             if (Mathf.Abs(_lookBlend) > 0.6f)
                 GUI.Box(new Rect(W * 0.5f - H * 0.4f, H * 0.62f, H * 0.8f, H * 0.1f),
                     _lookBlend < 0 ? "Checking left blind spot" : "Checking right blind spot", _buttonStyle);
@@ -251,6 +255,17 @@ namespace LToLocal.Game
             }
             Fill(new Rect(xToX(_curr.X) - carW / 2, zToY(_curr.Z) - carL / 2, carW, carL), new Color(0.3f, 0.6f, 1f));
             GUI.Label(new Rect(r.x, r.yMax - _smallStyle.fontSize * 1.4f, r.width, _smallStyle.fontSize * 1.4f), "map", _smallStyle);
+        }
+
+        /// <summary>Dark border so the shoulder-check view reads as "looking out of the side window".</summary>
+        private static void DrawWindowFrame(float W, float H, float strength)
+        {
+            var c = new Color(0.08f, 0.09f, 0.11f, 0.85f * Mathf.Clamp01((strength - 0.6f) / 0.4f));
+            float top = H * 0.30f, bottom = H * 0.22f, side = W * 0.04f;
+            Fill(new Rect(0, 0, W, top), c);
+            Fill(new Rect(0, H - bottom, W, bottom), c);
+            Fill(new Rect(0, top, side, H - top - bottom), c);
+            Fill(new Rect(W - side, top, side, H - top - bottom), c);
         }
 
         private static void Fill(Rect r, Color c)

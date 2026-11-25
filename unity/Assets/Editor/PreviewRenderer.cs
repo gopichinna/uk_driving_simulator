@@ -18,7 +18,13 @@ namespace LToLocal.EditorTools
             var cam = game.chaseCamera;
             Directory.CreateDirectory("Builds/Previews");
             var traffic = GameObject.Find("Traffic");
-            if (traffic != null) traffic.SetActive(false);
+            if (traffic != null)
+            {
+                foreach (Transform t in traffic.transform) t.gameObject.SetActive(false);
+                var blindSpotCar = traffic.transform.GetChild(0);
+                blindSpotCar.gameObject.SetActive(true);
+                blindSpotCar.position = car.position + new Vector3(3.65f, 0f, -5f); // lane 2, just behind: the blind spot
+            }
             var interior = car.Find("Interior");
             if (interior != null) interior.gameObject.SetActive(true);
             foreach (Transform c in car) if (c.name.StartsWith("Mirror")) c.gameObject.SetActive(false);
@@ -30,13 +36,12 @@ namespace LToLocal.EditorTools
             cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
             Save(cam, "Builds/Previews/seat.png");
 
-            // Right shoulder check
-            cam.fieldOfView = 60f;
-            cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.shoulderPitch, game.shoulderYaw, 0f));
+            // Shoulder checks (same poses as HelloCarGame)
+            if (interior != null) interior.gameObject.SetActive(false);
+            cam.fieldOfView = game.shoulderFov;
+            cam.transform.SetPositionAndRotation(car.TransformPoint(game.lookOffsetRight), car.rotation * Quaternion.Euler(game.shoulderPitch, game.shoulderYaw, 0f));
             Save(cam, "Builds/Previews/look_right.png");
-
-            // Left shoulder check (across the car)
-            cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.shoulderPitch, -game.shoulderYawLeft, 0f));
+            cam.transform.SetPositionAndRotation(car.TransformPoint(game.lookOffsetLeft), car.rotation * Quaternion.Euler(game.shoulderPitch, -game.shoulderYaw, 0f));
             Save(cam, "Builds/Previews/look_left.png");
             Debug.Log("[LToLocal] Previews rendered.");
         }

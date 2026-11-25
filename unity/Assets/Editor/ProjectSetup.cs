@@ -296,17 +296,9 @@ namespace LToLocal.EditorTools
             // No roof lining or dashboard: they cover too much of a phone screen. The HUD mirrors sit where the roof would be.
             Prim(PrimitiveType.Cube, "Floor", interior, new Vector3(0, 0.93f, -0.45f), new Vector3(1.6f, 0.02f, 2.0f), dark);
             foreach (float side in new[] { -1f, 1f })
-            {
                 Prim(PrimitiveType.Cube, "DoorTrim", interior, new Vector3(side * 0.76f, 0.96f, -0.35f), new Vector3(0.04f, 0.08f, 2.0f), trim);
-                // B-pillar roughly level with the driver's head; C-pillar at the back of the rear side window.
-                Prim(PrimitiveType.Cube, "BPillar", interior, new Vector3(side * 0.76f, 1.2f, -0.27f), new Vector3(0.05f, 0.32f, 0.08f), dark);
-                Prim(PrimitiveType.Cube, "CPillar", interior, new Vector3(side * 0.73f, 1.2f, -1.28f), new Vector3(0.05f, 0.32f, 0.2f), dark);
-                Prim(PrimitiveType.Cube, "RearHeadrest", interior, new Vector3(side * 0.4f, 1.2f, -1.12f), new Vector3(0.24f, 0.14f, 0.09f), dark);
-            }
-            // Rear seat back and front passenger seat (left-hand side in a UK car)
-            Prim(PrimitiveType.Cube, "RearSeatBack", interior, new Vector3(0, 1.02f, -1.05f), new Vector3(1.4f, 0.18f, 0.12f), trim);
-            Prim(PrimitiveType.Cube, "PassengerSeatBack", interior, new Vector3(-0.37f, 1.02f, -0.4f), new Vector3(0.48f, 0.18f, 0.1f), trim);
-            Prim(PrimitiveType.Cube, "PassengerHeadrest", interior, new Vector3(-0.37f, 1.22f, -0.42f), new Vector3(0.24f, 0.15f, 0.09f), dark);
+            // Seats, headrests and pillars were removed: primitive boxes looked worse than nothing.
+            // A proper low-poly interior asset replaces this in the vertical slice.
             interior.gameObject.SetActive(false);
         }
 
