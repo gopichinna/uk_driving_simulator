@@ -1,103 +1,82 @@
-# Tasks: Google Hydrogen, round 3, branch `hydrogen/curriculum-and-test-data`
+# Tasks: Google Hydrogen, round 4, branch `hydrogen/wolverhampton-world`
 
-**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 3 and §3 ownership), then this file. You own:
+**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 4 and §3 ownership), then this file. You own:
 - `pipeline/**`;
-- `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`;
+- `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`, `content/store/**`;
 - `content/ATTRIBUTIONS.md`;
 - the pipeline CI workflows;
 - edits to `docs/02-rules-catalogue.md`.
 
 Don't edit `core/**` or `unity/**`.
 
-**Goal (round 3):** the data that turns drives into a **course with a verdict**:
-- the official way a driving test is marked, verified on GOV.UK;
-- the words for the debrief, settings and HUD screens;
-- lessons for Stages 3–5;
-- Wolverhampton junction priority and signal plans, so real-street AI knows who goes first;
-- the credits and licences text the app must show.
+**Goal (round 4):** make Wolverhampton **look and drive like Wolverhampton**, and link faults to practice. This covers:
+- real building footprints and street widths;
+- sat-nav style instructions for routes, plus a mock-test route;
+- a rule → lesson index, so the debrief can say "practise this";
+- a draft store listing and privacy text for the owner to review.
 
-**Why this order:** Claude is building the end-of-drive **debrief** (fault list, test-style pass/fail) and the **Settings** screen now. Sections B and C unblock that work, so do them first and push early (you can open a draft PR).
+**Why this order:** Claude is building the debrief now (A feeds its "Practise this" button), then the Wolverhampton beta course (B and C feed it).
 
 **Done when:**
 - `pytest`, `ruff` and the readability linter pass;
 - every new file validates against its schema;
 - CI is green.
 
-Tick each box with a one-line note (commit hash or what changed).
+Tick each box with a one-line note.
 
 ## Done before
-- Round 1 (PR #1, `1a0ebd2`): pipeline, Wolverhampton pack, `rules.yaml`, GOV.UK verification, CI.
-- Round 2 (PR #2, `6266f74`): strings, glossary, signs, Stages 0–2 lessons, Wolverhampton QA, turn restrictions, routes.
+- Round 1 (PR #1): pipeline, Wolverhampton pack, `rules.yaml`, verification, CI.
+- Round 2 (PR #2): strings, glossary, signs, Stages 0–2 lessons, QA, turn restrictions, routes.
+- Round 3 (PR #3, `ab1549e`): test marking (15 driving faults; any serious or dangerous fault fails), UI strings and pseudo-locale, Stages 3–5 lessons, `junctionPriority[]` and `signalPlans[]`, credits.
 
-## A. Small fixes from the round-2 review
-- [x] A1. `GB.POS.KEEP_LEFT.why` says "traffic stays on the left lane". Fix the grammar ("on the left"). Then read every `why` and `tip` once more for grammar a B1 reader would trip on. (Fixed `GB.POS.KEEP_LEFT.why` and regenerated `en-XA`.)
-- [x] A2. Lessons judge some rules that the game can't detect yet (e.g. `GB.TL.NO_TURN_ON_RED`, `GB.SIG.TIMELY`). Add a pipeline report, `content/lessons/gb/IMPLEMENTATION.md` (generated), listing each lesson's `rulesJudged` with ✅ (has an `implementation` in `rules.yaml`) or ⏳ (planned). (`pipeline/ltl_pipeline/lesson_report.py`)
-  - The report is a warning, not a CI failure.
-  - Claude will use it to decide which rules to build next.
+## A. Rule → lesson index (needed by Claude's debrief now)
+- [ ] A1. `content/schemas/ruleindex.v0.schema.json` (new, pre-agreed) and the generated `content/lessons/gb/rule_index.json`. It maps each rule id to the lessons that train it: `{ ruleId: [{ lessonId, scenarioId, title }] }`, ordered by curriculum order. It includes every rule in `rules.yaml` that has an `implementation`.
+- [ ] A2. CI regenerates the file and fails on any diff. A test checks that every implemented rule maps to at least one lesson, and lists the gaps if not.
+- [ ] A3. New implemented rules from Claude's branch: `GB.POS.KEEP_LEFT` (wrong side of the road) and `GB.SIG.TIMELY` (moving out without a signal) are being added in `core/Rules.Core/KeepLeftRule.cs`. Once that merges, make sure `rules.yaml` picks them up. They already exist in `docs/02`, so the scan should find them.
 
-## B. Test-style marking (needed for Claude's debrief, task B3)
-- [x] B1. Verify on **GOV.UK only** how the car practical test is marked: the number of driving faults allowed, and what serious and dangerous faults mean for the result. Use the "Driving test: cars" guidance or the DL25 marking pages. Record the URL and the date checked. **If you can't confirm a number, mark it `UNVERIFIED` and say why. Don't guess.** (Verified `https://www.gov.uk/driving-test/driving-test-faults-result` on 2026-11-25: max 15 driving faults, fail on >= 1 serious or dangerous fault.)
-- [x] B2. `content/schemas/testmarking.v0.schema.json` (new, pre-agreed) and `content/countries/gb/test_marking.yaml`. Fields:
-  - `maxDrivingFaults` (integer);
-  - `failOnSerious` and `failOnDangerous` (booleans);
-  - plain-English `summary` lines for pass and fail;
-  - `source { url, checkedOn, verified }`.
-- [x] B3. Pytest: the file validates, and if it's verified, it has a gov.uk https URL. (`pipeline/tests/test_test_marking.py`)
+## B. Wolverhampton v0.3: what it looks like
+- [ ] B1. Additive roadpack **v0.3** (pre-agreed) link fields:
+  - `widthM`: carriageway width, from the `width` tag or estimated as lanes × 3.25 m. Say which in `confidenceNotes`.
+  - `sidewalk`: `"left" | "right" | "both" | "none"`, from `sidewalk*` tags or a default by road class. Record the source.
 
-## C. UI strings for the debrief, settings and HUD (needed by Claude now)
-- [x] C1. Extend `strings.v0` **additively** (pre-agreed) with a third `oneOf` branch: `kind: "ui"` and an `entries` object of `key → string`. Keys match `^[a-z0-9_]+(\.[a-z0-9_]+)+$`, and placeholders use ICU MessageFormat.
-- [x] C2. `content/countries/gb/strings/en/ui.json` with at least these keys (Claude's code will read exactly these): (All 29 required keys added.)
-  - `hud.finish_drive`, `hud.reset`, `hud.course`, `hud.view_seat`, `hud.view_chase`, `hud.settings`
-  - `debrief.title`, `debrief.no_faults`, `debrief.tap_to_replay`, `debrief.replay_close`
-  - `debrief.count.driving` (e.g. "{count, plural, one {# minor fault} other {# minor faults}}"), `debrief.count.serious`, `debrief.count.dangerous`, `debrief.count.good`
-  - `debrief.result.pass`, `debrief.result.fail`, `debrief.result.note` (a short note that this is practice, not a real test)
-  - `settings.title`, `settings.steering.label`, `settings.steering.hint`, `settings.units.hint` (the mph and km/h hint), `settings.reset_progress.label`, `settings.reset_progress.confirm`, `settings.close`
-  - `course.town`, `course.two_lane_roundabout`, `course.roundabout`, `course.dual_carriageway`, `course.wolverhampton_beta`
-- [x] C3. The readability linter covers `ui.json`, and its tests prove that every key in the list above exists. (`readability.py` + `test_required_ui_keys_and_pseudolocale`.)
-- [x] C4. Pseudo-locale for layout testing: generate `content/countries/gb/strings/en-XA/` from the `en` files. Make every string about 40% longer, with accented letters, and keep the placeholders intact. CI regenerates it and fails on any diff. (`pseudolocale.py` + CI diff check.)
+  Bump `packFormatVersion` to `0.3`. **Don't rename or remove any field.** Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer.
+- [ ] B2. `content/schemas/buildings.v0.schema.json` (new, pre-agreed) and `content/cities/wolverhampton/buildings.json`, from OSM `building=*` inside the pack bbox. For each building:
+  - `id`, `footprint` (`[[x, z], …]`, same origin as the pack, anticlockwise, simplified to ≤ 0.5 m error);
+  - `heightM`: from `height`, else `building:levels` × 3.0, else a default by building type. Record the source;
+  - `kind` (shop / house / office / church / civic / other);
+  - `name` if tagged;
+  - `osmId`.
 
-## D. Lessons for Stages 3–5 (data only)
-- [x] D1. `content/lessons/gb/11-…` onwards, about 8 lessons: (Added lessons 11–18 covering Stages 3–5; lessons 1–3 stay the only free ones.)
-  - **Stage 3, roundabouts:** give way to the right; lane choice and signals on a two-lane roundabout; leaving in lane; cyclists on roundabouts.
-  - **Stage 4, busy town:** overtaking cyclists (1.5 m); following distance in town.
-  - **Stage 5, faster roads:** lane discipline on a dual carriageway; the two-second rule at speed.
+  ODbL source block as in the road pack. Keep the file under about 3 MB: drop buildings under 15 m², and simplify geometry.
+- [ ] B3. Extend `QA.md` with building counts, how the heights were sourced, and width/sidewalk coverage.
 
-  Use the existing courses: `roundabout`, `two_lane_roundabout` and `dual_carriageway` (anchor `start`), and `town` with the round-2 anchors. Prefer rules marked ✅ in A2. Lessons 1–3 stay the only free ones.
-- [x] D2. The tests from round 2 cover the new lessons (schema, rule ids, course/anchor pairs, readability). (`test_lessons.py` updated for 18 lessons.)
+## C. Directions and a mock-test route
+- [ ] C1. Additive `route.v0` field (pre-agreed): `instructions[]` = `{ atLinkIndex, distanceBeforeM, text, maneuver }`.
+  - `maneuver` ∈ `turn_left`, `turn_right`, `straight_on`, `roundabout_exit_1` … `roundabout_exit_4`, `bear_left`, `bear_right`, `arrive`.
+  - Generate the instructions from the route geometry and `junctionPriority`.
+  - Plain English, e.g. "At the traffic lights, turn right." or "At the roundabout, take the second exit." Use the street name when it's known.
+- [ ] C2. Add the instructions to the 3 existing routes, and add a **mock-test route** of about 10 minutes (loops are fine). It covers signals, a roundabout, a crossing and at least one give-way junction, and must pass the existing route validator (connected, legal one-way, no restricted turns).
+- [ ] C3. The readability linter covers the instruction text.
 
-## E. Wolverhampton pack v0.2: who goes first
-For the "Wolverhampton (beta)" drive, AI needs priority at every junction.
-- [x] E1. Additive roadpack **v0.2** (pre-agreed): an optional top-level `junctionPriority[]`. Each entry is `{ nodeId, majorLinks: [linkId, …], controlledBy: "signals" | "give_way" | "stop" | "roundabout" | "uncontrolled", confidence, confidenceNotes }`. (`build.py` + `roadpack.v0.schema.json` + `pipeline/README.md`)
-  - Infer it from OSM: `highway=give_way`/`stop` nodes and `direction` tags, traffic signals, `junction=roundabout`, and otherwise road class and name/ref continuity.
-  - Document the heuristics in `pipeline/README.md`.
-- [x] E2. Optional `signalPlans[]`: `{ nodeId, stages: [[linkId, …], …], greenS: [..], confidence }`. (`build.py` opposing-approach stage inference, confidence 0.45.)
-  - OSM has no phase timings, so infer the stages by pairing opposite approaches.
-  - Use the same defaults as the town course: green 18 s / 14 s, amber 3 s, all-red 2 s, red and amber 2 s.
-  - Set confidence ≤ 0.5 and say that it's inferred.
-- [x] E3. Bump `packFormatVersion` to `0.2`, regenerate the pack, update the sample with one example of each, and extend `QA.md` with counts by `controlledBy` and by confidence band. (Done in `roadpack.json`, `roadpack.sample.json`, and `QA.md`.)
-  - **Don't rename or remove any field.**
-  - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer.
+## D. Store listing and privacy, as drafts for the owner
+- [ ] D1. `content/store/en/listing.md`: a draft Play Store / App Store listing.
+  - Title "L to Local", short tagline "Keep Left".
+  - Short description (≤ 80 characters) and a full description (≤ 4000 characters).
+  - Plain English, and **only claims the app actually supports today** (list them from `AGENTS.md` §5 and this branch). No "pass your test guaranteed", and no DVSA endorsement.
+  - Mark the file **DRAFT: owner review needed**.
+- [ ] D2. `content/store/en/privacy-draft.md`: a draft privacy notice for v1. v1 is offline: no account and no analytics yet. Settings and progress are stored only on the device. Mark it **DRAFT: owner and legal review needed**, and list the open questions (analytics consent later, ads in the free tier later).
 
-## F. Credits and licences screen text
-- [x] F1. `content/legal/en/credits.md`: the text for an in-app "Credits & licences" screen. (Added OSM ODbL + request instructions, Highway Code OGL v3.0 + DVSA/DfT non-endorsement, DfT signs OGL v3.0, Unity placeholder, and `uv.lock` packages.)
-  - OSM ODbL attribution, plus how to request the derived database.
-  - Highway Code under OGL v3.0, with the statement that this app isn't endorsed by DVSA or DfT.
-  - DfT sign images under OGL v3.0.
-  - Unity and the open-source components (list the ones that are in `pipeline/uv.lock`, plus a placeholder section that Claude fills in for Unity packages).
-  - Plain English.
-- [x] F2. A test that every licence named in `content/ATTRIBUTIONS.md` also appears in `credits.md`. (`pipeline/tests/test_credits.py`)
-
-## G. Hand-off
-- [x] G1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: test marking, UI strings, Stages 3–5, junction priority, credits". Use `gh`. A draft PR after B and C is welcome. (Note added to `docs/08` §6; PR #3 opened and marked ready via `gh`.)
+## E. Hand-off
+- [ ] E1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: rule index, Wolverhampton buildings and widths, directions, store drafts". Use `gh` on the `gopichinna/uk_driving_simulator` repo. A draft PR after A is welcome.
 
 ## Requests from Claude
-- Pre-agreed for round 3:
-  - new schema `testmarking.v0`;
-  - an additive `strings.v0` branch, `kind: "ui"`;
-  - additive roadpack **v0.2** fields `junctionPriority[]` and `signalPlans[]`.
+- Pre-agreed for round 4:
+  - new schemas `ruleindex.v0` and `buildings.v0`;
+  - additive roadpack **v0.3** link fields `widthM` and `sidewalk`;
+  - additive `route.v0` field `instructions[]`.
 
   Anything else needs a note here and in `docs/tasks/claude-branch.md` first.
-- Claude's debrief reads `test_marking.yaml` and `strings/en/ui.json` by the exact keys in C2. If a key must change, tell Claude here.
+- The PR link in your last summary pointed to `gopiparthiban/…`; the repo is `gopichinna/uk_driving_simulator`. Please double-check links in notes.
 
 ## Requests from Hydrogen (to Claude)
 *(none yet)*

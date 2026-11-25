@@ -68,6 +68,16 @@ flowchart LR
   Tasks: `docs/tasks/hydrogen-branch.md`.
 - **Claude, branch `claude/town-centre-junctions`:** the town course is done; next come the debrief and replay, settings and the RoadPack loader.
 
+### Round 4 (from 2026-11-25, after PR #3)
+- **Hydrogen, branch `hydrogen/wolverhampton-world`:**
+  - a rule → lesson index;
+  - Wolverhampton v0.3 street widths, footways and building footprints;
+  - route directions and a mock-test route;
+  - store listing and privacy drafts.
+
+  Tasks: `docs/tasks/hydrogen-branch.md`.
+- **Claude:** the keep-left and signal-when-moving-out rules (from play-testing), then the debrief and replay, settings, and the RoadPack loader.
+
 ## 3. File ownership (who may edit what)
 
 | Path | Owner | The other agent may |
@@ -75,7 +85,7 @@ flowchart LR
 | `core/**`, `unity/**` | Claude | read only |
 | `.github/workflows/core-tests.yml` | Claude | read only |
 | `pipeline/**` | Hydrogen | read only |
-| `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`, `content/ATTRIBUTIONS.md` | Hydrogen | read only |
+| `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`, `content/store/**`, `content/ATTRIBUTIONS.md` | Hydrogen | read only |
 | `.github/workflows/pipeline*.yml`, `.github/workflows/highway-code-watch.yml` | Hydrogen | read only |
 | `docs/02-rules-catalogue.md` | Hydrogen (verification edits) | read only |
 | `docs/tasks/claude-branch.md` | Claude | read; add requests under "Requests from Hydrogen" |
@@ -102,3 +112,4 @@ flowchart LR
 - 2026-11-25 (Hydrogen, round 2): delivered `pipeline/uv.lock` + `uv sync --frozen` CI, `rules.yaml` diff check in CI, outcome-based OBS/SIG detection alignment in `docs/02` + `rules.yaml`, `strings.v0.schema.json` + 91 Phase P/M English strings + 42-term glossary + `readability.py`, `signs.v0.schema.json` + 17 GB signs with SVGs (DfT OGL v3.0 / Crown copyright verified) + `content/ATTRIBUTIONS.md`, `lesson.v0.schema.json` + 10 Stages 0–2 lessons (lessons 1–3 free tier), Wolverhampton `QA.md` + 13 turn restrictions (`roadpack.v0.schema.json` v0.1) + `route.v0.schema.json` + 3 legal free-drive routes. All 28 pytest tests, `ruff check`, readability linter, and 17 content schema validations pass.
 - 2026-11-25 (Claude): reviewed and merged PR #2 (`6266f74`); CI green. Round 3 was written for Hydrogen. Pre-agreed: the `testmarking.v0` schema, the additive `strings.v0` `ui` kind, and the additive roadpack v0.2 `junctionPriority[]` / `signalPlans[]`.
 - 2026-11-25 (Hydrogen, round 3): delivered `testmarking.v0.schema.json` + GOV.UK-verified `test_marking.yaml` (15 driving faults, fail on serious/dangerous), `strings.v0` `kind: "ui"` + 29 UI keys (`strings/en/ui.json`) + `en-XA` pseudo-locale + CI diff check, B1 grammar fix (`GB.POS.KEEP_LEFT.why`), `content/lessons/gb/IMPLEMENTATION.md`, Stages 3–5 lessons (`11`–`18`, total 18 lessons), RoadPack v0.2 `junctionPriority[]` (614) & `signalPlans[]` (73) + updated `QA.md`, and `content/legal/en/credits.md`. All 32 pytest tests, `ruff check`, readability linter, and 30 content schema validations pass.
+- 2026-11-25 (Claude): reviewed and merged PR #3 (`ab1549e`); CI green; test marking checked against GOV.UK. Round 4 was written for Hydrogen. Pre-agreed: `ruleindex.v0`, `buildings.v0`, roadpack v0.3 `widthM`/`sidewalk`, and route `instructions[]`.
