@@ -18,4 +18,5 @@
 ## Coach Voice & Sound Effects (`content/audio/`)
 - **TTS Engine:** Piper (`rhasspy/piper`) — MIT Licence.
 - **Coach Voice Model:** `en_GB-cori-medium` (`rhasspy/piper-voices`) — **CC BY 4.0**, trained on the NVIDIA Hi-Fi Multi-Speaker English TTS Dataset (OpenSLR 109) from Cori Samuel's public-domain LibriVox recordings.
+- **Recorded Engine Loops (`content/audio/sfx/engine_*.ogg`):** `racing car engine sound loops` by `domasx2` (`https://opengameart.org/content/racing-car-engine-sound-loops`) — **CC0 1.0 Universal**.
 - **Sound Effects (`content/audio/sfx/`):** Procedurally synthesised for L to Local — **CC0 1.0 Universal**.

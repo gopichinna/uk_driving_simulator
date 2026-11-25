@@ -19,6 +19,7 @@
 ## Audio & Coach Voice (`content/audio/`)
 - **Piper TTS Engine:** MIT Licence — https://github.com/rhasspy/piper
 - **Coach Voice (`en_GB-cori-medium`):** **CC BY 4.0** (`rhasspy/piper-voices`, Hi-Fi TTS dataset OpenSLR 109, Cori Samuel public-domain LibriVox recordings).
+- **Recorded Engine Loops:** `racing car engine sound loops` by `domasx2` (OpenGameArt, **CC0 1.0 Universal**).
 - **Sound Effects:** Procedurally synthesised for L to Local (**CC0 1.0 Universal**).
 
 ## Engine & Unity Packages

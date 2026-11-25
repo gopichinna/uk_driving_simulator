@@ -40,7 +40,12 @@ def test_every_sfx_has_licence_and_valid_duration() -> None:
         ogg = SFX_MANIFEST.parent / entry["file"]
         assert ogg.is_file() and ogg.stat().st_size > 0
         assert entry["file"] in licences_text, f"{entry['file']} missing from LICENCES.md"
-        if not entry["loop"]:
+        if entry["key"].startswith("engine_"):
+            assert 2.0 <= entry["durationS"] <= 4.0, (
+                f"Engine loop {entry['file']} duration {entry['durationS']}s outside 2-4 s"
+            )
+            assert "domasx2" in licences_text
+        elif not entry["loop"]:
             assert 0.02 <= entry["durationS"] <= 3.0, (
                 f"SFX {entry['file']} duration {entry['durationS']}s > 3s"
             )

@@ -153,16 +153,8 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
         False,
     )
 
-    # Engine loops (seamless integer-cycle fundamental frequencies over 2.0 s)
-    t_eng = t_arr(2.0)
-    for name, f0 in (("engine_idle.ogg", 36.0), ("engine_low.ogg", 58.0), ("engine_mid.ogg", 92.0)):
-        sig = (
-            0.55 * np.sin(2 * np.pi * f0 * t_eng)
-            + 0.30 * np.sin(2 * np.pi * (f0 * 2.0) * t_eng)
-            + 0.15 * np.sin(2 * np.pi * (f0 * 3.0) * t_eng)
-            + 0.05 * rng.normal(0.0, 1.0, len(t_eng))
-        )
-        out[name] = (sig, False)
+    # Engine loops are sourced from recorded CC0 WAVs in pipeline/cache/sfx/
+    # (see content/audio/LICENCES.md — not synthesised).
 
     # Short car horn (dual tone 400 + 500 Hz, 0.35 s)
     t_hrn = t_arr(0.35)
@@ -225,8 +217,41 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
     waveforms = _build_sfx_waveforms()
     manifest_items: list[dict[str, Any]] = []
 
+    recorded_engines = {
+        "engine_idle.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_0.wav", 3),
+        "engine_low.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_2_0.wav", 4),
+        "engine_mid.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_4_0.wav", 4),
+    }
+
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
+        for fname, (src_wav, repeats) in sorted(recorded_engines.items()):
+            ogg_path = out_dir / fname
+            tiled_wav = tmp_dir / f"{fname}.tiled.wav"
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-loglevel",
+                    "error",
+                    "-stream_loop",
+                    str(repeats - 1),
+                    "-i",
+                    str(src_wav),
+                    str(tiled_wav),
+                ],
+                check=True,
+            )
+            dur = _wav_to_ogg(tiled_wav, ogg_path, "loudnorm=I=-16:TP=-1.5:LRA=7")
+            manifest_items.append(
+                {
+                    "key": Path(fname).stem,
+                    "file": fname,
+                    "durationS": dur,
+                    "targetLufs": -16,
+                    "loop": True,
+                }
+            )
         for fname, (samples, is_ambience) in sorted(waveforms.items()):
             raw_wav = tmp_dir / f"{fname}.wav"
             _write_pcm_wav(raw_wav, samples)

@@ -3,6 +3,27 @@
   "licence": "CC0-1.0",
   "entries": [
     {
+      "key": "engine_idle",
+      "file": "engine_idle.ogg",
+      "durationS": 2.599,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "engine_low",
+      "file": "engine_low.ogg",
+      "durationS": 2.737,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "engine_mid",
+      "file": "engine_mid.ogg",
+      "durationS": 2.53,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
       "key": "ambience_town",
       "file": "ambience_town.ogg",
       "durationS": 4.006,
@@ -29,27 +50,6 @@
       "durationS": 0.146,
       "targetLufs": -16,
       "loop": false
-    },
-    {
-      "key": "engine_idle",
-      "file": "engine_idle.ogg",
-      "durationS": 2.006,
-      "targetLufs": -16,
-      "loop": true
-    },
-    {
-      "key": "engine_low",
-      "file": "engine_low.ogg",
-      "durationS": 2.006,
-      "targetLufs": -16,
-      "loop": true
-    },
-    {
-      "key": "engine_mid",
-      "file": "engine_mid.ogg",
-      "durationS": 2.006,
-      "targetLufs": -16,
-      "loop": true
     },
     {
       "key": "horn",

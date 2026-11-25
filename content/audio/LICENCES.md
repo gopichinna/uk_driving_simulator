@@ -23,9 +23,9 @@ All sound effects and loops are procedurally synthesised in Python (`pipeline/lt
 |---|---|---|---|---|---|
 | `indicator_on.ogg` | Indicator relay click (on) | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
 | `indicator_off.ogg` | Indicator relay click (off) | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
-| `engine_idle.ogg` | Soft engine loop (idle) | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
-| `engine_low.ogg` | Soft engine loop (low RPM) | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
-| `engine_mid.ogg` | Soft engine loop (mid RPM) | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
+| `engine_idle.ogg` | Recorded car engine loop (idle) | domasx2 | https://opengameart.org/content/racing-car-engine-sound-loops (`loop_0.wav`) | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | −16 LUFS |
+| `engine_low.ogg` | Recorded car engine loop (~1500 rpm) | domasx2 | https://opengameart.org/content/racing-car-engine-sound-loops (`loop_2_0.wav`) | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | −16 LUFS |
+| `engine_mid.ogg` | Recorded car engine loop (~2500 rpm) | domasx2 | https://opengameart.org/content/racing-car-engine-sound-loops (`loop_4_0.wav`) | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | −16 LUFS |
 | `horn.ogg` | Short car horn | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
 | `tyre_squeal.ogg` | Short tyre squeal | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
 | `crossing_beep.ogg` | UK puffin/pelican crossing beep | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | −16 LUFS |
