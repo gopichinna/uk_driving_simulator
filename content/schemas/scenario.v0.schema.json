@@ -9,7 +9,9 @@
   "properties": {
     "scenarioFormatVersion": { "const": "0.1" },
     "scenarioId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-    "course": { "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway"] },
+    "course": {
+      "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway", "wolverhampton"]
+    },
     "anchor": {
       "enum": [
         "crossroads_signals",
@@ -123,6 +125,18 @@
             "properties": {
               "type": { "const": "finish_after_s" },
               "seconds": { "type": "number", "minimum": 10, "maximum": 180 }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "minutes", "mode"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "independent_driving" },
+              "minutes": { "type": "integer", "minimum": 1, "maximum": 60 },
+              "mode": { "enum": ["satnav", "signs", "mixed"] },
+              "poiId": { "type": "string", "minLength": 1 },
+              "instruction": { "type": "string", "minLength": 1 }
             }
           }
         ]

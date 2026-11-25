@@ -52,7 +52,9 @@
       "additionalProperties": false,
       "properties": {
         "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
-        "course": { "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway"] },
+        "course": {
+          "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway", "wolverhampton"]
+        },
         "anchor": {
           "enum": [
             "crossroads_signals",

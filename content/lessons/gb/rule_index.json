@@ -27,6 +27,11 @@
         "lessonId": "gb-s5-18-two-second-rule-speed",
         "scenarioId": "s5_18_two_sec_dusk",
         "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
       }
     ],
     "GB.JCT.BOX": [
@@ -205,6 +210,28 @@
         "lessonId": "gb-s4-15-overtaking-cyclists",
         "scenarioId": "s4_15_town_cyclist",
         "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.POS.LANE_FOR_ROUTE": [
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
       }
     ],
     "GB.RBT.APPROACH_LANE": [
@@ -343,6 +370,16 @@
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
         "scenarioId": "s5_17_overtake_and_return",
         "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
       }
     ],
     "GB.SPD.APPROPRIATE": [
@@ -387,6 +424,16 @@
         "lessonId": "gb-s5-18-two-second-rule-speed",
         "scenarioId": "s5_18_two_sec_dusk",
         "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
       }
     ],
     "GB.TL.AMBER": [
