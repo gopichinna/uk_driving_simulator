@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Town.unity
+    guid: 35c0fdbab37724aa9b6d599c6326acef
+  - enabled: 1
     path: Assets/Scenes/TwoLaneRoundabout.unity
     guid: ec987cd0e91e54e4db9337238a9252dc
   - enabled: 1

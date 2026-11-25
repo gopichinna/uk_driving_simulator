@@ -117,10 +117,14 @@ namespace LToLocal.Sim
             AddWalk(new Vec2(40, 5.5), new Vec2(ZebraX, 5.5), new Vec2(ZebraX, -5.5), new Vec2(110, -5.5));
             AddWalk(new Vec2(40, -5.5), new Vec2(ZebraX - 0.8, -5.5), new Vec2(ZebraX - 0.8, 5.5), new Vec2(110, 5.5));
 
-            // Speed-limit signs: 20 at the start of Church Street (both ends), 30 when leaving it.
-            SpeedSigns.Add((C + new Vec2(BendMouthM + 2, -5.2), Math.PI / 2, 20));        // eastbound, entering from the bend
-            SpeedSigns.Add((D + new Vec2(-TMouthM - 6, 5.2), -Math.PI / 2, 20));          // westbound, entering from Station Road
-            SpeedSigns.Add((new Vec2(-200, -5.2), Math.PI / 2, 30));                      // High Street, from the west
+            // Speed-limit signs on the driver's left verge: 30 where traffic enters the town, 20 into Church Street.
+            SpeedSigns.Add((C + new Vec2(BendMouthM + 3, 5.2), Math.PI / 2, 20));         // Church St eastbound, from the bend
+            SpeedSigns.Add((D + new Vec2(-TMouthM - 8, -5.2), -Math.PI / 2, 20));         // Church St westbound, from Station Road
+            SpeedSigns.Add((C + new Vec2(-5.2, BendMouthM + 3), 0, 30));                  // Mill Lane northbound, leaving the 20 zone
+            SpeedSigns.Add((new Vec2(-205, 5.2), Math.PI / 2, 30));                       // High Street eastbound
+            SpeedSigns.Add((new Vec2(205, -5.2), -Math.PI / 2, 30));                      // High Street westbound
+            SpeedSigns.Add((new Vec2(5.2, 190), Math.PI, 30));                            // Station Road southbound
+            SpeedSigns.Add((new Vec2(-5.2, -205), 0, 30));                                // Station Road northbound
 
             Anchors["start"] = (Roads[highW].Forward, 25);
             var hm = Graph.Segments[Roads[highMid].Forward];

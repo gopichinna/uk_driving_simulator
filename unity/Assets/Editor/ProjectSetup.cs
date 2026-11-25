@@ -19,7 +19,7 @@ namespace LToLocal.EditorTools
     ///   Unity -batchmode -projectPath unity -buildTarget Android -executeMethod LToLocal.EditorTools.ProjectSetup.BuildAndroid -quit
     /// Every scene is generated from code, so the scenes never drift from the simulation's geometry.
     /// </summary>
-    public static class ProjectSetup
+    public static partial class ProjectSetup
     {
         private const string SettingsDir = "Assets/Settings";
         private const string MaterialsDir = "Assets/Materials";
@@ -30,7 +30,7 @@ namespace LToLocal.EditorTools
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TownScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
@@ -40,6 +40,7 @@ namespace LToLocal.EditorTools
             BuildDualCarriagewayScene();
             BuildRoundaboutScene();
             BuildTwoLaneRoundaboutScene();
+            BuildTownScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));

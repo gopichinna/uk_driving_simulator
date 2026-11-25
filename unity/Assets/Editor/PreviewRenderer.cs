@@ -53,6 +53,40 @@ namespace LToLocal.EditorTools
             cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
             Save(cam, "Builds/Previews/twolane_seat.png");
 
+            // Town: crossroads from above, the zebra, the driver's view at the lights and at the Mill Lane give-way line
+            EditorSceneManager.OpenScene(ProjectSetup.TownScene);
+            game = Object.FindAnyObjectByType<DriveGame>();
+            cam = game.chaseCamera;
+            Save(cam, "Builds/Previews/_warmup.png");
+            cam.fieldOfView = 60f;
+            cam.nearClipPlane = 0.3f;
+            cam.transform.SetPositionAndRotation(new Vector3(-8, 38, -30), Quaternion.Euler(55, 15, 0));
+            Save(cam, "Builds/Previews/town_crossroads.png");
+            cam.transform.SetPositionAndRotation(new Vector3(52, 5, -1.75f), Quaternion.Euler(14, 90, 0));
+            foreach (var t in Object.FindObjectsByType<Transform>(FindObjectsInactive.Include, FindObjectsSortMode.None))
+                if (t.name == "BelishaOn" || (t.name == "On" && t.parent != null && t.parent.name == "Red")) t.gameObject.SetActive(true);
+            Save(cam, "Builds/Previews/town_zebra.png");
+            cam.transform.SetPositionAndRotation(new Vector3(-22, 1.6f, 1.75f), Quaternion.Euler(4, 90, 0));
+            cam.fieldOfView = 40f;
+            Save(cam, "Builds/Previews/town_signal_closeup.png");
+            cam.fieldOfView = 60f;
+            cam.transform.SetPositionAndRotation(new Vector3(-60, 160, -60), Quaternion.Euler(90, 0, 0));
+            Save(cam, "Builds/Previews/town_aerial.png");
+            var town = new LToLocal.Sim.TownGeometry();
+            car = game.car;
+            foreach (var (anchor, name) in new[] { ("crossroads_signals", "town_seat_lights"), ("tjunction_north", "town_seat_giveway"), ("school_street", "town_seat_school") })
+            {
+                var (p, h) = town.AnchorPose(anchor);
+                var (seg, s0) = town.Anchors[anchor];
+                var lane = town.Graph.Segments[seg];
+                (p, h) = lane.Path.Sample(System.Math.Min(lane.Length - 4, s0 + (anchor == "school_street" ? 0 : 42)));
+                car.SetPositionAndRotation(new Vector3((float)p.X, 0, (float)p.Z), Quaternion.Euler(0, (float)(h * Mathf.Rad2Deg), 0));
+                cam.fieldOfView = game.cockpitFov;
+                cam.nearClipPlane = 0.05f;
+                cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
+                Save(cam, $"Builds/Previews/{name}.png");
+            }
+
             Debug.Log("[LToLocal] Previews rendered.");
         }
 
