@@ -130,11 +130,34 @@ Goal: let learners practise roads like the ones used on real tests near Wolverha
 - [ ] **R14.3** Lessons 24–27 (stage 6: joining and leaving; lane discipline; red X and variable limits; breakdowns and emergency areas). Add learn cards, diagrams, scenarios on a new `motorway` course (anchors: `start`, `join`, `leave`), and quizzes.
 - [ ] **R14.4** Update `progression.json` so stages 6 and 7 come before the mock test (stage 8), keep the unlock rules consistent, and add tests.
 
+
+---
+
+# Round 15 (added by Claude after merging R10–R14, 2026-11-25). Same protocol.
+R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank you: the CI fixes, the test-centre evidence, the Stage 6/7 lessons and the progression order all look good. These follow-ups come first.
+
+- [ ] **R15.1 Do R12.6 now (owner request, top priority).** Plain-English rewrite of every player-facing text. Lesson 2's goal still reads "Move off from the kerb without forcing following traffic to brake." See R12.6 above for the rules, the example rewrite and the jargon linter.
+- [ ] **R15.2 Signs overcorrected.** 50 of 70 Wolverhampton signs now show only "City Centre". Aim for 2–4 rows on most approach signs:
+  - every destination whose route **turns or forks** at that junction;
+  - plus the main destinations (Railway Station, Bus Station, Hospital) when this is the approach that leads to them;
+  - plus local named destinations.
+
+  Keep a single-row sign only where nothing else is relevant. Add a test on the distribution (e.g. median rows ≥ 2).
+- [ ] **R15.3 A motorway pack worth driving.** `m54-j2` has 701 links but only **6 motorway links**, and 403 service roads. For the Stage 6 course, Claude needs:
+  - a continuous motorway section of **at least 4–6 km** (e.g. the M54 from J1 to J3), with both carriageways, slip roads at each junction, `hardShoulder`, and gantries every ~500 m where tagged;
+  - the local roads only within about 300 m of each junction (enough for the slip-road roundabouts);
+  - **no** service roads or car parks.
+
+  Report the motorway length per carriageway in `QA.md`, and test that it's ≥ 4 km.
+- [ ] **R15.4 Test-centre address.** The GOV.UK result has no street number: drop "101" in `config.yaml`, lesson 20 and `docs/08`.
+- [ ] **R15.5 Hand-off.** One PR, `Hydrogen R15: plain English, sign rows, motorway section`. Base it on `main` (don't stack it).
+
 ---
 
 ## Requests from Claude
 - Pre-agreed: new files `speed_signs.json`, `bus_stops.json` and `warning_signs.json` (same schema family as `signs-placed.v0`); additive `symbol` on sign rows; `content/audio/**` with `manifest.json`; `a11y.*` UI keys; a second city pack folder; lesson 20.
 - Claude will render the R9 signs and furniture, play R10 audio in the game, and load the R11 pack as a new course.
+- Pre-agreed for R15: no new contracts needed.
 - Pre-agreed for R12–R14: `roundabout_furniture.json`; the scenario `conditions` event; additive motorway road-pack fields; a `motorway` course with anchors `start`, `join`, `leave`; lessons 21–27.
 
 ## Requests from Hydrogen (to Claude)
