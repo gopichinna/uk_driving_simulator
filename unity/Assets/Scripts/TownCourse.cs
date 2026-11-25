@@ -128,36 +128,66 @@ namespace LToLocal.Game
         {
             Snapshot();
             if (trafficView != null) trafficView.Render(_snap, alpha, blink);
+            ShowLights(_lights);
+            _pedPoses.Clear();
+            foreach (var p in _peds.People) _pedPoses.Add((p.Id, p.Position.X, p.Position.Z, p.Heading));
+            RenderPedestrians(_pedPoses);
+        }
 
+        private const int PedIdOffset = 1_000_000;
+        private readonly List<(int id, double x, double z, double heading)> _pedPoses = new List<(int, double, double, double)>();
+        private readonly List<VehicleSnapshot> _replay = new List<VehicleSnapshot>();
+
+        public void Record(List<ActorPose> actors, List<LightState> lights)
+        {
+            actors.Clear();
+            Snapshot();
+            Replay.AddVehicles(actors, _snap);
+            foreach (var p in _peds.People)
+                actors.Add(new ActorPose { Id = PedIdOffset + p.Id, Kind = ActorKind.Pedestrian, X = (float)p.Position.X, Z = (float)p.Position.Z, Heading = (float)p.Heading });
+            lights.Clear();
+            lights.AddRange(_lights);
+        }
+
+        public void ShowRecorded(RecordedFrame frame, bool blink)
+        {
+            Replay.Vehicles(frame, _replay);
+            if (trafficView != null) trafficView.Render(_replay, 1f, blink);
+            if (frame.Lights.Length >= 2) ShowLights(frame.Lights);
+            _pedPoses.Clear();
+            foreach (var a in frame.Actors)
+                if (a.Kind == ActorKind.Pedestrian) _pedPoses.Add((a.Id - PedIdOffset, a.X, a.Z, a.Heading));
+            RenderPedestrians(_pedPoses);
+        }
+
+        private void ShowLights(IReadOnlyList<LightState> lights)
+        {
             foreach (var (group, red, amber, green) in _heads)
             {
-                var s = _lights[group];
+                var s = lights[group];
                 if (red != null) red.SetActive(s == LightState.Red || s == LightState.RedAmber);
                 if (amber != null) amber.SetActive(s == LightState.Amber || s == LightState.RedAmber);
                 if (green != null) green.SetActive(s == LightState.Green);
             }
             bool beaconOn = Mathf.Repeat(Time.time, 1.0f) < 0.5f;
             foreach (var b in _beacons) b.SetActive(beaconOn);
-
-            RenderPedestrians();
         }
 
-        private void RenderPedestrians()
+        private void RenderPedestrians(List<(int id, double x, double z, double heading)> people)
         {
             _seen.Clear();
-            foreach (var p in _peds.People)
+            foreach (var (id, x, z, heading) in people)
             {
-                _seen.Add(p.Id);
-                if (!_pedViews.TryGetValue(p.Id, out var view))
+                _seen.Add(id);
+                if (!_pedViews.TryGetValue(id, out var view))
                 {
                     if (_freePeds.Count == 0) continue;
                     view = _freePeds[_freePeds.Count - 1];
                     _freePeds.RemoveAt(_freePeds.Count - 1);
                     view.gameObject.SetActive(true);
-                    _pedViews[p.Id] = view;
+                    _pedViews[id] = view;
                 }
-                view.SetPositionAndRotation(new Vector3((float)p.Position.X, 0.08f, (float)p.Position.Z),
-                    Quaternion.Euler(0f, (float)(p.Heading * Mathf.Rad2Deg), 0f));
+                view.SetPositionAndRotation(new Vector3((float)x, 0.08f, (float)z), Quaternion.Euler(0f, (float)(heading * Mathf.Rad2Deg), 0f));
             }
             _release.Clear();
             foreach (var id in _pedViews.Keys) if (!_seen.Contains(id)) _release.Add(id);

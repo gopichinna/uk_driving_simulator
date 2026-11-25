@@ -1,0 +1,645 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en",
+  "kind": "rules",
+  "rules": {
+    "GB.OBS.MOVE_OFF_CHECKS": {
+      "title": "Move off safely",
+      "fault": "You moved off without leaving a safe gap.",
+      "why": "Traffic approaches fast from behind on your right. Moving into its path forces drivers to brake.",
+      "tip": "Check mirrors and your right blind spot before moving off.",
+      "good": "You waited for a clear gap before moving off."
+    },
+    "GB.OBS.MSM": {
+      "title": "Mirrors, signal, manoeuvre",
+      "fault": "Your manoeuvre forced another driver to brake.",
+      "why": "Following drivers need time to react to your speed or lane change. Sudden moves create rear-end risks.",
+      "tip": "Use the MSM routine before changing speed or direction.",
+      "good": "You signalled early and changed speed smoothly."
+    },
+    "GB.SIG.TIMELY": {
+      "title": "Signal in good time",
+      "fault": "You signalled too late or left it on.",
+      "why": "Other road users need early warning of your plan. A late signal gives them no time to react.",
+      "tip": "Signal early, then cancel as soon as you finish turning.",
+      "good": "Your signals were clear and cancelled promptly."
+    },
+    "GB.POS.KEEP_LEFT": {
+      "title": "Keep to the left",
+      "fault": "You drove on the wrong side of the road.",
+      "why": "In the UK, traffic stays on the left. Driving on the right risks a head-on crash.",
+      "tip": "Stay on the left unless overtaking or passing an obstruction.",
+      "good": "You kept a steady position on the left."
+    },
+    "GB.POS.AFTER_TURN": {
+      "title": "Finish turn on left",
+      "fault": "You ended your turn in the right lane.",
+      "why": "Turning into the opposing lane puts you in oncoming traffic. Always aim for the nearside half of the new road.",
+      "tip": "Look into the left lane of the side road as you turn.",
+      "good": "You turned cleanly into the left lane."
+    },
+    "GB.SPD.OVER_LIMIT": {
+      "title": "Speed limit exceeded",
+      "fault": "You drove at {speedMph} mph in a {limitMph} mph limit.",
+      "why": "Higher speeds increase your stopping distance and crash harm. You must never exceed the posted speed limit.",
+      "tip": "Check your speedometer and watch for new limit signs.",
+      "good": "You kept within the {limitMph} mph speed limit."
+    },
+    "GB.GAP.TWO_SECOND": {
+      "title": "Two-second following gap",
+      "fault": "Your gap dropped to {gapS} seconds.",
+      "why": "Tailgating leaves too little time to stop if traffic slows. Keep at least a two-second gap on faster roads.",
+      "tip": "Pick a roadside marker and count two seconds behind the car ahead.",
+      "good": "You maintained a safe following gap."
+    },
+    "GB.JCT.GIVE_WAY": {
+      "title": "Give way at junction",
+      "fault": "You pulled out and forced priority traffic to brake.",
+      "why": "You must give way to traffic on the major road. Entering a tight gap puts everyone at risk.",
+      "tip": "Wait until both lanes are clear before emerging.",
+      "good": "You judged the gap well and gave way safely."
+    },
+    "GB.JCT.H2_PEDESTRIANS": {
+      "title": "Give way to pedestrians",
+      "fault": "You did not give way to a waiting pedestrian.",
+      "why": "Under H2, people crossing or waiting at a junction have priority. Turning across them puts them in danger.",
+      "tip": "Slow down before turning and let pedestrians cross the side road.",
+      "good": "You waited patiently for pedestrians to cross."
+    },
+    "GB.JCT.TURN_FAR_GAP": {
+      "title": "Wait for safe gap",
+      "fault": "You turned right across oncoming traffic.",
+      "why": "Oncoming vehicles have priority when you turn across their lane. Misjudging their speed can cause a side impact.",
+      "tip": "Wait until oncoming traffic is far enough away to turn safely.",
+      "good": "You waited for a safe gap before turning right."
+    },
+    "GB.TL.RED": {
+      "title": "Stop on red",
+      "fault": "You crossed the stop line on red.",
+      "why": "A red light means other traffic or pedestrians have a green signal. You must stop behind the white stop line.",
+      "tip": "Scan traffic lights early so you can brake smoothly.",
+      "good": "You stopped cleanly behind the white line on red."
+    },
+    "GB.TL.AMBER": {
+      "title": "Stop on amber",
+      "fault": "You drove through amber when you could stop.",
+      "why": "Amber means stop unless you are too close to stop safely. You must not treat amber as a late green.",
+      "tip": "Ease off the throttle when a light has been green for a while.",
+      "good": "You stopped safely when the light turned amber."
+    },
+    "GB.RBT.GIVE_WAY_RIGHT": {
+      "title": "Give way to right",
+      "fault": "You entered the roundabout ahead of right-side traffic.",
+      "why": "Traffic already on the roundabout approaches from your right. You must give way at the broken lines.",
+      "tip": "Look right early and wait for a clear gap before joining.",
+      "good": "You gave way to circulating traffic from the right."
+    },
+    "GB.RBT.APPROACH_LANE": {
+      "title": "Choose roundabout lane",
+      "fault": "You approached the roundabout in the wrong lane.",
+      "why": "The wrong lane forces late lane changes on the roundabout. Follow lane arrows and choose left for left or right for right.",
+      "tip": "Check lane arrows early as you approach the roundabout.",
+      "good": "You picked the right lane before reaching the roundabout."
+    },
+    "GB.RBT.SIGNAL_APPROACH": {
+      "title": "Signal before roundabout",
+      "fault": "Your roundabout approach signal was missing or wrong.",
+      "why": "Other drivers rely on your signal to read your exit. Signal left for left exits and right for exits past straight ahead.",
+      "tip": "Signal clearly before the give-way line when turning.",
+      "good": "Your approach signal matched your chosen exit."
+    },
+    "GB.RBT.SIGNAL_EXIT": {
+      "title": "Signal to leave roundabout",
+      "fault": "You did not signal left before exiting.",
+      "why": "Waiting drivers need to know you are leaving the roundabout. Without a left signal, traffic behind and ahead is delayed.",
+      "tip": "Signal left right after you pass the exit before yours.",
+      "good": "You signalled left in good time before exiting."
+    },
+    "GB.RBT.WRONG_WAY": {
+      "title": "Circulate clockwise",
+      "fault": "You travelled anti-clockwise around the roundabout.",
+      "why": "In the UK, all roundabouts flow clockwise around the island. You must never turn right directly into oncoming roundabout traffic.",
+      "tip": "Keep the central island on your right at every roundabout.",
+      "good": "You circulated clockwise around the roundabout."
+    },
+    "GB.XNG.ZEBRA": {
+      "title": "Stop at zebra crossing",
+      "fault": "You failed to give way at the zebra crossing.",
+      "why": "You must stop once someone steps onto a zebra crossing. Slowing for waiting people keeps everyone safe.",
+      "tip": "Check both pavements as you approach the flashing orange beacons.",
+      "good": "You stopped smoothly to let pedestrians cross."
+    },
+    "GB.VRU.PASS_CYCLIST": {
+      "title": "Leave room for cyclists",
+      "fault": "You passed a cyclist with only {clearanceM} m space.",
+      "why": "Cyclists may swerve to avoid drains or potholes. Leave at least 1.5 m up to 30 mph and more at higher speeds.",
+      "tip": "Wait behind the cyclist if oncoming traffic prevents a wide pass.",
+      "good": "You gave the cyclist plenty of room when passing."
+    },
+    "GB.SCH.CHILD_STEPS_OUT": {
+      "title": "Watch for hidden hazards",
+      "fault": "You were too fast past parked cars.",
+      "why": "Children can step out unseen from between parked vehicles. Lower speed gives you time to stop safely.",
+      "tip": "Slow down and scan under and between parked cars.",
+      "good": "You kept a safe speed and stopped in time."
+    },
+    "GB.MWY.JOIN": {
+      "title": "Join motorway safely",
+      "fault": "You joined the motorway too slowly or crossed solid lines.",
+      "why": "Traffic on the main carriageway moves much faster. You must give way and match its speed on the slip road.",
+      "tip": "Use the full slip road to match speed and merge into a gap.",
+      "good": "You matched speed and merged smoothly into lane one."
+    },
+    "GB.MWY.RED_X": {
+      "title": "Obey red X signals",
+      "fault": "You drove in a lane closed by a red X.",
+      "why": "A red X closes the lane for stranded cars or workers ahead. You must move to an open lane or stop.",
+      "tip": "Watch overhead gantries and leave closed lanes early.",
+      "good": "You moved out of the closed lane promptly."
+    },
+    "GB.OBS.LANE_CHANGE": {
+      "title": "Safe lane change",
+      "fault": "You changed lanes into another vehicle's path.",
+      "why": "A car can hide in your blind spot beside your rear quarter. Moving over too soon forces other drivers to brake hard.",
+      "tip": "Check mirrors, look over your shoulder, signal, then move smoothly.",
+      "good": "You checked your blind spot and changed lanes smoothly."
+    },
+    "GB.SIG.MISLEADING": {
+      "title": "Avoid misleading signals",
+      "fault": "Your indicator misled another driver.",
+      "why": "A wrong or early signal can tempt side-road traffic to pull out. Make sure your signal matches your real path.",
+      "tip": "Only signal after passing side roads you are not taking.",
+      "good": "Your signals were clear and never misled anyone."
+    },
+    "GB.POS.LANE_FOR_ROUTE": {
+      "title": "Follow lane arrows",
+      "fault": "You took a route that broke lane arrows.",
+      "why": "Lane arrows sort traffic safely through busy junctions. Late lane swaps over solid lines cause sudden conflicts.",
+      "tip": "Read overhead signs and road arrows well before the junction.",
+      "good": "You chose the right lane early and followed arrows."
+    },
+    "GB.POS.DUAL_KEEP_LEFT": {
+      "title": "Keep left on dual carriageway",
+      "fault": "You stayed in the right lane without overtaking.",
+      "why": "On a two-lane dual carriageway, the right lane is for overtaking or turning right. Hogging it blocks faster traffic.",
+      "tip": "Move back to the left lane once your overtake is complete.",
+      "good": "You returned to the left lane after overtaking."
+    },
+    "GB.SPD.NATIONAL_LIMIT": {
+      "title": "National speed limit",
+      "fault": "You drove at {speedMph} mph above the {limitMph} mph national limit.",
+      "why": "The national limit is 60 mph on single carriageways, or 70 mph on dual carriageways. You must stay within it.",
+      "tip": "Check whether the road has a central barrier to know the limit.",
+      "good": "You matched the correct national speed limit."
+    },
+    "GB.SPD.BUILT_UP": {
+      "title": "Built-up speed limit",
+      "fault": "You exceeded the {limitMph} mph built-up limit.",
+      "why": "Built-up streets are 30 mph in England and Scotland, and 20 mph in Wales. You must obey the local limit.",
+      "tip": "Remember the 20 mph default when entering Welsh towns.",
+      "good": "You respected the built-up area speed limit."
+    },
+    "GB.SPD.STREET_LIGHTING": {
+      "title": "Street lights mean built-up",
+      "fault": "You missed the built-up speed limit cue.",
+      "why": "Regular street lights with no repeater signs mean the built-up limit applies. Watch for the change when entering a town.",
+      "tip": "Look for street lights as a cue to check your speed.",
+      "good": "You spotted the street lights and adjusted your speed."
+    },
+    "GB.SPD.APPROPRIATE": {
+      "title": "Drive to the conditions",
+      "fault": "Your speed of {speedMph} mph was too fast for conditions.",
+      "why": "The speed limit is a maximum, not a target. Wet roads, bends, and dark streets require extra stopping distance.",
+      "tip": "Always be able to stop within the distance you can see ahead.",
+      "good": "You matched your speed safely to the road conditions."
+    },
+    "GB.SPD.PROGRESS": {
+      "title": "Make safe progress",
+      "fault": "You held up traffic on a clear road.",
+      "why": "Driving much slower than safe traffic speed frustrates drivers behind. It can cause risky overtakes.",
+      "tip": "Keep up with safe traffic flow when the road ahead is clear.",
+      "good": "You made smooth, confident progress."
+    },
+    "GB.SPD.WORKS_TEMP": {
+      "title": "Roadworks speed limit",
+      "fault": "You drove at {speedMph} mph in a {limitMph} mph roadworks zone.",
+      "why": "Roadworks have narrow lanes and workers close to traffic. You must obey every temporary speed limit.",
+      "tip": "Slow down before entering the coned roadworks area.",
+      "good": "You kept to the temporary roadworks limit."
+    },
+    "GB.SPD.VARIABLE": {
+      "title": "Obey variable speed limits",
+      "fault": "You exceeded the {limitMph} mph gantry speed limit.",
+      "why": "Red-circle gantry signs set legal limits to prevent queues ahead. You must slow down before passing the sign.",
+      "tip": "Check every overhead gantry for red-circle speed changes.",
+      "good": "You adjusted promptly to the gantry speed limit."
+    },
+    "GB.GAP.STOPPING_TABLE": {
+      "title": "Know stopping distances",
+      "fault": "Your stopping distance exceeded the clear gap.",
+      "why": "Stopping distance grows quickly with speed. At 70 mph it takes about 96 metres to stop in dry weather.",
+      "tip": "Leave more space as your speed rises.",
+      "good": "You left enough room to stop smoothly."
+    },
+    "GB.GAP.CUT_IN": {
+      "title": "Restore gap after cut-in",
+      "fault": "You stayed too close after a car cut in.",
+      "why": "When another car fills your space, your stopping margin disappears. Ease off gently to rebuild your two-second gap.",
+      "tip": "Lift off the throttle when someone merges in front of you.",
+      "good": "You dropped back calmly to restore your gap."
+    },
+    "GB.JCT.STOP_SIGN": {
+      "title": "Stop at Stop sign",
+      "fault": "You rolled past the Stop sign line.",
+      "why": "Stop signs sit at junctions with very poor visibility. You must bring all wheels to a full stop at the solid line.",
+      "tip": "Stop completely at the line, then look both ways before moving.",
+      "good": "You came to a complete stop at the line."
+    },
+    "GB.JCT.H3_CYCLISTS": {
+      "title": "Do not cut across cyclists",
+      "fault": "You turned across a cyclist going straight ahead.",
+      "why": "Under H3, cyclists going ahead have priority over turning traffic. Cutting across their path causes serious collisions.",
+      "tip": "Check your nearside mirror and wait for cyclists before turning left.",
+      "good": "You let the cyclist pass before making your turn."
+    },
+    "GB.JCT.BOX": {
+      "title": "Keep box junctions clear",
+      "fault": "You stopped inside the yellow box junction.",
+      "why": "Blocking a box junction traps crossing traffic when lights change. You must not enter unless your exit road is clear.",
+      "tip": "Wait behind the yellow grid until space opens beyond it.",
+      "good": "You waited until your exit was clear before entering."
+    },
+    "GB.JCT.TURN_FAR_POSITION": {
+      "title": "Position for right turn",
+      "fault": "Your road position for turning right was poor.",
+      "why": "Staying near the centre line lets traffic pass safely on your left. It also gives you a clearer view ahead.",
+      "tip": "Move just left of the centre line while keeping wheels straight.",
+      "good": "You positioned neatly near the centre line."
+    },
+    "GB.JCT.TURN_NEAR": {
+      "title": "Keep left turning left",
+      "fault": "You swung wide or crossed an active lane.",
+      "why": "Swinging out wide can surprise traffic beside you. Keep close to the left kerb and give way to bus or cycle lanes.",
+      "tip": "Slow down early so you can turn tightly around the left corner.",
+      "good": "You kept close to the left through the turn."
+    },
+    "GB.JCT.EMERGE_LOOK": {
+      "title": "Creep and look carefully",
+      "fault": "You emerged too fast at a blind junction.",
+      "why": "Walls or parked cars can hide fast approaching traffic. High speed leaves no time to stop if the road is busy.",
+      "tip": "Slow right down and creep forward until you can see clearly.",
+      "good": "You crept forward carefully at the blind junction."
+    },
+    "GB.TL.RED_AMBER": {
+      "title": "Wait for green",
+      "fault": "You crossed the line on red and amber.",
+      "why": "Red and amber together mean get ready, not go. You must wait behind the stop line until green appears.",
+      "tip": "Stay stopped until the green light comes on.",
+      "good": "You waited until the light turned green."
+    },
+    "GB.TL.NO_TURN_ON_RED": {
+      "title": "No turning on red",
+      "fault": "You turned left on a red light.",
+      "why": "Unlike some countries, the UK has no turn on red. You must wait at the white line for a green light.",
+      "tip": "Always stop and wait on red even when turning left.",
+      "good": "You waited for green before turning left."
+    },
+    "GB.TL.CLEAR_JUNCTION": {
+      "title": "Do not block junction",
+      "fault": "You entered on green and blocked the junction.",
+      "why": "If your exit is blocked, you will trap cross traffic when lights change. You must only enter when you can clear the junction.",
+      "tip": "Hold back at the green light if traffic ahead is queued.",
+      "good": "You kept the junction clear in heavy traffic."
+    },
+    "GB.TL.FILTER_ARROW": {
+      "title": "Follow green filter arrow",
+      "fault": "You went against the green filter arrow.",
+      "why": "A green filter arrow only permits traffic in the arrow direction. You must wait for the main green for other routes.",
+      "tip": "Check which lane and direction the green arrow points to.",
+      "good": "You followed the filter arrow correctly."
+    },
+    "GB.TL.ASL": {
+      "title": "Stop before cyclist box",
+      "fault": "You stopped inside the cyclist waiting box.",
+      "why": "The ASL box gives cyclists a safe head start at lights. On red or amber, you must stop at the first white line.",
+      "tip": "Stop behind the first line whenever you see a bike box.",
+      "good": "You left the ASL box clear for cyclists."
+    },
+    "GB.RBT.STAY_IN_LANE": {
+      "title": "Stay in roundabout lane",
+      "fault": "You drifted across lanes on the roundabout.",
+      "why": "Crossing lanes mid-roundabout surprises cars beside you. Follow spiral road markings all the way to your exit.",
+      "tip": "Keep inside your marked lane until you exit.",
+      "good": "You held your lane cleanly around the roundabout."
+    },
+    "GB.RBT.CYCLISTS": {
+      "title": "Give cyclists roundabout space",
+      "fault": "You cut across a cyclist on the roundabout.",
+      "why": "Cyclists may stay in the left lane even when turning right. Give them space and never cut across them at exits.",
+      "tip": "Check your nearside for cyclists before exiting a roundabout.",
+      "good": "You gave the cyclist plenty of room on the roundabout."
+    },
+    "GB.RBT.MINI": {
+      "title": "Go around mini-roundabout",
+      "fault": "You drove straight over the mini-roundabout circle.",
+      "why": "You must drive around the painted white circle, not over it. Cutting across confuses other drivers and risks collisions.",
+      "tip": "Steer around the white disc and avoid U-turns.",
+      "good": "You steered cleanly around the mini-roundabout."
+    },
+    "GB.RBT.DOUBLE_MINI": {
+      "title": "Treat each mini separately",
+      "fault": "You failed to give way at the second mini-roundabout.",
+      "why": "Double mini-roundabouts work as two separate junctions. Give way to traffic from the right at each white circle.",
+      "tip": "Reset your scan and look right again at the second circle.",
+      "good": "You handled both mini-roundabouts safely."
+    },
+    "GB.XNG.PELICAN_AMBER": {
+      "title": "Yield on flashing amber",
+      "fault": "You entered a pelican crossing with someone still on it.",
+      "why": "Flashing amber means you must give way to anyone still crossing. Drive on only once the crossing is completely clear.",
+      "tip": "Wait until the last pedestrian reaches the kerb on flashing amber.",
+      "good": "You waited until the pelican crossing was clear."
+    },
+    "GB.XNG.LIGHT_CROSSINGS": {
+      "title": "Obey crossing signals",
+      "fault": "You drove through a red crossing signal.",
+      "why": "Puffin and toucan crossings use standard traffic lights with no flashing amber. You must stop on red and wait for green.",
+      "tip": "Stop behind the white line whenever crossing lights turn red.",
+      "good": "You obeyed the crossing lights cleanly."
+    },
+    "GB.XNG.ZIGZAG_OVERTAKE": {
+      "title": "No overtaking on zig-zags",
+      "fault": "You overtook inside the crossing zig-zag lines.",
+      "why": "A stopped car near a crossing hides people stepping out. You must not overtake the leading vehicle in the zig-zag zone.",
+      "tip": "Stay behind traffic on white zig-zag lines.",
+      "good": "You held back safely through the zig-zag zone."
+    },
+    "GB.XNG.KEEP_CLEAR": {
+      "title": "Keep crossings clear",
+      "fault": "You stopped on the pedestrian crossing in a queue.",
+      "why": "Stopping on a crossing blocks pedestrians and hides them from view. Wait before the crossing until space opens ahead.",
+      "tip": "Check that traffic ahead has room before rolling onto a crossing.",
+      "good": "You kept the crossing clear in queuing traffic."
+    },
+    "GB.XNG.SCHOOL_PATROL": {
+      "title": "Stop for school patrol",
+      "fault": "You drove past a raised school patrol sign.",
+      "why": "School crossing patrols protect children crossing busy roads. You must stop whenever they show the stop sign.",
+      "tip": "Watch for school patrols in bright coats near schools.",
+      "good": "You stopped promptly for the school crossing patrol."
+    },
+    "GB.VRU.HIERARCHY": {
+      "title": "Protect vulnerable road users",
+      "fault": "You put a more vulnerable road user at risk.",
+      "why": "Under H1, drivers carry greater responsibility than pedestrians and cyclists. Always give extra space and time to people outside cars.",
+      "tip": "Give way generously to pedestrians, cyclists, and horse riders.",
+      "good": "You showed great care for vulnerable road users."
+    },
+    "GB.VRU.CYCLE_LANE_SOLID": {
+      "title": "Solid-line cycle lane",
+      "fault": "You drove inside a solid-line cycle lane.",
+      "why": "A solid white line marks a protected cycle lane during its hours. You must not drive or park inside it.",
+      "tip": "Stay to the right of solid white cycle lane lines.",
+      "good": "You kept clear of the solid-line cycle lane."
+    },
+    "GB.VRU.CYCLE_LANE_BROKEN": {
+      "title": "Avoid broken cycle lane",
+      "fault": "You entered a broken-line cycle lane unnecessarily.",
+      "why": "Broken-line cycle lanes keep cyclists safe in busy traffic. Do not drive in them unless it is unavoidable.",
+      "tip": "Keep out of broken cycle lanes unless passing an obstruction.",
+      "good": "You left the cycle lane clear for riders."
+    },
+    "GB.VRU.CHILDREN": {
+      "title": "Expect children near roads",
+      "fault": "You drove too fast near children or pedestrians.",
+      "why": "Children can act suddenly and misjudge traffic speed. Hitting someone at 20 mph is far less fatal than at 30 mph.",
+      "tip": "Slow down and watch closely near parks, shops, and schools.",
+      "good": "You slowed down and watched carefully for children."
+    },
+    "GB.BUS.LANE_HOURS": {
+      "title": "Respect bus lane hours",
+      "fault": "You drove in an active bus lane.",
+      "why": "Bus lanes keep public transport moving during peak times. Check the blue sign for operating hours before entering.",
+      "tip": "Read the time plate on the blue bus lane sign.",
+      "good": "You stayed out of the bus lane during active hours."
+    },
+    "GB.SCH.SLOW": {
+      "title": "Slow near schools",
+      "fault": "You drove too fast past a flashing school sign.",
+      "why": "Flashing amber lights under a school sign mean children may be crossing. Drive very slowly and prepare to stop.",
+      "tip": "Drop to 20 mph or less when school warning lights flash.",
+      "good": "You slowed down safely past the school."
+    },
+    "GB.SCH.KEEP_CLEAR": {
+      "title": "Keep school entrance clear",
+      "fault": "You stopped on school keep-clear zig-zags.",
+      "why": "Parked cars block sightlines for children crossing outside schools. You must not stop on yellow zig-zags when signs prohibit it.",
+      "tip": "Never stop or drop off on yellow school zig-zags.",
+      "good": "You kept the school entrance zig-zags clear."
+    },
+    "GB.EMG.LET_PASS": {
+      "title": "Make way safely",
+      "fault": "You blocked an emergency vehicle or broke a rule.",
+      "why": "Emergency vehicles need room to pass quickly. However, never run red lights or mount kerbs to clear the way.",
+      "tip": "Pull over safely when legal without breaking other traffic rules.",
+      "good": "You made room safely and legally for the ambulance."
+    },
+    "GB.OVT.UNSAFE_PLACE": {
+      "title": "Do not overtake blind",
+      "fault": "You overtook where visibility was too short.",
+      "why": "Bends, hill brows, and junctions hide oncoming traffic. Starting a pass blind risks a severe head-on collision.",
+      "tip": "Wait for a long, clear straight with no junctions ahead.",
+      "good": "You held back until the road ahead was clear."
+    },
+    "GB.OVT.DOUBLE_WHITE": {
+      "title": "Obey solid double white lines",
+      "fault": "You crossed a solid white centre line.",
+      "why": "Solid lines mark stretches where overtaking is unsafe. You must not cross unless turning off or passing traffic at 10 mph or less.",
+      "tip": "Wait until the line nearest you becomes broken before overtaking.",
+      "good": "You stayed on your side of the solid white line."
+    },
+    "GB.OVT.INTO_LANE": {
+      "title": "No overtaking into bus lanes",
+      "fault": "You overtook by entering an active bus or cycle lane.",
+      "why": "Bus and cycle lanes are reserved for specific road users. You must not enter them to overtake slower traffic.",
+      "tip": "Wait behind until it is safe to pass on the right.",
+      "good": "You stayed out of reserved lanes while overtaking."
+    },
+    "GB.MWY.LEARNERS": {
+      "title": "Motorway rules for learners",
+      "fault": "Learners need an ADI on motorways.",
+      "why": "High-speed motorway driving requires experience. Learner drivers must only drive on motorways with an ADI in a dual-control car.",
+      "tip": "Book motorway lessons with an ADI before driving there solo.",
+      "good": "You followed the learner motorway requirement."
+    },
+    "GB.MWY.KEEP_LEFT": {
+      "title": "Keep left on motorways",
+      "fault": "You stayed in an outer motorway lane needlessly.",
+      "why": "Middle-lane hogging forces traffic to change lanes twice to pass. Stay in the left lane unless you are overtaking.",
+      "tip": "Move back left whenever there is a clear gap in lane one.",
+      "good": "You returned promptly to the left motorway lane."
+    },
+    "GB.MWY.OVERTAKE_RIGHT": {
+      "title": "Overtake on the right",
+      "fault": "You overtook on the left on a motorway.",
+      "why": "Drivers expect faster traffic to pass on their right. Passing on the left creates blind-spot surprises.",
+      "tip": "Always overtake on the right and move back left afterwards.",
+      "good": "You overtook cleanly on the right."
+    },
+    "GB.MWY.NO_UNDERTAKE": {
+      "title": "Do not undertake",
+      "fault": "You passed slower traffic on the left.",
+      "why": "Undertaking at speed is dangerous when drivers move back left. Only pass on the left in slow-moving queues.",
+      "tip": "Wait for the car ahead to move left or pass on the right.",
+      "good": "You avoided undertaking at speed."
+    },
+    "GB.MWY.AMBER_FLASH": {
+      "title": "Slow for flashing amber",
+      "fault": "You ignored flashing amber motorway signals.",
+      "why": "Flashing amber signals warn of a hazard, queue, or incident ahead. Slow down until you pass a clear signal or national limit sign.",
+      "tip": "Ease off the speed when gantry amber lights flash.",
+      "good": "You slowed down promptly for the warning lights."
+    },
+    "GB.MWY.HARD_SHOULDER": {
+      "title": "Keep off hard shoulder",
+      "fault": "You drove on an inactive hard shoulder.",
+      "why": "The hard shoulder is for breakdowns and emergency vehicles. You must not use it unless a gantry shows a speed limit above it.",
+      "tip": "Only use the hard shoulder when overhead signs open it.",
+      "good": "You stayed off the closed hard shoulder."
+    },
+    "GB.MWY.EMERGENCY_AREA": {
+      "title": "Emergency areas for emergencies",
+      "fault": "You stopped in an emergency area without an emergency.",
+      "why": "Orange emergency areas are lifelines for broken-down vehicles. You must not stop in one for breaks, calls, or directions.",
+      "tip": "Use motorway services for rest stops, never emergency areas.",
+      "good": "You left the emergency area clear for emergencies."
+    },
+    "GB.MWY.NO_STOP": {
+      "title": "Never stop in live lane",
+      "fault": "You stopped in a live motorway lane.",
+      "why": "Traffic approaches at 70 mph and cannot stop quickly. You must never stop on a motorway carriageway except in an emergency.",
+      "tip": "Keep moving to the next exit or services if unsure of your route.",
+      "good": "You kept traffic flowing safely on the motorway."
+    },
+    "GB.MWY.NO_REVERSE": {
+      "title": "Never reverse on motorways",
+      "fault": "You reversed or drove against motorway traffic.",
+      "why": "Reversing or turning around on a motorway causes catastrophic crashes. You must drive on to the next junction if you miss your exit.",
+      "tip": "If you miss an exit, stay calm and take the next one.",
+      "good": "You continued safely to the next exit."
+    },
+    "GB.MWY.LEAVE": {
+      "title": "Leave motorway safely",
+      "fault": "You signalled late or entered the exit slip too fast.",
+      "why": "Traffic behind needs early warning before you leave. Sharp bends on slip roads require a lower speed.",
+      "tip": "Signal left at the 300-yard marker and brake on the slip road.",
+      "good": "You signalled early and slowed smoothly on the slip road."
+    },
+    "GB.MWY.SMART_TYPES": {
+      "title": "Know motorway lane types",
+      "fault": "You misread the motorway lane layout.",
+      "why": "Motorways use all-lane running, dynamic hard shoulders, or controlled lanes. Knowing each type helps you spot where to stop in a breakdown.",
+      "tip": "Watch overhead gantries to see if the hard shoulder is open.",
+      "good": "You read the motorway lane layout accurately."
+    },
+    "GB.BRK.GO_LEFT": {
+      "title": "Go left, get safe",
+      "fault": "You did not follow motorway breakdown safety steps.",
+      "why": "In a breakdown, put hazards on and reach the left or an emergency area. Exit by the left door and wait behind the barrier.",
+      "tip": "If stuck in a live lane, keep seat belts on and call 999.",
+      "good": "You moved left, switched hazards on, and got safe."
+    },
+    "GB.BRK.NO_TRIANGLE_MWY": {
+      "title": "No warning triangle on motorway",
+      "fault": "You chose to place a triangle on a motorway.",
+      "why": "Walking along a live motorway puts you at extreme risk. Never place a warning triangle on a motorway.",
+      "tip": "Leave the car by the left door and get behind the barrier.",
+      "good": "You stayed safely behind the barrier without walking on the road."
+    },
+    "GB.BRK.REJOIN": {
+      "title": "Rejoin motorway safely",
+      "fault": "You rejoined without using the SOS phone or matching speed.",
+      "why": "From an emergency area, you must use the SOS phone so a lane can close. From a hard shoulder, build speed before merging.",
+      "tip": "Call via the orange SOS phone before leaving an emergency area.",
+      "good": "You followed the safe motorway rejoin steps."
+    },
+    "GB.BRK.SAFE_PLACE": {
+      "title": "Pick a safe breakdown spot",
+      "fault": "You stopped in an unsafe place.",
+      "why": "Stopping on a bend or brow hides your car from traffic. Reach motorway services or an emergency area if you can.",
+      "tip": "Exit at the next services if your car starts losing power.",
+      "good": "You found a safe place off the main carriageway."
+    },
+    "GB.WRK.NO_LANE_JUMP": {
+      "title": "Stay in roadworks lanes",
+      "fault": "You jumped queues or drove into coned areas.",
+      "why": "Weaving in roadworks risks hitting workers or cones. Stay in your lane and keep a steady speed.",
+      "tip": "Hold your lane patiently through coned roadworks.",
+      "good": "You stayed smoothly in lane through the roadworks."
+    },
+    "GB.WRK.MERGE_IN_TURN": {
+      "title": "Merge in turn",
+      "fault": "You blocked merging traffic or forced your way in.",
+      "why": "When lanes close at low speed, merging in turn keeps traffic moving. Take turns politely like a zip.",
+      "tip": "Use both lanes up to the merge point, then take turns.",
+      "good": "You merged smoothly in turn."
+    },
+    "GB.PRK.YELLOW_LINES": {
+      "title": "Obey yellow parking lines",
+      "fault": "You parked on restricted yellow lines.",
+      "why": "Double yellow lines mean no waiting at any time. Single yellow lines apply during the hours shown on nearby plates.",
+      "tip": "Always check kerb plates before parking near yellow lines.",
+      "good": "You parked only where waiting is permitted."
+    },
+    "GB.PRK.CLEARWAY": {
+      "title": "No stopping on clearways",
+      "fault": "You stopped on a clearway.",
+      "why": "Clearways keep fast rural and main roads flowing without parked cars. You must not stop on the carriageway.",
+      "tip": "Wait for a lay-by or side street before stopping.",
+      "good": "You kept the clearway completely clear."
+    },
+    "GB.PRK.JUNCTION_10M": {
+      "title": "Park clear of junctions",
+      "fault": "You parked within 10 metres of a junction.",
+      "why": "Cars parked near corners block sightlines for emerging drivers and pedestrians. Leave at least 10 metres clear from any junction.",
+      "tip": "Park at least two car lengths away from every corner.",
+      "good": "You parked well clear of the junction."
+    },
+    "GB.WX.HEADLIGHTS_NIGHT": {
+      "title": "Use headlights at night",
+      "fault": "Your headlights were off on an unlit night road.",
+      "why": "Sidelights alone do not light hazards on dark roads. You must use dipped headlights at night on unlit roads.",
+      "tip": "Switch dipped headlights on whenever street lights end at night.",
+      "good": "You used your headlights correctly at night."
+    },
+    "GB.WX.NO_DAZZLE": {
+      "title": "Dip headlights for others",
+      "fault": "You dazzled another driver with full beam.",
+      "why": "Full-beam headlights blind oncoming drivers and those ahead via their mirrors. You must dip your lights before dazzling anyone.",
+      "tip": "Dip to low beam as soon as you see headlights or tail lights.",
+      "good": "You dipped your headlights promptly for other traffic."
+    },
+    "GB.DRV.PHONE": {
+      "title": "Never use hand-held phone",
+      "fault": "You picked up a hand-held phone while driving.",
+      "why": "Checking a phone takes your eyes and mind off the road. You must never use a hand-held phone, even in traffic queues.",
+      "tip": "Put your phone on silent and out of reach before driving.",
+      "good": "You ignored the phone and stayed focused on the road."
+    },
+    "GB.DRV.SEATBELT": {
+      "title": "Wear your seat belt",
+      "fault": "You drove off without fastening your seat belt.",
+      "why": "Seat belts prevent fatal injuries in sudden stops or crashes. You must wear one and ensure under-14 passengers do too.",
+      "tip": "Buckle your seat belt before starting the engine.",
+      "good": "You buckled up before moving off."
+    },
+    "GB.DRV.DRINK_DRUGS": {
+      "title": "Never drink or drug drive",
+      "fault": "Alcohol and drugs impair safe driving.",
+      "why": "Even small amounts slow your reaction time and judgement. You must never drive above the legal alcohol limit, which is lower in Scotland.",
+      "tip": "Plan a safe ride home or choose zero-alcohol drinks.",
+      "good": "You kept zero alcohol in your system before driving."
+    }
+  }
+}

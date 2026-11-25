@@ -13,7 +13,7 @@ namespace LToLocal.Game
     /// Unity only displays what the engine-free core decides (docs/04 principle 1).
     /// </summary>
     [RequireComponent(typeof(TouchControls))]
-    public sealed class DriveGame : MonoBehaviour
+    public sealed partial class DriveGame : MonoBehaviour
     {
         public Transform car;
         public Camera chaseCamera;
@@ -91,10 +91,12 @@ namespace LToLocal.Game
             if (feedback != null) feedback.ResetTally();
             _chasePos = Vector3.zero;
             _titleUntil = Time.time + 3f;
+            ResetRecording();
         }
 
         private void Update()
         {
+            if (_mode != Mode.Driving) { UpdatePaused(); return; }
             CarControls input = _controls.Read();
             int steps = _clock.Advance(Time.deltaTime);
             for (int i = 0; i < steps; i++)
@@ -111,6 +113,8 @@ namespace LToLocal.Game
                 _cyclistRule.OnFrame(frame, _roadUsers, _events);
                 _gapRule.OnFrame(frame, _roadUsers, _events);
                 if (feedback != null) foreach (var e in _events) feedback.Push(e);
+                _driveEvents.AddRange(_events);
+                RecordStep();
             }
 
             if (_course.OutOfBounds(_curr)) ResetDrive();
@@ -154,6 +158,7 @@ namespace LToLocal.Game
         private void LateUpdate()
         {
             if (chaseCamera == null) return;
+            if (_mode == Mode.Replay) { ReplayCamera(); return; }
 
             bool inside = s_view == View.Cockpit && Mathf.Abs(_lookBlend) < 0.05f;
             foreach (var h in _mirrorHousings) if (h.activeSelf == (s_view == View.Cockpit)) h.SetActive(s_view != View.Cockpit);
@@ -201,12 +206,13 @@ namespace LToLocal.Game
             float W = Screen.width, H = Screen.height;
             _hudStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
             _signStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
-            _buttonStyle ??= new GUIStyle(GUI.skin.button) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
+            _buttonStyle ??= new GUIStyle(GUI.skin.button) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold, wordWrap = true };
             _titleStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
             _hudStyle.fontSize = Mathf.RoundToInt(H * 0.06f);
             _signStyle.fontSize = Mathf.RoundToInt(H * 0.05f);
-            _buttonStyle.fontSize = Mathf.RoundToInt(H * 0.036f);
+            _buttonStyle.fontSize = Mathf.RoundToInt(H * 0.03f);
             _titleStyle.fontSize = Mathf.RoundToInt(H * 0.045f);
+            if (_mode != Mode.Driving) { DrawOverlay(W, H); return; }
 
             // Speed
             GUI.Box(new Rect(W * 0.5f - H * 0.16f, H * 0.84f, H * 0.32f, H * 0.13f), $"{_curr.SpeedMph:0} mph", _hudStyle);
@@ -226,15 +232,20 @@ namespace LToLocal.Game
             if (GUI.Button(new Rect(W * 0.66f + W * 0.01f, iy, iw, ih), ">>", _buttonStyle)) ToggleIndicator(+1);
             GUI.color = Color.white;
 
-            // View / reset / course under the rear-view mirror
+            // View / reset / course / finish / settings under the rear-view mirror
             float rearMirrorBottom = H * 0.015f + W * 0.30f / 3.4f + 6f; // matches MirrorRig layout
-            float bw = W * 0.085f, bh = H * 0.085f, by = rearMirrorBottom + H * 0.02f;
-            if (GUI.Button(new Rect(W * 0.5f - bw * 1.55f, by, bw, bh), s_view == View.Chase ? "Seat" : "Chase", _buttonStyle))
+            float bw = W * 0.082f, bh = H * 0.085f, by = rearMirrorBottom + H * 0.02f, gap = bw * 1.06f;
+            Rect Slot(int i) => new Rect(W * 0.5f + (i - 2) * gap - bw / 2, by, bw, bh);
+            if (GUI.Button(Slot(0), s_view == View.Chase ? Ui.Get("hud.view_seat", "Seat") : Ui.Get("hud.view_chase", "Chase"), _buttonStyle))
                 s_view = s_view == View.Chase ? View.Cockpit : View.Chase;
-            if (GUI.Button(new Rect(W * 0.5f - bw * 0.5f, by, bw, bh), "Reset", _buttonStyle))
+            if (GUI.Button(Slot(1), Ui.Get("hud.reset", "Reset"), _buttonStyle))
                 ResetDrive();
-            if (GUI.Button(new Rect(W * 0.5f + bw * 0.55f, by, bw, bh), "Course", _buttonStyle))
+            if (GUI.Button(Slot(2), Ui.Get("hud.course", "Course"), _buttonStyle))
                 NextCourse();
+            if (GUI.Button(Slot(3), Ui.Get("hud.finish_drive", "Finish"), _buttonStyle))
+                OpenDebrief();
+            if (GUI.Button(Slot(4), Ui.Get("hud.settings", "Settings"), _buttonStyle))
+                SetMode(Mode.Settings);
 
             if (Time.time < _titleUntil)
                 GUI.Box(new Rect(W * 0.5f - H * 0.5f, H * 0.62f, H * 1.0f, H * 0.1f), _course.DisplayName, _titleStyle);

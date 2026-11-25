@@ -44,12 +44,12 @@
   Add it to the Course list.
 
 ## B. Debrief and replay (prototype P5)
-- [ ] B1. Core: `DriveRecorder`: an input log plus a state snapshot every second, and a 60 s ring buffer; restore the nearest snapshot and re-simulate. Test: replaying matches the original run.
-- [ ] B2. Unity: end-of-drive **Debrief** screen with the fault list grouped by rule. Tapping a fault replays from 6 s before to 3 s after, from a bird's-eye camera, with the explanation and the Highway Code rule.
-- [ ] B3. Unity: "Finish drive" button and a short summary (good / minor / serious / dangerous, and pass/fail in test style).
+- [x] B1. Core: `DriveRecorder`: an input log plus a state snapshot every second, and a 60 s ring buffer; restore the nearest snapshot and re-simulate. Test: replaying matches the original run. (Done with a pose recording at 10 Hz rather than input re-simulation: an exact replay without cloning AI state. `DriveRecorder`, tested.)
+- [x] B2. Unity: end-of-drive **Debrief** screen with the fault list grouped by rule. Tapping a fault replays from 6 s before to 3 s after, from a bird's-eye camera, with the explanation and the Highway Code rule. (Debrief + bird's-eye replay loop; text from `ui.json`/`rules.json`.)
+- [x] B3. Unity: "Finish drive" button and a short summary (good / minor / serious / dangerous, and pass/fail in test style). (Finish button; pass/fail from `test_marking.yaml`: ≤ 15 driving faults, no serious or dangerous.)
 
 ## C. Settings
-- [ ] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD.
+- [x] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD. (Settings: steering slider 30–150% in 5% steps, units hint, reset progress with confirm.)
 
 ## D. Real streets (prepare for the merge)
 - [ ] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths.
@@ -77,3 +77,4 @@
 
 ## Requests to Hydrogen
 - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer (as in the schema).
+- Please add UI keys `debrief.drive_again` ("Drive again") and `debrief.keep_driving` ("Keep driving"); the debrief uses built-in English for these until then.

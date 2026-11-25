@@ -23,5 +23,9 @@ namespace LToLocal.Game
         void Render(float alpha, bool blink);
         /// <summary>Other road users, for rules shared by all courses (e.g. passing cyclists).</summary>
         void GetRoadUsers(List<RoadUser> into);
+        /// <summary>Everyone's pose (and the traffic lights) right now, for the drive recording.</summary>
+        void Record(List<ActorPose> actors, List<LightState> lights);
+        /// <summary>Shows a recorded moment instead of the live simulation (debrief replays).</summary>
+        void ShowRecorded(RecordedFrame frame, bool blink);
     }
 }

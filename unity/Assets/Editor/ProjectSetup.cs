@@ -35,6 +35,7 @@ namespace LToLocal.EditorTools
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
         {
+            CopyContent();
             ConfigurePlayer();
             ConfigureUrp();
             BuildDualCarriagewayScene();
@@ -52,6 +53,7 @@ namespace LToLocal.EditorTools
         [MenuItem("L to Local/Build Android APK")]
         public static void BuildAndroid()
         {
+            CopyContent();
             EditorUserBuildSettings.buildAppBundle = false;
             Directory.CreateDirectory(Path.GetDirectoryName(ApkPath)!);
             var options = new BuildPlayerOptions
@@ -66,6 +68,28 @@ namespace LToLocal.EditorTools
             Debug.Log($"[LToLocal] Android build: {report.summary.result}, {report.summary.totalSize / (1024 * 1024)} MB, {report.summary.totalErrors} errors");
             if (Application.isBatchMode && report.summary.result != BuildResult.Succeeded)
                 EditorApplication.Exit(1);
+        }
+
+        /// <summary>
+        /// Copies the content files the app reads at runtime (owned by the content pipeline, see docs/08) into
+        /// Resources, so builds always ship the current text and test marking.
+        /// </summary>
+        private static void CopyContent()
+        {
+            const string dest = "Assets/Resources/Content";
+            Directory.CreateDirectory(dest);
+            var files = new (string from, string to)[]
+            {
+                ("../content/countries/gb/strings/en/ui.json", "ui.json"),
+                ("../content/countries/gb/strings/en/rules.json", "rules.json"),
+                ("../content/countries/gb/test_marking.yaml", "test_marking.txt"),
+            };
+            foreach (var (from, to) in files)
+            {
+                if (!File.Exists(from)) { Debug.LogWarning($"[LToLocal] Content file missing: {from}"); continue; }
+                File.Copy(from, $"{dest}/{to}", overwrite: true);
+            }
+            AssetDatabase.Refresh();
         }
 
         // =====================================================================

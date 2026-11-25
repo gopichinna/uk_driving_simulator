@@ -74,6 +74,22 @@ namespace LToLocal.Game
             foreach (var c in _traffic.Cars) into.Add(new RoadUser(c.Id, c.Position, c.Heading, c.SpeedMps, c.IsCyclist));
         }
 
+        private readonly List<VehicleSnapshot> _replay = new List<VehicleSnapshot>();
+
+        public void Record(List<ActorPose> actors, List<LightState> lights)
+        {
+            actors.Clear();
+            lights.Clear();
+            Snapshot();
+            Replay.AddVehicles(actors, _snap);
+        }
+
+        public void ShowRecorded(RecordedFrame frame, bool blink)
+        {
+            Replay.Vehicles(frame, _replay);
+            if (trafficView != null) trafficView.Render(_replay, 1f, blink);
+        }
+
         private void Snapshot()
         {
             _snap.Clear();
