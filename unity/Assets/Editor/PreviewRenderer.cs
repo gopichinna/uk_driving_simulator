@@ -1,6 +1,6 @@
 #nullable enable
 using System.IO;
-using UnityEditor;
+using LToLocal.Game;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
@@ -12,37 +12,29 @@ namespace LToLocal.EditorTools
     {
         public static void RenderViews()
         {
-            EditorSceneManager.OpenScene("Assets/Scenes/HelloCar.unity");
-            var game = Object.FindAnyObjectByType<LToLocal.Game.HelloCarGame>();
-            var car = game.car;
-            var cam = game.chaseCamera;
             Directory.CreateDirectory("Builds/Previews");
-            var traffic = GameObject.Find("Traffic");
-            if (traffic != null)
-            {
-                foreach (Transform t in traffic.transform) t.gameObject.SetActive(false);
-                var blindSpotCar = traffic.transform.GetChild(0);
-                blindSpotCar.gameObject.SetActive(true);
-                blindSpotCar.position = car.position + new Vector3(3.65f, 0f, -5f); // lane 2, just behind: the blind spot
-            }
-            var interior = car.Find("Interior");
-            if (interior != null) interior.gameObject.SetActive(true);
-            foreach (Transform c in car) if (c.name.StartsWith("Mirror")) c.gameObject.SetActive(false);
+
+            // Roundabout: aerial view and the driver's view from the start position
+            EditorSceneManager.OpenScene(ProjectSetup.RoundaboutScene);
+            var game = Object.FindAnyObjectByType<DriveGame>();
+            var cam = game.chaseCamera;
             Save(cam, "Builds/Previews/_warmup.png"); // first render after load can miss shaders
 
-            // Driver's seat
-            cam.nearClipPlane = 0.05f;
-            cam.fieldOfView = game.cockpitFov;
-            cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
-            Save(cam, "Builds/Previews/seat.png");
+            cam.fieldOfView = 60f;
+            cam.transform.SetPositionAndRotation(new Vector3(0, 110, -25), Quaternion.Euler(80, 0, 0));
+            Save(cam, "Builds/Previews/roundabout_aerial.png");
 
-            // Shoulder checks (same poses as HelloCarGame)
-            if (interior != null) interior.gameObject.SetActive(false);
-            cam.fieldOfView = game.shoulderFov;
-            cam.transform.SetPositionAndRotation(car.TransformPoint(game.lookOffsetRight), car.rotation * Quaternion.Euler(game.shoulderPitch, game.shoulderYaw, 0f));
-            Save(cam, "Builds/Previews/look_right.png");
-            cam.transform.SetPositionAndRotation(car.TransformPoint(game.lookOffsetLeft), car.rotation * Quaternion.Euler(game.shoulderPitch, -game.shoulderYaw, 0f));
-            Save(cam, "Builds/Previews/look_left.png");
+            var car = game.car;
+            cam.transform.SetPositionAndRotation(car.TransformPoint(new Vector3(0, 3.2f, -7.5f)), car.rotation * Quaternion.Euler(12, 0, 0));
+            Save(cam, "Builds/Previews/roundabout_chase.png");
+
+            // Move the car close to the give-way line and look from the driver's seat
+            car.position += car.forward * 95f;
+            cam.fieldOfView = game.cockpitFov;
+            cam.nearClipPlane = 0.05f;
+            cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
+            Save(cam, "Builds/Previews/roundabout_seat.png");
+
             Debug.Log("[LToLocal] Previews rendered.");
         }
 

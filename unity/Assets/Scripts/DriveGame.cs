@@ -2,29 +2,25 @@ using System.Collections.Generic;
 using LToLocal.Rules;
 using LToLocal.Sim;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace LToLocal.Game
 {
     /// <summary>
-    /// Practice drive on a 40 mph dual carriageway with traffic, mirrors, indicators,
-    /// chase / driver's-seat cameras and an optional mini-map.
-    /// The engine-free core (CarModel, TrafficSim) runs at a fixed 50 Hz; Unity only displays it.
+    /// The player's drive: car model at a fixed 50 Hz, indicators, chase / driver's-seat cameras,
+    /// optional shoulder-check view, the speed rule and HUD. The road, traffic and course-specific
+    /// rules come from the <see cref="ICourse"/> component on the same GameObject.
+    /// Unity only displays what the engine-free core decides (docs/04 principle 1).
     /// </summary>
     [RequireComponent(typeof(TouchControls))]
-    public sealed class HelloCarGame : MonoBehaviour
+    public sealed class DriveGame : MonoBehaviour
     {
         public Transform car;
         public Camera chaseCamera;
-        public TrafficView trafficView;
         public MirrorRig mirrors;
         public FeedbackView feedback;
         public GameObject[] playerIndicatorLeft = new GameObject[0];
         public GameObject[] playerIndicatorRight = new GameObject[0];
-
-        [Header("Road (dual carriageway along +Z; we drive north in lanes 0 and 1)")]
-        public float startX = -1.825f;
-        public float roadEndZ = 1900f;
-        public int speedLimitMph = 40;
 
         [Header("Chase camera")]
         public float camDistance = 7.5f;
@@ -36,69 +32,60 @@ namespace LToLocal.Game
         public float cockpitPitch = 0.5f;
         public float cockpitFov = 50f;
 
-        [Header("Shoulder check (blind spot)")]
+        [Header("Optional look over the shoulder (not marked)")]
         public float shoulderYaw = 125f;
         public float shoulderPitch = 2f;
         public float shoulderFov = 55f;
-        [Tooltip("Shoulder-check viewpoint, just outside each side window, so no interior is drawn.")]
         public Vector3 lookOffsetRight = new Vector3(1.02f, 1.15f, -0.25f);
         public Vector3 lookOffsetLeft = new Vector3(-1.02f, 1.15f, -0.25f);
         public float shoulderTurnSpeed = 6f;
 
         private enum View { Chase, Cockpit }
+        private static View s_view = View.Chase; // remembered across course changes
 
         private readonly FixedStepClock _clock = new FixedStepClock();
         private readonly CarParams _params = new CarParams();
+        private readonly SpeedRule _speedRule = new SpeedRule();
+        private readonly List<RuleEvent> _events = new List<RuleEvent>();
+        private ICourse _course;
         private TouchControls _controls;
         private CarState _prev, _curr;
-        private TrafficSim _traffic;
-        private LaneChangeRule _laneChangeRule;
-        private readonly List<RuleEvent> _ruleEvents = new List<RuleEvent>();
-        private int _lookReported;          // side of the shoulder check already recorded (0 = none)
 
-        private View _view = View.Chase;
-        private bool _showMap = false;     // mini-map removed from the HUD for now
-        private GameObject _interior;
-        private float _lookBlend;          // -1..1, eased toward the held look direction
+        private int _indicator;
+        private float _indicatorStartX, _indicatorStartHeading, _indicatorTime;
+        private float _lookBlend;
+        private Vector3 _chasePos;
         private GameObject[] _mirrorHousings = new GameObject[0];
-        private int _indicator;            // -1 left, 0 off, +1 right
-        private float _indicatorStartX;
-        private float _indicatorTime;
-        private GUIStyle _hudStyle, _signStyle, _buttonStyle, _smallStyle;
-
-        private static readonly StraightLane[] Lanes =
-        {
-            new StraightLane(-1.825, +1, isNearside: true),   // lane 1 (left) – ours
-            new StraightLane(+1.825, +1, isNearside: false),  // lane 2 (overtaking) – ours
-            new StraightLane(8.475, -1, isNearside: false),   // oncoming, their lane 2
-            new StraightLane(12.125, -1, isNearside: true),   // oncoming, their lane 1
-        };
+        private GameObject _interior;
+        private GUIStyle _hudStyle, _signStyle, _buttonStyle, _titleStyle;
+        private float _titleUntil;
 
         private void Awake()
         {
             Application.targetFrameRate = 60;
             Screen.sleepTimeout = SleepTimeout.NeverSleep;
             _controls = GetComponent<TouchControls>();
-            var housings = new System.Collections.Generic.List<GameObject>();
+            _course = GetComponent<ICourse>();
+
+            var housings = new List<GameObject>();
             foreach (Transform c in car) if (c.name.StartsWith("Mirror")) housings.Add(c.gameObject);
             _mirrorHousings = housings.ToArray();
             var interior = car.Find("Interior");
             if (interior != null) _interior = interior.gameObject;
-            _traffic = new TrafficSim(Lanes, new TrafficParams { CarsPerLane = new[] { 5, 3, 4, 4 } }, seed: 2026);
-            _laneChangeRule = new LaneChangeRule(_traffic, drivingSide: DrivingSide.Left);
-            if (mirrors != null) mirrors.Glanced += kind => _laneChangeRule.Observe(new ObservationEvent(kind, _clock.SimTime));
-            ResetDrive();
         }
+
+        private void Start() => ResetDrive();
 
         private void ResetDrive()
         {
-            _curr = new CarState { X = startX, Z = 0 };
+            _curr = _course.StartState;
             _prev = _curr;
             _indicator = 0;
-            if (trafficView != null) trafficView.Clear();
-            _traffic.Reset(_curr.Z);
-            _laneChangeRule?.Reset();
+            _speedRule.Reset();
+            _course.ResetCourse();
             if (feedback != null) feedback.ResetTally();
+            _chasePos = Vector3.zero;
+            _titleUntil = Time.time + 3f;
         }
 
         private void Update()
@@ -108,16 +95,16 @@ namespace LToLocal.Game
             for (int i = 0; i < steps; i++)
             {
                 _prev = _curr;
-                if (trafficView != null) trafficView.CapturePrevious(_traffic);
+                _course.CapturePrevious();
                 _curr = CarModel.Step(_curr, input, _params, _clock.StepSeconds);
-                _traffic.Step(_clock.StepSeconds, _curr);
 
-                _ruleEvents.Clear();
-                _laneChangeRule.OnFrame(new DriverFrame(_clock.SimTime, _curr, _indicator), _ruleEvents);
-                if (feedback != null) foreach (var e in _ruleEvents) feedback.Push(e);
+                _events.Clear();
+                _course.Step(_clock.StepSeconds, _curr, _clock.SimTime, _indicator, _events);
+                _speedRule.OnFrame(new DriverFrame(_clock.SimTime, _curr, _indicator), _course.SpeedLimitMph(_curr), _events);
+                if (feedback != null) foreach (var e in _events) feedback.Push(e);
             }
 
-            if (_curr.Z > roadEndZ || Mathf.Abs((float)_curr.X) > 60f) ResetDrive();
+            if (_course.OutOfBounds(_curr)) ResetDrive();
 
             float a = (float)_clock.Alpha;
             var pos = new Vector3(Mathf.Lerp((float)_prev.X, (float)_curr.X, a), 0f, Mathf.Lerp((float)_prev.Z, (float)_curr.Z, a));
@@ -128,40 +115,44 @@ namespace LToLocal.Game
             bool blink = Mathf.Repeat(Time.time, 0.8f) < 0.4f;
             foreach (var l in playerIndicatorLeft) l.SetActive(_indicator < 0 && blink);
             foreach (var l in playerIndicatorRight) l.SetActive(_indicator > 0 && blink);
-            if (trafficView != null) trafficView.Render(_traffic, a, blink);
+            _course.Render(a, blink);
         }
 
-        /// <summary>Self-cancel like a real car: after a lane change (≥ 2.5 m sideways and straight again), or after 15 s.</summary>
+        /// <summary>
+        /// Self-cancel like a real car: after the steering returns from a turn (heading changed by more than 30°
+        /// and is now steady), after a lane change (≥ 2.5 m sideways and straight again), or after 20 s.
+        /// </summary>
         private void UpdateIndicator()
         {
             if (_indicator == 0) return;
             _indicatorTime += Time.deltaTime;
-            bool movedOver = Mathf.Abs((float)_curr.X - _indicatorStartX) > 2.5f;
-            bool straight = Mathf.Abs((float)_curr.Heading) < 0.05f;
-            if ((movedOver && straight) || _indicatorTime > 15f) _indicator = 0;
+            float turned = Mathf.Abs(Mathf.DeltaAngle(_indicatorStartHeading, (float)(_curr.Heading * Mathf.Rad2Deg)));
+            bool steady = Mathf.Abs((float)_curr.SteerAngleRad) < 0.04f;
+            bool movedOver = Mathf.Abs((float)_curr.X - _indicatorStartX) > 2.5f && Mathf.Abs((float)_curr.Heading) < 0.05f && turned < 10f;
+            if ((turned > 30f && steady) || movedOver || _indicatorTime > 20f) _indicator = 0;
         }
 
         private void ToggleIndicator(int side)
         {
             _indicator = _indicator == side ? 0 : side;
             _indicatorStartX = (float)_curr.X;
+            _indicatorStartHeading = (float)(_curr.Heading * Mathf.Rad2Deg);
             _indicatorTime = 0f;
         }
+
+        // ---------------- cameras ----------------
 
         private void LateUpdate()
         {
             if (chaseCamera == null) return;
-            Transform cam = chaseCamera.transform;
 
-            // Door-mirror housings block the view from the driver's seat; the HUD mirrors replace them.
-            bool inside = _view == View.Cockpit && Mathf.Abs(_lookBlend) < 0.05f;
-            foreach (var h in _mirrorHousings) if (h.activeSelf == (_view == View.Cockpit)) h.SetActive(_view != View.Cockpit);
+            bool inside = s_view == View.Cockpit && Mathf.Abs(_lookBlend) < 0.05f;
+            foreach (var h in _mirrorHousings) if (h.activeSelf == (s_view == View.Cockpit)) h.SetActive(s_view != View.Cockpit);
             if (_interior != null && _interior.activeSelf != inside) _interior.SetActive(inside);
 
-            // 1. Normal pose for the current view
             Vector3 pos;
             Quaternion rot;
-            if (_view == View.Cockpit)
+            if (s_view == View.Cockpit)
             {
                 chaseCamera.nearClipPlane = 0.05f;
                 chaseCamera.fieldOfView = cockpitFov;
@@ -174,18 +165,12 @@ namespace LToLocal.Game
                 chaseCamera.fieldOfView = 60f;
                 Vector3 fwd = car.forward;
                 Vector3 target = car.position - fwd * camDistance + Vector3.up * camHeight;
-                _chasePos = Vector3.Lerp(_chasePos == Vector3.zero ? target : _chasePos, target, 1f - Mathf.Exp(-8f * Time.deltaTime));
+                _chasePos = _chasePos == Vector3.zero ? target : Vector3.Lerp(_chasePos, target, 1f - Mathf.Exp(-8f * Time.deltaTime));
                 pos = _chasePos;
                 rot = Quaternion.LookRotation(car.position + fwd * camLookAhead + Vector3.up * 1.0f - pos);
             }
 
-            // 2. Shoulder check: turn the driver's head toward the blind spot while "Look" is held
             _lookBlend = Mathf.MoveTowards(_lookBlend, _controls.Look, shoulderTurnSpeed * Time.deltaTime);
-            // Record a shoulder check once the head has actually turned (UK: right = offside).
-            int lookingSide = _lookBlend > 0.8f ? 1 : _lookBlend < -0.8f ? -1 : 0;
-            if (lookingSide != 0 && lookingSide != _lookReported)
-                _laneChangeRule.Observe(new ObservationEvent(lookingSide > 0 ? ObservationKind.ShoulderOffside : ObservationKind.ShoulderNearside, _clock.SimTime));
-            _lookReported = lookingSide;
             if (Mathf.Abs(_lookBlend) > 0.001f)
             {
                 float t = Mathf.SmoothStep(0f, 1f, Mathf.Abs(_lookBlend));
@@ -197,10 +182,8 @@ namespace LToLocal.Game
                 chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, shoulderFov, t);
             }
 
-            cam.SetPositionAndRotation(pos, rot);
+            chaseCamera.transform.SetPositionAndRotation(pos, rot);
         }
-
-        private Vector3 _chasePos;
 
         // ---------------- HUD ----------------
 
@@ -210,18 +193,19 @@ namespace LToLocal.Game
             _hudStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
             _signStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
             _buttonStyle ??= new GUIStyle(GUI.skin.button) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
-            _smallStyle ??= new GUIStyle(GUI.skin.label) { alignment = TextAnchor.UpperCenter };
+            _titleStyle ??= new GUIStyle(GUI.skin.box) { alignment = TextAnchor.MiddleCenter, fontStyle = FontStyle.Bold };
             _hudStyle.fontSize = Mathf.RoundToInt(H * 0.06f);
             _signStyle.fontSize = Mathf.RoundToInt(H * 0.05f);
-            _buttonStyle.fontSize = Mathf.RoundToInt(H * 0.04f);
-            _smallStyle.fontSize = Mathf.RoundToInt(H * 0.03f);
+            _buttonStyle.fontSize = Mathf.RoundToInt(H * 0.036f);
+            _titleStyle.fontSize = Mathf.RoundToInt(H * 0.045f);
 
             // Speed
             GUI.Box(new Rect(W * 0.5f - H * 0.16f, H * 0.84f, H * 0.32f, H * 0.13f), $"{_curr.SpeedMph:0} mph", _hudStyle);
 
             // Speed limit (below the nearside mirror)
-            GUI.color = _curr.SpeedMph > speedLimitMph + 0.5 ? new Color(1f, 0.5f, 0.5f) : Color.white;
-            GUI.Box(new Rect(W * 0.02f, H * 0.47f, H * 0.14f, H * 0.14f), speedLimitMph.ToString(), _signStyle);
+            double limit = _course.SpeedLimitMph(_curr);
+            GUI.color = _curr.SpeedMph > limit + 0.5 ? new Color(1f, 0.5f, 0.5f) : Color.white;
+            GUI.Box(new Rect(W * 0.02f, H * 0.47f, H * 0.14f, H * 0.14f), limit.ToString("0"), _signStyle);
             GUI.color = Color.white;
 
             // Indicators either side of the rear-view mirror
@@ -233,50 +217,30 @@ namespace LToLocal.Game
             if (GUI.Button(new Rect(W * 0.66f + W * 0.01f, iy, iw, ih), ">>", _buttonStyle)) ToggleIndicator(+1);
             GUI.color = Color.white;
 
-            // View / map / reset under the rear-view mirror
+            // View / reset / course under the rear-view mirror
             float rearMirrorBottom = H * 0.015f + W * 0.30f / 3.4f + 6f; // matches MirrorRig layout
             float bw = W * 0.085f, bh = H * 0.085f, by = rearMirrorBottom + H * 0.02f;
-            if (GUI.Button(new Rect(W * 0.5f - bw * 1.03f, by, bw, bh), _view == View.Chase ? "Seat" : "Chase", _buttonStyle))
-                _view = _view == View.Chase ? View.Cockpit : View.Chase;
-            if (GUI.Button(new Rect(W * 0.5f + bw * 0.03f, by, bw, bh), "Reset", _buttonStyle))
+            if (GUI.Button(new Rect(W * 0.5f - bw * 1.55f, by, bw, bh), s_view == View.Chase ? "Seat" : "Chase", _buttonStyle))
+                s_view = s_view == View.Chase ? View.Cockpit : View.Chase;
+            if (GUI.Button(new Rect(W * 0.5f - bw * 0.5f, by, bw, bh), "Reset", _buttonStyle))
                 ResetDrive();
+            if (GUI.Button(new Rect(W * 0.5f + bw * 0.55f, by, bw, bh), "Course", _buttonStyle))
+                NextCourse();
+
+            if (Time.time < _titleUntil)
+                GUI.Box(new Rect(W * 0.5f - H * 0.5f, H * 0.62f, H * 1.0f, H * 0.1f), _course.DisplayName, _titleStyle);
 
             if (Mathf.Abs(_lookBlend) > 0.6f) DrawWindowFrame(W, H, Mathf.Abs(_lookBlend));
-            if (Mathf.Abs(_lookBlend) > 0.6f)
-                GUI.Box(new Rect(W * 0.5f - H * 0.4f, H * 0.62f, H * 0.8f, H * 0.1f),
-                    _lookBlend < 0 ? "Checking left blind spot" : "Checking right blind spot", _buttonStyle);
-
-            if (_showMap) DrawMiniMap(new Rect(W * 0.30f, H * 0.50f, W * 0.11f, H * 0.46f));
         }
 
-        /// <summary>Top-down radar of nearby traffic: 40 m behind to 70 m ahead. A learning assist (off in test mode later).</summary>
-        private void DrawMiniMap(Rect r)
+        private static void NextCourse()
         {
-            const float behindM = 40f, aheadM = 70f, leftM = -4.5f, rightM = 14f;
-            float pxPerM = r.height / (behindM + aheadM);
-            float sx = r.width / (rightM - leftM);
-            float zToY(double z) => r.yMax - ((float)(z - _curr.Z) + behindM) * pxPerM;
-            float xToX(double x) => r.x + ((float)x - leftM) * sx;
-
-            Fill(r, new Color(0.15f, 0.16f, 0.18f, 0.8f));
-            Fill(new Rect(xToX(-3.65f), r.y, xToX(3.65f) - xToX(-3.65f), r.height), new Color(0.35f, 0.36f, 0.4f, 0.9f));
-            Fill(new Rect(xToX(6.65f), r.y, xToX(13.95f) - xToX(6.65f), r.height), new Color(0.35f, 0.36f, 0.4f, 0.9f));
-            Fill(new Rect(xToX(-0.05f), r.y, 2f, r.height), new Color(1f, 1f, 1f, 0.5f));
-
-            float carW = 1.8f * sx, carL = 4.3f * pxPerM;
-            foreach (var c in _traffic.Cars)
-            {
-                float y = zToY(c.Z);
-                if (y < r.y || y > r.yMax) continue;
-                bool oncoming = _traffic.Lanes[c.Lane].Direction < 0;
-                Fill(new Rect(xToX(c.X) - carW / 2, y - carL / 2, carW, carL),
-                    oncoming ? new Color(0.75f, 0.75f, 0.75f) : new Color(0.95f, 0.45f, 0.35f));
-            }
-            Fill(new Rect(xToX(_curr.X) - carW / 2, zToY(_curr.Z) - carL / 2, carW, carL), new Color(0.3f, 0.6f, 1f));
-            GUI.Label(new Rect(r.x, r.yMax - _smallStyle.fontSize * 1.4f, r.width, _smallStyle.fontSize * 1.4f), "map", _smallStyle);
+            int count = SceneManager.sceneCountInBuildSettings;
+            int next = (SceneManager.GetActiveScene().buildIndex + 1) % Mathf.Max(1, count);
+            SceneManager.LoadScene(next);
         }
 
-        /// <summary>Dark border so the shoulder-check view reads as "looking out of the side window".</summary>
+        /// <summary>Dark border so the shoulder view reads as "looking out of the side window".</summary>
         private static void DrawWindowFrame(float W, float H, float strength)
         {
             var c = new Color(0.08f, 0.09f, 0.11f, 0.85f * Mathf.Clamp01((strength - 0.6f) / 0.4f));

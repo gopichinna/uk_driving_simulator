@@ -1,19 +1,29 @@
 using System.Collections.Generic;
-using LToLocal.Sim;
 using UnityEngine;
 
 namespace LToLocal.Game
 {
+    /// <summary>One AI vehicle as the view needs it, independent of which traffic model produced it.</summary>
+    public struct VehicleSnapshot
+    {
+        public int Id;
+        public double X, Z;
+        /// <summary>Radians, 0 = north (+Z), positive = clockwise.</summary>
+        public double Heading;
+        /// <summary>-1 left, 0 off, +1 right.</summary>
+        public int Indicator;
+        public int Colour;
+    }
+
     /// <summary>
-    /// Shows <see cref="TrafficSim"/> cars using a pool of pre-built low-poly cars (children of this object).
-    /// Pool cars are grouped by colour index via their name suffix "_c{n}". Indicator lamps are children
-    /// named "IndL*" / "IndR*" and blink while a car signals.
+    /// Shows AI vehicles using a pool of pre-built low-poly cars (children of this object).
+    /// Pool cars are grouped by colour via their name suffix "_c{n}". Indicator lamps are children
+    /// named "IndL*" / "IndR*" and blink while a car signals. Interpolates between simulation steps.
     /// </summary>
     public sealed class TrafficView : MonoBehaviour
     {
         private readonly Dictionary<int, Transform> _assigned = new Dictionary<int, Transform>();
-        private readonly Dictionary<int, (double x, double z)> _prev = new Dictionary<int, (double, double)>();
-        private readonly Dictionary<int, (double x, double z)> _curr = new Dictionary<int, (double, double)>();
+        private readonly Dictionary<int, VehicleSnapshot> _prev = new Dictionary<int, VehicleSnapshot>();
         private readonly List<Transform>[] _freeByColour = new List<Transform>[8];
         private readonly Dictionary<Transform, (GameObject[] left, GameObject[] right)> _lamps = new Dictionary<Transform, (GameObject[], GameObject[])>();
         private readonly HashSet<int> _seen = new HashSet<int>();
@@ -24,10 +34,7 @@ namespace LToLocal.Game
             for (int i = 0; i < _freeByColour.Length; i++) _freeByColour[i] = new List<Transform>();
             foreach (Transform t in transform)
             {
-                int colour = 0;
-                int idx = t.name.LastIndexOf("_c");
-                if (idx >= 0) int.TryParse(t.name.Substring(idx + 2), out colour);
-                _freeByColour[Mathf.Clamp(colour, 0, _freeByColour.Length - 1)].Add(t);
+                _freeByColour[ColourOf(t)].Add(t);
                 t.gameObject.SetActive(false);
 
                 var left = new List<GameObject>();
@@ -42,10 +49,10 @@ namespace LToLocal.Game
         }
 
         /// <summary>Call before each simulation step so the view can interpolate between steps.</summary>
-        public void CapturePrevious(TrafficSim sim)
+        public void CapturePrevious(List<VehicleSnapshot> vehicles)
         {
             _prev.Clear();
-            foreach (var c in sim.Cars) _prev[c.Id] = (c.X, c.Z);
+            foreach (var v in vehicles) _prev[v.Id] = v;
         }
 
         public void Clear()
@@ -55,35 +62,28 @@ namespace LToLocal.Game
             _prev.Clear();
         }
 
-        public void Render(TrafficSim sim, float alpha, bool blinkOn)
+        public void Render(List<VehicleSnapshot> vehicles, float alpha, bool blinkOn)
         {
             _seen.Clear();
-            _curr.Clear();
-            foreach (var c in sim.Cars)
+            foreach (var v in vehicles)
             {
-                _seen.Add(c.Id);
-                _curr[c.Id] = (c.X, c.Z);
-                if (!_assigned.TryGetValue(c.Id, out var t))
+                _seen.Add(v.Id);
+                if (!_assigned.TryGetValue(v.Id, out var t))
                 {
-                    t = Acquire(c.ColourIndex);
+                    t = Acquire(v.Colour);
                     if (t == null) continue;
-                    _assigned[c.Id] = t;
+                    _assigned[v.Id] = t;
                 }
 
-                var (px, pz) = _prev.TryGetValue(c.Id, out var p) ? p : (c.X, c.Z);
-                float x = Mathf.Lerp((float)px, (float)c.X, alpha);
-                float z = Mathf.Lerp((float)pz, (float)c.Z, alpha);
-                int dir = sim.Lanes[c.Lane].Direction;
-
-                // Face the direction of travel, turning slightly while changing lane.
-                float yaw = dir > 0 ? 0f : 180f;
-                double dx = c.X - px, dz = c.Z - pz;
-                if (dx * dx + dz * dz > 1e-6) yaw = Mathf.Atan2((float)dx, (float)dz) * Mathf.Rad2Deg;
+                var p = _prev.TryGetValue(v.Id, out var prev) ? prev : v;
+                float x = Mathf.Lerp((float)p.X, (float)v.X, alpha);
+                float z = Mathf.Lerp((float)p.Z, (float)v.Z, alpha);
+                float yaw = Mathf.LerpAngle((float)(p.Heading * Mathf.Rad2Deg), (float)(v.Heading * Mathf.Rad2Deg), alpha);
                 t.SetPositionAndRotation(new Vector3(x, 0f, z), Quaternion.Euler(0f, yaw, 0f));
 
                 var lamps = _lamps[t];
-                SetLamps(lamps.left, c.Indicator < 0 && blinkOn);
-                SetLamps(lamps.right, c.Indicator > 0 && blinkOn);
+                SetLamps(lamps.left, v.Indicator < 0 && blinkOn);
+                SetLamps(lamps.right, v.Indicator > 0 && blinkOn);
             }
 
             _toRelease.Clear();
@@ -96,11 +96,19 @@ namespace LToLocal.Game
             foreach (var l in lamps) if (l.activeSelf != on) l.SetActive(on);
         }
 
+        private int ColourOf(Transform t)
+        {
+            int colour = 0;
+            int idx = t.name.LastIndexOf("_c");
+            if (idx >= 0) int.TryParse(t.name.Substring(idx + 2), out colour);
+            return Mathf.Clamp(colour, 0, _freeByColour.Length - 1);
+        }
+
         private Transform Acquire(int colour)
         {
             for (int k = 0; k < _freeByColour.Length; k++)
             {
-                var list = _freeByColour[(colour + k) % _freeByColour.Length];
+                var list = _freeByColour[((colour % _freeByColour.Length) + k) % _freeByColour.Length];
                 if (list.Count == 0) continue;
                 var t = list[list.Count - 1];
                 list.RemoveAt(list.Count - 1);
@@ -113,10 +121,7 @@ namespace LToLocal.Game
         private void Release(Transform t)
         {
             t.gameObject.SetActive(false);
-            int colour = 0;
-            int idx = t.name.LastIndexOf("_c");
-            if (idx >= 0) int.TryParse(t.name.Substring(idx + 2), out colour);
-            _freeByColour[Mathf.Clamp(colour, 0, _freeByColour.Length - 1)].Add(t);
+            _freeByColour[ColourOf(t)].Add(t);
         }
     }
 }

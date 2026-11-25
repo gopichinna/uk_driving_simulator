@@ -1,0 +1,25 @@
+using System;
+using System.Collections.Generic;
+using LToLocal.Rules;
+using LToLocal.Sim;
+using UnityEngine;
+
+namespace LToLocal.Game
+{
+    /// <summary>
+    /// A practice area: its own traffic and its own rules. The player's car, cameras, mirrors, controls,
+    /// speed rule and feedback live in <see cref="DriveGame"/> and are shared by every course.
+    /// </summary>
+    public interface ICourse
+    {
+        string DisplayName { get; }
+        CarState StartState { get; }
+        double SpeedLimitMph(in CarState player);
+        bool OutOfBounds(in CarState player);
+        void ResetCourse();
+        /// <summary>Snapshot vehicles before a step (for render interpolation).</summary>
+        void CapturePrevious();
+        void Step(double dt, in CarState player, double simTime, int indicator, List<RuleEvent> events);
+        void Render(float alpha, bool blink);
+    }
+}
