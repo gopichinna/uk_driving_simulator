@@ -225,12 +225,27 @@ namespace LToLocal.Game
             }
             y += H * 0.1f;
 
+            var due = LessonSession.DueReviews();
+            if (due.Count > 0)
+            {
+                var (ruleId, practice) = due[0];
+                string title = Rules.For(ruleId)?.Title;
+                GUI.color = new Color(1f, 0.85f, 0.4f);
+                if (GUI.Button(new Rect(x, y, w, H * 0.085f), $"Review drive ready ({due.Count} today): {(string.IsNullOrEmpty(title) ? ruleId : title)}", _rowStyle))
+                {
+                    SetMode(Mode.Driving);
+                    LessonSession.BeginReview(ruleId, practice);
+                }
+                GUI.color = Color.white;
+                y += H * 0.1f;
+            }
+
             var lessons = LessonSession.Lessons;
             float rowH = H * 0.085f, headH = H * 0.06f;
             int stages = 0, last = -1;
             foreach (var l in lessons) if (l.Stage != last) { stages++; last = l.Stage; }
             float content = lessons.Count * (rowH + 6) + stages * headH + rowH * 2;
-            var view = new Rect(x, y, w, H * 0.72f);
+            var view = new Rect(x, y, w, H * 0.86f - y);
             _menuScroll = GUI.BeginScrollView(view, _menuScroll, new Rect(0, 0, w - 30, content));
             float cy = 0;
             last = -1;
@@ -347,6 +362,12 @@ namespace LToLocal.Game
             }
             if (GUI.Button(new Rect(W * 0.5f + bw * 0.6f, by, bw, bh), "Next", _buttonStyle))
             {
+                if (LessonSession.IsReview)
+                {
+                    LessonSession.FinishReview(r);
+                    OpenLessonMenu();
+                    return;
+                }
                 LessonSession.RecordResult(r);
                 if (LessonSession.MoreScenarios) { SetMode(Mode.Driving); LessonSession.StartScenario(); }
                 else StartQuiz();

@@ -86,6 +86,8 @@ namespace LToLocal.Sim
         Zebra,
         /// <summary>Pedestrians crossing the mouth of a side road (Highway Code rule H2).</summary>
         JunctionMouth,
+        /// <summary>Other crossings (pelican, puffin, toucan, uncontrolled): traffic stops for someone on it, not for someone waiting.</summary>
+        Other,
     }
 
     public sealed class CrossingArea

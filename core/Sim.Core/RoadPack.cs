@@ -303,11 +303,11 @@ namespace LToLocal.Sim
 
             foreach (var c in pack.Crossings)
             {
-                if (c.Type != "zebra" || !LinkLanes.ContainsKey(c.LinkId)) continue;
+                if (!LinkLanes.ContainsKey(c.LinkId)) continue;
                 var link = links.Find(x => x.Id == c.LinkId)!;
                 var (s, _, _) = new PathPolyline(link.Geometry).Project(c.Pos);
                 var (p, h) = new PathPolyline(link.Geometry).Sample(s);
-                Graph.AddCrossing(CrossingKind.Zebra, c.Id, Geo2.Rect(p, h, 1.5, Width(link) / 2 + 0.1));
+                Graph.AddCrossing(c.Type == "zebra" ? CrossingKind.Zebra : CrossingKind.Other, c.Id, Geo2.Rect(p, h, 1.5, Width(link) / 2 + 0.1));
             }
 
             Graph.Finalise();
@@ -318,6 +318,37 @@ namespace LToLocal.Sim
                     var lane = Graph.Segments[lanes.forward[0]];
                     Spawns.Add((lane.Id, Math.Max(0, Math.Min(lane.Length - 1, sp.OffsetM))));
                 }
+        }
+
+        /// <summary>
+        /// Walking routes for a city (content/cities/&lt;city&gt;/pedestrians.json, pedroutes.v0). Side-road mouths the
+        /// routes cross become H2 crossing areas, so drivers turning there must give way.
+        /// </summary>
+        public List<PathPolyline> LoadPedestrianRoutes(string json)
+        {
+            var routes = new List<PathPolyline>();
+            var root = MiniJson.Obj(MiniJson.Parse(json));
+            if (!(root.Get("routes") is List<object?> list)) return routes;
+            foreach (var ro in list)
+            {
+                var r = MiniJson.Obj(ro);
+                var pts = new List<Vec2>();
+                if (r.Get("points") is List<object?> ps)
+                    foreach (var p in ps) { var xz = MiniJson.Arr(p); pts.Add(new Vec2(MiniJson.Num(xz[0]), MiniJson.Num(xz[1]))); }
+                if (pts.Count < 2) continue;
+                routes.Add(new PathPolyline(pts));
+                if (r.Get("mouthCrossings") is List<object?> mouths)
+                    foreach (var mo in mouths)
+                    {
+                        var m = MiniJson.Obj(mo);
+                        int a = (int)MiniJson.Num(m["fromIndex"]), b = (int)MiniJson.Num(m["toIndex"]);
+                        if (a < 0 || b >= pts.Count || a >= b) continue;
+                        Vec2 from = pts[a], to = pts[b], mid = (from + to) * 0.5;
+                        Graph.AddCrossing(CrossingKind.JunctionMouth, $"mouth_{m.Get("nodeId")}", Geo2.Rect(mid, (to - from).Heading, (to - from).Length / 2, 1.5));
+                    }
+            }
+            Graph.Finalise();
+            return routes;
         }
 
         private double Width(RoadPack.Link l) =>

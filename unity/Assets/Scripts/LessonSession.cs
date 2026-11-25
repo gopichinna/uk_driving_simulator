@@ -110,6 +110,107 @@ namespace LToLocal.Game
         {
             Results.Add(r);
             ScenarioIndex++;
+            if (IsReview) return;
+            var faulted = new List<string>();
+            foreach (var g in r.Summary.Groups) faulted.Add(g.RuleId);
+            if (faulted.Count > 0) { Reviews.RecordFaults(faulted, Today); SaveReviews(); }
+        }
+
+        // ---------------- review drives (spaced repetition of rules you got wrong) ----------------
+
+        public const string ReviewsKey = "progress_reviews", ReviewsDoneKey = "progress_reviews_done";
+        private static ReviewSchedule s_reviews;
+        private static RuleIndex s_ruleIndex;
+
+        public static bool IsReview { get; private set; }
+        public static string ReviewRule { get; private set; } = "";
+        public static int Today => (int)(System.DateTime.UtcNow - new System.DateTime(2026, 1, 1)).TotalDays;
+
+        public static ReviewSchedule Reviews
+        {
+            get
+            {
+                if (s_reviews != null) return s_reviews;
+                var prog = Resources.Load<TextAsset>("Content/progression");
+                var (intervals, max) = prog != null ? ReviewSchedule.SettingsFromProgression(prog.text) : (new[] { 1, 3, 7, 14 }, 3);
+                s_reviews = ReviewSchedule.Parse(PlayerPrefs.GetString(ReviewsKey, ""), intervals, max);
+                return s_reviews;
+            }
+        }
+
+        public static RuleIndex RuleIndex
+        {
+            get
+            {
+                if (s_ruleIndex != null) return s_ruleIndex;
+                var a = Resources.Load<TextAsset>("Content/rule_index");
+                s_ruleIndex = a != null ? RuleIndex.FromJson(a.text) : RuleIndex.FromJson("{}");
+                return s_ruleIndex;
+            }
+        }
+
+        public static int ReviewsDoneToday
+        {
+            get
+            {
+                var parts = PlayerPrefs.GetString(ReviewsDoneKey, "").Split(':');
+                return parts.Length == 2 && parts[0] == Today.ToString() && int.TryParse(parts[1], out int n) ? n : 0;
+            }
+        }
+
+        /// <summary>Rules due for review today that have a playable practice drive.</summary>
+        public static List<(string ruleId, RuleIndex.Entry practice)> DueReviews()
+        {
+            var list = new List<(string, RuleIndex.Entry)>();
+            foreach (var id in Reviews.Due(Today, ReviewsDoneToday))
+            {
+                var e = RuleIndex.PracticeFor(id, x => FindScenario(x.LessonId, x.ScenarioId, out var l, out _) && Playable(l));
+                if (e != null) list.Add((id, e));
+            }
+            return list;
+        }
+
+        private static bool FindScenario(string lessonId, string scenarioId, out LessonDef lesson, out LessonDef.ScenarioRef sref)
+        {
+            lesson = null; sref = null;
+            foreach (var l in Lessons)
+                if (l.Id == lessonId)
+                    foreach (var s in l.Scenarios)
+                        if (s.Id == scenarioId) { lesson = l; sref = s; return true; }
+            return false;
+        }
+
+        /// <summary>Plays one short drive that practises a rule you got wrong.</summary>
+        public static void BeginReview(string ruleId, RuleIndex.Entry practice)
+        {
+            if (!FindScenario(practice.LessonId, practice.ScenarioId, out var lesson, out var sref)) return;
+            var single = new LessonDef { Id = lesson.Id, Title = $"Review: {practice.Title}", Stage = lesson.Stage, Order = lesson.Order };
+            single.Scenarios.Add(sref);
+            Lesson = single;
+            MockTest = false;
+            ScenarioIndex = 0;
+            Results.Clear();
+            IsReview = true;
+            ReviewRule = ruleId;
+            StartScenario();
+        }
+
+        /// <summary>Clean on the reviewed rule moves it to the next interval; a fault starts it again.</summary>
+        public static bool FinishReview(ScenarioResult r)
+        {
+            bool clean = r.Completed;
+            foreach (var g in r.Summary.Groups) if (g.RuleId == ReviewRule) clean = false;
+            Reviews.RecordReview(ReviewRule, clean, Today);
+            PlayerPrefs.SetString(ReviewsDoneKey, $"{Today}:{ReviewsDoneToday + 1}");
+            SaveReviews();
+            End();
+            return clean;
+        }
+
+        private static void SaveReviews()
+        {
+            PlayerPrefs.SetString(ReviewsKey, Reviews.Serialize());
+            PlayerPrefs.Save();
         }
 
         public static bool MoreScenarios => Lesson != null && ScenarioIndex < Lesson.Scenarios.Count;
@@ -129,6 +230,8 @@ namespace LToLocal.Game
 
         public static void End()
         {
+            IsReview = false;
+            ReviewRule = "";
             Lesson = null;
             MockTest = false;
             ScenarioPending = false;
@@ -138,6 +241,7 @@ namespace LToLocal.Game
         public static void ResetAll()
         {
             s_progress = new LessonProgress();
+            s_reviews = null;
             End();
         }
 

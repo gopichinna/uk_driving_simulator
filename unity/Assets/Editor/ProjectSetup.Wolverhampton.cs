@@ -490,7 +490,21 @@ namespace LToLocal.EditorTools
             var (game, trafficView) = BuildCommon(m, V(startPos, 0), (float)(startHeading * Mathf.Rad2Deg));
             RenderSettings.fogStartDistance = 200f;
             RenderSettings.fogEndDistance = 550f;
+            var people = new GameObject("Pedestrians").transform;
+            var shirts = new[] { Mat("ShirtRed", new Color(0.80f, 0.25f, 0.25f)), Mat("ShirtBlue", new Color(0.20f, 0.40f, 0.80f)), Mat("ShirtGreen", new Color(0.25f, 0.60f, 0.35f)),
+                                 Mat("ShirtYellow", new Color(0.92f, 0.78f, 0.25f)), Mat("ShirtPurple", new Color(0.50f, 0.30f, 0.65f)), Mat("ShirtWhite", new Color(0.92f, 0.92f, 0.92f)) };
+            var skin = Mat("Skin", new Color(0.80f, 0.62f, 0.48f));
+            var trousers = Mat("Trousers", new Color(0.18f, 0.20f, 0.26f));
+            for (int i = 0; i < 20; i++)
+            {
+                var p = new GameObject($"Ped{i}").transform;
+                p.SetParent(people, false);
+                Prim(PrimitiveType.Cube, "Legs", p, new Vector3(0, 0.42f, 0), new Vector3(0.34f, 0.84f, 0.22f), trousers);
+                Prim(PrimitiveType.Capsule, "Body", p, new Vector3(0, 1.17f, 0), new Vector3(0.46f, 0.36f, 0.30f), shirts[i % shirts.Length]);
+                Prim(PrimitiveType.Sphere, "Head", p, new Vector3(0, 1.66f, 0), new Vector3(0.24f, 0.27f, 0.24f), skin);
+            }
             var course = game.AddComponent<WolverhamptonCourse>();
+            course.pedestrianRoot = people;
             course.trafficView = trafficView;
             course.signalsRoot = signals;
             course.startLink = g.Segments[startLane].SourceId;

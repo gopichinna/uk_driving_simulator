@@ -87,13 +87,16 @@ namespace LToLocal.EditorTools
                 ("../content/countries/gb/test_marking.yaml", "test_marking.txt"),
                 ("../content/cities/wolverhampton/roadpack.json", "wolverhampton_roadpack.json"),
                 ("../content/cities/wolverhampton/pois.json", "wolverhampton_pois.json"),
+                ("../content/cities/wolverhampton/pedestrians.json", "wolverhampton_pedestrians.json"),
+                ("../content/cities/wolverhampton-test-area/pedestrians.json", "wolverhampton_test_area_pedestrians.json"),
                 ("../content/cities/wolverhampton-test-area/roadpack.json", "wolverhampton_test_area_roadpack.json"),
                 ("../content/cities/wolverhampton-test-area/pois.json", "wolverhampton_test_area_pois.json"),
                 ("../content/lessons/gb/progression.json", "progression.json"),
+                ("../content/lessons/gb/rule_index.json", "rule_index.json"),
             };
             foreach (var (from, to) in files)
             {
-                if (!File.Exists(from)) { Debug.LogWarning($"[LToLocal] Content file missing: {from}"); continue; }
+                if (!File.Exists(from)) { Debug.Log($"[LToLocal] Optional content file not present: {from}"); continue; }
                 File.Copy(from, $"{dest}/{to}", overwrite: true);
             }
             // Lessons (numbered files only), their scenarios and quizzes, and the learn-card diagrams.

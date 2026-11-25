@@ -67,6 +67,34 @@ namespace LToLocal.Sim.Tests
         }
 
         [Test]
+        public void WolverhamptonPedestriansCrossSafely()
+        {
+            var b = new RoadPackGraph(RoadPack.Parse(Content("cities/wolverhampton/roadpack.json")));
+            var routes = b.LoadPedestrianRoutes(Content("cities/wolverhampton/pedestrians.json"));
+            Assert.That(routes.Count, Is.GreaterThan(10));
+            var peds = new TownPedestrians(b.Graph, routes, 20, 4);
+            var (start, heading) = b.Graph.Segments[b.Spawns[0].lane].Path.Sample(b.Spawns[0].s);
+            var player = new CarState { X = start.X, Z = start.Z, Heading = heading };
+            var traffic = new TownTraffic(b.Graph, b.Signals, new TownTrafficParams { TargetCars = 18, SpawnAroundPlayer = true }, 6) { Pedestrians = peds };
+            int crossings = 0, hits = 0;
+            var seen = new HashSet<int>();
+            for (int i = 0; i < 50 * 240; i++)
+            {
+                peds.Step(0.02, traffic, player);
+                traffic.Step(0.02, player, i * 0.02);
+                foreach (var p in peds.People)
+                {
+                    if (p.State != PedState.Crossing) continue;
+                    if (seen.Add(p.Id)) crossings++;
+                    foreach (var c in traffic.Cars) if ((c.Position - p.Position).Length < 1.8) hits++;
+                }
+            }
+            TestContext.Progress.WriteLine($"Wolverhampton: {routes.Count} routes, {crossings} people crossed, {b.Graph.CrossingAreas.Count} crossing areas");
+            Assert.That(crossings, Is.GreaterThan(5));
+            Assert.That(hits, Is.EqualTo(0), "no one is hit while crossing");
+        }
+
+                [Test]
         public void LoadsWolverhamptonAndAiDrivesItSafely()
         {
             var sw = Stopwatch.StartNew();

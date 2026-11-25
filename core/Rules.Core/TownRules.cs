@@ -295,6 +295,7 @@ namespace LToLocal.Rules
             Vec2 front = CarBody.Front(f.Ego);
             foreach (var area in _areas)
             {
+                if (area.Kind == CrossingKind.Other) continue; // light-controlled crossings are judged by the signals
                 bool zebra = area.Kind == CrossingKind.Zebra;
                 bool on = false, waiting = false;
                 double minClear = double.MaxValue;

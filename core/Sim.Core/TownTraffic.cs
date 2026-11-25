@@ -308,7 +308,7 @@ namespace LToLocal.Sim
                         double toZone = base0 + from;
                         if (toZone < 0.5 || toZone > 60) continue;
                         bool someoneOn = Pedestrians.OnCrossing(cross);
-                        bool waiting = Pedestrians.Waiting(cross);
+                        bool waiting = Pedestrians.Waiting(cross) && _g.CrossingAreas[cross].Kind != CrossingKind.Other;
                         bool canStop = toZone - 1.5 >= c.SpeedMps * c.SpeedMps / (2 * _p.ComfortDecelMps2) || c.SpeedMps < 3;
                         if (someoneOn || (waiting && canStop)) Consider(toZone - 1.5, 0, false);
                     }

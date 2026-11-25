@@ -1,0 +1,555 @@
+{
+  "ruleIndexVersion": "0.1",
+  "country": "GB",
+  "rules": {
+    "GB.GAP.TWO_SECOND": [
+      {
+        "lessonId": "gb-s0-03-speed-limits",
+        "scenarioId": "s0_03_dual_40",
+        "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s4-16-following-distance-town",
+        "scenarioId": "s4_16_town_traffic",
+        "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s4-16-following-distance-town",
+        "scenarioId": "s4_16_signals_queue",
+        "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s5-18-two-second-rule-speed",
+        "scenarioId": "s5_18_two_sec_cruise",
+        "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s5-18-two-second-rule-speed",
+        "scenarioId": "s5_18_two_sec_dusk",
+        "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.JCT.BOX": [
+      {
+        "lessonId": "gb-s2-10-box-junctions",
+        "scenarioId": "s2_10_box_straight",
+        "title": "Box junctions"
+      },
+      {
+        "lessonId": "gb-s2-10-box-junctions",
+        "scenarioId": "s2_10_box_right_turn",
+        "title": "Box junctions"
+      }
+    ],
+    "GB.JCT.EMERGE_LOOK": [
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_north",
+        "title": "Give way at T-junctions"
+      }
+    ],
+    "GB.JCT.GIVE_WAY": [
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_north",
+        "title": "Give way at T-junctions"
+      },
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_south",
+        "title": "Give way at T-junctions"
+      },
+      {
+        "lessonId": "gb-s1-05-pedestrians-h2",
+        "scenarioId": "s1_05_h2_south",
+        "title": "Pedestrians at junctions (H2)"
+      }
+    ],
+    "GB.JCT.H2_PEDESTRIANS": [
+      {
+        "lessonId": "gb-s1-05-pedestrians-h2",
+        "scenarioId": "s1_05_h2_north",
+        "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s1-05-pedestrians-h2",
+        "scenarioId": "s1_05_h2_south",
+        "title": "Pedestrians at junctions (H2)"
+      }
+    ],
+    "GB.JCT.H3_CYCLISTS": [
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_cyclists",
+        "title": "Advanced stop lines"
+      }
+    ],
+    "GB.JCT.TURN_FAR_GAP": [
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_south",
+        "title": "Give way at T-junctions"
+      },
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_south",
+        "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s2-10-box-junctions",
+        "scenarioId": "s2_10_box_right_turn",
+        "title": "Box junctions"
+      }
+    ],
+    "GB.JCT.TURN_FAR_POSITION": [
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_south",
+        "title": "Road position after turning"
+      }
+    ],
+    "GB.JCT.TURN_NEAR": [
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_north",
+        "title": "Road position after turning"
+      }
+    ],
+    "GB.OBS.LANE_CHANGE": [
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_inner_to_exit",
+        "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-15-overtaking-cyclists",
+        "scenarioId": "s4_15_dual_cyclist",
+        "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_overtake_and_return",
+        "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_busy_dual",
+        "title": "Dual carriageway lane discipline"
+      }
+    ],
+    "GB.OBS.MOVE_OFF_CHECKS": [
+      {
+        "lessonId": "gb-s0-02-moving-off-msm",
+        "scenarioId": "s0_02_move_off_town",
+        "title": "Moving off and MSM"
+      }
+    ],
+    "GB.OBS.MSM": [
+      {
+        "lessonId": "gb-s0-02-moving-off-msm",
+        "scenarioId": "s0_02_msm_approach",
+        "title": "Moving off and MSM"
+      }
+    ],
+    "GB.POS.AFTER_TURN": [
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_north",
+        "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_south",
+        "title": "Road position after turning"
+      }
+    ],
+    "GB.POS.DUAL_KEEP_LEFT": [
+      {
+        "lessonId": "gb-s0-01-keep-left-controls",
+        "scenarioId": "s0_01_dual_keep_left",
+        "title": "Keeping left and the controls"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_overtake_and_return",
+        "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_busy_dual",
+        "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s5-18-two-second-rule-speed",
+        "scenarioId": "s5_18_two_sec_dusk",
+        "title": "The two-second rule at speed"
+      }
+    ],
+    "GB.POS.KEEP_LEFT": [
+      {
+        "lessonId": "gb-s0-01-keep-left-controls",
+        "scenarioId": "s0_01_town_keep_left",
+        "title": "Keeping left and the controls"
+      },
+      {
+        "lessonId": "gb-s0-01-keep-left-controls",
+        "scenarioId": "s0_01_dual_keep_left",
+        "title": "Keeping left and the controls"
+      },
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_north",
+        "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s4-15-overtaking-cyclists",
+        "scenarioId": "s4_15_town_cyclist",
+        "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.POS.LANE_FOR_ROUTE": [
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.RBT.APPROACH_LANE": [
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_left_and_ahead",
+        "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_right_exit",
+        "title": "Roundabout lanes and signals"
+      }
+    ],
+    "GB.RBT.CYCLISTS": [
+      {
+        "lessonId": "gb-s3-14-roundabout-cyclists",
+        "scenarioId": "s3_14_single_rbt_cyclist",
+        "title": "Cyclists on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-14-roundabout-cyclists",
+        "scenarioId": "s3_14_two_lane_rbt_cyclist",
+        "title": "Cyclists on roundabouts"
+      }
+    ],
+    "GB.RBT.GIVE_WAY_RIGHT": [
+      {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_single_rbt_give_way",
+        "title": "Roundabout priority"
+      },
+      {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_two_lane_rbt_give_way",
+        "title": "Roundabout priority"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_inner_to_exit",
+        "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-14-roundabout-cyclists",
+        "scenarioId": "s3_14_single_rbt_cyclist",
+        "title": "Cyclists on roundabouts"
+      }
+    ],
+    "GB.RBT.SIGNAL_APPROACH": [
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_left_and_ahead",
+        "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_right_exit",
+        "title": "Roundabout lanes and signals"
+      }
+    ],
+    "GB.RBT.SIGNAL_EXIT": [
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_left_and_ahead",
+        "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_right_exit",
+        "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_hold_lane_ahead",
+        "title": "Staying in lane on roundabouts"
+      }
+    ],
+    "GB.RBT.STAY_IN_LANE": [
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_hold_lane_ahead",
+        "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_inner_to_exit",
+        "title": "Staying in lane on roundabouts"
+      }
+    ],
+    "GB.RBT.WRONG_WAY": [
+      {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_single_rbt_give_way",
+        "title": "Roundabout priority"
+      },
+      {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_two_lane_rbt_give_way",
+        "title": "Roundabout priority"
+      }
+    ],
+    "GB.SCH.SLOW": [
+      {
+        "lessonId": "gb-s0-03-speed-limits",
+        "scenarioId": "s0_03_school_street",
+        "title": "Speed limits"
+      }
+    ],
+    "GB.SIG.TIMELY": [
+      {
+        "lessonId": "gb-s0-02-moving-off-msm",
+        "scenarioId": "s0_02_move_off_town",
+        "title": "Moving off and MSM"
+      },
+      {
+        "lessonId": "gb-s0-02-moving-off-msm",
+        "scenarioId": "s0_02_msm_approach",
+        "title": "Moving off and MSM"
+      },
+      {
+        "lessonId": "gb-s1-05-pedestrians-h2",
+        "scenarioId": "s1_05_h2_north",
+        "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_left",
+        "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s4-15-overtaking-cyclists",
+        "scenarioId": "s4_15_dual_cyclist",
+        "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_overtake_and_return",
+        "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.SPD.APPROPRIATE": [
+      {
+        "lessonId": "gb-s0-03-speed-limits",
+        "scenarioId": "s0_03_school_street",
+        "title": "Speed limits"
+      }
+    ],
+    "GB.SPD.OVER_LIMIT": [
+      {
+        "lessonId": "gb-s0-01-keep-left-controls",
+        "scenarioId": "s0_01_town_keep_left",
+        "title": "Keeping left and the controls"
+      },
+      {
+        "lessonId": "gb-s0-03-speed-limits",
+        "scenarioId": "s0_03_school_street",
+        "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s0-03-speed-limits",
+        "scenarioId": "s0_03_dual_40",
+        "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s4-16-following-distance-town",
+        "scenarioId": "s4_16_town_traffic",
+        "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s5-17-dual-carriageway-lanes",
+        "scenarioId": "s5_17_busy_dual",
+        "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s5-18-two-second-rule-speed",
+        "scenarioId": "s5_18_two_sec_cruise",
+        "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s5-18-two-second-rule-speed",
+        "scenarioId": "s5_18_two_sec_dusk",
+        "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test",
+        "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-19-mock-driving-test",
+        "scenarioId": "s8_19_mock_test_signs",
+        "title": "Mock driving test"
+      }
+    ],
+    "GB.TL.AMBER": [
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_stop",
+        "title": "Traffic lights and amber"
+      }
+    ],
+    "GB.TL.ASL": [
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_cyclists",
+        "title": "Advanced stop lines"
+      }
+    ],
+    "GB.TL.CLEAR_JUNCTION": [
+      {
+        "lessonId": "gb-s2-10-box-junctions",
+        "scenarioId": "s2_10_box_straight",
+        "title": "Box junctions"
+      }
+    ],
+    "GB.TL.NO_TURN_ON_RED": [
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_left",
+        "title": "Traffic lights and amber"
+      }
+    ],
+    "GB.TL.RED": [
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_stop",
+        "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_left",
+        "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
+      },
+      {
+        "lessonId": "gb-s4-16-following-distance-town",
+        "scenarioId": "s4_16_signals_queue",
+        "title": "Following distance in town"
+      }
+    ],
+    "GB.TL.RED_AMBER": [
+      {
+        "lessonId": "gb-s2-07-traffic-lights-amber",
+        "scenarioId": "s2_07_signals_stop",
+        "title": "Traffic lights and amber"
+      }
+    ],
+    "GB.VRU.PASS_CYCLIST": [
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_cyclists",
+        "title": "Advanced stop lines"
+      },
+      {
+        "lessonId": "gb-s3-14-roundabout-cyclists",
+        "scenarioId": "s3_14_single_rbt_cyclist",
+        "title": "Cyclists on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-14-roundabout-cyclists",
+        "scenarioId": "s3_14_two_lane_rbt_cyclist",
+        "title": "Cyclists on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-15-overtaking-cyclists",
+        "scenarioId": "s4_15_town_cyclist",
+        "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s4-15-overtaking-cyclists",
+        "scenarioId": "s4_15_dual_cyclist",
+        "title": "Overtaking cyclists"
+      }
+    ],
+    "GB.XNG.KEEP_CLEAR": [
+      {
+        "lessonId": "gb-s2-09-zebra-zigzags",
+        "scenarioId": "s2_09_zebra_yield",
+        "title": "Zebra crossings and zig-zags"
+      }
+    ],
+    "GB.XNG.ZEBRA": [
+      {
+        "lessonId": "gb-s2-09-zebra-zigzags",
+        "scenarioId": "s2_09_zebra_yield",
+        "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s2-09-zebra-zigzags",
+        "scenarioId": "s2_09_zebra_zigzags",
+        "title": "Zebra crossings and zig-zags"
+      }
+    ],
+    "GB.XNG.ZIGZAG_OVERTAKE": [
+      {
+        "lessonId": "gb-s2-09-zebra-zigzags",
+        "scenarioId": "s2_09_zebra_zigzags",
+        "title": "Zebra crossings and zig-zags"
+      }
+    ]
+  }
+}

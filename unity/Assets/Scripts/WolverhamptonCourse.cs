@@ -18,6 +18,7 @@ namespace LToLocal.Game
         public float startOffset = 5f;
         /// <summary>Which city pack this course shows: Resources/Content/&lt;prefix&gt;_roadpack and _pois.</summary>
         public string resourcePrefix = "wolverhampton";
+        public Transform pedestrianRoot;
 
         private RoadPackGraph _built;
         private TownTraffic _traffic;
@@ -30,6 +31,13 @@ namespace LToLocal.Game
         private readonly List<VehicleSnapshot> _replay = new List<VehicleSnapshot>();
         private readonly List<RoadUser> _users = new List<RoadUser>();
         private readonly List<Pedestrian> _noPeople = new List<Pedestrian>();
+        private TownPedestrians _peds;
+        private const int PedIdOffset = 1_000_000;
+        private readonly List<Transform> _freePeds = new List<Transform>();
+        private readonly Dictionary<int, Transform> _pedViews = new Dictionary<int, Transform>();
+        private readonly HashSet<int> _pedSeen = new HashSet<int>();
+        private readonly List<int> _pedRelease = new List<int>();
+        private readonly List<(int id, double x, double z, double heading)> _pedPoses = new List<(int, double, double, double)>();
         private readonly List<(int group, GameObject red, GameObject amber, GameObject green)> _heads = new List<(int, GameObject, GameObject, GameObject)>();
         private GUIStyle _credit;
 
@@ -76,6 +84,13 @@ namespace LToLocal.Game
         {
             var b = Built;
             _traffic = new TownTraffic(b.Graph, b.Signals, new TownTrafficParams { TargetCars = 18, SpawnAroundPlayer = true }, seed: 2026);
+            var pedAsset = Resources.Load<TextAsset>($"Content/{resourcePrefix}_pedestrians");
+            if (pedAsset != null)
+            {
+                _peds = new TownPedestrians(b.Graph, b.LoadPedestrianRoutes(pedAsset.text), 16, seed: 2027);
+                _traffic.Pedestrians = _peds;
+            }
+            if (pedestrianRoot != null) foreach (Transform p in pedestrianRoot) { p.gameObject.SetActive(false); _freePeds.Add(p); }
             _rules = new TownRules(b.Graph, DrivingSide.Left);
             _keepLeft = new KeepLeftRule(b.Graph, DrivingSide.Left);
             for (int i = 0; i < b.Signals.GroupCount; i++) _lights.Add(LightState.Red);
@@ -96,10 +111,13 @@ namespace LToLocal.Game
         {
             if (trafficView != null) trafficView.Clear();
             _traffic.Reset();
+            _peds?.Reset();
+            foreach (var kv in _pedViews) { kv.Value.gameObject.SetActive(false); _freePeds.Add(kv.Value); }
+            _pedViews.Clear();
             _rules.Reset();
             _keepLeft.Reset();
             var start = StartState;
-            for (int i = 0; i < 50 * 20; i++) _traffic.Step(0.02, start, i * 0.02);
+            for (int i = 0; i < 50 * 20; i++) { _peds?.Step(0.02, _traffic, start); _traffic.Step(0.02, start, i * 0.02); }
             _time = 20;
             UpdateLights();
             Snapshot();
@@ -114,11 +132,12 @@ namespace LToLocal.Game
         public void Step(double dt, in CarState player, double simTime, int indicator, List<RuleEvent> events)
         {
             _time += dt;
+            _peds?.Step(dt, _traffic, player);
             _traffic.Step(dt, player, _time);
             UpdateLights();
             GetRoadUsers(_users);
             var frame = new DriverFrame(simTime, player, indicator);
-            _rules.OnFrame(frame, _lights, _noPeople, _users, events);
+            _rules.OnFrame(frame, _lights, _peds != null ? _peds.People : _noPeople, _users, events);
             _keepLeft.OnFrame(frame, _users, events);
         }
 
@@ -132,6 +151,30 @@ namespace LToLocal.Game
             Snapshot();
             if (trafficView != null) trafficView.Render(_snap, alpha, blink);
             ShowLights(_lights);
+            _pedPoses.Clear();
+            if (_peds != null) foreach (var p in _peds.People) _pedPoses.Add((p.Id, p.Position.X, p.Position.Z, p.Heading));
+            RenderPedestrians(_pedPoses);
+        }
+
+        private void RenderPedestrians(List<(int id, double x, double z, double heading)> people)
+        {
+            _pedSeen.Clear();
+            foreach (var (id, x, z, heading) in people)
+            {
+                _pedSeen.Add(id);
+                if (!_pedViews.TryGetValue(id, out var view))
+                {
+                    if (_freePeds.Count == 0) continue;
+                    view = _freePeds[_freePeds.Count - 1];
+                    _freePeds.RemoveAt(_freePeds.Count - 1);
+                    view.gameObject.SetActive(true);
+                    _pedViews[id] = view;
+                }
+                view.SetPositionAndRotation(new Vector3((float)x, 0.08f, (float)z), Quaternion.Euler(0f, (float)(heading * Mathf.Rad2Deg), 0f));
+            }
+            _pedRelease.Clear();
+            foreach (var id in _pedViews.Keys) if (!_pedSeen.Contains(id)) _pedRelease.Add(id);
+            foreach (var id in _pedRelease) { _pedViews[id].gameObject.SetActive(false); _freePeds.Add(_pedViews[id]); _pedViews.Remove(id); }
         }
 
         private void ShowLights(IReadOnlyList<LightState> lights)
@@ -158,6 +201,9 @@ namespace LToLocal.Game
             actors.Clear();
             Snapshot();
             Replay.AddVehicles(actors, _snap);
+            if (_peds != null)
+                foreach (var p in _peds.People)
+                    actors.Add(new ActorPose { Id = PedIdOffset + p.Id, Kind = ActorKind.Pedestrian, X = (float)p.Position.X, Z = (float)p.Position.Z, Heading = (float)p.Heading });
             lights.Clear();
             lights.AddRange(_lights);
         }
@@ -167,6 +213,9 @@ namespace LToLocal.Game
             Replay.Vehicles(frame, _replay);
             if (trafficView != null) trafficView.Render(_replay, 1f, blink);
             if (frame.Lights.Length > 0) ShowLights(frame.Lights);
+            _pedPoses.Clear();
+            foreach (var a in frame.Actors) if (a.Kind == ActorKind.Pedestrian) _pedPoses.Add((a.Id - PedIdOffset, a.X, a.Z, a.Heading));
+            RenderPedestrians(_pedPoses);
         }
 
         private void Snapshot()
