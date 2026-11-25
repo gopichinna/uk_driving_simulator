@@ -141,3 +141,7 @@ def test_required_ui_keys_and_pseudolocale() -> None:
     for key in REQUIRED_UI_KEYS:
         assert key in xa_ui["entries"]
         assert "{count" not in entries[key] or "{count" in xa_ui["entries"][key]
+
+    xa_voice = json.loads((XA_DIR / "voice.json").read_text(encoding="utf-8"))
+    assert xa_voice["kind"] == "voice"
+    assert "voice.lesson.start" in xa_voice["entries"]

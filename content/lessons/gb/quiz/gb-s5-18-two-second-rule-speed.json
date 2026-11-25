@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s5-18-two-second-rule-speed",
+  "questions": [
+    {
+      "id": "q_18_gap",
+      "question": "What minimum time gap should you leave on fast roads in dry weather?",
+      "options": [
+        "At least 2 seconds",
+        "About 1 second",
+        "Half a second"
+      ],
+      "answerIndex": 0,
+      "explanation": "Count at least two seconds behind the vehicle ahead on faster roads.",
+      "ruleId": "GB.GAP.TWO_SECOND"
+    },
+    {
+      "id": "q_18_wet",
+      "question": "How should your following gap change in wet weather?",
+      "options": [
+        "Double it to at least 4 seconds",
+        "Keep it at 1 second",
+        "Stay closer to see tail lights"
+      ],
+      "answerIndex": 0,
+      "explanation": "Wet roads double your stopping distance, so double your gap.",
+      "ruleId": "GB.GAP.TWO_SECOND"
+    }
+  ]
+}

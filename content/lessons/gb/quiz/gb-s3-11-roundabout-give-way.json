@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s3-11-roundabout-give-way",
+  "questions": [
+    {
+      "id": "q_11_give_way",
+      "question": "Which traffic has priority as you approach a UK roundabout?",
+      "options": [
+        "Traffic coming from your right",
+        "Traffic waiting on your left",
+        "Cars entering after you"
+      ],
+      "answerIndex": 0,
+      "explanation": "Give way to traffic approaching from your right unless signs say otherwise.",
+      "ruleId": "GB.RBT.GIVE_WAY_RIGHT"
+    },
+    {
+      "id": "q_11_dir",
+      "question": "Which direction does traffic travel around UK roundabouts?",
+      "options": [
+        "Clockwise",
+        "Anti-clockwise",
+        "Either direction"
+      ],
+      "answerIndex": 0,
+      "explanation": "Always circulate clockwise around the central island in the UK.",
+      "ruleId": "GB.RBT.WRONG_WAY"
+    }
+  ]
+}

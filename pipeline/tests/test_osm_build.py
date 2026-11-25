@@ -96,7 +96,7 @@ def test_deterministic_output() -> None:
 
 def test_junction_priority_and_signal_plans() -> None:
     pack = _build_fixture_pack()
-    assert pack["packFormatVersion"] == "0.4"
+    assert pack["packFormatVersion"] == "0.5"
     assert all("widthM" in lk and "sidewalk" in lk for lk in pack["links"])
     jp_by_node = {jp["nodeId"]: jp for jp in pack["junctionPriority"]}
     assert "n_2" in jp_by_node

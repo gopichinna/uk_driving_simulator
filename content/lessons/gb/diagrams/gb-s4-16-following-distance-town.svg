@@ -22,6 +22,6 @@
   <rect x="560" y="254" width="52" height="92" fill="#929aa4"/>
   <rect x="410" y="714" width="52" height="92" fill="#1d70b8"/>
   <line x1="436" y1="700" x2="436" y2="480" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
-  <line x1="436" y1="480" x2="455" y2="508" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
-  <line x1="436" y1="480" x2="417" y2="508" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="436" y1="480" x2="454" y2="507" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="436" y1="480" x2="418" y2="507" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
 </svg>

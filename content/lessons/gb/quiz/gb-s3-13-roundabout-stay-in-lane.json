@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+  "questions": [
+    {
+      "id": "q_13_lane",
+      "question": "What should you do on a multi-lane or spiral roundabout?",
+      "options": [
+        "Keep in your marked lane to your exit",
+        "Cut across lanes to leave faster",
+        "Straddle both lanes"
+      ],
+      "answerIndex": 0,
+      "explanation": "Stay inside your lane and follow the road markings.",
+      "ruleId": "GB.RBT.STAY_IN_LANE"
+    },
+    {
+      "id": "q_13_change",
+      "question": "What must you check before changing lanes on a roundabout?",
+      "options": [
+        "Your mirrors and blind spot",
+        "Only the central island",
+        "Only your speedometer"
+      ],
+      "answerIndex": 0,
+      "explanation": "Always check for vehicles beside you before moving across lanes.",
+      "ruleId": "GB.OBS.LANE_CHANGE"
+    }
+  ]
+}

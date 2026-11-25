@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s0-01-keep-left-controls",
+  "questions": [
+    {
+      "id": "q_01_side",
+      "question": "Which side of the road should you drive on in the UK?",
+      "options": [
+        "The left side",
+        "The right side",
+        "The middle lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "Traffic in the UK drives on the left unless signs say otherwise.",
+      "ruleId": "GB.POS.KEEP_LEFT"
+    },
+    {
+      "id": "q_01_dual",
+      "question": "When should you move back to the left lane on a dual carriageway?",
+      "options": [
+        "As soon as you finish overtaking",
+        "Only before your exit",
+        "Never on busy roads"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use the right lane only to overtake or turn right.",
+      "ruleId": "GB.POS.DUAL_KEEP_LEFT"
+    }
+  ]
+}
