@@ -29,9 +29,7 @@ def build_rule_index(
     ]
 
     lessons: list[dict[str, Any]] = []
-    for lf in sorted(lessons_dir.glob("*.json")):
-        if lf.name == "rule_index.json":
-            continue
+    for lf in sorted(lessons_dir.glob("[01][0-9]-*.json")):
         lessons.append(json.loads(lf.read_text(encoding="utf-8")))
     lessons.sort(key=lambda item: (item["stage"], item["order"], item["id"]))
 

@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.5",
+  "packFormatVersion": "0.6",
   "packId": "sample-t-junction",
   "displayName": "Sample: T-junction with traffic lights and a zebra",
   "country": "GB",
@@ -69,6 +69,8 @@
       "amberS": 3,
       "allRedS": 2,
       "redAmberS": 2,
+      "pedestrianStageS": 8,
+      "crossingIds": ["x_zebra"],
       "confidence": 0.45,
       "confidenceNotes": "inferred opposing-approach stages and default town-course timings"
     }

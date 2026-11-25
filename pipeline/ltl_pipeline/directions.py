@@ -250,7 +250,12 @@ def update_routes_with_instructions(
 
     existing = [r for r in routes_doc["routes"] if r["id"] != "wolverhampton-mock-test"]
     for r in existing:
-        if any(not links_by_id[s["linkId"]].get("inMainNetwork", True) for s in r["links"]):
+        needs_rebuild = any(
+            s["linkId"] not in links_by_id
+            or not links_by_id[s["linkId"]].get("inMainNetwork", True)
+            for s in r["links"]
+        )
+        if needs_rebuild:
             # Re-route from the first main-network link (or nearest main-network zebra/bus/rbt link)
             rbt_links = [
                 lk["id"]

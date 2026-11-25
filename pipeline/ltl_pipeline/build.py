@@ -309,9 +309,101 @@ def _approach_angle(link: dict[str, Any], node_id: str) -> float:
     return math.atan2(p2[1] - p1[1], p2[0] - p1[0])
 
 
+def _merge_degree2_links(
+    nodes: list[dict[str, Any]],
+    links: list[dict[str, Any]],
+    crossings: list[dict[str, Any]],
+    restrictions: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]], dict[str, str]]:
+    """Merge chains of links joined at plain degree-2 nodes with identical attributes."""
+    protected_nodes: set[str] = {r["viaNode"] for r in restrictions}
+    for n in nodes:
+        if (
+            n["kind"] in ("crossing", "roundabout", "mini_roundabout")
+            or n.get("trafficSignals")
+            or n.get("giveWay")
+            or n.get("stop")
+        ):
+            protected_nodes.add(n["id"])
+    for c in crossings:
+        protected_nodes.add(f"n_{c['osmId']}" if "osmId" in c else "")
+
+    def merge_key(lk: dict[str, Any]) -> tuple[Any, ...]:
+        return (
+            lk["roadClass"],
+            lk["oneway"],
+            lk["lanesForward"],
+            lk["lanesBackward"],
+            lk["speedLimitMph"],
+            lk["speedLimitSource"],
+            lk.get("name"),
+            lk.get("ref"),
+            lk.get("junctionRoundabout", False),
+            tuple(lk.get("turnLanesForward") or ()),
+            tuple(lk.get("turnLanesBackward") or ()),
+            json.dumps(lk.get("busLane"), sort_keys=True),
+            json.dumps(lk.get("cycleLane"), sort_keys=True),
+        )
+
+    links_by_id = {lk["id"]: dict(lk) for lk in links}
+    for lk in links_by_id.values():
+        lk["geometry"] = [list(pt) for pt in lk["geometry"]]
+    merged_into: dict[str, str] = {}
+
+    changed = True
+    while changed:
+        changed = False
+        incoming: dict[str, list[str]] = defaultdict(list)
+        outgoing: dict[str, list[str]] = defaultdict(list)
+        for lid, lk in links_by_id.items():
+            outgoing[lk["from"]].append(lid)
+            incoming[lk["to"]].append(lid)
+
+        for nid in sorted(set(incoming) & set(outgoing)):
+            if nid in protected_nodes:
+                continue
+            inc = incoming[nid]
+            out = outgoing[nid]
+            if len(inc) != 1 or len(out) != 1:
+                continue
+            l1_id, l2_id = inc[0], out[0]
+            if l1_id == l2_id or l1_id not in links_by_id or l2_id not in links_by_id:
+                continue
+            l1, l2 = links_by_id[l1_id], links_by_id[l2_id]
+            if l1["from"] == l2["to"]:
+                continue
+            if merge_key(l1) != merge_key(l2):
+                continue
+
+            joined_geom = list(l1["geometry"])
+            for pt in l2["geometry"][1:]:
+                if joined_geom[-1] != pt:
+                    joined_geom.append(pt)
+            l1["to"] = l2["to"]
+            l1["geometry"] = joined_geom
+            l1["confidence"] = round(min(l1["confidence"], l2["confidence"]), 2)
+            del links_by_id[l2_id]
+            merged_into[l2_id] = l1_id
+            changed = True
+            break
+
+    # Resolve transitive merge chains
+    resolved_map: dict[str, str] = {}
+    for old_id, target in merged_into.items():
+        while target in merged_into:
+            target = merged_into[target]
+        resolved_map[old_id] = target
+
+    merged_links = sorted(links_by_id.values(), key=lambda item: item["id"])
+    used_nodes = {lk["from"] for lk in merged_links} | {lk["to"] for lk in merged_links}
+    merged_nodes = [n for n in nodes if n["id"] in used_nodes]
+    return (merged_nodes, merged_links, resolved_map)
+
+
 def _infer_junction_priority_and_signals(
     nodes: list[dict[str, Any]],
     links: list[dict[str, Any]],
+    crossings: list[dict[str, Any]] | None = None,
 ) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
     incident: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for lk in links:
@@ -404,18 +496,26 @@ def _infer_junction_priority_and_signals(
             if stage2:
                 stages.append(sorted(stage2))
                 green_s.append(14)
-            signal_plans.append(
-                {
-                    "nodeId": nid,
-                    "stages": stages,
-                    "greenS": green_s,
-                    "amberS": 3,
-                    "allRedS": 2,
-                    "redAmberS": 2,
-                    "confidence": 0.45,
-                    "confidenceNotes": "inferred opposing-approach stages and default timings",
-                }
-            )
+            plan_obj: dict[str, Any] = {
+                "nodeId": nid,
+                "stages": stages,
+                "greenS": green_s,
+                "amberS": 3,
+                "allRedS": 2,
+                "redAmberS": 2,
+                "confidence": 0.45,
+                "confidenceNotes": "inferred opposing-approach stages and default timings",
+            }
+            # Attach pedestrianStageS + crossingIds for signal-controlled crossings
+            ped_cids: list[str] = []
+            for c in crossings or []:
+                if c.get("type") in ("pelican", "puffin", "toucan", "signals_unknown"):
+                    if math.hypot(c["x"] - node["x"], c["z"] - node["z"]) <= 20.0:
+                        ped_cids.append(c["id"])
+            if ped_cids or node["kind"] == "crossing":
+                plan_obj["pedestrianStageS"] = 8
+                plan_obj["crossingIds"] = sorted(ped_cids)
+            signal_plans.append(plan_obj)
 
     priorities.sort(key=lambda p: p["nodeId"])
     signal_plans.sort(key=lambda s: s["nodeId"])
@@ -912,7 +1012,18 @@ def build_roadpack(
                 }
             )
     restrictions.sort(key=lambda item: item["id"])
-    junction_priority, signal_plans = _infer_junction_priority_and_signals(nodes, links)
+    nodes, links, merged_map = _merge_degree2_links(nodes, links, crossings, restrictions)
+    for c in crossings:
+        if c["linkId"] in merged_map:
+            c["linkId"] = merged_map[c["linkId"]]
+    for r in restrictions:
+        if r["fromLink"] in merged_map:
+            r["fromLink"] = merged_map[r["fromLink"]]
+        if r["toLink"] in merged_map:
+            r["toLink"] = merged_map[r["toLink"]]
+    junction_priority, signal_plans = _infer_junction_priority_and_signals(
+        nodes, links, crossings=crossings
+    )
     main_network, spawn_points = _compute_main_network_and_spawns(links, restrictions)
     lane_connections = _build_lane_connections(links, restrictions)
 
@@ -926,7 +1037,7 @@ def build_roadpack(
     ]
 
     pack: dict[str, Any] = {
-        "packFormatVersion": "0.5",
+        "packFormatVersion": "0.6",
         "packId": config["pack_id"],
         "displayName": config["display_name"],
         "country": config["country"],

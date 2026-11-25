@@ -1,0 +1,770 @@
+{
+  "pedRoutesFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-centre",
+  "routes": [
+    {
+      "id": "ped_x_01",
+      "points": [
+        [
+          -119.92,
+          -302.16
+        ],
+        [
+          -90.75,
+          -246.8
+        ],
+        [
+          -79.46,
+          -252.73
+        ],
+        [
+          -108.64,
+          -308.11
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1111820897",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_02",
+      "points": [
+        [
+          -76.29,
+          -233.02
+        ],
+        [
+          -65.08,
+          -237.74
+        ],
+        [
+          -68.76,
+          -246.5
+        ],
+        [
+          -79.97,
+          -241.78
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1332657463",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_03",
+      "points": [
+        [
+          -217.56,
+          -96.27
+        ],
+        [
+          -220.15,
+          -84.03
+        ],
+        [
+          -210.86,
+          -82.06
+        ],
+        [
+          -208.27,
+          -94.3
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333392202",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_04",
+      "points": [
+        [
+          -208.09,
+          -138.83
+        ],
+        [
+          -215.48,
+          -106.42
+        ],
+        [
+          -206.22,
+          -104.31
+        ],
+        [
+          -198.83,
+          -136.71
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333392353",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_05",
+      "points": [
+        [
+          -211.79,
+          -99.9
+        ],
+        [
+          -223.36,
+          -102.72
+        ],
+        [
+          -225.62,
+          -93.49
+        ],
+        [
+          -214.04,
+          -90.67
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333392374",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_06",
+      "points": [
+        [
+          -159.43,
+          -87.24
+        ],
+        [
+          -198.79,
+          -96.72
+        ],
+        [
+          -201.01,
+          -87.48
+        ],
+        [
+          -161.66,
+          -78.0
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333392407",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_07",
+      "points": [
+        [
+          -172.71,
+          -211.85
+        ],
+        [
+          -193.27,
+          -209.26
+        ],
+        [
+          -192.08,
+          -199.84
+        ],
+        [
+          -171.52,
+          -202.43
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333392451",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_08",
+      "points": [
+        [
+          -36.32,
+          -59.65
+        ],
+        [
+          -49.49,
+          -62.17
+        ],
+        [
+          -51.28,
+          -52.84
+        ],
+        [
+          -38.11,
+          -50.32
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333415742",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_09",
+      "points": [
+        [
+          -40.69,
+          -39.7
+        ],
+        [
+          -37.82,
+          -43.22
+        ],
+        [
+          -42.65,
+          -47.16
+        ],
+        [
+          -45.52,
+          -43.65
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1333415745",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_10",
+      "points": [
+        [
+          376.96,
+          46.54
+        ],
+        [
+          369.3,
+          63.07
+        ],
+        [
+          377.92,
+          67.06
+        ],
+        [
+          385.58,
+          50.53
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1538172795",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_11",
+      "points": [
+        [
+          405.59,
+          254.95
+        ],
+        [
+          408.06,
+          251.55
+        ],
+        [
+          400.36,
+          245.97
+        ],
+        [
+          397.9,
+          249.37
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1538172906",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_12",
+      "points": [
+        [
+          360.88,
+          213.81
+        ],
+        [
+          362.37,
+          218.36
+        ],
+        [
+          371.4,
+          215.41
+        ],
+        [
+          369.91,
+          210.85
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1538267567",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_13",
+      "points": [
+        [
+          121.06,
+          374.44
+        ],
+        [
+          124.96,
+          379.76
+        ],
+        [
+          129.99,
+          376.07
+        ],
+        [
+          126.09,
+          370.75
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1619293837",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_14",
+      "points": [
+        [
+          -309.35,
+          176.29
+        ],
+        [
+          -277.66,
+          185.27
+        ],
+        [
+          -274.18,
+          172.99
+        ],
+        [
+          -305.87,
+          164.02
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1620648797",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_15",
+      "points": [
+        [
+          -359.28,
+          -456.34
+        ],
+        [
+          -354.78,
+          -453.1
+        ],
+        [
+          -351.14,
+          -458.17
+        ],
+        [
+          -355.64,
+          -461.41
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1621493199",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_16",
+      "points": [
+        [
+          204.02,
+          -356.67
+        ],
+        [
+          214.98,
+          -341.87
+        ],
+        [
+          222.61,
+          -347.52
+        ],
+        [
+          211.66,
+          -362.32
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1621822917",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_17",
+      "points": [
+        [
+          -385.44,
+          -86.36
+        ],
+        [
+          -384.79,
+          -88.93
+        ],
+        [
+          -393.99,
+          -91.29
+        ],
+        [
+          -394.65,
+          -88.71
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_1695935483",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_18",
+      "points": [
+        [
+          381.17,
+          43.78
+        ],
+        [
+          360.52,
+          44.63
+        ],
+        [
+          361.05,
+          54.12
+        ],
+        [
+          381.38,
+          53.28
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_201409410",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_19",
+      "points": [
+        [
+          181.86,
+          -351.07
+        ],
+        [
+          187.34,
+          -350.71
+        ],
+        [
+          187.75,
+          -356.94
+        ],
+        [
+          182.27,
+          -357.3
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_2030489953",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_20",
+      "points": [
+        [
+          116.91,
+          312.92
+        ],
+        [
+          -70.63,
+          214.11
+        ],
+        [
+          -77.93,
+          224.57
+        ],
+        [
+          116.83,
+          325.68
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_214971",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_21",
+      "points": [
+        [
+          429.84,
+          236.14
+        ],
+        [
+          426.73,
+          224.06
+        ],
+        [
+          414.09,
+          225.81
+        ],
+        [
+          418.11,
+          241.17
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_247761920",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_x_22",
+      "points": [
+        [
+          456.51,
+          65.2
+        ],
+        [
+          397.6,
+          48.16
+        ],
+        [
+          394.96,
+          57.28
+        ],
+        [
+          454.12,
+          74.39
+        ]
+      ],
+      "crossings": [
+        {
+          "crossingId": "x_270914879",
+          "fromIndex": 1,
+          "toIndex": 2
+        }
+      ],
+      "mouthCrossings": []
+    },
+    {
+      "id": "ped_h2_23",
+      "points": [
+        [
+          -273.7,
+          334.81
+        ],
+        [
+          -274.74,
+          328.65
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_1002882978",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ped_h2_24",
+      "points": [
+        [
+          -405.55,
+          -473.06
+        ],
+        [
+          -396.42,
+          -470.43
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_1012606620",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ped_h2_25",
+      "points": [
+        [
+          -162.05,
+          -423.79
+        ],
+        [
+          -171.54,
+          -424.23
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_1169117787",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ped_h2_26",
+      "points": [
+        [
+          -440.34,
+          316.86
+        ],
+        [
+          -435.49,
+          308.69
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_15404314",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ped_h2_27",
+      "points": [
+        [
+          153.92,
+          408.21
+        ],
+        [
+          147.76,
+          407.22
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_1619293844",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    },
+    {
+      "id": "ped_h2_28",
+      "points": [
+        [
+          -338.72,
+          -491.28
+        ],
+        [
+          -333.4,
+          -488.04
+        ]
+      ],
+      "crossings": [],
+      "mouthCrossings": [
+        {
+          "nodeId": "n_1621493184",
+          "fromIndex": 0,
+          "toIndex": 1
+        }
+      ]
+    }
+  ]
+}

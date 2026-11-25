@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.5",
+  "packFormatVersion": "0.6",
   "packId": "gb-wolverhampton-centre",
   "displayName": "Wolverhampton City Centre",
   "country": "GB",
@@ -451,13 +451,6 @@
       "osmId": 438468
     },
     {
-      "id": "n_438470",
-      "x": 140.985,
-      "z": 434.545,
-      "kind": "junction",
-      "osmId": 438470
-    },
-    {
       "id": "n_438476",
       "x": 159.796,
       "z": 278.254,
@@ -730,32 +723,11 @@
       "osmId": 59764486
     },
     {
-      "id": "n_154780294",
-      "x": 219.69,
-      "z": 66.371,
-      "kind": "junction",
-      "osmId": 154780294
-    },
-    {
-      "id": "n_154780712",
-      "x": -0.42,
-      "z": -44.356,
-      "kind": "junction",
-      "osmId": 154780712
-    },
-    {
       "id": "n_154780713",
       "x": -37.217,
       "z": -54.983,
       "kind": "junction",
       "osmId": 154780713
-    },
-    {
-      "id": "n_154780715",
-      "x": -92.87,
-      "z": -67.078,
-      "kind": "junction",
-      "osmId": 154780715
     },
     {
       "id": "n_154780717",
@@ -822,13 +794,6 @@
       "kind": "end",
       "osmId": 201434885,
       "trafficSignals": true
-    },
-    {
-      "id": "n_201442100",
-      "x": 227.758,
-      "z": 25.221,
-      "kind": "junction",
-      "osmId": 201442100
     },
     {
       "id": "n_201972258",
@@ -1176,13 +1141,6 @@
       "osmId": 244244946
     },
     {
-      "id": "n_244397684",
-      "x": 230.491,
-      "z": -308.28,
-      "kind": "junction",
-      "osmId": 244397684
-    },
-    {
       "id": "n_244397719",
       "x": 270.103,
       "z": -559.233,
@@ -1382,13 +1340,6 @@
       "osmId": 280083592
     },
     {
-      "id": "n_280083596",
-      "x": 437.167,
-      "z": 264.918,
-      "kind": "junction",
-      "osmId": 280083596
-    },
-    {
       "id": "n_280083597",
       "x": 456.266,
       "z": 267.379,
@@ -1559,13 +1510,6 @@
       "osmId": 295901974
     },
     {
-      "id": "n_295901975",
-      "x": -82.532,
-      "z": 22.557,
-      "kind": "junction",
-      "osmId": 295901975
-    },
-    {
       "id": "n_295901978",
       "x": -89.843,
       "z": 131.476,
@@ -1634,20 +1578,6 @@
       "z": 103.453,
       "kind": "junction",
       "osmId": 540700196
-    },
-    {
-      "id": "n_552250039",
-      "x": -320.734,
-      "z": -389.809,
-      "kind": "junction",
-      "osmId": 552250039
-    },
-    {
-      "id": "n_552250062",
-      "x": -335.235,
-      "z": -412.709,
-      "kind": "junction",
-      "osmId": 552250062
     },
     {
       "id": "n_565562316",
@@ -1827,13 +1757,6 @@
       "osmId": 992455310
     },
     {
-      "id": "n_992779014",
-      "x": -290.554,
-      "z": -443.058,
-      "kind": "junction",
-      "osmId": 992779014
-    },
-    {
       "id": "n_992779034",
       "x": -327.981,
       "z": -303.29,
@@ -1935,13 +1858,6 @@
       "osmId": 1007478105
     },
     {
-      "id": "n_1011031095",
-      "x": 143.675,
-      "z": -242.006,
-      "kind": "junction",
-      "osmId": 1011031095
-    },
-    {
       "id": "n_1011058986",
       "x": -76.199,
       "z": -231.959,
@@ -2038,20 +1954,6 @@
       "z": -80.621,
       "kind": "end",
       "osmId": 1332602060
-    },
-    {
-      "id": "n_1332657323",
-      "x": -176.243,
-      "z": -227.372,
-      "kind": "junction",
-      "osmId": 1332657323
-    },
-    {
-      "id": "n_1332657357",
-      "x": -173.287,
-      "z": -213.195,
-      "kind": "junction",
-      "osmId": 1332657357
     },
     {
       "id": "n_1332657463",
@@ -2239,34 +2141,6 @@
       "z": 15.103,
       "kind": "junction",
       "osmId": 1538172599
-    },
-    {
-      "id": "n_1538172625",
-      "x": 434.322,
-      "z": -56.288,
-      "kind": "junction",
-      "osmId": 1538172625
-    },
-    {
-      "id": "n_1538172631",
-      "x": 431.108,
-      "z": -40.297,
-      "kind": "junction",
-      "osmId": 1538172631
-    },
-    {
-      "id": "n_1538172643",
-      "x": 460.274,
-      "z": -51.79,
-      "kind": "junction",
-      "osmId": 1538172643
-    },
-    {
-      "id": "n_1538172655",
-      "x": 469.98,
-      "z": -52.212,
-      "kind": "junction",
-      "osmId": 1538172655
     },
     {
       "id": "n_1538172795",
@@ -2477,13 +2351,6 @@
       "z": -468.891,
       "kind": "junction",
       "osmId": 1621822791
-    },
-    {
-      "id": "n_1621822795",
-      "x": -150.785,
-      "z": -463.873,
-      "kind": "junction",
-      "osmId": 1621822795
     },
     {
       "id": "n_1621822836",
@@ -2803,13 +2670,6 @@
       "osmId": 2297683590
     },
     {
-      "id": "n_2297683615",
-      "x": 484.662,
-      "z": 272.222,
-      "kind": "junction",
-      "osmId": 2297683615
-    },
-    {
       "id": "n_2418996321",
       "x": -343.087,
       "z": -67.623,
@@ -2882,104 +2742,6 @@
       "kind": "end",
       "osmId": 2418996383,
       "giveWay": true
-    },
-    {
-      "id": "n_2935368327",
-      "x": 434.435,
-      "z": -107.965,
-      "kind": "junction",
-      "osmId": 2935368327
-    },
-    {
-      "id": "n_2935368328",
-      "x": 468.711,
-      "z": -107.194,
-      "kind": "junction",
-      "osmId": 2935368328
-    },
-    {
-      "id": "n_2935368329",
-      "x": 444.527,
-      "z": -107.019,
-      "kind": "junction",
-      "osmId": 2935368329
-    },
-    {
-      "id": "n_2935368331",
-      "x": 477.257,
-      "z": -103.477,
-      "kind": "junction",
-      "osmId": 2935368331
-    },
-    {
-      "id": "n_2935368332",
-      "x": 467.246,
-      "z": -96.946,
-      "kind": "junction",
-      "osmId": 2935368332
-    },
-    {
-      "id": "n_2935368334",
-      "x": 432.096,
-      "z": -93.499,
-      "kind": "junction",
-      "osmId": 2935368334
-    },
-    {
-      "id": "n_2935368335",
-      "x": 440.574,
-      "z": -87.389,
-      "kind": "junction",
-      "osmId": 2935368335
-    },
-    {
-      "id": "n_2935368337",
-      "x": 465.32,
-      "z": -84.082,
-      "kind": "junction",
-      "osmId": 2935368337
-    },
-    {
-      "id": "n_2935368338",
-      "x": 474.239,
-      "z": -83.836,
-      "kind": "junction",
-      "osmId": 2935368338
-    },
-    {
-      "id": "n_2935368339",
-      "x": 428.387,
-      "z": -76.007,
-      "kind": "junction",
-      "osmId": 2935368339
-    },
-    {
-      "id": "n_2935368340",
-      "x": 437.062,
-      "z": -70.72,
-      "kind": "junction",
-      "osmId": 2935368340
-    },
-    {
-      "id": "n_2935368341",
-      "x": 463.082,
-      "z": -68.403,
-      "kind": "junction",
-      "osmId": 2935368341
-    },
-    {
-      "id": "n_2935368342",
-      "x": 472.15,
-      "z": -67.813,
-      "kind": "junction",
-      "osmId": 2935368342
-    },
-    {
-      "id": "n_2935368343",
-      "x": 425.172,
-      "z": -60.328,
-      "kind": "junction",
-      "osmId": 2935368343
     },
     {
       "id": "n_2955448892",
@@ -3149,13 +2911,6 @@
       "osmId": 3830953990
     },
     {
-      "id": "n_3929131092",
-      "x": -142.697,
-      "z": 277.853,
-      "kind": "junction",
-      "osmId": 3929131092
-    },
-    {
       "id": "n_3929131095",
       "x": -151.887,
       "z": 292.809,
@@ -3168,13 +2923,6 @@
       "z": 426.747,
       "kind": "junction",
       "osmId": 3929131111
-    },
-    {
-      "id": "n_4710007285",
-      "x": 498.975,
-      "z": 84.809,
-      "kind": "junction",
-      "osmId": 4710007285
     },
     {
       "id": "n_4710007286",
@@ -3210,13 +2958,6 @@
       "z": 259.983,
       "kind": "junction",
       "osmId": 4832257641
-    },
-    {
-      "id": "n_4832257642",
-      "x": 9.211,
-      "z": -39.025,
-      "kind": "junction",
-      "osmId": 4832257642
     },
     {
       "id": "n_4981561691",
@@ -3553,13 +3294,6 @@
       "osmId": 5278574244
     },
     {
-      "id": "n_5278574256",
-      "x": -295.418,
-      "z": -394.239,
-      "kind": "end",
-      "osmId": 5278574256
-    },
-    {
       "id": "n_5278574261",
       "x": -262.358,
       "z": -231.029,
@@ -3836,13 +3570,6 @@
       "osmId": 5928464562
     },
     {
-      "id": "n_5933391010",
-      "x": -172.215,
-      "z": 4.042,
-      "kind": "junction",
-      "osmId": 5933391010
-    },
-    {
       "id": "n_6053242780",
       "x": 116.868,
       "z": 319.304,
@@ -3885,25 +3612,11 @@
       "osmId": 6183725492
     },
     {
-      "id": "n_6183952523",
-      "x": -483.628,
-      "z": -97.044,
-      "kind": "junction",
-      "osmId": 6183952523
-    },
-    {
       "id": "n_6183952526",
       "x": -591.534,
       "z": -61.301,
       "kind": "end",
       "osmId": 6183952526
-    },
-    {
-      "id": "n_6183952530",
-      "x": -486.658,
-      "z": -97.745,
-      "kind": "junction",
-      "osmId": 6183952530
     },
     {
       "id": "n_6183952540",
@@ -3949,25 +3662,11 @@
       "osmId": 6416777364
     },
     {
-      "id": "n_6419971897",
-      "x": 390.44,
-      "z": 479.86,
-      "kind": "junction",
-      "osmId": 6419971897
-    },
-    {
       "id": "n_6419971899",
       "x": 359.26,
       "z": 469.074,
       "kind": "junction",
       "osmId": 6419971899
-    },
-    {
-      "id": "n_6468948517",
-      "x": 338.922,
-      "z": 470.442,
-      "kind": "junction",
-      "osmId": 6468948517
     },
     {
       "id": "n_6753869548",
@@ -4117,25 +3816,11 @@
       "osmId": 7237631450
     },
     {
-      "id": "n_7237631451",
-      "x": 22.552,
-      "z": -487.744,
-      "kind": "junction",
-      "osmId": 7237631451
-    },
-    {
       "id": "n_7237631452",
       "x": 39.728,
       "z": -488.412,
       "kind": "junction",
       "osmId": 7237631452
-    },
-    {
-      "id": "n_7237631453",
-      "x": 32.543,
-      "z": -488.178,
-      "kind": "junction",
-      "osmId": 7237631453
     },
     {
       "id": "n_7237631454",
@@ -4223,53 +3908,11 @@
       "osmId": 7237678499
     },
     {
-      "id": "n_7237678500",
-      "x": -141.218,
-      "z": -149.367,
-      "kind": "junction",
-      "osmId": 7237678500
-    },
-    {
-      "id": "n_7237678501",
-      "x": -139.788,
-      "z": -146.351,
-      "kind": "junction",
-      "osmId": 7237678501
-    },
-    {
       "id": "n_7237678502",
       "x": -142.072,
       "z": -122.66,
       "kind": "end",
       "osmId": 7237678502
-    },
-    {
-      "id": "n_7237678504",
-      "x": -150.248,
-      "z": -204.65,
-      "kind": "junction",
-      "osmId": 7237678504
-    },
-    {
-      "id": "n_7237678505",
-      "x": -142.073,
-      "z": -156.589,
-      "kind": "junction",
-      "osmId": 7237678505
-    },
-    {
-      "id": "n_7237678516",
-      "x": -173.893,
-      "z": -277.792,
-      "kind": "junction",
-      "osmId": 7237678516
-    },
-    {
-      "id": "n_7237678517",
-      "x": -165.872,
-      "z": -228.708,
-      "kind": "junction",
-      "osmId": 7237678517
     },
     {
       "id": "n_7237678518",
@@ -4291,13 +3934,6 @@
       "z": -220.986,
       "kind": "end",
       "osmId": 7237678542
-    },
-    {
-      "id": "n_7237678544",
-      "x": -315.146,
-      "z": -229.19,
-      "kind": "junction",
-      "osmId": 7237678544
     },
     {
       "id": "n_7237730023",
@@ -4347,27 +3983,6 @@
       "z": -503.957,
       "kind": "end",
       "osmId": 7241048585
-    },
-    {
-      "id": "n_7241048588",
-      "x": 48.364,
-      "z": -492.774,
-      "kind": "junction",
-      "osmId": 7241048588
-    },
-    {
-      "id": "n_7241048589",
-      "x": 58.681,
-      "z": -492.885,
-      "kind": "junction",
-      "osmId": 7241048589
-    },
-    {
-      "id": "n_7241048592",
-      "x": 69.33,
-      "z": -488.812,
-      "kind": "junction",
-      "osmId": 7241048592
     },
     {
       "id": "n_7241048609",
@@ -4742,13 +4357,6 @@
       "osmId": 7246237164
     },
     {
-      "id": "n_7246403396",
-      "x": 279.276,
-      "z": -227.256,
-      "kind": "junction",
-      "osmId": 7246403396
-    },
-    {
       "id": "n_7246403397",
       "x": 357.644,
       "z": -234.918,
@@ -4791,13 +4399,6 @@
       "osmId": 7246403411
     },
     {
-      "id": "n_7246403412",
-      "x": 303.148,
-      "z": -112.705,
-      "kind": "junction",
-      "osmId": 7246403412
-    },
-    {
       "id": "n_7246403414",
       "x": 390.984,
       "z": -134.342,
@@ -4831,20 +4432,6 @@
       "z": -151.602,
       "kind": "junction",
       "osmId": 7246403430
-    },
-    {
-      "id": "n_7248730482",
-      "x": 473.071,
-      "z": -476.916,
-      "kind": "junction",
-      "osmId": 7248730482
-    },
-    {
-      "id": "n_7248730484",
-      "x": 475.7,
-      "z": -469.883,
-      "kind": "junction",
-      "osmId": 7248730484
     },
     {
       "id": "n_7248871991",
@@ -5048,48 +4635,6 @@
       "z": -164.898,
       "kind": "end",
       "osmId": 7933802058
-    },
-    {
-      "id": "n_7947558449",
-      "x": 300.098,
-      "z": -228.345,
-      "kind": "junction",
-      "osmId": 7947558449
-    },
-    {
-      "id": "n_7947558451",
-      "x": 352.988,
-      "z": -334.512,
-      "kind": "junction",
-      "osmId": 7947558451
-    },
-    {
-      "id": "n_7947858279",
-      "x": 75.93,
-      "z": -356.346,
-      "kind": "junction",
-      "osmId": 7947858279
-    },
-    {
-      "id": "n_7948796384",
-      "x": 218.826,
-      "z": -144.112,
-      "kind": "junction",
-      "osmId": 7948796384
-    },
-    {
-      "id": "n_7956224390",
-      "x": 106.83,
-      "z": 22.001,
-      "kind": "junction",
-      "osmId": 7956224390
-    },
-    {
-      "id": "n_7956406227",
-      "x": 151.644,
-      "z": 43.034,
-      "kind": "junction",
-      "osmId": 7956406227
     },
     {
       "id": "n_8076192025",
@@ -5620,13 +5165,6 @@
       "osmId": 8079304386
     },
     {
-      "id": "n_8079342740",
-      "x": 125.73,
-      "z": 126.125,
-      "kind": "junction",
-      "osmId": 8079342740
-    },
-    {
       "id": "n_8079342778",
       "x": 128.493,
       "z": 228.323,
@@ -5676,13 +5214,6 @@
       "osmId": 8090626665
     },
     {
-      "id": "n_8090626666",
-      "x": 116.56,
-      "z": -437.423,
-      "kind": "junction",
-      "osmId": 8090626666
-    },
-    {
       "id": "n_8090626667",
       "x": 116.513,
       "z": -445.135,
@@ -5716,13 +5247,6 @@
       "z": -444.132,
       "kind": "junction",
       "osmId": 8090640540
-    },
-    {
-      "id": "n_8090640552",
-      "x": 137.336,
-      "z": -436.065,
-      "kind": "junction",
-      "osmId": 8090640552
     },
     {
       "id": "n_8091111781",
@@ -5836,13 +5360,6 @@
       "osmId": 8097322200
     },
     {
-      "id": "n_8097322201",
-      "x": 364.963,
-      "z": 148.626,
-      "kind": "junction",
-      "osmId": 8097322201
-    },
-    {
       "id": "n_8097322205",
       "x": 398.214,
       "z": 149.419,
@@ -5862,13 +5379,6 @@
       "z": 442.407,
       "kind": "junction",
       "osmId": 8108977419
-    },
-    {
-      "id": "n_8115253858",
-      "x": -117.61,
-      "z": 158.128,
-      "kind": "junction",
-      "osmId": 8115253858
     },
     {
       "id": "n_8115253860",
@@ -6018,13 +5528,6 @@
       "osmId": 8132960125
     },
     {
-      "id": "n_8132960126",
-      "x": 218.831,
-      "z": 485.19,
-      "kind": "junction",
-      "osmId": 8132960126
-    },
-    {
       "id": "n_8132960127",
       "x": 231.369,
       "z": 490.755,
@@ -6072,13 +5575,6 @@
       "z": -126.298,
       "kind": "junction",
       "osmId": 8148726952
-    },
-    {
-      "id": "n_8148726953",
-      "x": -501.086,
-      "z": -144.102,
-      "kind": "junction",
-      "osmId": 8148726953
     },
     {
       "id": "n_8148726954",
@@ -6193,13 +5689,6 @@
       "osmId": 8167939750
     },
     {
-      "id": "n_8168546599",
-      "x": 337.723,
-      "z": 164.926,
-      "kind": "junction",
-      "osmId": 8168546599
-    },
-    {
       "id": "n_8168627087",
       "x": -74.727,
       "z": 255.585,
@@ -6284,13 +5773,6 @@
       "osmId": 8168737548
     },
     {
-      "id": "n_8169169524",
-      "x": 312.729,
-      "z": -170.78,
-      "kind": "junction",
-      "osmId": 8169169524
-    },
-    {
       "id": "n_8169183399",
       "x": 354.402,
       "z": -207.61,
@@ -6324,13 +5806,6 @@
       "z": -372.375,
       "kind": "end",
       "osmId": 8175306387
-    },
-    {
-      "id": "n_8175315444",
-      "x": 364.067,
-      "z": -286.528,
-      "kind": "junction",
-      "osmId": 8175315444
     },
     {
       "id": "n_8175315445",
@@ -6634,13 +6109,6 @@
       "osmId": 8203969915
     },
     {
-      "id": "n_8211822419",
-      "x": 178.906,
-      "z": 168.245,
-      "kind": "junction",
-      "osmId": 8211822419
-    },
-    {
       "id": "n_8238890559",
       "x": -451.71,
       "z": -229.346,
@@ -6745,20 +6213,6 @@
       "kind": "end",
       "osmId": 12559991292,
       "trafficSignals": true
-    },
-    {
-      "id": "n_13891645298",
-      "x": 467.93,
-      "z": 261.115,
-      "kind": "junction",
-      "osmId": 13891645298
-    },
-    {
-      "id": "n_13891645299",
-      "x": 470.466,
-      "z": 253.771,
-      "kind": "junction",
-      "osmId": 13891645299
     },
     {
       "id": "n_13891657302",
@@ -7055,40 +6509,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_1058854041_0",
-      "from": "n_154780715",
-      "to": "n_244223480",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          -92.87,
-          -67.078
-        ],
-        [
-          -123.262,
-          -73.854
-        ],
-        [
-          -160.547,
-          -82.622
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 1058854041,
-      "name": "Darlington Street",
-      "inMainNetwork": true
-    },
-    {
       "id": "l_109182580_0",
       "from": "n_1250582095",
       "to": "n_18236722",
@@ -7218,7 +6638,7 @@
     {
       "id": "l_118446711_0",
       "from": "n_244397723",
-      "to": "n_7948796384",
+      "to": "n_244397720",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -7229,6 +6649,10 @@
         [
           218.826,
           -144.112
+        ],
+        [
+          216.168,
+          -132.405
         ]
       ],
       "speedLimitMph": 20,
@@ -7290,7 +6714,7 @@
     {
       "id": "l_118496186_1",
       "from": "n_7237678522",
-      "to": "n_1332657323",
+      "to": "n_1332657697",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -7309,6 +6733,14 @@
         [
           -176.243,
           -227.372
+        ],
+        [
+          -173.287,
+          -213.195
+        ],
+        [
+          -172.114,
+          -207.142
         ]
       ],
       "speedLimitMph": 30,
@@ -7357,36 +6789,6 @@
       "sidewalkSource": "default",
       "osmWayId": 118708993,
       "inMainNetwork": false
-    },
-    {
-      "id": "l_118716556_0",
-      "from": "n_201442100",
-      "to": "n_992426177",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          227.758,
-          25.221
-        ],
-        [
-          209.883,
-          63.545
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 118716556,
-      "name": "Princess Street",
-      "inMainNetwork": true
     },
     {
       "id": "l_123075131_0",
@@ -7456,36 +6858,6 @@
       "osmWayId": 123075131,
       "name": "Chapel Ash Island",
       "ref": "A4150",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_1242995331_0",
-      "from": "n_8168546599",
-      "to": "n_18834324",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          337.723,
-          164.926
-        ],
-        [
-          335.289,
-          176.421
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 1242995331,
-      "name": "Fryer Street",
       "inMainNetwork": true
     },
     {
@@ -7910,40 +7282,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_135964083_0",
-      "from": "n_4710007285",
-      "to": "n_282880356",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          498.975,
-          84.809
-        ],
-        [
-          507.209,
-          87.814
-        ],
-        [
-          509.812,
-          89.55
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 135964083,
-      "name": "Railway Drive",
-      "inMainNetwork": false
-    },
-    {
       "id": "l_135964084_0",
       "from": "n_18834324",
       "to": "n_1492243150",
@@ -8315,152 +7653,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_140385487_0",
-      "from": "n_1538172643",
-      "to": "n_1538172655",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          460.274,
-          -51.79
-        ],
-        [
-          456.239,
-          -25.428
-        ],
-        [
-          456.211,
-          -23.848
-        ],
-        [
-          456.679,
-          -22.346
-        ],
-        [
-          457.587,
-          -21.055
-        ],
-        [
-          458.861,
-          -20.131
-        ],
-        [
-          460.366,
-          -19.63
-        ],
-        [
-          461.945,
-          -19.641
-        ],
-        [
-          463.443,
-          -20.131
-        ],
-        [
-          464.711,
-          -21.076
-        ],
-        [
-          465.619,
-          -22.367
-        ],
-        [
-          466.073,
-          -23.869
-        ],
-        [
-          467.965,
-          -36.699
-        ],
-        [
-          469.98,
-          -52.212
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 140385487,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_140385489_0",
-      "from": "n_2935368343",
-      "to": "n_1538172631",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          425.172,
-          -60.328
-        ],
-        [
-          421.463,
-          -42.379
-        ],
-        [
-          421.24,
-          -40.276
-        ],
-        [
-          421.707,
-          -38.773
-        ],
-        [
-          422.622,
-          -37.494
-        ],
-        [
-          423.889,
-          -36.559
-        ],
-        [
-          425.394,
-          -36.069
-        ],
-        [
-          426.973,
-          -36.069
-        ],
-        [
-          428.471,
-          -36.57
-        ],
-        [
-          429.739,
-          -37.504
-        ],
-        [
-          430.647,
-          -38.795
-        ],
-        [
-          431.108,
-          -40.297
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 140385489,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_140653958_0",
       "from": "n_4710007286",
       "to": "n_201409410",
@@ -8501,7 +7693,7 @@
     {
       "id": "l_140653958_1",
       "from": "n_201409410",
-      "to": "n_154780294",
+      "to": "n_992426177",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -8548,6 +7740,14 @@
         [
           219.69,
           66.371
+        ],
+        [
+          214.255,
+          64.802
+        ],
+        [
+          209.883,
+          63.545
         ]
       ],
       "speedLimitMph": 20,
@@ -9004,7 +8204,7 @@
     {
       "id": "l_148868368_0",
       "from": "n_992426094",
-      "to": "n_438470",
+      "to": "n_460051777",
       "roadClass": "trunk",
       "oneway": true,
       "geometry": [
@@ -9023,6 +8223,42 @@
         [
           140.985,
           434.545
+        ],
+        [
+          141.683,
+          440.253
+        ],
+        [
+          142.55,
+          446.763
+        ],
+        [
+          143.973,
+          457.012
+        ],
+        [
+          145.551,
+          466.593
+        ],
+        [
+          148.289,
+          482.84
+        ],
+        [
+          151.819,
+          504.016
+        ],
+        [
+          156.488,
+          533.138
+        ],
+        [
+          162.016,
+          574.734
+        ],
+        [
+          165.919,
+          598.525
         ]
       ],
       "speedLimitMph": 40,
@@ -9349,7 +8585,7 @@
     {
       "id": "l_149038892_0",
       "from": "n_280083592",
-      "to": "n_280083596",
+      "to": "n_280083597",
       "roadClass": "primary",
       "oneway": true,
       "geometry": [
@@ -9364,6 +8600,18 @@
         [
           437.167,
           264.918
+        ],
+        [
+          443.531,
+          266.599
+        ],
+        [
+          450.037,
+          267.223
+        ],
+        [
+          456.266,
+          267.379
         ]
       ],
       "speedLimitMph": 30,
@@ -9947,138 +9195,6 @@
       "osmWayId": 149160142,
       "name": "Fold Street",
       "inMainNetwork": true
-    },
-    {
-      "id": "l_149160150_0",
-      "from": "n_552250062",
-      "to": "n_552250039",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -335.235,
-          -412.709
-        ],
-        [
-          -320.734,
-          -389.809
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 149160150,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_149166955_0",
-      "from": "n_1621822795",
-      "to": "n_201972275",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          -150.785,
-          -463.873
-        ],
-        [
-          -164.275,
-          -480.386
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "default",
-      "osmWayId": 149166955,
-      "name": "Temple Street",
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_149166964_0",
-      "from": "n_1011031095",
-      "to": "n_1621822930",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          143.675,
-          -242.006
-        ],
-        [
-          145.783,
-          -246.157
-        ],
-        [
-          145.708,
-          -252.589
-        ],
-        [
-          140.828,
-          -256.406
-        ],
-        [
-          132.424,
-          -259.177
-        ],
-        [
-          121.321,
-          -263.294
-        ],
-        [
-          111.344,
-          -263.818
-        ],
-        [
-          103.088,
-          -263.673
-        ],
-        [
-          97.761,
-          -262.85
-        ],
-        [
-          92.738,
-          -263.072
-        ],
-        [
-          89.661,
-          -264.797
-        ],
-        [
-          84.482,
-          -274.223
-        ],
-        [
-          78.796,
-          -291.415
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 149166964,
-      "inMainNetwork": false
     },
     {
       "id": "l_149166968_0",
@@ -11111,12 +10227,24 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_1524058084_0",
-      "from": "n_13891645299",
+      "id": "l_1524058085_0",
+      "from": "n_13891657307",
       "to": "n_13891657302",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
+        [
+          467.103,
+          267.758
+        ],
+        [
+          467.788,
+          262.528
+        ],
+        [
+          467.93,
+          261.115
+        ],
         [
           470.466,
           253.771
@@ -11144,69 +10272,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 1524058084,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_1524058085_0",
-      "from": "n_13891657307",
-      "to": "n_13891645298",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          467.103,
-          267.758
-        ],
-        [
-          467.788,
-          262.528
-        ],
-        [
-          467.93,
-          261.115
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
       "osmWayId": 1524058085,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_1524058086_0",
-      "from": "n_13891645298",
-      "to": "n_13891645299",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          467.93,
-          261.115
-        ],
-        [
-          470.466,
-          253.771
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 1524058086,
       "inMainNetwork": false
     },
     {
@@ -11557,7 +10623,7 @@
     {
       "id": "l_15534450_2",
       "from": "n_5183020588",
-      "to": "n_154780715",
+      "to": "n_244223480",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -11568,6 +10634,14 @@
         [
           -92.87,
           -67.078
+        ],
+        [
+          -123.262,
+          -73.854
+        ],
+        [
+          -160.547,
+          -82.622
         ]
       ],
       "speedLimitMph": 20,
@@ -11582,44 +10656,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 15534450,
       "name": "Darlington Street",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_15534580_0",
-      "from": "n_154780712",
-      "to": "n_5183020590",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          -0.42,
-          -44.356
-        ],
-        [
-          -14.111,
-          -50.331
-        ],
-        [
-          -19.147,
-          -51.355
-        ],
-        [
-          -27.694,
-          -53.035
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 15534580,
-      "name": "Queen Square",
       "inMainNetwork": true
     },
     {
@@ -13404,41 +12440,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_220679428_0",
-      "from": "n_2297683615",
-      "to": "n_280083639",
-      "roadClass": "primary",
-      "oneway": false,
-      "geometry": [
-        [
-          484.662,
-          272.222
-        ],
-        [
-          501.686,
-          277.465
-        ],
-        [
-          520.825,
-          282.72
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 220679428,
-      "name": "Wednesfield Road",
-      "ref": "A4124",
-      "inMainNetwork": false
-    },
-    {
       "id": "l_22329181_0",
       "from": "n_7248871994",
       "to": "n_7248871991",
@@ -14347,7 +13348,7 @@
     {
       "id": "l_22757741_0",
       "from": "n_244223506",
-      "to": "n_295901975",
+      "to": "n_244223509",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -14362,6 +13363,10 @@
         [
           -82.532,
           22.557
+        ],
+        [
+          -82.437,
+          21.934
         ]
       ],
       "speedLimitMph": 20,
@@ -14788,7 +13793,7 @@
     {
       "id": "l_22757767_5",
       "from": "n_7237671781",
-      "to": "n_992779014",
+      "to": "n_244227057",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -14811,6 +13816,14 @@
         [
           -290.554,
           -443.058
+        ],
+        [
+          -283.213,
+          -443.459
+        ],
+        [
+          -260.302,
+          -437.985
         ]
       ],
       "speedLimitMph": 20,
@@ -15600,36 +14613,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_22779028_0",
-      "from": "n_7947558451",
-      "to": "n_271960",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          352.988,
-          -334.512
-        ],
-        [
-          352.867,
-          -351.794
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 22779028,
-      "name": "St George's Parade",
-      "inMainNetwork": false
-    },
-    {
       "id": "l_22779028_1",
       "from": "n_271960",
       "to": "n_8076302038",
@@ -16168,7 +15151,7 @@
     {
       "id": "l_22779053_5",
       "from": "n_8097322200",
-      "to": "n_8168546599",
+      "to": "n_18834324",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -16183,6 +15166,10 @@
         [
           337.723,
           164.926
+        ],
+        [
+          335.289,
+          176.421
         ]
       ],
       "speedLimitMph": 20,
@@ -16690,7 +15677,7 @@
     {
       "id": "l_22801795_0",
       "from": "n_155021143",
-      "to": "n_4710007285",
+      "to": "n_282880356",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -16701,6 +15688,14 @@
         [
           498.975,
           84.809
+        ],
+        [
+          507.209,
+          87.814
+        ],
+        [
+          509.812,
+          89.55
         ]
       ],
       "speedLimitMph": 20,
@@ -17899,7 +16894,7 @@
     {
       "id": "l_25689657_1",
       "from": "n_13891657307",
-      "to": "n_2297683615",
+      "to": "n_280083639",
       "roadClass": "primary",
       "oneway": false,
       "geometry": [
@@ -17910,6 +16905,14 @@
         [
           484.662,
           272.222
+        ],
+        [
+          501.686,
+          277.465
+        ],
+        [
+          520.825,
+          282.72
         ]
       ],
       "speedLimitMph": 30,
@@ -20306,7 +19309,7 @@
     {
       "id": "l_311799312_1",
       "from": "n_1203785173",
-      "to": "n_201442100",
+      "to": "n_992426177",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -20317,6 +19320,10 @@
         [
           227.758,
           25.221
+        ],
+        [
+          209.883,
+          63.545
         ]
       ],
       "speedLimitMph": 20,
@@ -20565,36 +19572,6 @@
       "name": "Ring Road St Patricks",
       "ref": "A4150",
       "inMainNetwork": true
-    },
-    {
-      "id": "l_340172717_0",
-      "from": "n_7237678505",
-      "to": "n_7237678504",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          -142.073,
-          -156.589
-        ],
-        [
-          -150.248,
-          -204.65
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 340172717,
-      "name": "Townwell Fold",
-      "inMainNetwork": false
     },
     {
       "id": "l_34019939_0",
@@ -20959,7 +19936,7 @@
     {
       "id": "l_35406701_0",
       "from": "n_244223883",
-      "to": "n_4832257642",
+      "to": "n_5183020590",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -20978,6 +19955,22 @@
         [
           9.211,
           -39.025
+        ],
+        [
+          -0.42,
+          -44.356
+        ],
+        [
+          -14.111,
+          -50.331
+        ],
+        [
+          -19.147,
+          -51.355
+        ],
+        [
+          -27.694,
+          -53.035
         ]
       ],
       "speedLimitMph": 20,
@@ -21325,36 +20318,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_38791084_0",
-      "from": "n_7947858279",
-      "to": "n_271978",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          75.93,
-          -356.346
-        ],
-        [
-          106.954,
-          -357.637
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "default",
-      "osmWayId": 38791084,
-      "name": "Cleveland Street",
-      "inMainNetwork": true
-    },
-    {
       "id": "l_38791084_1",
       "from": "n_271978",
       "to": "n_5183105890",
@@ -21496,44 +20459,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 38791085,
       "name": "Red Lion Street",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_38791086_0",
-      "from": "n_154780294",
-      "to": "n_992426177",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          219.69,
-          66.371
-        ],
-        [
-          214.255,
-          64.802
-        ],
-        [
-          209.883,
-          63.545
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 38791086,
-      "name": "Lichfield Street",
-      "cycleLane": {
-        "forward": "none",
-        "backward": "lane_broken"
-      },
       "inMainNetwork": true
     },
     {
@@ -21933,7 +20858,7 @@
     {
       "id": "l_43655272_0",
       "from": "n_1621771701",
-      "to": "n_552250062",
+      "to": "n_8079304336",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -21956,6 +20881,22 @@
         [
           -335.235,
           -412.709
+        ],
+        [
+          -320.734,
+          -389.809
+        ],
+        [
+          -320.07,
+          -386.526
+        ],
+        [
+          -320.991,
+          -381.118
+        ],
+        [
+          -327.863,
+          -351.328
         ]
       ],
       "speedLimitMph": 30,
@@ -22102,7 +21043,7 @@
     {
       "id": "l_491066193_0",
       "from": "n_992426227",
-      "to": "n_8211822419",
+      "to": "n_18855078",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -22113,6 +21054,10 @@
         [
           178.906,
           168.245
+        ],
+        [
+          173.611,
+          198.847
         ]
       ],
       "speedLimitMph": 20,
@@ -22164,36 +21109,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_491066195_0",
-      "from": "n_4832257642",
-      "to": "n_154780712",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          9.211,
-          -39.025
-        ],
-        [
-          -0.42,
-          -44.356
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 491066195,
-      "name": "Queen Square",
-      "inMainNetwork": true
-    },
-    {
       "id": "l_491066196_0",
       "from": "n_244223899",
       "to": "n_244223883",
@@ -22225,44 +21140,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 491066196,
       "name": "Queen Square",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_491066197_0",
-      "from": "n_244397684",
-      "to": "n_5183105885",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          230.491,
-          -308.28
-        ],
-        [
-          231.467,
-          -295.172
-        ],
-        [
-          232.483,
-          -274.396
-        ],
-        [
-          233.586,
-          -251.717
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 491066197,
-      "name": "Garrick Street",
       "inMainNetwork": true
     },
     {
@@ -22323,40 +21200,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 491066197,
       "name": "Garrick Street",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_491066198_0",
-      "from": "n_992779014",
-      "to": "n_244227057",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          -290.554,
-          -443.058
-        ],
-        [
-          -283.213,
-          -443.459
-        ],
-        [
-          -260.302,
-          -437.985
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "left",
-      "sidewalkSource": "tagged",
-      "osmWayId": 491066198,
-      "name": "Peel Street",
       "inMainNetwork": true
     },
     {
@@ -23934,47 +22777,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_546203837_0",
-      "from": "n_5278574256",
-      "to": "n_7237671780",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          -295.418,
-          -394.239
-        ],
-        [
-          -263.723,
-          -400.395
-        ],
-        [
-          -266.584,
-          -419.134
-        ],
-        [
-          -289.353,
-          -424.697
-        ],
-        [
-          -293.771,
-          -403.387
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 546203837,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_546203837_1",
       "from": "n_7237671780",
       "to": "n_10003464292",
@@ -24006,7 +22808,7 @@
     {
       "id": "l_546203837_2",
       "from": "n_10003464292",
-      "to": "n_5278574256",
+      "to": "n_7237671780",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -24017,6 +22819,22 @@
         [
           -295.418,
           -394.239
+        ],
+        [
+          -263.723,
+          -400.395
+        ],
+        [
+          -266.584,
+          -419.134
+        ],
+        [
+          -289.353,
+          -424.697
+        ],
+        [
+          -293.771,
+          -403.387
         ]
       ],
       "speedLimitMph": 30,
@@ -24997,49 +23815,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_612926059_0",
-      "from": "n_280083596",
-      "to": "n_280083597",
-      "roadClass": "primary",
-      "oneway": true,
-      "geometry": [
-        [
-          437.167,
-          264.918
-        ],
-        [
-          443.531,
-          266.599
-        ],
-        [
-          450.037,
-          267.223
-        ],
-        [
-          456.266,
-          267.379
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "left",
-      "sidewalkSource": "tagged",
-      "osmWayId": 612926059,
-      "name": "Wednesfield Road",
-      "ref": "A4124",
-      "cycleLane": {
-        "forward": "lane_broken",
-        "backward": "none"
-      },
-      "inMainNetwork": true
-    },
-    {
       "id": "l_612926060_0",
       "from": "n_5800848178",
       "to": "n_280083592",
@@ -25182,36 +23957,6 @@
       "osmWayId": 627857124,
       "name": "Bilston Street Island",
       "ref": "A4150",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_627988061_0",
-      "from": "n_295901975",
-      "to": "n_244223509",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          -82.532,
-          22.557
-        ],
-        [
-          -82.437,
-          21.934
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 627988061,
-      "name": "North Street",
       "inMainNetwork": true
     },
     {
@@ -25379,7 +24124,7 @@
     {
       "id": "l_627988062_0",
       "from": "n_5928464562",
-      "to": "n_5933391010",
+      "to": "n_295901974",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -25387,32 +24132,6 @@
           -106.071,
           25.584
         ],
-        [
-          -172.215,
-          4.042
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 627988062,
-      "name": "Corporation Street",
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_628486652_0",
-      "from": "n_5933391010",
-      "to": "n_295901974",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
         [
           -172.215,
           4.042
@@ -25432,7 +24151,7 @@
       "widthSource": "estimated",
       "sidewalk": "both",
       "sidewalkSource": "tagged",
-      "osmWayId": 628486652,
+      "osmWayId": 627988062,
       "name": "Corporation Street",
       "inMainNetwork": false
     },
@@ -27249,75 +25968,9 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_660495307_0",
-      "from": "n_6183952530",
-      "to": "n_6183952526",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -486.658,
-          -97.745
-        ],
-        [
-          -510.32,
-          -102.939
-        ],
-        [
-          -532.583,
-          -87.191
-        ],
-        [
-          -591.534,
-          -61.301
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 660495307,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_660495310_0",
-      "from": "n_6183952523",
-      "to": "n_6183952530",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -483.628,
-          -97.044
-        ],
-        [
-          -486.658,
-          -97.745
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 660495310,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_660495313_0",
       "from": "n_6183952540",
-      "to": "n_6183952523",
+      "to": "n_6183952526",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -27348,6 +26001,22 @@
         [
           -483.628,
           -97.044
+        ],
+        [
+          -486.658,
+          -97.745
+        ],
+        [
+          -510.32,
+          -102.939
+        ],
+        [
+          -532.583,
+          -87.191
+        ],
+        [
+          -591.534,
+          -61.301
         ]
       ],
       "speedLimitMph": 30,
@@ -27475,7 +26144,7 @@
     {
       "id": "l_685156316_0",
       "from": "n_1623857890",
-      "to": "n_6419971897",
+      "to": "n_8169338239",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -27506,31 +26175,6 @@
         [
           390.44,
           479.86
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 685156316,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_702172540_0",
-      "from": "n_6419971897",
-      "to": "n_8169338239",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          390.44,
-          479.86
         ],
         [
           379.008,
@@ -27547,7 +26191,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 702172540,
+      "osmWayId": 685156316,
       "inMainNetwork": true
     },
     {
@@ -27582,7 +26226,7 @@
     {
       "id": "l_702172540_2",
       "from": "n_6419971899",
-      "to": "n_6468948517",
+      "to": "n_6784366927",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -27597,6 +26241,42 @@
         [
           338.922,
           470.442
+        ],
+        [
+          329.087,
+          494.132
+        ],
+        [
+          313.239,
+          538.253
+        ],
+        [
+          294.924,
+          597.163
+        ],
+        [
+          295.344,
+          610.171
+        ],
+        [
+          281.535,
+          684.471
+        ],
+        [
+          249.847,
+          672.385
+        ],
+        [
+          238.008,
+          666.687
+        ],
+        [
+          258.383,
+          590.128
+        ],
+        [
+          262.619,
+          582.227
         ]
       ],
       "speedLimitMph": 30,
@@ -28333,7 +27013,7 @@
     {
       "id": "l_753179410_0",
       "from": "n_7237678542",
-      "to": "n_7237678544",
+      "to": "n_1621771806",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -28356,6 +27036,22 @@
         [
           -315.146,
           -229.19
+        ],
+        [
+          -313.35,
+          -232.495
+        ],
+        [
+          -311.716,
+          -234.743
+        ],
+        [
+          -310.367,
+          -236.446
+        ],
+        [
+          -307.623,
+          -239.896
         ]
       ],
       "speedLimitMph": 30,
@@ -28642,7 +27338,7 @@
     {
       "id": "l_775826356_0",
       "from": "n_3473842693",
-      "to": "n_7237678505",
+      "to": "n_3473842696",
       "roadClass": "unclassified",
       "oneway": false,
       "geometry": [
@@ -28653,6 +27349,14 @@
         [
           -142.073,
           -156.589
+        ],
+        [
+          -150.248,
+          -204.65
+        ],
+        [
+          -151.001,
+          -210.091
         ]
       ],
       "speedLimitMph": 20,
@@ -28699,12 +27403,24 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_775826358_0",
-      "from": "n_7237678500",
+      "id": "l_775826363_0",
+      "from": "n_7237678502",
       "to": "n_3473842693",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
+        [
+          -142.072,
+          -122.66
+        ],
+        [
+          -138.324,
+          -141.088
+        ],
+        [
+          -139.788,
+          -146.351
+        ],
         [
           -141.218,
           -149.367
@@ -28724,163 +27440,13 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 775826358,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826359_0",
-      "from": "n_7237678501",
-      "to": "n_7237678500",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -139.788,
-          -146.351
-        ],
-        [
-          -141.218,
-          -149.367
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 775826359,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826362_0",
-      "from": "n_7237678504",
-      "to": "n_3473842696",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          -150.248,
-          -204.65
-        ],
-        [
-          -151.001,
-          -210.091
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 775826362,
-      "name": "Townwell Fold",
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826363_0",
-      "from": "n_7237678502",
-      "to": "n_7237678501",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -142.072,
-          -122.66
-        ],
-        [
-          -138.324,
-          -141.088
-        ],
-        [
-          -139.788,
-          -146.351
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
       "osmWayId": 775826363,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826365_0",
-      "from": "n_7237678517",
-      "to": "n_7237678516",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -165.872,
-          -228.708
-        ],
-        [
-          -173.893,
-          -277.792
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 775826365,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826366_0",
-      "from": "n_7237678516",
-      "to": "n_7237678522",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -173.893,
-          -277.792
-        ],
-        [
-          -174.469,
-          -281.32
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 775826366,
       "inMainNetwork": false
     },
     {
       "id": "l_775826367_0",
       "from": "n_7237678518",
-      "to": "n_7237678517",
+      "to": "n_7237678522",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -28903,6 +27469,14 @@
         [
           -165.872,
           -228.708
+        ],
+        [
+          -173.893,
+          -277.792
+        ],
+        [
+          -174.469,
+          -281.32
         ]
       ],
       "speedLimitMph": 30,
@@ -28916,124 +27490,6 @@
       "sidewalk": "none",
       "sidewalkSource": "default",
       "osmWayId": 775826367,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775826368_0",
-      "from": "n_1332657357",
-      "to": "n_1332657697",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          -173.287,
-          -213.195
-        ],
-        [
-          -172.114,
-          -207.142
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.7,
-      "confidenceNotes": "explicit lanes; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "tagged",
-      "osmWayId": 775826368,
-      "name": "Victoria Fold",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_775826369_0",
-      "from": "n_1332657323",
-      "to": "n_1332657357",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          -176.243,
-          -227.372
-        ],
-        [
-          -173.287,
-          -213.195
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.7,
-      "confidenceNotes": "explicit lanes; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "tagged",
-      "osmWayId": 775826369,
-      "name": "Victoria Fold",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_775830456_0",
-      "from": "n_7237631453",
-      "to": "n_7237631452",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          32.543,
-          -488.178
-        ],
-        [
-          39.728,
-          -488.412
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 775830456,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_775830457_0",
-      "from": "n_7237631451",
-      "to": "n_7237631453",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          22.552,
-          -487.744
-        ],
-        [
-          32.543,
-          -488.178
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 775830457,
       "inMainNetwork": false
     },
     {
@@ -29105,7 +27561,7 @@
     {
       "id": "l_775830461_1",
       "from": "n_7237631454",
-      "to": "n_7237631451",
+      "to": "n_7237631452",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -29116,6 +27572,14 @@
         [
           22.552,
           -487.744
+        ],
+        [
+          32.543,
+          -488.178
+        ],
+        [
+          39.728,
+          -488.412
         ]
       ],
       "speedLimitMph": 30,
@@ -29362,67 +27826,9 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_776082042_0",
-      "from": "n_7241048589",
-      "to": "n_7241048588",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          58.681,
-          -492.885
-        ],
-        [
-          48.364,
-          -492.774
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776082042,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_776082043_0",
-      "from": "n_7241048588",
-      "to": "n_7241007075",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          48.364,
-          -492.774
-        ],
-        [
-          39.66,
-          -489.781
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776082043,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_776082048_0",
       "from": "n_7241048585",
-      "to": "n_7241048589",
+      "to": "n_7241007075",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -29433,6 +27839,14 @@
         [
           58.681,
           -492.885
+        ],
+        [
+          48.364,
+          -492.774
+        ],
+        [
+          39.66,
+          -489.781
         ]
       ],
       "speedLimitMph": 30,
@@ -29484,7 +27898,7 @@
     {
       "id": "l_776082050_1",
       "from": "n_7241007079",
-      "to": "n_7241048592",
+      "to": "n_7241007074",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -29495,6 +27909,14 @@
         [
           69.33,
           -488.812
+        ],
+        [
+          48.635,
+          -488.234
+        ],
+        [
+          39.796,
+          -484.517
         ]
       ],
       "speedLimitMph": 30,
@@ -30479,38 +28901,9 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_776640938_0",
-      "from": "n_8169169524",
-      "to": "n_7246403405",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          312.729,
-          -170.78
-        ],
-        [
-          313.61,
-          -176.344
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776640938,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_776640939_0",
       "from": "n_244397721",
-      "to": "n_7246403412",
+      "to": "n_7246403405",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -30521,6 +28914,18 @@
         [
           303.148,
           -112.705
+        ],
+        [
+          305.596,
+          -125.913
+        ],
+        [
+          312.729,
+          -170.78
+        ],
+        [
+          313.61,
+          -176.344
         ]
       ],
       "speedLimitMph": 30,
@@ -30567,39 +28972,6 @@
       "sidewalk": "none",
       "sidewalkSource": "default",
       "osmWayId": 776640944,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_776640945_0",
-      "from": "n_7246403412",
-      "to": "n_8169169524",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          303.148,
-          -112.705
-        ],
-        [
-          305.596,
-          -125.913
-        ],
-        [
-          312.729,
-          -170.78
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776640945,
       "inMainNetwork": true
     },
     {
@@ -30884,38 +29256,9 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_776880584_0",
-      "from": "n_7248730484",
-      "to": "n_7248730482",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          475.7,
-          -469.883
-        ],
-        [
-          473.071,
-          -476.916
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776880584,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_776880585_0",
       "from": "n_7248871994",
-      "to": "n_7248730484",
+      "to": "n_7248872007",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -30938,28 +29281,7 @@
         [
           475.7,
           -469.883
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 776880585,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_776880590_0",
-      "from": "n_7248730482",
-      "to": "n_7248872007",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
+        ],
         [
           473.071,
           -476.916
@@ -30979,7 +29301,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 776880590,
+      "osmWayId": 776880585,
       "inMainNetwork": false
     },
     {
@@ -31575,7 +29897,7 @@
     {
       "id": "l_7984136_0",
       "from": "n_271985",
-      "to": "n_7246403396",
+      "to": "n_5277664282",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -31590,6 +29912,14 @@
         [
           279.276,
           -227.256
+        ],
+        [
+          300.098,
+          -228.345
+        ],
+        [
+          332.755,
+          -232.917
         ]
       ],
       "speedLimitMph": 20,
@@ -31639,7 +29969,7 @@
     {
       "id": "l_7984137_1",
       "from": "n_1621822917",
-      "to": "n_244397684",
+      "to": "n_5183105885",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -31654,6 +29984,18 @@
         [
           230.491,
           -308.28
+        ],
+        [
+          231.467,
+          -295.172
+        ],
+        [
+          232.483,
+          -274.396
+        ],
+        [
+          233.586,
+          -251.717
         ]
       ],
       "speedLimitMph": 20,
@@ -33206,7 +31548,7 @@
     {
       "id": "l_813955365_1",
       "from": "n_7603364173",
-      "to": "n_1011031095",
+      "to": "n_1621822930",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -33225,6 +31567,54 @@
         [
           143.675,
           -242.006
+        ],
+        [
+          145.783,
+          -246.157
+        ],
+        [
+          145.708,
+          -252.589
+        ],
+        [
+          140.828,
+          -256.406
+        ],
+        [
+          132.424,
+          -259.177
+        ],
+        [
+          121.321,
+          -263.294
+        ],
+        [
+          111.344,
+          -263.818
+        ],
+        [
+          103.088,
+          -263.673
+        ],
+        [
+          97.761,
+          -262.85
+        ],
+        [
+          92.738,
+          -263.072
+        ],
+        [
+          89.661,
+          -264.797
+        ],
+        [
+          84.482,
+          -274.223
+        ],
+        [
+          78.796,
+          -291.415
         ]
       ],
       "speedLimitMph": 30,
@@ -33550,7 +31940,7 @@
     {
       "id": "l_852018219_3",
       "from": "n_8175315445",
-      "to": "n_7947558451",
+      "to": "n_271960",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -33565,6 +31955,10 @@
         [
           352.988,
           -334.512
+        ],
+        [
+          352.867,
+          -351.794
         ]
       ],
       "speedLimitMph": 20,
@@ -33582,38 +31976,9 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_852039828_0",
-      "from": "n_2935368335",
-      "to": "n_2935368329",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          440.574,
-          -87.389
-        ],
-        [
-          444.527,
-          -107.019
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852039828,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_852047641_0",
       "from": "n_244576971",
-      "to": "n_7947858279",
+      "to": "n_271978",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -33628,6 +31993,10 @@
         [
           75.93,
           -356.346
+        ],
+        [
+          106.954,
+          -357.637
         ]
       ],
       "speedLimitMph": 20,
@@ -33675,38 +32044,9 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_852117141_0",
-      "from": "n_2935368338",
-      "to": "n_2935368331",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          474.239,
-          -83.836
-        ],
-        [
-          477.257,
-          -103.477
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852117141,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_852154912_0",
       "from": "n_1538172526",
-      "to": "n_2935368328",
+      "to": "n_1472879756",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -33717,91 +32057,7 @@
         [
           468.711,
           -107.194
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852154912,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852170602_0",
-      "from": "n_7948796384",
-      "to": "n_244397720",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          218.826,
-          -144.112
         ],
-        [
-          216.168,
-          -132.405
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 852170602,
-      "name": "Market Street",
-      "cycleLane": {
-        "forward": "lane_broken",
-        "backward": "none"
-      },
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852186017_0",
-      "from": "n_2935368329",
-      "to": "n_1538172515",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          444.527,
-          -107.019
-        ],
-        [
-          448.169,
-          -126.77
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852186017,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852288856_0",
-      "from": "n_2935368332",
-      "to": "n_2935368337",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
         [
           467.246,
           -96.946
@@ -33809,57 +32065,63 @@
         [
           465.32,
           -84.082
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852288856,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852378904_0",
-      "from": "n_2935368328",
-      "to": "n_2935368332",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          468.711,
-          -107.194
         ],
         [
-          467.246,
-          -96.946
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852378904,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852463204_0",
-      "from": "n_1538172655",
-      "to": "n_2935368342",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
+          463.082,
+          -68.403
+        ],
+        [
+          460.274,
+          -51.79
+        ],
+        [
+          456.239,
+          -25.428
+        ],
+        [
+          456.211,
+          -23.848
+        ],
+        [
+          456.679,
+          -22.346
+        ],
+        [
+          457.587,
+          -21.055
+        ],
+        [
+          458.861,
+          -20.131
+        ],
+        [
+          460.366,
+          -19.63
+        ],
+        [
+          461.945,
+          -19.641
+        ],
+        [
+          463.443,
+          -20.131
+        ],
+        [
+          464.711,
+          -21.076
+        ],
+        [
+          465.619,
+          -22.367
+        ],
+        [
+          466.073,
+          -23.869
+        ],
+        [
+          467.965,
+          -36.699
+        ],
         [
           469.98,
           -52.212
@@ -33867,57 +32129,11 @@
         [
           472.15,
           -67.813
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852463204,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852502236_0",
-      "from": "n_2935368342",
-      "to": "n_2935368338",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          472.15,
-          -67.813
         ],
         [
           474.239,
           -83.836
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 852502236,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_852521077_0",
-      "from": "n_2935368331",
-      "to": "n_1472879756",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
+        ],
         [
           477.257,
           -103.477
@@ -33937,13 +32153,13 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 852521077,
+      "osmWayId": 852154912,
       "inMainNetwork": true
     },
     {
       "id": "l_852793496_0",
       "from": "n_1538172513",
-      "to": "n_2935368327",
+      "to": "n_1538172515",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -33954,6 +32170,82 @@
         [
           434.435,
           -107.965
+        ],
+        [
+          432.096,
+          -93.499
+        ],
+        [
+          428.387,
+          -76.007
+        ],
+        [
+          425.172,
+          -60.328
+        ],
+        [
+          421.463,
+          -42.379
+        ],
+        [
+          421.24,
+          -40.276
+        ],
+        [
+          421.707,
+          -38.773
+        ],
+        [
+          422.622,
+          -37.494
+        ],
+        [
+          423.889,
+          -36.559
+        ],
+        [
+          425.394,
+          -36.069
+        ],
+        [
+          426.973,
+          -36.069
+        ],
+        [
+          428.471,
+          -36.57
+        ],
+        [
+          429.739,
+          -37.504
+        ],
+        [
+          430.647,
+          -38.795
+        ],
+        [
+          431.108,
+          -40.297
+        ],
+        [
+          434.322,
+          -56.288
+        ],
+        [
+          437.062,
+          -70.72
+        ],
+        [
+          440.574,
+          -87.389
+        ],
+        [
+          444.527,
+          -107.019
+        ],
+        [
+          448.169,
+          -126.77
         ]
       ],
       "speedLimitMph": 10,
@@ -33970,55 +32262,9 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_853012424_0",
-      "from": "n_7956224390",
-      "to": "n_244223899",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          106.83,
-          22.001
-        ],
-        [
-          92.068,
-          13.588
-        ],
-        [
-          87.86,
-          11.451
-        ],
-        [
-          68.577,
-          -0.957
-        ],
-        [
-          63.589,
-          -2.236
-        ],
-        [
-          59.942,
-          -2.693
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 853012424,
-      "name": "Lichfield Street",
-      "inMainNetwork": true
-    },
-    {
       "id": "l_853035674_0",
       "from": "n_992426177",
-      "to": "n_7956406227",
+      "to": "n_276541176",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -34037,6 +32283,18 @@
         [
           151.644,
           43.034
+        ],
+        [
+          148.194,
+          41.609
+        ],
+        [
+          146.181,
+          40.786
+        ],
+        [
+          122.202,
+          30.692
         ]
       ],
       "speedLimitMph": 20,
@@ -34051,151 +32309,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 853035674,
       "name": "Lichfield Street",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_853501281_0",
-      "from": "n_2935368340",
-      "to": "n_2935368335",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          437.062,
-          -70.72
-        ],
-        [
-          440.574,
-          -87.389
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 853501281,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854039537_0",
-      "from": "n_2935368337",
-      "to": "n_2935368341",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          465.32,
-          -84.082
-        ],
-        [
-          463.082,
-          -68.403
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854039537,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854068182_0",
-      "from": "n_2935368341",
-      "to": "n_1538172643",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          463.082,
-          -68.403
-        ],
-        [
-          460.274,
-          -51.79
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854068182,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854337975_0",
-      "from": "n_1538172625",
-      "to": "n_2935368340",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          434.322,
-          -56.288
-        ],
-        [
-          437.062,
-          -70.72
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854337975,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854571972_0",
-      "from": "n_1538172631",
-      "to": "n_1538172625",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          431.108,
-          -40.297
-        ],
-        [
-          434.322,
-          -56.288
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854571972,
       "inMainNetwork": true
     },
     {
@@ -34249,36 +32362,6 @@
       "sidewalk": "none",
       "sidewalkSource": "default",
       "osmWayId": 854584200,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854584201_0",
-      "from": "n_7947558449",
-      "to": "n_5277664282",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          300.098,
-          -228.345
-        ],
-        [
-          332.755,
-          -232.917
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "left",
-      "sidewalkSource": "tagged",
-      "osmWayId": 854584201,
-      "name": "Bilston Street",
       "inMainNetwork": true
     },
     {
@@ -34339,64 +32422,6 @@
       "sidewalkSource": "tagged",
       "osmWayId": 854584202,
       "name": "Bilston Street",
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854641675_0",
-      "from": "n_2935368334",
-      "to": "n_2935368339",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          432.096,
-          -93.499
-        ],
-        [
-          428.387,
-          -76.007
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854641675,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_854837641_0",
-      "from": "n_2935368339",
-      "to": "n_2935368343",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          428.387,
-          -76.007
-        ],
-        [
-          425.172,
-          -60.328
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 854837641,
       "inMainNetwork": true
     },
     {
@@ -34873,47 +32898,9 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_85550390_0",
-      "from": "n_7956406227",
-      "to": "n_276541176",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          151.644,
-          43.034
-        ],
-        [
-          148.194,
-          41.609
-        ],
-        [
-          146.181,
-          40.786
-        ],
-        [
-          122.202,
-          30.692
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 85550390,
-      "name": "Lichfield Street",
-      "inMainNetwork": true
-    },
-    {
       "id": "l_85550390_1",
       "from": "n_276541176",
-      "to": "n_7956224390",
+      "to": "n_244223899",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -34928,6 +32915,26 @@
         [
           106.83,
           22.001
+        ],
+        [
+          92.068,
+          13.588
+        ],
+        [
+          87.86,
+          11.451
+        ],
+        [
+          68.577,
+          -0.957
+        ],
+        [
+          63.589,
+          -2.236
+        ],
+        [
+          59.942,
+          -2.693
         ]
       ],
       "speedLimitMph": 20,
@@ -36538,7 +34545,7 @@
     {
       "id": "l_85581313_1",
       "from": "n_5182987572",
-      "to": "n_1621822795",
+      "to": "n_201972275",
       "roadClass": "unclassified",
       "oneway": true,
       "geometry": [
@@ -36549,6 +34556,10 @@
         [
           -150.785,
           -463.873
+        ],
+        [
+          -164.275,
+          -480.386
         ]
       ],
       "speedLimitMph": 20,
@@ -36564,65 +34575,6 @@
       "osmWayId": 85581313,
       "name": "Temple Street",
       "inMainNetwork": false
-    },
-    {
-      "id": "l_856102381_0",
-      "from": "n_2935368327",
-      "to": "n_2935368334",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          434.435,
-          -107.965
-        ],
-        [
-          432.096,
-          -93.499
-        ]
-      ],
-      "speedLimitMph": 10,
-      "speedLimitSource": "tagged",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.6,
-      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 856102381,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_856640076_0",
-      "from": "n_7246403396",
-      "to": "n_7947558449",
-      "roadClass": "unclassified",
-      "oneway": true,
-      "geometry": [
-        [
-          279.276,
-          -227.256
-        ],
-        [
-          300.098,
-          -228.345
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "left",
-      "sidewalkSource": "tagged",
-      "osmWayId": 856640076,
-      "name": "Bilston Street",
-      "inMainNetwork": true
     },
     {
       "id": "l_857080243_0",
@@ -36931,69 +34883,6 @@
       "name": "Chapel Ash Island",
       "ref": "A4150",
       "inMainNetwork": true
-    },
-    {
-      "id": "l_86306233_0",
-      "from": "n_438470",
-      "to": "n_460051777",
-      "roadClass": "trunk",
-      "oneway": true,
-      "geometry": [
-        [
-          140.985,
-          434.545
-        ],
-        [
-          141.683,
-          440.253
-        ],
-        [
-          142.55,
-          446.763
-        ],
-        [
-          143.973,
-          457.012
-        ],
-        [
-          145.551,
-          466.593
-        ],
-        [
-          148.289,
-          482.84
-        ],
-        [
-          151.819,
-          504.016
-        ],
-        [
-          156.488,
-          533.138
-        ],
-        [
-          162.016,
-          574.734
-        ],
-        [
-          165.919,
-          598.525
-        ]
-      ],
-      "speedLimitMph": 40,
-      "speedLimitSource": "tagged",
-      "lanesForward": 3,
-      "lanesBackward": 0,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (9.75 m)",
-      "widthM": 9.75,
-      "widthSource": "estimated",
-      "sidewalk": "left",
-      "sidewalkSource": "tagged",
-      "osmWayId": 86306233,
-      "name": "Stafford Street",
-      "ref": "A449",
-      "inMainNetwork": false
     },
     {
       "id": "l_86336372_0",
@@ -38414,39 +36303,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_866634692_0",
-      "from": "n_3929131092",
-      "to": "n_8077756187",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -142.697,
-          277.853
-        ],
-        [
-          -84.479,
-          325.279
-        ],
-        [
-          -79.43,
-          337.887
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 866634692,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_866634693_0",
       "from": "n_8077756195",
       "to": "n_8077756196",
@@ -38507,7 +36363,7 @@
     {
       "id": "l_866634693_2",
       "from": "n_3929131095",
-      "to": "n_3929131092",
+      "to": "n_8077756187",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -38522,6 +36378,14 @@
         [
           -142.697,
           277.853
+        ],
+        [
+          -84.479,
+          325.279
+        ],
+        [
+          -79.43,
+          337.887
         ]
       ],
       "speedLimitMph": 30,
@@ -39576,43 +37440,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_866798131_0",
-      "from": "n_552250039",
-      "to": "n_8079304336",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -320.734,
-          -389.809
-        ],
-        [
-          -320.07,
-          -386.526
-        ],
-        [
-          -320.991,
-          -381.118
-        ],
-        [
-          -327.863,
-          -351.328
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 866798131,
-      "inMainNetwork": true
-    },
-    {
       "id": "l_866798132_0",
       "from": "n_8079304336",
       "to": "n_1621771754",
@@ -39913,47 +37740,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_866798140_0",
-      "from": "n_7237678544",
-      "to": "n_1621771806",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          -315.146,
-          -229.19
-        ],
-        [
-          -313.35,
-          -232.495
-        ],
-        [
-          -311.716,
-          -234.743
-        ],
-        [
-          -310.367,
-          -236.446
-        ],
-        [
-          -307.623,
-          -239.896
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 866798140,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_866802483_0",
       "from": "n_8079342778",
       "to": "n_8079342779",
@@ -39984,35 +37770,6 @@
       "sidewalk": "none",
       "sidewalkSource": "default",
       "osmWayId": 866802483,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_866802490_0",
-      "from": "n_8079342740",
-      "to": "n_8079342816",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          125.73,
-          126.125
-        ],
-        [
-          129.241,
-          134.804
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 866802490,
       "inMainNetwork": false
     },
     {
@@ -40055,7 +37812,7 @@
     {
       "id": "l_866802491_0",
       "from": "n_8079342815",
-      "to": "n_8079342740",
+      "to": "n_8079342816",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -40066,6 +37823,10 @@
         [
           125.73,
           126.125
+        ],
+        [
+          129.241,
+          134.804
         ]
       ],
       "speedLimitMph": 30,
@@ -40113,7 +37874,7 @@
     {
       "id": "l_867987642_0",
       "from": "n_8090626665",
-      "to": "n_8090640552",
+      "to": "n_8090626667",
       "roadClass": "service",
       "oneway": true,
       "geometry": [
@@ -40124,28 +37885,15 @@
         [
           137.336,
           -436.065
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 867987642,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_867987643_0",
-      "from": "n_8090626666",
-      "to": "n_8090626667",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
+        ],
+        [
+          136.922,
+          -423.257
+        ],
+        [
+          116.404,
+          -423.78
+        ],
         [
           116.56,
           -437.423
@@ -40165,44 +37913,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 867987643,
-      "inMainNetwork": true
-    },
-    {
-      "id": "l_867987644_0",
-      "from": "n_8090640552",
-      "to": "n_8090626666",
-      "roadClass": "service",
-      "oneway": true,
-      "geometry": [
-        [
-          137.336,
-          -436.065
-        ],
-        [
-          136.922,
-          -423.257
-        ],
-        [
-          116.404,
-          -423.78
-        ],
-        [
-          116.56,
-          -437.423
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 0,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
-      "widthM": 3.25,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 867987644,
+      "osmWayId": 867987642,
       "inMainNetwork": true
     },
     {
@@ -40685,39 +38396,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_868447058_0",
-      "from": "n_7241048592",
-      "to": "n_7241007074",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          69.33,
-          -488.812
-        ],
-        [
-          48.635,
-          -488.234
-        ],
-        [
-          39.796,
-          -484.517
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 868447058,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_868591197_0",
       "from": "n_295901974",
       "to": "n_244223487",
@@ -40756,50 +38434,9 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_868703513_0",
-      "from": "n_8097322201",
-      "to": "n_8097322205",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          364.963,
-          148.626
-        ],
-        [
-          360.807,
-          163.359
-        ],
-        [
-          369.407,
-          171.227
-        ],
-        [
-          384.914,
-          175.201
-        ],
-        [
-          398.214,
-          149.419
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 868703513,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_868703514_0",
       "from": "n_8097322200",
-      "to": "n_8097322201",
+      "to": "n_8097322205",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -40822,6 +38459,22 @@
         [
           364.963,
           148.626
+        ],
+        [
+          360.807,
+          163.359
+        ],
+        [
+          369.407,
+          171.227
+        ],
+        [
+          384.914,
+          175.201
+        ],
+        [
+          398.214,
+          149.419
         ]
       ],
       "speedLimitMph": 30,
@@ -41235,7 +38888,7 @@
     {
       "id": "l_871187620_0",
       "from": "n_244223503",
-      "to": "n_8115253858",
+      "to": "n_8115253860",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -41247,31 +38900,6 @@
           -116.77,
           154.256
         ],
-        [
-          -117.61,
-          158.128
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 871187620,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_871187621_0",
-      "from": "n_8115253858",
-      "to": "n_8115253860",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
         [
           -117.61,
           158.128
@@ -41295,7 +38923,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 871187621,
+      "osmWayId": 871187620,
       "inMainNetwork": false
     },
     {
@@ -42007,7 +39635,7 @@
     {
       "id": "l_873327857_1",
       "from": "n_8132960128",
-      "to": "n_8132960126",
+      "to": "n_8132960127",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -42015,31 +39643,6 @@
           223.522,
           474.563
         ],
-        [
-          218.831,
-          485.19
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 873327857,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_873327858_0",
-      "from": "n_8132960126",
-      "to": "n_8132960127",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
         [
           218.831,
           485.19
@@ -42059,7 +39662,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 873327858,
+      "osmWayId": 873327857,
       "inMainNetwork": false
     },
     {
@@ -42168,7 +39771,7 @@
     {
       "id": "l_875462670_1",
       "from": "n_8148726952",
-      "to": "n_8148726953",
+      "to": "n_8148726954",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -42176,31 +39779,6 @@
           -498.752,
           -126.298
         ],
-        [
-          -501.086,
-          -144.102
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 875462670,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_875462671_0",
-      "from": "n_8148726953",
-      "to": "n_8148726954",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
         [
           -501.086,
           -144.102
@@ -42220,7 +39798,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 875462671,
+      "osmWayId": 875462670,
       "inMainNetwork": false
     },
     {
@@ -42549,67 +40127,6 @@
       "inMainNetwork": true
     },
     {
-      "id": "l_878059591_0",
-      "from": "n_6468948517",
-      "to": "n_6784366927",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
-        [
-          338.922,
-          470.442
-        ],
-        [
-          329.087,
-          494.132
-        ],
-        [
-          313.239,
-          538.253
-        ],
-        [
-          294.924,
-          597.163
-        ],
-        [
-          295.344,
-          610.171
-        ],
-        [
-          281.535,
-          684.471
-        ],
-        [
-          249.847,
-          672.385
-        ],
-        [
-          238.008,
-          666.687
-        ],
-        [
-          258.383,
-          590.128
-        ],
-        [
-          262.619,
-          582.227
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 878059591,
-      "inMainNetwork": false
-    },
-    {
       "id": "l_878059592_0",
       "from": "n_6419971899",
       "to": "n_8169338239",
@@ -42718,7 +40235,7 @@
     {
       "id": "l_878770488_0",
       "from": "n_8175315445",
-      "to": "n_8175315444",
+      "to": "n_8175315446",
       "roadClass": "service",
       "oneway": false,
       "geometry": [
@@ -42726,31 +40243,6 @@
           352.72,
           -286.552
         ],
-        [
-          364.067,
-          -286.528
-        ]
-      ],
-      "speedLimitMph": 30,
-      "speedLimitSource": "default",
-      "lanesForward": 1,
-      "lanesBackward": 1,
-      "confidence": 0.45,
-      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
-      "widthM": 6.5,
-      "widthSource": "estimated",
-      "sidewalk": "none",
-      "sidewalkSource": "default",
-      "osmWayId": 878770488,
-      "inMainNetwork": false
-    },
-    {
-      "id": "l_878770489_0",
-      "from": "n_8175315444",
-      "to": "n_8175315446",
-      "roadClass": "service",
-      "oneway": false,
-      "geometry": [
         [
           364.067,
           -286.528
@@ -42770,7 +40262,7 @@
       "widthSource": "estimated",
       "sidewalk": "none",
       "sidewalkSource": "default",
-      "osmWayId": 878770489,
+      "osmWayId": 878770488,
       "inMainNetwork": false
     },
     {
@@ -44321,40 +41813,6 @@
       "inMainNetwork": false
     },
     {
-      "id": "l_883057339_0",
-      "from": "n_8211822419",
-      "to": "n_18855078",
-      "roadClass": "unclassified",
-      "oneway": false,
-      "geometry": [
-        [
-          178.906,
-          168.245
-        ],
-        [
-          173.611,
-          198.847
-        ]
-      ],
-      "speedLimitMph": 20,
-      "speedLimitSource": "tagged",
-      "lanesForward": 2,
-      "lanesBackward": 1,
-      "confidence": 0.85,
-      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (9.75 m)",
-      "widthM": 9.75,
-      "widthSource": "estimated",
-      "sidewalk": "both",
-      "sidewalkSource": "tagged",
-      "osmWayId": 883057339,
-      "name": "Stafford Street",
-      "cycleLane": {
-        "forward": "shared_busway",
-        "backward": "none"
-      },
-      "inMainNetwork": true
-    },
-    {
       "id": "l_886042564_0",
       "from": "n_8238890559",
       "to": "n_6183725492",
@@ -44954,7 +42412,7 @@
       "x": 352.867,
       "z": -351.794,
       "type": "signals_unknown",
-      "linkId": "l_22779028_0",
+      "linkId": "l_852018219_3",
       "confidence": 0.85,
       "osmId": 271960
     },
@@ -44963,7 +42421,7 @@
       "x": 106.954,
       "z": -357.637,
       "type": "pelican",
-      "linkId": "l_38791084_0",
+      "linkId": "l_852047641_0",
       "confidence": 0.95,
       "osmId": 271978
     },
@@ -44972,7 +42430,7 @@
       "x": 122.202,
       "z": 30.692,
       "type": "uncontrolled",
-      "linkId": "l_85550390_0",
+      "linkId": "l_853035674_0",
       "confidence": 0.4,
       "osmId": 276541176
     },
@@ -45881,16 +43339,6 @@
       "confidenceNotes": "inferred from name/ref continuity"
     },
     {
-      "nodeId": "n_1011031095",
-      "majorLinks": [
-        "l_149166964_0",
-        "l_813955365_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_1011058986",
       "majorLinks": [
         "l_35406700_3",
@@ -45992,26 +43440,6 @@
       "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_1332657323",
-      "majorLinks": [
-        "l_118496186_1",
-        "l_775826369_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_1332657357",
-      "majorLinks": [
-        "l_775826368_0",
-        "l_775826369_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_1332657697",
       "majorLinks": [
         "l_86882780_2",
@@ -46040,26 +43468,6 @@
       "controlledBy": "roundabout",
       "confidence": 0.9,
       "confidenceNotes": "roundabout circulating priority"
-    },
-    {
-      "nodeId": "n_13891645298",
-      "majorLinks": [
-        "l_1524058085_0",
-        "l_1524058086_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_13891645299",
-      "majorLinks": [
-        "l_1524058084_0",
-        "l_1524058086_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_13891657307",
@@ -46149,7 +43557,7 @@
         "l_140385473_0",
         "l_140385478_0",
         "l_290002937_0",
-        "l_852521077_0"
+        "l_852154912_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -46171,7 +43579,7 @@
       "majorLinks": [
         "l_140385480_0",
         "l_636402733_0",
-        "l_852186017_0"
+        "l_852793496_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -46199,46 +43607,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_1538172625",
-      "majorLinks": [
-        "l_854337975_0",
-        "l_854571972_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_1538172631",
-      "majorLinks": [
-        "l_140385489_0",
-        "l_854571972_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_1538172643",
-      "majorLinks": [
-        "l_140385487_0",
-        "l_854068182_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_1538172655",
-      "majorLinks": [
-        "l_140385487_0",
-        "l_852463204_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_1538172911",
       "majorLinks": [
         "l_649691042_2",
@@ -46258,42 +43626,12 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_154780294",
-      "majorLinks": [
-        "l_140653958_1",
-        "l_38791086_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_154780712",
-      "majorLinks": [
-        "l_15534580_0",
-        "l_491066195_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_154780713",
       "majorLinks": [
         "l_15534450_0",
         "l_15534580_1",
         "l_534432395_1",
         "l_627988061_5"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_154780715",
-      "majorLinks": [
-        "l_1058854041_0",
-        "l_15534450_2"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -46491,16 +43829,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.7,
       "confidenceNotes": "inferred from name/ref continuity"
-    },
-    {
-      "nodeId": "n_1621822795",
-      "majorLinks": [
-        "l_149166955_0",
-        "l_85581313_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_1621822836",
@@ -46712,7 +44040,7 @@
     {
       "nodeId": "n_18834324",
       "majorLinks": [
-        "l_1242995331_0",
+        "l_22779053_5",
         "l_7984310_0",
         "l_85548593_0"
       ],
@@ -46734,8 +44062,8 @@
     {
       "nodeId": "n_18855078",
       "majorLinks": [
-        "l_85550577_0",
-        "l_883057339_0"
+        "l_491066193_0",
+        "l_85550577_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.7,
@@ -46872,16 +44200,6 @@
       "controlledBy": "signals",
       "confidence": 0.75,
       "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_201442100",
-      "majorLinks": [
-        "l_118716556_0",
-        "l_311799312_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_201972258",
@@ -47395,16 +44713,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_2297683615",
-      "majorLinks": [
-        "l_220679428_0",
-        "l_25689657_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_2418996357",
       "majorLinks": [
         "l_22757716_0",
@@ -47563,7 +44871,7 @@
     {
       "nodeId": "n_244223480",
       "majorLinks": [
-        "l_1058854041_0",
+        "l_15534450_2",
         "l_183926041_0"
       ],
       "controlledBy": "uncontrolled",
@@ -47625,7 +44933,7 @@
     {
       "nodeId": "n_244223509",
       "majorLinks": [
-        "l_627988061_0",
+        "l_22757741_0",
         "l_627988061_1"
       ],
       "controlledBy": "uncontrolled",
@@ -47686,7 +44994,7 @@
       "nodeId": "n_244223899",
       "majorLinks": [
         "l_491066196_0",
-        "l_853012424_0"
+        "l_85550390_1"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
@@ -47705,7 +45013,7 @@
     {
       "nodeId": "n_244227057",
       "majorLinks": [
-        "l_491066198_0",
+        "l_22757767_5",
         "l_491066198_1"
       ],
       "controlledBy": "signals",
@@ -47775,20 +45083,10 @@
       "confidenceNotes": "inferred from name/ref continuity"
     },
     {
-      "nodeId": "n_244397684",
-      "majorLinks": [
-        "l_491066197_0",
-        "l_7984137_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_244397720",
       "majorLinks": [
-        "l_7984133_0",
-        "l_852170602_0"
+        "l_118446711_0",
+        "l_7984133_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.7,
@@ -48108,19 +45406,9 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_280083596",
-      "majorLinks": [
-        "l_149038892_0",
-        "l_612926059_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_280083597",
       "majorLinks": [
-        "l_612926059_0",
+        "l_149038892_0",
         "l_86628388_0"
       ],
       "controlledBy": "uncontrolled",
@@ -48260,146 +45548,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_2935368327",
-      "majorLinks": [
-        "l_852793496_0",
-        "l_856102381_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368328",
-      "majorLinks": [
-        "l_852154912_0",
-        "l_852378904_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368329",
-      "majorLinks": [
-        "l_852039828_0",
-        "l_852186017_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368331",
-      "majorLinks": [
-        "l_852117141_0",
-        "l_852521077_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368332",
-      "majorLinks": [
-        "l_852288856_0",
-        "l_852378904_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368334",
-      "majorLinks": [
-        "l_854641675_0",
-        "l_856102381_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368335",
-      "majorLinks": [
-        "l_852039828_0",
-        "l_853501281_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368337",
-      "majorLinks": [
-        "l_852288856_0",
-        "l_854039537_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368338",
-      "majorLinks": [
-        "l_852117141_0",
-        "l_852502236_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368339",
-      "majorLinks": [
-        "l_854641675_0",
-        "l_854837641_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368340",
-      "majorLinks": [
-        "l_853501281_0",
-        "l_854337975_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368341",
-      "majorLinks": [
-        "l_854039537_0",
-        "l_854068182_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368342",
-      "majorLinks": [
-        "l_852463204_0",
-        "l_852502236_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_2935368343",
-      "majorLinks": [
-        "l_140385489_0",
-        "l_854837641_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_295901969",
       "majorLinks": [
         "l_627988061_2",
@@ -48428,16 +45576,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.7,
       "confidenceNotes": "inferred from name/ref continuity"
-    },
-    {
-      "nodeId": "n_295901975",
-      "majorLinks": [
-        "l_22757741_0",
-        "l_627988061_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_2976113024",
@@ -48539,16 +45677,6 @@
       "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_3929131092",
-      "majorLinks": [
-        "l_866634692_0",
-        "l_866634693_2"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_3929131095",
       "majorLinks": [
         "l_866634693_1",
@@ -48575,16 +45703,6 @@
         "l_19205886_2",
         "l_7984310_0",
         "l_7984419_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_438470",
-      "majorLinks": [
-        "l_148868368_0",
-        "l_86306233_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -48739,16 +45857,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_4710007285",
-      "majorLinks": [
-        "l_135964083_0",
-        "l_22801795_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_4710007286",
       "majorLinks": [
         "l_140385476_3",
@@ -48786,16 +45894,6 @@
       "majorLinks": [
         "l_491066194_0",
         "l_85550577_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_4832257642",
-      "majorLinks": [
-        "l_35406701_0",
-        "l_491066195_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -48876,8 +45974,8 @@
     {
       "nodeId": "n_5183020590",
       "majorLinks": [
-        "l_15534580_0",
-        "l_15534580_1"
+        "l_15534580_1",
+        "l_35406701_0"
       ],
       "controlledBy": "signals",
       "confidence": 0.75,
@@ -48896,8 +45994,8 @@
     {
       "nodeId": "n_5183105885",
       "majorLinks": [
-        "l_491066197_0",
-        "l_491066197_1"
+        "l_491066197_1",
+        "l_7984137_1"
       ],
       "controlledBy": "signals",
       "confidence": 0.75,
@@ -48958,8 +46056,8 @@
     {
       "nodeId": "n_5277664282",
       "majorLinks": [
-        "l_852018215_0",
-        "l_854584201_0"
+        "l_7984136_0",
+        "l_852018215_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
@@ -49382,26 +46480,6 @@
       "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_552250039",
-      "majorLinks": [
-        "l_149160150_0",
-        "l_866798131_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_552250062",
-      "majorLinks": [
-        "l_149160150_0",
-        "l_43655272_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_565562316",
       "majorLinks": [
         "l_86140132_0",
@@ -49450,16 +46528,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_5933391010",
-      "majorLinks": [
-        "l_627988062_0",
-        "l_628486652_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_59751555",
@@ -49544,26 +46612,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_6183952523",
-      "majorLinks": [
-        "l_660495310_0",
-        "l_660495313_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_6183952530",
-      "majorLinks": [
-        "l_660495307_0",
-        "l_660495310_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_6360436464",
       "majorLinks": [
         "l_78044205_0",
@@ -49584,31 +46632,11 @@
       "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_6419971897",
-      "majorLinks": [
-        "l_685156316_0",
-        "l_702172540_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_6419971899",
       "majorLinks": [
         "l_702172540_1",
         "l_702172540_2",
         "l_878059592_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_6468948517",
-      "majorLinks": [
-        "l_702172540_2",
-        "l_878059591_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -49702,16 +46730,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_7237631451",
-      "majorLinks": [
-        "l_775830457_0",
-        "l_775830461_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_7237631452",
       "majorLinks": [
         "l_22757677_1",
@@ -49720,16 +46738,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_7237631453",
-      "majorLinks": [
-        "l_775830456_0",
-        "l_775830457_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_7237631454",
@@ -49785,8 +46793,8 @@
     {
       "nodeId": "n_7237671780",
       "majorLinks": [
-        "l_546203837_0",
         "l_546203837_1",
+        "l_546203837_2",
         "l_775826355_0"
       ],
       "controlledBy": "uncontrolled",
@@ -49804,66 +46812,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_7237678500",
-      "majorLinks": [
-        "l_775826358_0",
-        "l_775826359_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7237678501",
-      "majorLinks": [
-        "l_775826359_0",
-        "l_775826363_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7237678504",
-      "majorLinks": [
-        "l_340172717_0",
-        "l_775826362_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7237678505",
-      "majorLinks": [
-        "l_340172717_0",
-        "l_775826356_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7237678516",
-      "majorLinks": [
-        "l_775826365_0",
-        "l_775826366_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7237678517",
-      "majorLinks": [
-        "l_775826365_0",
-        "l_775826367_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_7237678522",
       "majorLinks": [
         "l_118496186_0",
@@ -49872,16 +46820,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.7,
       "confidenceNotes": "inferred from name/ref continuity"
-    },
-    {
-      "nodeId": "n_7237678544",
-      "majorLinks": [
-        "l_753179410_0",
-        "l_866798140_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_7241007074",
@@ -49909,36 +46847,6 @@
         "l_776082040_0",
         "l_776082050_0",
         "l_776082050_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7241048588",
-      "majorLinks": [
-        "l_776082042_0",
-        "l_776082043_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7241048589",
-      "majorLinks": [
-        "l_776082042_0",
-        "l_776082048_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7241048592",
-      "majorLinks": [
-        "l_776082050_1",
-        "l_868447058_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -50223,16 +47131,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_7246403396",
-      "majorLinks": [
-        "l_7984136_0",
-        "l_856640076_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_7246403403",
       "majorLinks": [
         "l_22766042_1",
@@ -50268,16 +47166,6 @@
         "l_776640952_0",
         "l_776640953_1",
         "l_776640953_2"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7246403412",
-      "majorLinks": [
-        "l_776640939_0",
-        "l_776640945_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -50328,26 +47216,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_7248730482",
-      "majorLinks": [
-        "l_776880584_0",
-        "l_776880590_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7248730484",
-      "majorLinks": [
-        "l_776880584_0",
-        "l_776880585_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_7248871991",
       "majorLinks": [
         "l_22329181_0",
@@ -50369,7 +47237,7 @@
     {
       "nodeId": "n_7248872007",
       "majorLinks": [
-        "l_776880590_0",
+        "l_776880585_0",
         "l_776880590_1",
         "l_776880593_0"
       ],
@@ -50547,66 +47415,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_7947558449",
-      "majorLinks": [
-        "l_854584201_0",
-        "l_856640076_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7947558451",
-      "majorLinks": [
-        "l_22779028_0",
-        "l_852018219_3"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7947858279",
-      "majorLinks": [
-        "l_38791084_0",
-        "l_852047641_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7948796384",
-      "majorLinks": [
-        "l_118446711_0",
-        "l_852170602_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7956224390",
-      "majorLinks": [
-        "l_853012424_0",
-        "l_85550390_1"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_7956406227",
-      "majorLinks": [
-        "l_853035674_0",
-        "l_85550390_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_8076192025",
@@ -50834,7 +47642,7 @@
       "majorLinks": [
         "l_866634691_0",
         "l_866634691_1",
-        "l_866634692_0"
+        "l_866634693_2"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -51003,7 +47811,7 @@
       "nodeId": "n_8079304336",
       "majorLinks": [
         "l_43655271_0",
-        "l_866798131_0",
+        "l_43655272_0",
         "l_866798132_0"
       ],
       "controlledBy": "uncontrolled",
@@ -51064,16 +47872,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_8079342740",
-      "majorLinks": [
-        "l_866802490_0",
-        "l_866802491_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_8079342779",
       "majorLinks": [
         "l_85550577_0",
@@ -51096,8 +47894,8 @@
     {
       "nodeId": "n_8079342816",
       "majorLinks": [
-        "l_866802490_0",
         "l_866802490_1",
+        "l_866802491_0",
         "l_866802494_0"
       ],
       "controlledBy": "uncontrolled",
@@ -51113,16 +47911,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_8090626666",
-      "majorLinks": [
-        "l_867987643_0",
-        "l_867987644_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_8090626667",
@@ -51175,16 +47963,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_8090640552",
-      "majorLinks": [
-        "l_867987642_0",
-        "l_867987644_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_8091111781",
@@ -51319,16 +48097,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_8097322201",
-      "majorLinks": [
-        "l_868703513_0",
-        "l_868703514_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_8108977419",
       "majorLinks": [
         "l_23151708_0",
@@ -51337,16 +48105,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_8115253858",
-      "majorLinks": [
-        "l_871187620_0",
-        "l_871187621_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_8115253898",
@@ -51456,16 +48214,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_8132960126",
-      "majorLinks": [
-        "l_873327857_1",
-        "l_873327858_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_8132960128",
       "majorLinks": [
         "l_873327857_0",
@@ -51499,19 +48247,9 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_8148726953",
-      "majorLinks": [
-        "l_875462670_1",
-        "l_875462671_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_8148726954",
       "majorLinks": [
-        "l_875462671_0",
+        "l_875462670_1",
         "l_875462671_1",
         "l_875462672_0"
       ],
@@ -51570,26 +48308,6 @@
       "confidenceNotes": "inferred from roadClass hierarchy"
     },
     {
-      "nodeId": "n_8168546599",
-      "majorLinks": [
-        "l_1242995331_0",
-        "l_22779053_5"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_8169169524",
-      "majorLinks": [
-        "l_776640938_0",
-        "l_776640945_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_8169183411",
       "majorLinks": [
         "l_878041691_0",
@@ -51603,19 +48321,9 @@
     {
       "nodeId": "n_8169338239",
       "majorLinks": [
-        "l_702172540_0",
+        "l_685156316_0",
         "l_702172540_1",
         "l_878059592_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
-      "nodeId": "n_8175315444",
-      "majorLinks": [
-        "l_878770488_0",
-        "l_878770489_0"
       ],
       "controlledBy": "uncontrolled",
       "confidence": 0.4,
@@ -51824,16 +48532,6 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_8211822419",
-      "majorLinks": [
-        "l_491066193_0",
-        "l_883057339_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_992426065",
       "majorLinks": [
         "l_86140128_0",
@@ -51919,7 +48617,7 @@
     {
       "nodeId": "n_992426177",
       "majorLinks": [
-        "l_38791086_0",
+        "l_140653958_1",
         "l_853035674_0"
       ],
       "controlledBy": "uncontrolled",
@@ -52058,16 +48756,6 @@
       "confidenceNotes": "inferred from name/ref continuity"
     },
     {
-      "nodeId": "n_992779014",
-      "majorLinks": [
-        "l_22757767_5",
-        "l_491066198_0"
-      ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_992779034",
       "majorLinks": [
         "l_22757767_1",
@@ -52192,7 +48880,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_2984164707"
+      ]
     },
     {
       "nodeId": "n_1470033181",
@@ -52209,7 +48901,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1538172906"
+      ]
     },
     {
       "nodeId": "n_1470033201",
@@ -52226,7 +48922,13 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1470033201",
+        "x_247761920",
+        "x_5800848178"
+      ]
     },
     {
       "nodeId": "n_1472879000",
@@ -52316,7 +49018,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1333392202",
+        "x_1333392353",
+        "x_1333392374",
+        "x_1333392407"
+      ]
     },
     {
       "nodeId": "n_1619274700",
@@ -52350,7 +49059,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8168627115",
+        "x_8168627116"
+      ]
     },
     {
       "nodeId": "n_1620648810",
@@ -52367,7 +49081,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8168627101",
+        "x_8168627103",
+        "x_8168627105",
+        "x_8168627107"
+      ]
     },
     {
       "nodeId": "n_1621493186",
@@ -52384,7 +49105,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1621493199",
+        "x_8167828760"
+      ]
     },
     {
       "nodeId": "n_1621493211",
@@ -52418,7 +49144,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1621493243",
+        "x_1695935483"
+      ]
     },
     {
       "nodeId": "n_1621822896",
@@ -52435,7 +49166,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_5800352894"
+      ]
     },
     {
       "nodeId": "n_18834324",
@@ -52446,7 +49181,7 @@
           "l_85548593_0"
         ],
         [
-          "l_1242995331_0"
+          "l_22779053_5"
         ]
       ],
       "greenS": [
@@ -52474,7 +49209,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_201409410"
+      ]
     },
     {
       "nodeId": "n_201434885",
@@ -52542,7 +49281,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_10108726265",
+        "x_8168627109",
+        "x_8168627111",
+        "x_8168627115"
+      ]
     },
     {
       "nodeId": "n_214984",
@@ -52576,13 +49322,19 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1333415742",
+        "x_1333415745",
+        "x_244223514"
+      ]
     },
     {
       "nodeId": "n_244227057",
       "stages": [
         [
-          "l_491066198_0",
+          "l_22757767_5",
           "l_491066198_1"
         ]
       ],
@@ -52593,7 +49345,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_7237671775"
+      ]
     },
     {
       "nodeId": "n_24936165",
@@ -52613,7 +49369,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_3830953990",
+        "x_8168737535"
+      ]
     },
     {
       "nodeId": "n_270914874",
@@ -52630,7 +49391,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8167939748",
+        "x_8167939750"
+      ]
     },
     {
       "nodeId": "n_270917118",
@@ -52681,7 +49447,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_5800352893"
+      ]
     },
     {
       "nodeId": "n_271986",
@@ -52698,7 +49468,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_7246403397"
+      ]
     },
     {
       "nodeId": "n_280151389",
@@ -52732,7 +49506,15 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_6416777363",
+        "x_6416777364",
+        "x_8327811335",
+        "x_8327811338",
+        "x_992426192"
+      ]
     },
     {
       "nodeId": "n_2976113024",
@@ -52855,7 +49637,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1333392451"
+      ]
     },
     {
       "nodeId": "n_5183020588",
@@ -52872,14 +49658,19 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1333415742",
+        "x_5183020588"
+      ]
     },
     {
       "nodeId": "n_5183020590",
       "stages": [
         [
-          "l_15534580_0",
-          "l_15534580_1"
+          "l_15534580_1",
+          "l_35406701_0"
         ]
       ],
       "greenS": [
@@ -52889,7 +49680,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1333415745",
+        "x_244223514"
+      ]
     },
     {
       "nodeId": "n_5183020591",
@@ -52912,8 +49708,8 @@
       "nodeId": "n_5183105885",
       "stages": [
         [
-          "l_491066197_0",
-          "l_491066197_1"
+          "l_491066197_1",
+          "l_7984137_1"
         ]
       ],
       "greenS": [
@@ -52923,7 +49719,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_5800352907"
+      ]
     },
     {
       "nodeId": "n_5183105890",
@@ -52940,7 +49740,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_2030489953",
+        "x_5183105890"
+      ]
     },
     {
       "nodeId": "n_5456156657",
@@ -52957,7 +49762,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_5456156657"
+      ]
     },
     {
       "nodeId": "n_5456156658",
@@ -52974,7 +49783,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_5456156658"
+      ]
     },
     {
       "nodeId": "n_565562316",
@@ -52991,7 +49804,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1621493243",
+        "x_1695935483"
+      ]
     },
     {
       "nodeId": "n_5800848179",
@@ -53008,7 +49826,15 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1538172906",
+        "x_280083588",
+        "x_5800848178",
+        "x_5800848179",
+        "x_6416777346"
+      ]
     },
     {
       "nodeId": "n_59751555",
@@ -53042,7 +49868,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1492243150",
+        "x_1538267567",
+        "x_1538267569",
+        "x_59751621"
+      ]
     },
     {
       "nodeId": "n_6416777346",
@@ -53059,7 +49892,15 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1538172906",
+        "x_280083588",
+        "x_5800848178",
+        "x_5800848179",
+        "x_6416777346"
+      ]
     },
     {
       "nodeId": "n_7237671776",
@@ -53076,7 +49917,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_7237671775"
+      ]
     },
     {
       "nodeId": "n_7243648157",
@@ -53093,7 +49938,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_214859"
+      ]
     },
     {
       "nodeId": "n_8076341820",
@@ -53110,7 +49959,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1619293837",
+        "x_8327811335"
+      ]
     },
     {
       "nodeId": "n_8079304250",
@@ -53127,7 +49981,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1621493199",
+        "x_8167828760"
+      ]
     },
     {
       "nodeId": "n_8079304251",
@@ -53144,7 +50003,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1621493199",
+        "x_8167828760"
+      ]
     },
     {
       "nodeId": "n_8091111781",
@@ -53161,7 +50025,13 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1538267567",
+        "x_1538267569",
+        "x_59751621"
+      ]
     },
     {
       "nodeId": "n_8091111786",
@@ -53178,7 +50048,13 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_1538267567",
+        "x_1538267569",
+        "x_59751621"
+      ]
     },
     {
       "nodeId": "n_8091111814",
@@ -53195,7 +50071,13 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8327811343",
+        "x_8327811345",
+        "x_8327811347"
+      ]
     },
     {
       "nodeId": "n_8093861462",
@@ -53263,7 +50145,12 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8327811340",
+        "x_8327811341"
+      ]
     },
     {
       "nodeId": "n_992426138",
@@ -53280,7 +50167,13 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8327811340",
+        "x_8327811341",
+        "x_8327811343"
+      ]
     },
     {
       "nodeId": "n_992426149",
@@ -53297,7 +50190,15 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_6096613816",
+        "x_6416777361",
+        "x_8327811348",
+        "x_992426149",
+        "x_992426216"
+      ]
     },
     {
       "nodeId": "n_992426192",
@@ -53314,7 +50215,15 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_6416777363",
+        "x_6416777364",
+        "x_8327811335",
+        "x_8327811338",
+        "x_992426192"
+      ]
     },
     {
       "nodeId": "n_992426196",
@@ -53331,7 +50240,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_8327811343",
+        "x_8327811345",
+        "x_8327811347",
+        "x_8327811348"
+      ]
     },
     {
       "nodeId": "n_992426216",
@@ -53348,7 +50264,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_6096613816",
+        "x_6416777361",
+        "x_992426149",
+        "x_992426216"
+      ]
     },
     {
       "nodeId": "n_992455266",
@@ -53365,7 +50288,11 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_404683"
+      ]
     },
     {
       "nodeId": "n_992455300",
@@ -53399,7 +50326,14 @@
       "allRedS": 2,
       "redAmberS": 2,
       "confidence": 0.45,
-      "confidenceNotes": "inferred opposing-approach stages and default timings"
+      "confidenceNotes": "inferred opposing-approach stages and default timings",
+      "pedestrianStageS": 8,
+      "crossingIds": [
+        "x_10108726265",
+        "x_8168627107",
+        "x_8168627109",
+        "x_8168627111"
+      ]
     },
     {
       "nodeId": "n_999588966",
@@ -53420,8 +50354,8 @@
     }
   ],
   "mainNetwork": {
-    "linkCount": 596,
-    "nodeCount": 483
+    "linkCount": 550,
+    "nodeCount": 437
   },
   "spawnPoints": [
     {
@@ -53492,9 +50426,9 @@
     },
     {
       "id": "sp_12",
-      "linkId": "l_148868369_0",
-      "offsetM": 26.4,
-      "heading": 186.0
+      "linkId": "l_22757767_5",
+      "offsetM": 37.1,
+      "heading": 112.4
     }
   ],
   "laneConnections": [
@@ -53923,22 +50857,6 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_154780712",
-      "fromLink": "l_491066195_0",
-      "fromLane": 0,
-      "toLink": "l_15534580_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_154780712",
-      "fromLink": "l_491066195_0",
-      "fromLane": 1,
-      "toLink": "l_15534580_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
       "nodeId": "n_154780713",
       "fromLink": "l_15534580_1",
       "fromLane": 0,
@@ -53959,22 +50877,6 @@
       "fromLink": "l_15534580_1",
       "fromLane": 1,
       "toLink": "l_15534450_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_154780715",
-      "fromLink": "l_15534450_2",
-      "fromLane": 0,
-      "toLink": "l_1058854041_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_154780715",
-      "fromLink": "l_15534450_2",
-      "fromLane": 1,
-      "toLink": "l_1058854041_0",
       "toLane": 1,
       "confidence": 0.55
     },
@@ -54206,7 +51108,7 @@
       "nodeId": "n_1621771806",
       "fromLink": "l_149160142_0",
       "fromLane": 0,
-      "toLink": "l_866798140_0",
+      "toLink": "l_753179410_0",
       "toLane": 0,
       "confidence": 0.55
     },
@@ -54316,7 +51218,7 @@
     },
     {
       "nodeId": "n_18855078",
-      "fromLink": "l_883057339_0",
+      "fromLink": "l_491066193_0",
       "fromLane": 0,
       "toLink": "l_85550577_0",
       "toLane": 0,
@@ -54324,7 +51226,7 @@
     },
     {
       "nodeId": "n_18855078",
-      "fromLink": "l_883057339_0",
+      "fromLink": "l_491066193_0",
       "fromLane": 1,
       "toLink": "l_19373424_0",
       "toLane": 0,
@@ -54332,7 +51234,7 @@
     },
     {
       "nodeId": "n_18855078",
-      "fromLink": "l_883057339_0",
+      "fromLink": "l_491066193_0",
       "fromLane": 1,
       "toLink": "l_85550577_0",
       "toLane": 1,
@@ -54399,22 +51301,6 @@
       "fromLink": "l_19373955_1",
       "fromLane": 1,
       "toLink": "l_19373955_2",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_201442100",
-      "fromLink": "l_311799312_1",
-      "fromLane": 0,
-      "toLink": "l_118716556_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_201442100",
-      "fromLink": "l_311799312_1",
-      "fromLane": 1,
-      "toLink": "l_118716556_0",
       "toLane": 1,
       "confidence": 0.55
     },
@@ -55588,7 +52474,7 @@
     },
     {
       "nodeId": "n_244223480",
-      "fromLink": "l_1058854041_0",
+      "fromLink": "l_15534450_2",
       "fromLane": 0,
       "toLink": "l_183926041_0",
       "toLane": 0,
@@ -55596,7 +52482,7 @@
     },
     {
       "nodeId": "n_244223480",
-      "fromLink": "l_1058854041_0",
+      "fromLink": "l_15534450_2",
       "fromLane": 1,
       "toLink": "l_183926041_0",
       "toLane": 0,
@@ -55604,7 +52490,7 @@
     },
     {
       "nodeId": "n_244223480",
-      "fromLink": "l_1058854041_0",
+      "fromLink": "l_15534450_2",
       "fromLane": 1,
       "toLink": "l_22757739_0",
       "toLane": 1,
@@ -55740,7 +52626,7 @@
     },
     {
       "nodeId": "n_244223899",
-      "fromLink": "l_853012424_0",
+      "fromLink": "l_85550390_1",
       "fromLane": 0,
       "toLink": "l_491066196_0",
       "toLane": 0,
@@ -55748,7 +52634,7 @@
     },
     {
       "nodeId": "n_244223899",
-      "fromLink": "l_853012424_0",
+      "fromLink": "l_85550390_1",
       "fromLane": 1,
       "toLink": "l_22757757_0",
       "toLane": 0,
@@ -55756,7 +52642,7 @@
     },
     {
       "nodeId": "n_244223899",
-      "fromLink": "l_853012424_0",
+      "fromLink": "l_85550390_1",
       "fromLane": 1,
       "toLink": "l_491066196_0",
       "toLane": 1,
@@ -55796,7 +52682,7 @@
     },
     {
       "nodeId": "n_244227057",
-      "fromLink": "l_491066198_0",
+      "fromLink": "l_22757767_5",
       "fromLane": 0,
       "toLink": "l_491066198_1",
       "toLane": 0,
@@ -55804,7 +52690,7 @@
     },
     {
       "nodeId": "n_244227057",
-      "fromLink": "l_491066198_0",
+      "fromLink": "l_22757767_5",
       "fromLane": 1,
       "toLink": "l_491066198_1",
       "toLane": 1,
@@ -55907,18 +52793,26 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_244397684",
-      "fromLink": "l_7984137_1",
+      "nodeId": "n_244397720",
+      "fromLink": "l_118446711_0",
       "fromLane": 0,
-      "toLink": "l_491066197_0",
+      "toLink": "l_109182581_0",
       "toLane": 0,
       "confidence": 0.55
     },
     {
-      "nodeId": "n_244397684",
-      "fromLink": "l_7984137_1",
+      "nodeId": "n_244397720",
+      "fromLink": "l_118446711_0",
+      "fromLane": 0,
+      "toLink": "l_7984133_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_244397720",
+      "fromLink": "l_118446711_0",
       "fromLane": 1,
-      "toLink": "l_491066197_0",
+      "toLink": "l_7984133_0",
       "toLane": 1,
       "confidence": 0.55
     },
@@ -55928,30 +52822,6 @@
       "fromLane": 1,
       "toLink": "l_109182581_0",
       "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_244397720",
-      "fromLink": "l_852170602_0",
-      "fromLane": 0,
-      "toLink": "l_109182581_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_244397720",
-      "fromLink": "l_852170602_0",
-      "fromLane": 0,
-      "toLink": "l_7984133_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_244397720",
-      "fromLink": "l_852170602_0",
-      "fromLane": 1,
-      "toLink": "l_7984133_0",
-      "toLane": 1,
       "confidence": 0.55
     },
     {
@@ -56220,7 +53090,7 @@
     },
     {
       "nodeId": "n_271960",
-      "fromLink": "l_22779028_0",
+      "fromLink": "l_852018219_3",
       "fromLane": 0,
       "toLink": "l_22779028_1",
       "toLane": 0,
@@ -56228,7 +53098,7 @@
     },
     {
       "nodeId": "n_271960",
-      "fromLink": "l_22779028_0",
+      "fromLink": "l_852018219_3",
       "fromLane": 1,
       "toLink": "l_22779028_1",
       "toLane": 1,
@@ -56348,7 +53218,7 @@
     },
     {
       "nodeId": "n_276541176",
-      "fromLink": "l_85550390_0",
+      "fromLink": "l_853035674_0",
       "fromLane": 0,
       "toLink": "l_85550390_1",
       "toLane": 0,
@@ -56356,7 +53226,7 @@
     },
     {
       "nodeId": "n_276541176",
-      "fromLink": "l_85550390_0",
+      "fromLink": "l_853035674_0",
       "fromLane": 1,
       "toLink": "l_85550390_1",
       "toLane": 1,
@@ -56379,24 +53249,8 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_280083596",
-      "fromLink": "l_149038892_0",
-      "fromLane": 0,
-      "toLink": "l_612926059_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_280083596",
-      "fromLink": "l_149038892_0",
-      "fromLane": 1,
-      "toLink": "l_612926059_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
       "nodeId": "n_280083597",
-      "fromLink": "l_612926059_0",
+      "fromLink": "l_149038892_0",
       "fromLane": 0,
       "toLink": "l_86628388_0",
       "toLane": 0,
@@ -56404,7 +53258,7 @@
     },
     {
       "nodeId": "n_280083597",
-      "fromLink": "l_612926059_0",
+      "fromLink": "l_149038892_0",
       "fromLane": 1,
       "toLink": "l_86628388_0",
       "toLane": 1,
@@ -56614,7 +53468,7 @@
       "nodeId": "n_295901974",
       "fromLink": "l_22757739_2",
       "fromLane": 1,
-      "toLink": "l_628486652_0",
+      "toLink": "l_627988062_0",
       "toLane": 0,
       "confidence": 0.55
     },
@@ -56702,7 +53556,7 @@
       "nodeId": "n_3473842696",
       "fromLink": "l_86882780_1",
       "fromLane": 1,
-      "toLink": "l_775826362_0",
+      "toLink": "l_775826356_0",
       "toLane": 0,
       "confidence": 0.55
     },
@@ -56800,22 +53654,6 @@
       "fromLane": 1,
       "toLink": "l_7984419_0",
       "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_438470",
-      "fromLink": "l_148868368_0",
-      "fromLane": 0,
-      "toLink": "l_86306233_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_438470",
-      "fromLink": "l_148868368_0",
-      "fromLane": 2,
-      "toLink": "l_86306233_0",
-      "toLane": 2,
       "confidence": 0.55
     },
     {
@@ -56963,22 +53801,6 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_4832257642",
-      "fromLink": "l_35406701_0",
-      "fromLane": 0,
-      "toLink": "l_491066195_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_4832257642",
-      "fromLink": "l_35406701_0",
-      "fromLane": 1,
-      "toLink": "l_491066195_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
       "nodeId": "n_4981561692",
       "fromLink": "l_19373955_2",
       "fromLane": 0,
@@ -57012,7 +53834,7 @@
     },
     {
       "nodeId": "n_5183020590",
-      "fromLink": "l_15534580_0",
+      "fromLink": "l_35406701_0",
       "fromLane": 0,
       "toLink": "l_15534580_1",
       "toLane": 0,
@@ -57020,7 +53842,7 @@
     },
     {
       "nodeId": "n_5183020590",
-      "fromLink": "l_15534580_0",
+      "fromLink": "l_35406701_0",
       "fromLane": 1,
       "toLink": "l_15534580_1",
       "toLane": 1,
@@ -57028,7 +53850,7 @@
     },
     {
       "nodeId": "n_5183105885",
-      "fromLink": "l_491066197_0",
+      "fromLink": "l_7984137_1",
       "fromLane": 0,
       "toLink": "l_491066197_1",
       "toLane": 0,
@@ -57036,7 +53858,7 @@
     },
     {
       "nodeId": "n_5183105885",
-      "fromLink": "l_491066197_0",
+      "fromLink": "l_7984137_1",
       "fromLane": 1,
       "toLink": "l_491066197_1",
       "toLane": 1,
@@ -57084,7 +53906,7 @@
     },
     {
       "nodeId": "n_5277664282",
-      "fromLink": "l_854584201_0",
+      "fromLink": "l_7984136_0",
       "fromLane": 0,
       "toLink": "l_546116272_2",
       "toLane": 0,
@@ -57092,7 +53914,7 @@
     },
     {
       "nodeId": "n_5277664282",
-      "fromLink": "l_854584201_0",
+      "fromLink": "l_7984136_0",
       "fromLane": 0,
       "toLink": "l_852018215_0",
       "toLane": 0,
@@ -57100,7 +53922,7 @@
     },
     {
       "nodeId": "n_5277664282",
-      "fromLink": "l_854584201_0",
+      "fromLink": "l_7984136_0",
       "fromLane": 1,
       "toLink": "l_852018215_0",
       "toLane": 1,
@@ -57619,22 +54441,6 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_7246403396",
-      "fromLink": "l_7984136_0",
-      "fromLane": 0,
-      "toLink": "l_856640076_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7246403396",
-      "fromLink": "l_7984136_0",
-      "fromLane": 1,
-      "toLink": "l_856640076_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
       "nodeId": "n_7246403397",
       "fromLink": "l_852018215_1",
       "fromLane": 0,
@@ -57718,7 +54524,7 @@
       "nodeId": "n_7246403405",
       "fromLink": "l_22766048_1",
       "fromLane": 1,
-      "toLink": "l_776640938_0",
+      "toLink": "l_776640939_0",
       "toLane": 0,
       "confidence": 0.55
     },
@@ -57776,86 +54582,6 @@
       "fromLane": 1,
       "toLink": "l_880133463_0",
       "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7947558449",
-      "fromLink": "l_856640076_0",
-      "fromLane": 0,
-      "toLink": "l_854584201_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7947558449",
-      "fromLink": "l_856640076_0",
-      "fromLane": 1,
-      "toLink": "l_854584201_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7947558451",
-      "fromLink": "l_852018219_3",
-      "fromLane": 0,
-      "toLink": "l_22779028_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7947558451",
-      "fromLink": "l_852018219_3",
-      "fromLane": 1,
-      "toLink": "l_22779028_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7948796384",
-      "fromLink": "l_118446711_0",
-      "fromLane": 0,
-      "toLink": "l_852170602_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7948796384",
-      "fromLink": "l_118446711_0",
-      "fromLane": 1,
-      "toLink": "l_852170602_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7956224390",
-      "fromLink": "l_85550390_1",
-      "fromLane": 0,
-      "toLink": "l_853012424_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7956224390",
-      "fromLink": "l_85550390_1",
-      "fromLane": 1,
-      "toLink": "l_853012424_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7956406227",
-      "fromLink": "l_853035674_0",
-      "fromLane": 0,
-      "toLink": "l_85550390_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_7956406227",
-      "fromLink": "l_853035674_0",
-      "fromLane": 1,
-      "toLink": "l_85550390_0",
-      "toLane": 1,
       "confidence": 0.55
     },
     {
@@ -58419,22 +55145,6 @@
       "confidence": 0.55
     },
     {
-      "nodeId": "n_8211822419",
-      "fromLink": "l_491066193_0",
-      "fromLane": 0,
-      "toLink": "l_883057339_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_8211822419",
-      "fromLink": "l_491066193_0",
-      "fromLane": 1,
-      "toLink": "l_883057339_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
       "nodeId": "n_8327811335",
       "fromLink": "l_7984179_0",
       "fromLane": 0,
@@ -58724,7 +55434,7 @@
     },
     {
       "nodeId": "n_992426177",
-      "fromLink": "l_118716556_0",
+      "fromLink": "l_311799312_1",
       "fromLane": 0,
       "toLink": "l_853035674_0",
       "toLane": 0,
@@ -58732,7 +55442,7 @@
     },
     {
       "nodeId": "n_992426177",
-      "fromLink": "l_118716556_0",
+      "fromLink": "l_311799312_1",
       "fromLane": 0,
       "toLink": "l_85550386_0",
       "toLane": 0,
@@ -58740,15 +55450,15 @@
     },
     {
       "nodeId": "n_992426177",
-      "fromLink": "l_118716556_0",
+      "fromLink": "l_311799312_1",
       "fromLane": 1,
-      "toLink": "l_38791086_0",
+      "toLink": "l_140653958_1",
       "toLane": 0,
       "confidence": 0.55
     },
     {
       "nodeId": "n_992426177",
-      "fromLink": "l_118716556_0",
+      "fromLink": "l_311799312_1",
       "fromLane": 1,
       "toLink": "l_85550386_0",
       "toLane": 0,
@@ -59023,22 +55733,6 @@
       "fromLink": "l_775826348_1",
       "fromLane": 1,
       "toLink": "l_85551215_0",
-      "toLane": 1,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_992779014",
-      "fromLink": "l_22757767_5",
-      "fromLane": 0,
-      "toLink": "l_491066198_0",
-      "toLane": 0,
-      "confidence": 0.55
-    },
-    {
-      "nodeId": "n_992779014",
-      "fromLink": "l_22757767_5",
-      "fromLane": 1,
-      "toLink": "l_491066198_0",
       "toLane": 1,
       "confidence": 0.55
     },

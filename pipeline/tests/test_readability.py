@@ -122,6 +122,17 @@ REQUIRED_UI_KEYS = [
     "course.roundabout",
     "course.dual_carriageway",
     "course.wolverhampton_beta",
+    "progress.title",
+    "progress.stage_locked",
+    "progress.unlock_hint",
+    "progress.stars",
+    "progress.review_due",
+    "lesson.start",
+    "lesson.next",
+    "lesson.retry",
+    "lesson.quiz_title",
+    "lesson.correct",
+    "lesson.incorrect",
 ]
 
 
