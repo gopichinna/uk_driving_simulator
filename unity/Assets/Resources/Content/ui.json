@@ -34,6 +34,17 @@
     "course.two_lane_roundabout": "Two-lane roundabout",
     "course.roundabout": "Single-lane roundabout",
     "course.dual_carriageway": "40 mph dual carriageway",
-    "course.wolverhampton_beta": "Wolverhampton (beta)"
+    "course.wolverhampton_beta": "Wolverhampton (beta)",
+    "progress.title": "Your progress",
+    "progress.stage_locked": "Stage locked",
+    "progress.unlock_hint": "Get {stars} stars in Stage {stage} to unlock.",
+    "progress.stars": "{stars} / 3 stars",
+    "progress.review_due": "{count, plural, one {# review drive} other {# review drives}} ready",
+    "lesson.start": "Start lesson",
+    "lesson.next": "Next",
+    "lesson.retry": "Try again",
+    "lesson.quiz_title": "Quick check",
+    "lesson.correct": "Correct",
+    "lesson.incorrect": "Not quite"
   }
 }

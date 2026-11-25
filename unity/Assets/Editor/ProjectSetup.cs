@@ -85,6 +85,8 @@ namespace LToLocal.EditorTools
                 ("../content/countries/gb/strings/en/rules.json", "rules.json"),
                 ("../content/countries/gb/test_marking.yaml", "test_marking.txt"),
                 ("../content/cities/wolverhampton/roadpack.json", "wolverhampton_roadpack.json"),
+                ("../content/cities/wolverhampton/pois.json", "wolverhampton_pois.json"),
+                ("../content/lessons/gb/progression.json", "progression.json"),
             };
             foreach (var (from, to) in files)
             {

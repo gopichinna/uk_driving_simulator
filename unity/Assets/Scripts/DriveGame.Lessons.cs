@@ -47,6 +47,13 @@ namespace LToLocal.Game
                 {
                     _director = new ScenarioDirector(def);
                     _director.Start(World, _curr);
+                    // Independent driving (the mock test): sat-nav unless the player must follow the signs.
+                    if (_director.IsIndependentDriving && _director.IndependentMode != "signs" && _course is WolverhamptonCourse w)
+                    {
+                        _nav = new SatNav(w.Graph);
+                        _plan = new MockTestPlan(w.Graph, (ulong)System.DateTime.Now.Ticks);
+                        _nav.SetDestination(_plan.NextDestination(new Vec2(_curr.X, _curr.Z)), _curr);
+                    }
                 }
                 LessonSession.ScenarioPending = false;
             }
@@ -71,12 +78,14 @@ namespace LToLocal.Game
             {
                 _nav.Update(_curr, _clock.SimTime);
                 if (_nav.Arrived) _nav.SetDestination(_plan.NextDestination(new Vec2(_curr.X, _curr.Z)), _curr);
-                if (_clock.SimTime - _mockStart >= _plan.DurationS) EndMockTest();
+                if (_director == null && _clock.SimTime - _mockStart >= _plan.DurationS) EndMockTest();
             }
         }
 
         private void EndScenario(bool completed, string note)
         {
+            bool independent = _director != null && _director.IsIndependentDriving;
+            _nav = null;
             _lastResult = new ScenarioResult
             {
                 ScenarioId = LessonSession.CurrentRef?.Id ?? "",
@@ -85,6 +94,7 @@ namespace LToLocal.Game
                 Summary = DriveSummary.From(_driveEvents, Marking),
             };
             _director = null;
+            if (independent && completed && _lastResult.Summary.Passed) LessonSession.AwardLicence();
             SetMode(Mode.ScenarioDone);
         }
 
@@ -113,8 +123,17 @@ namespace LToLocal.Game
             {
                 var r = LessonSession.CurrentRef;
                 line = $"Drive {LessonSession.ScenarioIndex + 1} of {LessonSession.Lesson.Scenarios.Count}: {r.Goal}";
+                if (_director.IsIndependentDriving)
+                {
+                    line = $"Independent driving · {(int)_director.TimeLeft / 60}:{(int)_director.TimeLeft % 60:00} left\n";
+                    if (_nav != null) { var (what, dist) = _nav.Next(_curr); line += SatNav.Describe(what, dist); }
+                    else line += _director.IndependentInstruction;
+                }
+                else
+                {
                 if (_director.RequiredExit > 0) line += $"  Take exit {_director.RequiredExit}.";
                 line += $"   ({(int)_director.TimeLeft / 60}:{(int)_director.TimeLeft % 60:00} left)";
+                }
             }
             else if (_nav != null)
             {
@@ -124,10 +143,11 @@ namespace LToLocal.Game
             }
             if (line == null) return;
             Styles(H);
-            float w = W * 0.62f, h = H * (_nav != null ? 0.13f : 0.09f);
+            bool big = _nav != null || (_director != null && _director.IsIndependentDriving);
+            float w = W * 0.62f, h = H * (big ? 0.13f : 0.09f);
             var rect = new Rect(W * 0.5f - w / 2, H * 0.69f, w, h);
             Fill(rect, new Color(0.05f, 0.06f, 0.08f, 0.75f));
-            var style = new GUIStyle(_textStyle) { alignment = TextAnchor.MiddleCenter, fontSize = Mathf.RoundToInt(H * (_nav != null ? 0.038f : 0.03f)) };
+            var style = new GUIStyle(_textStyle) { alignment = TextAnchor.MiddleCenter, fontSize = Mathf.RoundToInt(H * (big ? 0.038f : 0.03f)) };
             GUI.Label(rect, line, style);
         }
 
@@ -166,10 +186,14 @@ namespace LToLocal.Game
                 if (l.Stage != last)
                 {
                     last = l.Stage;
-                    GUI.Label(new Rect(0, cy, w - 30, headH), StageName(l.Stage), _textStyle);
+                    var ps = LessonSession.Progression?.StageOf(l.Stage);
+                    string head = ps != null ? $"Stage {l.Stage}: {ps.Title}" : StageName(l.Stage);
+                    if (ps != null && ps.UnlockAfterStage >= 0 && !LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression))
+                        head += $"   (unlocks with {ps.MinStars} stars in Stage {ps.UnlockAfterStage})";
+                    GUI.Label(new Rect(0, cy, w - 30, headH), head, _textStyle);
                     cy += headH;
                 }
-                bool open = LessonSession.Progress.Unlocked(l, lessons);
+                bool open = LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression);
                 int stars = LessonSession.Progress.StarsFor(l.Id);
                 string label = $"{l.Order}. {l.Title}{(l.FreeTier ? "  (free)" : "")}   {new string('★', stars)}{new string('☆', 3 - stars)}{(open ? "" : "   Locked")}";
                 GUI.enabled = open;
@@ -180,12 +204,6 @@ namespace LToLocal.Game
                 }
                 GUI.enabled = true;
                 cy += rowH + 6;
-            }
-            cy += 10;
-            if (GUI.Button(new Rect(0, cy, w - 30, rowH), "Final: mock driving test in Wolverhampton (about 35 minutes)", _rowStyle))
-            {
-                SetMode(Mode.Driving);
-                LessonSession.BeginMockTest();
             }
             GUI.EndScrollView();
 

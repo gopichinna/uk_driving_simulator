@@ -34,7 +34,7 @@ namespace LToLocal.Rules.Tests
                 {
                     var def = ScenarioDef.FromJson(File.ReadAllText(Path.Combine(Root(), "scenarios/gb", s.Id + ".json")));
                     Assert.That(def.Course, Is.EqualTo(s.Course), s.Id);
-                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s" }));
+                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s", "independent_driving" }));
                 }
                 var quiz = QuizDef.FromJson(File.ReadAllText(Path.Combine(Root(), "lessons/gb/quiz", l.Id + ".json")));
                 Assert.That(quiz.Questions.All(q => q.AnswerIndex >= 0 && q.AnswerIndex < q.Options.Count), l.Id);
@@ -64,6 +64,35 @@ namespace LToLocal.Rules.Tests
             var reloaded = LessonProgress.Parse(progress.Serialize());
             Assert.That(reloaded.StarsFor(first.Id), Is.EqualTo(1));
             Assert.That(reloaded.Record(first.Id, 1), Is.False, "keeps the best");
+        }
+
+        [Test]
+        public void ProgressionDataControlsUnlocks()
+        {
+            var prog = Progression.FromJson(File.ReadAllText(Path.Combine(Root(), "lessons/gb/progression.json")));
+            var lessons = Lessons();
+            Assert.That(prog.FreeTier, Is.EquivalentTo(lessons.Where(l => l.FreeTier).Select(l => l.Id)));
+            var stage1 = lessons.First(l => l.Stage == 1);
+            var rule = prog.StageOf(1)!;
+            var progress = new LessonProgress();
+            Assert.That(progress.Unlocked(stage1, lessons, prog), Is.False);
+            int given = 0;
+            foreach (var id in prog.StageOf(rule.UnlockAfterStage)!.LessonIds)
+                if (given < rule.MinStars) { int s = System.Math.Min(3, rule.MinStars - given); progress.Record(id, s); given += s; }
+            Assert.That(progress.Unlocked(stage1, lessons, prog), Is.True, $"{rule.MinStars} stars in stage {rule.UnlockAfterStage} unlock stage 1");
+        }
+
+        [Test]
+        public void IndependentDrivingRunsForItsMinutes()
+        {
+            var world = new FakeWorld();
+            var d = new ScenarioDirector(Def("{\"scenarioId\":\"m\",\"course\":\"wolverhampton\",\"anchor\":\"start\",\"durationS\":180,\"events\":[{\"type\":\"independent_driving\",\"minutes\":35,\"mode\":\"mixed\"},{\"type\":\"finish_after_s\",\"seconds\":170}]}"));
+            d.Start(world, new CarState());
+            Assert.That(d.IsIndependentDriving && d.IndependentMode == "mixed");
+            for (int i = 0; i < 50 * 200; i++) d.Step(0.02, world, new CarState());
+            Assert.That(d.Finished, Is.False, "the 35 minutes win over the scenario's own short timers");
+            for (int i = 0; i < 50 * 60 * 35; i++) d.Step(0.02, world, new CarState());
+            Assert.That(d.Finished && d.Completed);
         }
 
         private sealed class FakeWorld : IScenarioWorld

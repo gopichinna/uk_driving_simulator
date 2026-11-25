@@ -46,6 +46,22 @@ namespace LToLocal.Game
             }
         }
 
+        private static Progression s_progression;
+        private static bool s_progressionLoaded;
+
+        /// <summary>Unlock rules from the content pack (null if missing: then each previous stage needs a star on every lesson).</summary>
+        public static Progression Progression
+        {
+            get
+            {
+                if (s_progressionLoaded) return s_progression;
+                s_progressionLoaded = true;
+                var a = Resources.Load<TextAsset>("Content/progression");
+                if (a != null) s_progression = Progression.FromJson(a.text);
+                return s_progression;
+            }
+        }
+
         public static LessonProgress Progress => s_progress ??= LessonProgress.Parse(PlayerPrefs.GetString(ProgressKey, ""));
 
         public static bool HasLicence => PlayerPrefs.GetInt(LicenceKey, 0) == 1;

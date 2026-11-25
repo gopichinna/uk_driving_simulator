@@ -1,0 +1,1372 @@
+{
+  "poisFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-centre",
+  "origin": {
+    "lat": 52.5862,
+    "lon": -2.1288
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-24T21:21:23Z",
+    "bbox": [
+      -2.1362,
+      52.5817,
+      -2.1214,
+      52.5907
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "pois": [
+    {
+      "id": "poi_bus_station_140385467",
+      "name": "Wolverhampton Interchange",
+      "kind": "bus_station",
+      "x": 448.432,
+      "z": -49.204,
+      "accessLinkId": "l_852154912_0",
+      "osmId": 140385467
+    },
+    {
+      "id": "poi_car_park_1365000515",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 226.284,
+      "z": -260.146,
+      "accessLinkId": "l_7984137_1",
+      "osmId": 1365000515
+    },
+    {
+      "id": "poi_car_park_140387785",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 376.695,
+      "z": -126.716,
+      "accessLinkId": "l_776640952_0",
+      "osmId": 140387785
+    },
+    {
+      "id": "poi_car_park_149166998",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 340.525,
+      "z": -454.437,
+      "accessLinkId": "l_22779135_0",
+      "osmId": 149166998
+    },
+    {
+      "id": "poi_car_park_149172598",
+      "name": "Faulkland Crescent Coach Park",
+      "kind": "car_park",
+      "x": 226.341,
+      "z": 422.321,
+      "accessLinkId": "l_149282981_2",
+      "osmId": 149172598
+    },
+    {
+      "id": "poi_car_park_149282983",
+      "name": "Faulkland Street Car Park",
+      "kind": "car_park",
+      "x": 260.286,
+      "z": 369.667,
+      "accessLinkId": "l_149283018_0",
+      "osmId": 149282983
+    },
+    {
+      "id": "poi_car_park_149283031",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 280.554,
+      "z": 473.907,
+      "accessLinkId": "l_149282984_0",
+      "osmId": 149283031
+    },
+    {
+      "id": "poi_car_park_156363875",
+      "name": "St. Peter's Square",
+      "kind": "car_park",
+      "x": -24.661,
+      "z": 195.579,
+      "accessLinkId": "l_871187630_1",
+      "osmId": 156363875
+    },
+    {
+      "id": "poi_car_park_156363876",
+      "name": "Ceremonial Car Park",
+      "kind": "car_park",
+      "x": -32.459,
+      "z": 154.211,
+      "accessLinkId": "l_156364120_0",
+      "osmId": 156363876
+    },
+    {
+      "id": "poi_car_park_156370177",
+      "name": "Traders Car Park",
+      "kind": "car_park",
+      "x": 124.506,
+      "z": -423.792,
+      "accessLinkId": "l_867987642_0",
+      "osmId": 156370177
+    },
+    {
+      "id": "poi_car_park_156370201",
+      "name": "Fryer Street Car Park",
+      "kind": "car_park",
+      "x": 320.211,
+      "z": 102.756,
+      "accessLinkId": "l_104334752_0",
+      "osmId": 156370201
+    },
+    {
+      "id": "poi_car_park_156376791",
+      "name": "Broad Street Car Park",
+      "kind": "car_park",
+      "x": 287.872,
+      "z": 252.188,
+      "accessLinkId": "l_866481295_0",
+      "osmId": 156376791
+    },
+    {
+      "id": "poi_car_park_209695977",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 326.545,
+      "z": -17.6,
+      "accessLinkId": "l_22766059_0",
+      "osmId": 209695977
+    },
+    {
+      "id": "poi_car_park_209872551",
+      "name": "Jack Harris Upper Car Park P",
+      "kind": "car_park",
+      "x": -90.111,
+      "z": 307.873,
+      "accessLinkId": "l_866634693_2",
+      "osmId": 209872551
+    },
+    {
+      "id": "poi_car_park_209873847",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 47.897,
+      "z": 442.262,
+      "accessLinkId": "l_209874063_1",
+      "osmId": 209873847
+    },
+    {
+      "id": "poi_car_park_209873913",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 50.886,
+      "z": 404.814,
+      "accessLinkId": "l_104334756_0",
+      "osmId": 209873913
+    },
+    {
+      "id": "poi_car_park_209878849",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 88.783,
+      "z": -398.028,
+      "accessLinkId": "l_776095312_0",
+      "osmId": 209878849
+    },
+    {
+      "id": "poi_car_park_209878859",
+      "name": "Summer Row Car Park",
+      "kind": "car_park",
+      "x": 50.338,
+      "z": -419.13,
+      "accessLinkId": "l_612851564_3",
+      "osmId": 209878859
+    },
+    {
+      "id": "poi_car_park_233524873",
+      "name": "Birch Street Car Park",
+      "kind": "car_park",
+      "x": -332.939,
+      "z": 24.443,
+      "accessLinkId": "l_880133461_1",
+      "osmId": 233524873
+    },
+    {
+      "id": "poi_car_park_245807947",
+      "name": "Civic Centre",
+      "kind": "car_park",
+      "x": -39.208,
+      "z": 92.851,
+      "accessLinkId": "l_156364120_0",
+      "osmId": 245807947
+    },
+    {
+      "id": "poi_car_park_290037647",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -166.632,
+      "z": 358.953,
+      "accessLinkId": "l_866634696_0",
+      "osmId": 290037647
+    },
+    {
+      "id": "poi_car_park_290037649",
+      "name": "Waterloo Road Car Park",
+      "kind": "car_park",
+      "x": -206.432,
+      "z": 340.593,
+      "accessLinkId": "l_25696128_0",
+      "osmId": 290037649
+    },
+    {
+      "id": "poi_car_park_290037650",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -206.787,
+      "z": 236.62,
+      "accessLinkId": "l_37852781_1",
+      "osmId": 290037650
+    },
+    {
+      "id": "poi_car_park_341003650",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -380.507,
+      "z": 5.594,
+      "accessLinkId": "l_85580979_0",
+      "osmId": 341003650
+    },
+    {
+      "id": "poi_car_park_341003651",
+      "name": "Birch Street Car Park",
+      "kind": "car_park",
+      "x": -335.278,
+      "z": -16.95,
+      "accessLinkId": "l_776883999_0",
+      "osmId": 341003651
+    },
+    {
+      "id": "poi_car_park_341003654",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -304.701,
+      "z": -73.445,
+      "accessLinkId": "l_233524862_2",
+      "osmId": 341003654
+    },
+    {
+      "id": "poi_car_park_534446321",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -43.52,
+      "z": 20.498,
+      "accessLinkId": "l_22757753_0",
+      "osmId": 534446321
+    },
+    {
+      "id": "poi_car_park_534446334",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 163.81,
+      "z": -415.508,
+      "accessLinkId": "l_867987661_1",
+      "osmId": 534446334
+    },
+    {
+      "id": "poi_car_park_546116269",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 329.782,
+      "z": -197.736,
+      "accessLinkId": "l_546116272_2",
+      "osmId": 546116269
+    },
+    {
+      "id": "poi_car_park_546116276",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 320.794,
+      "z": -277.14,
+      "accessLinkId": "l_854584200_0",
+      "osmId": 546116276
+    },
+    {
+      "id": "poi_car_park_546120382",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 289.973,
+      "z": -432.839,
+      "accessLinkId": "l_638785947_2",
+      "osmId": 546120382
+    },
+    {
+      "id": "poi_car_park_546120386",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 308.577,
+      "z": -426.017,
+      "accessLinkId": "l_638785947_2",
+      "osmId": 546120386
+    },
+    {
+      "id": "poi_car_park_775826364",
+      "name": "Beatties",
+      "kind": "car_park",
+      "x": -178.994,
+      "z": -171.772,
+      "accessLinkId": "l_645715020_0",
+      "osmId": 775826364
+    },
+    {
+      "id": "poi_car_park_775826370",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -182.107,
+      "z": -248.985,
+      "accessLinkId": "l_118496186_1",
+      "osmId": 775826370
+    },
+    {
+      "id": "poi_car_park_775826371",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -295.197,
+      "z": -243.296,
+      "accessLinkId": "l_149160142_1",
+      "osmId": 775826371
+    },
+    {
+      "id": "poi_car_park_775826377",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -451.481,
+      "z": -229.805,
+      "accessLinkId": "l_438851182_0",
+      "osmId": 775826377
+    },
+    {
+      "id": "poi_car_park_775830462",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 5.747,
+      "z": -492.994,
+      "accessLinkId": "l_868431854_0",
+      "osmId": 775830462
+    },
+    {
+      "id": "poi_car_park_775830464",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 9.069,
+      "z": -462.65,
+      "accessLinkId": "l_22779135_9",
+      "osmId": 775830464
+    },
+    {
+      "id": "poi_car_park_775830473",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -100.343,
+      "z": -459.532,
+      "accessLinkId": "l_534429536_2",
+      "osmId": 775830473
+    },
+    {
+      "id": "poi_car_park_775830493",
+      "name": "Church Street Car Park",
+      "kind": "car_park",
+      "x": -137.486,
+      "z": -498.251,
+      "accessLinkId": "l_534429536_3",
+      "osmId": 775830493
+    },
+    {
+      "id": "poi_car_park_776082039",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 65.642,
+      "z": -500.026,
+      "accessLinkId": "l_22779135_6",
+      "osmId": 776082039
+    },
+    {
+      "id": "poi_car_park_776082047",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 120.306,
+      "z": -477.555,
+      "accessLinkId": "l_22779135_4",
+      "osmId": 776082047
+    },
+    {
+      "id": "poi_car_park_776082063",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 82.58,
+      "z": -482.626,
+      "accessLinkId": "l_22779135_6",
+      "osmId": 776082063
+    },
+    {
+      "id": "poi_car_park_776095310",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 57.985,
+      "z": -388.135,
+      "accessLinkId": "l_612851564_4",
+      "osmId": 776095310
+    },
+    {
+      "id": "poi_car_park_776099121",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -86.313,
+      "z": -376.537,
+      "accessLinkId": "l_776099135_0",
+      "osmId": 776099121
+    },
+    {
+      "id": "poi_car_park_776099124",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -90.988,
+      "z": -414.305,
+      "accessLinkId": "l_534429536_1",
+      "osmId": 776099124
+    },
+    {
+      "id": "poi_car_park_776099130",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -40.725,
+      "z": -405.737,
+      "accessLinkId": "l_22757678_2",
+      "osmId": 776099130
+    },
+    {
+      "id": "poi_car_park_776099131",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -81.287,
+      "z": -349.162,
+      "accessLinkId": "l_776099135_0",
+      "osmId": 776099131
+    },
+    {
+      "id": "poi_car_park_776099137",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -55.496,
+      "z": -386.7,
+      "accessLinkId": "l_776099133_5",
+      "osmId": 776099137
+    },
+    {
+      "id": "poi_car_park_776099138",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -40.233,
+      "z": -393.832,
+      "accessLinkId": "l_22757678_2",
+      "osmId": 776099138
+    },
+    {
+      "id": "poi_car_park_776351315",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 240.822,
+      "z": -418.067,
+      "accessLinkId": "l_638785947_2",
+      "osmId": 776351315
+    },
+    {
+      "id": "poi_car_park_776351316",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 242.497,
+      "z": -437.059,
+      "accessLinkId": "l_638785947_2",
+      "osmId": 776351316
+    },
+    {
+      "id": "poi_car_park_776369382",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 280.574,
+      "z": -474.859,
+      "accessLinkId": "l_22779135_0",
+      "osmId": 776369382
+    },
+    {
+      "id": "poi_car_park_776623226",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 328.712,
+      "z": -266.524,
+      "accessLinkId": "l_854584200_0",
+      "osmId": 776623226
+    },
+    {
+      "id": "poi_car_park_776623235",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 276.286,
+      "z": -356.11,
+      "accessLinkId": "l_7984137_1",
+      "osmId": 776623235
+    },
+    {
+      "id": "poi_car_park_776640942",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 251.827,
+      "z": -165.209,
+      "accessLinkId": "l_22766048_3",
+      "osmId": 776640942
+    },
+    {
+      "id": "poi_car_park_776640949",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 244.061,
+      "z": -142.683,
+      "accessLinkId": "l_118446711_0",
+      "osmId": 776640949
+    },
+    {
+      "id": "poi_car_park_776640950",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 298.875,
+      "z": -141.764,
+      "accessLinkId": "l_776640939_0",
+      "osmId": 776640950
+    },
+    {
+      "id": "poi_car_park_776880588",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 486.687,
+      "z": -482.568,
+      "accessLinkId": "l_290002936_1",
+      "osmId": 776880588
+    },
+    {
+      "id": "poi_car_park_776883978",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -377.275,
+      "z": -35.721,
+      "accessLinkId": "l_25696174_2",
+      "osmId": 776883978
+    },
+    {
+      "id": "poi_car_park_776883982",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -275.998,
+      "z": -76.315,
+      "accessLinkId": "l_233524862_0",
+      "osmId": 776883982
+    },
+    {
+      "id": "poi_car_park_776883984",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -270.706,
+      "z": -26.224,
+      "accessLinkId": "l_85580974_0",
+      "osmId": 776883984
+    },
+    {
+      "id": "poi_car_park_776883992",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -291.638,
+      "z": 71.685,
+      "accessLinkId": "l_22757717_0",
+      "osmId": 776883992
+    },
+    {
+      "id": "poi_car_park_776883994",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -293.456,
+      "z": 102.224,
+      "accessLinkId": "l_25696174_1",
+      "osmId": 776883994
+    },
+    {
+      "id": "poi_car_park_776883995",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -353.085,
+      "z": 67.589,
+      "accessLinkId": "l_22757717_0",
+      "osmId": 776883995
+    },
+    {
+      "id": "poi_car_park_776883996",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -312.646,
+      "z": -17.537,
+      "accessLinkId": "l_776883997_1",
+      "osmId": 776883996
+    },
+    {
+      "id": "poi_car_park_813955367",
+      "name": "Mander Centre",
+      "kind": "car_park",
+      "x": 42.331,
+      "z": -163.797,
+      "accessLinkId": "l_38791088_1",
+      "osmId": 813955367
+    },
+    {
+      "id": "poi_car_park_813955368",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -33.519,
+      "z": -285.861,
+      "accessLinkId": "l_879046570_0",
+      "osmId": 813955368
+    },
+    {
+      "id": "poi_car_park_85580976",
+      "name": "Fold Street Car Park",
+      "kind": "car_park",
+      "x": -297.698,
+      "z": -164.577,
+      "accessLinkId": "l_546203840_0",
+      "osmId": 85580976
+    },
+    {
+      "id": "poi_car_park_866481292",
+      "name": "Whitemore Street Car Park",
+      "kind": "car_park",
+      "x": 219.256,
+      "z": 289.974,
+      "accessLinkId": "l_866481297_0",
+      "osmId": 866481292
+    },
+    {
+      "id": "poi_car_park_866497023",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -280.753,
+      "z": -405.983,
+      "accessLinkId": "l_546203837_2",
+      "osmId": 866497023
+    },
+    {
+      "id": "poi_car_park_866634682",
+      "name": "Molineux Street Car Park 2",
+      "kind": "car_park",
+      "x": -15.5,
+      "z": 468.143,
+      "accessLinkId": "l_209874063_1",
+      "osmId": 866634682
+    },
+    {
+      "id": "poi_car_park_866634685",
+      "name": "Molineux Street Car Park 3",
+      "kind": "car_park",
+      "x": -17.883,
+      "z": 413.422,
+      "accessLinkId": "l_25696038_3",
+      "osmId": 866634685
+    },
+    {
+      "id": "poi_car_park_866634697",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -123.276,
+      "z": 331.848,
+      "accessLinkId": "l_866634696_0",
+      "osmId": 866634697
+    },
+    {
+      "id": "poi_car_park_866634703",
+      "name": "Directors Car Park",
+      "kind": "car_park",
+      "x": -214.764,
+      "z": 381.677,
+      "accessLinkId": "l_25696128_0",
+      "osmId": 866634703
+    },
+    {
+      "id": "poi_car_park_866640291",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -205.675,
+      "z": 280.298,
+      "accessLinkId": "l_37852781_2",
+      "osmId": 866640291
+    },
+    {
+      "id": "poi_car_park_866798130",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -361.886,
+      "z": -319.584,
+      "accessLinkId": "l_866798132_0",
+      "osmId": 866798130
+    },
+    {
+      "id": "poi_car_park_866798137",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -233.518,
+      "z": -198.398,
+      "accessLinkId": "l_866798133_1",
+      "osmId": 866798137
+    },
+    {
+      "id": "poi_car_park_866798141",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -340.496,
+      "z": -207.88,
+      "accessLinkId": "l_866798139_0",
+      "osmId": 866798141
+    },
+    {
+      "id": "poi_car_park_866802488",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 141.623,
+      "z": 145.06,
+      "accessLinkId": "l_491066193_0",
+      "osmId": 866802488
+    },
+    {
+      "id": "poi_car_park_867562716",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -203.181,
+      "z": -451.977,
+      "accessLinkId": "l_22758209_0",
+      "osmId": 867562716
+    },
+    {
+      "id": "poi_car_park_867562717",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -220.45,
+      "z": -458.987,
+      "accessLinkId": "l_22758209_0",
+      "osmId": 867562717
+    },
+    {
+      "id": "poi_car_park_868431849",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -7.367,
+      "z": -484.373,
+      "accessLinkId": "l_868431854_0",
+      "osmId": 868431849
+    },
+    {
+      "id": "poi_car_park_868431855",
+      "name": "Genting Casino Car Park",
+      "kind": "car_park",
+      "x": -37.398,
+      "z": -474.75,
+      "accessLinkId": "l_868431853_0",
+      "osmId": 868431855
+    },
+    {
+      "id": "poi_car_park_868447059",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 159.571,
+      "z": -462.862,
+      "accessLinkId": "l_22779135_1",
+      "osmId": 868447059
+    },
+    {
+      "id": "poi_car_park_870467169",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -434.911,
+      "z": 481.815,
+      "accessLinkId": "l_23151708_2",
+      "osmId": 870467169
+    },
+    {
+      "id": "poi_car_park_870467170",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -447.651,
+      "z": 461.722,
+      "accessLinkId": "l_23151708_1",
+      "osmId": 870467170
+    },
+    {
+      "id": "poi_car_park_871187622",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -128.169,
+      "z": 165.333,
+      "accessLinkId": "l_871187625_1",
+      "osmId": 871187622
+    },
+    {
+      "id": "poi_car_park_871187626",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -169.948,
+      "z": 159.573,
+      "accessLinkId": "l_871187625_1",
+      "osmId": 871187626
+    },
+    {
+      "id": "poi_car_park_871187639",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -154.257,
+      "z": 256.936,
+      "accessLinkId": "l_866634693_2",
+      "osmId": 871187639
+    },
+    {
+      "id": "poi_car_park_871199223",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -141.307,
+      "z": -25.62,
+      "accessLinkId": "l_22757739_1",
+      "osmId": 871199223
+    },
+    {
+      "id": "poi_car_park_873294920",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -443.156,
+      "z": 212.668,
+      "accessLinkId": "l_873294923_1",
+      "osmId": 873294920
+    },
+    {
+      "id": "poi_car_park_873327856",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 216.145,
+      "z": 480.164,
+      "accessLinkId": "l_149282988_1",
+      "osmId": 873327856
+    },
+    {
+      "id": "poi_car_park_875462668",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 450.282,
+      "z": -153.575,
+      "accessLinkId": "l_140385480_0",
+      "osmId": 875462668
+    },
+    {
+      "id": "poi_car_park_875462669",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -497.831,
+      "z": -113.748,
+      "accessLinkId": "l_123075131_1",
+      "osmId": 875462669
+    },
+    {
+      "id": "poi_car_park_876374496",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -140.18,
+      "z": -128.184,
+      "accessLinkId": "l_15534450_2",
+      "osmId": 876374496
+    },
+    {
+      "id": "poi_car_park_876567531",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 308.009,
+      "z": 212.374,
+      "accessLinkId": "l_866481294_0",
+      "osmId": 876567531
+    },
+    {
+      "id": "poi_car_park_876612517",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 256.493,
+      "z": 222.351,
+      "accessLinkId": "l_19373424_3",
+      "osmId": 876612517
+    },
+    {
+      "id": "poi_car_park_877352916",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 204.318,
+      "z": 199.258,
+      "accessLinkId": "l_19373424_0",
+      "osmId": 877352916
+    },
+    {
+      "id": "poi_car_park_878022586",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 258.8,
+      "z": -34.352,
+      "accessLinkId": "l_19373955_1",
+      "osmId": 878022586
+    },
+    {
+      "id": "poi_car_park_878039752",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 245.656,
+      "z": -111.274,
+      "accessLinkId": "l_7984133_0",
+      "osmId": 878039752
+    },
+    {
+      "id": "poi_car_park_879046572",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -180.186,
+      "z": -383.835,
+      "accessLinkId": "l_22758209_1",
+      "osmId": 879046572
+    },
+    {
+      "id": "poi_car_park_879046577",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -154.819,
+      "z": -361.359,
+      "accessLinkId": "l_19422216_0",
+      "osmId": 879046577
+    },
+    {
+      "id": "poi_car_park_879046578",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -158.773,
+      "z": -339.944,
+      "accessLinkId": "l_22757916_0",
+      "osmId": 879046578
+    },
+    {
+      "id": "poi_car_park_879693696",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -226.056,
+      "z": 130.573,
+      "accessLinkId": "l_22757740_0",
+      "osmId": 879693696
+    },
+    {
+      "id": "poi_car_park_879693730",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -208.527,
+      "z": 45.743,
+      "accessLinkId": "l_868591197_0",
+      "osmId": 879693730
+    },
+    {
+      "id": "poi_car_park_879693744",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -217.229,
+      "z": 110.627,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693744
+    },
+    {
+      "id": "poi_car_park_879693745",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -216.462,
+      "z": 105.111,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693745
+    },
+    {
+      "id": "poi_car_park_879693746",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -209.174,
+      "z": 101.159,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693746
+    },
+    {
+      "id": "poi_car_park_879693747",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -210.502,
+      "z": 95.041,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693747
+    },
+    {
+      "id": "poi_car_park_879693748",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -212.706,
+      "z": 88.082,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693748
+    },
+    {
+      "id": "poi_car_park_879693749",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -212.646,
+      "z": 80.977,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693749
+    },
+    {
+      "id": "poi_car_park_879693750",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -210.796,
+      "z": 74.183,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693750
+    },
+    {
+      "id": "poi_car_park_879693751",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -210.571,
+      "z": 68.089,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693751
+    },
+    {
+      "id": "poi_car_park_879693752",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -208.322,
+      "z": 61.46,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693752
+    },
+    {
+      "id": "poi_car_park_879693753",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -203.774,
+      "z": 56.834,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693753
+    },
+    {
+      "id": "poi_car_park_879693754",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -207.418,
+      "z": 31.077,
+      "accessLinkId": "l_868591197_0",
+      "osmId": 879693754
+    },
+    {
+      "id": "poi_car_park_879693755",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -206.066,
+      "z": 23.386,
+      "accessLinkId": "l_868591197_0",
+      "osmId": 879693755
+    },
+    {
+      "id": "poi_car_park_879693756",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -201.321,
+      "z": 12.473,
+      "accessLinkId": "l_868591197_0",
+      "osmId": 879693756
+    },
+    {
+      "id": "poi_car_park_879693757",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -199.512,
+      "z": -5.087,
+      "accessLinkId": "l_22757739_2",
+      "osmId": 879693757
+    },
+    {
+      "id": "poi_car_park_879693758",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -202.393,
+      "z": -41.1,
+      "accessLinkId": "l_15520106_1",
+      "osmId": 879693758
+    },
+    {
+      "id": "poi_car_park_879693759",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -217.437,
+      "z": 115.082,
+      "accessLinkId": "l_38791085_0",
+      "osmId": 879693759
+    },
+    {
+      "id": "poi_car_park_879790531",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -289.225,
+      "z": 64.43,
+      "accessLinkId": "l_22757717_0",
+      "osmId": 879790531
+    },
+    {
+      "id": "poi_car_park_880295961",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 74.808,
+      "z": -348.713,
+      "accessLinkId": "l_852047641_0",
+      "osmId": 880295961
+    },
+    {
+      "id": "poi_car_park_880295962",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 91.396,
+      "z": -350.146,
+      "accessLinkId": "l_852047641_0",
+      "osmId": 880295962
+    },
+    {
+      "id": "poi_car_park_880295963",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 133.909,
+      "z": -350.449,
+      "accessLinkId": "l_38791084_1",
+      "osmId": 880295963
+    },
+    {
+      "id": "poi_car_park_882170030",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 157.877,
+      "z": -11.182,
+      "accessLinkId": "l_853035674_0",
+      "osmId": 882170030
+    },
+    {
+      "id": "poi_car_park_882170032",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 128.189,
+      "z": -21.673,
+      "accessLinkId": "l_85550390_1",
+      "osmId": 882170032
+    },
+    {
+      "id": "poi_car_park_882171630",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -359.886,
+      "z": 225.92,
+      "accessLinkId": "l_873294919_0",
+      "osmId": 882171630
+    },
+    {
+      "id": "poi_car_park_882171632",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -350.479,
+      "z": 178.525,
+      "accessLinkId": "l_7984151_3",
+      "osmId": 882171632
+    },
+    {
+      "id": "poi_car_park_882171634",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -315.479,
+      "z": 205.584,
+      "accessLinkId": "l_7984151_4",
+      "osmId": 882171634
+    },
+    {
+      "id": "poi_car_park_882171637",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -322.502,
+      "z": 220.761,
+      "accessLinkId": "l_7984151_3",
+      "osmId": 882171637
+    },
+    {
+      "id": "poi_car_park_882171638",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -318.38,
+      "z": 236.403,
+      "accessLinkId": "l_25696127_1",
+      "osmId": 882171638
+    },
+    {
+      "id": "poi_car_park_882171639",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -327.38,
+      "z": 260.051,
+      "accessLinkId": "l_25696127_1",
+      "osmId": 882171639
+    },
+    {
+      "id": "poi_car_park_885325450",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -308.527,
+      "z": -429.781,
+      "accessLinkId": "l_22757767_5",
+      "osmId": 885325450
+    },
+    {
+      "id": "poi_car_park_887987056",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -284.35,
+      "z": 43.358,
+      "accessLinkId": "l_85580974_0",
+      "osmId": 887987056
+    },
+    {
+      "id": "poi_car_park_887987057",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -289.467,
+      "z": 59.206,
+      "accessLinkId": "l_85580974_0",
+      "osmId": 887987057
+    },
+    {
+      "id": "poi_city_centre_queen_square",
+      "name": "City Centre (Queen Square)",
+      "kind": "city_centre",
+      "x": 40.666,
+      "z": 11.128,
+      "accessLinkId": "l_491066196_0",
+      "osmId": 0,
+      "reason": "Queen Square is Wolverhampton's civic centre used on local direction signs"
+    },
+    {
+      "id": "poi_hospital_47660665",
+      "name": "West Park Hospital",
+      "kind": "hospital",
+      "x": -868.864,
+      "z": 110.64,
+      "accessLinkId": "l_19366139_0",
+      "osmId": 47660665,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_police_86882334",
+      "name": "Bilston Street Police Station",
+      "kind": "police",
+      "x": 280.913,
+      "z": -205.233,
+      "accessLinkId": "l_7984136_0",
+      "osmId": 86882334
+    },
+    {
+      "id": "poi_railway_station_6634567442",
+      "name": "Wolverhampton",
+      "kind": "railway_station",
+      "x": 580.015,
+      "z": 199.045,
+      "accessLinkId": "l_25689656_0",
+      "osmId": 6634567442,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_258882369",
+      "name": "Woden Primary School",
+      "kind": "school",
+      "x": 821.203,
+      "z": 851.358,
+      "accessLinkId": "l_685156316_0",
+      "osmId": 258882369,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_294544602",
+      "name": "Nishkam Primary School",
+      "kind": "school",
+      "x": -704.088,
+      "z": -440.379,
+      "accessLinkId": "l_866798129_0",
+      "osmId": 294544602,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_395406894",
+      "name": "Broadmeadow Special School",
+      "kind": "school",
+      "x": -475.698,
+      "z": 459.937,
+      "accessLinkId": "l_23151708_0",
+      "osmId": 395406894
+    },
+    {
+      "id": "poi_school_47587106",
+      "name": "West Park Primary School",
+      "kind": "school",
+      "x": -546.714,
+      "z": 546.667,
+      "accessLinkId": "l_23151708_0",
+      "osmId": 47587106,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_612864195",
+      "name": "Thomas Telford University Technical College",
+      "kind": "school",
+      "x": 534.165,
+      "z": 688.606,
+      "accessLinkId": "l_685156316_0",
+      "osmId": 612864195,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_shopping_22982677",
+      "name": "Mander Centre",
+      "kind": "shopping",
+      "x": 48.298,
+      "z": -167.629,
+      "accessLinkId": "l_38791088_1",
+      "osmId": 22982677
+    },
+    {
+      "id": "poi_university_23007114",
+      "name": "University of Wolverhampton Wulfruna Campus",
+      "kind": "university",
+      "x": 98.777,
+      "z": 203.075,
+      "accessLinkId": "l_85550577_0",
+      "osmId": 23007114
+    },
+    {
+      "id": "poi_university_684848398",
+      "name": "University of Wolverhampton",
+      "kind": "university",
+      "x": 112.723,
+      "z": 386.256,
+      "accessLinkId": "l_649691038_0",
+      "osmId": 684848398
+    }
+  ]
+}

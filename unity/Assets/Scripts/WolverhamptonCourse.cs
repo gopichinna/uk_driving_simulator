@@ -10,7 +10,7 @@ namespace LToLocal.Game
     /// AI traffic drives around the player; lights, give way, zebras and keeping left are judged, but only on data
     /// with confidence ≥ 0.7 (signal phases are always judged against what the game shows).
     /// </summary>
-    public sealed class WolverhamptonCourse : MonoBehaviour, ICourse
+    public sealed class WolverhamptonCourse : MonoBehaviour, ICourse, IScenarioWorld
     {
         public TrafficView trafficView;
         public Transform signalsRoot;
@@ -177,6 +177,43 @@ namespace LToLocal.Game
                     Indicator = c.Indicator, Colour = c.ColourIndex, IsCyclist = c.IsCyclist,
                 });
         }
+
+        // ---------------- scenarios (IScenarioWorld) ----------------
+
+        private Dictionary<string, Vec2> _pois;
+
+        public bool TryLocate(string name, out Vec2 position, out double heading)
+        {
+            heading = 0;
+            if (name == "start")
+            {
+                var st = StartState;
+                position = new Vec2(st.X, st.Z);
+                heading = st.Heading;
+                return true;
+            }
+            if (_pois == null)
+            {
+                _pois = new Dictionary<string, Vec2>();
+                var asset = Resources.Load<TextAsset>("Content/wolverhampton_pois");
+                if (asset != null && MiniJson.Parse(asset.text) is Dictionary<string, object> root && root.TryGetValue("pois", out var list))
+                    foreach (var o in MiniJson.Arr(list))
+                    {
+                        var p = MiniJson.Obj(o);
+                        _pois[(string)p["id"]] = new Vec2(MiniJson.Num(p["x"]), MiniJson.Num(p["z"]));
+                    }
+            }
+            return _pois.TryGetValue(name, out position);
+        }
+
+        public void SetTrafficDensity(double v) => _traffic.Params.TargetCars = Mathf.RoundToInt(6 + Mathf.Clamp01((float)v) * 20);
+        public void PedestrianWaits(string crossing) { }
+        public void PedestrianStepsOut(string crossing) { }
+        public void CarEmerges(string junction, double gapS, in CarState player) { }
+        public void ParkedCar(string anchor, double offsetM) { }
+        public void CyclistAhead(string anchor, double offsetM, double speedMph) { }
+        public bool LightsTurnAmber(in CarState player) => false;
+        public int ExitTaken(in CarState player) => 0;
 
         /// <summary>ODbL: the map data must be credited where it is shown.</summary>
         private void OnGUI()

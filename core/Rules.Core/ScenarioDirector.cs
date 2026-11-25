@@ -48,9 +48,16 @@ namespace LToLocal.Rules
         public bool Completed { get; private set; }
         public string Note { get; private set; } = "";
         public double Elapsed => _elapsed;
-        public double TimeLeft => Math.Max(0, _def.DurationS - _elapsed);
+        public double TimeLeft => Math.Max(0, (IsIndependentDriving ? IndependentMinutes * 60 : _def.DurationS) - _elapsed);
         /// <summary>The exit the player is asked to take (0 if none).</summary>
         public int RequiredExit { get; private set; }
+        /// <summary>Independent driving (the mock test): minutes to drive, "satnav" | "signs" | "mixed", and the instruction shown.</summary>
+        public double IndependentMinutes { get; private set; }
+        public string IndependentMode { get; private set; } = "";
+        public string IndependentInstruction { get; private set; } = "";
+        /// <summary>"Follow the signs" destination (a POI id the course can locate), or empty.</summary>
+        public string IndependentDestination { get; private set; } = "";
+        public bool IsIndependentDriving => IndependentMinutes > 0;
 
         public void Start(IScenarioWorld world, in CarState player)
         {
@@ -64,6 +71,13 @@ namespace LToLocal.Rules
                     case "parked_car": world.ParkedCar(e.Str("anchor"), e.Num("offsetM")); _fired[i] = true; break;
                     case "cyclist_ahead": world.CyclistAhead(e.Str("anchor"), e.Num("offsetM", 40), e.Num("speedMph", 12)); _fired[i] = true; break;
                     case "take_exit": RequiredExit = (int)e.Num("exitNumber", 1); _fired[i] = true; break;
+                    case "independent_driving":
+                        IndependentMinutes = e.Num("minutes", 35);
+                        IndependentMode = e.Str("mode");
+                        IndependentInstruction = e.Str("instruction");
+                        IndependentDestination = e.Str("poiId");
+                        _fired[i] = true;
+                        break;
                 }
             }
         }
@@ -101,7 +115,7 @@ namespace LToLocal.Rules
                         }
                         break;
                     case "finish_after_s":
-                        if (_elapsed >= e.Num("seconds", 90)) Finish(true, "");
+                        if (!IsIndependentDriving && _elapsed >= e.Num("seconds", 90)) Finish(true, "");
                         break;
                     case "take_exit":
                         int exit = world.ExitTaken(player);
@@ -110,7 +124,11 @@ namespace LToLocal.Rules
                 }
                 if (Finished) return;
             }
-            if (_elapsed >= _def.DurationS) Finish(true, "Time is up for this drive.");
+            if (IndependentDestination.Length > 0 && world.TryLocate(IndependentDestination, out var dest, out _) && (dest - p).Length < 35)
+                Finish(true, "You reached the destination by following the signs.");
+            if (Finished) return;
+            double limit = IsIndependentDriving ? IndependentMinutes * 60 : _def.DurationS;
+            if (_elapsed >= limit) Finish(true, IsIndependentDriving ? "" : "Time is up for this drive.");
         }
 
         private void Finish(bool completed, string note)

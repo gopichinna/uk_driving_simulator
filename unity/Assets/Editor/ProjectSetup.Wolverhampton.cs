@@ -191,6 +191,50 @@ namespace LToLocal.EditorTools
             return hull;
         }
 
+        private static void PlacedSigns(Transform world, Palette m, Material black)
+        {
+            var root = new GameObject("PlacedSigns").transform;
+            root.SetParent(world, false);
+            const string signsPath = "../content/cities/wolverhampton/direction_signs.json", platesPath = "../content/cities/wolverhampton/street_names.json";
+            if (File.Exists(signsPath))
+            {
+                var doc = MiniJson.Obj(MiniJson.Parse(File.ReadAllText(signsPath)));
+                foreach (var so in MiniJson.Arr(doc["signs"]))
+                {
+                    var s = MiniJson.Obj(so);
+                    var rows = new List<(string, int)>();
+                    foreach (var ro in MiniJson.Arr(s["rows"]))
+                    {
+                        var r = MiniJson.Obj(ro);
+                        string text = r["text"] as string ?? "";
+                        if (r.TryGetValue("ref", out var rf) && rf is string refText && refText.Length > 0) text += $" ({refText})";
+                        int dir = (r["direction"] as string) switch { "left" => -1, "right" => 1, "ahead_left" => -2, "ahead_right" => 2, _ => 0 };
+                        rows.Add((text, dir));
+                    }
+                    double heading = MiniJson.Num(s["heading"]) * System.Math.PI / 180;
+                    DirectionSign(root, new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"])), heading, rows.ToArray(), m, black, (s["style"] as string) == "primary");
+                }
+            }
+            if (File.Exists(platesPath))
+            {
+                var doc = MiniJson.Obj(MiniJson.Parse(File.ReadAllText(platesPath)));
+                foreach (var po in MiniJson.Arr(doc["plates"]))
+                {
+                    var p = MiniJson.Obj(po);
+                    string name = p["name"] as string ?? "";
+                    if (name.Length == 0) continue;
+                    var plate = new GameObject($"StreetName {name}").transform;
+                    plate.SetParent(root, false);
+                    plate.SetPositionAndRotation(V(new Vec2(MiniJson.Num(p["x"]), MiniJson.Num(p["z"])), 0), Quaternion.Euler(0, (float)MiniJson.Num(p["heading"]), 0));
+                    float w = 0.6f + name.Length * 0.13f;
+                    foreach (float x in new[] { -w / 2 + 0.1f, w / 2 - 0.1f }) Prim(PrimitiveType.Cube, "Leg", plate, new Vector3(x, 0.45f, 0.03f), new Vector3(0.06f, 0.9f, 0.06f), black);
+                    Prim(PrimitiveType.Cube, "Border", plate, new Vector3(0, 1.05f, 0), new Vector3(w, 0.42f, 0.04f), black);
+                    Prim(PrimitiveType.Cube, "Plate", plate, new Vector3(0, 1.05f, -0.01f), new Vector3(w - 0.06f, 0.36f, 0.04f), m.White);
+                    Text(plate, name, new Vector3(0, 1.05f, -0.04f), 0.024f, Color.black, TextAnchor.MiddleCenter);
+                }
+            }
+        }
+
         private static void BuildWolverhamptonScene()
         {
             if (!File.Exists(PackPath)) { Debug.LogWarning("[LToLocal] Wolverhampton pack missing; scene skipped."); return; }
@@ -319,6 +363,9 @@ namespace LToLocal.EditorTools
                 }
                 for (int i = 0; i < byColour.Length; i++) byColour[i].Save($"Wolv_Buildings{i}", world, m.Buildings[i]);
             }
+
+            // Direction signs and street-name plates placed by the content pipeline (real destinations from OSM).
+            PlacedSigns(world, m, Mat("ZebraBlack", new Color(0.07f, 0.07f, 0.08f)));
 
             // One signal head per signalised approach (nearside lane), facing the drivers.
             var heads = new HashSet<string>();

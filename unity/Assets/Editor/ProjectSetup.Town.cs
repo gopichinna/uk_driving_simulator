@@ -291,34 +291,42 @@ namespace LToLocal.EditorTools
             go.GetComponent<MeshRenderer>().sharedMaterial = SignFont.material;
         }
 
-        /// <summary>An arrow drawn with bars, in a sign's local plane (dir: -1 left, 0 ahead, +1 right).</summary>
+        /// <summary>An arrow drawn with bars, in a sign's local plane (dir: -1 left, 0 ahead, +1 right, -2 ahead-left, +2 ahead-right).</summary>
         private static void Arrow(Transform parent, Vector3 at, int dir, Material mat)
         {
             var a = new GameObject("Arrow").transform;
             a.SetParent(parent, false);
             a.localPosition = at;
-            a.localRotation = Quaternion.Euler(0, 0, dir == 0 ? 0 : dir < 0 ? 90 : -90);
+            float angle = dir switch { -1 => 90, 1 => -90, -2 => 45, 2 => -45, _ => 0 };
+            a.localRotation = Quaternion.Euler(0, 0, angle);
             Prim(PrimitiveType.Cube, "Shaft", a, new Vector3(0, -0.04f, 0), new Vector3(0.06f, 0.26f, 0.01f), mat);
             Prim(PrimitiveType.Cube, "HeadL", a, new Vector3(-0.05f, 0.08f, 0), new Vector3(0.06f, 0.15f, 0.01f), mat, new Vector3(0, 0, -40));
             Prim(PrimitiveType.Cube, "HeadR", a, new Vector3(0.05f, 0.08f, 0), new Vector3(0.06f, 0.15f, 0.01f), mat, new Vector3(0, 0, 40));
         }
 
         /// <summary>UK local direction sign: white panel, black border and text, one row per destination.</summary>
-        private static void DirectionSign(Transform parent, Vec2 at, double trafficHeading, (string text, int dir)[] rows, Palette m, Material black)
+        private static void DirectionSign(Transform parent, Vec2 at, double trafficHeading, (string text, int dir)[] rows, Palette m, Material black, bool primary = false)
         {
+            // Primary routes: green panel, white border and text. Local: white panel, black border and text.
+            var panel = primary ? Mat("SignGreen", new Color(0.0f, 0.42f, 0.25f)) : m.White;
+            var border = primary ? m.White : black;
+            var ink = primary ? m.White : black;
+            Color inkColour = primary ? Color.white : Color.black;
             var root = new GameObject("DirectionSign").transform;
             root.SetParent(parent, false);
             root.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)(trafficHeading * Mathf.Rad2Deg), 0)); // drivers look along +Z
-            float rowH = 0.42f, w = 2.7f, h = rows.Length * rowH + 0.2f, bottom = 1.9f;
+            int longest = 0;
+            foreach (var r in rows) longest = Mathf.Max(longest, r.text.Length);
+            float rowH = 0.42f, w = Mathf.Max(2.7f, 0.75f + longest * 0.15f), h = rows.Length * rowH + 0.2f, bottom = 1.9f;
             foreach (float x in new[] { -w / 2 + 0.25f, w / 2 - 0.25f })
                 Prim(PrimitiveType.Cylinder, "Pole", root, new Vector3(x, bottom / 2 + h / 2 - 0.1f, 0.06f), new Vector3(0.08f, (bottom + h) / 2, 0.08f), m.Pole);
-            Prim(PrimitiveType.Cube, "Border", root, new Vector3(0, bottom + h / 2, 0), new Vector3(w, h, 0.04f), black);
-            Prim(PrimitiveType.Cube, "Panel", root, new Vector3(0, bottom + h / 2, -0.01f), new Vector3(w - 0.08f, h - 0.08f, 0.04f), m.White);
+            Prim(PrimitiveType.Cube, "Border", root, new Vector3(0, bottom + h / 2, 0), new Vector3(w, h, 0.04f), border);
+            Prim(PrimitiveType.Cube, "Panel", root, new Vector3(0, bottom + h / 2, -0.01f), new Vector3(w - 0.08f, h - 0.08f, 0.04f), panel);
             for (int i = 0; i < rows.Length; i++)
             {
                 float y = bottom + h - 0.1f - rowH * (i + 0.5f);
-                Arrow(root, new Vector3(-w / 2 + 0.3f, y, -0.04f), rows[i].dir, black);
-                Text(root, rows[i].text, new Vector3(-w / 2 + 0.55f, y, -0.04f), 0.028f, Color.black);
+                Arrow(root, new Vector3(-w / 2 + 0.3f, y, -0.04f), rows[i].dir, ink);
+                Text(root, rows[i].text, new Vector3(-w / 2 + 0.55f, y, -0.04f), 0.028f, inkColour);
             }
         }
 

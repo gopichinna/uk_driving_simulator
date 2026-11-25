@@ -161,6 +161,47 @@ namespace LToLocal.Rules
         }
     }
 
+    /// <summary>
+    /// How stages unlock (content/lessons/gb/progression.json): a stage opens once the stage it names has earned at
+    /// least <c>minStars</c> stars in total across its lessons.
+    /// </summary>
+    public sealed class Progression
+    {
+        public sealed class Stage
+        {
+            public int Number;
+            public string Title = "";
+            public List<string> LessonIds = new List<string>();
+            public int UnlockAfterStage = -1, MinStars;
+        }
+
+        public readonly List<Stage> Stages = new List<Stage>();
+        public readonly List<string> FreeTier = new List<string>();
+
+        public static Progression FromJson(string json)
+        {
+            var o = MiniJson.Obj(MiniJson.Parse(json));
+            var p = new Progression();
+            if (o.Get("stages") is List<object?> stages)
+                foreach (var x in stages)
+                {
+                    var so = MiniJson.Obj(x);
+                    var st = new Stage { Number = (int)LessonDef.N(so, "stage"), Title = LessonDef.S(so, "title") };
+                    LessonDef.Strings(so.Get("lessonIds"), st.LessonIds);
+                    if (so.Get("unlockAfter") is Dictionary<string, object?> u)
+                    {
+                        st.UnlockAfterStage = (int)LessonDef.N(u, "stage", -1);
+                        st.MinStars = (int)LessonDef.N(u, "minStars");
+                    }
+                    p.Stages.Add(st);
+                }
+            LessonDef.Strings(o.Get("freeTier"), p.FreeTier);
+            return p;
+        }
+
+        public Stage? StageOf(int number) => Stages.Find(s => s.Number == number);
+    }
+
     /// <summary>Best stars per lesson, saved on the device as "lessonId=stars;…".</summary>
     public sealed class LessonProgress
     {
@@ -174,6 +215,24 @@ namespace LToLocal.Rules
             if (stars <= StarsFor(lessonId)) return false;
             _stars[lessonId] = stars;
             return true;
+        }
+
+        /// <summary>Stars earned in a stage, and how many are needed to unlock it (from the progression data).</summary>
+        public int StageStars(Progression.Stage stage)
+        {
+            int sum = 0;
+            foreach (var id in stage.LessonIds) sum += StarsFor(id);
+            return sum;
+        }
+
+        /// <summary>With progression data: the stage's unlock rule. Without: every lesson of the previous stage has a star.</summary>
+        public bool Unlocked(LessonDef lesson, IReadOnlyList<LessonDef> all, Progression? progression)
+        {
+            var stage = progression?.StageOf(lesson.Stage);
+            if (stage == null) return Unlocked(lesson, all);
+            if (stage.UnlockAfterStage < 0) return true;
+            var before = progression!.StageOf(stage.UnlockAfterStage);
+            return before == null || StageStars(before) >= stage.MinStars;
         }
 
         /// <summary>Stage 0 is always open; a later stage opens when every lesson of the stage before has at least one star.</summary>

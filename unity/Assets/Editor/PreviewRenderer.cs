@@ -119,6 +119,16 @@ namespace LToLocal.EditorTools
             // A second, ordinary junction near the start
             cam.transform.SetPositionAndRotation(car.position + Vector3.up * 30 - car.forward * 5, Quaternion.LookRotation(car.forward * 40 + Vector3.down * 30));
             Save(cam, "Builds/Previews/wolverhampton_ahead.png");
+            // A placed direction sign, seen by a driver 22 m before it
+            var signDoc = LToLocal.Sim.MiniJson.Obj(LToLocal.Sim.MiniJson.Parse(System.IO.File.ReadAllText("../content/cities/wolverhampton/direction_signs.json")));
+            var sign0 = LToLocal.Sim.MiniJson.Obj(LToLocal.Sim.MiniJson.Arr(signDoc["signs"])[0]);
+            float sh = (float)LToLocal.Sim.MiniJson.Num(sign0["heading"]);
+            var signPos = new Vector3((float)LToLocal.Sim.MiniJson.Num(sign0["x"]), 0, (float)LToLocal.Sim.MiniJson.Num(sign0["z"]));
+            var back = Quaternion.Euler(0, sh, 0) * Vector3.forward;
+            var right = Quaternion.Euler(0, sh + 90, 0) * Vector3.forward;
+            cam.fieldOfView = 50f;
+            cam.transform.SetPositionAndRotation(signPos - back * 22 + right * 3.5f + Vector3.up * 1.4f, Quaternion.LookRotation(signPos + Vector3.up * 2.3f - (signPos - back * 22 + right * 3.5f + Vector3.up * 1.4f)));
+            Save(cam, "Builds/Previews/wolverhampton_sign.png");
             RenderSettings.fog = true;
             cam.fieldOfView = game.cockpitFov;
             cam.nearClipPlane = 0.05f;
