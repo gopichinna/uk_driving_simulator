@@ -79,7 +79,7 @@ See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no ha
 
 ## D. Lessons for Stages 0–2 (data only)
 See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Lessons 1–3 are the **free tier**.
-- [ ] D1. `content/schemas/lesson.v0.schema.json` (new file, pre-agreed). A lesson has:
+- [x] D1. `content/schemas/lesson.v0.schema.json` (new file, pre-agreed). A lesson has:
   - `id`, `stage`, `order`, `title`, `freeTier` (bool);
   - `learnCard`: `blocks[]` of plain text, `ruleIds[]`, and a `govUkUrl`;
   - `scenarios[]`, each with:
@@ -88,7 +88,7 @@ See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Less
     - `variations` (`trafficDensity` [min, max], `cyclistShare`, `pedestrianIntent` ∈ {wait, cross, random}, `timeOfDay`);
     - `passCriteria` (e.g. `{ "maxMinor": 2, "maxSerious": 0 }`);
   - `recap` (2–3 lines).
-- [ ] D2. `content/lessons/gb/*.json`: about 10 lessons:
+- [x] D2. `content/lessons/gb/*.json`: about 10 lessons: (10 lessons for Stages 0–2; lessons 1–3 are free tier.)
   - **Stage 0**, lessons 1–3, the free tier: keeping left and the controls; moving off and MSM; speed limits;
   - **Stage 1**: give way at T-junctions; pedestrians at junctions (H2); road position after turning;
   - **Stage 2**: traffic lights and amber; advanced stop lines; zebra crossings and zig-zags; box junctions.
@@ -102,7 +102,7 @@ See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Less
   | `two_lane_roundabout` | `start` |
   | `dual_carriageway` | `start` |
 
-- [ ] D3. Tests:
+- [x] D3. Tests: (`pipeline/tests/test_lessons.py`)
   - every lesson validates;
   - rule ids exist;
   - course / anchor pairs are in the allowed list;

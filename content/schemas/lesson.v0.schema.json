@@ -1,0 +1,100 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/lesson.v0.schema.json",
+  "title": "L to Local Lesson v0",
+  "description": "Curriculum lesson definition: learn card, 2-4 micro-scenarios, and recap. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["lessonFormatVersion", "id", "stage", "order", "title", "freeTier", "learnCard", "scenarios", "recap"],
+  "additionalProperties": false,
+  "properties": {
+    "lessonFormatVersion": { "const": "0.1" },
+    "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "stage": { "type": "integer", "minimum": 0 },
+    "order": { "type": "integer", "minimum": 1 },
+    "title": { "type": "string", "minLength": 1 },
+    "freeTier": { "type": "boolean" },
+    "learnCard": {
+      "type": "object",
+      "required": ["blocks", "ruleIds", "govUkUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "blocks": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "ruleIds": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" }
+        },
+        "govUkUrl": { "type": "string", "pattern": "^https://www\\.gov\\.uk/" }
+      }
+    },
+    "scenarios": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 4,
+      "items": { "$ref": "#/$defs/scenario" }
+    },
+    "recap": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": { "type": "string", "minLength": 1 }
+    }
+  },
+  "$defs": {
+    "scenario": {
+      "type": "object",
+      "required": ["id", "course", "anchor", "goal", "rulesJudged", "variations", "passCriteria"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "course": { "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway"] },
+        "anchor": {
+          "enum": [
+            "crossroads_signals",
+            "tjunction_north",
+            "tjunction_south",
+            "zebra",
+            "box_junction",
+            "school_street",
+            "start"
+          ]
+        },
+        "goal": { "type": "string", "minLength": 1 },
+        "rulesJudged": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" }
+        },
+        "variations": {
+          "type": "object",
+          "required": ["trafficDensity", "cyclistShare", "pedestrianIntent", "timeOfDay"],
+          "additionalProperties": false,
+          "properties": {
+            "trafficDensity": {
+              "type": "array",
+              "items": { "type": "number", "minimum": 0, "maximum": 1 },
+              "minItems": 2,
+              "maxItems": 2
+            },
+            "cyclistShare": { "type": "number", "minimum": 0, "maximum": 1 },
+            "pedestrianIntent": { "enum": ["wait", "cross", "random"] },
+            "timeOfDay": { "enum": ["day", "dusk", "night"] }
+          }
+        },
+        "passCriteria": {
+          "type": "object",
+          "required": ["maxMinor", "maxSerious"],
+          "additionalProperties": false,
+          "properties": {
+            "maxMinor": { "type": "integer", "minimum": 0 },
+            "maxSerious": { "type": "integer", "minimum": 0 }
+          }
+        }
+      }
+    }
+  }
+}
