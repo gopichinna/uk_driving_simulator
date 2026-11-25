@@ -45,7 +45,7 @@ What's missing is the **data** for Wolverhampton's signs and destinations.
 - [x] C3. A quiz for lesson 19 (`content/lessons/gb/quiz/gb-s8-19-mock-driving-test.json`, original questions only: what happens on the test, what counts as a serious fault, independent driving; 52/52 tests pass).
 
 ## D. Hand-off
-- [ ] D1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: Wolverhampton destinations, direction signs, mock-test lesson".
+- [x] D1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: Wolverhampton destinations, direction signs, mock-test lesson".
 
 ## Requests from Claude
 - Pre-agreed for round 8:
