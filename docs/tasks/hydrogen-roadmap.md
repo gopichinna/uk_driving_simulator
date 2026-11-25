@@ -140,7 +140,8 @@ R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank y
 - [x] **R15.2 Signs overcorrected.** Updated `direction_signs.py` so approach signs show 2–4 rows (turning/forking destinations + main/local destinations on that approach); added median >= 2 rows test in `test_direction_signs.py`.
 - [x] **R15.3 A motorway pack worth driving.** Built continuous M6 J9–J10A / M54 J2 corridor in `content/cities/m54-j2/` (411 links, 43 gantries, 4 EAs, >= 4 km per carriageway, 0 service roads, local roads within 300 m of slip junctions); length per carriageway reported in `QA.md` and tested in `test_motorway.py`.
 - [x] **R15.4 Test-centre address.** Dropped `"101"` from `wolverhampton-test-area/config.yaml` and `docs/08-parallel-work-plan.md` (verified 0 remaining `"101 Spring"` references).
-- [x] **R15.6 A real engine sound.** Replaced synthetic `engine_*.ogg` with recorded CC0 loops from OpenGameArt (`racing car engine sound loops` by `domasx2`, `http://creativecommons.org/publicdomain/zero/1.0/`), tiled to 2.5–2.7 s mono loops normalised to −16 LUFS, and recorded in `content/audio/LICENCES.md`, `ATTRIBUTIONS.md`, and `credits.md`.
+- [x] **R15.6 A real engine sound.** Replaced synthetic `engine_*` with recorded CC0 loops from OpenGameArt (`racing car engine sound loops` by `domasx2`, `http://creativecommons.org/publicdomain/zero/1.0/`), tiled to 2.5–2.7 s mono loops normalised to −16 LUFS, and recorded in `content/audio/LICENCES.md`, `ATTRIBUTIONS.md`, and `credits.md`.
+- [x] **R15.7 Audio format Unity can import.** Switched all 49 audio clips (37 voice + 12 SFX) from Ogg Opus to **WAV (16-bit PCM, mono, 44.1 kHz)**, removed stale `.ogg` files, updated `manifest.json` + `LICENCES.md`, and added codec verification in `test_audio.py` failing on `OpusHead`.
 - [x] **R15.5 Hand-off.** PR `Hydrogen R15: plain English, sign rows, motorway section` based on `main` (`62/62` pytest, `ruff`, `readability`, `en-XA` green).
 
 ---

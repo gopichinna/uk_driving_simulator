@@ -19,29 +19,34 @@ MODEL_PATH = REPO_ROOT / "pipeline" / "cache" / "piper" / "en_GB-cori-medium.onn
 VOICE_OUT_DIR = REPO_ROOT / "content" / "audio" / "voice" / "en"
 SFX_OUT_DIR = REPO_ROOT / "content" / "audio" / "sfx"
 
-SAMPLE_RATE = 24000
+SAMPLE_RATE = 44100
 
 
-def _probe_duration_s(path: Path) -> float:
+def _probe_audio(path: Path) -> tuple[float, str, int, int]:
     out = subprocess.check_output(
         [
             "ffprobe",
             "-v",
             "error",
+            "-select_streams",
+            "a:0",
             "-show_entries",
-            "format=duration",
+            "format=duration:stream=codec_name,sample_rate,channels",
             "-of",
-            "default=noprint_wrappers=1:nokey=1",
+            "json",
             str(path),
         ],
         text=True,
-    ).strip()
-    return round(float(out), 3)
+    )
+    info = json.loads(out)
+    dur = round(float(info["format"]["duration"]), 3)
+    st = info["streams"][0]
+    return dur, st["codec_name"], int(st["sample_rate"]), int(st["channels"])
 
 
-def _wav_to_ogg(
-    wav_path: Path,
-    ogg_path: Path,
+def _to_wav(
+    src_wav: Path,
+    out_wav: Path,
     af_filter: str,
 ) -> float:
     subprocess.run(
@@ -51,7 +56,7 @@ def _wav_to_ogg(
             "-loglevel",
             "error",
             "-i",
-            str(wav_path),
+            str(src_wav),
             "-ac",
             "1",
             "-ar",
@@ -59,14 +64,14 @@ def _wav_to_ogg(
             "-af",
             af_filter,
             "-c:a",
-            "libopus",
-            "-b:a",
-            "48k",
-            str(ogg_path),
+            "pcm_s16le",
+            str(out_wav),
         ],
         check=True,
     )
-    return _probe_duration_s(ogg_path)
+    dur, codec, sr, ch = _probe_audio(out_wav)
+    assert codec == "pcm_s16le" and sr == SAMPLE_RATE and ch == 1
+    return dur
 
 
 def generate_voice_audio(
@@ -89,8 +94,8 @@ def generate_voice_audio(
                 voice.synthesize_wav(text, wf)
 
             # Trim leading/trailing silence and normalise peak to ~ -3 dBFS
-            ogg_name = f"{key}.ogg"
-            ogg_path = out_dir / ogg_name
+            wav_name = f"{key}.wav"
+            wav_path = out_dir / wav_name
             af = (
                 "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
                 "areverse,"
@@ -98,11 +103,11 @@ def generate_voice_audio(
                 "areverse,"
                 "loudnorm=I=-16:TP=-3.0:LRA=7"
             )
-            dur = _wav_to_ogg(raw_wav, ogg_path, af)
+            dur = _to_wav(raw_wav, wav_path, af)
             manifest_items.append(
                 {
                     "key": key,
-                    "file": ogg_name,
+                    "file": wav_name,
                     "text": text,
                     "durationS": dur,
                 }
@@ -142,12 +147,12 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
 
     # Indicator relay clicks (on slightly brighter than off)
     t_clk = t_arr(0.06)
-    out["indicator_on.ogg"] = (
+    out["indicator_on.wav"] = (
         np.exp(-t_clk * 90.0)
         * (np.sin(2 * np.pi * 1400 * t_clk) + 0.5 * np.sin(2 * np.pi * 2800 * t_clk)),
         False,
     )
-    out["indicator_off.ogg"] = (
+    out["indicator_off.wav"] = (
         np.exp(-t_clk * 100.0)
         * (np.sin(2 * np.pi * 950 * t_clk) + 0.4 * np.sin(2 * np.pi * 1900 * t_clk)),
         False,
@@ -159,7 +164,7 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
     # Short car horn (dual tone 400 + 500 Hz, 0.35 s)
     t_hrn = t_arr(0.35)
     env_hrn = np.minimum(1.0, t_hrn / 0.02) * np.minimum(1.0, (0.35 - t_hrn) / 0.03)
-    out["horn.ogg"] = (
+    out["horn.wav"] = (
         env_hrn * (0.6 * np.sin(2 * np.pi * 400 * t_hrn) + 0.5 * np.sin(2 * np.pi * 500 * t_hrn)),
         False,
     )
@@ -168,7 +173,7 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
     t_sq = t_arr(0.55)
     env_sq = np.minimum(1.0, t_sq / 0.04) * np.exp(-t_sq * 3.2)
     freq_sq = 1350.0 + 250.0 * np.sin(2 * np.pi * 9.0 * t_sq)
-    out["tyre_squeal.ogg"] = (
+    out["tyre_squeal.wav"] = (
         env_sq * (0.7 * np.sin(2 * np.pi * freq_sq * t_sq) + 0.3 * rng.normal(0.0, 1.0, len(t_sq))),
         False,
     )
@@ -176,11 +181,11 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
     # UK puffin/pelican crossing beep (2.5 kHz, 0.14 s)
     t_bp = t_arr(0.14)
     env_bp = np.minimum(1.0, t_bp / 0.008) * np.minimum(1.0, (0.14 - t_bp) / 0.012)
-    out["crossing_beep.ogg"] = (env_bp * np.sin(2 * np.pi * 2500 * t_bp), False)
+    out["crossing_beep.wav"] = (env_bp * np.sin(2 * np.pi * 2500 * t_bp), False)
 
     # UI click
     t_ui = t_arr(0.04)
-    out["ui_click.ogg"] = (np.exp(-t_ui * 130.0) * np.sin(2 * np.pi * 1200 * t_ui), False)
+    out["ui_click.wav"] = (np.exp(-t_ui * 130.0) * np.sin(2 * np.pi * 1200 * t_ui), False)
 
     # Success chime (C5 -> E5 -> G5 arpeggio, 0.55 s)
     t_ch = t_arr(0.55)
@@ -189,7 +194,7 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
         mask = t_ch >= start
         dt = np.maximum(0.0, t_ch - start)
         s_ok[mask] += np.exp(-dt[mask] * 7.0) * np.sin(2 * np.pi * freq * dt[mask])
-    out["chime_success.ogg"] = (s_ok, False)
+    out["chime_success.wav"] = (s_ok, False)
 
     # Fault chime (gentle descending minor two-note tone, 0.45 s)
     t_fl = t_arr(0.45)
@@ -198,7 +203,7 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
         mask = t_fl >= start
         dt = np.maximum(0.0, t_fl - start)
         s_fl[mask] += np.exp(-dt[mask] * 8.0) * np.sin(2 * np.pi * freq * dt[mask])
-    out["chime_fault.ogg"] = (s_fl, False)
+    out["chime_fault.wav"] = (s_fl, False)
 
     # Light town ambience loop (4.0 s pink-ish filtered rumble)
     t_amb = t_arr(4.0)
@@ -206,27 +211,27 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
     # Smooth moving-average lowpass for soft distant traffic hum
     kernel = np.ones(45) / 45.0
     hum = np.convolve(raw_noise, kernel, mode="same") + 0.08 * np.sin(2 * np.pi * 48.0 * t_amb)
-    out["ambience_town.ogg"] = (hum, True)
+    out["ambience_town.wav"] = (hum, True)
 
     return out
 
 
 def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
-    """Synthesise CC0 sound effects (-16 LUFS) and town ambience (-23 LUFS)."""
+    """Synthesise CC0 sound effects (-16 LUFS) and process recorded engine loops."""
     out_dir.mkdir(parents=True, exist_ok=True)
     waveforms = _build_sfx_waveforms()
     manifest_items: list[dict[str, Any]] = []
 
     recorded_engines = {
-        "engine_idle.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_0.wav", 3),
-        "engine_low.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_2_0.wav", 4),
-        "engine_mid.ogg": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_4_0.wav", 4),
+        "engine_idle.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_0.wav", 3),
+        "engine_low.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_2_0.wav", 4),
+        "engine_mid.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_4_0.wav", 4),
     }
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
         for fname, (src_wav, repeats) in sorted(recorded_engines.items()):
-            ogg_path = out_dir / fname
+            out_wav = out_dir / fname
             tiled_wav = tmp_dir / f"{fname}.tiled.wav"
             subprocess.run(
                 [
@@ -242,7 +247,7 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
                 ],
                 check=True,
             )
-            dur = _wav_to_ogg(tiled_wav, ogg_path, "loudnorm=I=-16:TP=-1.5:LRA=7")
+            dur = _to_wav(tiled_wav, out_wav, "loudnorm=I=-16:TP=-1.5:LRA=7")
             manifest_items.append(
                 {
                     "key": Path(fname).stem,
@@ -253,12 +258,12 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
                 }
             )
         for fname, (samples, is_ambience) in sorted(waveforms.items()):
-            raw_wav = tmp_dir / f"{fname}.wav"
+            raw_wav = tmp_dir / f"{fname}.raw.wav"
             _write_pcm_wav(raw_wav, samples)
-            ogg_path = out_dir / fname
+            out_wav = out_dir / fname
             target_lufs = -23 if is_ambience else -16
             af = f"loudnorm=I={target_lufs}:TP=-1.5:LRA=7"
-            dur = _wav_to_ogg(raw_wav, ogg_path, af)
+            dur = _to_wav(raw_wav, out_wav, af)
             manifest_items.append(
                 {
                     "key": Path(fname).stem,

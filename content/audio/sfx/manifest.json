@@ -4,85 +4,85 @@
   "entries": [
     {
       "key": "engine_idle",
-      "file": "engine_idle.ogg",
-      "durationS": 2.599,
+      "file": "engine_idle.wav",
+      "durationS": 2.592,
       "targetLufs": -16,
       "loop": true
     },
     {
       "key": "engine_low",
-      "file": "engine_low.ogg",
-      "durationS": 2.737,
+      "file": "engine_low.wav",
+      "durationS": 2.73,
       "targetLufs": -16,
       "loop": true
     },
     {
       "key": "engine_mid",
-      "file": "engine_mid.ogg",
-      "durationS": 2.53,
+      "file": "engine_mid.wav",
+      "durationS": 2.523,
       "targetLufs": -16,
       "loop": true
     },
     {
       "key": "ambience_town",
-      "file": "ambience_town.ogg",
-      "durationS": 4.006,
+      "file": "ambience_town.wav",
+      "durationS": 4.0,
       "targetLufs": -23,
       "loop": true
     },
     {
       "key": "chime_fault",
-      "file": "chime_fault.ogg",
-      "durationS": 0.457,
+      "file": "chime_fault.wav",
+      "durationS": 0.45,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "chime_success",
-      "file": "chime_success.ogg",
-      "durationS": 0.556,
+      "file": "chime_success.wav",
+      "durationS": 0.55,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "crossing_beep",
-      "file": "crossing_beep.ogg",
-      "durationS": 0.146,
+      "file": "crossing_beep.wav",
+      "durationS": 0.14,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "horn",
-      "file": "horn.ogg",
-      "durationS": 0.356,
+      "file": "horn.wav",
+      "durationS": 0.35,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "indicator_off",
-      "file": "indicator_off.ogg",
-      "durationS": 0.067,
+      "file": "indicator_off.wav",
+      "durationS": 0.06,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "indicator_on",
-      "file": "indicator_on.ogg",
-      "durationS": 0.067,
+      "file": "indicator_on.wav",
+      "durationS": 0.06,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "tyre_squeal",
-      "file": "tyre_squeal.ogg",
-      "durationS": 0.556,
+      "file": "tyre_squeal.wav",
+      "durationS": 0.55,
       "targetLufs": -16,
       "loop": false
     },
     {
       "key": "ui_click",
-      "file": "ui_click.ogg",
-      "durationS": 0.046,
+      "file": "ui_click.wav",
+      "durationS": 0.04,
       "targetLufs": -16,
       "loop": false
     }
