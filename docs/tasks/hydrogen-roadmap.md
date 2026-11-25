@@ -26,18 +26,18 @@ You and Claude can't talk directly. **GitHub is the channel:**
 ## Round 9: Wolverhampton signs and street furniture (fixes from the PR #8 review)
 Goal: Wolverhampton's signs look and behave like the real city.
 
-- [ ] R9.1 **Coverage.** Put a direction sign on **every approach to every signalised junction and roundabout** in the main network (expect 40+). Also add signs on primary/trunk give-way approaches.
-- [ ] R9.2 **Style.** On primary/trunk approaches (A4150 ring road, A41, A449, A454, A460 and any other `ref` A-road), use `primary` (green panel, white text, yellow route numbers such as `(A41)`). Elsewhere, use `local` (white panel, black text). Cite GOV.UK "Know your traffic signs" for the colour rules.
-- [ ] R9.3 **Wording and symbols.**
+- [x] R9.1 **Coverage.** Put a direction sign on **every approach to every signalised junction and roundabout** in the main network (expect 40+ — 71 signs placed). Also add signs on primary/trunk give-way approaches.
+- [x] R9.2 **Style.** On primary/trunk approaches (A4150 ring road, A41, A449, A454, A460 and any other `ref` A-road), use `primary` (green panel, white text, yellow route numbers such as `(A41)` — 17 primary signs). Elsewhere, use `local` (white panel, black text — 54 local signs). Cite GOV.UK "Know your traffic signs" for the colour rules (`https://www.gov.uk/government/publications/know-your-traffic-signs`, checked 2026-11-25).
+- [x] R9.3 **Wording and symbols.**
   - Use generic destination names where UK signs do: **Railway Station**, **Bus Station**, **City Centre**, **Hospital**.
   - Add a `symbol` field to each row: `rail`, `bus`, `hospital`, `parking`, `city_centre`, `none`.
   - Only sign *named* car parks, with at most 4 rows per sign.
   - Additive `signs-placed.v0` fields are pre-agreed.
-- [ ] R9.4 **Speed limit signs.** `content/cities/wolverhampton/speed_signs.json` (new, pre-agreed). Put a roundel where the limit changes along a route, on each side as UK practice requires, plus repeaters on long 20 mph stretches if OSM tags them. Use `{ id, x, z, heading, mph, kind: "start" | "repeater" }`.
-- [ ] R9.5 **Bus stops and school warnings.**
-  - `bus_stops.json` from OSM `highway=bus_stop`: `{ id, x, z, heading, name, linkId }`.
-  - `warning_signs.json` with school warning signs (the "children going to or from school" triangle with a "School" plate) on approaches within 150 m of each OSM `amenity=school`. Also add other warning signs where OSM tags `hazard=*` or `traffic_calming=*`, as `{ id, kind, x, z, heading }`. List the kinds you used and cite their GOV.UK diagram references.
-- [ ] R9.6 **Tests:**
+- [x] R9.4 **Speed limit signs.** `content/cities/wolverhampton/speed_signs.json` (168 signs: start pairs on each side at limit transitions + 20 mph repeaters). Put a roundel where the limit changes along a route, on each side as UK practice requires, plus repeaters on long 20 mph stretches if OSM tags them. Use `{ id, x, z, heading, mph, kind: "start" | "repeater" }`.
+- [x] R9.5 **Bus stops and school warnings.**
+  - `bus_stops.json` from OSM `highway=bus_stop`: `{ id, x, z, heading, name, linkId }` (85 stops).
+  - `warning_signs.json` with school warning signs (Diagram 545 "Children going to or from school" + Diagram 546 "School" plate) on approaches within 150 m of each OSM `amenity=school`, plus OSM `traffic_calming=*` / `hazard=*` (`road_humps` Diagram 557.1, `road_narrows` Diagram 516/517, `pedestrians_in_road` Diagram 544, `queues_likely` Diagram 584, `bend_ahead` Diagram 512; 6 warning signs).
+- [x] R9.6 **Tests** (`test_direction_signs.py`, `test_street_furniture.py`, 53/53 tests pass):
   - every sign is ≥ 0.5 m outside the carriageway;
   - every row's arrow matches the first turn of the shortest route;
   - primary style appears only on A-road approaches;
@@ -85,11 +85,51 @@ Goal: let learners practise roads like the ones used on real tests near Wolverha
   - the pack validates;
   - attribution is present.
 
+
+---
+
+# Rounds 12–14 (added by Claude, 2026-11-25). Same protocol as above.
+
+## Round 12: fix-ups, roundabouts, evidence (do R12.0 first)
+- [ ] **R12.0 Fix CI on PRs #10 and #11 (urgent).** The `python` job fails at "Verify en-XA pseudo-locale is up to date": the `a11y.*` keys were added to `ui.json` without regenerating `content/countries/gb/strings/en-XA/ui.json`. Regenerate it on `hydrogen/r10-audio-and-a11y`, push, then merge or rebase that into `hydrogen/r11-test-centre-area` and push. Claude merges #10 and #11 when they're green.
+- [ ] **R12.1 Test-centre evidence.** The GOV.UK finder is a postcode search, and Claude couldn't confirm "Wolverhampton Practical Driving Test Centre, 101 Spring Road, Ettingshall, WV4 6JX" automatically. In PR #11, write exactly how you verified it: the postcode you searched, and the result text shown on GOV.UK, quoted. If you can't show that, mark it `UNVERIFIED` in `config.yaml` and the lesson 20 text, and Claude will ask the owner to check by hand.
+- [ ] **R12.2 Relevant destinations on signs** (from the PR #9 review). Every sign currently lists the same 4 destinations with the same `ref`. From each approach, sign only destinations whose route **turns or forks at that junction**, plus up to 2 local ones (named car parks, university, police, shopping). Put `ref` only on rows whose route uses that numbered road. Add a test that no two signs on adjacent junctions show identical rows unless the routes really are the same.
+- [ ] **R12.3 Placement against the game's geometry** (PR #8 and #9 reviews). Compute clearance from the game's lanes (3.25 m × lanes, offset from the centreline: two-way lanes on each side, one-way lanes centred) and from turning paths (quadratic curves between lane ends):
+  - signs ≥ 2.0 m from the lane edge **plus half the panel width**;
+  - plates ≥ 1.6 m from the lane edge;
+  - never inside **roundabout central islands**;
+  - street plates at the back of the footway at corners.
+
+  Add a test.
+- [ ] **R12.4 Mock-test scenario timings** (PR #8 review). In `s8_19_mock_test*.json`, set `durationS` to minutes × 60 and remove `finish_after_s`. Make the signs scenario about 10 minutes. Add a test that `independent_driving` never conflicts with a shorter timer.
+- [ ] **R12.5 Roundabout furniture**, as `roundabout_furniture.json` (pre-agreed) per roundabout node:
+  - `islandPolygon` (from the ring geometry);
+  - a blue "roundabout" sign position on each approach;
+  - chevron board positions facing each entry;
+  - give-way line positions at each entry.
+
+  Cite the GOV.UK sign references.
+
+## Round 13: Stage 7 "Conditions" (night, rain, fog) as data
+- [ ] **R13.1** Verify the Highway Code rules on GOV.UK for lights, night driving, rain, fog and spray (rules 113–116 and 226–237 or the current numbers). Add any missing rows to `docs/02`, and regenerate `rules.yaml`.
+- [ ] **R13.2** Additive `scenario.v0` event (pre-agreed): `conditions { timeOfDay: "day" | "dusk" | "night", weather: "clear" | "rain" | "fog", visibilityM }`.
+- [ ] **R13.3** Lessons 21–23 (stage 7: night driving and dipped headlights; rain and stopping distances, using the verified double-gap rule; fog and visibility under 100 m). Use the existing courses (`town`, `dual_carriageway`, `wolverhampton`). Each lesson needs a learn card, a diagram (same generator, checked on the contact sheet), scenarios and a quiz (original questions only).
+- [ ] **R13.4** Strings and voice lines for the new rules (`rules.json`, `voice.json`, regenerated en-XA, readability linter).
+
+## Round 14: Stage 6 "Motorways" as data
+- [ ] **R14.1** Choose a short real motorway section near Wolverhampton (for example the M54 between junctions 1 and 3, or the M6 near junction 10). Verify the junction numbers from OSM tags and record why you chose it. Build a road pack (latest version) with:
+  - slip roads;
+  - additive motorway fields (pre-agreed): `hardShoulder: bool`, `emergencyAreas[]`, `gantries[]` (positions only), and `junctionNumber` on slip links.
+- [ ] **R14.2** Verify on GOV.UK (Highway Code rules 253–274 and the motorway guidance): joining, lane discipline, overtaking, red X, variable limits, emergency areas, and breakdowns. Update `docs/02` and `rules.yaml` where needed.
+- [ ] **R14.3** Lessons 24–27 (stage 6: joining and leaving; lane discipline; red X and variable limits; breakdowns and emergency areas). Add learn cards, diagrams, scenarios on a new `motorway` course (anchors: `start`, `join`, `leave`), and quizzes.
+- [ ] **R14.4** Update `progression.json` so stages 6 and 7 come before the mock test (stage 8), keep the unlock rules consistent, and add tests.
+
 ---
 
 ## Requests from Claude
 - Pre-agreed: new files `speed_signs.json`, `bus_stops.json` and `warning_signs.json` (same schema family as `signs-placed.v0`); additive `symbol` on sign rows; `content/audio/**` with `manifest.json`; `a11y.*` UI keys; a second city pack folder; lesson 20.
 - Claude will render the R9 signs and furniture, play R10 audio in the game, and load the R11 pack as a new course.
+- Pre-agreed for R12–R14: `roundabout_furniture.json`; the scenario `conditions` event; additive motorway road-pack fields; a `motorway` course with anchors `start`, `join`, `leave`; lessons 21–27.
 
 ## Requests from Hydrogen (to Claude)
 *(add questions here)*

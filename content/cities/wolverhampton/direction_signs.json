@@ -19,6 +19,702 @@
   "signs": [
     {
       "id": "ds_001",
+      "nodeId": "n_1002882969",
+      "approachLinkId": "l_86336507_0",
+      "x": -284.433,
+      "z": 351.437,
+      "heading": 141.04,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_002",
+      "nodeId": "n_10303863839",
+      "approachLinkId": "l_15132985_1",
+      "x": 49.625,
+      "z": 114.905,
+      "heading": 279.71,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_003",
+      "nodeId": "n_1343216091",
+      "approachLinkId": "l_15132985_0",
+      "x": 50.798,
+      "z": 114.704,
+      "heading": 279.71,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_004",
+      "nodeId": "n_1343216091",
+      "approachLinkId": "l_156370208_0",
+      "x": 26.472,
+      "z": 158.544,
+      "heading": 128.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_005",
+      "nodeId": "n_1470033201",
+      "approachLinkId": "l_43158989_0",
+      "x": 460.71,
+      "z": 260.133,
+      "heading": 242.87,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4124"
+        }
+      ]
+    },
+    {
+      "id": "ds_006",
+      "nodeId": "n_1472879000",
+      "approachLinkId": "l_148994809_0",
+      "x": 492.013,
+      "z": -50.993,
+      "heading": 174.24,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_007",
+      "nodeId": "n_1472879002",
+      "approachLinkId": "l_133822045_0",
+      "x": 441.397,
+      "z": 202.201,
+      "heading": 148.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_008",
+      "nodeId": "n_1472879754",
+      "approachLinkId": "l_133822331_0",
+      "x": 495.258,
+      "z": -168.567,
+      "heading": 4.12,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_009",
+      "nodeId": "n_1538172911",
+      "approachLinkId": "l_649691042_2",
+      "x": 336.164,
+      "z": 317.735,
+      "heading": 122.63,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_010",
+      "nodeId": "n_154780717",
+      "approachLinkId": "l_15520106_0",
+      "x": -216.93,
+      "z": -55.233,
+      "heading": 167.88,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "id": "ds_011",
+      "nodeId": "n_154780717",
+      "approachLinkId": "l_183926041_1",
+      "x": -172.994,
+      "z": -90.197,
+      "heading": 256.46,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_012",
+      "nodeId": "n_154780717",
+      "approachLinkId": "l_645715020_2",
+      "x": -208.583,
+      "z": -135.32,
+      "heading": 347.15,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_013",
+      "nodeId": "n_154780717",
+      "approachLinkId": "l_85551216_0",
+      "x": -252.876,
+      "z": -99.738,
+      "heading": 77.72,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "left"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_014",
+      "nodeId": "n_1620648792",
+      "approachLinkId": "l_85550728_0",
+      "x": -256.362,
+      "z": 96.894,
+      "heading": 350.11,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_015",
+      "nodeId": "n_1620648810",
+      "approachLinkId": "l_643170821_0",
+      "x": -248.72,
+      "z": 241.964,
+      "heading": 187.1,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_016",
+      "nodeId": "n_1621493211",
+      "approachLinkId": "l_43159704_0",
+      "x": -308.043,
+      "z": -120.856,
+      "heading": 257.72,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_017",
+      "nodeId": "n_1621493243",
+      "approachLinkId": "l_25696174_2",
+      "x": -391.977,
+      "z": -47.37,
+      "heading": 171.3,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_018",
+      "nodeId": "n_1621822896",
+      "approachLinkId": "l_638785947_1",
+      "x": 192.372,
+      "z": -351.392,
+      "heading": 94.72,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_019",
+      "nodeId": "n_1621822896",
+      "approachLinkId": "l_638785947_2",
+      "x": 188.543,
+      "z": -417.969,
+      "heading": 356.31,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_020",
       "nodeId": "n_18834324",
       "approachLinkId": "l_22779053_5",
       "x": 341.011,
@@ -28,29 +724,105 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "left"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "ahead_right"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "right"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "left"
         }
       ]
     },
     {
-      "id": "ds_002",
+      "id": "ds_021",
+      "nodeId": "n_18834324",
+      "approachLinkId": "l_7984310_0",
+      "x": 367.162,
+      "z": 197.855,
+      "heading": 245.86,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_022",
+      "nodeId": "n_18855081",
+      "approachLinkId": "l_15132985_6",
+      "x": 23.393,
+      "z": 160.787,
+      "heading": 110.4,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_023",
       "nodeId": "n_18855081",
       "approachLinkId": "l_38791087_0",
       "x": 76.088,
@@ -60,29 +832,665 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "ahead"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "ahead"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "ahead"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "ahead"
         }
       ]
     },
     {
-      "id": "ds_003",
+      "id": "ds_024",
+      "nodeId": "n_18855090",
+      "approachLinkId": "l_15132985_2",
+      "x": 27.366,
+      "z": 121.268,
+      "heading": 279.47,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_025",
+      "nodeId": "n_18855090",
+      "approachLinkId": "l_705005031_0",
+      "x": -31.253,
+      "z": 163.098,
+      "heading": 125.3,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "left"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_026",
+      "nodeId": "n_201409410",
+      "approachLinkId": "l_140653958_0",
+      "x": 380.369,
+      "z": 28.627,
+      "heading": 350.62,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_027",
+      "nodeId": "n_201409410",
+      "approachLinkId": "l_140653958_1",
+      "x": 321.965,
+      "z": 58.315,
+      "heading": 100.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_028",
+      "nodeId": "n_201434885",
+      "approachLinkId": "l_19373955_1",
+      "x": 335.139,
+      "z": -43.945,
+      "heading": 75.94,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_029",
+      "nodeId": "n_214929",
+      "approachLinkId": "l_7985852_0",
+      "x": -360.271,
+      "z": -164.092,
+      "heading": 208.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_030",
+      "nodeId": "n_214967",
+      "approachLinkId": "l_643170789_0",
+      "x": -204.939,
+      "z": 163.488,
+      "heading": 252.08,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_031",
+      "nodeId": "n_214984",
+      "approachLinkId": "l_636402736_0",
+      "x": 452.188,
+      "z": 102.326,
+      "heading": 337.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_032",
+      "nodeId": "n_244223514",
+      "approachLinkId": "l_627988061_3",
+      "x": -68.697,
+      "z": -10.709,
+      "heading": 134.42,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_033",
+      "nodeId": "n_244227057",
+      "approachLinkId": "l_22757767_5",
+      "x": -294.719,
+      "z": -436.087,
+      "heading": 143.45,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_034",
+      "nodeId": "n_24936165",
+      "approachLinkId": "l_7984133_1",
+      "x": 209.28,
+      "z": -121.783,
+      "heading": 347.62,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "id": "ds_035",
+      "nodeId": "n_270914874",
+      "approachLinkId": "l_24930290_0",
+      "x": 415.236,
+      "z": -179.742,
+      "heading": 194.16,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_036",
+      "nodeId": "n_270917121",
+      "approachLinkId": "l_290002936_0",
+      "x": 416.315,
+      "z": -239.539,
+      "heading": 110.63,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_037",
+      "nodeId": "n_271986",
+      "approachLinkId": "l_852018215_0",
+      "x": 309.096,
+      "z": -225.111,
+      "heading": 97.97,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_038",
+      "nodeId": "n_280151389",
+      "approachLinkId": "l_153700256_0",
+      "x": 436.242,
+      "z": 210.65,
+      "heading": 148.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_039",
+      "nodeId": "n_280593126",
+      "approachLinkId": "l_649691038_0",
+      "x": 157.658,
+      "z": 404.726,
+      "heading": 185.52,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A449"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A449"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A449"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A449"
+        }
+      ]
+    },
+    {
+      "id": "ds_040",
+      "nodeId": "n_3830953986",
+      "approachLinkId": "l_123075131_0",
+      "x": -422.789,
+      "z": -189.454,
+      "heading": 305.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_041",
       "nodeId": "n_438598",
       "approachLinkId": "l_38791087_1",
       "x": 153.298,
@@ -92,29 +1500,69 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "ahead_right"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "ahead"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "ahead"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "ahead_right"
         }
       ]
     },
     {
-      "id": "ds_004",
+      "id": "ds_042",
+      "nodeId": "n_438598",
+      "approachLinkId": "l_7984152_0",
+      "x": 187.98,
+      "z": 147.952,
+      "heading": 171.77,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "left"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_043",
       "nodeId": "n_438598",
       "approachLinkId": "l_85548593_2",
       "x": 230.763,
@@ -124,29 +1572,33 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "left"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "left"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "left"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "left"
         }
       ]
     },
     {
-      "id": "ds_005",
+      "id": "ds_044",
       "nodeId": "n_438598",
       "approachLinkId": "l_85550386_0",
       "x": 202.584,
@@ -156,29 +1608,33 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "right"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "right"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "right"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "right"
         }
       ]
     },
     {
-      "id": "ds_006",
+      "id": "ds_045",
       "nodeId": "n_438627",
       "approachLinkId": "l_645715020_0",
       "x": -194.184,
@@ -188,61 +1644,765 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "ahead"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "ahead"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "ahead"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "ahead"
         }
       ]
     },
     {
-      "id": "ds_007",
+      "id": "ds_046",
       "nodeId": "n_438627",
-      "approachLinkId": "l_7984145_0",
-      "x": -214.705,
-      "z": -235.76,
-      "heading": 13.91,
-      "distanceBeforeJunctionM": 35.0,
+      "approachLinkId": "l_86882780_4",
+      "x": -162.997,
+      "z": -212.909,
+      "heading": 277.95,
+      "distanceBeforeJunctionM": 40.0,
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
-          "direction": "ahead"
+          "symbol": "city_centre",
+          "direction": "right"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
-          "direction": "ahead"
+          "symbol": "rail",
+          "direction": "right"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "id": "ds_047",
+      "nodeId": "n_5183020588",
+      "approachLinkId": "l_15534450_1",
+      "x": -16.177,
+      "z": -55.292,
+      "heading": 258.51,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "ahead"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "ahead"
         }
       ]
     },
     {
-      "id": "ds_008",
+      "id": "ds_048",
+      "nodeId": "n_5183020590",
+      "approachLinkId": "l_35406701_0",
+      "x": 11.613,
+      "z": -42.777,
+      "heading": 240.01,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_049",
+      "nodeId": "n_5183105885",
+      "approachLinkId": "l_7984137_1",
+      "x": 227.194,
+      "z": -291.452,
+      "heading": 2.8,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_050",
+      "nodeId": "n_5183105890",
+      "approachLinkId": "l_38791084_1",
+      "x": 141.964,
+      "z": -353.956,
+      "heading": 86.29,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_051",
+      "nodeId": "n_5456156657",
+      "approachLinkId": "l_146803783_2",
+      "x": 396.567,
+      "z": -12.088,
+      "heading": 170.9,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_052",
+      "nodeId": "n_5456156658",
+      "approachLinkId": "l_140385476_1",
+      "x": 394.82,
+      "z": -50.046,
+      "heading": 348.49,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_053",
+      "nodeId": "n_5456156658",
+      "approachLinkId": "l_140385476_2",
+      "x": 389.124,
+      "z": 30.235,
+      "heading": 170.62,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_054",
+      "nodeId": "n_5800848179",
+      "approachLinkId": "l_295111884_0",
+      "x": 380.713,
+      "z": 287.636,
+      "heading": 131.59,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_055",
+      "nodeId": "n_59751555",
+      "approachLinkId": "l_153700257_0",
+      "x": 354.818,
+      "z": 239.223,
+      "heading": 318.49,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_056",
+      "nodeId": "n_59751618",
+      "approachLinkId": "l_19205886_0",
+      "x": 409.458,
+      "z": 179.808,
+      "heading": 324.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_057",
+      "nodeId": "n_6416777346",
+      "approachLinkId": "l_25689327_0",
+      "x": 380.562,
+      "z": 287.77,
+      "heading": 131.59,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4124"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4124"
+        }
+      ]
+    },
+    {
+      "id": "ds_058",
+      "nodeId": "n_8091111781",
+      "approachLinkId": "l_7984419_0",
+      "x": 337.019,
+      "z": 184.672,
+      "heading": 43.7,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_059",
+      "nodeId": "n_8091111786",
+      "approachLinkId": "l_641675310_0",
+      "x": 406.924,
+      "z": 183.341,
+      "heading": 324.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_060",
+      "nodeId": "n_8091111814",
+      "approachLinkId": "l_643170792_0",
+      "x": 155.897,
+      "z": 275.193,
+      "heading": 348.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_061",
+      "nodeId": "n_8093861462",
+      "approachLinkId": "l_35406700_0",
+      "x": -131.483,
+      "z": -341.959,
+      "heading": 7.97,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_062",
+      "nodeId": "n_8093861462",
+      "approachLinkId": "l_35406700_1",
+      "x": -90.255,
+      "z": -272.582,
+      "heading": 207.79,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_063",
+      "nodeId": "n_8093861463",
+      "approachLinkId": "l_22757916_0",
+      "x": -172.288,
+      "z": -306.071,
+      "heading": 99.42,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_064",
+      "nodeId": "n_8093861464",
+      "approachLinkId": "l_19422216_0",
+      "x": -135.381,
+      "z": -369.816,
+      "heading": 7.96,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_065",
+      "nodeId": "n_8115254332",
+      "approachLinkId": "l_15132985_3",
+      "x": 19.14,
+      "z": 124.229,
+      "heading": 300.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_066",
       "nodeId": "n_8115254332",
       "approachLinkId": "l_871187631_0",
       "x": -8.927,
@@ -252,24 +2412,220 @@
       "style": "local",
       "rows": [
         {
-          "text": "City Centre (Queen Square)",
+          "text": "City Centre",
           "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
           "direction": "left"
         },
         {
-          "text": "Wolverhampton",
+          "text": "Railway Station",
           "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
           "direction": "left"
         },
         {
-          "text": "Wolverhampton Interchange",
+          "text": "Bus Station",
           "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
           "direction": "left"
         },
         {
-          "text": "West Park Hospital",
+          "text": "Hospital",
           "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
           "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_067",
+      "nodeId": "n_992426065",
+      "approachLinkId": "l_86140128_0",
+      "x": 89.282,
+      "z": 351.994,
+      "heading": 80.35,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_068",
+      "nodeId": "n_992426149",
+      "approachLinkId": "l_324026349_0",
+      "x": 210.947,
+      "z": 314.633,
+      "heading": 270.78,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
+        }
+      ]
+    },
+    {
+      "id": "ds_069",
+      "nodeId": "n_992426196",
+      "approachLinkId": "l_643170777_0",
+      "x": 157.138,
+      "z": 269.344,
+      "heading": 348.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_070",
+      "nodeId": "n_992426216",
+      "approachLinkId": "l_85550387_0",
+      "x": 207.52,
+      "z": 315.144,
+      "heading": 281.66,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_071",
+      "nodeId": "n_992455300",
+      "approachLinkId": "l_85580978_0",
+      "x": -382.629,
+      "z": -96.232,
+      "heading": 111.33,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Railway Station",
+          "poiId": "poi_railway_station_6634567442",
+          "symbol": "rail",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Bus Station",
+          "poiId": "poi_bus_station_140385467",
+          "symbol": "bus",
+          "direction": "ahead",
+          "ref": "A4150"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_47660665",
+          "symbol": "hospital",
+          "direction": "ahead",
+          "ref": "A4150"
         }
       ]
     }
