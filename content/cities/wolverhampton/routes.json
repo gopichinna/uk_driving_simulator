@@ -1,0 +1,620 @@
+{
+  "routeFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-centre",
+  "routes": [
+    {
+      "id": "wolverhampton-ring-roundabout",
+      "name": "Ring Road & Roundabout Loop",
+      "description": "Free-drive route starting on the ring-road roundabout and passing signalised junctions.",
+      "estimatedMinutes": 3.6,
+      "start": {
+        "linkId": "l_15132985_0",
+        "offsetM": 0
+      },
+      "links": [
+        {
+          "linkId": "l_15132985_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_15132985_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791087_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791087_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85548593_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_25371174_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373424_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_85550577_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550577_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066194_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550391_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23486739_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_897791707_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696206_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757760_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_897791710_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550392_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550392_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066194_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_85550577_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_85550577_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_883057339_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_491066193_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_7984152_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_868384401_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550386_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984152_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066193_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_883057339_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373424_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373424_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373424_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373424_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19373426_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757736_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757736_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866481294_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866481294_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757736_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22757736_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_36799795_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85548593_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "bus_lane",
+        "cycle_lane",
+        "pelican",
+        "puffin",
+        "roundabout",
+        "signals"
+      ]
+    },
+    {
+      "id": "wolverhampton-zebra-high-street",
+      "name": "City Centre Zebra & Crossings",
+      "description": "Urban route through city-centre streets featuring a zebra crossing and pedestrian signals.",
+      "estimatedMinutes": 3.6,
+      "start": {
+        "linkId": "l_762310458_0",
+        "offsetM": 0
+      },
+      "links": [
+        {
+          "linkId": "l_762310458_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_866798129_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866798128_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866798128_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866798128_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43655272_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149160150_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866798131_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_866798132_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757767_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757767_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757767_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1092260458_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_546203837_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_546203837_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_775826355_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757767_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066198_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066198_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066198_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22758209_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22758209_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22758209_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984738_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_534429537_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_534429536_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_534429536_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_534429536_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_534429536_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22757678_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22757678_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22757678_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22757678_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_38791083_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791083_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_852047641_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791084_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791084_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791084_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_38791084_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638785947_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638785947_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638785947_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779135_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22757677_0",
+          "direction": "forward"
+        }
+      ],
+      "features": [
+        "cycle_lane",
+        "pelican",
+        "signals",
+        "toucan",
+        "zebra"
+      ]
+    },
+    {
+      "id": "wolverhampton-bus-lanes-signals",
+      "name": "Bus Lanes & Signalised Corridor",
+      "description": "Main-road drive covering bus-lane corridors, cycle lanes, and light-controlled crossings.",
+      "estimatedMinutes": 3.7,
+      "start": {
+        "linkId": "l_148868369_0",
+        "offsetM": 0
+      },
+      "links": [
+        {
+          "linkId": "l_148868369_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_148868372_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_148868372_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_148868372_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_148868372_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_649691042_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149283000_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149283001_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149282984_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_149282981_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1427538813_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149283018_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1427538814_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149282981_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_149282981_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_149282984_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149402172_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_685156316_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_702172540_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_702172540_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_878059592_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_702172540_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_685156316_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_149402172_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_149283001_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1427538812_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_649691042_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_649691042_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_295111883_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25689327_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25689327_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25689327_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_149038892_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_612926059_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_86628388_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25689657_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25689657_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_220679428_0",
+          "direction": "forward"
+        }
+      ],
+      "features": [
+        "bus_lane",
+        "cycle_lane",
+        "pelican",
+        "signals",
+        "toucan"
+      ]
+    }
+  ]
+}

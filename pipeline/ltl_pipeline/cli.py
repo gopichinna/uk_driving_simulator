@@ -10,6 +10,7 @@ import yaml
 from ltl_pipeline.build import build_roadpack, write_roadpack
 from ltl_pipeline.extract import extract_osm
 from ltl_pipeline.fetch import fetch_extract
+from ltl_pipeline.qa import write_qa_report
 from ltl_pipeline.schema import REPO_ROOT
 
 
@@ -44,6 +45,7 @@ def build_city(city: str, force_fetch: bool = False) -> Path:
     )
     out_path = city_dir / "roadpack.json"
     write_roadpack(pack, out_path)
+    write_qa_report(pack, city_dir / "QA.md")
     return out_path
 
 

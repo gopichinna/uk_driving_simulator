@@ -40303,6 +40303,125 @@
     }
   ],
   "zones": [],
+  "restrictions": [
+    {
+      "id": "r_11828699",
+      "type": "no_u_turn",
+      "fromLink": "l_25696127_1",
+      "viaNode": "n_214998",
+      "toLink": "l_85550730_0",
+      "confidence": 0.9,
+      "osmRelationId": 11828699
+    },
+    {
+      "id": "r_11966043",
+      "type": "no_right_turn",
+      "fromLink": "l_85550726_0",
+      "viaNode": "n_214997",
+      "toLink": "l_85580973_0",
+      "confidence": 0.9,
+      "osmRelationId": 11966043
+    },
+    {
+      "id": "r_11966044",
+      "type": "no_left_turn",
+      "fromLink": "l_85581305_1",
+      "viaNode": "n_992785892",
+      "toLink": "l_879699933_0",
+      "confidence": 0.9,
+      "osmRelationId": 11966044
+    },
+    {
+      "id": "r_11966045",
+      "type": "no_left_turn",
+      "fromLink": "l_85581304_2",
+      "viaNode": "n_992785920",
+      "toLink": "l_879699935_0",
+      "confidence": 0.9,
+      "osmRelationId": 11966045
+    },
+    {
+      "id": "r_11966046",
+      "type": "no_right_turn",
+      "fromLink": "l_25696204_0",
+      "viaNode": "n_992438578",
+      "toLink": "l_156594812_0",
+      "confidence": 0.9,
+      "osmRelationId": 11966046
+    },
+    {
+      "id": "r_12216231",
+      "type": "no_left_turn",
+      "fromLink": "l_86140128_2",
+      "viaNode": "n_215015",
+      "toLink": "l_7984179_0",
+      "confidence": 0.9,
+      "osmRelationId": 12216231
+    },
+    {
+      "id": "r_1632587",
+      "type": "no_right_turn",
+      "fromLink": "l_22766042_2",
+      "viaNode": "n_244397720",
+      "toLink": "l_7984133_0",
+      "confidence": 0.9,
+      "osmRelationId": 1632587
+    },
+    {
+      "id": "r_1633569",
+      "type": "no_right_turn",
+      "fromLink": "l_645715020_2",
+      "viaNode": "n_154780717",
+      "toLink": "l_183926041_1",
+      "confidence": 0.9,
+      "osmRelationId": 1633569
+    },
+    {
+      "id": "r_17400949",
+      "type": "no_right_turn",
+      "fromLink": "l_24630821_0",
+      "viaNode": "n_992455290",
+      "toLink": "l_294037858_0",
+      "confidence": 0.9,
+      "osmRelationId": 17400949
+    },
+    {
+      "id": "r_19572256",
+      "type": "no_right_turn",
+      "fromLink": "l_149283000_0",
+      "viaNode": "n_280611264",
+      "toLink": "l_1427538812_0",
+      "confidence": 0.9,
+      "osmRelationId": 19572256
+    },
+    {
+      "id": "r_2449065",
+      "type": "only_right_turn",
+      "fromLink": "l_627988061_5",
+      "viaNode": "n_154780713",
+      "toLink": "l_15534450_0",
+      "confidence": 0.9,
+      "osmRelationId": 2449065
+    },
+    {
+      "id": "r_3917700",
+      "type": "no_right_turn",
+      "fromLink": "l_897791706_0",
+      "viaNode": "n_214976",
+      "toLink": "l_23486739_0",
+      "confidence": 0.9,
+      "osmRelationId": 3917700
+    },
+    {
+      "id": "r_9502026",
+      "type": "only_straight_on",
+      "fromLink": "l_295111884_2",
+      "viaNode": "n_1007478062",
+      "toLink": "l_684848393_0",
+      "confidence": 0.9,
+      "osmRelationId": 9502026
+    }
+  ],
   "excluded": [
     {
       "osmWayId": 24930293,

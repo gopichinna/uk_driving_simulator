@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/route.v0.schema.json",
+  "title": "L to Local Free-Drive Route v0",
+  "description": "Ordered free-drive route over a city RoadPack. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["routeFormatVersion", "packId", "routes"],
+  "additionalProperties": false,
+  "properties": {
+    "routeFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "routes": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/route" }
+    }
+  },
+  "$defs": {
+    "route": {
+      "type": "object",
+      "required": ["id", "name", "description", "start", "links", "features"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+        "name": { "type": "string", "minLength": 1 },
+        "description": { "type": "string", "minLength": 1 },
+        "estimatedMinutes": { "type": "number", "minimum": 1 },
+        "start": {
+          "type": "object",
+          "required": ["linkId", "offsetM"],
+          "additionalProperties": false,
+          "properties": {
+            "linkId": { "type": "string", "minLength": 1 },
+            "offsetM": { "type": "number", "minimum": 0 }
+          }
+        },
+        "links": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "type": "object",
+            "required": ["linkId", "direction"],
+            "additionalProperties": false,
+            "properties": {
+              "linkId": { "type": "string", "minLength": 1 },
+              "direction": { "enum": ["forward", "backward"] }
+            }
+          }
+        },
+        "features": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["signals", "zebra", "pelican", "puffin", "toucan", "roundabout", "bus_lane", "cycle_lane"] }
+        }
+      }
+    }
+  }
+}

@@ -436,6 +436,35 @@ def build_roadpack(
 
     links.sort(key=lambda item: item["id"])
     crossings.sort(key=lambda item: item["id"])
+
+    # Resolve turn restrictions to (fromLink, viaNode, toLink)
+    restrictions: list[dict[str, Any]] = []
+    for r in extracted.restrictions:
+        via_id = f"n_{r.via_node_id}"
+        from_candidates = [
+            lk["id"]
+            for lk in links
+            if lk.get("osmWayId") == r.from_way_id and (lk["to"] == via_id or lk["from"] == via_id)
+        ]
+        to_candidates = [
+            lk["id"]
+            for lk in links
+            if lk.get("osmWayId") == r.to_way_id and (lk["from"] == via_id or lk["to"] == via_id)
+        ]
+        if from_candidates and to_candidates:
+            restrictions.append(
+                {
+                    "id": f"r_{r.osm_id}",
+                    "type": r.restriction_type,
+                    "fromLink": from_candidates[0],
+                    "viaNode": via_id,
+                    "toLink": to_candidates[0],
+                    "confidence": 0.9,
+                    "osmRelationId": r.osm_id,
+                }
+            )
+    restrictions.sort(key=lambda item: item["id"])
+
     excluded_list = [
         {
             "osmWayId": e.osm_way_id,
@@ -466,6 +495,7 @@ def build_roadpack(
         "links": links,
         "crossings": crossings,
         "zones": [],
+        "restrictions": restrictions,
         "excluded": excluded_list,
     }
     validate_roadpack(pack)

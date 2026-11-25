@@ -15,6 +15,7 @@ RULEPACK_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "rulepack.v0.schema.j
 STRINGS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "strings.v0.schema.json"
 SIGNS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "signs.v0.schema.json"
 LESSON_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "lesson.v0.schema.json"
+ROUTE_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "route.v0.schema.json"
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -78,6 +79,15 @@ def validate_lesson_file(path: Path, schema_path: Path = LESSON_SCHEMA_PATH) -> 
     return data
 
 
+def validate_routes_file(path: Path, schema_path: Path = ROUTE_SCHEMA_PATH) -> dict[str, Any]:
+    """Load a routes JSON file and validate it against route.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -106,5 +116,9 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for lesson_path in sorted(root.glob("lessons/*/*.json")):
         validate_lesson_file(lesson_path)
         validated.append(lesson_path)
+
+    for routes_path in sorted(root.glob("cities/*/routes.json")):
+        validate_routes_file(routes_path)
+        validated.append(routes_path)
 
     return validated
