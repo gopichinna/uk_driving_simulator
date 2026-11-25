@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <polygon points="8,14 92,14 50,88" fill="#FFFFFF" stroke="#D4351C" stroke-width="9" stroke-linejoin="round"/>
+  <text x="50" y="38" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#111111">GIVE</text>
+  <text x="50" y="52" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="11" fill="#111111">WAY</text>
+</svg>

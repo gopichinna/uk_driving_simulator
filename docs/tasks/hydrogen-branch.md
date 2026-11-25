@@ -64,8 +64,8 @@ See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no ha
   Tests cover each failure type.
 
 ## C. GB traffic-sign catalogue
-- [ ] C1. **Check the licence first.** Find, on GOV.UK, the licence for DfT traffic sign images (the "traffic signs image database" or the Traffic Signs Regulations and General Directions (TSRGD) diagrams). Record the URL and the exact licence (e.g. OGL v3.0 or Crown copyright terms). **If you can't confirm it, write `UNVERIFIED`, don't download images, and say why.**
-- [ ] C2. `content/schemas/signs.v0.schema.json` (new file, pre-agreed) and `content/countries/gb/signs.yaml`. Each entry has:
+- [x] C1. **Check the licence first.** Find, on GOV.UK, the licence for DfT traffic sign images (the "traffic signs image database" or the Traffic Signs Regulations and General Directions (TSRGD) diagrams). Record the URL and the exact licence (e.g. OGL v3.0 or Crown copyright terms). **If you can't confirm it, write `UNVERIFIED`, don't download images, and say why.** (Verified `https://www.gov.uk/guidance/traffic-sign-images`: Open Government Licence v3.0 + Crown copyright, must be accurate, not misleading, and not used as manufacturing templates.)
+- [x] C2. `content/schemas/signs.v0.schema.json` (new file, pre-agreed) and `content/countries/gb/signs.yaml`. Each entry has: (17 signs covering Stages 0–2 and town course.)
   - `id`, `name`, `tsrgdDiagram` (number), `category` (regulatory / warning / information);
   - `meaning` (plain English, ≤ 2 sentences);
   - `relatedRules[]`, `sourceUrl`, `image` (path, or null).
@@ -75,7 +75,7 @@ See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no ha
   - give way, stop, no entry, one-way, ahead only, turn left/right only;
   - traffic signals ahead, pedestrian crossing ahead, school / children, roundabout ahead;
   - bus lane and cycle lane signs.
-- [ ] C3. If C1 confirms the licence allows it: put the images (SVG preferred) in `content/countries/gb/signs/`, and add the attribution to `content/ATTRIBUTIONS.md` (new file; also list OSM ODbL and Highway Code OGL there).
+- [x] C3. If C1 confirms the licence allows it: put the images (SVG preferred) in `content/countries/gb/signs/`, and add the attribution to `content/ATTRIBUTIONS.md` (new file; also list OSM ODbL and Highway Code OGL there). (17 SVGs in `content/countries/gb/signs/` + `content/ATTRIBUTIONS.md`.)
 
 ## D. Lessons for Stages 0–2 (data only)
 See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Lessons 1–3 are the **free tier**.

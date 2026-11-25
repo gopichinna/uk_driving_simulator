@@ -1,0 +1,163 @@
+signsFormatVersion: "0.1"
+country: GB
+licence:
+  status: verified
+  name: "Open Government Licence v3.0 (Crown copyright)"
+  url: "https://www.gov.uk/guidance/traffic-sign-images"
+  notes: >
+    DfT road traffic sign images and TSRGD diagrams are Crown copyright and
+    reusable under the Open Government Licence v3.0. Reproductions must be
+    accurate, not misleading, and not used as manufacturing templates.
+signs:
+  - id: GB.SIGN.SPEED_20
+    name: "20 mph speed limit"
+    tsrgdDiagram: "670"
+    category: regulatory
+    meaning: "You must not drive faster than 20 mph."
+    relatedRules: ["GB.SPD.OVER_LIMIT", "GB.SPD.BUILT_UP"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/speed_20.svg"
+
+  - id: GB.SIGN.SPEED_30
+    name: "30 mph speed limit"
+    tsrgdDiagram: "670"
+    category: regulatory
+    meaning: "You must not drive faster than 30 mph."
+    relatedRules: ["GB.SPD.OVER_LIMIT", "GB.SPD.BUILT_UP"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/speed_30.svg"
+
+  - id: GB.SIGN.NATIONAL_SPEED_LIMIT
+    name: "National speed limit"
+    tsrgdDiagram: "671"
+    category: regulatory
+    meaning: "National speed limit applies: 60 mph on single carriageways and 70 mph on dual carriageways for cars."
+    relatedRules: ["GB.SPD.NATIONAL_LIMIT", "GB.SPD.OVER_LIMIT"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/national_speed_limit.svg"
+
+  - id: GB.SIGN.ZONE_20
+    name: "20 mph zone entry"
+    tsrgdDiagram: "674"
+    category: regulatory
+    meaning: "You are entering a 20 mph speed limit zone with traffic calming."
+    relatedRules: ["GB.SPD.OVER_LIMIT", "GB.SCH.SLOW"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/zone_20.svg"
+
+  - id: GB.SIGN.GIVE_WAY
+    name: "Give way"
+    tsrgdDiagram: "602"
+    category: regulatory
+    meaning: "You must give way to traffic on the major road ahead."
+    relatedRules: ["GB.JCT.GIVE_WAY", "GB.RBT.GIVE_WAY_RIGHT"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/give_way.svg"
+
+  - id: GB.SIGN.STOP
+    name: "Stop and give way"
+    tsrgdDiagram: "601.1"
+    category: regulatory
+    meaning: "You must stop completely at the solid white line and give way."
+    relatedRules: ["GB.JCT.STOP_SIGN"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/stop.svg"
+
+  - id: GB.SIGN.NO_ENTRY
+    name: "No entry"
+    tsrgdDiagram: "616"
+    category: regulatory
+    meaning: "You must not enter this road or lane."
+    relatedRules: ["GB.POS.KEEP_LEFT", "GB.RBT.WRONG_WAY"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/no_entry.svg"
+
+  - id: GB.SIGN.ONE_WAY
+    name: "One-way traffic"
+    tsrgdDiagram: "652"
+    category: information
+    meaning: "Traffic on this street travels only in the direction of the arrow."
+    relatedRules: ["GB.POS.KEEP_LEFT"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/one_way.svg"
+
+  - id: GB.SIGN.AHEAD_ONLY
+    name: "Ahead only"
+    tsrgdDiagram: "606"
+    category: regulatory
+    meaning: "You must drive straight ahead only."
+    relatedRules: ["GB.POS.LANE_FOR_ROUTE"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/ahead_only.svg"
+
+  - id: GB.SIGN.TURN_LEFT_ONLY
+    name: "Turn left only"
+    tsrgdDiagram: "606"
+    category: regulatory
+    meaning: "You must turn left in the direction of the arrow."
+    relatedRules: ["GB.POS.LANE_FOR_ROUTE", "GB.JCT.TURN_NEAR"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/turn_left_only.svg"
+
+  - id: GB.SIGN.TURN_RIGHT_ONLY
+    name: "Turn right only"
+    tsrgdDiagram: "606"
+    category: regulatory
+    meaning: "You must turn right in the direction of the arrow."
+    relatedRules: ["GB.POS.LANE_FOR_ROUTE", "GB.JCT.TURN_FAR_POSITION"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/turn_right_only.svg"
+
+  - id: GB.SIGN.TRAFFIC_SIGNALS_AHEAD
+    name: "Traffic signals ahead"
+    tsrgdDiagram: "543"
+    category: warning
+    meaning: "Traffic lights are ahead. Prepare to stop if they change."
+    relatedRules: ["GB.TL.RED", "GB.TL.AMBER"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/traffic_signals_ahead.svg"
+
+  - id: GB.SIGN.PEDESTRIAN_CROSSING_AHEAD
+    name: "Zebra crossing ahead"
+    tsrgdDiagram: "544"
+    category: warning
+    meaning: "A zebra crossing is ahead. Watch for pedestrians waiting or crossing."
+    relatedRules: ["GB.XNG.ZEBRA"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/pedestrian_crossing_ahead.svg"
+
+  - id: GB.SIGN.SCHOOL_CHILDREN
+    name: "Children going to or from school"
+    tsrgdDiagram: "545"
+    category: warning
+    meaning: "Children may be crossing ahead near a school. Slow down and watch closely."
+    relatedRules: ["GB.SCH.SLOW", "GB.SCH.CHILD_STEPS_OUT"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/school_children.svg"
+
+  - id: GB.SIGN.ROUNDABOUT_AHEAD
+    name: "Roundabout ahead"
+    tsrgdDiagram: "510"
+    category: warning
+    meaning: "A roundabout is ahead. Choose your lane early and give way to the right."
+    relatedRules: ["GB.RBT.GIVE_WAY_RIGHT", "GB.RBT.APPROACH_LANE"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/roundabout_ahead.svg"
+
+  - id: GB.SIGN.BUS_LANE
+    name: "With-flow bus lane"
+    tsrgdDiagram: "959.1"
+    category: regulatory
+    meaning: "Lane reserved for buses and cycles during the hours shown on the sign."
+    relatedRules: ["GB.BUS.LANE_HOURS"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/bus_lane.svg"
+
+  - id: GB.SIGN.CYCLE_LANE
+    name: "With-flow cycle lane"
+    tsrgdDiagram: "959.1"
+    category: regulatory
+    meaning: "Lane reserved for pedal cycles."
+    relatedRules: ["GB.VRU.CYCLE_LANE_SOLID", "GB.VRU.CYCLE_LANE_BROKEN"]
+    sourceUrl: "https://www.gov.uk/guidance/the-highway-code/traffic-signs"
+    image: "content/countries/gb/signs/cycle_lane.svg"
