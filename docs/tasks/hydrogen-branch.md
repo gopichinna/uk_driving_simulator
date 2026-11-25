@@ -36,13 +36,13 @@ Tick each box with a one-line note (commit hash or what changed).
   - Claude will use it to decide which rules to build next.
 
 ## B. Test-style marking (needed for Claude's debrief, task B3)
-- [ ] B1. Verify on **GOV.UK only** how the car practical test is marked: the number of driving faults allowed, and what serious and dangerous faults mean for the result. Use the "Driving test: cars" guidance or the DL25 marking pages. Record the URL and the date checked. **If you can't confirm a number, mark it `UNVERIFIED` and say why. Don't guess.**
-- [ ] B2. `content/schemas/testmarking.v0.schema.json` (new, pre-agreed) and `content/countries/gb/test_marking.yaml`. Fields:
+- [x] B1. Verify on **GOV.UK only** how the car practical test is marked: the number of driving faults allowed, and what serious and dangerous faults mean for the result. Use the "Driving test: cars" guidance or the DL25 marking pages. Record the URL and the date checked. **If you can't confirm a number, mark it `UNVERIFIED` and say why. Don't guess.** (Verified `https://www.gov.uk/driving-test/driving-test-faults-result` on 2026-11-25: max 15 driving faults, fail on >= 1 serious or dangerous fault.)
+- [x] B2. `content/schemas/testmarking.v0.schema.json` (new, pre-agreed) and `content/countries/gb/test_marking.yaml`. Fields:
   - `maxDrivingFaults` (integer);
   - `failOnSerious` and `failOnDangerous` (booleans);
   - plain-English `summary` lines for pass and fail;
   - `source { url, checkedOn, verified }`.
-- [ ] B3. Pytest: the file validates, and if it's verified, it has a gov.uk https URL.
+- [x] B3. Pytest: the file validates, and if it's verified, it has a gov.uk https URL. (`pipeline/tests/test_test_marking.py`)
 
 ## C. UI strings for the debrief, settings and HUD (needed by Claude now)
 - [ ] C1. Extend `strings.v0` **additively** (pre-agreed) with a third `oneOf` branch: `kind: "ui"` and an `entries` object of `key → string`. Keys match `^[a-z0-9_]+(\.[a-z0-9_]+)+$`, and placeholders use ICU MessageFormat.
