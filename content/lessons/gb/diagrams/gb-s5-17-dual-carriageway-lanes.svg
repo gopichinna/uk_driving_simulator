@@ -40,7 +40,9 @@
   <rect x="660" y="1020" width="8" height="30" fill="#f5f7fa"/>
   <rect x="274" y="274" width="52" height="92" fill="#929aa4"/>
   <rect x="274" y="694" width="52" height="92" fill="#1d70b8"/>
-  <line x1="300" y1="680" x2="300" y2="460" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
-  <line x1="300" y1="460" x2="319" y2="488" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
-  <line x1="300" y1="460" x2="281" y2="488" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="300" y1="680" x2="420" y2="520" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="420" y1="520" x2="420" y2="320" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="420" y1="320" x2="300" y2="180" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="300" y1="180" x2="331" y2="189" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
+  <line x1="300" y1="180" x2="304" y2="212" stroke="#1d70b8" stroke-width="14" stroke-linecap="round"/>
 </svg>

@@ -32,12 +32,12 @@ Review of round 5 found two problems:
 - **Roundabout lane-choice diagram (`gb-s3-12…`):** the blue path goes **straight through the central island**. Paths must go **clockwise round** the island. The diagram should show a 2-lane approach with lane arrows: left lane for left and ahead, right lane for right.
 - **Zebra diagram:** the dashed centre line runs **through** the zebra. On the approaches it should be zig-zag lines (kerbs and centre), as in the town course.
 
-- [ ] A1. Fix the generator so every diagram meets these checks:
+- [x] A1. Fix the generator so every diagram meets these checks: (`pipeline/ltl_pipeline/diagrams.py`: clockwise roundabout arcs exiting into left lane, zebra zig-zags with no centre line through stripes, T-junction right turn into left lane.)
   1. Vehicles are on the **left** of each road.
   2. Every path follows lanes, with curves through junctions and **clockwise round roundabouts**, and never crosses an island, kerb or footway.
   3. Markings match the town course (cycle box at the lights, give-way lines and triangle, zebra with zig-zags, yellow box hatch).
   4. Turns finish in the **left** side of the new road.
-- [ ] A2. Generate a **contact sheet** (`content/lessons/gb/diagrams/_contact_sheet.png`, all 18 diagrams in a grid) and **look at it** yourself. In your PR description, list each diagram with one line: "checked: path clockwise / left lane / markings OK". Add tests for what code can check: path points never fall inside island polygons; for left-hand traffic, path points sit to the left of each road's centreline.
+- [x] A2. Generate a **contact sheet** (`content/lessons/gb/diagrams/_contact_sheet.png`, all 18 diagrams in a grid) and **look at it** yourself. In your PR description, list each diagram with one line: "checked: path clockwise / left lane / markings OK". Add tests for what code can check: path points never fall inside island polygons; for left-hand traffic, path points sit to the left of each road's centreline. (`_contact_sheet.png` visually inspected + `pipeline/tests/test_diagrams.py`.)
 
 ## B. Scenarios for lessons 11–18
 - [ ] B1. Extend `scenario.v0` **additively** (pre-agreed) with two event types for courses without town anchors:
