@@ -57,13 +57,13 @@ Tick each box with a one-line note (commit hash or what changed).
 - [x] C4. Pseudo-locale for layout testing: generate `content/countries/gb/strings/en-XA/` from the `en` files. Make every string about 40% longer, with accented letters, and keep the placeholders intact. CI regenerates it and fails on any diff. (`pseudolocale.py` + CI diff check.)
 
 ## D. Lessons for Stages 3–5 (data only)
-- [ ] D1. `content/lessons/gb/11-…` onwards, about 8 lessons:
+- [x] D1. `content/lessons/gb/11-…` onwards, about 8 lessons: (Added lessons 11–18 covering Stages 3–5; lessons 1–3 stay the only free ones.)
   - **Stage 3, roundabouts:** give way to the right; lane choice and signals on a two-lane roundabout; leaving in lane; cyclists on roundabouts.
   - **Stage 4, busy town:** overtaking cyclists (1.5 m); following distance in town.
   - **Stage 5, faster roads:** lane discipline on a dual carriageway; the two-second rule at speed.
 
   Use the existing courses: `roundabout`, `two_lane_roundabout` and `dual_carriageway` (anchor `start`), and `town` with the round-2 anchors. Prefer rules marked ✅ in A2. Lessons 1–3 stay the only free ones.
-- [ ] D2. The tests from round 2 cover the new lessons (schema, rule ids, course/anchor pairs, readability).
+- [x] D2. The tests from round 2 cover the new lessons (schema, rule ids, course/anchor pairs, readability). (`test_lessons.py` updated for 18 lessons.)
 
 ## E. Wolverhampton pack v0.2: who goes first
 For the "Wolverhampton (beta)" drive, AI needs priority at every junction.

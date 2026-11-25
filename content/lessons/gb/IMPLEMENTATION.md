@@ -42,3 +42,29 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 10 | Box junctions | `GB.JCT.BOX` | ⏳ |
 | 10 | Box junctions | `GB.TL.CLEAR_JUNCTION` | ⏳ |
 | 10 | Box junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
+| 11 | Roundabout priority | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
+| 11 | Roundabout priority | `GB.RBT.WRONG_WAY` | ✅ |
+| 12 | Roundabout lanes and signals | `GB.RBT.APPROACH_LANE` | ✅ |
+| 12 | Roundabout lanes and signals | `GB.RBT.SIGNAL_APPROACH` | ✅ |
+| 12 | Roundabout lanes and signals | `GB.RBT.SIGNAL_EXIT` | ✅ |
+| 13 | Staying in lane on roundabouts | `GB.RBT.STAY_IN_LANE` | ✅ |
+| 13 | Staying in lane on roundabouts | `GB.RBT.SIGNAL_EXIT` | ✅ |
+| 13 | Staying in lane on roundabouts | `GB.OBS.LANE_CHANGE` | ✅ |
+| 13 | Staying in lane on roundabouts | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
+| 14 | Cyclists on roundabouts | `GB.RBT.CYCLISTS` | ⏳ |
+| 14 | Cyclists on roundabouts | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
+| 14 | Cyclists on roundabouts | `GB.VRU.PASS_CYCLIST` | ✅ |
+| 15 | Overtaking cyclists | `GB.VRU.PASS_CYCLIST` | ✅ |
+| 15 | Overtaking cyclists | `GB.POS.KEEP_LEFT` | ⏳ |
+| 15 | Overtaking cyclists | `GB.OBS.LANE_CHANGE` | ✅ |
+| 15 | Overtaking cyclists | `GB.SIG.TIMELY` | ✅ |
+| 16 | Following distance in town | `GB.GAP.TWO_SECOND` | ✅ |
+| 16 | Following distance in town | `GB.SPD.OVER_LIMIT` | ✅ |
+| 16 | Following distance in town | `GB.TL.RED` | ⏳ |
+| 17 | Dual carriageway lane discipline | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
+| 17 | Dual carriageway lane discipline | `GB.OBS.LANE_CHANGE` | ✅ |
+| 17 | Dual carriageway lane discipline | `GB.SIG.TIMELY` | ✅ |
+| 17 | Dual carriageway lane discipline | `GB.SPD.OVER_LIMIT` | ✅ |
+| 18 | The two-second rule at speed | `GB.GAP.TWO_SECOND` | ✅ |
+| 18 | The two-second rule at speed | `GB.SPD.OVER_LIMIT` | ✅ |
+| 18 | The two-second rule at speed | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
