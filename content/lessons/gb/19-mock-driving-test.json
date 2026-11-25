@@ -1,0 +1,83 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s8-19-mock-driving-test",
+  "stage": 8,
+  "order": 19,
+  "title": "Mock driving test",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "The real driving test starts with an eyesight check and two safety questions.",
+      "You then drive for about 35 minutes on varied roads.",
+      "This includes 20 to 35 minutes of independent driving by signs or sat nav.",
+      "You also complete one reversing exercise, plus an optional emergency stop.",
+      "This game covers the driving and independent driving parts across Wolverhampton."
+    ],
+    "ruleIds": [
+      "GB.POS.KEEP_LEFT",
+      "GB.POS.LANE_FOR_ROUTE",
+      "GB.SIG.TIMELY",
+      "GB.SPD.OVER_LIMIT",
+      "GB.GAP.TWO_SECOND"
+    ],
+    "govUkUrl": "https://www.gov.uk/driving-test/what-happens-during-test",
+    "diagram": "content/lessons/gb/diagrams/gb-s8-19-mock-driving-test.png"
+  },
+  "scenarios": [
+    {
+      "id": "s8_19_mock_test",
+      "course": "wolverhampton",
+      "anchor": "start",
+      "goal": "Complete a 35-minute independent drive mixing sat nav and road signs.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.POS.LANE_FOR_ROUTE",
+        "GB.SIG.TIMELY",
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s8_19_mock_test_signs",
+      "course": "wolverhampton",
+      "anchor": "start",
+      "goal": "Follow the direction signs to City Centre (Queen Square).",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.POS.LANE_FOR_ROUTE",
+        "GB.SIG.TIMELY",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "No serious or dangerous faults and at most 15 driving faults passes the test.",
+    "Going the wrong way on independent driving is fine if you stay safe."
+  ]
+}

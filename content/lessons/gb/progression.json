@@ -61,6 +61,14 @@
         "gb-s5-18-two-second-rule-speed"
       ],
       "unlockAfter": { "stage": 4, "minStars": 3 }
+    },
+    {
+      "stage": 8,
+      "title": "Mock driving test",
+      "lessonIds": [
+        "gb-s8-19-mock-driving-test"
+      ],
+      "unlockAfter": { "stage": 5, "minStars": 3 }
     }
   ],
   "stars": {

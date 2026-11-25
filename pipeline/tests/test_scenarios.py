@@ -22,6 +22,7 @@ ALLOWED_COURSE_ANCHORS: dict[str, set[str]] = {
     "roundabout": {"start"},
     "two_lane_roundabout": {"start"},
     "dual_carriageway": {"start"},
+    "wolverhampton": {"start"},
 }
 
 
@@ -32,7 +33,7 @@ def test_every_lesson_scenario_has_valid_file() -> None:
         for sc in lesson["scenarios"]:
             expected[sc["id"]] = (sc["course"], sc["anchor"])
 
-    assert len(expected) == 36
+    assert len(expected) == 38
     for sc_id, (course, anchor) in expected.items():
         path = SCENARIOS_DIR / f"{sc_id}.json"
         assert path.is_file(), f"Missing scenario file: {path}"

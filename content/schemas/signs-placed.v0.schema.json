@@ -1,0 +1,102 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.example/schemas/signs-placed.v0.schema.json",
+  "title": "Signs Placed v0 (Direction Signs & Street Name Plates)",
+  "type": "object",
+  "required": ["signsFormatVersion", "packId", "origin", "source"],
+  "properties": {
+    "signsFormatVersion": { "type": "string", "const": "0.1" },
+    "packId": { "type": "string", "minLength": 1 },
+    "origin": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      },
+      "additionalProperties": false
+    },
+    "headingConvention": {
+      "type": "string",
+      "description": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x"
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind", "licence", "attribution"],
+      "properties": {
+        "kind": { "type": "string" },
+        "licence": { "type": "string" },
+        "attribution": { "type": "string" },
+        "generator": { "type": "string" },
+        "styleSources": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "signs": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/directionSign" }
+    },
+    "plates": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/streetNamePlate" }
+    }
+  },
+  "oneOf": [
+    { "required": ["signs"] },
+    { "required": ["plates"] }
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "directionSign": {
+      "type": "object",
+      "required": ["id", "nodeId", "approachLinkId", "x", "z", "heading", "style", "rows"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "nodeId": { "type": "string", "minLength": 1 },
+        "approachLinkId": { "type": "string", "minLength": 1 },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "distanceBeforeJunctionM": { "type": "number", "minimum": 20, "maximum": 60 },
+        "style": { "type": "string", "enum": ["primary", "local"] },
+        "rows": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 4,
+          "items": {
+            "type": "object",
+            "required": ["text", "direction"],
+            "properties": {
+              "text": { "type": "string", "minLength": 1 },
+              "poiId": { "type": "string", "minLength": 1 },
+              "ref": { "type": "string", "minLength": 1 },
+              "direction": {
+                "type": "string",
+                "enum": ["ahead", "left", "right", "ahead_left", "ahead_right"]
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "streetNamePlate": {
+      "type": "object",
+      "required": ["id", "nodeId", "linkId", "x", "z", "heading", "name"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "nodeId": { "type": "string", "minLength": 1 },
+        "linkId": { "type": "string", "minLength": 1 },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "name": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    }
+  }
+}

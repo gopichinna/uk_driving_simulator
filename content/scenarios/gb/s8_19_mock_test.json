@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_19_mock_test",
+  "course": "wolverhampton",
+  "anchor": "start",
+  "durationS": 180,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.55
+    },
+    {
+      "type": "independent_driving",
+      "minutes": 35,
+      "mode": "mixed",
+      "instruction": "Follow the sat nav and road signs across Wolverhampton."
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 170
+    }
+  ]
+}
