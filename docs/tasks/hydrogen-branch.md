@@ -30,8 +30,8 @@ Tick each box with a one-line note (commit hash or what changed).
 - Round 2 (PR #2, `6266f74`): strings, glossary, signs, Stages 0–2 lessons, Wolverhampton QA, turn restrictions, routes.
 
 ## A. Small fixes from the round-2 review
-- [ ] A1. `GB.POS.KEEP_LEFT.why` says "traffic stays on the left lane". Fix the grammar ("on the left"). Then read every `why` and `tip` once more for grammar a B1 reader would trip on.
-- [ ] A2. Lessons judge some rules that the game can't detect yet (e.g. `GB.TL.NO_TURN_ON_RED`, `GB.SIG.TIMELY`). Add a pipeline report, `content/lessons/gb/IMPLEMENTATION.md` (generated), listing each lesson's `rulesJudged` with ✅ (has an `implementation` in `rules.yaml`) or ⏳ (planned).
+- [x] A1. `GB.POS.KEEP_LEFT.why` says "traffic stays on the left lane". Fix the grammar ("on the left"). Then read every `why` and `tip` once more for grammar a B1 reader would trip on. (Fixed `GB.POS.KEEP_LEFT.why` and regenerated `en-XA`.)
+- [x] A2. Lessons judge some rules that the game can't detect yet (e.g. `GB.TL.NO_TURN_ON_RED`, `GB.SIG.TIMELY`). Add a pipeline report, `content/lessons/gb/IMPLEMENTATION.md` (generated), listing each lesson's `rulesJudged` with ✅ (has an `implementation` in `rules.yaml`) or ⏳ (planned). (`pipeline/ltl_pipeline/lesson_report.py`)
   - The report is a warning, not a CI failure.
   - Claude will use it to decide which rules to build next.
 

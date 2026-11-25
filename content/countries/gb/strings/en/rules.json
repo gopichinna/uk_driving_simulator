@@ -28,7 +28,7 @@
     "GB.POS.KEEP_LEFT": {
       "title": "Keep to the left",
       "fault": "You drove on the wrong side of the road.",
-      "why": "In the UK, traffic stays on the left lane. Driving on the right risks a head-on crash.",
+      "why": "In the UK, traffic stays on the left. Driving on the right risks a head-on crash.",
       "tip": "Stay on the left unless overtaking or passing an obstruction.",
       "good": "You kept a steady position on the left."
     },
