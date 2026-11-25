@@ -23,14 +23,14 @@ Work through the sections in order. Tick each box and add a one-line note (commi
 - Pipeline, Wolverhampton road pack, `rules.yaml` (130 rules), GOV.UK verification and CI.
 
 ## A. Housekeeping
-- [ ] A1. Commit `pipeline/uv.lock`. CI installs with `uv sync --frozen` (or the equivalent), so builds are reproducible.
-- [ ] A2. In CI, regenerate `content/countries/gb/rules.yaml` from `docs/02` and fail if the result differs from the committed file.
-- [ ] A3. Align `docs/02` with the **no observation busywork** decision (`AGENTS.md` §4, rule 7). For the OBS / SIG / lane-change rules, rewrite the **Detection** column so it judges outcomes, not mirror-check inputs. For example:
+- [x] A1. Commit `pipeline/uv.lock`. CI installs with `uv sync --frozen` (or the equivalent), so builds are reproducible. (`pipeline.yml` updated to `astral-sh/setup-uv@v5` + `uv sync --frozen --all-extras`.)
+- [x] A2. In CI, regenerate `content/countries/gb/rules.yaml` from `docs/02` and fail if the result differs from the committed file. (Added `git diff --exit-code ../content/countries/gb/rules.yaml` step.)
+- [x] A3. Align `docs/02` with the **no observation busywork** decision (`AGENTS.md` §4, rule 7). For the OBS / SIG / lane-change rules, rewrite the **Detection** column so it judges outcomes, not mirror-check inputs. For example:
   - "a vehicle was in your blind spot when you moved";
   - "a following car had to brake hard (> 3 m/s²)";
   - "you signalled less than 2 s before moving".
 
-  Keep the rule ids, the Highway Code sources and the force unchanged. Regenerate `rules.yaml`.
+  Keep the rule ids, the Highway Code sources and the force unchanged. Regenerate `rules.yaml`. (Updated `GB.OBS.MOVE_OFF_CHECKS`, `GB.OBS.MSM`, `GB.OBS.LANE_CHANGE`, `GB.SIG.HEADLIGHT_FLASH` and regenerated `rules.yaml`.)
 
 ## B. Player-facing strings (English, CEFR B1, ready for translation)
 See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no hard-coded text.
