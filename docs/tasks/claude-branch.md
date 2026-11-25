@@ -3,23 +3,23 @@
 **Goal:** see `docs/08-parallel-work-plan.md` §2. Claude owns `core/**`, `unity/**` and `core-tests.yml`. Claude doesn't edit `pipeline/**`, `content/countries/**`, `content/cities/**` or `docs/02`.
 
 ## A. Town-centre course (hand-authored)
-- [ ] A1. Core: `TownGeometry`: a small grid of two-way streets (one lane each way, 30 mph, with a 20 mph school street). It has:
+- [x] A1. Core: `TownGeometry`: a small grid of two-way streets (one lane each way, 30 mph, with a 20 mph school street). It has: (de2bd8a: `LaneGraph` + `TownGeometry`)
   - a **signalised crossroads** (with an advanced stop line for cyclists);
   - two **give-way T-junctions**;
   - a **zebra crossing** with zig-zags;
   - a **box junction**.
 
   Lane paths, conflict zones and stop/give-way lines all come from one geometry.
-- [ ] A2. Core: `TrafficSignals`: a GB light sequence (red → red+amber → green → amber) per signal group, with configurable timings; deterministic.
-- [ ] A3. Core: town traffic AI:
+- [x] A2. Core: `TrafficSignals`: a GB light sequence (red → red+amber → green → amber) per signal group, with configurable timings; deterministic. (de2bd8a: `TrafficSignals`)
+- [x] A3. Core: town traffic AI: (de2bd8a: `TownTraffic`; soak-tested over 3 seeds)
   - IDM along lane paths;
   - stops for red and amber;
   - gives way at give-way lines and to pedestrians at junctions (H2);
   - doesn't block box junctions;
   - 10% cyclists;
   - 3-second gaps.
-- [ ] A4. Core: pedestrians: walk footways, wait at the zebra and cross; some cross at junction mouths (to test H2). Deterministic and seeded.
-- [ ] A5. Rules (Rules.Core), each with pass/minor/serious fixtures:
+- [x] A4. Core: pedestrians: walk footways, wait at the zebra and cross; some cross at junction mouths (to test H2). Deterministic and seeded. (de2bd8a: `TownPedestrians`)
+- [x] A5. Rules (Rules.Core), each with pass/minor/serious fixtures: (c620ae1: `TownRules.cs`, 26 fixtures)
 
   | Rule | Highway Code |
   |---|---|
@@ -32,7 +32,7 @@
   | `GB.JCT.H2_PEDESTRIANS` | H2, 170 |
   | `GB.JCT.BOX` | 174 |
 
-- [ ] A6. Unity: generated `Town` scene with road markings:
+- [x] A6. Unity: generated `Town` scene with road markings: (6f5b9e0: Town scene, now the first course; APK builds)
   - stop lines and ASL boxes;
   - give-way lines and triangles;
   - zebra stripes, Belisha beacons and zig-zags;
@@ -59,7 +59,7 @@
 
 ## D+. Use Hydrogen's round-2 content as it lands
 - [ ] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text.
-- [ ] D4. The town course exposes the anchors promised to Hydrogen:
+- [x] D4. The town course exposes the anchors promised to Hydrogen: (de2bd8a: all 7 anchors, tested)
   - `start`;
   - `crossroads_signals`;
   - `tjunction_north`, `tjunction_south`;
