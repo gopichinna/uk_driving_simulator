@@ -101,9 +101,35 @@ namespace LToLocal.EditorTools
             CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
             CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
-            CopyDir("../content/audio/sfx", $"{dest}/audio/sfx", "*.ogg", f => !Path.GetFileName(f).StartsWith("engine_")); // synthetic engine loop not shipped
-            CopyDir("../content/audio/voice/en", $"{dest}/audio/voice", "*.ogg", _ => true);
+            // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
+            // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.
+            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", f => !Path.GetFileName(f).StartsWith("engine_"));
+            ConvertAudioDir("../content/audio/voice/en", $"{dest}/audio/voice", _ => true);
             AssetDatabase.Refresh();
+        }
+
+        private static void ConvertAudioDir(string from, string to, System.Func<string, bool> keep)
+        {
+            if (!Directory.Exists(from)) return;
+            if (Directory.Exists(to)) foreach (var old in Directory.GetFiles(to)) File.Delete(old);
+            Directory.CreateDirectory(to);
+            string ffmpeg = File.Exists("/opt/homebrew/bin/ffmpeg") ? "/opt/homebrew/bin/ffmpeg" : File.Exists("/usr/local/bin/ffmpeg") ? "/usr/local/bin/ffmpeg" : "ffmpeg";
+            int ok = 0, failed = 0;
+            foreach (var f in Directory.GetFiles(from, "*.ogg"))
+            {
+                if (!keep(f)) continue;
+                string outPath = Path.Combine(to, Path.GetFileNameWithoutExtension(f) + ".wav");
+                var psi = new System.Diagnostics.ProcessStartInfo(ffmpeg, $"-y -loglevel error -i \"{Path.GetFullPath(f)}\" -ar 44100 -ac 1 -c:a pcm_s16le \"{Path.GetFullPath(outPath)}\"")
+                { UseShellExecute = false, RedirectStandardError = true, CreateNoWindow = true };
+                try
+                {
+                    using var p = System.Diagnostics.Process.Start(psi);
+                    p.WaitForExit(20000);
+                    if (p.ExitCode == 0 && File.Exists(outPath)) ok++; else failed++;
+                }
+                catch (System.Exception e) { failed++; Debug.LogWarning($"[LToLocal] ffmpeg not available ({e.Message}); audio skipped."); break; }
+            }
+            Debug.Log($"[LToLocal] Audio converted to WAV: {ok} ok, {failed} failed ({from}).");
         }
 
         private static void CopyDir(string from, string to, string pattern, System.Func<string, bool> keep)

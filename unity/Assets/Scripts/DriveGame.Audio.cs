@@ -32,6 +32,7 @@ namespace LToLocal.Game
             _chimeFault = Resources.Load<AudioClip>("Content/audio/sfx/chime_fault");
             _chimeGood = Resources.Load<AudioClip>("Content/audio/sfx/chime_success");
             var amb = Resources.Load<AudioClip>("Content/audio/sfx/ambience_town");
+            Debug.Log($"[LToLocal] Audio: tick={(_tickOn != null)} chime={(_chimeFault != null)} ambience={(amb != null)} listeners={FindObjectsByType<AudioListener>().Length} rate={AudioSettings.outputSampleRate} sound={SoundOn} voice={VoiceOn} volume={AudioListener.volume} paused={AudioListener.pause}");
             if (amb != null)
             {
                 _ambience.clip = amb;
