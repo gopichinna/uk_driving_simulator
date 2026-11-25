@@ -39,6 +39,12 @@ namespace LToLocal.Sim
         public double LateralAccelMps2 = 2.0;
         public int ColourCount = 6;
         public double WeightAhead = 0.5, WeightNear = 0.25, WeightFar = 0.25;
+        /// <summary>
+        /// Large networks (road packs): keep traffic around the player. Vehicles appear on lanes between
+        /// <see cref="SpawnMinM"/> and <see cref="SpawnMaxM"/> away and are removed beyond <see cref="DespawnM"/>.
+        /// </summary>
+        public bool SpawnAroundPlayer;
+        public double SpawnMinM = 70, SpawnMaxM = 220, DespawnM = 300;
     }
 
     /// <summary>
@@ -50,7 +56,7 @@ namespace LToLocal.Sim
     public sealed class TownTraffic
     {
         private readonly LaneGraph _g;
-        private readonly TrafficSignals? _signals;
+        private readonly ISignalPlan? _signals;
         private readonly TownTrafficParams _p;
         private readonly DeterministicRandom _rng;
         private readonly List<TownCar> _cars = new List<TownCar>();
@@ -59,7 +65,7 @@ namespace LToLocal.Sim
         private int _nextId;
         private double _time;
 
-        public TownTraffic(LaneGraph graph, TrafficSignals? signals, TownTrafficParams p, ulong seed)
+        public TownTraffic(LaneGraph graph, ISignalPlan? signals, TownTrafficParams p, ulong seed)
         {
             _g = graph;
             _signals = signals;
@@ -472,8 +478,37 @@ namespace LToLocal.Sim
 
         // ---------------- population ----------------
 
+        private readonly List<int> _anyLane = new List<int>();
+
+        private void SpawnAround(in CarState player)
+        {
+            var pp = new Vec2(player.X, player.Z);
+            for (int i = _cars.Count - 1; i >= 0; i--)
+                if ((_cars[i].Position - pp).Length > _p.DespawnM) _cars.RemoveAt(i);
+            if (_cars.Count >= _p.TargetCars) return;
+            if (_anyLane.Count == 0)
+                foreach (var seg in _g.Segments)
+                    if (seg.Kind == SegmentKind.Lane && seg.Length > 25 && seg.Next.Count > 0) _anyLane.Add(seg.Id);
+            if (_anyLane.Count == 0) return;
+            for (int attempt = 0; attempt < 6; attempt++)
+            {
+                var lane = _g.Segments[_anyLane[_rng.Range(0, _anyLane.Count)]];
+                double s = lane.Length * 0.5;
+                var (pos, _) = lane.Path.Sample(s);
+                double d = (pos - pp).Length;
+                if (d < _p.SpawnMinM || d > _p.SpawnMaxM) continue;
+                bool free = true;
+                foreach (var o in _cars) if ((o.Position - pos).Length < 25) free = false;
+                if (!free) continue;
+                bool cyclist = _rng.NextDouble() < _p.CyclistChance;
+                Add(lane.Id, s, cyclist ? _p.CyclistSpeedMps : lane.SpeedLimitMph / 2.236936 * 0.8, cyclist);
+                return;
+            }
+        }
+
         private void Spawn(in CarState player)
         {
+            if (_p.SpawnAroundPlayer) { SpawnAround(player); return; }
             if (_cars.Count >= _p.TargetCars || _sources.Count == 0) return;
             int lane = _sources[_rng.Range(0, _sources.Count)];
             bool cyclist = _rng.NextDouble() < _p.CyclistChance;

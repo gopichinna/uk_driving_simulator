@@ -3,6 +3,38 @@ using System.Collections.Generic;
 
 namespace LToLocal.Sim
 {
+    /// <summary>Anything that can say what a signal group shows at a time.</summary>
+    public interface ISignalPlan
+    {
+        LightState State(int group, double time);
+    }
+
+    /// <summary>
+    /// Many independent junction controllers behind one set of global group numbers (road packs: one plan per
+    /// signalised node). <see cref="Add"/> returns the first global group of the new plan.
+    /// </summary>
+    public sealed class SignalNetwork : ISignalPlan
+    {
+        private readonly List<(int first, int count, TrafficSignals plan)> _plans = new List<(int, int, TrafficSignals)>();
+
+        public int GroupCount { get; private set; }
+
+        public int Add(TrafficSignals plan, int groups)
+        {
+            int first = GroupCount;
+            _plans.Add((first, groups, plan));
+            GroupCount += groups;
+            return first;
+        }
+
+        public LightState State(int group, double time)
+        {
+            foreach (var (first, count, plan) in _plans)
+                if (group >= first && group < first + count) return plan.State(group - first, time);
+            return LightState.Green;
+        }
+    }
+
     /// <summary>What a signal head shows. GB sequence: Red → RedAmber → Green → Amber → Red.</summary>
     public enum LightState { Red, RedAmber, Green, Amber }
 
@@ -12,7 +44,7 @@ namespace LToLocal.Sim
     /// period during whose end the next groups show red and amber together. Deterministic: the state is a pure
     /// function of time. GB: Highway Code "Light signals controlling traffic".
     /// </summary>
-    public sealed class TrafficSignals
+    public sealed class TrafficSignals : ISignalPlan
     {
         private readonly int[][] _stages;
         private readonly double[] _green;

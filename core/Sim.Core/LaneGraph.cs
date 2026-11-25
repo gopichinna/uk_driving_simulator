@@ -42,6 +42,10 @@ namespace LToLocal.Sim
         public string Name = "";
         public PathPolyline Path = null!;
         public double SpeedLimitMph = 30;
+        /// <summary>How sure the source data is about this lane's control and direction (0–1). Rules only judge ≥ 0.7.</summary>
+        public double Confidence = 1.0;
+        /// <summary>Source link id (road packs), for debugging and routes.</summary>
+        public string SourceId = "";
         public readonly List<int> Next = new List<int>();
         public readonly List<int> Prev = new List<int>();
 
@@ -167,10 +171,49 @@ namespace LToLocal.Sim
             return CrossingAreas.Count - 1;
         }
 
+        private const double Cell = 30.0;
+        private readonly Dictionary<long, List<int>> _index = new Dictionary<long, List<int>>();
+        private readonly List<int> _scratch = new List<int>();
+        private int[] _seen = Array.Empty<int>();
+        private int _stamp;
+
+        private static long Key(int cx, int cz) => ((long)cx << 32) ^ (uint)cz;
+
+        private void BuildIndex()
+        {
+            _index.Clear();
+            foreach (var s in Segments)
+            {
+                double minX = double.MaxValue, minZ = double.MaxValue, maxX = double.MinValue, maxZ = double.MinValue;
+                foreach (var p in s.Path.Points) { minX = Math.Min(minX, p.X); maxX = Math.Max(maxX, p.X); minZ = Math.Min(minZ, p.Z); maxZ = Math.Max(maxZ, p.Z); }
+                for (int cx = (int)Math.Floor((minX - 4) / Cell); cx <= (int)Math.Floor((maxX + 4) / Cell); cx++)
+                    for (int cz = (int)Math.Floor((minZ - 4) / Cell); cz <= (int)Math.Floor((maxZ + 4) / Cell); cz++)
+                    {
+                        if (!_index.TryGetValue(Key(cx, cz), out var l)) _index[Key(cx, cz)] = l = new List<int>();
+                        l.Add(s.Id);
+                    }
+            }
+            _seen = new int[Segments.Count];
+        }
+
+        /// <summary>Segments whose path may come within <paramref name="radius"/> of a point (a superset).</summary>
+        public void Near(Vec2 p, double radius, List<Segment> into)
+        {
+            into.Clear();
+            if (_index.Count == 0) { into.AddRange(Segments); return; }
+            _stamp++;
+            for (int cx = (int)Math.Floor((p.X - radius) / Cell); cx <= (int)Math.Floor((p.X + radius) / Cell); cx++)
+                for (int cz = (int)Math.Floor((p.Z - radius) / Cell); cz <= (int)Math.Floor((p.Z + radius) / Cell); cz++)
+                    if (_index.TryGetValue(Key(cx, cz), out var l))
+                        foreach (int id in l)
+                            if (_seen[id] != _stamp) { _seen[id] = _stamp; into.Add(Segments[id]); }
+        }
+
         /// <summary>Computes conflict points between connectors and which segments pass through which crossings.</summary>
         public void Finalise()
         {
             foreach (var s in Segments) { s.Conflicts.Clear(); s.Crossings.Clear(); }
+            BuildIndex();
 
             var byNode = new Dictionary<int, List<Segment>>();
             foreach (var s in Segments)
@@ -198,8 +241,14 @@ namespace LToLocal.Sim
                         }
                     }
 
+            var near = new List<Segment>();
             foreach (var c in CrossingAreas)
-                foreach (var s in Segments)
+            {
+                Vec2 centre = new Vec2(0, 0);
+                foreach (var v in c.Polygon) centre = centre + v;
+                centre = centre * (1.0 / Math.Max(1, c.Polygon.Length));
+                Near(centre, 12, near);
+                foreach (var s in near)
                 {
                     double from = double.NaN, to = double.NaN;
                     for (double d = 0; d <= s.Length; d += 0.25)
@@ -211,6 +260,7 @@ namespace LToLocal.Sim
                     }
                     if (!double.IsNaN(from)) s.Crossings.Add((c.Id, from, to));
                 }
+            }
         }
 
         /// <summary>
@@ -239,7 +289,9 @@ namespace LToLocal.Sim
             Segment? best = null;
             s = 0;
             distance = double.MaxValue;
-            foreach (var seg in Segments)
+            Near(p, 25, _nearest);
+            if (_nearest.Count == 0) Near(p, 120, _nearest);
+            foreach (var seg in _nearest)
             {
                 if (lanesOnly && seg.Kind != SegmentKind.Lane) continue;
                 var (ss, _, d) = seg.Path.Project(p);
@@ -248,6 +300,8 @@ namespace LToLocal.Sim
             }
             return best;
         }
+
+        private readonly List<Segment> _nearest = new List<Segment>();
 
         public static double Angle(double a)
         {

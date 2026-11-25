@@ -25,11 +25,22 @@ namespace LToLocal.Rules
         private double _lastSignalOut = double.NegativeInfinity;
         private double _lastNearJunction = double.NegativeInfinity;
 
+        private readonly bool[] _isJunction;
+        private readonly List<Segment> _near = new List<Segment>();
+
         public KeepLeftRule(LaneGraph graph, DrivingSide side = DrivingSide.Left)
         {
             _g = graph;
             _side = side;
+            _isJunction = new bool[graph.Nodes.Count];
+            var connectors = new int[graph.Nodes.Count];
+            foreach (var s in graph.Segments) if (s.Kind == SegmentKind.Connector && s.Node >= 0) connectors[s.Node]++;
+            // A bend (one way in and out each side) is not a junction; anything else is.
+            for (int i = 0; i < graph.Nodes.Count; i++) _isJunction[i] = graph.Nodes[i].Signalised || connectors[i] > 2;
         }
+
+        /// <summary>Lanes whose source data is less certain than this are not judged.</summary>
+        public double MinConfidence = 0.7;
 
         /// <summary>How far past the centre line (m) counts as being on the wrong side.</summary>
         public double IntoLaneM = 0.5;
@@ -54,7 +65,7 @@ namespace LToLocal.Rules
             Vec2 me = new Vec2(f.Ego.X, f.Ego.Z);
             bool nearJunction = false;
             foreach (var n in _g.Nodes)
-                if ((me - n.Centre).Length < JunctionRadiusM && (n.Signalised || HasJunction(n))) nearJunction = true;
+                if (_isJunction[n.Id] && Math.Abs(me.X - n.Centre.X) < JunctionRadiusM && (me - n.Centre).Length < JunctionRadiusM) nearJunction = true;
             if (nearJunction) _lastNearJunction = f.Time;
 
             bool wrong = !nearJunction && f.Ego.SpeedMps > 0.5 && OnWrongSide(me, f.Ego.Heading);
@@ -93,21 +104,14 @@ namespace LToLocal.Rules
             }
         }
 
-        private bool HasJunction(JunctionNode n)
-        {
-            // A bend (one way in, one way out on each side) is not a junction; anything else is.
-            int connectors = 0;
-            foreach (var s in _g.Segments) if (s.Kind == SegmentKind.Connector && s.Node == n.Id) connectors++;
-            return connectors > 2;
-        }
-
         /// <summary>Is the point at least <see cref="IntoLaneM"/> past the centre line into a lane going the other way?</summary>
         public bool OnWrongSide(Vec2 p, double heading)
         {
             double ownBest = double.MaxValue, oppBest = double.MaxValue;
-            foreach (var s in _g.Segments)
+            _g.Near(p, 6, _near);
+            foreach (var s in _near)
             {
-                if (s.Kind != SegmentKind.Lane) continue;
+                if (s.Kind != SegmentKind.Lane || s.Confidence < MinConfidence) continue;
                 var (ss, _, d) = s.Path.Project(p);
                 if (d > TownLaneHalf * 2 + 1 || ss <= 0.01 || ss >= s.Length - 0.01) continue;
                 double c = Math.Cos(heading - s.Path.Sample(ss).heading);

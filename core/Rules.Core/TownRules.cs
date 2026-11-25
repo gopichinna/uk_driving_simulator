@@ -469,7 +469,7 @@ namespace LToLocal.Rules
                     approaches.Add(new TrafficLightRule.Approach(s.SignalGroup, LaneLine.Across(pStop, hStop),
                         s.HasAdvancedStopLine ? LaneLine.Across(pEnd, hEnd) : null, centre));
                 }
-                else if (s.EndControl == LineControl.GiveWay)
+                else if (s.EndControl == LineControl.GiveWay && s.Confidence >= 0.7)
                     giveWays.Add(new GiveWayRule.Line(LaneLine.Across(pEnd, hEnd), centre));
             }
             var boxes = new List<Vec2[]>();
