@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s0-01-keep-left-controls",
+  "stage": 0,
+  "order": 1,
+  "title": "Keeping left and the controls",
+  "freeTier": true,
+  "learnCard": {
+    "blocks": [
+      "In the UK, drive on the left side of the road.",
+      "Steer smoothly and hold a steady line away from the kerb.",
+      "Move back to the left lane after overtaking on dual carriageways."
+    ],
+    "ruleIds": ["GB.POS.KEEP_LEFT", "GB.POS.DUAL_KEEP_LEFT"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+  },
+  "scenarios": [
+    {
+      "id": "s0_01_town_keep_left",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Drive along the town street while keeping safely on the left.",
+      "rulesJudged": ["GB.POS.KEEP_LEFT", "GB.SPD.OVER_LIMIT"],
+      "variations": {
+        "trafficDensity": [0.1, 0.3],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    },
+    {
+      "id": "s0_01_dual_keep_left",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Return to the left lane smoothly after passing slower traffic.",
+      "rulesJudged": ["GB.POS.KEEP_LEFT", "GB.POS.DUAL_KEEP_LEFT"],
+      "variations": {
+        "trafficDensity": [0.2, 0.4],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "Always keep left unless overtaking or passing an obstruction.",
+    "Return to the left lane on dual carriageways once your pass is done."
+  ]
+}

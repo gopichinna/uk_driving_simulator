@@ -1,0 +1,25 @@
+# Banned idioms, legalese, and overly complex phrases (one per line, case-insensitive)
+undue hesitation
+proceed with caution
+execute a manoeuvre
+vis-a-vis
+aforementioned
+heretofore
+in accordance with
+pursuant to
+exercise due care
+ascertain
+commence
+terminate
+vehicular
+pedestrian thoroughfare
+carriageway incursion
+utilize
+utilise
+prior to
+subsequent to
+in the event that
+at this juncture
+with regard to
+bearing in mind
+take cognizance

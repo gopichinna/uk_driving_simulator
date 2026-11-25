@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s1-05-pedestrians-h2",
+  "stage": 1,
+  "order": 5,
+  "title": "Pedestrians at junctions (H2)",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Under H2, pedestrians crossing a side road have priority.",
+      "Give way to anyone waiting to cross the road you turn into.",
+      "Slow down early so you can stop smoothly before the mouth."
+    ],
+    "ruleIds": ["GB.JCT.H2_PEDESTRIANS", "GB.VRU.HIERARCHY"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/introduction"
+  },
+  "scenarios": [
+    {
+      "id": "s1_05_h2_north",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Let waiting pedestrians cross the side road before you turn.",
+      "rulesJudged": ["GB.JCT.H2_PEDESTRIANS", "GB.SIG.TIMELY"],
+      "variations": {
+        "trafficDensity": [0.2, 0.4],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    },
+    {
+      "id": "s1_05_h2_south",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Scan the pavement as you turn and yield to pedestrians.",
+      "rulesJudged": ["GB.JCT.H2_PEDESTRIANS", "GB.JCT.GIVE_WAY"],
+      "variations": {
+        "trafficDensity": [0.2, 0.5],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "Pedestrians crossing or waiting at a junction mouth have priority.",
+    "Check the side road pavement before starting any turn."
+  ]
+}

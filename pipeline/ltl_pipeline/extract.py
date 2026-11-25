@@ -90,10 +90,20 @@ class ExcludedWay:
 
 
 @dataclass(frozen=True)
+class OsmRestriction:
+    osm_id: int
+    restriction_type: str
+    from_way_id: int
+    via_node_id: int
+    to_way_id: int
+
+
+@dataclass(frozen=True)
 class ExtractedOsm:
     nodes: dict[int, OsmNode]
     ways: list[OsmWay]
     excluded: list[ExcludedWay]
+    restrictions: list[OsmRestriction] = field(default_factory=list)
 
 
 def _in_bbox(lat: float, lon: float, bbox: tuple[float, float, float, float]) -> bool:
@@ -119,6 +129,34 @@ class _Pass1Handler(osmium.SimpleHandler):
         self.tram_node_ids: set[int] = set()
         self.candidate_ways: list[tuple[int, str, tuple[int, ...], dict[str, str]]] = []
         self.explicit_tram_highways: list[ExcludedWay] = []
+        self.candidate_restrictions: list[OsmRestriction] = []
+
+    def relation(self, r: osmium.osm.Relation) -> None:
+        if r.tags.get("type") != "restriction":
+            return
+        rtype = r.tags.get("restriction") or r.tags.get("restriction:motorcar")
+        if not rtype:
+            return
+        from_way: int | None = None
+        to_way: int | None = None
+        via_node: int | None = None
+        for m in r.members:
+            if m.role == "from" and m.type == "w":
+                from_way = int(m.ref)
+            elif m.role == "to" and m.type == "w":
+                to_way = int(m.ref)
+            elif m.role == "via" and m.type == "n":
+                via_node = int(m.ref)
+        if from_way is not None and to_way is not None and via_node is not None:
+            self.candidate_restrictions.append(
+                OsmRestriction(
+                    osm_id=int(r.id),
+                    restriction_type=rtype.strip(),
+                    from_way_id=from_way,
+                    via_node_id=via_node,
+                    to_way_id=to_way,
+                )
+            )
 
     def way(self, w: osmium.osm.Way) -> None:
         node_ids: list[int] = []
@@ -236,8 +274,23 @@ def extract_osm(
     p2 = _Pass2Handler(bbox=bbox, needed_node_ids=needed_node_ids)
     p2.apply_file(str(osm_path), locations=False)
 
+    kept_way_ids = {w.osm_id for w in kept_ways}
+    restrictions = [
+        r
+        for r in p1.candidate_restrictions
+        if r.from_way_id in kept_way_ids
+        and r.to_way_id in kept_way_ids
+        and r.via_node_id in p2.nodes
+    ]
+    restrictions.sort(key=lambda r: r.osm_id)
+
     # Sort deterministically
     kept_ways.sort(key=lambda w: w.osm_id)
     excluded.sort(key=lambda e: e.osm_way_id)
 
-    return ExtractedOsm(nodes=p2.nodes, ways=kept_ways, excluded=excluded)
+    return ExtractedOsm(
+        nodes=p2.nodes,
+        ways=kept_ways,
+        excluded=excluded,
+        restrictions=restrictions,
+    )

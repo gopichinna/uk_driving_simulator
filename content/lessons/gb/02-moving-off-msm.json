@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s0-02-moving-off-msm",
+  "stage": 0,
+  "order": 2,
+  "title": "Moving off and MSM",
+  "freeTier": true,
+  "learnCard": {
+    "blocks": [
+      "Use the MSM routine before moving off or changing speed.",
+      "Only pull out when the road behind and beside you is clear.",
+      "Signal early enough for other drivers to react, then cancel promptly."
+    ],
+    "ruleIds": ["GB.OBS.MOVE_OFF_CHECKS", "GB.OBS.MSM", "GB.SIG.TIMELY"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+  },
+  "scenarios": [
+    {
+      "id": "s0_02_move_off_town",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Move off from the kerb without forcing following traffic to brake.",
+      "rulesJudged": ["GB.OBS.MOVE_OFF_CHECKS", "GB.SIG.TIMELY"],
+      "variations": {
+        "trafficDensity": [0.2, 0.5],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    },
+    {
+      "id": "s0_02_msm_approach",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Signal in good time and slow smoothly for the junction.",
+      "rulesJudged": ["GB.OBS.MSM", "GB.SIG.TIMELY"],
+      "variations": {
+        "trafficDensity": [0.2, 0.4],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "Wait for a safe gap before moving off from the kerb.",
+    "Signal early so following drivers have plenty of time to react."
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en",
+  "kind": "glossary",
+  "terms": [
+    {
+      "id": "give_way",
+      "term": "Give way",
+      "definition": "Slow down and stop if needed to let priority traffic pass safely.",
+      "relatedRules": ["GB.JCT.GIVE_WAY", "GB.RBT.GIVE_WAY_RIGHT", "GB.XNG.ZEBRA"]
+    },
+    {
+      "id": "nearside",
+      "term": "Nearside",
+      "definition": "The side of the road or vehicle closest to the kerb. In the UK this is the left side.",
+      "relatedRules": ["GB.POS.KEEP_LEFT", "GB.JCT.TURN_NEAR", "GB.BRK.GO_LEFT"]
+    },
+    {
+      "id": "offside",
+      "term": "Offside",
+      "definition": "The side of the vehicle closest to the centre of the road. In the UK this is the right side.",
+      "relatedRules": ["GB.OBS.MOVE_OFF_CHECKS", "GB.RBT.GIVE_WAY_RIGHT", "GB.JCT.OPPOSITE_RIGHT"]
+    },
+    {
+      "id": "dual_carriageway",
+      "term": "Dual carriageway",
+      "definition": "A road with a central barrier or reservation separating opposite directions of traffic.",
+      "relatedRules": ["GB.POS.DUAL_KEEP_LEFT", "GB.SPD.NATIONAL_LIMIT", "GB.JCT.DUAL_CROSS"],
+      "kmhHint": "70 mph ≈ 112 km/h"
+    },
+    {
+      "id": "single_carriageway",
+      "term": "Single carriageway",
+      "definition": "A road with no central reservation between opposite traffic lanes.",
+      "relatedRules": ["GB.SPD.NATIONAL_LIMIT", "GB.POS.THREE_LANE_SINGLE"],
+      "kmhHint": "60 mph ≈ 96 km/h"
+    },
+    {
+      "id": "national_speed_limit",
+      "term": "National speed limit",
+      "definition": "The default upper speed limit for a road type when no number is shown. For cars it is 60 mph on single carriageways and 70 mph on dual carriageways.",
+      "relatedRules": ["GB.SPD.NATIONAL_LIMIT"],
+      "kmhHint": "60 mph ≈ 96 km/h; 70 mph ≈ 112 km/h"
+    },
+    {
+      "id": "built_up_area",
+      "term": "Built-up area",
+      "definition": "An area with street lights, usually with a 30 mph limit in England and Scotland. In Wales the default limit is 20 mph.",
+      "relatedRules": ["GB.SPD.BUILT_UP", "GB.SPD.STREET_LIGHTING"],
+      "kmhHint": "30 mph ≈ 48 km/h; 20 mph ≈ 32 km/h"
+    },
+    {
+      "id": "speed_limit_20",
+      "term": "20 mph zone",
+      "definition": "A low-speed area near homes, shops, or schools to protect people walking and cycling.",
+      "relatedRules": ["GB.SPD.BUILT_UP", "GB.SCH.SLOW"],
+      "kmhHint": "20 mph ≈ 32 km/h"
+    },
+    {
+      "id": "speed_limit_40",
+      "term": "40 mph limit",
+      "definition": "A signed speed limit often used on wider urban main roads.",
+      "relatedRules": ["GB.SPD.OVER_LIMIT", "GB.GAP.TWO_SECOND"],
+      "kmhHint": "40 mph ≈ 64 km/h"
+    },
+    {
+      "id": "zig_zags",
+      "term": "Zig-zags",
+      "definition": "White or yellow zig-zag lines near crossings or schools. Do not park there or overtake near a crossing.",
+      "relatedRules": ["GB.XNG.ZIGZAG_OVERTAKE", "GB.SCH.KEEP_CLEAR"]
+    },
+    {
+      "id": "box_junction",
+      "term": "Box junction",
+      "definition": "A yellow criss-cross grid painted at busy junctions. Do not enter unless your exit is clear.",
+      "relatedRules": ["GB.JCT.BOX"]
+    },
+    {
+      "id": "advanced_stop_line",
+      "term": "Advanced stop line (ASL)",
+      "definition": "A box at traffic lights marked with a bike symbol for cyclists to wait ahead. Cars stop at the first white line on red or amber.",
+      "relatedRules": ["GB.TL.ASL"]
+    },
+    {
+      "id": "asl",
+      "term": "ASL",
+      "definition": "Short for advanced stop line, a waiting box for cyclists at traffic lights.",
+      "relatedRules": ["GB.TL.ASL"]
+    },
+    {
+      "id": "filter_arrow",
+      "term": "Filter arrow",
+      "definition": "A green arrow light allowing traffic to turn only in the arrow direction.",
+      "relatedRules": ["GB.TL.FILTER_ARROW"]
+    },
+    {
+      "id": "hard_shoulder",
+      "term": "Hard shoulder",
+      "definition": "The emergency strip on the left side of a motorway. Use it only in emergencies or when gantry signs show a speed limit above it.",
+      "relatedRules": ["GB.MWY.HARD_SHOULDER", "GB.BRK.GO_LEFT", "GB.BRK.REJOIN"]
+    },
+    {
+      "id": "red_x",
+      "term": "Red X",
+      "definition": "An overhead motorway signal showing a lane is closed ahead. Move to an open lane safely.",
+      "relatedRules": ["GB.MWY.RED_X"]
+    },
+    {
+      "id": "zebra_crossing",
+      "term": "Zebra crossing",
+      "definition": "A crossing with black and white stripes and flashing orange beacons. Give way to anyone waiting and stop once someone steps onto it.",
+      "relatedRules": ["GB.XNG.ZEBRA"]
+    },
+    {
+      "id": "pelican_crossing",
+      "term": "Pelican crossing",
+      "definition": "A signal-controlled crossing with a flashing amber phase after red. During flashing amber, give way to anyone still crossing.",
+      "relatedRules": ["GB.XNG.PELICAN_AMBER", "GB.XNG.PELICAN_ISLAND"]
+    },
+    {
+      "id": "puffin_crossing",
+      "term": "Puffin crossing",
+      "definition": "A smart signal-controlled crossing that senses people crossing. It goes straight from red and amber to green with no flashing amber.",
+      "relatedRules": ["GB.XNG.LIGHT_CROSSINGS"]
+    },
+    {
+      "id": "toucan_crossing",
+      "term": "Toucan crossing",
+      "definition": "A wide signal-controlled crossing shared by pedestrians and cyclists. Follow the traffic lights as at a puffin crossing.",
+      "relatedRules": ["GB.XNG.LIGHT_CROSSINGS"]
+    },
+    {
+      "id": "mini_roundabout",
+      "term": "Mini-roundabout",
+      "definition": "A small junction with a painted white circle in the centre. Drive around the circle and give way to the right.",
+      "relatedRules": ["GB.RBT.MINI", "GB.RBT.DOUBLE_MINI"]
+    },
+    {
+      "id": "msm",
+      "term": "MSM",
+      "definition": "Mirrors, Signal, Manoeuvre: the routine for changing speed, position, or direction safely.",
+      "relatedRules": ["GB.OBS.MSM", "GB.OBS.LANE_CHANGE"]
+    },
+    {
+      "id": "blind_spot",
+      "term": "Blind spot",
+      "definition": "The area beside and behind your car that your mirrors cannot show. Look over your shoulder before moving off or changing lanes.",
+      "relatedRules": ["GB.OBS.MOVE_OFF_CHECKS", "GB.OBS.LANE_CHANGE"]
+    },
+    {
+      "id": "h2",
+      "term": "H2",
+      "definition": "Pedestrian priority rule at junctions. Give way to people crossing or waiting to cross a side road.",
+      "relatedRules": ["GB.JCT.H2_PEDESTRIANS", "GB.XNG.ZEBRA"]
+    },
+    {
+      "id": "h1",
+      "term": "H1",
+      "definition": "Hierarchy of road users. Drivers of larger vehicles carry greater responsibility to reduce danger.",
+      "relatedRules": ["GB.VRU.HIERARCHY"]
+    },
+    {
+      "id": "h3",
+      "term": "H3",
+      "definition": "Priority for cyclists and horse riders. Do not cut across them when turning or changing lanes.",
+      "relatedRules": ["GB.JCT.H3_CYCLISTS"]
+    },
+    {
+      "id": "uk",
+      "term": "UK",
+      "definition": "The United Kingdom. Traffic drives on the left.",
+      "relatedRules": ["GB.POS.KEEP_LEFT", "GB.TL.NO_TURN_ON_RED", "GB.RBT.WRONG_WAY"]
+    },
+    {
+      "id": "gb",
+      "term": "GB",
+      "definition": "Great Britain: England, Scotland, and Wales.",
+      "relatedRules": ["GB.SPD.BUILT_UP"]
+    },
+    {
+      "id": "adi",
+      "term": "ADI",
+      "definition": "Approved Driving Instructor, qualified to teach learners including on motorways in dual-control cars.",
+      "relatedRules": ["GB.MWY.LEARNERS"]
+    },
+    {
+      "id": "sos",
+      "term": "SOS",
+      "definition": "Emergency telephone marker on motorways and in emergency areas.",
+      "relatedRules": ["GB.MWY.EMERGENCY_AREA", "GB.BRK.REJOIN"]
+    },
+    {
+      "id": "roundabout",
+      "term": "Roundabout",
+      "definition": "A circular junction where UK traffic travels clockwise around a central island.",
+      "relatedRules": ["GB.RBT.GIVE_WAY_RIGHT", "GB.RBT.APPROACH_LANE", "GB.RBT.WRONG_WAY"]
+    },
+    {
+      "id": "slip_road",
+      "term": "Slip road",
+      "definition": "A short lane used to join or leave a motorway or dual carriageway.",
+      "relatedRules": ["GB.MWY.JOIN", "GB.MWY.LEAVE"]
+    },
+    {
+      "id": "central_reservation",
+      "term": "Central reservation",
+      "definition": "The strip or barrier dividing opposite traffic carriageways.",
+      "relatedRules": ["GB.JCT.DUAL_CROSS", "GB.MWY.NO_REVERSE"]
+    },
+    {
+      "id": "stop_line",
+      "term": "Stop line",
+      "definition": "A solid white line across your lane. Stop behind it for red lights or Stop signs.",
+      "relatedRules": ["GB.TL.RED", "GB.JCT.STOP_SIGN"]
+    },
+    {
+      "id": "two_second_rule",
+      "term": "Two-second rule",
+      "definition": "A check for safe following distance. Count two seconds after the car ahead passes a marker.",
+      "relatedRules": ["GB.GAP.TWO_SECOND", "GB.GAP.CUT_IN"]
+    },
+    {
+      "id": "bus_lane",
+      "term": "Bus lane",
+      "definition": "A lane marked for buses, cycles, and taxis. Check the sign for its active hours.",
+      "relatedRules": ["GB.BUS.LANE_HOURS", "GB.OVT.INTO_LANE"]
+    },
+    {
+      "id": "cycle_lane",
+      "term": "Cycle lane",
+      "definition": "A marked lane for pedal cycles on the road. A solid white line keeps cars out during its hours.",
+      "relatedRules": ["GB.VRU.CYCLE_LANE_SOLID", "GB.VRU.CYCLE_LANE_BROKEN"]
+    },
+    {
+      "id": "emergency_area",
+      "term": "Emergency area",
+      "definition": "An orange bay with an SOS phone on motorways without a hard shoulder.",
+      "relatedRules": ["GB.MWY.EMERGENCY_AREA", "GB.BRK.GO_LEFT", "GB.BRK.REJOIN"]
+    },
+    {
+      "id": "clearway",
+      "term": "Clearway",
+      "definition": "A road where stopping is not allowed on the main carriageway.",
+      "relatedRules": ["GB.PRK.CLEARWAY"]
+    },
+    {
+      "id": "contraflow",
+      "term": "Contraflow",
+      "definition": "Roadworks layout where traffic temporarily shares the opposite carriageway in narrow lanes.",
+      "relatedRules": ["GB.WRK.CONTRAFLOW"]
+    },
+    {
+      "id": "headway",
+      "term": "Headway",
+      "definition": "The time gap between your front bumper and the vehicle ahead.",
+      "relatedRules": ["GB.GAP.TWO_SECOND"]
+    },
+    {
+      "id": "gantry",
+      "term": "Gantry",
+      "definition": "An overhead bridge carrying lane signals and variable speed limits above a motorway.",
+      "relatedRules": ["GB.SPD.VARIABLE", "GB.MWY.RED_X", "GB.MWY.HARD_SHOULDER"]
+    }
+  ]
+}
