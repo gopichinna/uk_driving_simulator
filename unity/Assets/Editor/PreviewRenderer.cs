@@ -101,6 +101,18 @@ namespace LToLocal.EditorTools
             car = game.car;
             cam.transform.SetPositionAndRotation(car.position + new Vector3(0, 60, 0) - car.forward * 60, Quaternion.LookRotation(car.forward * 60 + Vector3.down * 60));
             Save(cam, "Builds/Previews/wolverhampton_start_oblique.png");
+            // The busiest junction, close up
+            var built = new LToLocal.Sim.RoadPackGraph(LToLocal.Sim.RoadPack.Parse(System.IO.File.ReadAllText("../content/cities/wolverhampton/roadpack.json")));
+            var counts = new System.Collections.Generic.Dictionary<int, int>();
+            foreach (var sg in built.Graph.Segments) if (sg.Kind == LToLocal.Sim.SegmentKind.Connector) counts[sg.Node] = counts.TryGetValue(sg.Node, out var cn) ? cn + 1 : 1;
+            int busiest = 0, most = 0;
+            foreach (var kv in counts) if (kv.Value > most) { most = kv.Value; busiest = kv.Key; }
+            var bc = built.Graph.Nodes[busiest].Centre;
+            cam.transform.SetPositionAndRotation(new Vector3((float)bc.X, 45, (float)bc.Z - 40), Quaternion.Euler(48, 0, 0));
+            Save(cam, "Builds/Previews/wolverhampton_junction.png");
+            // A second, ordinary junction near the start
+            cam.transform.SetPositionAndRotation(car.position + Vector3.up * 30 - car.forward * 5, Quaternion.LookRotation(car.forward * 40 + Vector3.down * 30));
+            Save(cam, "Builds/Previews/wolverhampton_ahead.png");
             RenderSettings.fog = true;
             cam.fieldOfView = game.cockpitFov;
             cam.nearClipPlane = 0.05f;

@@ -47,6 +47,15 @@ namespace LToLocal.EditorTools
 
             public void Quad(Vec2 a, Vec2 b, float width, float y) => Strip(new[] { a, b }, width, y);
 
+            /// <summary>Flat convex polygon (triangle fan), facing up.</summary>
+            public void Polygon(List<Vec2> hull, float y)
+            {
+                if (hull.Count < 3) return;
+                int s = V.Count;
+                foreach (var p in hull) V.Add(P(p, y));
+                for (int i = 1; i + 1 < hull.Count; i++) T.AddRange(new[] { s, s + i + 1, s + i });
+            }
+
             public void Disc(Vec2 c, float r, float y, int sides = 16)
             {
                 int centre = V.Count;
@@ -148,6 +157,40 @@ namespace LToLocal.EditorTools
             }
         }
 
+        private static List<Vec2> Mid(IReadOnlyList<Vec2> a, IReadOnlyList<Vec2> b)
+        {
+            var m = new List<Vec2>();
+            int n = System.Math.Min(a.Count, b.Count);
+            for (int i = 0; i < n; i++) m.Add((a[i] + b[i]) * 0.5);
+            return m;
+        }
+
+        private static void Dashes(MeshBuilder into, List<Vec2> line, double half, double every)
+        {
+            if (line.Count < 2) return;
+            var path = new PathPolyline(line);
+            for (double s = half + 1; s < path.Length - half - 1; s += every)
+            {
+                var (p, h) = path.Sample(s);
+                into.Quad(p - Vec2.FromHeading(h) * half, p + Vec2.FromHeading(h) * half, 0.12f, 0.025f);
+            }
+        }
+
+        /// <summary>Anticlockwise convex hull (monotone chain).</summary>
+        private static List<Vec2> ConvexHull(List<Vec2> pts)
+        {
+            var p = new List<Vec2>(pts);
+            p.Sort((a, b) => a.X != b.X ? a.X.CompareTo(b.X) : a.Z.CompareTo(b.Z));
+            if (p.Count < 3) return p;
+            double Cross(Vec2 o, Vec2 a, Vec2 b) => (a.X - o.X) * (b.Z - o.Z) - (a.Z - o.Z) * (b.X - o.X);
+            var hull = new List<Vec2>();
+            foreach (var v in p) { while (hull.Count >= 2 && Cross(hull[hull.Count - 2], hull[hull.Count - 1], v) <= 0) hull.RemoveAt(hull.Count - 1); hull.Add(v); }
+            int lower = hull.Count + 1;
+            for (int i = p.Count - 2; i >= 0; i--) { var v = p[i]; while (hull.Count >= lower && Cross(hull[hull.Count - 2], hull[hull.Count - 1], v) <= 0) hull.RemoveAt(hull.Count - 1); hull.Add(v); }
+            hull.RemoveAt(hull.Count - 1);
+            return hull;
+        }
+
         private static void BuildWolverhamptonScene()
         {
             if (!File.Exists(PackPath)) { Debug.LogWarning("[LToLocal] Wolverhampton pack missing; scene skipped."); return; }
@@ -163,54 +206,66 @@ namespace LToLocal.EditorTools
             var world = new GameObject("World").transform;
             Prim(PrimitiveType.Plane, "Ground", world, new Vector3(0, -0.01f, 30), new Vector3(220, 1, 220), m.Grass);
 
-            // Roads and footways: every street in the pack (non-network streets are scenery), merged.
+            // The road surface is drawn from the same lanes the traffic and rules use, so markings, kerbs and
+            // driving lines always agree. Streets outside the network are scenery (car-park aisles are skipped).
             var roads = new MeshBuilder();
             var footways = new MeshBuilder();
             var lines = new MeshBuilder();
-            var degree = new Dictionary<string, int>();
-            foreach (var l in pack.Links) foreach (var n in new[] { l.From, l.To }) degree[n] = degree.TryGetValue(n, out int d) ? d + 1 : 1;
+            float w = (float)built.LaneWidthM;
             foreach (var l in pack.Links)
             {
-                if (l.Geometry.Count < 2) continue;
-                float w = (float)System.Math.Max(l.WidthM, (l.LanesForward + l.LanesBackward) * 3.25);
-                roads.Strip(l.Geometry, w + 0.3f, 0.012f);
-                if (l.Sidewalk == "both" || l.Sidewalk == "left") footways.Strip(Geo2.Offset(l.Geometry, w / 2 + 1.4), 2.8f, 0.006f);
-                if (l.Sidewalk == "both" || l.Sidewalk == "right") footways.Strip(Geo2.Offset(l.Geometry, -(w / 2 + 1.4)), 2.8f, 0.006f);
+                if (l.InMainNetwork || l.Geometry.Count < 2 || l.RoadClass == "service") continue;
+                float rw = (float)System.Math.Max(l.WidthM, (l.LanesForward + l.LanesBackward) * 3.0);
+                roads.Strip(l.Geometry, rw, 0.010f);
+                if (l.Sidewalk != "none") { footways.Strip(Geo2.Offset(l.Geometry, rw / 2 + 1.4), 2.8f, 0.006f); footways.Strip(Geo2.Offset(l.Geometry, -(rw / 2 + 1.4)), 2.8f, 0.006f); }
             }
-            var widest = new Dictionary<string, double>();
-            foreach (var l in pack.Links)
-                foreach (var n in new[] { l.From, l.To })
-                    widest[n] = System.Math.Max(widest.TryGetValue(n, out var w0) ? w0 : 0, System.Math.Max(l.WidthM, (l.LanesForward + l.LanesBackward) * 3.25));
-            foreach (var n in pack.Nodes.Values)
-                if (degree.TryGetValue(n.Id, out int d) && d >= 3) roads.Disc(n.Pos, (float)(widest[n.Id] / 2 + 1.0), 0.011f);
-            foreach (var s in g.Segments)
-                if (s.Kind == SegmentKind.Connector) roads.Strip(s.Path.Points, 3.4f, 0.013f);
 
-            // Markings: centre lines on two-way roads, lane lines on multi-lane ones, give-way and stop lines.
-            foreach (var l in pack.Links)
+            foreach (var kv in built.LinkLanes)
             {
-                if (!l.InMainNetwork || l.Geometry.Count < 2) continue;
-                const double w = 3.25;
-                var offsets = new List<(double off, bool centre)>();
-                if (l.OneWay)
-                    for (int k = 1; k < l.LanesForward; k++) offsets.Add(((k - l.LanesForward / 2.0) * w, false));
-                else
+                var (fwd, back) = kv.Value;
+                var link = pack.Links.Find(x => x.Id == kv.Key)!;
+                foreach (int id in fwd) roads.Strip(g.Segments[id].Path.Points, w + 0.3f, 0.012f);
+                foreach (int id in back) roads.Strip(g.Segments[id].Path.Points, w + 0.3f, 0.012f);
+
+                // Footways along the outer edges.
+                if (link.Sidewalk != "none")
                 {
-                    offsets.Add((0, true));
-                    for (int k = 1; k < l.LanesForward; k++) offsets.Add((k * w, false));
-                    for (int k = 1; k < l.LanesBackward; k++) offsets.Add((-k * w, false));
+                    footways.Strip(Geo2.Offset(g.Segments[fwd[0]].Path.Points, w / 2 + 1.5), 2.8f, 0.006f);
+                    if (back.Count > 0) footways.Strip(Geo2.Offset(g.Segments[back[0]].Path.Points, w / 2 + 1.5), 2.8f, 0.006f);
+                    else if (link.Sidewalk == "both" && link.RoadClass != "trunk" && link.RoadClass != "primary")
+                        footways.Strip(Geo2.Offset(g.Segments[fwd[fwd.Count - 1]].Path.Points, -(w / 2 + 1.5)), 2.8f, 0.006f); // not down a central reservation
                 }
-                foreach (var (off, centre) in offsets)
+
+                // Lane lines between lanes going the same way, and the centre line between directions.
+                for (int k = 0; k + 1 < fwd.Count; k++) Dashes(lines, Mid(g.Segments[fwd[k]].Path.Points, g.Segments[fwd[k + 1]].Path.Points), 1.5, 9);
+                for (int k = 0; k + 1 < back.Count; k++) Dashes(lines, Mid(g.Segments[back[k]].Path.Points, g.Segments[back[k + 1]].Path.Points), 1.5, 9);
+                if (back.Count > 0)
+                    Dashes(lines, Mid(g.Segments[fwd[fwd.Count - 1]].Path.Points, Geo2.Reverse(g.Segments[back[back.Count - 1]].Path.Points)), 1.0, 6);
+            }
+
+            // Turning paths, and one surface per junction joining all its lane ends (convex hull).
+            var atNode = new Dictionary<int, List<Vec2>>();
+            foreach (var s in g.Segments)
+            {
+                if (s.Kind != SegmentKind.Connector) continue;
+                roads.Strip(s.Path.Points, w + 0.2f, 0.013f);
+                if (!atNode.TryGetValue(s.Node, out var pts)) atNode[s.Node] = pts = new List<Vec2>();
+                var path = s.Path;
+                for (double d = 0; d <= path.Length + 0.01; d += System.Math.Max(0.5, path.Length / 6))
                 {
-                    var linePath = new PathPolyline(off == 0 ? l.Geometry : Geo2.Offset(l.Geometry, off));
-                    for (double s = 9; s < linePath.Length - 9; s += centre ? 6 : 9)
-                    {
-                        var (p, h) = linePath.Sample(s);
-                        double half = centre ? 1.0 : 1.5;
-                        lines.Quad(p - Vec2.FromHeading(h) * half, p + Vec2.FromHeading(h) * half, 0.12f, 0.025f);
-                    }
+                    var (p, h) = path.Sample(d);
+                    Vec2 left = Vec2.FromHeading(h).LeftNormal * (w / 2);
+                    pts.Add(p + left);
+                    pts.Add(p - left);
                 }
             }
+            foreach (var kv in atNode)
+            {
+                int connectors = 0;
+                foreach (var s in g.Segments) if (s.Kind == SegmentKind.Connector && s.Node == kv.Key) connectors++;
+                if (connectors > 2) roads.Polygon(ConvexHull(kv.Value), 0.0115f);
+            }
+
             foreach (var s in g.Segments)
             {
                 if (s.Kind != SegmentKind.Lane) continue;
