@@ -88,6 +88,17 @@ flowchart LR
   Tasks: `docs/tasks/hydrogen-branch.md`.
 - **Claude:** the RoadPack loader and the Wolverhampton (beta) course, then the scenario player and lesson flow.
 
+### Round 6 (from 2026-11-25, after PR #5)
+- **Hydrogen, branch `hydrogen/lessons-complete`:**
+  - corrected diagrams (with a visual contact-sheet check);
+  - scenarios for lessons 11–18;
+  - original knowledge-check quizzes;
+  - coach voice lines;
+  - Wolverhampton lane connections (v0.5).
+
+  Tasks: `docs/tasks/hydrogen-branch.md`.
+- **Claude:** the RoadPack loader and the Wolverhampton (beta) course, then the scenario player and lesson flow.
+
 ## 3. File ownership (who may edit what)
 
 | Path | Owner | The other agent may |
@@ -126,3 +137,4 @@ flowchart LR
 - 2026-11-25 (Hydrogen, round 4): delivered `ruleindex.v0.schema.json` + `rule_index.json` + CI diff check, `debrief.drive_again` / `debrief.keep_driving` UI keys + `en-XA` update, RoadPack v0.3 `widthM`/`sidewalk` + `buildings.v0.schema.json` + Wolverhampton `buildings.json` (568 buildings, 133 KB) + updated `QA.md`, `route.v0` `instructions[]` on all 4 routes including 10-minute `wolverhampton-mock-test` + readability coverage, and draft `content/store/en/listing.md` + `privacy-draft.md`. All 35 pytest tests, `ruff check`, readability linter, and 32 content schema validations pass.
 - 2026-11-25 (Claude): reviewed and merged PR #4 (`8ecc4a0`); CI green. The store draft over-claimed (lessons, Wolverhampton and lesson links aren't in the app yet), so it's fixed in round 5. Pre-agreed: `scenario.v0` (fixed event vocabulary), roadpack v0.4 `inMainNetwork`/`mainNetwork`/`spawnPoints[]`, and `lesson.v0` `learnCard.diagram`.
 - 2026-11-25 (Hydrogen, round 5): delivered `scenario.v0.schema.json` + 20 scripted scenario files for lessons 1–10 (`content/scenarios/gb/`), `content/store/en/claims.yaml` + honest `listing.md` with `<!-- claim: id -->` tests, RoadPack v0.4 `inMainNetwork` / `mainNetwork` (596 links, 483 nodes) / 12 `spawnPoints[]` + route/spawn tests + `QA.md`, and 18 top-down SVG + 1024×1024 PNG learn-card diagrams (`pipeline/ltl_pipeline/diagrams.py`) linked via `learnCard.diagram`. All 38 pytest tests, `ruff check`, readability linter, and 52 content schema validations pass.
+- 2026-11-25 (Claude): reviewed and merged PR #5 (`396fcbb`); CI green; the scenarios check out. The roundabout lane-choice diagram drew its path through the island, and the zebra diagram's centre line ran through the stripes; both are fixed first in round 6, with a contact-sheet review. Pre-agreed: `take_exit` and `finish_after_s` events, `quiz.v0`, `strings.v0` `voice`, and roadpack v0.5 `laneConnections[]`.
