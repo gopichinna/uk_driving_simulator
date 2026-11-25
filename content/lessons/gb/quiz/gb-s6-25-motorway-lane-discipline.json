@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s6-25-motorway-lane-discipline",
+  "questions": [
+    {
+      "id": "q_25_keep_left",
+      "question": "Which motorway lane should you normally drive in when the road ahead is clear?",
+      "options": [
+        "The left lane",
+        "The middle lane",
+        "The right lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "Keep in the left lane unless you are overtaking slower vehicles.",
+      "ruleId": "GB.MWY.KEEP_LEFT"
+    },
+    {
+      "id": "q_25_undertake",
+      "question": "When may you overtake on the left on a motorway?",
+      "options": [
+        "When traffic in queues is moving more slowly on the right",
+        "Whenever you are in a hurry",
+        "On the hard shoulder at any time"
+      ],
+      "answerIndex": 0,
+      "explanation": "Only pass on the left in congested queues moving slower in the right lanes.",
+      "ruleId": "GB.MWY.NO_UNDERTAKE"
+    }
+  ]
+}

@@ -77,7 +77,7 @@ def test_every_row_direction_matches_shortest_route_first_turn_and_styles() -> N
                 continue
             acc_link = poi_by_id[poi_id]["accessLinkId"]
             assert acc_link in link_dists, f"{sign['id']} POI {poi_id} unreachable"
-            _, first_out = link_dists[acc_link]
+            _, first_out, route_refs = link_dists[acc_link]
             out_lk = graph.links[first_out]
             out_fwd = out_lk["from"] == nid
             out_dx, out_dz = _departure_tangent(out_lk["geometry"], out_fwd)
@@ -85,21 +85,35 @@ def test_every_row_direction_matches_shortest_route_first_turn_and_styles() -> N
             assert row["direction"] == expected_dir, (
                 f"{sign['id']} row {row['text']}: got {row['direction']}, expected {expected_dir}"
             )
+            if "ref" in row:
+                assert row["ref"] in route_refs
 
     assert primary_count > 0, "Expected primary-style signs on A-road approaches"
     assert local_count > 0, "Expected local-style signs on non-primary approaches"
 
 
-def test_no_sign_or_plate_on_carriageway() -> None:
+def test_adjacent_junction_signs_differ_when_routes_differ() -> None:
+    signs, _, _, _ = _load_all()
+    all_sigs = [tuple((r["text"], r["direction"]) for r in s["rows"]) for s in signs["signs"]]
+    assert len(set(all_sigs)) >= 12, "Expected diverse direction sign row sets across junctions"
+    for sign in signs["signs"]:
+        if len(sign["rows"]) >= 3:
+            dirs = {r["direction"] for r in sign["rows"]}
+            assert len(dirs) >= 2 or len(sign["rows"]) <= 2, (
+                f"{sign['id']} has 3+ rows all in a single direction"
+            )
+
+
+def test_signs_and_plates_clear_game_geometry_and_islands() -> None:
     signs, streets, pack, _ = _load_all()
     graph = RoadGraph(pack)
     for sign in signs["signs"]:
-        assert not graph.on_carriageway(sign["x"], sign["z"], min_clearance_m=0.5), (
-            f"Direction sign {sign['id']} sits within 0.5 m of carriageway"
+        assert graph.clears_game_geometry(sign["x"], sign["z"], lane_clearance_m=2.0), (
+            f"Direction sign {sign['id']} too close to game lane geometry or inside island"
         )
     for plate in streets["plates"]:
-        assert not graph.on_carriageway(plate["x"], plate["z"], min_clearance_m=0.5), (
-            f"Street plate {plate['id']} sits within 0.5 m of carriageway"
+        assert graph.clears_game_geometry(plate["x"], plate["z"], lane_clearance_m=1.6), (
+            f"Street plate {plate['id']} too close to game lane geometry or inside island"
         )
 
 

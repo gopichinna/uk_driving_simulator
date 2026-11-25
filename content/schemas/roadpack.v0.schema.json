@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6"] },
+    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -47,6 +47,39 @@
     },
     "spawnPoints": { "type": "array", "items": { "$ref": "#/$defs/spawnPoint" }, "default": [] },
     "laneConnections": { "type": "array", "items": { "$ref": "#/$defs/laneConnection" }, "default": [] },
+    "emergencyAreas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "x", "z", "heading", "linkId"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "x": { "type": "number" },
+          "z": { "type": "number" },
+          "heading": { "type": "number" },
+          "linkId": { "type": "string" }
+        }
+      },
+      "default": []
+    },
+    "gantries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "x", "z", "heading", "linkId", "lanes"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "x": { "type": "number" },
+          "z": { "type": "number" },
+          "heading": { "type": "number" },
+          "linkId": { "type": "string" },
+          "lanes": { "type": "integer", "minimum": 1 }
+        }
+      },
+      "default": []
+    },
     "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
   },
   "$defs": {
@@ -97,6 +130,8 @@
         "sidewalk": { "enum": ["left", "right", "both", "none"] },
         "sidewalkSource": { "enum": ["tagged", "default"] },
         "inMainNetwork": { "type": "boolean" },
+        "hardShoulder": { "type": "boolean" },
+        "junctionNumber": { "type": "string" },
         "osmWayId": { "type": "integer" }
       }
     },

@@ -1,0 +1,1285 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "origin": {
+    "lat": 52.56,
+    "lon": -2.1016
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "signs": [
+    {
+      "id": "ds_001",
+      "nodeId": "n_1615519948",
+      "approachLinkId": "l_148450692_1",
+      "x": 786.511,
+      "z": 411.198,
+      "heading": 9.52,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_002",
+      "nodeId": "n_1615519979",
+      "approachLinkId": "l_148450677_0",
+      "x": 855.59,
+      "z": 458.078,
+      "heading": 101.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_003",
+      "nodeId": "n_1621398668",
+      "approachLinkId": "l_638576678_1",
+      "x": 57.099,
+      "z": -633.931,
+      "heading": 348.43,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_004",
+      "nodeId": "n_1621398668",
+      "approachLinkId": "l_638576678_2",
+      "x": 55.855,
+      "z": -553.11,
+      "heading": 172.6,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_005",
+      "nodeId": "n_1621398680",
+      "approachLinkId": "l_368626042_0",
+      "x": 95.356,
+      "z": -622.899,
+      "heading": 316.0,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_006",
+      "nodeId": "n_1621467566",
+      "approachLinkId": "l_87112816_0",
+      "x": 303.273,
+      "z": -914.793,
+      "heading": 332.13,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_007",
+      "nodeId": "n_1621467567",
+      "approachLinkId": "l_78046026_0",
+      "x": 260.239,
+      "z": -787.297,
+      "heading": 141.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_008",
+      "nodeId": "n_1626612748",
+      "approachLinkId": "l_439936951_0",
+      "x": -749.4,
+      "z": 177.044,
+      "heading": 330.0,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_009",
+      "nodeId": "n_1626612752",
+      "approachLinkId": "l_3715178_0",
+      "x": -751.726,
+      "z": 243.437,
+      "heading": 232.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_010",
+      "nodeId": "n_1626612752",
+      "approachLinkId": "l_3715178_1",
+      "x": -793.089,
+      "z": 192.869,
+      "heading": 347.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_011",
+      "nodeId": "n_1635604406",
+      "approachLinkId": "l_638576692_0",
+      "x": 464.532,
+      "z": -604.732,
+      "heading": 127.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_012",
+      "nodeId": "n_1635604420",
+      "approachLinkId": "l_150671506_0",
+      "x": 435.139,
+      "z": -570.201,
+      "heading": 156.59,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_013",
+      "nodeId": "n_18236687",
+      "approachLinkId": "l_854931075_0",
+      "x": 515.706,
+      "z": -710.486,
+      "heading": 65.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_014",
+      "nodeId": "n_18236703",
+      "approachLinkId": "l_23219978_3",
+      "x": -318.128,
+      "z": -357.162,
+      "heading": 306.65,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_015",
+      "nodeId": "n_201470937",
+      "approachLinkId": "l_439935842_1",
+      "x": -979.247,
+      "z": 702.539,
+      "heading": 1.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_016",
+      "nodeId": "n_20959225",
+      "approachLinkId": "l_439936948_1",
+      "x": 7.395,
+      "z": -528.888,
+      "heading": 120.1,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_017",
+      "nodeId": "n_240137188",
+      "approachLinkId": "l_22330596_0",
+      "x": 501.453,
+      "z": -743.321,
+      "heading": 341.91,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_018",
+      "nodeId": "n_240137188",
+      "approachLinkId": "l_56685888_2",
+      "x": 508.733,
+      "z": -679.598,
+      "heading": 147.26,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_019",
+      "nodeId": "n_240137194",
+      "approachLinkId": "l_24942500_1",
+      "x": 540.776,
+      "z": -790.428,
+      "heading": 355.19,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_020",
+      "nodeId": "n_240137194",
+      "approachLinkId": "l_638576683_0",
+      "x": 540.591,
+      "z": -712.725,
+      "heading": 124.6,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "left"
+        },
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_021",
+      "nodeId": "n_251837668",
+      "approachLinkId": "l_23271062_4",
+      "x": -810.3,
+      "z": 114.699,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_022",
+      "nodeId": "n_251837673",
+      "approachLinkId": "l_23271062_0",
+      "x": -802.826,
+      "z": 136.596,
+      "heading": 9.86,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_023",
+      "nodeId": "n_251837673",
+      "approachLinkId": "l_23271064_0",
+      "x": -783.562,
+      "z": 204.373,
+      "heading": 160.92,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_024",
+      "nodeId": "n_251837676",
+      "approachLinkId": "l_23271062_1",
+      "x": -802.311,
+      "z": 158.296,
+      "heading": 32.31,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "left"
+        },
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_025",
+      "nodeId": "n_251837676",
+      "approachLinkId": "l_23271068_0",
+      "x": -737.894,
+      "z": 129.314,
+      "heading": 300.19,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_026",
+      "nodeId": "n_251837677",
+      "approachLinkId": "l_23271062_2",
+      "x": -793.457,
+      "z": 166.768,
+      "heading": 68.4,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_027",
+      "nodeId": "n_251837679",
+      "approachLinkId": "l_23271062_3",
+      "x": -768.61,
+      "z": 156.129,
+      "heading": 155.49,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_028",
+      "nodeId": "n_251837679",
+      "approachLinkId": "l_23271066_0",
+      "x": -812.98,
+      "z": 107.403,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_029",
+      "nodeId": "n_251837789",
+      "approachLinkId": "l_23271072_0",
+      "x": -934.902,
+      "z": -809.451,
+      "heading": 327.24,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_030",
+      "nodeId": "n_251837791",
+      "approachLinkId": "l_87069497_0",
+      "x": -942.159,
+      "z": -748.377,
+      "heading": 129.4,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_031",
+      "nodeId": "n_251837793",
+      "approachLinkId": "l_87069515_0",
+      "x": -943.523,
+      "z": -772.658,
+      "heading": 234.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_032",
+      "nodeId": "n_251837796",
+      "approachLinkId": "l_23271074_0",
+      "x": -905.634,
+      "z": -741.385,
+      "heading": 239.52,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_033",
+      "nodeId": "n_3451655845",
+      "approachLinkId": "l_439936956_0",
+      "x": -902.585,
+      "z": 749.736,
+      "heading": 270.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_034",
+      "nodeId": "n_3451655845",
+      "approachLinkId": "l_439936956_1",
+      "x": -978.306,
+      "z": 747.931,
+      "heading": 358.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_035",
+      "nodeId": "n_3724787235",
+      "approachLinkId": "l_23219978_5",
+      "x": -385.494,
+      "z": -303.324,
+      "heading": 311.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_036",
+      "nodeId": "n_3724787238",
+      "approachLinkId": "l_23271069_4",
+      "x": -466.683,
+      "z": -292.841,
+      "heading": 41.85,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_037",
+      "nodeId": "n_3724787238",
+      "approachLinkId": "l_23271069_5",
+      "x": -430.451,
+      "z": -233.308,
+      "heading": 135.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_038",
+      "nodeId": "n_3724787253",
+      "approachLinkId": "l_638579026_2",
+      "x": -453.308,
+      "z": -209.903,
+      "heading": 135.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_039",
+      "nodeId": "n_3725203827",
+      "approachLinkId": "l_23219981_0",
+      "x": -367.292,
+      "z": -290.557,
+      "heading": 130.23,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_040",
+      "nodeId": "n_3725203827",
+      "approachLinkId": "l_23219981_1",
+      "x": -390.551,
+      "z": -357.672,
+      "heading": 40.37,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_041",
+      "nodeId": "n_3725203939",
+      "approachLinkId": "l_637984813_1",
+      "x": -401.341,
+      "z": -259.861,
+      "heading": 131.82,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_042",
+      "nodeId": "n_395927914",
+      "approachLinkId": "l_56685885_1",
+      "x": 475.519,
+      "z": -663.318,
+      "heading": 326.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_043",
+      "nodeId": "n_395927965",
+      "approachLinkId": "l_638576692_3",
+      "x": 438.537,
+      "z": -616.927,
+      "heading": 3.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_044",
+      "nodeId": "n_4376191735",
+      "approachLinkId": "l_439936954_0",
+      "x": 21.592,
+      "z": 726.319,
+      "heading": 185.76,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_045",
+      "nodeId": "n_4376191735",
+      "approachLinkId": "l_439936954_1",
+      "x": 0.391,
+      "z": 648.052,
+      "heading": 5.51,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_046",
+      "nodeId": "n_4376191736",
+      "approachLinkId": "l_148450676_0",
+      "x": -0.659,
+      "z": 712.431,
+      "heading": 97.34,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_047",
+      "nodeId": "n_4376191736",
+      "approachLinkId": "l_148450676_1",
+      "x": 74.692,
+      "z": 681.21,
+      "heading": 285.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_048",
+      "nodeId": "n_4376191737",
+      "approachLinkId": "l_439936955_0",
+      "x": 31.139,
+      "z": 692.431,
+      "heading": 281.35,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_049",
+      "nodeId": "n_4376191737",
+      "approachLinkId": "l_439936955_1",
+      "x": -46.262,
+      "z": 715.949,
+      "heading": 94.85,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_050",
+      "nodeId": "n_4376191739",
+      "approachLinkId": "l_7982754_0",
+      "x": 2.085,
+      "z": 682.141,
+      "heading": 5.58,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_051",
+      "nodeId": "n_4376191739",
+      "approachLinkId": "l_7982754_1",
+      "x": 23.475,
+      "z": 761.633,
+      "heading": 173.81,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_052",
+      "nodeId": "n_540469884",
+      "approachLinkId": "l_638579038_5",
+      "x": 50.331,
+      "z": -514.774,
+      "heading": 171.93,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_053",
+      "nodeId": "n_540469884",
+      "approachLinkId": "l_638579038_6",
+      "x": 51.063,
+      "z": -595.279,
+      "heading": 352.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_054",
+      "nodeId": "n_540469927",
+      "approachLinkId": "l_87110690_0",
+      "x": 352.968,
+      "z": -828.343,
+      "heading": 243.8,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A463"
+        }
+      ]
+    },
+    {
+      "id": "ds_055",
+      "nodeId": "n_708947146",
+      "approachLinkId": "l_56684833_0",
+      "x": -797.24,
+      "z": 230.607,
+      "heading": 67.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_056",
+      "nodeId": "n_708947146",
+      "approachLinkId": "l_56684833_1",
+      "x": -733.915,
+      "z": 273.737,
+      "heading": 213.98,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_057",
+      "nodeId": "n_872146205",
+      "approachLinkId": "l_638576692_2",
+      "x": 445.241,
+      "z": -630.409,
+      "heading": 307.03,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_058",
+      "nodeId": "n_916899167",
+      "approachLinkId": "l_23271062_5",
+      "x": -808.831,
+      "z": 118.698,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_059",
+      "nodeId": "n_936437920",
+      "approachLinkId": "l_854931073_0",
+      "x": 518.626,
+      "z": -759.59,
+      "heading": 288.87,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_060",
+      "nodeId": "n_936437934",
+      "approachLinkId": "l_854931076_0",
+      "x": 497.785,
+      "z": -728.029,
+      "heading": 12.37,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_061",
+      "nodeId": "n_936437971",
+      "approachLinkId": "l_638576683_1",
+      "x": 551.81,
+      "z": -739.612,
+      "heading": 188.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left",
+          "ref": "A463"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left",
+          "ref": "A463"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_062",
+      "nodeId": "n_936437991",
+      "approachLinkId": "l_23219406_0",
+      "x": 470.34,
+      "z": -743.184,
+      "heading": 63.83,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_063",
+      "nodeId": "n_936437991",
+      "approachLinkId": "l_854931074_0",
+      "x": 529.38,
+      "z": -760.487,
+      "heading": 262.71,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        }
+      ]
+    }
+  ]
+}

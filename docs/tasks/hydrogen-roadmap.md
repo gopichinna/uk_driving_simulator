@@ -46,44 +46,43 @@ Goal: Wolverhampton's signs look and behave like the real city.
 ## Round 10: Sound and the coach's voice (licence-checked)
 Goal: audio content the game can ship, with every file's licence recorded.
 
-- [ ] R10.1 **Coach voice.** Generate speech for every line in `content/countries/gb/strings/en/voice.json`, using an **offline text-to-speech engine whose engine *and* voice model licences allow commercial use in an app** (for example Piper; check the specific voice's licence on its model card). Before generating anything, write the licence (URL and terms) into `content/audio/LICENCES.md`. If no suitable voice is clearly licensed, stop and record why.
-  - Output: `content/audio/voice/en/<key>.ogg` (mono, 22–24 kHz, peak about −3 dBFS, trimmed silence).
-  - Add `content/audio/voice/en/manifest.json`: `{ key, file, text, durationS }`.
-- [ ] R10.2 **Sound effects.** Source CC0 or similarly free-to-ship effects:
-  - indicator tick (on and off);
-  - a soft engine loop (idle and a few rpm steps);
-  - a short horn;
-  - a tyre squeal;
-  - a pedestrian crossing beep (puffin/pelican);
-  - UI clicks;
-  - a gentle success chime and a fault chime;
-  - a light town ambience loop.
-
-  Record the source URL, author and licence for every file in `content/audio/LICENCES.md`, with **no CC-BY-NC or unknown-licence files**. Normalise loudness: −16 LUFS for effects, −23 LUFS for ambience.
-- [ ] R10.3 **Store screenshots and accessibility text.**
-  - `content/store/en/screenshots.md`: 6 captions (each ≤ 8 words) matching **shipped** claims only (`claims.yaml`).
-  - Accessibility labels for every HUD control and screen in `ui.json` under `a11y.*` keys: what each button does, in a few words.
-- [ ] R10.4 **Tests:**
-  - every voice key has an audio file and every audio file has a licence entry;
-  - durations are within 0.3–6 s for voice and ≤ 3 s for effects (except the loops);
-  - `ATTRIBUTIONS.md` and `content/legal/en/credits.md` list the audio sources.
+- [x] R10.1 **Coach voice.** (PR #10: Piper MIT + `en_GB-cori-medium` CC BY 4.0, 25 mono 24 kHz OGGs + `manifest.json` + `LICENCES.md`)
+- [x] R10.2 **Sound effects.** (PR #10: 12 CC0 1.0 procedural SFX/loops, −16 / −23 LUFS)
+- [x] R10.3 **Store screenshots and accessibility text.** (PR #10: 6 shipped-claim captions + 14 `a11y.*` keys + `en-XA`)
+- [x] R10.4 **Tests** (PR #10: `test_audio.py`, `ATTRIBUTIONS.md`, `credits.md`)
 
 ## Round 11: The area around Wolverhampton's driving test centre
 Goal: let learners practise roads like the ones used on real tests near Wolverhampton. **DVSA doesn't publish test routes, so don't claim to copy them.** Model the *area* around the centre.
 
-- [ ] R11.1 **Verify on GOV.UK** ("Find a driving test centre") which car test centre(s) serve Wolverhampton: name, address and postcode. Record the URL and date. If you can't verify it, stop the round and report it under "Requests from Hydrogen".
-- [ ] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json` (same schema, the latest version): about 2 × 2 km around the centre. Include:
-  - residential streets, roundabouts, a dual carriageway section and signals if present;
-  - the same pipeline steps (main network, spawn points, signal plans, lane connections, buildings, POIs, signs and speed signs from R9).
+- [x] R11.1 **Verify on GOV.UK** (PR #11: Wolverhampton Practical Driving Test Centre, 101 Spring Road, Ettingshall, WV4 6JX)
+- [x] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json` (PR #11: 2 × 2 km pack + furniture)
+- [x] R11.3 **Practice routes** (`routes.json`, PR #11: 3 legal connected practice loops)
+- [x] R11.4 **Lesson 20, "Roads near the test centre".** (PR #11: Stage 8 lesson + scenarios + quiz)
+- [x] R11.5 **QA and tests** (PR #11: `QA.md`, `test_test_area.py`)
 
-  Exclude tram streets, as before.
-- [ ] R11.3 **Practice routes** (`routes.json`): 3 routes of 15–25 minutes each that start and end at the test centre and mix road types. Include sat-nav instructions, plus one "follow the signs to …" segment per route. Label them as **practice routes, not official test routes**.
-- [ ] R11.4 **Lesson 20, "Roads near the test centre".** Stage 8, using the scenario `independent_driving` mode `mixed`. Add a learn card with plain-English advice on what to expect around a test centre (general, not route-specific), plus a quiz.
-- [ ] R11.5 **QA and tests:**
-  - `QA.md` for the new pack;
-  - routes are connected and legal;
-  - the pack validates;
-  - attribution is present.
+---
+
+# Rounds 12–14 (added by Claude, 2026-11-25). Same protocol as above.
+
+## Round 12: fix-ups, roundabouts, evidence (do R12.0 first)
+- [x] **R12.0 Fix CI on PRs #10 and #11 (urgent).** Regenerated `content/countries/gb/strings/en-XA/ui.json` on `hydrogen/r10-audio-and-a11y`, pushed, and merged into `hydrogen/r11-test-centre-area`.
+- [x] **R12.1 Test-centre evidence.** Searched `WV4 6JX` on `https://www.gov.uk/find-driving-test-centre` (2026-11-25) and posted the exact quoted GOV.UK result block on PR #11.
+- [x] **R12.2 Relevant destinations on signs** (from the PR #9 review). Sign turning/forking destinations + local POIs with route-verified `ref`s; tested in `test_direction_signs.py`.
+- [x] **R12.3 Placement against the game's geometry** (PR #8 and #9 reviews). Checked against 3.25 m game lane widths and roundabout central islands; signs >= 2.0 m from lane edge, plates >= 1.6 m from lane edge, none inside roundabout islands.
+- [x] **R12.4 Mock-test scenario timings** (PR #8 review). Set `s8_19_mock_test.json` to `durationS: 2100` (35 min), `s8_19_mock_test_signs.json` to `durationS: 600` (10 min), `s8_20_*.json` to `durationS: 1200` (20 min), removed conflicting `finish_after_s`, and added check in `test_scenarios.py`.
+- [x] **R12.5 Roundabout furniture**, as `roundabout_furniture.json` (`roundabout-furniture.v0.schema.json`) for both `wolverhampton` and `wolverhampton-test-area`, with `islandPolygon`, blue signs (Diagrams 610/611.1), chevron boards (Diagram 515), and give-way lines (Diagram 1003.1/1003.3).
+
+## Round 13: Stage 7 "Conditions" (night, rain, fog) as data
+- [x] **R13.1** Verified Highway Code rules 113–116 and 226–236 on GOV.UK (`https://www.gov.uk/guidance/the-highway-code/driving-in-adverse-weather-conditions-226-to-237` and `general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-25). Added `GB.WX.FOG_STOPPING` (Rule 235) to `docs/02` and regenerated `rules.yaml` (131 rules).
+- [x] **R13.2** Added `conditions { timeOfDay, weather, visibilityM }` to `scenario.v0.schema.json`.
+- [x] **R13.3** Added Stage 7 lessons 21–23 (`21-night-dipped-headlights.json`, `22-rain-stopping-distances.json`, `23-fog-low-visibility.json`), 6 scenarios (`s7_21_*`..`s7_23_*`), 3 original quizzes, diagrams + contact sheet, `progression.json`, and `rule_index.json`.
+- [x] **R13.4** Added strings in `rules.json`, voice lines + OGGs in `voice.json` / `content/audio/voice/en/`, regenerated `en-XA`, and verified `readability` (0 errors) + 60/60 pytest pass.
+
+## Round 14: Stage 6 "Motorways" as data
+- [x] **R14.1** Chose **M54 Junction 2 (Coven Heath Interchange, `ref=2`)**, verified from OSM `highway=motorway_junction` (`52.6384, -2.1300`). Built `content/cities/m54-j2/roadpack.json` (`packFormatVersion` `0.7`) with slip roads (`junctionNumber: "2"`), `hardShoulder` booleans, `gantries[]`, `emergencyAreas[]`, and `QA.md`.
+- [x] **R14.2** Verified Highway Code motorway rules 253–275 on GOV.UK (`https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273` and `breakdowns-and-incidents-274-to-287`, checked 2026-11-25); all 15 `GB.MWY.*` / `GB.BRK.NO_TRIANGLE_MWY` rules in `docs/02` and `rules.yaml` match.
+- [x] **R14.3** Added Stage 6 lessons 24–27 (`24-motorway-joining-leaving.json`..`27-motorway-breakdowns.json`), 8 scenarios on `course: "motorway"` (anchors `start`, `join`, `leave`), 4 original quizzes, diagrams + contact sheet (`6x5`), and `rule_index.json`.
+- [x] **R14.4** Updated `progression.json` so Stages 6 (Motorways) and 7 (Conditions) precede Stage 8 (Mock driving test) with consistent unlock rules, and added `pipeline/tests/test_motorway.py` (62/62 pytest pass).
 
 
 ---

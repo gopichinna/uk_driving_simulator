@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s6-27-motorway-breakdowns",
+  "questions": [
+    {
+      "id": "q_27_emergency_area",
+      "question": "When may you stop in a motorway emergency area?",
+      "options": [
+        "Only in an emergency or breakdown",
+        "To read a map or take a phone call",
+        "To let passengers stretch their legs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Emergency areas are strictly for emergencies and breakdowns.",
+      "ruleId": "GB.MWY.EMERGENCY_AREA"
+    },
+    {
+      "id": "q_27_triangle",
+      "question": "Should you place a warning triangle on a motorway if you break down?",
+      "options": [
+        "No, never place a warning triangle on a motorway",
+        "Yes, 45 metres behind your car",
+        "Yes, in the middle lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "Never place a warning triangle on a motorway because high-speed traffic makes it unsafe.",
+      "ruleId": "GB.BRK.NO_TRIANGLE_MWY"
+    }
+  ]
+}

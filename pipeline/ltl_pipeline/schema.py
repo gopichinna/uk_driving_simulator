@@ -25,6 +25,9 @@ PROGRESSION_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "progression.v0.sc
 PEDROUTES_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "pedroutes.v0.schema.json"
 POIS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "pois.v0.schema.json"
 SIGNS_PLACED_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "signs-placed.v0.schema.json"
+ROUNDABOUT_FURNITURE_SCHEMA_PATH = (
+    REPO_ROOT / "content" / "schemas" / "roundabout-furniture.v0.schema.json"
+)
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -194,6 +197,17 @@ def validate_signs_placed_file(
     return data
 
 
+def validate_roundabout_furniture_file(
+    path: Path, schema_path: Path = ROUNDABOUT_FURNITURE_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load roundabout_furniture.json and validate against roundabout-furniture.v0."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -256,6 +270,10 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
         for sp_path in sorted(root.glob(f"cities/*/{fname}")):
             validate_signs_placed_file(sp_path)
             validated.append(sp_path)
+
+    for rf_path in sorted(root.glob("cities/*/roundabout_furniture.json")):
+        validate_roundabout_furniture_file(rf_path)
+        validated.append(rf_path)
 
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)

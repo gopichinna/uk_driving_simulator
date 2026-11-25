@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s7-23-fog-low-visibility",
+  "questions": [
+    {
+      "id": "q_23_vis_100m",
+      "question": "Below what visibility distance must you switch on your headlights?",
+      "options": [
+        "100 metres",
+        "500 metres",
+        "1,000 metres"
+      ],
+      "answerIndex": 0,
+      "explanation": "You must use headlights when you cannot see more than 100 metres ahead.",
+      "ruleId": "GB.WX.LOW_VISIBILITY"
+    },
+    {
+      "id": "q_23_fog_off",
+      "question": "What must you do with front or rear fog lights when visibility improves?",
+      "options": [
+        "Switch them off straight away",
+        "Leave rear fog lights on in town",
+        "Flash them at oncoming cars"
+      ],
+      "answerIndex": 0,
+      "explanation": "Fog lights dazzle other drivers and hide brake lights once fog clears.",
+      "ruleId": "GB.WX.FOG_LIGHTS"
+    }
+  ]
+}

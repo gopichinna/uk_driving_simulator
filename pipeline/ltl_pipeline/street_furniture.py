@@ -46,13 +46,13 @@ def _place_on_verge(
     width_m: float,
     side: int = 1,
 ) -> tuple[float, float] | None:
-    """Place a sign on nearside (side=1) or offside (side=-1) verge >= 0.5 m off carriageway."""
+    """Place a sign on nearside/offside verge >= 2.0 m outside game lane edge."""
     nx, nz = (-dz * side, dx * side)
-    for extra in (0.9, 1.6, 2.5, 3.5):
+    for extra in (2.2, 3.0, 4.0, 5.0):
         offset = width_m / 2.0 + extra
         cx = round(px + nx * offset, 3)
         cz = round(pz + nz * offset, 3)
-        if not graph.on_carriageway(cx, cz, min_clearance_m=0.5):
+        if graph.clears_game_geometry(cx, cz, lane_clearance_m=2.0):
             return cx, cz
     return None
 
@@ -238,8 +238,8 @@ def build_bus_stops_and_warnings(
         if res is None:
             continue
         px, pz, dx, dz = res
-        # Keep original x,z if >= 0.5 m outside carriageway, else place on nearside verge
-        if not graph.on_carriageway(x, z, min_clearance_m=0.5):
+        # Keep original x,z if >= 1.6 m outside game lane geometry, else place on nearside verge
+        if graph.clears_game_geometry(x, z, lane_clearance_m=1.6):
             bx, bz = x, z
         else:
             pt = _place_on_verge(graph, px, pz, dx, dz, float(lk.get("widthM", 6.5)), side=1)

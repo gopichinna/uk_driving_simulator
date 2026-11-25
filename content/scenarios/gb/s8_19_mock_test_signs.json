@@ -3,7 +3,7 @@
   "scenarioId": "s8_19_mock_test_signs",
   "course": "wolverhampton",
   "anchor": "start",
-  "durationS": 180,
+  "durationS": 600,
   "events": [
     {
       "type": "traffic_density",
@@ -11,14 +11,10 @@
     },
     {
       "type": "independent_driving",
-      "minutes": 35,
+      "minutes": 10,
       "mode": "signs",
       "poiId": "poi_city_centre_queen_square",
       "instruction": "Follow the signs to City Centre (Queen Square)."
-    },
-    {
-      "type": "finish_after_s",
-      "seconds": 170
     }
   ]
 }
