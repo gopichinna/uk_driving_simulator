@@ -51,7 +51,7 @@ graphify-out/             knowledge graph of this repo (GRAPH_REPORT.md, graph.j
 10. **Stay in your lane.** Only edit the files your branch owns (`docs/08-parallel-work-plan.md` §3). If you need a change in someone else's area, write it under "Requests to the other branch" in your task file.
 11. Commit messages: imperative summary line, then a short body explaining why.
 
-## 5. Current state (main, 2026-11-25)
+## 5. Current state (main, 2026-11-25, after PR #1)
 - Playable on Android across three courses: a **two-lane roundabout** (lane arrows, 2-in/2-out arms), a **single-lane roundabout**, and a **40 mph dual carriageway**.
 - Traffic: AI cars that follow UK rules and signal properly; cyclists are 10% of traffic.
 - Mirrors: a live rear-view mirror and two door mirrors, plus an optional look over the shoulder.
@@ -68,6 +68,14 @@ graphify-out/             knowledge graph of this repo (GRAPH_REPORT.md, graph.j
 | Following distance: 2 s | 126 |
 
 - 79 core tests.
+- **Data (merged from Hydrogen, PR #1):**
+  - the `pipeline/` OSM → RoadPack tool;
+  - `content/cities/wolverhampton/roadpack.json` (953 nodes, 1,079 links, 119 crossings);
+  - `content/countries/gb/rules.yaml` (130 rules), generated from `docs/02`, with the §5 items verified on GOV.UK;
+  - CI for the pipeline, and a weekly Highway Code update watcher.
+- **Round 2 in progress:**
+  - Claude: town-centre course, debrief and replay, settings, loader (`docs/tasks/claude-branch.md`);
+  - Hydrogen: content layer: strings, glossary, signs, lessons and routes (`docs/tasks/hydrogen-branch.md`).
 
 ## 6. Knowledge graph (graphify)
 `graphify-out/GRAPH_REPORT.md` summarises the architecture: god nodes, communities, surprising links. `graphify-out/graph.html` is interactive. With graphify installed (`pip install graphifyy`), you can ask questions such as `graphify query "how does the roundabout rule judge lane choice?"`. Update the graph after big changes with `graphify . --update`.

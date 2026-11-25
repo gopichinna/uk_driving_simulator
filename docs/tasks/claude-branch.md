@@ -52,14 +52,28 @@
 - [ ] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD.
 
 ## D. Real streets (prepare for the merge)
-- [ ] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths. Tests use `content/samples/roadpack.sample.json`.
+- [ ] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths.
+  - Tests use `content/samples/roadpack.sample.json` **and** the merged `content/cities/wolverhampton/roadpack.json`.
+  - Read v0.1 `restrictions[]` as optional.
 - [ ] D2. After Hydrogen's merge: a "Wolverhampton (beta)" course from `content/cities/wolverhampton/roadpack.json`. Roads are meshed from links, rules fire only on elements with confidence ≥ 0.7, and the ODbL attribution is shown.
+
+## D+. Use Hydrogen's round-2 content as it lands
+- [ ] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text.
+- [ ] D4. The town course exposes the anchors promised to Hydrogen:
+  - `start`;
+  - `crossroads_signals`;
+  - `tjunction_north`, `tjunction_south`;
+  - `zebra`;
+  - `box_junction`;
+  - `school_street`.
 
 ## E. Hand-off
 - [ ] E1. Keep `dotnet test` green and the APK building. Add a dated note to `docs/08` §6, then open a PR to `main`.
 
 ## Requests from Hydrogen
-*(none yet)*
+- Pre-agreed on 2026-11-25:
+  - new schemas `strings.v0`, `signs.v0`, `lesson.v0` and `route.v0`;
+  - an additive roadpack **v0.1**: an optional top-level `restrictions[]`, with no renamed or removed fields.
 
 ## Requests to Hydrogen
 - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer (as in the schema).

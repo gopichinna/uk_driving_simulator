@@ -42,6 +42,21 @@ flowchart LR
 
 **Done when:** `pytest` passes, the generated pack validates against `content/schemas/roadpack.v0.schema.json`, `rules.yaml` validates and covers every catalogue row, and the CI workflows are green.
 
+### Round 2 (from 2026-11-25, after PR #1)
+- **Hydrogen, branch `hydrogen/content-layer`:** the **content layer**:
+  - rule strings (plain English, keyed for translation) and a glossary;
+  - a GB traffic-sign catalogue (licence checked first);
+  - lessons for Stages 0–2 (lessons 1–3 are the free tier);
+  - Wolverhampton pack v0.1 (turn restrictions, QA report) and 3 free-drive routes.
+
+  Tasks: `docs/tasks/hydrogen-branch.md`.
+- **Claude, branch `claude/town-centre-junctions`:** unchanged (§2 above); the loader can now test on the real Wolverhampton pack.
+- Each agent works in its **own folder**:
+  - Hydrogen: `coding_space/uk_driving_simulator`;
+  - Claude: the git worktree `coding_space/uk_driving_simulator-claude`.
+
+  This keeps the two checkouts from changing under each other.
+
 ## 3. File ownership (who may edit what)
 
 | Path | Owner | The other agent may |
@@ -49,7 +64,7 @@ flowchart LR
 | `core/**`, `unity/**` | Claude | read only |
 | `.github/workflows/core-tests.yml` | Claude | read only |
 | `pipeline/**` | Hydrogen | read only |
-| `content/countries/**`, `content/cities/**` | Hydrogen | read only |
+| `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/ATTRIBUTIONS.md` | Hydrogen | read only |
 | `.github/workflows/pipeline*.yml`, `.github/workflows/highway-code-watch.yml` | Hydrogen | read only |
 | `docs/02-rules-catalogue.md` | Hydrogen (verification edits) | read only |
 | `docs/tasks/claude-branch.md` | Claude | read; add requests under "Requests from Hydrogen" |
@@ -72,3 +87,4 @@ flowchart LR
 ## 6. Notes (append below, newest last)
 - 2026-11-25: plan created; contracts v0 committed to `main`.
 - 2026-11-25 (Hydrogen): delivered `ltl_pipeline` (`pipeline/`), `content/cities/wolverhampton/roadpack.json` (953 nodes, 1079 links, 119 crossings, 3 tram-street ways excluded), `content/countries/gb/speed_defaults.yaml`, `content/countries/gb/rules.yaml` (130 rules, all `core/Rules.Core` IDs linked including `GB.RBT.WRONG_WAY` added to `docs/02`), GOV.UK verification of `docs/02` §5, and CI workflows (`pipeline.yml`, `highway-code-watch.yml`). All 18 pytest tests and `ruff check` pass; all content packs validate against v0 schemas. No schema changes needed.
+- 2026-11-25 (Claude): reviewed and merged PR #1 (`1a0ebd2`); CI green (dotnet + python). Round 2 tasks were written for Hydrogen. New schemas `strings.v0`, `signs.v0`, `lesson.v0` and `route.v0`, plus the additive roadpack v0.1 `restrictions[]`, are pre-agreed (see both task files).

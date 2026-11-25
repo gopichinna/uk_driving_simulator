@@ -1,60 +1,145 @@
-# Tasks: Google Hydrogen, branch `hydrogen/osm-pipeline-rule-pack`
+# Tasks: Google Hydrogen, round 2, branch `hydrogen/content-layer`
 
-**Goal:** see `docs/08-parallel-work-plan.md` §2. Read `AGENTS.md` first. You own `pipeline/**`, `content/countries/**`, `content/cities/**`, the pipeline CI workflows, and verification edits to `docs/02-rules-catalogue.md`. Don't edit `core/**` or `unity/**`.
+**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 2 and §3 ownership), then this file. You own `pipeline/**`, `content/countries/**`, `content/cities/**`, `content/ATTRIBUTIONS.md`, the pipeline CI workflows, and edits to `docs/02-rules-catalogue.md`. Don't edit `core/**` or `unity/**`.
 
-Work through these in order. Tick each box when it's done and add a one-line note (commit hash or what changed).
+**Goal (round 2):** build the **content layer**: everything the game reads that isn't code. That means:
+- player-facing words for every rule, in plain English, in string tables ready for translation;
+- a UK driving glossary;
+- a GB traffic-sign catalogue;
+- lesson definitions for curriculum Stages 0–2;
+- a better Wolverhampton pack with free-drive routes.
 
-## A. Pipeline foundation
-- [x] A1. `pipeline/pyproject.toml` (Python 3.12+): deps `osmium` (pyosmium), `shapely`, `pyproj`, `jsonschema`, `pyyaml`; dev deps `pytest`, `ruff`. Package name `ltl_pipeline`.
-- [x] A2. `pipeline/ltl_pipeline/schema.py`: validate any road pack against `content/schemas/roadpack.v0.schema.json`. Add a test that `content/samples/roadpack.sample.json` validates.
-- [x] A3. `pipeline/ltl_pipeline/geo.py`: lat/lon → local metres (x = east, z = north) around a pack origin, using a local tangent plane or a pyproj transverse Mercator centred on the origin. Tests: round trip, and known distances within 0.5 m over 1 km.
-- [x] A4. `.github/workflows/pipeline.yml`: on PRs and `main`, run `ruff` and `pytest` in `pipeline/`, plus schema validation of everything in `content/`.
+Claude's branch `claude/town-centre-junctions` builds the town course, the debrief and the RoadPack loader at the same time, and will read these files.
 
-## B. OSM → RoadPack v0 for Wolverhampton
-- [x] B1. `pipeline/ltl_pipeline/fetch.py`: download the Geofabrik `west-midlands-latest.osm.pbf` into `pipeline/cache/` (gitignored), checksum it, and record the extract timestamp. No live Overpass calls in the app; one-off pipeline fetches are fine.
-- [x] B2. `content/cities/wolverhampton/config.yaml`: a **bbox of about 1 km²** covering Wolverhampton city centre inside or along the ring road (A4150), with at least one signalised junction, 2–3 T-junctions, a zebra or light-controlled crossing, and ideally one ring-road roundabout. **Exclude streets with West Midlands Metro tram tracks** (`railway=tram`); trams are out of scope. Record the bbox, the reason for it, and the excluded ways.
-- [x] B3. `pipeline/ltl_pipeline/extract.py`: clip the pbf to the bbox and keep `highway=*` drivable classes (motorway…residential, service optional). Keep these tags:
-  - `lanes`, `lanes:forward`, `lanes:backward`, `turn:lanes*`, `oneway`
-  - `maxspeed`, `junction=roundabout`
-  - `busway`, `bus:lanes`, `cycleway*`
-  - `highway=traffic_signals`, `crossing=*`, `crossing_ref=*` (zebra/pelican/puffin/toucan), `highway=crossing`
-  - `name`, `ref`
-- [x] B4. `pipeline/ltl_pipeline/build.py`: build the link-level graph:
-  - Split ways at junctions, and give nodes `kind` (junction / roundabout / mini_roundabout / crossing / end).
-  - Speed limits: use the tagged `maxspeed`, otherwise the GB defaults from `content/countries/gb/speed_defaults.yaml` (create it: built-up/restricted road 30 mph in England, single carriageway 60, dual carriageway 70; source Highway Code rule 124). Set `speedLimitSource`.
-  - Crossings (type from tags) and traffic signals.
-  - Zones: bus lanes with `:conditional` times when tagged; 20 mph zones.
-- [x] B5. **Confidence** (0–1) per link and per crossing, with a short `confidenceNotes`. For example: explicit `lanes` and `turn:lanes` = high; lanes inferred from road class = low; crossing type missing = low. Document the scoring in `pipeline/README.md`.
-- [x] B6. Output `content/cities/wolverhampton/roadpack.json` (pretty JSON, deterministic ordering) and make sure it validates. Include the `source` block: Geofabrik extract name, timestamp, bbox, licence `ODbL-1.0`, attribution `© OpenStreetMap contributors`. (953 nodes, 1079 links, 119 crossings, 73 signalised nodes, 7 roundabout links, 3 tram-street ways excluded.)
-- [x] B7. Tests built from tiny hand-made `.osm` XML fixtures in `pipeline/tests/fixtures/`, covering: a T-junction split, maxspeed default vs tagged, zebra detection, roundabout node kind, a tram-street exclusion, and deterministic output.
-- [x] B8. `pipeline/README.md`: how to run, what each stage does, the confidence rules, and the **ODbL obligations**. Derived packs are ODbL, and pack data must be offered on request, per `docs/04` §7.1.
+**Done when:**
+- `pytest` and `ruff` pass;
+- every new file validates against its schema;
+- the readability linter passes on all strings;
+- the CI workflows are green.
 
-## C. Machine-readable GB rule pack
-- [x] C1. `pipeline/ltl_pipeline/rulepack.py`: parse the tables in `docs/02-rules-catalogue.md` into entries that conform to `content/schemas/rulepack.v0.schema.json`, and write `content/countries/gb/rules.yaml`. It must be **regenerable**: re-running it gives the same file.
-- [x] C2. Fill the `implementation` field for rules that already exist in code. Find them by scanning `core/Rules.Core/*.cs` read-only for `RuleId`/`Rule*` string constants such as `"GB.RBT.GIVE_WAY_RIGHT"`. In CI, fail if code uses a rule id that isn't in `rules.yaml`. (Added `GB.RBT.WRONG_WAY` to `docs/02-rules-catalogue.md` to match `RoundaboutRule.cs`.)
-- [x] C3. Tests: every catalogue row appears in the output; ids are unique and match `^GB\.[A-Z]+\.[A-Z0-9_]+$`; `force` ∈ {MUST, should, info}; each `source.url` is an https gov.uk URL (or marked `UNVERIFIED`).
+Work through the sections in order. Tick each box and add a one-line note (commit hash or what changed).
 
-## D. Verification (web research, GOV.UK sources only)
-- [x] D1. Resolve every item in `docs/02` §5 "Open verification list":
-  - typical **stopping distances** (from the GOV.UK stopping-distances PDF);
-  - Highway Code **rule 160** (keep left) and **rule 129** (double white line exceptions);
-  - **rule 239** (door opening / Dutch reach);
-  - the **Traffic signs** page;
-  - **smart motorway** policy and naming;
-  - **penalty amounts** (red X, mobile phones);
-  - **DVSA practical-test fault categories**, from the public GOV.UK page;
-  - **rules 222–223** (buses).
+## Round 1 (done, merged in PR #1 as `1a0ebd2`)
+- Pipeline, Wolverhampton road pack, `rules.yaml` (130 rules), GOV.UK verification and CI.
 
-  Update the rows (✅/⚠️/❌ and notes) and record the date checked. If something can't be verified, leave it `UNVERIFIED` and say why. **Don't guess.** (All 7 research items verified against GOV.UK on 2026-11-25.)
-- [x] D2. `.github/workflows/highway-code-watch.yml`: a weekly job that fetches `https://www.gov.uk/guidance/the-highway-code/updates`, compares the newest entry date with `content/countries/gb/highway-code-version.txt`, and opens a GitHub issue if it changed.
+## A. Housekeeping
+- [ ] A1. Commit `pipeline/uv.lock`. CI installs with `uv sync --frozen` (or the equivalent), so builds are reproducible.
+- [ ] A2. In CI, regenerate `content/countries/gb/rules.yaml` from `docs/02` and fail if the result differs from the committed file.
+- [ ] A3. Align `docs/02` with the **no observation busywork** decision (`AGENTS.md` §4, rule 7). For the OBS / SIG / lane-change rules, rewrite the **Detection** column so it judges outcomes, not mirror-check inputs. For example:
+  - "a vehicle was in your blind spot when you moved";
+  - "a following car had to brake hard (> 3 m/s²)";
+  - "you signalled less than 2 s before moving".
 
-## E. Hand-off
-- [x] E1. Update `docs/08` §6 with a dated note of what was delivered and any contract questions.
-- [ ] E2. Open a PR to `main` titled "Hydrogen: OSM pipeline, Wolverhampton road pack, GB rule pack".
+  Keep the rule ids, the Highway Code sources and the force unchanged. Regenerate `rules.yaml`.
+
+## B. Player-facing strings (English, CEFR B1, ready for translation)
+See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no hard-coded text.
+- [ ] B1. `content/schemas/strings.v0.schema.json` (new file, pre-agreed). It defines **rule strings**, keyed by `rule_id`:
+
+  | Field | What it holds |
+  |---|---|
+  | `title` | ≤ 5 words |
+  | `fault` | what happened, ≤ 12 words |
+  | `why` | ≤ 2 sentences |
+  | `tip` | 1 sentence |
+  | `good` | praise when done well, 1 sentence, optional |
+
+  Placeholders use ICU MessageFormat, e.g. `{speedMph}`, `{limitMph}`, `{gapS}`. It also defines **glossary entries**: `id`, `term`, `definition` (≤ 2 sentences), `relatedRules[]`, optional `kmhHint`.
+- [ ] B2. `content/countries/gb/strings/en/rules.json`: strings for **every rule with phase `P` first**, then phase `M`.
+  - The wording must keep the legal force: write "must" only where `force` is MUST or MUST NOT.
+  - Don't repeat the Highway Code number in the text; the game takes it from `rules.yaml`.
+  - All text is our own paraphrase. Don't copy Highway Code sentences word for word.
+- [ ] B3. `content/countries/gb/strings/en/glossary.json`: at least 40 terms, including:
+  - give way, nearside, offside, dual carriageway, national speed limit, built-up area;
+  - zig-zags, box junction, advanced stop line, filter arrow, hard shoulder, red X;
+  - zebra / pelican / puffin / toucan crossing, mini-roundabout, MSM, blind spot, H2 (pedestrian priority at junctions).
+
+  Speed terms get a `kmhHint` (e.g. "30 mph ≈ 48 km/h").
+- [ ] B4. `pipeline/ltl_pipeline/readability.py` and a CI step, which fail when any string breaks these rules:
+  - a sentence is over 15 words;
+  - it uses a phrase from a banned-idiom list (put the list in `content/countries/gb/strings/en/banned_phrases.txt`);
+  - it uses an abbreviation that isn't in the glossary;
+  - a rule exists in `rules.yaml` with phase `P` but has no strings.
+
+  Tests cover each failure type.
+
+## C. GB traffic-sign catalogue
+- [ ] C1. **Check the licence first.** Find, on GOV.UK, the licence for DfT traffic sign images (the "traffic signs image database" or the Traffic Signs Regulations and General Directions (TSRGD) diagrams). Record the URL and the exact licence (e.g. OGL v3.0 or Crown copyright terms). **If you can't confirm it, write `UNVERIFIED`, don't download images, and say why.**
+- [ ] C2. `content/schemas/signs.v0.schema.json` (new file, pre-agreed) and `content/countries/gb/signs.yaml`. Each entry has:
+  - `id`, `name`, `tsrgdDiagram` (number), `category` (regulatory / warning / information);
+  - `meaning` (plain English, ≤ 2 sentences);
+  - `relatedRules[]`, `sourceUrl`, `image` (path, or null).
+
+  Start with what Stages 0–2 and the town course need:
+  - 20 and 30 limit roundels, the national speed limit sign, a 20 zone entry;
+  - give way, stop, no entry, one-way, ahead only, turn left/right only;
+  - traffic signals ahead, pedestrian crossing ahead, school / children, roundabout ahead;
+  - bus lane and cycle lane signs.
+- [ ] C3. If C1 confirms the licence allows it: put the images (SVG preferred) in `content/countries/gb/signs/`, and add the attribution to `content/ATTRIBUTIONS.md` (new file; also list OSM ODbL and Highway Code OGL there).
+
+## D. Lessons for Stages 0–2 (data only)
+See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Lessons 1–3 are the **free tier**.
+- [ ] D1. `content/schemas/lesson.v0.schema.json` (new file, pre-agreed). A lesson has:
+  - `id`, `stage`, `order`, `title`, `freeTier` (bool);
+  - `learnCard`: `blocks[]` of plain text, `ruleIds[]`, and a `govUkUrl`;
+  - `scenarios[]`, each with:
+    - `id`, `course`, `anchor`, `goal` (one sentence);
+    - `rulesJudged[]` (rule ids);
+    - `variations` (`trafficDensity` [min, max], `cyclistShare`, `pedestrianIntent` ∈ {wait, cross, random}, `timeOfDay`);
+    - `passCriteria` (e.g. `{ "maxMinor": 2, "maxSerious": 0 }`);
+  - `recap` (2–3 lines).
+- [ ] D2. `content/lessons/gb/*.json`: about 10 lessons:
+  - **Stage 0**, lessons 1–3, the free tier: keeping left and the controls; moving off and MSM; speed limits;
+  - **Stage 1**: give way at T-junctions; pedestrians at junctions (H2); road position after turning;
+  - **Stage 2**: traffic lights and amber; advanced stop lines; zebra crossings and zig-zags; box junctions.
+
+  Use only rule ids that exist in `rules.yaml`. Use only these `course` / `anchor` values (Claude is building them):
+
+  | course | anchors |
+  |---|---|
+  | `town` | `crossroads_signals`, `tjunction_north`, `tjunction_south`, `zebra`, `box_junction`, `school_street`, `start` |
+  | `roundabout` | `start` |
+  | `two_lane_roundabout` | `start` |
+  | `dual_carriageway` | `start` |
+
+- [ ] D3. Tests:
+  - every lesson validates;
+  - rule ids exist;
+  - course / anchor pairs are in the allowed list;
+  - exactly lessons 1–3 have `freeTier: true`;
+  - learn-card text passes the readability linter.
+
+## E. Wolverhampton pack v0.1 and free-drive routes
+- [ ] E1. `content/cities/wolverhampton/QA.md`, generated by the pipeline. It reports:
+  - links by confidence band;
+  - links using a default speed limit;
+  - crossings with an unknown type;
+  - disconnected components;
+  - very short links (< 2 m).
+
+  Fix the pipeline issues it shows.
+- [ ] E2. **Turn restrictions** (pre-agreed additive schema change, so roadpack format **v0.1**):
+  - add an optional top-level `restrictions[]`: `{ id, type, fromLink, viaNode, toLink, confidence }`, built from OSM `type=restriction` relations (`no_left_turn`, `no_right_turn`, `no_u_turn`, `only_straight_on`, …);
+  - bump `packFormatVersion` to `0.1`;
+  - **don't rename or remove any existing field**;
+  - keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer;
+  - update `content/samples/roadpack.sample.json` with one example restriction.
+- [ ] E3. `content/schemas/route.v0.schema.json` (new file, pre-agreed) and `content/cities/wolverhampton/routes.json`. Make 3 free-drive routes of 3–6 minutes each. Each route has:
+  - an `id` and a `name`;
+  - a `description` (one line);
+  - `links[]`: ordered link ids, each with a direction;
+  - `start` (link + offset metres);
+  - a `features[]` summary (signals, zebra, roundabout, bus lane).
+
+  Choose routes that together cover a signalised junction, a zebra or light-controlled crossing, and a roundabout. A validator test checks that each route is connected, never drives the wrong way down a one-way link and never breaks a turn restriction.
+
+## F. Hand-off
+- [ ] F1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: content layer (strings, glossary, signs, lessons, routes)". `gh` is installed on the Mac.
 
 ## Requests from Claude
-- The C# loader on `claude/town-centre-junctions` reads `geometry` as `[[x, z], …]` in metres and `speedLimitMph` as an integer. Please keep both exactly as in the schema.
-- If you need a schema change, add it here **and** in `docs/tasks/claude-branch.md` → "Requests from Hydrogen", and don't change `content/schemas/` until it's agreed.
+- The town course uses exactly the anchors listed in D2. Claude will tell you here if any change.
+- The C# loader reads the roadpack `v0.1` `restrictions[]` field as optional, so v0 packs still load.
+- New schema files under `content/schemas/` named in B1, C2, D1 and E3 are **pre-agreed**; create them on your branch. Any other schema change needs a note here and in `docs/tasks/claude-branch.md` first.
 
 ## Requests from Hydrogen (to Claude)
 *(none yet)*
