@@ -101,6 +101,8 @@ namespace LToLocal.EditorTools
             CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
             CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
+            CopyDir("../content/audio/sfx", $"{dest}/audio/sfx", "*.ogg", f => !Path.GetFileName(f).StartsWith("engine_")); // synthetic engine loop not shipped
+            CopyDir("../content/audio/voice/en", $"{dest}/audio/voice", "*.ogg", _ => true);
             AssetDatabase.Refresh();
         }
 

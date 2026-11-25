@@ -75,6 +75,7 @@ namespace LToLocal.Game
             _mirrorHousings = housings.ToArray();
             var interior = car.Find("Interior");
             if (interior != null) _interior = interior.gameObject;
+            SetUpAudio();
         }
 
         private void Start()
@@ -119,6 +120,7 @@ namespace LToLocal.Game
                 _cyclistRule.OnFrame(frame, _roadUsers, _events);
                 _gapRule.OnFrame(frame, _roadUsers, _events);
                 if (feedback != null) foreach (var e in _events) feedback.Push(e);
+                foreach (var e in _events) RuleAudio(e);
                 _driveEvents.AddRange(_events);
                 RecordStep();
                 LessonStep(_clock.StepSeconds);
@@ -134,6 +136,7 @@ namespace LToLocal.Game
 
             UpdateIndicator();
             bool blink = Mathf.Repeat(Time.time, 0.8f) < 0.4f;
+            IndicatorAudio(blink);
             foreach (var l in playerIndicatorLeft) l.SetActive(_indicator < 0 && blink);
             foreach (var l in playerIndicatorRight) l.SetActive(_indicator > 0 && blink);
             _course.Render(a, blink);

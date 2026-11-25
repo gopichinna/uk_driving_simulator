@@ -296,6 +296,11 @@ namespace LToLocal.Game
             GUI.Label(new Rect(x, y, w, H * 0.06f), Ui.Get("settings.units.hint", "UK roads use mph (30 mph ≈ 48 km/h)."), _textStyle);
             y += H * 0.12f;
 
+            float tw = W * 0.2f, th = H * 0.08f;
+            if (GUI.Button(new Rect(x, y, tw, th), SoundOn ? "Sounds: on" : "Sounds: off", _buttonStyle)) { SoundOn = !SoundOn; ApplySoundSetting(); }
+            if (GUI.Button(new Rect(x + tw + W * 0.02f, y, tw, th), VoiceOn ? "Coach voice: on" : "Coach voice: off", _buttonStyle)) VoiceOn = !VoiceOn;
+            y += th + H * 0.04f;
+
             float bw = W * 0.26f, bh = H * 0.09f;
             string resetLabel = _confirmReset ? Ui.Get("settings.reset_progress.confirm", "Clear all saved progress?") : Ui.Get("settings.reset_progress.label", "Reset progress");
             if (GUI.Button(new Rect(x, y, bw * (_confirmReset ? 2f : 1f), bh), resetLabel, _buttonStyle))
@@ -312,8 +317,11 @@ namespace LToLocal.Game
         private static void ResetProgress()
         {
             float sens = TouchControls.SteeringSensitivity;
+            bool sound = SoundOn, voice = VoiceOn;
             PlayerPrefs.DeleteAll();
             TouchControls.SteeringSensitivity = sens;
+            SoundOn = sound;
+            VoiceOn = voice;
             LessonSession.ResetAll();
         }
     }
