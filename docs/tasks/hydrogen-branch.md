@@ -40,12 +40,12 @@ Review of round 5 found two problems:
 - [x] A2. Generate a **contact sheet** (`content/lessons/gb/diagrams/_contact_sheet.png`, all 18 diagrams in a grid) and **look at it** yourself. In your PR description, list each diagram with one line: "checked: path clockwise / left lane / markings OK". Add tests for what code can check: path points never fall inside island polygons; for left-hand traffic, path points sit to the left of each road's centreline. (`_contact_sheet.png` visually inspected + `pipeline/tests/test_diagrams.py`.)
 
 ## B. Scenarios for lessons 11–18
-- [ ] B1. Extend `scenario.v0` **additively** (pre-agreed) with two event types for courses without town anchors:
+- [x] B1. Extend `scenario.v0` **additively** (pre-agreed) with two event types for courses without town anchors: (`scenario.v0.schema.json`: `take_exit` and `finish_after_s`.)
   - `take_exit` `{ exitNumber: 1–4 }`: the roundabout exit the player must take. The scenario ends when they leave by it.
   - `finish_after_s` `{ seconds }`: the scenario ends after this many seconds of driving.
 
   Use them together with the existing `traffic_density`, `cyclist_ahead` (anchor `start`) and `finish_at`.
-- [ ] B2. Write a scenario file for every scenario in lessons 11–18, and extend the C3 tests from round 5 to cover them.
+- [x] B2. Write a scenario file for every scenario in lessons 11–18, and extend the C3 tests from round 5 to cover them. (All 36 scenario files across lessons 1–18 validated by `test_scenarios.py`.)
   - **Roundabout lessons:** vary `take_exit` across the scenarios (1st, 2nd, 3rd) so lane choice and signals are practised.
   - **Dual carriageway:** use `finish_after_s`.
 
