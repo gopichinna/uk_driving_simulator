@@ -33,6 +33,7 @@
     "links": { "type": "array", "items": { "$ref": "#/$defs/link" } },
     "crossings": { "type": "array", "items": { "$ref": "#/$defs/crossing" }, "default": [] },
     "zones": { "type": "array", "items": { "$ref": "#/$defs/zone" }, "default": [] },
+    "restrictions": { "type": "array", "items": { "$ref": "#/$defs/restriction" }, "default": [] },
     "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
   },
   "$defs": {
@@ -107,6 +108,20 @@
         "polygon": { "type": "array", "items": { "$ref": "#/$defs/point" }, "minItems": 3 },
         "hours": { "type": "string" },
         "confidence": { "$ref": "#/$defs/confidence" }
+      }
+    },
+    "restriction": {
+      "type": "object",
+      "required": ["id", "type", "fromLink", "viaNode", "toLink", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "type": "string" },
+        "fromLink": { "type": "string" },
+        "viaNode": { "type": "string" },
+        "toLink": { "type": "string" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "osmRelationId": { "type": "integer" }
       }
     }
   }

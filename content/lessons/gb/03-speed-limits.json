@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s0-03-speed-limits",
+  "stage": 0,
+  "order": 3,
+  "title": "Speed limits",
+  "freeTier": true,
+  "learnCard": {
+    "blocks": [
+      "You must never drive faster than the road's speed limit.",
+      "Street lights with no signs usually mean 30 mph in England.",
+      "Slow down below the limit near schools and parked cars."
+    ],
+    "ruleIds": ["GB.SPD.OVER_LIMIT", "GB.SPD.BUILT_UP", "GB.SPD.APPROPRIATE"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+  },
+  "scenarios": [
+    {
+      "id": "s0_03_school_street",
+      "course": "town",
+      "anchor": "school_street",
+      "goal": "Stay within the speed limit and slow down past the school.",
+      "rulesJudged": ["GB.SPD.OVER_LIMIT", "GB.SPD.APPROPRIATE", "GB.SCH.SLOW"],
+      "variations": {
+        "trafficDensity": [0.2, 0.4],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    },
+    {
+      "id": "s0_03_dual_40",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Hold a steady speed within the 40 mph limit.",
+      "rulesJudged": ["GB.SPD.OVER_LIMIT", "GB.GAP.TWO_SECOND"],
+      "variations": {
+        "trafficDensity": [0.3, 0.5],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 2, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "The speed limit is a maximum, not a target.",
+    "Always leave yourself enough room to stop in what you see."
+  ]
+}

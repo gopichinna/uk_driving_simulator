@@ -18,7 +18,8 @@ rules:
   severity: D → S if a following vehicle must brake (`other_decel_req` > 3 m/s²)
   phase: P
   verifiedOn: '2026-11-25'
-  detection: Moving from parked to >2 mph without `mirror_offside` + `blindspot_offside` in the previous 5 s
+  detection: Moving from parked to > 2 mph while a vehicle is in your offside blind spot or approaching from behind (`other_decel_req`
+    > 3 m/s²), or without signalling when traffic is near
   teachingMoment: '"Traffic comes from behind on your right. Check over your right shoulder."'
 - id: GB.OBS.MSM
   group: A. Observation, signalling, road position (OBS / SIG / POS)
@@ -33,7 +34,8 @@ rules:
   severity: D → S on conflict
   phase: P
   verifiedOn: '2026-11-25'
-  detection: Indicator on, lane change, or braking > 2.5 m/s² with no relevant mirror check in the previous 3 s
+  detection: Lane change or braking > 2.5 m/s² that forces a following vehicle to brake (`other_decel_req` > 3 m/s²) or creates
+    a conflict
   teachingMoment: Replay highlights the vehicle that was in your mirror
 - id: GB.OBS.LANE_CHANGE
   group: A. Observation, signalling, road position (OBS / SIG / POS)
@@ -48,7 +50,8 @@ rules:
   severity: D → S if another vehicle must brake; X if a collision is only avoided by AI emergency braking
   phase: M
   verifiedOn: '2026-11-25'
-  detection: Lane-boundary crossing without mirror + blind-spot check in 3 s, or signal < 1.5 s before crossing
+  detection: Lane-boundary crossing while a vehicle is in your blind spot, forcing another vehicle to brake, or signal < 1.5
+    s before crossing
   teachingMoment: Shows the car hidden in the blind spot
   implementation:
     status: implemented
@@ -103,7 +106,7 @@ rules:
   severity: D → S on conflict
   phase: V1
   verifiedOn: '2026-11-25'
-  detection: 'Scripted: an AI flashes, and the player proceeds without an observation check'
+  detection: 'Scripted: an AI flashes, and the player pulls out into a conflict with another road user'
   teachingMoment: Big habit gap for persona P1
 - id: GB.SIG.HORN
   group: A. Observation, signalling, road position (OBS / SIG / POS)

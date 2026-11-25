@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s2-07-traffic-lights-amber",
+  "stage": 2,
+  "order": 7,
+  "title": "Traffic lights and amber",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "You must stop behind the white line on red.",
+      "Amber means stop unless you are too close to stop safely.",
+      "Wait for green on red and amber; never turn on red."
+    ],
+    "ruleIds": ["GB.TL.RED", "GB.TL.AMBER", "GB.TL.RED_AMBER", "GB.TL.NO_TURN_ON_RED"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic"
+  },
+  "scenarios": [
+    {
+      "id": "s2_07_signals_stop",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Stop cleanly behind the white line on amber and red.",
+      "rulesJudged": ["GB.TL.RED", "GB.TL.AMBER", "GB.TL.RED_AMBER"],
+      "variations": {
+        "trafficDensity": [0.3, 0.5],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    },
+    {
+      "id": "s2_07_signals_left",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Wait on red even when turning left at the crossroads.",
+      "rulesJudged": ["GB.TL.RED", "GB.TL.NO_TURN_ON_RED", "GB.SIG.TIMELY"],
+      "variations": {
+        "trafficDensity": [0.3, 0.6],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "In the UK, there is no turning on a red light.",
+    "Anticipate green lights turning amber so you can brake smoothly."
+  ]
+}

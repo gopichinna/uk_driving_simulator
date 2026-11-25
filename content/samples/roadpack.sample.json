@@ -46,5 +46,8 @@
   ],
   "zones": [
     { "id": "z_box", "kind": "box_junction", "polygon": [[-6, -6], [6, -6], [6, 6], [-6, 6]], "confidence": 0.6 }
+  ],
+  "restrictions": [
+    { "id": "r_no_right_south_east", "type": "no_right_turn", "fromLink": "l_south", "viaNode": "n_junction", "toLink": "l_east", "confidence": 0.9 }
   ]
 }
