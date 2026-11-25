@@ -52,7 +52,7 @@ def test_every_sfx_has_licence_and_valid_duration() -> None:
     licences_text = LICENCES_MD.read_text(encoding="utf-8")
     assert "CC-BY-NC" not in licences_text.replace("No CC-BY-NC", "")
     manifest = json.loads(SFX_MANIFEST.read_text(encoding="utf-8"))
-    assert len(manifest["entries"]) >= 12
+    assert len(manifest["entries"]) >= 13
     assert not list(SFX_MANIFEST.parent.glob("*.ogg")), "Stale Opus .ogg files remain"
     for entry in manifest["entries"]:
         clip = SFX_MANIFEST.parent / entry["file"]

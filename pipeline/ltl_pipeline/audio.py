@@ -137,51 +137,12 @@ def _write_pcm_wav(path: Path, samples: np.ndarray, sr: int = SAMPLE_RATE) -> No
 
 
 def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
-    """Return {filename: (float32_samples, is_ambience)}."""
+    """Return {filename: (float32_samples, is_ambience)} for UI chimes/clicks only."""
     sr = SAMPLE_RATE
-    rng = np.random.default_rng(42)
     out: dict[str, tuple[np.ndarray, bool]] = {}
 
     def t_arr(dur: float) -> np.ndarray:
         return np.linspace(0.0, dur, int(sr * dur), endpoint=False)
-
-    # Indicator relay clicks (on slightly brighter than off)
-    t_clk = t_arr(0.06)
-    out["indicator_on.wav"] = (
-        np.exp(-t_clk * 90.0)
-        * (np.sin(2 * np.pi * 1400 * t_clk) + 0.5 * np.sin(2 * np.pi * 2800 * t_clk)),
-        False,
-    )
-    out["indicator_off.wav"] = (
-        np.exp(-t_clk * 100.0)
-        * (np.sin(2 * np.pi * 950 * t_clk) + 0.4 * np.sin(2 * np.pi * 1900 * t_clk)),
-        False,
-    )
-
-    # Engine loops are sourced from recorded CC0 WAVs in pipeline/cache/sfx/
-    # (see content/audio/LICENCES.md — not synthesised).
-
-    # Short car horn (dual tone 400 + 500 Hz, 0.35 s)
-    t_hrn = t_arr(0.35)
-    env_hrn = np.minimum(1.0, t_hrn / 0.02) * np.minimum(1.0, (0.35 - t_hrn) / 0.03)
-    out["horn.wav"] = (
-        env_hrn * (0.6 * np.sin(2 * np.pi * 400 * t_hrn) + 0.5 * np.sin(2 * np.pi * 500 * t_hrn)),
-        False,
-    )
-
-    # Tyre squeal (filtered chirp + noise, 0.55 s)
-    t_sq = t_arr(0.55)
-    env_sq = np.minimum(1.0, t_sq / 0.04) * np.exp(-t_sq * 3.2)
-    freq_sq = 1350.0 + 250.0 * np.sin(2 * np.pi * 9.0 * t_sq)
-    out["tyre_squeal.wav"] = (
-        env_sq * (0.7 * np.sin(2 * np.pi * freq_sq * t_sq) + 0.3 * rng.normal(0.0, 1.0, len(t_sq))),
-        False,
-    )
-
-    # UK puffin/pelican crossing beep (2.5 kHz, 0.14 s)
-    t_bp = t_arr(0.14)
-    env_bp = np.minimum(1.0, t_bp / 0.008) * np.minimum(1.0, (0.14 - t_bp) / 0.012)
-    out["crossing_beep.wav"] = (env_bp * np.sin(2 * np.pi * 2500 * t_bp), False)
 
     # UI click
     t_ui = t_arr(0.04)
@@ -205,27 +166,30 @@ def _build_sfx_waveforms() -> dict[str, tuple[np.ndarray, bool]]:
         s_fl[mask] += np.exp(-dt[mask] * 8.0) * np.sin(2 * np.pi * freq * dt[mask])
     out["chime_fault.wav"] = (s_fl, False)
 
-    # Light town ambience loop (4.0 s pink-ish filtered rumble)
-    t_amb = t_arr(4.0)
-    raw_noise = rng.normal(0.0, 1.0, len(t_amb))
-    # Smooth moving-average lowpass for soft distant traffic hum
-    kernel = np.ones(45) / 45.0
-    hum = np.convolve(raw_noise, kernel, mode="same") + 0.08 * np.sin(2 * np.pi * 48.0 * t_amb)
-    out["ambience_town.wav"] = (hum, True)
-
     return out
 
 
 def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
-    """Synthesise CC0 sound effects (-16 LUFS) and process recorded engine loops."""
+    """Process recorded CC0 engine/car/street clips and UI chimes to 44.1 kHz mono WAV."""
     out_dir.mkdir(parents=True, exist_ok=True)
     waveforms = _build_sfx_waveforms()
     manifest_items: list[dict[str, Any]] = []
+    cache_dir = REPO_ROOT / "pipeline" / "cache" / "sfx"
 
     recorded_engines = {
-        "engine_idle.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_0.wav", 3),
-        "engine_low.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_2_0.wav", 4),
-        "engine_mid.wav": (REPO_ROOT / "pipeline" / "cache" / "sfx" / "loop_4_0.wav", 4),
+        "engine_idle.wav": (cache_dir / "loop_0.wav", 3),
+        "engine_low.wav": (cache_dir / "loop_2_0.wav", 4),
+        "engine_mid.wav": (cache_dir / "loop_4_0.wav", 4),
+    }
+    # (src_file, ss_offset, duration_s, target_lufs, is_loop)
+    recorded_clips = {
+        "engine_start.wav": (cache_dir / "engine_start.mp3", 0.0, 2.5, -16, False),
+        "indicator_on.wav": (cache_dir / "blinkers.mp3", 0.35, 0.14, -16, False),
+        "indicator_off.wav": (cache_dir / "blinkers.mp3", 0.72, 0.14, -16, False),
+        "horn.wav": (cache_dir / "horn.mp3", 0.25, 0.65, -16, False),
+        "tyre_squeal.wav": (cache_dir / "tyre_squeal.mp3", 0.5, 1.2, -16, False),
+        "crossing_beep.wav": (cache_dir / "crossing_beep.mp3", 12.0, 0.8, -16, False),
+        "ambience_town.wav": (cache_dir / "ambience_town.mp3", 10.0, 4.0, -23, True),
     }
 
     with tempfile.TemporaryDirectory() as tmp:
@@ -255,6 +219,41 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
                     "durationS": dur,
                     "targetLufs": -16,
                     "loop": True,
+                }
+            )
+        for fname, (src_mp3, ss, seg_dur, target_lufs, is_loop) in sorted(recorded_clips.items()):
+            out_wav = out_dir / fname
+            trimmed_wav = tmp_dir / f"{fname}.trim.wav"
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-loglevel",
+                    "error",
+                    "-ss",
+                    str(ss),
+                    "-t",
+                    str(seg_dur),
+                    "-i",
+                    str(src_mp3),
+                    str(trimmed_wav),
+                ],
+                check=True,
+            )
+            fade_out = max(0.01, seg_dur - 0.02)
+            af = (
+                f"afade=t=in:st=0:d=0.01,"
+                f"afade=t=out:st={fade_out}:d=0.02,"
+                f"loudnorm=I={target_lufs}:TP=-1.5:LRA=7"
+            )
+            dur = _to_wav(trimmed_wav, out_wav, af)
+            manifest_items.append(
+                {
+                    "key": Path(fname).stem,
+                    "file": fname,
+                    "durationS": dur,
+                    "targetLufs": target_lufs,
+                    "loop": is_loop,
                 }
             )
         for fname, (samples, is_ambience) in sorted(waveforms.items()):

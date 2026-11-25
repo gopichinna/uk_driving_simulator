@@ -31,6 +31,48 @@
       "loop": true
     },
     {
+      "key": "crossing_beep",
+      "file": "crossing_beep.wav",
+      "durationS": 0.8,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "engine_start",
+      "file": "engine_start.wav",
+      "durationS": 2.5,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "horn",
+      "file": "horn.wav",
+      "durationS": 0.65,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "indicator_off",
+      "file": "indicator_off.wav",
+      "durationS": 0.14,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "indicator_on",
+      "file": "indicator_on.wav",
+      "durationS": 0.14,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "tyre_squeal",
+      "file": "tyre_squeal.wav",
+      "durationS": 1.2,
+      "targetLufs": -16,
+      "loop": false
+    },
+    {
       "key": "chime_fault",
       "file": "chime_fault.wav",
       "durationS": 0.45,
@@ -40,41 +82,6 @@
     {
       "key": "chime_success",
       "file": "chime_success.wav",
-      "durationS": 0.55,
-      "targetLufs": -16,
-      "loop": false
-    },
-    {
-      "key": "crossing_beep",
-      "file": "crossing_beep.wav",
-      "durationS": 0.14,
-      "targetLufs": -16,
-      "loop": false
-    },
-    {
-      "key": "horn",
-      "file": "horn.wav",
-      "durationS": 0.35,
-      "targetLufs": -16,
-      "loop": false
-    },
-    {
-      "key": "indicator_off",
-      "file": "indicator_off.wav",
-      "durationS": 0.06,
-      "targetLufs": -16,
-      "loop": false
-    },
-    {
-      "key": "indicator_on",
-      "file": "indicator_on.wav",
-      "durationS": 0.06,
-      "targetLufs": -16,
-      "loop": false
-    },
-    {
-      "key": "tyre_squeal",
-      "file": "tyre_squeal.wav",
       "durationS": 0.55,
       "targetLufs": -16,
       "loop": false
