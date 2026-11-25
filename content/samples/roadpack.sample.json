@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.2",
+  "packFormatVersion": "0.3",
   "packId": "sample-t-junction",
   "displayName": "Sample: T-junction with traffic lights and a zebra",
   "country": "GB",
@@ -23,6 +23,7 @@
       "id": "l_south", "from": "n_south", "to": "n_junction", "roadClass": "secondary", "name": "Sample Road",
       "oneway": false, "geometry": [[0, -120], [0, -60], [0, 0]],
       "speedLimitMph": 30, "speedLimitSource": "default", "lanesForward": 1, "lanesBackward": 1,
+      "widthM": 6.5, "widthSource": "estimated", "sidewalk": "both", "sidewalkSource": "default",
       "confidence": 0.9, "confidenceNotes": "hand-authored"
     },
     {

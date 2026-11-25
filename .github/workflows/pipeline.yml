@@ -36,3 +36,7 @@ jobs:
         run: |
           uv run python -m ltl_pipeline.pseudolocale
           git diff --exit-code ../content/countries/gb/strings/en-XA/
+      - name: Verify rule_index.json is up to date
+        run: |
+          uv run python -m ltl_pipeline.rule_index
+          git diff --exit-code ../content/lessons/gb/rule_index.json

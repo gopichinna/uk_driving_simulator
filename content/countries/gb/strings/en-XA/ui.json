@@ -21,6 +21,8 @@
     "debrief.result.pass": "[Práctícé páss ~~~~~~]",
     "debrief.result.fail": "[Práctícé fáíl ~~~~~~]",
     "debrief.result.note": "[Práctícé féédbáck ónly. Thís ís nót án óffícíál drívíng tést. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+    "debrief.drive_again": "[Drívé ágáín ~~~~~]",
+    "debrief.keep_driving": "[Kéép drívíng ~~~~~]",
     "settings.title": "[Séttíngs ~~~~]",
     "settings.steering.label": "[Stééríng sénsítívíty ~~~~~~~~]",
     "settings.steering.hint": "[Híghér válúés máké stééríng réáct fástér. ~~~~~~~~~~~~~~~~~]",

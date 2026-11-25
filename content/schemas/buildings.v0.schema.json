@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/buildings.v0.schema.json",
+  "title": "L to Local City Buildings v0",
+  "description": "Simplified anticlockwise building footprints in local metres from OSM. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["buildingsFormatVersion", "packId", "origin", "source", "buildings"],
+  "additionalProperties": false,
+  "properties": {
+    "buildingsFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "origin": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind", "licence", "attribution"],
+      "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["osm", "hand-authored"] },
+        "extract": { "type": "string" },
+        "extractTimestamp": { "type": "string", "format": "date-time" },
+        "bbox": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4 },
+        "licence": { "type": "string" },
+        "attribution": { "type": "string" },
+        "generator": { "type": "string" }
+      }
+    },
+    "buildings": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/building" }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "building": {
+      "type": "object",
+      "required": ["id", "footprint", "heightM", "heightSource", "kind", "osmId"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "footprint": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/point" },
+          "minItems": 3
+        },
+        "heightM": { "type": "number", "minimum": 1 },
+        "heightSource": { "enum": ["tagged", "levels", "default"] },
+        "kind": { "enum": ["shop", "house", "office", "church", "civic", "other"] },
+        "name": { "type": "string" },
+        "osmId": { "type": "integer" }
+      }
+    }
+  }
+}

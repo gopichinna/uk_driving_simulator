@@ -18,6 +18,7 @@ DEFAULT_BANNED = (
     REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "banned_phrases.txt"
 )
 DEFAULT_RULES_YAML = REPO_ROOT / "content" / "countries" / "gb" / "rules.yaml"
+DEFAULT_ROUTES_JSON = REPO_ROOT / "content" / "cities" / "wolverhampton" / "routes.json"
 
 # Match uppercase abbreviations (2+ chars, or H1/H2/H3) outside ICU {placeholders}
 ABBREV_RE = re.compile(r"\b(?:[A-Z]{2,}|H[1-3])\b")
@@ -186,14 +187,37 @@ def lint_ui_strings(
     return errors
 
 
+def lint_route_instructions(
+    routes_json: dict[str, Any],
+    glossary_data: dict[str, Any],
+    banned_phrases: list[str],
+) -> list[str]:
+    """Check sat-nav instruction text for readability and glossary abbreviations."""
+    errors: list[str] = []
+    allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
+    for route in routes_json.get("routes", []):
+        rid = route.get("id", "<unknown>")
+        for idx, inst in enumerate(route.get("instructions", [])):
+            errors.extend(
+                check_text_readability(
+                    inst["text"],
+                    context=f"routes.{rid}.instructions[{idx}]",
+                    banned_phrases=banned_phrases,
+                    allowed_abbrevs=allowed_abbrevs,
+                )
+            )
+    return errors
+
+
 def lint_all_strings(
     rules_json_path: Path = DEFAULT_STRINGS_RULES,
     glossary_path: Path = DEFAULT_GLOSSARY,
     rules_yaml_path: Path = DEFAULT_RULES_YAML,
     banned_path: Path = DEFAULT_BANNED,
     ui_json_path: Path = DEFAULT_STRINGS_UI,
+    routes_json_path: Path = DEFAULT_ROUTES_JSON,
 ) -> list[str]:
-    """Run all readability checks on GB English strings, UI strings, and glossary."""
+    """Run all readability checks on GB English strings, UI strings, routes, and glossary."""
     rules_json = json.loads(rules_json_path.read_text(encoding="utf-8"))
     glossary_data = json.loads(glossary_path.read_text(encoding="utf-8"))
     rules_yaml = yaml.safe_load(rules_yaml_path.read_text(encoding="utf-8"))
@@ -204,6 +228,9 @@ def lint_all_strings(
     if ui_json_path.is_file():
         ui_json = json.loads(ui_json_path.read_text(encoding="utf-8"))
         errors.extend(lint_ui_strings(ui_json, glossary_data, banned))
+    if routes_json_path.is_file():
+        routes_json = json.loads(routes_json_path.read_text(encoding="utf-8"))
+        errors.extend(lint_route_instructions(routes_json, glossary_data, banned))
     return errors
 
 
