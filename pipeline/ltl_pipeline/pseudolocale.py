@@ -62,7 +62,7 @@ def transform_strings_doc(data: dict[str, Any]) -> dict[str, Any]:
                 item["kmhHint"] = pseudolocalise(entry["kmhHint"])
             new_terms.append(item)
         result["terms"] = new_terms
-    elif kind == "ui":
+    elif kind in ("ui", "voice"):
         result["entries"] = {k: pseudolocalise(v) for k, v in data["entries"].items()}
 
     return result

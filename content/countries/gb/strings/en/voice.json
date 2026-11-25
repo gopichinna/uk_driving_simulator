@@ -1,0 +1,33 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en",
+  "kind": "voice",
+  "entries": {
+    "voice.lesson.start": "Keep left, scan ahead, and drive smoothly.",
+    "voice.lesson.passed": "Well done, you passed this lesson cleanly.",
+    "voice.lesson.try_again": "Let us review what happened and try again.",
+    "voice.GB.OBS.LANE_CHANGE.fault": "Check your blind spot and signal before changing lanes.",
+    "voice.GB.OBS.LANE_CHANGE.good": "Nice smooth lane change with a clear gap.",
+    "voice.GB.SIG.TIMELY.fault": "Signal earlier so other drivers have time to react.",
+    "voice.GB.SIG.TIMELY.good": "Clear, early signalling.",
+    "voice.GB.SPD.OVER_LIMIT.fault": "Ease off the speed, you are over the limit.",
+    "voice.GB.SPD.OVER_LIMIT.good": "Steady speed within the limit.",
+    "voice.GB.GAP.TWO_SECOND.fault": "Drop back a little, leave at least two seconds.",
+    "voice.GB.GAP.TWO_SECOND.good": "Good safe following gap.",
+    "voice.GB.RBT.GIVE_WAY_RIGHT.fault": "Give way to traffic coming from your right.",
+    "voice.GB.RBT.GIVE_WAY_RIGHT.good": "Good roundabout priority check to the right.",
+    "voice.GB.RBT.APPROACH_LANE.fault": "Pick the lane matching your exit before the roundabout.",
+    "voice.GB.RBT.APPROACH_LANE.good": "Good early lane choice on the approach.",
+    "voice.GB.RBT.SIGNAL_APPROACH.fault": "Match your approach signal to your roundabout exit.",
+    "voice.GB.RBT.SIGNAL_APPROACH.good": "Clear roundabout approach signal.",
+    "voice.GB.RBT.SIGNAL_EXIT.fault": "Signal left after passing the exit before yours.",
+    "voice.GB.RBT.SIGNAL_EXIT.good": "Well-timed exit signal.",
+    "voice.GB.RBT.STAY_IN_LANE.fault": "Hold your marked lane around the roundabout.",
+    "voice.GB.RBT.STAY_IN_LANE.good": "Smooth lane discipline around the island.",
+    "voice.GB.RBT.WRONG_WAY.fault": "Always go clockwise around UK roundabouts.",
+    "voice.GB.RBT.WRONG_WAY.good": "Clean clockwise path around the roundabout.",
+    "voice.GB.VRU.PASS_CYCLIST.fault": "Give cyclists at least 1.5 metres when passing.",
+    "voice.GB.VRU.PASS_CYCLIST.good": "Great wide clearance past the cyclist."
+  }
+}

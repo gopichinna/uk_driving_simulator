@@ -53,6 +53,23 @@
           }
         }
       }
+    },
+    {
+      "required": ["stringsFormatVersion", "country", "language", "kind", "entries"],
+      "additionalProperties": false,
+      "properties": {
+        "stringsFormatVersion": { "const": "0.1" },
+        "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+        "kind": { "const": "voice" },
+        "entries": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^[a-z0-9_]+(\\.[A-Za-z0-9_]+)+$": { "type": "string", "minLength": 1 }
+          }
+        }
+      }
     }
   ],
   "$defs": {

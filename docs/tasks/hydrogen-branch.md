@@ -65,10 +65,10 @@ Review of round 5 found two problems:
   - `ruleId` exists.
 
 ## D. Coach voice lines (for text-to-speech later)
-- [ ] D1. Extend `strings.v0` additively (pre-agreed) with `kind: "voice"`: `entries` of `key → line` (≤ 12 words, spoken English, B1). Create `content/countries/gb/strings/en/voice.json` with:
+- [x] D1. Extend `strings.v0` additively (pre-agreed) with `kind: "voice"`: `entries` of `key → line` (≤ 12 words, spoken English, B1). Create `content/countries/gb/strings/en/voice.json` with: (`strings.v0.schema.json` + `voice.json`: 25 spoken lines <= 12 words.)
   - `voice.<ruleId>.fault` and `voice.<ruleId>.good` for every implemented rule (see `rule_index.json`);
   - `voice.lesson.start`, `voice.lesson.passed`, `voice.lesson.try_again`.
-- [ ] D2. The readability linter checks voice lines, including the 12-word limit. The en-XA pseudo-locale includes them.
+- [x] D2. The readability linter checks voice lines, including the 12-word limit. The en-XA pseudo-locale includes them. (`readability.py` `lint_voice_strings` + `pseudolocale.py` + `en-XA/voice.json`.)
 
 ## E. Wolverhampton lane connections (roadpack v0.5, additive, pre-agreed)
 - [ ] E1. For links with `turn:lanes` or more than one lane, add top-level `laneConnections[]`: `{ nodeId, fromLink, fromLane, toLink, toLane, confidence }`.

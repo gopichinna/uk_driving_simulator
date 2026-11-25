@@ -1,0 +1,33 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en-XA",
+  "kind": "voice",
+  "entries": {
+    "voice.lesson.start": "[Kéép léft, scán áhéád, ánd drívé smóóthly. ~~~~~~~~~~~~~~~~~]",
+    "voice.lesson.passed": "[Wéll dóné, yóú pásséd thís léssón cléánly. ~~~~~~~~~~~~~~~~~]",
+    "voice.lesson.try_again": "[Lét ús révíéw whát háppénéd ánd try ágáín. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.OBS.LANE_CHANGE.fault": "[Chéck yóúr blínd spót ánd sígnál béfóré chángíng lánés. ~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.OBS.LANE_CHANGE.good": "[Nícé smóóth láné chángé wíth á cléár gáp. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.SIG.TIMELY.fault": "[Sígnál éárlíér só óthér drívérs hávé tímé tó réáct. ~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.SIG.TIMELY.good": "[Cléár, éárly sígnállíng. ~~~~~~~~~~]",
+    "voice.GB.SPD.OVER_LIMIT.fault": "[Éásé óff thé spééd, yóú áré óvér thé límít. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.SPD.OVER_LIMIT.good": "[Stéády spééd wíthín thé límít. ~~~~~~~~~~~~]",
+    "voice.GB.GAP.TWO_SECOND.fault": "[Dróp báck á líttlé, léávé át léást twó sécónds. ~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.GAP.TWO_SECOND.good": "[Góód sáfé fóllówíng gáp. ~~~~~~~~~~]",
+    "voice.GB.RBT.GIVE_WAY_RIGHT.fault": "[Gívé wáy tó tráffíc cómíng fróm yóúr ríght. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.GIVE_WAY_RIGHT.good": "[Góód róúndábóút príóríty chéck tó thé ríght. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.APPROACH_LANE.fault": "[Píck thé láné mátchíng yóúr éxít béfóré thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.APPROACH_LANE.good": "[Góód éárly láné chóícé ón thé áppróách. ~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.SIGNAL_APPROACH.fault": "[Mátch yóúr áppróách sígnál tó yóúr róúndábóút éxít. ~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.SIGNAL_APPROACH.good": "[Cléár róúndábóút áppróách sígnál. ~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.SIGNAL_EXIT.fault": "[Sígnál léft áftér pássíng thé éxít béfóré yóúrs. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.SIGNAL_EXIT.good": "[Wéll-tíméd éxít sígnál. ~~~~~~~~~~]",
+    "voice.GB.RBT.STAY_IN_LANE.fault": "[Hóld yóúr márkéd láné áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.STAY_IN_LANE.good": "[Smóóth láné díscíplíné áróúnd thé íslánd. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.WRONG_WAY.fault": "[Álwáys gó clóckwísé áróúnd ÚK róúndábóúts. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.RBT.WRONG_WAY.good": "[Cléán clóckwísé páth áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.VRU.PASS_CYCLIST.fault": "[Gívé cyclísts át léást 1.5 métrés whén pássíng. ~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.VRU.PASS_CYCLIST.good": "[Gréát wídé cléáráncé pást thé cyclíst. ~~~~~~~~~~~~~~~~]"
+  }
+}
