@@ -10,7 +10,7 @@ namespace LToLocal.Rules
     ///  GB.RBT.SIGNAL_APPROACH – left for a left exit, right for exits past 12 o'clock, usually none for ahead (rule 186)
     ///  GB.RBT.SIGNAL_EXIT     – signal left after passing the exit before the one you want (rule 186)
     ///  GB.RBT.APPROACH_LANE   – use the lane the arrows show for your exit (rule 186)
-    ///  GB.RBT.STAY_IN_LANE    – move to the outer lane before you exit; don't change lanes into someone's path
+    ///  GB.RBT.STAY_IN_LANE    – stay in your lane as you leave (inner → right exit lane); don't change lanes into someone's path
     ///  GB.RBT.WRONG_WAY       – circulate clockwise in the UK (rules 185–186)
     /// </summary>
     public sealed class RoundaboutRule
@@ -23,6 +23,7 @@ namespace LToLocal.Rules
         public const string RuleWrongWay = "GB.RBT.WRONG_WAY";
         private const string Src185 = "Highway Code rule 185";
         private const string Src186 = "Highway Code rule 186";
+        private const double LaneCheckBeforeExitRad = 0.25; // ~4 m before the outer-lane turn-off
 
         private enum Phase { Away, Approaching, OnRing, Exiting }
 
@@ -40,7 +41,6 @@ namespace LToLocal.Rules
         private double _wrongWaySince = double.NaN;
         private bool _wrongWayReported, _giveWayReported, _visitFault;
         private int _ringLane = -1;
-        private double _innerLaneLastSeen = double.NegativeInfinity;
         private double _laneChangeTime = double.NegativeInfinity;
         private int _laneChangeTo = -1;
         private bool _laneChangeReported;
@@ -66,7 +66,8 @@ namespace LToLocal.Rules
             var pos = new Vec2(f.Ego.X, f.Ego.Z);
             bool onRing = _v.OnRing(pos);
             int approach = _v.ApproachArm(pos, f.Ego.Heading, out int lane);
-            int exiting = onRing ? -1 : _v.ExitArm(pos);
+            int exitLane = -1;
+            int exiting = onRing ? -1 : _v.ExitArm(pos, out exitLane);
             _v.RingVehicles(_ring);
 
             switch (_phase)
@@ -95,7 +96,7 @@ namespace LToLocal.Rules
 
                 case Phase.OnRing:
                     if (onRing) OnRingFrame(f, output);
-                    else if (exiting >= 0) Leave(f, exiting, output);
+                    else if (exiting >= 0) Leave(f, exiting, exitLane, output);
                     else if (approach < 0) _phase = Phase.Away;
                     break;
             }
@@ -125,7 +126,6 @@ namespace LToLocal.Rules
             _wrongWaySince = double.NaN;
             _wrongWayReported = _giveWayReported = _visitFault = _laneChangeReported = false;
             _ringLane = -1;
-            _innerLaneLastSeen = double.NegativeInfinity;
             _laneChangeTime = double.NegativeInfinity;
         }
 
@@ -195,11 +195,14 @@ namespace LToLocal.Rules
                 double moved = TwoLaneRoundaboutGeometry.Cw(_prevBearing, b);
                 if (moved < 0.5)
                     for (int k = 0; k < _v.ArmCount; k++)
+                    {
                         if (double.IsNaN(_passTime[k]) && TwoLaneRoundaboutGeometry.Cw(_prevBearing, _v.DivergeBearing(k)) <= moved)
-                        {
                             _passTime[k] = f.Time;
-                            _passLane[k] = _v.RingLaneAt(_v.RadiusOf(pos)); // which lane we were in at this exit
-                        }
+                        // The lane you're in a few metres before an exit is the lane you should leave in.
+                        double check = _v.DivergeBearing(k) - LaneCheckBeforeExitRad;
+                        if (_passLane[k] < 0 && TwoLaneRoundaboutGeometry.Cw(_prevBearing, check) <= moved)
+                            _passLane[k] = _v.RingLaneAt(_v.RadiusOf(pos));
+                    }
             }
             _prevBearing = b;
 
@@ -207,7 +210,6 @@ namespace LToLocal.Rules
 
             // Lane discipline on multi-lane roundabouts
             int ringLane = _v.RingLaneAt(_v.RadiusOf(pos));
-            if (ringLane == 1) _innerLaneLastSeen = f.Time;
             if (_ringLane >= 0 && ringLane != _ringLane)
             {
                 _laneChangeTime = f.Time;
@@ -234,7 +236,7 @@ namespace LToLocal.Rules
             }
         }
 
-        private void Leave(in DriverFrame f, int exitArm, List<RuleEvent> output)
+        private void Leave(in DriverFrame f, int exitArm, int exitLane, List<RuleEvent> output)
         {
             _phase = Phase.Exiting;
             if (_entryArm < 0 || _wrongWayReported) return;
@@ -253,9 +255,12 @@ namespace LToLocal.Rules
                         : $"For the {exitName}, approach in the right lane. Follow the lane arrows.", Src186);
             }
 
-            // Leaving straight from the inner lane cuts across the outer lane
-            if (_v.ApproachLanes > 1 && (_passLane[exitArm] == 1 || time - _innerLaneLastSeen < 1.5))
-                Fault(RuleStayInLane, "Move into the outer (left) lane before you leave the roundabout. Leaving from the inner lane cuts across other traffic.", Src186);
+            // Stay in your lane as you leave: inner lane → right exit lane, outer lane → left exit lane
+            int laneAtExit = _passLane[exitArm];
+            if (_v.ApproachLanes > 1 && laneAtExit >= 0 && exitLane >= 0 && laneAtExit != exitLane)
+                Fault(RuleStayInLane, laneAtExit == 1
+                    ? "Stay in your lane as you leave. From the inner lane, use the right-hand exit lane: cutting across to the left lane puts you in front of outer-lane traffic."
+                    : "Stay in your lane as you leave. From the outer lane, use the left-hand exit lane.", Src186);
 
             // Approach signal
             const double minSignal = 1.0;

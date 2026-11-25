@@ -12,7 +12,7 @@ public class TwoLaneRoundaboutTests
     private static G Geo() => new G(new Vec2(0, 0));
 
     [Test]
-    public void EntriesJoinTheirRingLaneAndExitsLeaveFromTheOuterLane()
+    public void EntriesJoinAndExitsLeaveFromTheirOwnRingLane()
     {
         var g = Geo();
         for (int k = 0; k < g.ArmCount; k++)
@@ -21,8 +21,10 @@ public class TwoLaneRoundaboutTests
             var (end1, _) = g.Entry[k, 1].Sample(g.Entry[k, 1].Length);
             Assert.That(g.RadiusOf(end0), Is.EqualTo(G.OuterLaneR).Within(0.05), "left lane joins the outer lane");
             Assert.That(g.RadiusOf(end1), Is.EqualTo(G.InnerLaneR).Within(0.05), "right lane joins the inner lane");
-            var (exitStart, _) = g.Exit[k].Sample(0);
-            Assert.That(g.RadiusOf(exitStart), Is.EqualTo(G.OuterLaneR).Within(0.05));
+            var (exit0, _) = g.Exit[k, 0].Sample(0);
+            var (exit1, _) = g.Exit[k, 1].Sample(0);
+            Assert.That(g.RadiusOf(exit0), Is.EqualTo(G.OuterLaneR).Within(0.05), "left exit lane leaves from the outer lane");
+            Assert.That(g.RadiusOf(exit1), Is.EqualTo(G.InnerLaneR).Within(0.05), "right exit lane leaves from the inner lane");
         }
     }
 
@@ -46,30 +48,40 @@ public class TwoLaneRoundaboutTests
     }
 
     [Test]
-    public void RightTurnerUsesInnerLaneThenMovesOutBeforeItsExit()
+    public void RightTurnerStaysInTheInnerLaneAndLeavesByTheRightExitLane()
     {
         var g = Geo();
         var t = new TwoLaneRoundaboutTraffic(g, new TwoLaneTrafficParams(), 1);
         var car = t.AddOnEntry(S, 1, E, g.GiveWayS[S, 1] - 30, 10);
 
-        bool wasInner = false, rightOnApproach = false, leftOnRing = false, finished = false;
-        int laneAtExit = -1;
+        bool rightOnApproach = false, leftOnRing = false, finished = false, leftInnerLane = false;
         for (int i = 0; i < 50 * 60 && !finished; i++)
         {
-            int segBefore = (int)car.Segment;
-            int laneBefore = car.RingLane;
             t.Step(Dt, FarPlayer, spawn: false);
-            if (car.Segment == TwoLaneSegment.Ring && car.RingLane == 1) wasInner = true;
+            if (car.Segment == TwoLaneSegment.Ring && car.RingLane != 1) leftInnerLane = true;
             if (car.Segment == TwoLaneSegment.Entry && car.Indicator == 1) rightOnApproach = true;
             if (car.Segment == TwoLaneSegment.Ring && car.Indicator == -1) leftOnRing = true;
-            if (segBefore == (int)TwoLaneSegment.Ring && car.Segment == TwoLaneSegment.Exit) laneAtExit = laneBefore;
+            if (car.Segment == TwoLaneSegment.Exit) Assert.That(car.ExitLane, Is.EqualTo(1), "right exit lane");
             finished = !t.Cars.Contains(car);
         }
 
         Assert.That(finished, "should leave by the east arm");
-        Assert.That(wasInner, "right turners circulate in the inner lane");
-        Assert.That(laneAtExit, Is.EqualTo(0), "must be in the outer lane when leaving");
+        Assert.That(leftInnerLane, Is.False, "stays in the inner lane all the way round");
         Assert.That(rightOnApproach && leftOnRing, "right on approach, left before the exit");
+    }
+
+    [Test]
+    public void InnerLaneCarWaitsForOuterLaneTrafficBeforeCrossingToItsExit()
+    {
+        var g = Geo();
+        var t = new TwoLaneRoundaboutTraffic(g, new TwoLaneTrafficParams(), 1);
+        // Inner-lane car about to leave by the west exit...
+        var inner = t.AddOnRing(N, W, 1, g.DivergeBearing[W, 1] - 0.2, 7);
+        // ...while an outer-lane car is right next to the crossing point, going past it (to the north exit).
+        var outer = t.AddOnRing(E, N, 0, g.ExitCrossBearing[W] - 6.0 / G.OuterLaneR, 7);
+
+        for (int i = 0; i < 25; i++) t.Step(Dt, FarPlayer, spawn: false);
+        Assert.That(inner.Segment, Is.EqualTo(TwoLaneSegment.Ring), "must not cut across the outer-lane car");
     }
 
     [Test]

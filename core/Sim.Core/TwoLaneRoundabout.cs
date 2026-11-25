@@ -4,12 +4,12 @@ using System.Collections.Generic;
 namespace LToLocal.Sim
 {
     /// <summary>
-    /// Two-lane UK roundabout (left-hand traffic, clockwise). Each arm has two approach lanes and one exit lane:
-    ///   approach lane 0 (left / nearside):  left or straight on  → outer circulating lane
-    ///   approach lane 1 (right / offside):  right or full circle  → inner circulating lane, moving to the outer
-    ///                                       lane after passing the exit before the one you want (spiral style)
-    /// Exits leave from the outer lane. Ring vehicles are described by bearing (radians, clockwise from north)
-    /// and radius, so lane changes on the ring are just a change of radius.
+    /// Two-lane UK roundabout (left-hand traffic, clockwise). Each arm has two lanes in and two lanes out:
+    ///   approach lane 0 (left / nearside):  left or straight on  → outer circulating lane → left exit lane
+    ///   approach lane 1 (right / offside):  right or full circle  → inner circulating lane → right exit lane
+    /// "Stay in your lane": inner-lane traffic leaves into the right-hand exit lane, crossing the outer lane,
+    /// and gives way to outer-lane traffic where it crosses. Ring vehicles are described by bearing
+    /// (radians, clockwise from north) and radius.
     /// </summary>
     public sealed class TwoLaneRoundaboutGeometry
     {
@@ -22,9 +22,9 @@ namespace LToLocal.Sim
         public const double OuterEdgeR = 17.5;
         public const double GiveWayDistanceM = 19.5;     // along the arm from the centre
         public static readonly double[] EntryLaneOffset = { 5.25, 1.75 }; // left of inbound travel; lane 0 = nearside
-        public const double ExitLaneOffset = 1.825;      // left of outbound travel
+        public static readonly double[] ExitLaneOffset = { 5.25, 1.75 };  // left of outbound travel; lane 0 = nearside
         public static readonly double[] EntryMergeAngleDeg = { 38, 28 };   // after the arm's bearing, per lane
-        public const double ExitDivergeAngleDeg = 32;    // before the arm's bearing
+        public static readonly double[] ExitDivergeAngleDeg = { 38, 28 };  // before the arm's bearing, per lane
 
         public TwoLaneRoundaboutGeometry(Vec2 centre, double armLength = 150.0)
         {
@@ -34,8 +34,12 @@ namespace LToLocal.Sim
             Entry = new PathPolyline[n, 2];
             GiveWayS = new double[n, 2];
             MergeBearing = new double[n, 2];
-            Exit = new PathPolyline[n];
-            DivergeBearing = new double[n];
+            Exit = new PathPolyline[n, 2];
+            DivergeBearing = new double[n, 2];
+            ExitCrossBearing = new double[n];
+            ExitCrossS = new double[n];
+            EntryCrossBearing = new double[n];
+            EntryCrossS = new double[n];
 
             for (int k = 0; k < n; k++)
             {
@@ -60,17 +64,25 @@ namespace LToLocal.Sim
                     MergeBearing[k, lane] = Norm(mb);
                 }
 
-                double db = b - Rad(ExitDivergeAngleDeg);
-                Vec2 diverge = RingPoint(db, OuterLaneR);
-                Vec2 dTangent = Vec2.FromHeading(db + Math.PI / 2);
-                Vec2 outOff = outward.LeftNormal * ExitLaneOffset;
-                Vec2 join = centre + outward * GiveWayDistanceM + outOff;
-                Vec2 end = centre + outward * armLength + outOff;
-                double k2 = (join - diverge).Length * 0.45;
-                var exitPts = PathPolyline.Bezier(diverge, diverge + dTangent * k2, join - outward * k2, join, 14);
-                exitPts.Add(end);
-                Exit[k] = new PathPolyline(exitPts);
-                DivergeBearing[k] = Norm(db);
+                for (int lane = 0; lane < 2; lane++)
+                {
+                    double db = b - Rad(ExitDivergeAngleDeg[lane]);
+                    double r = lane == 0 ? OuterLaneR : InnerLaneR;
+                    Vec2 diverge = RingPoint(db, r);
+                    Vec2 dTangent = Vec2.FromHeading(db + Math.PI / 2);
+                    Vec2 outOff = outward.LeftNormal * ExitLaneOffset[lane];
+                    Vec2 join = centre + outward * GiveWayDistanceM + outOff;
+                    Vec2 end = centre + outward * armLength + outOff;
+                    double k2 = (join - diverge).Length * 0.45;
+                    var exitPts = PathPolyline.Bezier(diverge, diverge + dTangent * k2, join - outward * k2, join, 14);
+                    exitPts.Add(end);
+                    Exit[k, lane] = new PathPolyline(exitPts);
+                    DivergeBearing[k, lane] = Norm(db);
+                }
+
+                // Where the inner-lane paths cross the outer circulating lane (the conflict points).
+                (ExitCrossS[k], ExitCrossBearing[k]) = FirstAtRadius(Exit[k, 1], 0, OuterLaneR, outward: true);
+                (EntryCrossS[k], EntryCrossBearing[k]) = FirstAtRadius(Entry[k, 1], GiveWayS[k, 1], OuterLaneR, outward: false);
             }
         }
 
@@ -80,8 +92,26 @@ namespace LToLocal.Sim
         public PathPolyline[,] Entry { get; }
         public double[,] GiveWayS { get; }
         public double[,] MergeBearing { get; }
-        public PathPolyline[] Exit { get; }
-        public double[] DivergeBearing { get; }
+        public PathPolyline[,] Exit { get; }
+        public double[,] DivergeBearing { get; }
+        /// <summary>Where the right-lane exit path crosses the outer lane's centreline.</summary>
+        public double[] ExitCrossS { get; }
+        public double[] ExitCrossBearing { get; }
+        /// <summary>Where the right-lane entry path crosses the outer lane's centreline.</summary>
+        public double[] EntryCrossS { get; }
+        public double[] EntryCrossBearing { get; }
+
+        private (double s, double bearing) FirstAtRadius(PathPolyline path, double fromS, double radius, bool outward)
+        {
+            for (double s = fromS; s <= path.Length; s += 0.1)
+            {
+                var (p, _) = path.Sample(s);
+                double r = RadiusOf(p);
+                if (outward ? r >= radius : r <= radius) return (s, BearingOf(p));
+            }
+            var (end, _) = path.Sample(path.Length);
+            return (path.Length, BearingOf(end));
+        }
 
         public static double Rad(double deg) => deg * Math.PI / 180;
         public static double Norm(double a) { a %= 2 * Math.PI; return a < 0 ? a + 2 * Math.PI : a; }
@@ -112,7 +142,7 @@ namespace LToLocal.Sim
     public sealed class TwoLaneCar
     {
         public int Id;
-        public int EntryArm, EntryLane, ExitArm;
+        public int EntryArm, EntryLane, ExitArm, ExitLane;
         public TwoLaneSegment Segment;
         /// <summary>Front-bumper distance along the entry / exit path.</summary>
         public double S;
@@ -145,6 +175,8 @@ namespace LToLocal.Sim
         public double CyclistLengthM = 1.8;
         public double CyclistSpeedMps = 5.5;
         public double PlayerLengthM = 4.3;
+        /// <summary>Following gap in seconds (AI keeps 3 s; the Highway Code minimum is 2 s, rule 126).</summary>
+        public double TimeHeadwayS = 3.0;
     }
 
     /// <summary>AI traffic for <see cref="TwoLaneRoundaboutGeometry"/> with correct lane choice and UK signalling.</summary>
@@ -186,7 +218,7 @@ namespace LToLocal.Sim
             c.Bearing = TwoLaneRoundaboutGeometry.Norm(bearing);
             c.RingLane = c.TargetRingLane = ringLane;
             c.Radius = TwoLaneRoundaboutGeometry.LaneRadius(ringLane);
-            c.ThetaToGo = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.DivergeBearing[exitArm]);
+            c.ThetaToGo = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.DivergeBearing[exitArm, ringLane]);
             if (c.ThetaToGo < 0.05) c.ThetaToGo += 2 * Math.PI;
             c.SpeedMps = speed;
             UpdatePose(c);
@@ -218,7 +250,7 @@ namespace LToLocal.Sim
                 c.LastAccelMps2 = (v - c.SpeedMps) / dt;
                 c.SpeedMps = v;
                 Advance(c, v * dt, dt, pp, player);
-                if (c.Segment == TwoLaneSegment.Exit && c.S >= _g.Exit[c.ExitArm].Length)
+                if (c.Segment == TwoLaneSegment.Exit && c.S >= _g.Exit[c.ExitArm, c.ExitLane].Length)
                 {
                     _cars.RemoveAt(i);
                     continue;
@@ -245,7 +277,7 @@ namespace LToLocal.Sim
                     c.RingLane = c.TargetRingLane = c.IsCyclist ? 0 : c.EntryLane;
                     c.Radius = TwoLaneRoundaboutGeometry.LaneRadius(c.RingLane);
                     c.Bearing = _g.MergeBearing[c.EntryArm, c.EntryLane] + extra / c.Radius;
-                    c.ThetaToGo = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.DivergeBearing[c.ExitArm]);
+                    c.ThetaToGo = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.DivergeBearing[c.ExitArm, c.RingLane]);
                     if (c.ThetaToGo < 0.05) c.ThetaToGo += 2 * Math.PI;
                 }
                 return;
@@ -257,9 +289,6 @@ namespace LToLocal.Sim
                 c.Bearing = TwoLaneRoundaboutGeometry.Norm(c.Bearing + dTheta);
                 c.ThetaToGo -= dTheta;
 
-                // Spiral: inner-lane cars move out after passing the exit before theirs.
-                if (c.RingLane == 1 && c.TargetRingLane == 1 && c.ThetaToGo < Math.PI / 2 + 0.05 && OuterLaneClear(c, pp, player))
-                    c.TargetRingLane = 0;
 
                 double targetR = TwoLaneRoundaboutGeometry.LaneRadius(c.TargetRingLane);
                 double before = c.Radius;
@@ -270,14 +299,16 @@ namespace LToLocal.Sim
 
                 if (c.ThetaToGo <= 0)
                 {
-                    if (c.RingLane == 0 && c.Radius == TwoLaneRoundaboutGeometry.OuterLaneR)
+                    // Stay in your lane: outer → left exit lane, inner → right exit lane (crossing the outer lane).
+                    if (c.RingLane == 0 || CrossingClear(c, pp, player))
                     {
                         c.Segment = TwoLaneSegment.Exit;
+                        c.ExitLane = c.RingLane;
                         c.S = -c.ThetaToGo * c.Radius;
                     }
                     else
                     {
-                        c.ThetaToGo += 2 * Math.PI; // couldn't get across in time: go round again (safely)
+                        c.ThetaToGo += 2 * Math.PI; // outer lane busy at the crossing: go round again (safely)
                     }
                 }
                 return;
@@ -297,7 +328,7 @@ namespace LToLocal.Sim
                 c.Heading = centreBearing + Math.PI / 2 - tilt;
                 return;
             }
-            var path = c.Segment == TwoLaneSegment.Entry ? _g.Entry[c.EntryArm, c.EntryLane] : _g.Exit[c.ExitArm];
+            var path = c.Segment == TwoLaneSegment.Entry ? _g.Entry[c.EntryArm, c.EntryLane] : _g.Exit[c.ExitArm, c.ExitLane];
             double s = Math.Max(0, c.S - c.LengthM / 2);
             var (pos, h) = path.Sample(s);
             c.Position = pos;
@@ -350,7 +381,7 @@ namespace LToLocal.Sim
                 if (c.S <= line + 0.5 && !CanEnter(c, pp, player)) Consider(line + 0.5 - c.S + 1.0, 0, 1.0);
             }
 
-            return Idm.Accel(c.SpeedMps, desired, gap, leaderSpeed);
+            return Idm.Accel(c.SpeedMps, desired, gap, leaderSpeed, headway: _p.TimeHeadwayS);
         }
 
         private double DesiredSpeed(TwoLaneCar c)
@@ -400,8 +431,21 @@ namespace LToLocal.Sim
                             if (ahead > 0.05 && ahead < 2 * Math.PI * c.Radius - 1) d = ahead;
                         }
                     }
-                    else if (o.Segment == TwoLaneSegment.Exit && o.ExitArm == c.ExitArm && c.RingLane == 0)
+                    else if (o.Segment == TwoLaneSegment.Exit && o.ExitArm == c.ExitArm && o.ExitLane == c.RingLane)
                         d = c.ThetaToGo * c.Radius + o.S;
+                    else if (c.RingLane == 0 && o.Segment == TwoLaneSegment.Exit && o.ExitLane == 1 && o.S < _g.ExitCrossS[o.ExitArm] + o.LengthM)
+                    {
+                        // inner-lane car leaving across our lane: treat it as being at the crossing point
+                        double toCross = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.ExitCrossBearing[o.ExitArm]) * c.Radius;
+                        if (toCross < c.ThetaToGo * c.Radius + 2) d = toCross - (_g.ExitCrossS[o.ExitArm] - o.S);
+                    }
+                    else if (c.RingLane == 0 && o.Segment == TwoLaneSegment.Entry && o.EntryLane == 1 && !o.IsCyclist
+                             && o.S > _g.GiveWayS[o.EntryArm, 1] && o.S < _g.EntryCrossS[o.EntryArm] + o.LengthM)
+                    {
+                        // right-lane entrant crossing our lane to reach the inner lane
+                        double toCross = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.EntryCrossBearing[o.EntryArm]) * c.Radius;
+                        if (toCross < c.ThetaToGo * c.Radius + 2) d = toCross - (_g.EntryCrossS[o.EntryArm] - o.S);
+                    }
                     else if (o.Segment == TwoLaneSegment.Entry && o.S > _g.GiveWayS[o.EntryArm, o.EntryLane])
                     {
                         // committed entrant: treat as already at (just before) its merge point, in its target lane
@@ -416,7 +460,7 @@ namespace LToLocal.Sim
                     break;
 
                 case TwoLaneSegment.Exit:
-                    if (o.Segment == TwoLaneSegment.Exit && o.ExitArm == c.ExitArm) d = o.S - c.S;
+                    if (o.Segment == TwoLaneSegment.Exit && o.ExitArm == c.ExitArm && o.ExitLane == c.ExitLane) d = o.S - c.S;
                     break;
             }
             return d > 0 && d < look ? d : double.NaN;
@@ -439,7 +483,7 @@ namespace LToLocal.Sim
                 }
                 default:
                 {
-                    var path = c.Segment == TwoLaneSegment.Entry ? _g.Entry[c.EntryArm, c.EntryLane] : _g.Exit[c.ExitArm];
+                    var path = c.Segment == TwoLaneSegment.Entry ? _g.Entry[c.EntryArm, c.EntryLane] : _g.Exit[c.ExitArm, c.ExitLane];
                     var (s, _, dist) = path.Project(pp);
                     if (dist > 2.2) break;
                     double ahead = s - c.S;
@@ -463,8 +507,8 @@ namespace LToLocal.Sim
             {
                 if (o.Segment != TwoLaneSegment.Ring) continue;
                 double upstreamAngle = TwoLaneRoundaboutGeometry.Cw(o.Bearing, mb);
-                // An inner-lane car that will stay inner past our merge doesn't cross an outer-lane entry.
-                if (toOuter && o.RingLane == 1 && o.TargetRingLane == 1 && o.ThetaToGo > upstreamAngle + Math.PI / 2) continue;
+                // Inner-lane traffic stays in the inner lane past an outer-lane entry (it only crosses at its own exit).
+                if (toOuter && o.RingLane == 1) continue;
                 if (Conflicts(upstreamAngle, o.Radius, o.SpeedMps, o.ThetaToGo, o.RingLane == 0)) return false;
             }
 
@@ -487,21 +531,25 @@ namespace LToLocal.Sim
             return dist / Math.Max(speed, 1.5) < _p.CriticalGapS;
         }
 
-        private bool OuterLaneClear(TwoLaneCar c, Vec2 pp, in CarState player)
+        /// <summary>Can an inner-lane car leave now, crossing the outer lane, without making anyone brake?</summary>
+        private bool CrossingClear(TwoLaneCar c, Vec2 pp, in CarState player)
         {
             double R = TwoLaneRoundaboutGeometry.OuterLaneR;
+            double cross = _g.ExitCrossBearing[c.ExitArm];
             foreach (var o in _cars)
             {
                 if (o == c || o.Segment != TwoLaneSegment.Ring || !SameRingLane(o.Radius, R)) continue;
-                double ahead = TwoLaneRoundaboutGeometry.Cw(c.Bearing, o.Bearing) * R;   // o ahead of us
-                double behind = TwoLaneRoundaboutGeometry.Cw(o.Bearing, c.Bearing) * R;  // o behind us
-                if (ahead < 6 + o.LengthM || behind < 8 + Math.Max(0, o.SpeedMps - c.SpeedMps) * 2) return false;
+                double toCross = TwoLaneRoundaboutGeometry.Cw(o.Bearing, cross) * R;  // how far it is from the crossing
+                double past = TwoLaneRoundaboutGeometry.Cw(cross, o.Bearing) * R;     // how far past it (its front)
+                if (past < o.LengthM + 2) return false;                                // still in the crossing
+                if (o.ThetaToGo * o.Radius < toCross) continue;                         // it leaves before reaching it
+                if (toCross < 8 + o.SpeedMps * 2.0) return false;                      // arriving within ~2 s
             }
             if (SameRingLane(_g.RadiusOf(pp), R))
             {
-                double ahead = TwoLaneRoundaboutGeometry.Cw(c.Bearing, _g.BearingOf(pp)) * R;
-                double behind = TwoLaneRoundaboutGeometry.Cw(_g.BearingOf(pp), c.Bearing) * R;
-                if (ahead < 9 || behind < 9) return false;
+                double toCross = TwoLaneRoundaboutGeometry.Cw(_g.BearingOf(pp), cross) * R;
+                double past = TwoLaneRoundaboutGeometry.Cw(cross, _g.BearingOf(pp)) * R;
+                if (past < 6 || toCross < 8 + Math.Max(0, player.SpeedMps) * 2.0) return false;
             }
             return true;
         }

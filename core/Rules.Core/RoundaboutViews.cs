@@ -32,7 +32,8 @@ namespace LToLocal.Rules
         double RadiusOf(Vec2 p);
         /// <summary>Arm (and approach lane) the point is approaching on, or -1.</summary>
         int ApproachArm(Vec2 p, double heading, out int lane);
-        int ExitArm(Vec2 p);
+        /// <summary>Exit arm (and exit lane, 0 = left) the point is leaving on, or -1.</summary>
+        int ExitArm(Vec2 p, out int lane);
         double DivergeBearing(int arm);
         int ExitNumber(int entryArm, int exitArm);
         /// <summary>Lane the lane arrows tell you to use for this exit (0 = left).</summary>
@@ -78,8 +79,9 @@ namespace LToLocal.Rules
             return -1;
         }
 
-        public int ExitArm(Vec2 p)
+        public int ExitArm(Vec2 p, out int lane)
         {
+            lane = 0;
             for (int k = 0; k < _g.ArmCount; k++)
             {
                 var (s, _, dist) = _g.Exit[k].Project(p);
@@ -114,7 +116,8 @@ namespace LToLocal.Rules
         public bool OnRing(Vec2 p) => _g.OnRing(p);
         public double BearingOf(Vec2 p) => _g.BearingOf(p);
         public double RadiusOf(Vec2 p) => _g.RadiusOf(p);
-        public double DivergeBearing(int arm) => _g.DivergeBearing[arm];
+        /// <summary>The first (outer-lane) turn-off point for this exit.</summary>
+        public double DivergeBearing(int arm) => _g.DivergeBearing[arm, 0];
         public int ExitNumber(int a, int b) => _g.ExitNumber(a, b);
         public int RecommendedApproachLane(int exitNumber) => TwoLaneRoundaboutGeometry.ApproachLaneFor(exitNumber);
         public int RingLaneAt(double radius) => TwoLaneRoundaboutGeometry.RingLaneAt(radius);
@@ -139,14 +142,18 @@ namespace LToLocal.Rules
             return bestArm;
         }
 
-        public int ExitArm(Vec2 p)
+        public int ExitArm(Vec2 p, out int lane)
         {
+            lane = -1;
+            int bestArm = -1;
+            double best = 1.9; // exit lanes are 3.5 m apart
             for (int k = 0; k < _g.ArmCount; k++)
-            {
-                var (s, _, dist) = _g.Exit[k].Project(p);
-                if (dist < 3.0 && s > 1.5) return k;
-            }
-            return -1;
+                for (int l = 0; l < 2; l++)
+                {
+                    var (s, _, dist) = _g.Exit[k, l].Project(p);
+                    if (dist < best && s > 1.5) { best = dist; bestArm = k; lane = l; }
+                }
+            return bestArm;
         }
 
         public void RingVehicles(List<RingVehicle> into)

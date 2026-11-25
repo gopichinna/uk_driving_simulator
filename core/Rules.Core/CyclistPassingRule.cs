@@ -7,8 +7,9 @@ namespace LToLocal.Rules
     /// <summary>Another road user, as the rules see them.</summary>
     public readonly struct RoadUser
     {
-        public RoadUser(int id, Vec2 position, double heading, double speedMps, bool isCyclist)
+        public RoadUser(int id, Vec2 position, double heading, double speedMps, bool isCyclist, double lengthM = 0)
         {
+            LengthM = lengthM > 0 ? lengthM : (isCyclist ? 1.8 : 4.3);
             Id = id;
             Position = position;
             Heading = heading;
@@ -21,6 +22,7 @@ namespace LToLocal.Rules
         public double Heading { get; }
         public double SpeedMps { get; }
         public bool IsCyclist { get; }
+        public double LengthM { get; }
     }
 
     /// <summary>

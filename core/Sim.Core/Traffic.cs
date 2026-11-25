@@ -45,7 +45,8 @@ namespace LToLocal.Sim
     {
         // Intelligent Driver Model (IDM)
         public double MinGapM = 2.0;
-        public double TimeHeadwayS = 1.5;
+        /// <summary>Following gap in seconds. The Highway Code asks for at least 2 s (rule 126); AI keeps 3 s.</summary>
+        public double TimeHeadwayS = 3.0;
         public double MaxAccelMps2 = 1.5;
         public double ComfortDecelMps2 = 2.0;
         public double CarLengthM = 4.3;

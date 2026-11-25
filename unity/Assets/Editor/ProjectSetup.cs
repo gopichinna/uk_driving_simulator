@@ -489,8 +489,10 @@ namespace LToLocal.EditorTools
             for (int k = 0; k < g.ArmCount; k++)
             {
                 for (int l = 0; l < 2; l++)
+                {
                     AddStrip(world, $"TL_Entry{k}_{l}", g.Entry[k, l].Points, 3.9f, false, 0.014f, m.Road);
-                AddStrip(world, $"TL_Exit{k}", g.Exit[k].Points, 4.4f, false, 0.014f, m.Road);
+                    AddStrip(world, $"TL_Exit{k}_{l}", g.Exit[k, l].Points, 3.9f, false, 0.014f, m.Road);
+                }
             }
 
             // Dashed lane line around the ring (between the inner and outer lanes)
@@ -528,16 +530,18 @@ namespace LToLocal.EditorTools
                 arm.SetParent(world, false);
                 arm.SetPositionAndRotation(C, Quaternion.Euler(0, b, 0));
                 // Local frame: +Z out along the arm. Inbound traffic drives toward -Z, so its left is +X:
-                // inbound lanes at x = +5.25 (left / lane 0) and +1.75 (right / lane 1); outbound lane at x = -1.825.
+                // inbound lanes at x = +5.25 (left / lane 0) and +1.75 (right / lane 1);
+                // outbound lanes at x = -5.25 (left / lane 0) and -1.75 (right / lane 1).
                 float start = GW - 2f, end = (float)g.ArmLength + 10f, mid = (start + end) / 2;
-                Prim(PrimitiveType.Cube, "Carriageway", arm, new Vector3(1.675f, 0.01f, mid), new Vector3(10.65f, 0.02f, end - start), m.Road);
+                Prim(PrimitiveType.Cube, "Carriageway", arm, new Vector3(0, 0.01f, mid), new Vector3(14.0f, 0.02f, end - start), m.Road);
 
                 // Edge lines
                 Prim(PrimitiveType.Cube, "EdgeIn", arm, new Vector3(6.85f, 0.025f, (GW + 1 + end) / 2), new Vector3(0.15f, 0.01f, end - GW - 1), m.White);
-                Prim(PrimitiveType.Cube, "EdgeOut", arm, new Vector3(-3.5f, 0.025f, (GW + 1 + end) / 2), new Vector3(0.15f, 0.01f, end - GW - 1), m.White);
-                // Lane line between the two approach lanes (dashed; longer dashes near the junction)
+                Prim(PrimitiveType.Cube, "EdgeOut", arm, new Vector3(-6.85f, 0.025f, (GW + 1 + end) / 2), new Vector3(0.15f, 0.01f, end - GW - 1), m.White);
+                // Lane lines between the two lanes in each direction (dashed; longer dashes near the junction)
                 for (float z = GW + 3f; z < end; z += 6f)
-                    Prim(PrimitiveType.Cube, "LaneDash", arm, new Vector3(3.5f, 0.025f, z), new Vector3(0.12f, 0.01f, z < GW + 40 ? 4f : 2.5f), m.White);
+                    foreach (float x in new[] { 3.5f, -3.5f })
+                        Prim(PrimitiveType.Cube, "LaneDash", arm, new Vector3(x, 0.025f, z), new Vector3(0.12f, 0.01f, z < GW + 40 ? 4f : 2.5f), m.White);
                 // Centre line between directions, from the splitter island outward
                 for (float z = GW + 12f; z < end; z += 9f)
                     Prim(PrimitiveType.Cube, "CentreDash", arm, new Vector3(0, 0.025f, z), new Vector3(0.12f, 0.01f, 3f), m.White);

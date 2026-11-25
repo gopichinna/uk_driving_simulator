@@ -140,6 +140,8 @@ namespace LToLocal.Sim
         public double CyclistChance = 0.10;
         public double CyclistLengthM = 1.8;
         public double CyclistSpeedMps = 5.5;
+        /// <summary>Following gap in seconds (AI keeps 3 s; the Highway Code minimum is 2 s, rule 126).</summary>
+        public double TimeHeadwayS = 3.0;
     }
 
     /// <summary>
@@ -317,7 +319,7 @@ namespace LToLocal.Sim
             if (c.Segment == RoundaboutSegment.Entry && c.S <= _g.GiveWayS[c.EntryArm] + 0.5 && !CanEnter(c, playerPos, player))
                 Consider(_g.GiveWayS[c.EntryArm] + 0.5 - c.S + 1.0, 0, 1.0);
 
-            return Idm.Accel(c.SpeedMps, desired, gap, leaderSpeed);
+            return Idm.Accel(c.SpeedMps, desired, gap, leaderSpeed, headway: _p.TimeHeadwayS);
         }
 
         private double DesiredSpeed(RoundaboutCar c)
