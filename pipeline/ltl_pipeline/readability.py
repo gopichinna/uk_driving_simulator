@@ -12,6 +12,7 @@ import yaml
 from ltl_pipeline.schema import REPO_ROOT
 
 DEFAULT_STRINGS_RULES = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "rules.json"
+DEFAULT_STRINGS_UI = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "ui.json"
 DEFAULT_GLOSSARY = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "glossary.json"
 DEFAULT_BANNED = (
     REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "banned_phrases.txt"
@@ -29,9 +30,25 @@ def load_banned_phrases(path: Path = DEFAULT_BANNED) -> list[str]:
     return [ln.strip().lower() for ln in lines if ln.strip() and not ln.strip().startswith("#")]
 
 
+def _strip_icu_blocks(text: str, replacement: str = "VALUE") -> str:
+    """Replace top-level and nested ICU {placeholder} blocks with replacement."""
+    out: list[str] = []
+    depth = 0
+    for ch in text:
+        if ch == "{":
+            if depth == 0:
+                out.append(replacement)
+            depth += 1
+        elif ch == "}":
+            depth = max(0, depth - 1)
+        elif depth == 0:
+            out.append(ch)
+    return "".join(out)
+
+
 def split_sentences(text: str) -> list[str]:
     """Split text into sentences without breaking on decimal numbers like 1.5."""
-    cleaned = ICU_PLACEHOLDER_RE.sub("VALUE", text.strip())
+    cleaned = _strip_icu_blocks(text.strip(), "VALUE")
     parts = re.split(r"(?<!\d)[.!?]+(?:\s+|$)", cleaned)
     return [p.strip() for p in parts if p.strip()]
 
@@ -76,7 +93,7 @@ def check_text_readability(
         if phrase in lowered:
             errors.append(f"{context}: contains banned phrase {phrase!r}")
 
-    stripped_icu = ICU_PLACEHOLDER_RE.sub("", text)
+    stripped_icu = _strip_icu_blocks(text, "")
     for m in ABBREV_RE.finditer(stripped_icu):
         abbr = m.group(0)
         if abbr not in allowed_abbrevs:
@@ -149,13 +166,34 @@ def lint_glossary(
     return errors
 
 
+def lint_ui_strings(
+    ui_json: dict[str, Any],
+    glossary_data: dict[str, Any],
+    banned_phrases: list[str],
+) -> list[str]:
+    """Check UI strings for readability and glossary abbreviations."""
+    errors: list[str] = []
+    allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
+    for key, val in sorted(ui_json.get("entries", {}).items()):
+        errors.extend(
+            check_text_readability(
+                val,
+                context=f"ui.{key}",
+                banned_phrases=banned_phrases,
+                allowed_abbrevs=allowed_abbrevs,
+            )
+        )
+    return errors
+
+
 def lint_all_strings(
     rules_json_path: Path = DEFAULT_STRINGS_RULES,
     glossary_path: Path = DEFAULT_GLOSSARY,
     rules_yaml_path: Path = DEFAULT_RULES_YAML,
     banned_path: Path = DEFAULT_BANNED,
+    ui_json_path: Path = DEFAULT_STRINGS_UI,
 ) -> list[str]:
-    """Run all readability checks on GB English strings and glossary."""
+    """Run all readability checks on GB English strings, UI strings, and glossary."""
     rules_json = json.loads(rules_json_path.read_text(encoding="utf-8"))
     glossary_data = json.loads(glossary_path.read_text(encoding="utf-8"))
     rules_yaml = yaml.safe_load(rules_yaml_path.read_text(encoding="utf-8"))
@@ -163,6 +201,9 @@ def lint_all_strings(
 
     errors = lint_rule_strings(rules_json, glossary_data, rules_yaml, banned)
     errors.extend(lint_glossary(glossary_data, banned))
+    if ui_json_path.is_file():
+        ui_json = json.loads(ui_json_path.read_text(encoding="utf-8"))
+        errors.extend(lint_ui_strings(ui_json, glossary_data, banned))
     return errors
 
 

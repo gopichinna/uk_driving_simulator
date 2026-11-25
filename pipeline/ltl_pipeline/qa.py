@@ -47,6 +47,8 @@ def generate_qa_markdown(pack: dict[str, Any]) -> str:
     nodes = pack.get("nodes", [])
     crossings = pack.get("crossings", [])
     restrictions = pack.get("restrictions", [])
+    priorities = pack.get("junctionPriority", [])
+    signal_plans = pack.get("signalPlans", [])
 
     high = sum(1 for lk in links if lk["confidence"] >= 0.8)
     med = sum(1 for lk in links if 0.5 <= lk["confidence"] < 0.8)
@@ -93,6 +95,28 @@ def generate_qa_markdown(pack: dict[str, Any]) -> str:
     ]
     for lid, dist in short_links:
         lines.append(f"  - `{lid}`: {dist} m")
+
+    by_ctrl: dict[str, int] = defaultdict(int)
+    for jp in priorities:
+        by_ctrl[jp["controlledBy"]] += 1
+    jp_high = sum(1 for jp in priorities if jp["confidence"] >= 0.8)
+    jp_med = sum(1 for jp in priorities if 0.5 <= jp["confidence"] < 0.8)
+    jp_low = sum(1 for jp in priorities if jp["confidence"] < 0.5)
+
+    lines.extend(
+        [
+            "",
+            "## Junction priority & signal plans",
+            f"- **Junction priority entries:** {len(priorities)} "
+            f"(high {jp_high}, medium {jp_med}, low {jp_low})",
+            f"- **Inferred signal plans:** {len(signal_plans)}",
+            "",
+            "| controlledBy | Count |",
+            "|---|---|",
+        ]
+    )
+    for ctrl in sorted(by_ctrl):
+        lines.append(f"| `{ctrl}` | {by_ctrl[ctrl]} |")
     lines.append("")
     return "\n".join(lines)
 

@@ -92,3 +92,13 @@ def test_deterministic_output() -> None:
     pack_a = json.dumps(_build_fixture_pack(), indent=2)
     pack_b = json.dumps(_build_fixture_pack(), indent=2)
     assert pack_a == pack_b
+
+
+def test_junction_priority_and_signal_plans() -> None:
+    pack = _build_fixture_pack()
+    assert pack["packFormatVersion"] == "0.2"
+    jp_by_node = {jp["nodeId"]: jp for jp in pack["junctionPriority"]}
+    assert "n_2" in jp_by_node
+    assert jp_by_node["n_2"]["controlledBy"] == "uncontrolled"
+    assert jp_by_node["n_12"]["controlledBy"] == "roundabout"
+
