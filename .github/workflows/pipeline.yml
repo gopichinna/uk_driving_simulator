@@ -32,3 +32,7 @@ jobs:
           git diff --exit-code ../content/countries/gb/rules.yaml
       - name: Run readability linter
         run: uv run python -m ltl_pipeline.readability
+      - name: Verify en-XA pseudo-locale is up to date
+        run: |
+          uv run python -m ltl_pipeline.pseudolocale
+          git diff --exit-code ../content/countries/gb/strings/en-XA/

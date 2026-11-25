@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/testmarking.v0.schema.json",
+  "title": "L to Local Test Marking v0",
+  "description": "Official practical driving test fault thresholds and pass/fail summary lines. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["testMarkingVersion", "country", "maxDrivingFaults", "failOnSerious", "failOnDangerous", "summary", "source"],
+  "additionalProperties": false,
+  "properties": {
+    "testMarkingVersion": { "const": "0.1" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "maxDrivingFaults": { "type": "integer", "minimum": 0 },
+    "failOnSerious": { "type": "boolean" },
+    "failOnDangerous": { "type": "boolean" },
+    "summary": {
+      "type": "object",
+      "required": ["pass", "fail"],
+      "additionalProperties": false,
+      "properties": {
+        "pass": { "type": "string", "minLength": 1 },
+        "fail": { "type": "string", "minLength": 1 }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["url", "checkedOn", "verified"],
+      "additionalProperties": false,
+      "properties": {
+        "url": { "type": "string", "minLength": 1 },
+        "checkedOn": { "type": "string", "format": "date" },
+        "verified": { "type": "boolean" }
+      }
+    }
+  }
+}

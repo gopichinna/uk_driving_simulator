@@ -1,6 +1,6 @@
 # RoadPack QA Report: Wolverhampton City Centre
 
-- **Pack ID:** `gb-wolverhampton-centre` (format `0.1`)
+- **Pack ID:** `gb-wolverhampton-centre` (format `0.2`)
 - **Extract:** `geofabrik west-midlands-latest.osm.pbf` (`2026-11-24T21:21:23Z`)
 - **Totals:** 953 nodes, 1079 links, 119 crossings, 13 turn restrictions
 
@@ -25,3 +25,13 @@
   - `l_22757677_2`: 1.37 m
   - `l_627988061_0`: 0.63 m
   - `l_85580973_1`: 0.83 m
+
+## Junction priority & signal plans
+- **Junction priority entries:** 614 (high 8, medium 315, low 291)
+- **Inferred signal plans:** 73
+
+| controlledBy | Count |
+|---|---|
+| `roundabout` | 8 |
+| `signals` | 73 |
+| `uncontrolled` | 533 |

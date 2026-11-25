@@ -54,6 +54,13 @@ Every link and crossing has a `confidence` in `[0.0, 1.0]` and (for links) `conf
   - `0.85` when `crossing=zebra`, `traffic_signals`, or `parallel`.
   - `0.65` when `crossing=uncontrolled` or `marked`.
   - `0.40` when `highway=crossing` has no crossing type tag (`signals_unknown` / `uncontrolled`).
+- **Junction priority (`junctionPriority[]`)**:
+  - `0.90` for roundabouts (`junction=roundabout` or `mini_roundabout`).
+  - `0.85` for explicit `highway=stop` or `highway=give_way` nodes.
+  - `0.75+` for `highway=traffic_signals` nodes.
+  - `0.65–0.70` for uncontrolled junctions with a clear `roadClass` hierarchy or `name`/`ref` continuity; `0.40` when all approaches share the same class.
+- **Signal plans (`signalPlans[]`)**:
+  - `0.45` (`<= 0.5`): OSM does not store signal phase timings, so stages are inferred by pairing opposing approach bearings with town-course default timings (green 18 s / 14 s, amber 3 s, all-red 2 s, red-amber 2 s).
 
 ## ODbL Licensing Obligations
 

@@ -1,0 +1,51 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s3-13-roundabout-stay-in-lane",
+  "stage": 3,
+  "order": 13,
+  "title": "Staying in lane on roundabouts",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Hold your marked lane all the way around multi-lane roundabouts.",
+      "Do not drift sideways into another driver's path when leaving.",
+      "Check beside you before changing lanes on a roundabout."
+    ],
+    "ruleIds": ["GB.RBT.STAY_IN_LANE", "GB.OBS.LANE_CHANGE"],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+  },
+  "scenarios": [
+    {
+      "id": "s3_13_hold_lane_ahead",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Keep inside your lane while circulating and leaving the roundabout.",
+      "rulesJudged": ["GB.RBT.STAY_IN_LANE", "GB.RBT.SIGNAL_EXIT"],
+      "variations": {
+        "trafficDensity": [0.4, 0.7],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    },
+    {
+      "id": "s3_13_inner_to_exit",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Exit from the inner lane into the right exit lane cleanly.",
+      "rulesJudged": ["GB.RBT.STAY_IN_LANE", "GB.OBS.LANE_CHANGE", "GB.RBT.GIVE_WAY_RIGHT"],
+      "variations": {
+        "trafficDensity": [0.4, 0.7],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": { "maxMinor": 1, "maxSerious": 0 }
+    }
+  ],
+  "recap": [
+    "Follow the lane markings cleanly around the island and onto your exit.",
+    "Never cut across another lane without a safe gap."
+  ]
+}

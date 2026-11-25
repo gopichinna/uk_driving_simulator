@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.1",
+  "packFormatVersion": "0.2",
   "packId": "sample-t-junction",
   "displayName": "Sample: T-junction with traffic lights and a zebra",
   "country": "GB",
@@ -49,5 +49,26 @@
   ],
   "restrictions": [
     { "id": "r_no_right_south_east", "type": "no_right_turn", "fromLink": "l_south", "viaNode": "n_junction", "toLink": "l_east", "confidence": 0.9 }
+  ],
+  "junctionPriority": [
+    {
+      "nodeId": "n_junction",
+      "majorLinks": ["l_west", "l_east"],
+      "controlledBy": "signals",
+      "confidence": 0.85,
+      "confidenceNotes": "traffic_signals node with primary major road"
+    }
+  ],
+  "signalPlans": [
+    {
+      "nodeId": "n_junction",
+      "stages": [["l_west", "l_east"], ["l_south"]],
+      "greenS": [18, 14],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default town-course timings"
+    }
   ]
 }

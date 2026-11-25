@@ -1,0 +1,385 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en-XA",
+  "kind": "glossary",
+  "terms": [
+    {
+      "id": "give_way",
+      "term": "[Gívé wáy ~~~~]",
+      "definition": "[Slów dówn ánd stóp íf néédéd tó lét príóríty tráffíc páss sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.JCT.GIVE_WAY",
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.XNG.ZEBRA"
+      ]
+    },
+    {
+      "id": "nearside",
+      "term": "[Néársídé ~~~~]",
+      "definition": "[Thé sídé óf thé róád ór véhíclé clósést tó thé kérb. Ín thé ÚK thís ís thé léft sídé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.POS.KEEP_LEFT",
+        "GB.JCT.TURN_NEAR",
+        "GB.BRK.GO_LEFT"
+      ]
+    },
+    {
+      "id": "offside",
+      "term": "[Óffsídé ~~~~]",
+      "definition": "[Thé sídé óf thé véhíclé clósést tó thé céntré óf thé róád. Ín thé ÚK thís ís thé ríght sídé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.OBS.MOVE_OFF_CHECKS",
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.JCT.OPPOSITE_RIGHT"
+      ]
+    },
+    {
+      "id": "dual_carriageway",
+      "term": "[Dúál cárríágéwáy ~~~~~~~]",
+      "definition": "[Á róád wíth á céntrál bárríér ór résérvátíón sépárátíng óppósíté díréctíóns óf tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.POS.DUAL_KEEP_LEFT",
+        "GB.SPD.NATIONAL_LIMIT",
+        "GB.JCT.DUAL_CROSS"
+      ],
+      "kmhHint": "[70 mph ≈ 112 km/h ~~~~~~~]"
+    },
+    {
+      "id": "single_carriageway",
+      "term": "[Sínglé cárríágéwáy ~~~~~~~~]",
+      "definition": "[Á róád wíth nó céntrál résérvátíón bétwéén óppósíté tráffíc lánés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.NATIONAL_LIMIT",
+        "GB.POS.THREE_LANE_SINGLE"
+      ],
+      "kmhHint": "[60 mph ≈ 96 km/h ~~~~~~~]"
+    },
+    {
+      "id": "national_speed_limit",
+      "term": "[Nátíónál spééd límít ~~~~~~~~]",
+      "definition": "[Thé défáúlt úppér spééd límít fór á róád typé whén nó númbér ís shówn. Fór cárs ít ís 60 mph ón sínglé cárríágéwáys ánd 70 mph ón dúál cárríágéwáys. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.NATIONAL_LIMIT"
+      ],
+      "kmhHint": "[60 mph ≈ 96 km/h; 70 mph ≈ 112 km/h ~~~~~~~~~~~~~~]"
+    },
+    {
+      "id": "built_up_area",
+      "term": "[Búílt-úp áréá ~~~~~~]",
+      "definition": "[Án áréá wíth stréét líghts, úsúálly wíth á 30 mph límít ín Énglánd ánd Scótlánd. Ín Wálés thé défáúlt límít ís 20 mph. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.BUILT_UP",
+        "GB.SPD.STREET_LIGHTING"
+      ],
+      "kmhHint": "[30 mph ≈ 48 km/h; 20 mph ≈ 32 km/h ~~~~~~~~~~~~~~]"
+    },
+    {
+      "id": "speed_limit_20",
+      "term": "[20 mph zóné ~~~~~]",
+      "definition": "[Á lów-spééd áréá néár hómés, shóps, ór schóóls tó prótéct péóplé wálkíng ánd cyclíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.BUILT_UP",
+        "GB.SCH.SLOW"
+      ],
+      "kmhHint": "[20 mph ≈ 32 km/h ~~~~~~~]"
+    },
+    {
+      "id": "speed_limit_40",
+      "term": "[40 mph límít ~~~~~]",
+      "definition": "[Á sígnéd spééd límít óftén úséd ón wídér úrbán máín róáds. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "kmhHint": "[40 mph ≈ 64 km/h ~~~~~~~]"
+    },
+    {
+      "id": "zig_zags",
+      "term": "[Zíg-zágs ~~~~]",
+      "definition": "[Whíté ór yéllów zíg-zág línés néár cróssíngs ór schóóls. Dó nót párk théré ór óvértáké néár á cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.XNG.ZIGZAG_OVERTAKE",
+        "GB.SCH.KEEP_CLEAR"
+      ]
+    },
+    {
+      "id": "box_junction",
+      "term": "[Bóx júnctíón ~~~~~]",
+      "definition": "[Á yéllów críss-cróss gríd páíntéd át búsy júnctíóns. Dó nót éntér únléss yóúr éxít ís cléár. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.JCT.BOX"
+      ]
+    },
+    {
+      "id": "advanced_stop_line",
+      "term": "[Ádváncéd stóp líné (ÁSL) ~~~~~~~~~~]",
+      "definition": "[Á bóx át tráffíc líghts márkéd wíth á bíké symból fór cyclísts tó wáít áhéád. Cárs stóp át thé fírst whíté líné ón réd ór ámbér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.TL.ASL"
+      ]
+    },
+    {
+      "id": "asl",
+      "term": "[ÁSL ~~~~]",
+      "definition": "[Shórt fór ádváncéd stóp líné, á wáítíng bóx fór cyclísts át tráffíc líghts. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.TL.ASL"
+      ]
+    },
+    {
+      "id": "filter_arrow",
+      "term": "[Fíltér árrów ~~~~~]",
+      "definition": "[Á gréén árrów líght állówíng tráffíc tó túrn ónly ín thé árrów díréctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.TL.FILTER_ARROW"
+      ]
+    },
+    {
+      "id": "hard_shoulder",
+      "term": "[Hárd shóúldér ~~~~~~]",
+      "definition": "[Thé émérgéncy stríp ón thé léft sídé óf á mótórwáy. Úsé ít ónly ín émérgéncíés ór whén gántry sígns shów á spééd límít ábóvé ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.HARD_SHOULDER",
+        "GB.BRK.GO_LEFT",
+        "GB.BRK.REJOIN"
+      ]
+    },
+    {
+      "id": "red_x",
+      "term": "[Réd X ~~~~]",
+      "definition": "[Án óvérhéád mótórwáy sígnál shówíng á láné ís clóséd áhéád. Móvé tó án ópén láné sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.RED_X"
+      ]
+    },
+    {
+      "id": "zebra_crossing",
+      "term": "[Zébrá cróssíng ~~~~~~]",
+      "definition": "[Á cróssíng wíth bláck ánd whíté strípés ánd fláshíng órángé béácóns. Gívé wáy tó ányóné wáítíng ánd stóp óncé sóméóné stéps óntó ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.XNG.ZEBRA"
+      ]
+    },
+    {
+      "id": "pelican_crossing",
+      "term": "[Pélícán cróssíng ~~~~~~~]",
+      "definition": "[Á sígnál-cóntrólléd cróssíng wíth á fláshíng ámbér phásé áftér réd. Dúríng fláshíng ámbér, gívé wáy tó ányóné stíll cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.XNG.PELICAN_AMBER",
+        "GB.XNG.PELICAN_ISLAND"
+      ]
+    },
+    {
+      "id": "puffin_crossing",
+      "term": "[Púffín cróssíng ~~~~~~]",
+      "definition": "[Á smárt sígnál-cóntrólléd cróssíng thát sénsés péóplé cróssíng. Ít góés stráíght fróm réd ánd ámbér tó gréén wíth nó fláshíng ámbér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.XNG.LIGHT_CROSSINGS"
+      ]
+    },
+    {
+      "id": "toucan_crossing",
+      "term": "[Tóúcán cróssíng ~~~~~~]",
+      "definition": "[Á wídé sígnál-cóntrólléd cróssíng sháréd by pédéstríáns ánd cyclísts. Fóllów thé tráffíc líghts ás át á púffín cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.XNG.LIGHT_CROSSINGS"
+      ]
+    },
+    {
+      "id": "mini_roundabout",
+      "term": "[Míní-róúndábóút ~~~~~~]",
+      "definition": "[Á smáll júnctíón wíth á páíntéd whíté círclé ín thé céntré. Drívé áróúnd thé círclé ánd gívé wáy tó thé ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.RBT.MINI",
+        "GB.RBT.DOUBLE_MINI"
+      ]
+    },
+    {
+      "id": "msm",
+      "term": "[MSM ~~~~]",
+      "definition": "[Mírrórs, Sígnál, Mánóéúvré: thé róútíné fór chángíng spééd, pósítíón, ór díréctíón sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.OBS.MSM",
+        "GB.OBS.LANE_CHANGE"
+      ]
+    },
+    {
+      "id": "blind_spot",
+      "term": "[Blínd spót ~~~~]",
+      "definition": "[Thé áréá bésídé ánd béhínd yóúr cár thát yóúr mírrórs cánnót shów. Lóók óvér yóúr shóúldér béfóré móvíng óff ór chángíng lánés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.OBS.MOVE_OFF_CHECKS",
+        "GB.OBS.LANE_CHANGE"
+      ]
+    },
+    {
+      "id": "h2",
+      "term": "[H2 ~~~~]",
+      "definition": "[Pédéstríán príóríty rúlé át júnctíóns. Gívé wáy tó péóplé cróssíng ór wáítíng tó cróss á sídé róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.JCT.H2_PEDESTRIANS",
+        "GB.XNG.ZEBRA"
+      ]
+    },
+    {
+      "id": "h1",
+      "term": "[H1 ~~~~]",
+      "definition": "[Híérárchy óf róád úsérs. Drívérs óf lárgér véhíclés cárry gréátér réspónsíbílíty tó rédúcé dángér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.VRU.HIERARCHY"
+      ]
+    },
+    {
+      "id": "h3",
+      "term": "[H3 ~~~~]",
+      "definition": "[Príóríty fór cyclísts ánd hórsé rídérs. Dó nót cút ácróss thém whén túrníng ór chángíng lánés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.JCT.H3_CYCLISTS"
+      ]
+    },
+    {
+      "id": "uk",
+      "term": "[ÚK ~~~~]",
+      "definition": "[Thé Únítéd Kíngdóm. Tráffíc drívés ón thé léft. ~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.POS.KEEP_LEFT",
+        "GB.TL.NO_TURN_ON_RED",
+        "GB.RBT.WRONG_WAY"
+      ]
+    },
+    {
+      "id": "gb",
+      "term": "[GB ~~~~]",
+      "definition": "[Gréát Brítáín: Énglánd, Scótlánd, ánd Wálés. ~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.BUILT_UP"
+      ]
+    },
+    {
+      "id": "adi",
+      "term": "[ÁDÍ ~~~~]",
+      "definition": "[Áppróvéd Drívíng Ínstrúctór, qúálífíéd tó téách léárnérs ínclúdíng ón mótórwáys ín dúál-cóntról cárs. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.LEARNERS"
+      ]
+    },
+    {
+      "id": "sos",
+      "term": "[SÓS ~~~~]",
+      "definition": "[Émérgéncy téléphóné márkér ón mótórwáys ánd ín émérgéncy áréás. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.EMERGENCY_AREA",
+        "GB.BRK.REJOIN"
+      ]
+    },
+    {
+      "id": "roundabout",
+      "term": "[Róúndábóút ~~~~]",
+      "definition": "[Á círcúlár júnctíón whéré ÚK tráffíc trávéls clóckwísé áróúnd á céntrál íslánd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.WRONG_WAY"
+      ]
+    },
+    {
+      "id": "slip_road",
+      "term": "[Slíp róád ~~~~]",
+      "definition": "[Á shórt láné úséd tó jóín ór léávé á mótórwáy ór dúál cárríágéwáy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.JOIN",
+        "GB.MWY.LEAVE"
+      ]
+    },
+    {
+      "id": "central_reservation",
+      "term": "[Céntrál résérvátíón ~~~~~~~~]",
+      "definition": "[Thé stríp ór bárríér dívídíng óppósíté tráffíc cárríágéwáys. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.JCT.DUAL_CROSS",
+        "GB.MWY.NO_REVERSE"
+      ]
+    },
+    {
+      "id": "stop_line",
+      "term": "[Stóp líné ~~~~]",
+      "definition": "[Á sólíd whíté líné ácróss yóúr láné. Stóp béhínd ít fór réd líghts ór Stóp sígns. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.TL.RED",
+        "GB.JCT.STOP_SIGN"
+      ]
+    },
+    {
+      "id": "two_second_rule",
+      "term": "[Twó-sécónd rúlé ~~~~~~]",
+      "definition": "[Á chéck fór sáfé fóllówíng dístáncé. Cóúnt twó sécónds áftér thé cár áhéád pássés á márkér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.GAP.TWO_SECOND",
+        "GB.GAP.CUT_IN"
+      ]
+    },
+    {
+      "id": "bus_lane",
+      "term": "[Bús láné ~~~~]",
+      "definition": "[Á láné márkéd fór búsés, cyclés, ánd táxís. Chéck thé sígn fór íts áctívé hóúrs. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.BUS.LANE_HOURS",
+        "GB.OVT.INTO_LANE"
+      ]
+    },
+    {
+      "id": "cycle_lane",
+      "term": "[Cyclé láné ~~~~]",
+      "definition": "[Á márkéd láné fór pédál cyclés ón thé róád. Á sólíd whíté líné kééps cárs óút dúríng íts hóúrs. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.VRU.CYCLE_LANE_SOLID",
+        "GB.VRU.CYCLE_LANE_BROKEN"
+      ]
+    },
+    {
+      "id": "emergency_area",
+      "term": "[Émérgéncy áréá ~~~~~~]",
+      "definition": "[Án órángé báy wíth án SÓS phóné ón mótórwáys wíthóút á hárd shóúldér. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.MWY.EMERGENCY_AREA",
+        "GB.BRK.GO_LEFT",
+        "GB.BRK.REJOIN"
+      ]
+    },
+    {
+      "id": "clearway",
+      "term": "[Cléárwáy ~~~~]",
+      "definition": "[Á róád whéré stóppíng ís nót állówéd ón thé máín cárríágéwáy. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.PRK.CLEARWAY"
+      ]
+    },
+    {
+      "id": "contraflow",
+      "term": "[Cóntráflów ~~~~]",
+      "definition": "[Róádwórks láyóút whéré tráffíc témpóráríly shárés thé óppósíté cárríágéwáy ín nárrów lánés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.WRK.CONTRAFLOW"
+      ]
+    },
+    {
+      "id": "headway",
+      "term": "[Héádwáy ~~~~]",
+      "definition": "[Thé tímé gáp bétwéén yóúr frónt búmpér ánd thé véhíclé áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.GAP.TWO_SECOND"
+      ]
+    },
+    {
+      "id": "gantry",
+      "term": "[Gántry ~~~~]",
+      "definition": "[Án óvérhéád brídgé cárryíng láné sígnáls ánd váríáblé spééd límíts ábóvé á mótórwáy. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "relatedRules": [
+        "GB.SPD.VARIABLE",
+        "GB.MWY.RED_X",
+        "GB.MWY.HARD_SHOULDER"
+      ]
+    }
+  ]
+}

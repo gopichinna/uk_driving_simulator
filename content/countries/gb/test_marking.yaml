@@ -1,0 +1,12 @@
+testMarkingVersion: "0.1"
+country: GB
+maxDrivingFaults: 15
+failOnSerious: true
+failOnDangerous: true
+summary:
+  pass: "Practice pass: 15 or fewer driving faults and no serious or dangerous faults."
+  fail: "Practice fail: over 15 driving faults, or at least one serious or dangerous fault."
+source:
+  url: "https://www.gov.uk/driving-test/driving-test-faults-result"
+  checkedOn: "2026-11-25"
+  verified: true

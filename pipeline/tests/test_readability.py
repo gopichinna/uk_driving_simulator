@@ -88,3 +88,54 @@ def test_missing_phase_p_rule_fails() -> None:
 def test_actual_gb_strings_pass_readability() -> None:
     errors = lint_all_strings()
     assert errors == [], f"Readability errors: {errors}"
+
+
+REQUIRED_UI_KEYS = [
+    "hud.finish_drive",
+    "hud.reset",
+    "hud.course",
+    "hud.view_seat",
+    "hud.view_chase",
+    "hud.settings",
+    "debrief.title",
+    "debrief.no_faults",
+    "debrief.tap_to_replay",
+    "debrief.replay_close",
+    "debrief.count.driving",
+    "debrief.count.serious",
+    "debrief.count.dangerous",
+    "debrief.count.good",
+    "debrief.result.pass",
+    "debrief.result.fail",
+    "debrief.result.note",
+    "settings.title",
+    "settings.steering.label",
+    "settings.steering.hint",
+    "settings.units.hint",
+    "settings.reset_progress.label",
+    "settings.reset_progress.confirm",
+    "settings.close",
+    "course.town",
+    "course.two_lane_roundabout",
+    "course.roundabout",
+    "course.dual_carriageway",
+    "course.wolverhampton_beta",
+]
+
+
+def test_required_ui_keys_and_pseudolocale() -> None:
+    import json
+
+    from ltl_pipeline.pseudolocale import XA_DIR
+    from ltl_pipeline.readability import DEFAULT_STRINGS_UI
+
+    ui_data = json.loads(DEFAULT_STRINGS_UI.read_text(encoding="utf-8"))
+    entries = ui_data["entries"]
+    for key in REQUIRED_UI_KEYS:
+        assert key in entries, f"Missing required UI key: {key}"
+
+    xa_ui = json.loads((XA_DIR / "ui.json").read_text(encoding="utf-8"))
+    assert xa_ui["language"] == "en-XA"
+    for key in REQUIRED_UI_KEYS:
+        assert key in xa_ui["entries"]
+        assert "{count" not in entries[key] or "{count" in xa_ui["entries"][key]

@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "const": "0.1" },
+    "packFormatVersion": { "enum": ["0.1", "0.2"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -34,6 +34,8 @@
     "crossings": { "type": "array", "items": { "$ref": "#/$defs/crossing" }, "default": [] },
     "zones": { "type": "array", "items": { "$ref": "#/$defs/zone" }, "default": [] },
     "restrictions": { "type": "array", "items": { "$ref": "#/$defs/restriction" }, "default": [] },
+    "junctionPriority": { "type": "array", "items": { "$ref": "#/$defs/junctionPriority" }, "default": [] },
+    "signalPlans": { "type": "array", "items": { "$ref": "#/$defs/signalPlan" }, "default": [] },
     "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
   },
   "$defs": {
@@ -122,6 +124,37 @@
         "toLink": { "type": "string" },
         "confidence": { "$ref": "#/$defs/confidence" },
         "osmRelationId": { "type": "integer" }
+      }
+    },
+    "junctionPriority": {
+      "type": "object",
+      "required": ["nodeId", "majorLinks", "controlledBy", "confidence", "confidenceNotes"],
+      "additionalProperties": false,
+      "properties": {
+        "nodeId": { "type": "string" },
+        "majorLinks": { "type": "array", "items": { "type": "string" } },
+        "controlledBy": { "enum": ["signals", "give_way", "stop", "roundabout", "uncontrolled"] },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "confidenceNotes": { "type": "string" }
+      }
+    },
+    "signalPlan": {
+      "type": "object",
+      "required": ["nodeId", "stages", "greenS", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "nodeId": { "type": "string" },
+        "stages": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "type": "array", "items": { "type": "string" } }
+        },
+        "greenS": { "type": "array", "minItems": 1, "items": { "type": "number", "minimum": 1 } },
+        "amberS": { "type": "number" },
+        "allRedS": { "type": "number" },
+        "redAmberS": { "type": "number" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "confidenceNotes": { "type": "string" }
       }
     }
   }
