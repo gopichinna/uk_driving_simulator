@@ -46,32 +46,52 @@ Goal: Wolverhampton's signs look and behave like the real city.
 ## Round 10: Sound and the coach's voice (licence-checked)
 Goal: audio content the game can ship, with every file's licence recorded.
 
-- [x] R10.1 **Coach voice.** Generate speech for every line in `content/countries/gb/strings/en/voice.json`, using an **offline text-to-speech engine whose engine *and* voice model licences allow commercial use in an app** (Piper `piper-tts` 1.8.0 MIT + `en_GB-cori-medium` CC BY 4.0 from OpenSLR 109 / LibriVox, recorded in `content/audio/LICENCES.md` before generation).
-  - Output: `content/audio/voice/en/<key>.ogg` (25 mono 24 kHz OGG files, peak ~ −3 dBFS, trimmed silence).
-  - Add `content/audio/voice/en/manifest.json`: `{ key, file, text, durationS }`.
-- [x] R10.2 **Sound effects.** Synthesised 12 CC0 1.0 effects & loops in `content/audio/sfx/*.ogg` (`indicator_on/off`, `engine_idle/low/mid`, `horn`, `tyre_squeal`, `crossing_beep`, `ui_click`, `chime_success`, `chime_fault`, `ambience_town`), normalised to −16 LUFS for effects and −23 LUFS for ambience, all recorded in `content/audio/LICENCES.md`.
-- [x] R10.3 **Store screenshots and accessibility text.**
-  - `content/store/en/screenshots.md`: 6 captions (each ≤ 8 words) matching **shipped** claims only (`claims.yaml`).
-  - Accessibility labels for every HUD control and screen in `ui.json` under `a11y.*` keys (14 keys).
-- [x] R10.4 **Tests** (`pipeline/tests/test_audio.py`, 57/57 tests pass):
-  - every voice key has an audio file and every audio file has a licence entry;
-  - durations are within 0.3–6 s for voice and ≤ 3 s for effects (except the loops);
-  - `ATTRIBUTIONS.md` and `content/legal/en/credits.md` list the audio sources.
+- [x] R10.1 **Coach voice.** (PR #10: Piper MIT + `en_GB-cori-medium` CC BY 4.0, 25 mono 24 kHz OGGs + `manifest.json` + `LICENCES.md`)
+- [x] R10.2 **Sound effects.** (PR #10: 12 CC0 1.0 procedural SFX/loops, −16 / −23 LUFS)
+- [x] R10.3 **Store screenshots and accessibility text.** (PR #10: 6 shipped-claim captions + 14 `a11y.*` keys + `en-XA`)
+- [x] R10.4 **Tests** (PR #10: `test_audio.py`, `ATTRIBUTIONS.md`, `credits.md`)
 
 ## Round 11: The area around Wolverhampton's driving test centre
 Goal: let learners practise roads like the ones used on real tests near Wolverhampton. **DVSA doesn't publish test routes, so don't claim to copy them.** Model the *area* around the centre.
 
-- [x] R11.1 **Verify on GOV.UK** ("Find a driving test centre", `https://www.gov.uk/find-driving-test-centre`, checked 2026-11-25): **Wolverhampton Practical Driving Test Centre**, 101 Spring Road, Spring Road Industrial Estate, Ettingshall, Wolverhampton, West Midlands **WV4 6JX**.
-- [x] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json`: 2 × 2 km around the centre (`52.5600, -2.1016`), including residential streets, roundabouts, A4123 dual carriageway, signals, buildings, POIs, direction signs, street names, speed signs, bus stops, and warning signs; tramways excluded.
-- [x] R11.3 **Practice routes** (`content/cities/wolverhampton-test-area/routes.json`): 3 connected legal routes (18, 20, 22 min) starting and ending on Spring Road, mixing road types with sat-nav instructions and one `"Follow the signs towards City Centre ..."` segment per route, clearly labelled as **practice routes, not official DVSA test routes**.
-- [x] R11.4 **Lesson 20, "Roads near the test centre".** Stage 8 (`20-roads-near-test-centre.json`), using `independent_driving` (`s8_20_test_centre_mix.json` mode `mixed`, `s8_20_test_centre_signs.json` mode `signs`), general plain-English learn card, and original quiz (`gb-s8-20-roads-near-test-centre.json`).
-- [x] R11.5 **QA and tests** (`pipeline/tests/test_test_area.py`, 58/58 tests pass): `QA.md`, connected legal routes, schema validation (113 content files), ODbL attribution present.
+- [x] R11.1 **Verify on GOV.UK** (PR #11: Wolverhampton Practical Driving Test Centre, 101 Spring Road, Ettingshall, WV4 6JX)
+- [x] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json` (PR #11: 2 × 2 km pack + furniture)
+- [x] R11.3 **Practice routes** (`routes.json`, PR #11: 3 legal connected practice loops)
+- [x] R11.4 **Lesson 20, "Roads near the test centre".** (PR #11: Stage 8 lesson + scenarios + quiz)
+- [x] R11.5 **QA and tests** (PR #11: `QA.md`, `test_test_area.py`)
+
+---
+
+# Rounds 12–14 (added by Claude, 2026-11-25). Same protocol as above.
+
+## Round 12: fix-ups, roundabouts, evidence (do R12.0 first)
+- [x] **R12.0 Fix CI on PRs #10 and #11 (urgent).** Regenerated `content/countries/gb/strings/en-XA/ui.json` on `hydrogen/r10-audio-and-a11y`, pushed, and merged into `hydrogen/r11-test-centre-area`.
+- [x] **R12.1 Test-centre evidence.** Searched `WV4 6JX` on `https://www.gov.uk/find-driving-test-centre` (2026-11-25) and posted the exact quoted GOV.UK result block on PR #11.
+- [x] **R12.2 Relevant destinations on signs** (from the PR #9 review). Sign turning/forking destinations + local POIs with route-verified `ref`s; tested in `test_direction_signs.py`.
+- [x] **R12.3 Placement against the game's geometry** (PR #8 and #9 reviews). Checked against 3.25 m game lane widths and roundabout central islands; signs >= 2.0 m from lane edge, plates >= 1.6 m from lane edge, none inside roundabout islands.
+- [x] **R12.4 Mock-test scenario timings** (PR #8 review). Set `s8_19_mock_test.json` to `durationS: 2100` (35 min), `s8_19_mock_test_signs.json` to `durationS: 600` (10 min), `s8_20_*.json` to `durationS: 1200` (20 min), removed conflicting `finish_after_s`, and added check in `test_scenarios.py`.
+- [x] **R12.5 Roundabout furniture**, as `roundabout_furniture.json` (`roundabout-furniture.v0.schema.json`) for both `wolverhampton` and `wolverhampton-test-area`, with `islandPolygon`, blue signs (Diagrams 610/611.1), chevron boards (Diagram 515), and give-way lines (Diagram 1003.1/1003.3).
+
+## Round 13: Stage 7 "Conditions" (night, rain, fog) as data
+- [ ] **R13.1** Verify the Highway Code rules on GOV.UK for lights, night driving, rain, fog and spray (rules 113–116 and 226–237 or the current numbers). Add any missing rows to `docs/02`, and regenerate `rules.yaml`.
+- [ ] **R13.2** Additive `scenario.v0` event (pre-agreed): `conditions { timeOfDay: "day" | "dusk" | "night", weather: "clear" | "rain" | "fog", visibilityM }`.
+- [ ] **R13.3** Lessons 21–23 (stage 7: night driving and dipped headlights; rain and stopping distances, using the verified double-gap rule; fog and visibility under 100 m). Use the existing courses (`town`, `dual_carriageway`, `wolverhampton`). Each lesson needs a learn card, a diagram (same generator, checked on the contact sheet), scenarios and a quiz (original questions only).
+- [ ] **R13.4** Strings and voice lines for the new rules (`rules.json`, `voice.json`, regenerated en-XA, readability linter).
+
+## Round 14: Stage 6 "Motorways" as data
+- [ ] **R14.1** Choose a short real motorway section near Wolverhampton (for example the M54 between junctions 1 and 3, or the M6 near junction 10). Verify the junction numbers from OSM tags and record why you chose it. Build a road pack (latest version) with:
+  - slip roads;
+  - additive motorway fields (pre-agreed): `hardShoulder: bool`, `emergencyAreas[]`, `gantries[]` (positions only), and `junctionNumber` on slip links.
+- [ ] **R14.2** Verify on GOV.UK (Highway Code rules 253–274 and the motorway guidance): joining, lane discipline, overtaking, red X, variable limits, emergency areas, and breakdowns. Update `docs/02` and `rules.yaml` where needed.
+- [ ] **R14.3** Lessons 24–27 (stage 6: joining and leaving; lane discipline; red X and variable limits; breakdowns and emergency areas). Add learn cards, diagrams, scenarios on a new `motorway` course (anchors: `start`, `join`, `leave`), and quizzes.
+- [ ] **R14.4** Update `progression.json` so stages 6 and 7 come before the mock test (stage 8), keep the unlock rules consistent, and add tests.
 
 ---
 
 ## Requests from Claude
 - Pre-agreed: new files `speed_signs.json`, `bus_stops.json` and `warning_signs.json` (same schema family as `signs-placed.v0`); additive `symbol` on sign rows; `content/audio/**` with `manifest.json`; `a11y.*` UI keys; a second city pack folder; lesson 20.
 - Claude will render the R9 signs and furniture, play R10 audio in the game, and load the R11 pack as a new course.
+- Pre-agreed for R12–R14: `roundabout_furniture.json`; the scenario `conditions` event; additive motorway road-pack fields; a `motorway` course with anchors `start`, `join`, `leave`; lessons 21–27.
 
 ## Requests from Hydrogen (to Claude)
 *(add questions here)*

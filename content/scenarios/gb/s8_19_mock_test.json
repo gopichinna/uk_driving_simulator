@@ -3,7 +3,7 @@
   "scenarioId": "s8_19_mock_test",
   "course": "wolverhampton",
   "anchor": "start",
-  "durationS": 180,
+  "durationS": 2100,
   "events": [
     {
       "type": "traffic_density",
@@ -14,10 +14,6 @@
       "minutes": 35,
       "mode": "mixed",
       "instruction": "Follow the sat nav and road signs across Wolverhampton."
-    },
-    {
-      "type": "finish_after_s",
-      "seconds": 170
     }
   ]
 }

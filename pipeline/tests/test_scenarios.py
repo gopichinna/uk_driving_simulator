@@ -45,7 +45,18 @@ def test_every_lesson_scenario_has_valid_file() -> None:
         assert anchor in ALLOWED_COURSE_ANCHORS[course]
 
         event_types = [ev["type"] for ev in data["events"]]
-        assert any(t in event_types for t in ("finish_at", "take_exit", "finish_after_s"))
+        assert any(
+            t in event_types
+            for t in ("finish_at", "take_exit", "finish_after_s", "independent_driving")
+        )
+        for ev in data["events"]:
+            if ev["type"] == "independent_driving":
+                assert data["durationS"] >= ev["minutes"] * 60, (
+                    f"{sc_id}: durationS {data['durationS']} < {ev['minutes']}*60"
+                )
+                assert "finish_after_s" not in event_types, (
+                    f"{sc_id}: finish_after_s conflicts with independent_driving"
+                )
         for ev in data["events"]:
             if ev["type"] in ("parked_car", "cyclist_ahead", "finish_at"):
                 assert ev["anchor"] in ALLOWED_COURSE_ANCHORS[course]
