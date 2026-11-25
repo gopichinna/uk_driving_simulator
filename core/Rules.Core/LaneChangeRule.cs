@@ -8,26 +8,31 @@ namespace LToLocal.Rules
     {
         /// <summary>Signal must be on at least this long before the car crosses into the new lane.</summary>
         public double MinSignalBeforeS = 1.5;
-        /// <summary>A mirror check counts if made within this many seconds before crossing.</summary>
-        public double MirrorWindowS = 6.0;
-        /// <summary>A shoulder check counts if made within this many seconds before crossing.</summary>
-        public double ShoulderWindowS = 4.0;
         /// <summary>After crossing, watch traffic in the new lane for this long.</summary>
         public double ConflictWindowS = 3.0;
         public double SeriousBrakeMps2 = 3.0;
         public double DangerousBrakeMps2 = 6.0;
         /// <summary>Bumper gap to a car behind in the new lane that counts as cutting in dangerously.</summary>
         public double DangerousGapM = 4.0;
+        /// <summary>Blind-spot zone: from this far behind our rear bumper up to alongside.</summary>
+        public double BlindSpotBehindM = 8.0;
+        /// <summary>Time gap to the car ahead in the new lane below which we moved in too close.</summary>
+        public double TooCloseAheadS = 1.0;
         /// <summary>Hysteresis so drifting on the lane line doesn't count as several lane changes.</summary>
         public double LaneHysteresisM = 0.35;
         /// <summary>A signal is needed if another vehicle is within this distance (it "would benefit", rule 103).</summary>
         public double SignalNeededWithinM = 80.0;
+        public double CarLengthM = 4.3;
     }
 
     /// <summary>
     /// GB.OBS.LANE_CHANGE + GB.SIG.TIMELY (docs/02 catalogue, section A).
     /// Highway Code rule 133: before changing lane, check mirrors and glance sideways, signal, and move only when safe.
     /// Highway Code rule 103: signal in good time.
+    ///
+    /// Design decision (prototype play-test, 2026-11-25): players are NOT asked to tap mirrors or hold a
+    /// shoulder-check button; that felt like a chore. Observation is judged by its outcome instead: if a car
+    /// was in the blind spot, alongside, or had to brake, the feedback explains that checking would have shown it.
     /// </summary>
     public sealed class LaneChangeRule
     {
@@ -39,7 +44,6 @@ namespace LToLocal.Rules
         private readonly TrafficSim _traffic;
         private readonly LaneChangeParams _p;
         private readonly DrivingSide _drivingSide;
-        private readonly List<ObservationEvent> _observations = new List<ObservationEvent>();
 
         private int _lane = -1;
         private int _indicatorDir;
@@ -61,18 +65,14 @@ namespace LToLocal.Rules
             _drivingSide = drivingSide;
         }
 
-        public void Observe(ObservationEvent e)
-        {
-            _observations.Add(e);
-            if (_observations.Count > 64) _observations.RemoveAt(0);
-        }
+        /// <summary>Kept for a possible "observation" assist mode; observations are not required or judged.</summary>
+        public void Observe(ObservationEvent e) { }
 
         public void Reset()
         {
             _lane = -1;
             _indicatorDir = 0;
             _pending = null;
-            _observations.Clear();
         }
 
         public void OnFrame(in DriverFrame f, List<RuleEvent> output)
@@ -128,26 +128,15 @@ namespace LToLocal.Rules
             var lanes = _traffic.Lanes;
             int travel = lanes[to].Direction;
             int moveDir = Math.Sign((lanes[to].CenterX - lanes[from].CenterX) * travel); // +1 right, -1 left
-            CarSide side = Sides.FromDirection(moveDir, _drivingSide);
+            string sideWord = moveDir > 0 ? "right" : "left";
             double t = f.Time;
             bool clean = true;
 
-            // 1. Mirror (rule 133: "check mirrors")
-            bool mirrored = Seen(t - _p.MirrorWindowS, t, side == CarSide.Offside ? ObservationKind.MirrorOffside : ObservationKind.MirrorNearside)
-                         || Seen(t - _p.MirrorWindowS, t, ObservationKind.MirrorInterior);
-            if (!mirrored)
-            {
-                clean = false;
-                output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.Violation, Severity.Driving, t,
-                    $"Check your mirrors before changing lanes. Tap the {(moveDir > 0 ? "right" : "left")} mirror.", Source133));
-            }
-
-            // 2. Signal (rules 103 and 133)
+            // 1. Signal (rules 103 and 133)
             bool othersAround = AnyoneWithin(f.Ego, _p.SignalNeededWithinM, travel);
             if (_indicatorDir == moveDir)
             {
-                double onFor = t - _indicatorSince;
-                if (onFor < _p.MinSignalBeforeS)
+                if (t - _indicatorSince < _p.MinSignalBeforeS)
                 {
                     clean = false;
                     output.Add(new RuleEvent(RuleIdSignal, RuleOutcome.Violation, Severity.Driving, t,
@@ -167,18 +156,49 @@ namespace LToLocal.Rules
                     "Signal before changing lanes when other road users are around.", Source133));
             }
 
-            // 3. Shoulder check (rule 133: "glance sideways")
-            bool shoulder = Seen(t - _p.ShoulderWindowS, t, side == CarSide.Offside ? ObservationKind.ShoulderOffside : ObservationKind.ShoulderNearside);
-            if (!shoulder)
+            // 2. What was actually in the new lane when we moved across? (rule 133: "move when safe")
+            Severity worst = Severity.None;
+            string? message = null;
+            double egoSpeedAlong = f.Ego.SpeedMps * Math.Cos(f.Ego.Heading) * travel;
+            foreach (var c in _traffic.Cars)
             {
-                clean = false;
-                output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.Violation, Severity.Driving, t,
-                    $"Look over your {(moveDir > 0 ? "right" : "left")} shoulder before moving across. A car can hide in your blind spot.", Source133));
+                if (!InLane(c, to)) continue;
+                double ahead = (c.Z - f.Ego.Z) * travel; // centre-to-centre, > 0: other car is ahead of us
+                double len = _p.CarLengthM;
+
+                if (Math.Abs(ahead) < len)
+                {
+                    Raise(Severity.Dangerous, $"Dangerous lane change: there was a car right alongside you on your {sideWord}. "
+                        + $"Check your {sideWord} mirror and look over your {sideWord} shoulder before moving across.");
+                }
+                else if (ahead < 0 && -ahead - len <= _p.BlindSpotBehindM)
+                {
+                    Raise(Severity.Serious, $"A car was in your {sideWord} blind spot. "
+                        + $"A mirror check and a look over your {sideWord} shoulder would have shown it.");
+                }
+                else if (ahead > 0)
+                {
+                    double gap = ahead - len;
+                    double headway = egoSpeedAlong > 1 ? gap / egoSpeedAlong : double.PositiveInfinity;
+                    if (headway < _p.TooCloseAheadS)
+                        Raise(Severity.Driving, "You moved in too close behind the car in front. Leave a bigger gap.");
+                }
             }
 
-            // 4. Safety (rule 133: "move when safe") is judged over the next few seconds.
-            _pending = new Pending { CrossTime = t, TargetLane = to, CleanSoFar = clean, WorstConflict = Severity.None };
+            if (message != null)
+            {
+                clean = false;
+                output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.Violation, worst, t, message, Source133));
+            }
+
+            // 3. Did anyone behind have to brake for us? Judged over the next few seconds.
+            _pending = new Pending { CrossTime = t, TargetLane = to, CleanSoFar = clean, WorstConflict = worst };
             CheckPending(f, output);
+
+            void Raise(Severity s, string m)
+            {
+                if (s > worst) { worst = s; message = m; }
+            }
         }
 
         private void CheckPending(in DriverFrame f, List<RuleEvent> output)
@@ -187,46 +207,40 @@ namespace LToLocal.Rules
             var p = _pending;
             int travel = _traffic.Lanes[p.TargetLane].Direction;
 
-            foreach (var c in _traffic.Cars)
+            if (f.Time > p.CrossTime) // the crossing frame itself was judged above
             {
-                if (Math.Abs(c.X - _traffic.Lanes[p.TargetLane].CenterX) > 1.8) continue;
-                double behind = (f.Ego.Z - c.Z) * travel; // > 0: the other car is behind us
-                if (behind <= 0 || behind > 60) continue;
+                foreach (var c in _traffic.Cars)
+                {
+                    if (!InLane(c, p.TargetLane)) continue;
+                    double behind = (f.Ego.Z - c.Z) * travel;
+                    if (behind <= 0 || behind > 60) continue;
 
-                Severity s = Severity.None;
-                if (f.Time - p.CrossTime < 1.0 && behind - 4.3 < _p.DangerousGapM) s = Severity.Dangerous;
-                else if (c.LastAccelMps2 <= -_p.DangerousBrakeMps2) s = Severity.Dangerous;
-                else if (c.LastAccelMps2 <= -_p.SeriousBrakeMps2) s = Severity.Serious;
-                if (s > p.WorstConflict) p.WorstConflict = s;
-            }
-
-            if (p.WorstConflict >= Severity.Serious)
-            {
-                // Report a conflict as soon as it happens, once.
-                output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.Violation, p.WorstConflict, f.Time,
-                    p.WorstConflict == Severity.Dangerous
-                        ? "Dangerous lane change: you cut in right in front of another car."
-                        : "Unsafe lane change: a car behind had to brake for you.",
-                    Source133));
-                _pending = null;
-                return;
+                    Severity s = c.LastAccelMps2 <= -_p.DangerousBrakeMps2 ? Severity.Dangerous
+                               : c.LastAccelMps2 <= -_p.SeriousBrakeMps2 ? Severity.Serious
+                               : Severity.None;
+                    if (s > p.WorstConflict)
+                    {
+                        p.WorstConflict = s;
+                        output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.Violation, s, f.Time,
+                            s == Severity.Dangerous
+                                ? "Dangerous lane change: the car behind had to brake hard to avoid you."
+                                : "Unsafe lane change: a car behind had to brake for you. Check your mirror before moving across.",
+                            Source133));
+                        p.CleanSoFar = false;
+                    }
+                }
             }
 
             if (f.Time - p.CrossTime >= _p.ConflictWindowS)
             {
                 if (p.CleanSoFar)
                     output.Add(new RuleEvent(RuleIdLaneChange, RuleOutcome.GoodPractice, Severity.None, f.Time,
-                        "Good lane change: mirror, signal, shoulder check.", Source133));
+                        "Good lane change: signalled in good time and moved across safely.", Source133));
                 _pending = null;
             }
         }
 
-        private bool Seen(double from, double to, ObservationKind kind)
-        {
-            foreach (var o in _observations)
-                if (o.Kind == kind && o.Time >= from && o.Time <= to) return true;
-            return false;
-        }
+        private bool InLane(TrafficCar c, int lane) => Math.Abs(c.X - _traffic.Lanes[lane].CenterX) <= 1.8;
 
         private bool AnyoneWithin(in CarState ego, double distance, int travel)
         {

@@ -18,6 +18,10 @@ namespace LToLocal.Game
 
         public bool showMirrors = true;
 
+        [Tooltip("Off by default: play-testing showed tapping mirrors to 'check' them felt like a chore. "
+               + "Lane changes are judged by what actually happened instead (LaneChangeRule).")]
+        public bool tapToCheck = false;
+
         /// <summary>Raised when the player taps a mirror to check it (the observation mechanic, docs/03 §4).</summary>
         public event Action<ObservationKind> Glanced;
 
@@ -86,7 +90,7 @@ namespace LToLocal.Game
                 r = new Rect(r.x - r.width * grow / 2, r.y, r.width * (1 + grow), r.height * (1 + grow));
             }
             DrawMirror(r, tex, frame, glancing);
-            if (GUI.Button(r, GUIContent.none, GUIStyle.none))
+            if (tapToCheck && GUI.Button(r, GUIContent.none, GUIStyle.none))
             {
                 _glanceUntil[index] = Time.time + 0.7f;
                 Glanced?.Invoke(kind);

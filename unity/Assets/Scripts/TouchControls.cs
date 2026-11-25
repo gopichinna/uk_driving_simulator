@@ -101,9 +101,9 @@ namespace LToLocal.Game
 
             var lookStyle = new GUIStyle(style) { fontSize = Mathf.RoundToInt(Screen.height * 0.035f) };
             GUI.color = _look < 0 ? new Color(1f, 0.85f, 0.3f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
-            GUI.Box(LookLeftRect, "Look left (hold)", lookStyle);
+            GUI.Box(LookLeftRect, "Look left", lookStyle);
             GUI.color = _look > 0 ? new Color(1f, 0.85f, 0.3f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
-            GUI.Box(LookRightRect, "Look right (hold)", lookStyle);
+            GUI.Box(LookRightRect, "Look right", lookStyle);
 
             GUI.color = _go ? new Color(0.5f, 1f, 0.6f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
             GUI.Box(GoRect, "GO", style);

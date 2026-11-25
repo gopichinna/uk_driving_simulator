@@ -5,7 +5,7 @@
 |---|---|---|---|
 | H1 | Instant feedback + replay makes the rule understood | After a fault + replay, the tester explains the rule in their own words | ≥ 80% of faults explained correctly |
 | H2 | A phone touch screen is controllable enough to drive a roundabout | Completion without restart; a 1–5 "felt in control" rating | ≤ 2 restarts per attempt; median ≥ 4 |
-| H3 | The observation gesture (mirror check) is acceptable, not a chore | 1–5 "helpful vs annoying"; check rate | Median ≥ 3.5; otherwise redesign or automate |
+| H3 | The observation gesture (mirror check) is acceptable, not a chore | 1–5 "helpful vs annoying"; check rate | **Answered early (2026-11-25): it felt like a chore.** Redesigned: observation is judged by outcome (blind-spot / alongside / forced braking) instead of explicit taps |
 | H4 | Rules can be fired *fairly* on real OSM streets | False faults found by the reviewer in 10-min drives | < 1 per 10 minutes |
 | H5 | Performance on a mid-range Android phone | p95 frame time; sim + rules time per tick | ≥ 30 fps p95; ≤ 5 ms |
 

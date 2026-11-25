@@ -54,43 +54,38 @@ public class LaneChangeRuleTests
 
 
     [Test]
-    public void FullRoutineIsGoodPractice()
+    public void SignalledSafeLaneChangeIsGoodPractice()
     {
         var traffic = NewTraffic();
-        traffic.AddCar(1, -70, speed: 15, desired: 15); // someone around, but far enough back
+        traffic.AddCar(1, -70, speed: 15, desired: 15); // someone around, but far back
 
-        var events = Drive(traffic,
-            t => t >= 1.5 && t < 7 ? 1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 1.0), (ObservationKind.ShoulderOffside, 3.8) });
+        var events = Drive(traffic, t => t >= 1.5 && t < 7 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
 
         Assert.That(events, Has.Count.EqualTo(1), string.Join("\n", events));
         Assert.That(events[0].Outcome, Is.EqualTo(RuleOutcome.GoodPractice));
     }
 
     [Test]
-    public void NoMirrorNoSignalNoShoulderGivesThreeDrivingFaults()
+    public void NoMirrorOrShoulderInputIsNeeded()
     {
-        var traffic = NewTraffic();
-        traffic.AddCar(0, 40, speed: 15, desired: 15); // a car nearby, so a signal is needed
-
+        var traffic = NewTraffic(); // empty road: no signal needed either
         var events = Drive(traffic, _ => 0, Array.Empty<(ObservationKind, double)>());
 
-        Assert.That(events.Count(e => e.Severity == Severity.Driving), Is.EqualTo(3), string.Join("\n", events));
-        Assert.That(events.Any(e => e.Message.Contains("mirror")));
-        Assert.That(events.Any(e => e.RuleId == LaneChangeRule.RuleIdSignal));
-        Assert.That(events.Any(e => e.Message.Contains("shoulder")));
-        Assert.That(events.All(e => e.Outcome == RuleOutcome.Violation));
+        Assert.That(events, Has.Count.EqualTo(1), string.Join("\n", events));
+        Assert.That(events[0].Outcome, Is.EqualTo(RuleOutcome.GoodPractice));
     }
 
     [Test]
-    public void SignalNotNeededOnAnEmptyRoad()
+    public void MissingSignalWithTrafficAroundIsADrivingFault()
     {
-        var traffic = NewTraffic(); // nobody around
+        var traffic = NewTraffic();
+        traffic.AddCar(0, 40, speed: 15, desired: 15); // car ahead in our lane
 
-        var events = Drive(traffic, _ => 0,
-            new[] { (ObservationKind.MirrorInterior, 1.0), (ObservationKind.ShoulderOffside, 3.5) });
+        var events = Drive(traffic, _ => 0, Array.Empty<(ObservationKind, double)>());
 
-        Assert.That(events.Any(e => e.RuleId == LaneChangeRule.RuleIdSignal), Is.False, string.Join("\n", events));
+        var fault = events.Single(e => e.RuleId == LaneChangeRule.RuleIdSignal);
+        Assert.That(fault.Severity, Is.EqualTo(Severity.Driving));
+        Assert.That(events.Any(e => e.Outcome == RuleOutcome.GoodPractice), Is.False);
     }
 
     [Test]
@@ -99,58 +94,72 @@ public class LaneChangeRuleTests
         var traffic = NewTraffic();
         traffic.AddCar(0, 40, speed: 15, desired: 15);
 
-        // The car crosses the line ~1 s after starting to move (t ≈ 5.0); signal comes on only at 4.5.
-        var events = Drive(traffic, t => t >= 4.5 ? 1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 1.0), (ObservationKind.ShoulderOffside, 3.8) });
+        // The car crosses the line ~1 s after starting to move (t ≈ 5.0); the signal comes on only at 4.5.
+        var events = Drive(traffic, t => t >= 4.5 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
 
-        var signal = events.Single(e => e.RuleId == LaneChangeRule.RuleIdSignal);
-        Assert.That(signal.Message, Does.Contain("earlier"));
+        Assert.That(events.Single(e => e.RuleId == LaneChangeRule.RuleIdSignal).Message, Does.Contain("earlier"));
     }
 
     [Test]
     public void WrongWaySignalIsAFault()
     {
         var traffic = NewTraffic();
-        var events = Drive(traffic, t => t >= 1.0 ? -1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 1.0), (ObservationKind.ShoulderOffside, 3.8) });
+        var events = Drive(traffic, t => t >= 1.0 ? -1 : 0, Array.Empty<(ObservationKind, double)>());
 
         Assert.That(events.Any(e => e.Message.Contains("wrong way")), string.Join("\n", events));
     }
 
     [Test]
-    public void OldMirrorCheckDoesNotCount()
+    public void CarInTheBlindSpotIsSeriousAndExplainsTheShoulderCheck()
     {
         var traffic = NewTraffic();
-        // Mirror checked at t=0.1; with an 8 s lead-in the crossing is at ≈9 s, outside the 6 s window.
-        var events = Drive(traffic, t => t >= 6 ? 1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 0.1), (ObservationKind.ShoulderOffside, 8.5) }, leadIn: 8.0);
+        // Same speed as us, just behind our rear bumper in lane 2: invisible in the door mirror.
+        traffic.AddCar(1, -9, speed: 15, desired: 15);
 
-        Assert.That(events.Any(e => e.Message.Contains("mirror")), string.Join("\n", events));
+        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
+
+        var e = events.First(x => x.RuleId == LaneChangeRule.RuleIdLaneChange && x.Outcome == RuleOutcome.Violation);
+        Assert.That(e.Severity, Is.GreaterThanOrEqualTo(Severity.Serious), string.Join("\n", events));
+        Assert.That(e.Message, Does.Contain("blind spot").Or.Contain("alongside"));
+        Assert.That(e.Message, Does.Contain("shoulder"));
     }
 
     [Test]
-    public void CuttingInFrontOfACarIsSeriousOrDangerous()
+    public void CarAlongsideIsDangerous()
     {
         var traffic = NewTraffic();
-        // A much faster car in lane 2 (30 m/s vs our 15): when we move over at t≈5 it is ~15 m behind
-        // and closing fast, so it has to brake hard.
+        traffic.AddCar(1, 0, speed: 15, desired: 15); // right next to us
+
+        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
+
+        Assert.That(events.Any(e => e.Severity == Severity.Dangerous && e.Message.Contains("alongside")), string.Join("\n", events));
+    }
+
+    [Test]
+    public void ForcingAFastCarToBrakeIsSeriousOrDangerous()
+    {
+        var traffic = NewTraffic();
+        // 30 m/s vs our 15: when we move over at t≈5 it is ~15 m behind and closing fast.
         traffic.AddCar(1, -90, speed: 30, desired: 30);
 
-        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 1.0), (ObservationKind.ShoulderOffside, 3.8) });
+        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
 
         Assert.That(events.Any(e => e.Severity >= Severity.Serious), string.Join("\n", events));
         Assert.That(events.Any(e => e.Outcome == RuleOutcome.GoodPractice), Is.False);
     }
 
     [Test]
-    public void ShoulderCheckOnTheWrongSideDoesNotCount()
+    public void MovingInTooCloseBehindACarIsADrivingFault()
     {
         var traffic = NewTraffic();
-        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0,
-            new[] { (ObservationKind.MirrorOffside, 1.0), (ObservationKind.ShoulderNearside, 3.8) });
+        // Slower car in lane 2, ~12 m ahead when we cross: under a 1 s gap at 15 m/s.
+        traffic.AddCar(1, 75 + 12 + 4.3 - 5 * 10, speed: 10, desired: 10);
+        // A car beside it in lane 1 stops it from moving back left (keep left) before we get there.
+        traffic.AddCar(0, 75 + 12 + 4.3 - 5 * 10, speed: 10, desired: 10);
 
-        Assert.That(events.Any(e => e.Message.Contains("right shoulder")), string.Join("\n", events));
+        var events = Drive(traffic, t => t >= 1.5 ? 1 : 0, Array.Empty<(ObservationKind, double)>());
+
+        Assert.That(events.Any(e => e.Message.Contains("too close")), string.Join("\n", events));
     }
 
     [Test]
