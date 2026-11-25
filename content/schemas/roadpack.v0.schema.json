@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/roadpack.v0.schema.json",
+  "title": "L to Local RoadPack v0",
+  "description": "Link-level road graph for one area, produced offline by pipeline/ (from OpenStreetMap or hand-authored) and consumed by core/ (RoadPackLoader). Coordinates are local metres: x = east, z = north, relative to `origin`. Shared contract: change only by agreement (docs/08 §4).",
+  "type": "object",
+  "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
+  "additionalProperties": false,
+  "properties": {
+    "packFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
+    "displayName": { "type": "string" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "region": { "type": "string", "enum": ["GB-ENG", "GB-SCT", "GB-WLS"] },
+    "drivingSide": { "enum": ["left", "right"] },
+    "origin": {
+      "type": "object", "required": ["lat", "lon"], "additionalProperties": false,
+      "properties": { "lat": { "type": "number" }, "lon": { "type": "number" } }
+    },
+    "source": {
+      "type": "object", "required": ["kind", "licence", "attribution"], "additionalProperties": false,
+      "properties": {
+        "kind": { "enum": ["osm", "hand-authored"] },
+        "extract": { "type": "string", "description": "e.g. geofabrik west-midlands-latest.osm.pbf" },
+        "extractTimestamp": { "type": "string", "format": "date-time" },
+        "bbox": { "type": "array", "items": { "type": "number" }, "minItems": 4, "maxItems": 4, "description": "[minLon, minLat, maxLon, maxLat]" },
+        "licence": { "type": "string", "examples": ["ODbL-1.0"] },
+        "attribution": { "type": "string", "examples": ["© OpenStreetMap contributors"] },
+        "generator": { "type": "string" }
+      }
+    },
+    "nodes": { "type": "array", "items": { "$ref": "#/$defs/node" } },
+    "links": { "type": "array", "items": { "$ref": "#/$defs/link" } },
+    "crossings": { "type": "array", "items": { "$ref": "#/$defs/crossing" }, "default": [] },
+    "zones": { "type": "array", "items": { "$ref": "#/$defs/zone" }, "default": [] },
+    "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
+  },
+  "$defs": {
+    "point": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2, "description": "[x, z] metres" },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "node": {
+      "type": "object", "required": ["id", "x", "z", "kind"], "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "x": { "type": "number" }, "z": { "type": "number" },
+        "kind": { "enum": ["junction", "roundabout", "mini_roundabout", "crossing", "end", "shape"] },
+        "trafficSignals": { "type": "boolean", "default": false },
+        "giveWay": { "type": "boolean", "default": false },
+        "stop": { "type": "boolean", "default": false },
+        "osmId": { "type": "integer" }
+      }
+    },
+    "link": {
+      "type": "object",
+      "required": ["id", "from", "to", "roadClass", "oneway", "geometry", "speedLimitMph", "speedLimitSource", "lanesForward", "lanesBackward", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "from": { "type": "string" }, "to": { "type": "string" },
+        "roadClass": { "enum": ["motorway", "trunk", "primary", "secondary", "tertiary", "unclassified", "residential", "service", "living_street"] },
+        "name": { "type": "string" }, "ref": { "type": "string" },
+        "oneway": { "type": "boolean", "description": "true = only from → to" },
+        "junctionRoundabout": { "type": "boolean", "default": false },
+        "geometry": { "type": "array", "items": { "$ref": "#/$defs/point" }, "minItems": 2, "description": "polyline from `from` to `to`, metres" },
+        "speedLimitMph": { "type": "integer", "minimum": 5, "maximum": 70 },
+        "speedLimitSource": { "enum": ["tagged", "default"] },
+        "lanesForward": { "type": "integer", "minimum": 0, "maximum": 6 },
+        "lanesBackward": { "type": "integer", "minimum": 0, "maximum": 6 },
+        "turnLanesForward": { "type": "array", "items": { "type": "string" }, "description": "per lane, left to right, OSM turn:lanes values e.g. 'left', 'through;right'" },
+        "turnLanesBackward": { "type": "array", "items": { "type": "string" } },
+        "busLane": { "$ref": "#/$defs/laneRestriction" },
+        "cycleLane": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "forward": { "enum": ["none", "lane_solid", "lane_broken", "track", "shared_busway"] },
+            "backward": { "enum": ["none", "lane_solid", "lane_broken", "track", "shared_busway"] }
+          }
+        },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "confidenceNotes": { "type": "string" },
+        "osmWayId": { "type": "integer" }
+      }
+    },
+    "laneRestriction": {
+      "type": "object", "additionalProperties": false,
+      "properties": {
+        "forward": { "type": "boolean" }, "backward": { "type": "boolean" },
+        "hours": { "type": "string", "description": "OSM opening_hours syntax if known, e.g. 'Mo-Fr 07:00-10:00,16:00-19:00'" }
+      }
+    },
+    "crossing": {
+      "type": "object", "required": ["id", "x", "z", "type", "linkId", "confidence"], "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "x": { "type": "number" }, "z": { "type": "number" },
+        "type": { "enum": ["zebra", "parallel", "pelican", "puffin", "toucan", "equestrian", "signals_unknown", "uncontrolled"] },
+        "linkId": { "type": "string" },
+        "confidence": { "$ref": "#/$defs/confidence" },
+        "osmId": { "type": "integer" }
+      }
+    },
+    "zone": {
+      "type": "object", "required": ["id", "kind", "polygon", "confidence"], "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["speed_20", "school", "clearway", "red_route", "box_junction", "pedestrian_zone"] },
+        "polygon": { "type": "array", "items": { "$ref": "#/$defs/point" }, "minItems": 3 },
+        "hours": { "type": "string" },
+        "confidence": { "$ref": "#/$defs/confidence" }
+      }
+    }
+  }
+}

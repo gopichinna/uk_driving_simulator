@@ -1,0 +1,50 @@
+{
+  "packFormatVersion": "0.1",
+  "packId": "sample-t-junction",
+  "displayName": "Sample: T-junction with traffic lights and a zebra",
+  "country": "GB",
+  "region": "GB-ENG",
+  "drivingSide": "left",
+  "origin": { "lat": 52.5862, "lon": -2.1288 },
+  "source": {
+    "kind": "hand-authored",
+    "licence": "CC0-1.0",
+    "attribution": "Hand-authored sample for tests",
+    "generator": "manual"
+  },
+  "nodes": [
+    { "id": "n_south", "x": 0, "z": -120, "kind": "end" },
+    { "id": "n_junction", "x": 0, "z": 0, "kind": "junction", "trafficSignals": true },
+    { "id": "n_west", "x": -150, "z": 0, "kind": "end" },
+    { "id": "n_east", "x": 150, "z": 0, "kind": "end" }
+  ],
+  "links": [
+    {
+      "id": "l_south", "from": "n_south", "to": "n_junction", "roadClass": "secondary", "name": "Sample Road",
+      "oneway": false, "geometry": [[0, -120], [0, -60], [0, 0]],
+      "speedLimitMph": 30, "speedLimitSource": "default", "lanesForward": 1, "lanesBackward": 1,
+      "confidence": 0.9, "confidenceNotes": "hand-authored"
+    },
+    {
+      "id": "l_west", "from": "n_west", "to": "n_junction", "roadClass": "primary", "name": "Sample Street", "ref": "A1234",
+      "oneway": false, "geometry": [[-150, 0], [0, 0]],
+      "speedLimitMph": 30, "speedLimitSource": "tagged", "lanesForward": 2, "lanesBackward": 1,
+      "turnLanesForward": ["left;through", "through"],
+      "busLane": { "forward": true, "backward": false, "hours": "Mo-Fr 07:00-10:00,16:00-19:00" },
+      "confidence": 0.8
+    },
+    {
+      "id": "l_east", "from": "n_junction", "to": "n_east", "roadClass": "primary", "name": "Sample Street", "ref": "A1234",
+      "oneway": false, "geometry": [[0, 0], [150, 0]],
+      "speedLimitMph": 30, "speedLimitSource": "tagged", "lanesForward": 1, "lanesBackward": 1,
+      "cycleLane": { "forward": "lane_broken", "backward": "none" },
+      "confidence": 0.8
+    }
+  ],
+  "crossings": [
+    { "id": "x_zebra", "x": 0, "z": -40, "type": "zebra", "linkId": "l_south", "confidence": 0.95 }
+  ],
+  "zones": [
+    { "id": "z_box", "kind": "box_junction", "polygon": [[-6, -6], [6, -6], [6, 6], [-6, 6]], "confidence": 0.6 }
+  ]
+}

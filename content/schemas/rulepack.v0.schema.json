@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/rulepack.v0.schema.json",
+  "title": "L to Local rule pack v0 (one country)",
+  "description": "Machine-readable form of docs/02-rules-catalogue.md, stored as content/countries/<cc>/rules.yaml. Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["rulePackVersion", "country", "sourceDocument", "rules"],
+  "additionalProperties": false,
+  "properties": {
+    "rulePackVersion": { "const": "0.1" },
+    "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+    "sourceDocument": { "type": "string", "examples": ["docs/02-rules-catalogue.md"] },
+    "highwayCodeLastUpdate": { "type": "string", "format": "date" },
+    "rules": { "type": "array", "items": { "$ref": "#/$defs/rule" } }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": ["id", "group", "plainEnglish", "source", "force", "verified", "severity", "phase"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" },
+        "group": { "type": "string", "examples": ["F. Roundabouts (RBT)"] },
+        "plainEnglish": { "type": "string" },
+        "source": {
+          "type": "object", "required": ["text"], "additionalProperties": false,
+          "properties": {
+            "text": { "type": "string", "examples": ["ROAD 185"] },
+            "rules": { "type": "array", "items": { "type": "string" }, "examples": [["185"]] },
+            "url": { "type": "string" }
+          }
+        },
+        "force": { "enum": ["MUST", "should", "info"] },
+        "verified": { "enum": ["verified", "partial", "unverified"] },
+        "verifiedOn": { "type": "string", "format": "date" },
+        "detection": { "type": "string" },
+        "severity": { "type": "string", "description": "as written in the catalogue, e.g. 'S → X if …'" },
+        "teachingMoment": { "type": "string" },
+        "phase": { "enum": ["P", "M", "V1", "L"] },
+        "implementation": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "status": { "enum": ["implemented", "planned"] },
+            "class": { "type": "string", "examples": ["LToLocal.Rules.RoundaboutRule"] },
+            "file": { "type": "string", "examples": ["core/Rules.Core/RoundaboutRule.cs"] }
+          }
+        }
+      }
+    }
+  }
+}

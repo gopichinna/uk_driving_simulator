@@ -1,0 +1,356 @@
+{
+  ".github/workflows/core-tests.yml": {
+    "mtime": 1795614456.4623816,
+    "seen": 1795626655.8895411,
+    "ast_hash": "97b42169810adc00e123422b052b7865",
+    "semantic_hash": "97b42169810adc00e123422b052b7865"
+  },
+  "core/LToLocal.Core.slnx": {
+    "mtime": 1795619413.4764113,
+    "seen": 1795626655.889545,
+    "ast_hash": "8f2e56678583abd3b6a78c2422dc028d",
+    "semantic_hash": "8f2e56678583abd3b6a78c2422dc028d"
+  },
+  "core/Rules.Core.Tests/FollowingDistanceRuleTests.cs": {
+    "mtime": 1795624496.7685683,
+    "seen": 1795626655.889547,
+    "ast_hash": "3d59e16dc4496930c1e719c1254f9588",
+    "semantic_hash": "3d59e16dc4496930c1e719c1254f9588"
+  },
+  "core/Rules.Core.Tests/LaneChangeRuleTests.cs": {
+    "mtime": 1795620829.4104125,
+    "seen": 1795626655.889548,
+    "ast_hash": "852342597dc75c4ae67218a37f15b270",
+    "semantic_hash": "852342597dc75c4ae67218a37f15b270"
+  },
+  "core/Rules.Core.Tests/RoundaboutRuleTests.cs": {
+    "mtime": 1795621553.3777626,
+    "seen": 1795626655.889549,
+    "ast_hash": "a3ba6927f4a6e0d376d48c03ff718569",
+    "semantic_hash": "a3ba6927f4a6e0d376d48c03ff718569"
+  },
+  "core/Rules.Core.Tests/Rules.Core.Tests.csproj": {
+    "mtime": 1795619413.0404277,
+    "seen": 1795626655.88955,
+    "ast_hash": "db3f380fc98725f3e180de237550edaa",
+    "semantic_hash": "db3f380fc98725f3e180de237550edaa"
+  },
+  "core/Rules.Core.Tests/TwoLaneAndCyclistRuleTests.cs": {
+    "mtime": 1795624422.0793786,
+    "seen": 1795626655.8895512,
+    "ast_hash": "e0cae59690914fb2e8a2b0bbd54113c8",
+    "semantic_hash": "e0cae59690914fb2e8a2b0bbd54113c8"
+  },
+  "core/Rules.Core/CyclistPassingRule.cs": {
+    "mtime": 1795624496.7596889,
+    "seen": 1795626655.8895519,
+    "ast_hash": "abb26938abdc817b06cbc00daa205181",
+    "semantic_hash": "abb26938abdc817b06cbc00daa205181"
+  },
+  "core/Rules.Core/FollowingDistanceRule.cs": {
+    "mtime": 1795624517.11284,
+    "seen": 1795626655.8895519,
+    "ast_hash": "3defa0796da97d9ff0fcebb4e9ca91f9",
+    "semantic_hash": "3defa0796da97d9ff0fcebb4e9ca91f9"
+  },
+  "core/Rules.Core/LaneChangeRule.cs": {
+    "mtime": 1795620793.8687813,
+    "seen": 1795626655.8895528,
+    "ast_hash": "25b285610ab115232abaf89e868c4375",
+    "semantic_hash": "25b285610ab115232abaf89e868c4375"
+  },
+  "core/Rules.Core/RoundaboutRule.cs": {
+    "mtime": 1795624451.6412094,
+    "seen": 1795626655.889554,
+    "ast_hash": "33832b5cf362604d3363f77cb5e581b0",
+    "semantic_hash": "33832b5cf362604d3363f77cb5e581b0"
+  },
+  "core/Rules.Core/RoundaboutViews.cs": {
+    "mtime": 1795624390.161695,
+    "seen": 1795626655.889555,
+    "ast_hash": "1eb5c6ad45d46354a67f6fbda64e62d8",
+    "semantic_hash": "1eb5c6ad45d46354a67f6fbda64e62d8"
+  },
+  "core/Rules.Core/RuleTypes.cs": {
+    "mtime": 1795619473.755267,
+    "seen": 1795626655.889555,
+    "ast_hash": "1f1b61b167f89a53861bc0693f930dba",
+    "semantic_hash": "1f1b61b167f89a53861bc0693f930dba"
+  },
+  "core/Rules.Core/Rules.Core.csproj": {
+    "mtime": 1795619410.684022,
+    "seen": 1795626655.889557,
+    "ast_hash": "8a52a4e8ba0643be74a5501493c4f3cd",
+    "semantic_hash": "8a52a4e8ba0643be74a5501493c4f3cd"
+  },
+  "core/Rules.Core/SpeedRule.cs": {
+    "mtime": 1795621482.1035378,
+    "seen": 1795626655.889558,
+    "ast_hash": "602af87e626006ce3050c2efc24afa2c",
+    "semantic_hash": "602af87e626006ce3050c2efc24afa2c"
+  },
+  "core/Rules.Core/package.json": {
+    "mtime": 1795619410.6867492,
+    "seen": 1795626655.889558,
+    "ast_hash": "6b94c8ae1a707df27f0b0f3c94c2a7b9",
+    "semantic_hash": "6b94c8ae1a707df27f0b0f3c94c2a7b9"
+  },
+  "core/Sim.Core.Tests/CarModelTests.cs": {
+    "mtime": 1795616523.3280609,
+    "seen": 1795626655.889559,
+    "ast_hash": "d83697a5fe73625847979eb61fb27390",
+    "semantic_hash": "d83697a5fe73625847979eb61fb27390"
+  },
+  "core/Sim.Core.Tests/DeterministicRandomTests.cs": {
+    "mtime": 1795614438.0691822,
+    "seen": 1795626655.88956,
+    "ast_hash": "a6f75ae0cae53c2d0e21eee71f7a7638",
+    "semantic_hash": "a6f75ae0cae53c2d0e21eee71f7a7638"
+  },
+  "core/Sim.Core.Tests/FixedStepClockTests.cs": {
+    "mtime": 1795614424.4838614,
+    "seen": 1795626655.8895612,
+    "ast_hash": "c65a44675d0e9598fb3364a532ad7690",
+    "semantic_hash": "c65a44675d0e9598fb3364a532ad7690"
+  },
+  "core/Sim.Core.Tests/RoundaboutTests.cs": {
+    "mtime": 1795622923.304754,
+    "seen": 1795626655.8895612,
+    "ast_hash": "3184ab8fc2427eb897ae526cbc6804f2",
+    "semantic_hash": "3184ab8fc2427eb897ae526cbc6804f2"
+  },
+  "core/Sim.Core.Tests/Sim.Core.Tests.csproj": {
+    "mtime": 1795614396.5716863,
+    "seen": 1795626655.8895621,
+    "ast_hash": "2f9be0b2f9c13195a8bba19add8571a2",
+    "semantic_hash": "2f9be0b2f9c13195a8bba19add8571a2"
+  },
+  "core/Sim.Core.Tests/TrafficSimTests.cs": {
+    "mtime": 1795617497.6024919,
+    "seen": 1795626655.8895628,
+    "ast_hash": "c39a66bf4df9cda60dba9ef5384f99af",
+    "semantic_hash": "c39a66bf4df9cda60dba9ef5384f99af"
+  },
+  "core/Sim.Core.Tests/TwoLaneRoundaboutTests.cs": {
+    "mtime": 1795624422.0789745,
+    "seen": 1795626655.8895638,
+    "ast_hash": "715c0591000114fee3fcd8bf14506c71",
+    "semantic_hash": "715c0591000114fee3fcd8bf14506c71"
+  },
+  "core/Sim.Core/DeterministicRandom.cs": {
+    "mtime": 1795614424.3886366,
+    "seen": 1795626655.8895638,
+    "ast_hash": "ff842d94f44731a29f4638c357c00b77",
+    "semantic_hash": "ff842d94f44731a29f4638c357c00b77"
+  },
+  "core/Sim.Core/FixedStepClock.cs": {
+    "mtime": 1795614424.2540855,
+    "seen": 1795626655.889565,
+    "ast_hash": "041edb887b270bc497a90c50218d3ee9",
+    "semantic_hash": "041edb887b270bc497a90c50218d3ee9"
+  },
+  "core/Sim.Core/Geometry.cs": {
+    "mtime": 1795621333.0813985,
+    "seen": 1795626655.889566,
+    "ast_hash": "ad48ce405d0a0addc3dcdf1226e60d1a",
+    "semantic_hash": "ad48ce405d0a0addc3dcdf1226e60d1a"
+  },
+  "core/Sim.Core/Roundabout.cs": {
+    "mtime": 1795624291.4682446,
+    "seen": 1795626655.889566,
+    "ast_hash": "dc98ca46acc4d6586fdfc3802587c1c4",
+    "semantic_hash": "dc98ca46acc4d6586fdfc3802587c1c4"
+  },
+  "core/Sim.Core/Sim.Core.csproj": {
+    "mtime": 1795614396.1668997,
+    "seen": 1795626655.889567,
+    "ast_hash": "a0d61ed49347928b068491514332bb5b",
+    "semantic_hash": "a0d61ed49347928b068491514332bb5b"
+  },
+  "core/Sim.Core/Traffic.cs": {
+    "mtime": 1795624291.4678547,
+    "seen": 1795626655.889568,
+    "ast_hash": "de6a5d3e822b6339017c874b698bdbb6",
+    "semantic_hash": "de6a5d3e822b6339017c874b698bdbb6"
+  },
+  "core/Sim.Core/TwoLaneRoundabout.cs": {
+    "mtime": 1795624373.4486945,
+    "seen": 1795626655.889568,
+    "ast_hash": "e145b07a3e557503bf133998cfae6f52",
+    "semantic_hash": "e145b07a3e557503bf133998cfae6f52"
+  },
+  "core/Sim.Core/Vehicle.cs": {
+    "mtime": 1795616535.4178197,
+    "seen": 1795626655.889569,
+    "ast_hash": "9ca489aaed62b56bfa1488f9e6cc65d5",
+    "semantic_hash": "9ca489aaed62b56bfa1488f9e6cc65d5"
+  },
+  "core/Sim.Core/package.json": {
+    "mtime": 1795616497.1146555,
+    "seen": 1795626655.88957,
+    "ast_hash": "fe936b707375c9f223e18cea1b72019b",
+    "semantic_hash": "fe936b707375c9f223e18cea1b72019b"
+  },
+  "unity/Assets/Editor/PreviewRenderer.cs": {
+    "mtime": 1795623341.0420358,
+    "seen": 1795626655.88957,
+    "ast_hash": "b8f14c7dc1fca7d2e4d22b29322a39f1",
+    "semantic_hash": "b8f14c7dc1fca7d2e4d22b29322a39f1"
+  },
+  "unity/Assets/Editor/ProjectSetup.cs": {
+    "mtime": 1795624555.6555874,
+    "seen": 1795626655.8895712,
+    "ast_hash": "d20aecf9c05d0bc74503b64623536012",
+    "semantic_hash": "d20aecf9c05d0bc74503b64623536012"
+  },
+  "unity/Assets/Scripts/DriveGame.cs": {
+    "mtime": 1795624555.6549795,
+    "seen": 1795626655.8895721,
+    "ast_hash": "69d8a2ef053b29363e8c7ad97fa4f245",
+    "semantic_hash": "69d8a2ef053b29363e8c7ad97fa4f245"
+  },
+  "unity/Assets/Scripts/DualCarriagewayCourse.cs": {
+    "mtime": 1795623290.261714,
+    "seen": 1795626655.889573,
+    "ast_hash": "71d82d9d782b63e4cd294392b1618847",
+    "semantic_hash": "71d82d9d782b63e4cd294392b1618847"
+  },
+  "unity/Assets/Scripts/FeedbackView.cs": {
+    "mtime": 1795619556.0550334,
+    "seen": 1795626655.889573,
+    "ast_hash": "d967861b5ca4c110c8e2fee3d525afbe",
+    "semantic_hash": "d967861b5ca4c110c8e2fee3d525afbe"
+  },
+  "unity/Assets/Scripts/ICourse.cs": {
+    "mtime": 1795623290.2615106,
+    "seen": 1795626655.8895738,
+    "ast_hash": "4513b43746ce224bca2a8976b32fd485",
+    "semantic_hash": "4513b43746ce224bca2a8976b32fd485"
+  },
+  "unity/Assets/Scripts/MirrorRig.cs": {
+    "mtime": 1795620846.1426153,
+    "seen": 1795626655.889575,
+    "ast_hash": "b7902e05eb34d4b6a6f48dd2f8939c4e",
+    "semantic_hash": "b7902e05eb34d4b6a6f48dd2f8939c4e"
+  },
+  "unity/Assets/Scripts/RoundaboutCourse.cs": {
+    "mtime": 1795623290.261895,
+    "seen": 1795626655.889575,
+    "ast_hash": "721e95c0913d240e06f3d88e43303fde",
+    "semantic_hash": "721e95c0913d240e06f3d88e43303fde"
+  },
+  "unity/Assets/Scripts/TouchControls.cs": {
+    "mtime": 1795623290.2605906,
+    "seen": 1795626655.889576,
+    "ast_hash": "23982c2e607b5939794c9602a10d7b45",
+    "semantic_hash": "23982c2e607b5939794c9602a10d7b45"
+  },
+  "unity/Assets/Scripts/TrafficView.cs": {
+    "mtime": 1795623290.2611868,
+    "seen": 1795626655.889577,
+    "ast_hash": "d75673e97490488061e3f854fec52915",
+    "semantic_hash": "d75673e97490488061e3f854fec52915"
+  },
+  "unity/Assets/Scripts/TwoLaneRoundaboutCourse.cs": {
+    "mtime": 1795623290.2684805,
+    "seen": 1795626655.889577,
+    "ast_hash": "626986cf79ddf2c50f7f94a56e51d859",
+    "semantic_hash": "626986cf79ddf2c50f7f94a56e51d859"
+  },
+  "unity/Packages/manifest.json": {
+    "mtime": 1795619544.8085506,
+    "seen": 1795626655.889579,
+    "ast_hash": "13e4a686adf2bb2c28df39b962be09aa",
+    "semantic_hash": "13e4a686adf2bb2c28df39b962be09aa"
+  },
+  "unity/Packages/packages-lock.json": {
+    "mtime": 1795619589.144037,
+    "seen": 1795626655.889579,
+    "ast_hash": "6d362cb53e1a2aa05189d50379d75ecc",
+    "semantic_hash": "6d362cb53e1a2aa05189d50379d75ecc"
+  },
+  "unity/ProjectSettings/SceneTemplateSettings.json": {
+    "mtime": 1795616731.5570126,
+    "seen": 1795626655.88958,
+    "ast_hash": "eeb26e313b89cd9334b828428a4847ef",
+    "semantic_hash": "eeb26e313b89cd9334b828428a4847ef"
+  },
+  "README.md": {
+    "mtime": 1795614212.687778,
+    "seen": 1795626655.889581,
+    "ast_hash": "b86e3ff6b7670b0e71d733084e68996a",
+    "semantic_hash": "b86e3ff6b7670b0e71d733084e68996a"
+  },
+  "docs/00-executive-summary.md": {
+    "mtime": 1795614212.68214,
+    "seen": 1795626655.889581,
+    "ast_hash": "817dad0df3f8bed2666095ebf7bdef93",
+    "semantic_hash": "817dad0df3f8bed2666095ebf7bdef93"
+  },
+  "docs/01-product-spec.md": {
+    "mtime": 1795614212.6829474,
+    "seen": 1795626655.8895822,
+    "ast_hash": "1a8ed53886ceff8dfc87f2aa9b5a0efe",
+    "semantic_hash": "1a8ed53886ceff8dfc87f2aa9b5a0efe"
+  },
+  "docs/02-rules-catalogue.md": {
+    "mtime": 1795611935.9685311,
+    "seen": 1795626655.889583,
+    "ast_hash": "ae3a241c159a84bcdb1358e0299a9d9e",
+    "semantic_hash": "ae3a241c159a84bcdb1358e0299a9d9e"
+  },
+  "docs/03-gameplay-and-learning-design.md": {
+    "mtime": 1795623382.798144,
+    "seen": 1795626655.889583,
+    "ast_hash": "2d5002b428c359bc9a4aa3cb5433652e",
+    "semantic_hash": "2d5002b428c359bc9a4aa3cb5433652e"
+  },
+  "docs/04-architecture.md": {
+    "mtime": 1795612895.2446678,
+    "seen": 1795626655.889584,
+    "ast_hash": "c074a2251874b4ea1b01b52e19274a04",
+    "semantic_hash": "c074a2251874b4ea1b01b52e19274a04"
+  },
+  "docs/05-tech-decision-records.md": {
+    "mtime": 1795614632.7430284,
+    "seen": 1795626655.8895848,
+    "ast_hash": "3912cbec39034d29009928e833b016d0",
+    "semantic_hash": "3912cbec39034d29009928e833b016d0"
+  },
+  "docs/06-roadmap-and-risks.md": {
+    "mtime": 1795614212.6827145,
+    "seen": 1795626655.889586,
+    "ast_hash": "d7a77ef868ce0390c68f43020367e624",
+    "semantic_hash": "d7a77ef868ce0390c68f43020367e624"
+  },
+  "docs/07-prototype-plan.md": {
+    "mtime": 1795620846.144159,
+    "seen": 1795626655.889586,
+    "ast_hash": "308f90d3d4a172c8f65b1268b4f5e787",
+    "semantic_hash": "308f90d3d4a172c8f65b1268b4f5e787"
+  },
+  "uk-driving-sim-PROMPT.md": {
+    "mtime": 1795610509.3909698,
+    "seen": 1795626655.889587,
+    "ast_hash": "60f4c2663b684d05d94d0d30b3ca687f",
+    "semantic_hash": "60f4c2663b684d05d94d0d30b3ca687f"
+  },
+  "unity/ProjectSettings/ProjectVersion.txt": {
+    "mtime": 1795616456.6506,
+    "seen": 1795626655.8895879,
+    "ast_hash": "fa5f789f0b4725d2b166f9168035dd6d",
+    "semantic_hash": "fa5f789f0b4725d2b166f9168035dd6d"
+  },
+  "docs/images/2d-vs-3d.png": {
+    "mtime": 1795613412.148812,
+    "seen": 1795626655.889589,
+    "ast_hash": "e0dae3442e5f47b60b4bce0bb5762277",
+    "semantic_hash": "e0dae3442e5f47b60b4bce0bb5762277"
+  },
+  "docs/images/2d-vs-3d.svg": {
+    "mtime": 1795613411.745026,
+    "seen": 1795626655.889589,
+    "ast_hash": "2f1b2b21f63d3d5e3dbf870de25c5424",
+    "semantic_hash": "2f1b2b21f63d3d5e3dbf870de25c5424"
+  }
+}
