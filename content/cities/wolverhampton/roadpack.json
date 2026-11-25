@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.1",
+  "packFormatVersion": "0.2",
   "packId": "gb-wolverhampton-centre",
   "displayName": "Wolverhampton City Centre",
   "country": "GB",
@@ -40420,6 +40420,7608 @@
       "toLink": "l_684848393_0",
       "confidence": 0.9,
       "osmRelationId": 9502026
+    }
+  ],
+  "junctionPriority": [
+    {
+      "nodeId": "n_10003464291",
+      "majorLinks": [
+        "l_22757767_3",
+        "l_22757767_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_10003464292",
+      "majorLinks": [
+        "l_1092260458_0",
+        "l_546203837_1",
+        "l_546203837_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1002882969",
+      "majorLinks": [
+        "l_86336507_0",
+        "l_86336507_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1002882978",
+      "majorLinks": [
+        "l_19366135_0",
+        "l_19366135_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1007478062",
+      "majorLinks": [
+        "l_295111884_2",
+        "l_684848393_0",
+        "l_86628390_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1007478105",
+      "majorLinks": [
+        "l_636402735_0",
+        "l_649691012_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1011031095",
+      "majorLinks": [
+        "l_149166964_0",
+        "l_813955365_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1011058986",
+      "majorLinks": [
+        "l_35406700_3",
+        "l_86882780_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1011093058",
+      "majorLinks": [
+        "l_22757678_0",
+        "l_22757678_1",
+        "l_86886182_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1012606620",
+      "majorLinks": [
+        "l_149125994_0",
+        "l_149125994_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_10303863839",
+      "majorLinks": [
+        "l_15132985_1",
+        "l_15132985_2"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_1169117787",
+      "majorLinks": [
+        "l_22758209_1",
+        "l_22758209_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1203785173",
+      "majorLinks": [
+        "l_311799312_0",
+        "l_311799312_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1203785181",
+      "majorLinks": [
+        "l_104334756_0",
+        "l_104334756_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1203785187",
+      "majorLinks": [
+        "l_25696038_2",
+        "l_25696038_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1203785192",
+      "majorLinks": [
+        "l_22779053_1",
+        "l_22779053_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_12559991292",
+      "majorLinks": [
+        "l_34106032_1",
+        "l_34106032_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1332657323",
+      "majorLinks": [
+        "l_118496186_1",
+        "l_775826369_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1332657357",
+      "majorLinks": [
+        "l_775826368_0",
+        "l_775826369_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1332657697",
+      "majorLinks": [
+        "l_86882780_2",
+        "l_86882780_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1343216091",
+      "majorLinks": [
+        "l_15132985_0",
+        "l_15132985_1"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_1343216094",
+      "majorLinks": [
+        "l_15132985_5",
+        "l_15132985_6"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_13891645298",
+      "majorLinks": [
+        "l_1524058085_0",
+        "l_1524058086_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_13891645299",
+      "majorLinks": [
+        "l_1524058084_0",
+        "l_1524058086_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_13891657307",
+      "majorLinks": [
+        "l_25689657_0",
+        "l_25689657_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1470033181",
+      "majorLinks": [
+        "l_86628390_0",
+        "l_86628390_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1470033201",
+      "majorLinks": [
+        "l_43158989_0",
+        "l_43158989_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1472878998",
+      "majorLinks": [
+        "l_133822045_2",
+        "l_135964084_1",
+        "l_148994809_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1472879000",
+      "majorLinks": [
+        "l_140385473_0",
+        "l_148994809_0"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1472879002",
+      "majorLinks": [
+        "l_133822045_0",
+        "l_133822045_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1472879008",
+      "majorLinks": [
+        "l_636402736_1",
+        "l_636402736_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1472879754",
+      "majorLinks": [
+        "l_133822331_0",
+        "l_133822331_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1472879756",
+      "majorLinks": [
+        "l_133822331_1",
+        "l_140385473_0",
+        "l_140385478_0",
+        "l_290002937_0",
+        "l_852521077_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172513",
+      "majorLinks": [
+        "l_140385480_0",
+        "l_641671160_0",
+        "l_852793496_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172515",
+      "majorLinks": [
+        "l_140385480_0",
+        "l_636402733_0",
+        "l_852186017_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172526",
+      "majorLinks": [
+        "l_290002937_0",
+        "l_636402733_0",
+        "l_852154912_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172599",
+      "majorLinks": [
+        "l_146803779_0",
+        "l_636402736_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1538172625",
+      "majorLinks": [
+        "l_854337975_0",
+        "l_854571972_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172631",
+      "majorLinks": [
+        "l_140385489_0",
+        "l_854571972_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172643",
+      "majorLinks": [
+        "l_140385487_0",
+        "l_854068182_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172655",
+      "majorLinks": [
+        "l_140385487_0",
+        "l_852463204_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1538172911",
+      "majorLinks": [
+        "l_649691042_2",
+        "l_649691042_3"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_15404314",
+      "majorLinks": [
+        "l_25695784_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_154780294",
+      "majorLinks": [
+        "l_140653958_1",
+        "l_38791086_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_154780712",
+      "majorLinks": [
+        "l_15534580_0",
+        "l_491066195_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_154780713",
+      "majorLinks": [
+        "l_15534450_0",
+        "l_15534580_1",
+        "l_534432395_1",
+        "l_627988061_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_154780715",
+      "majorLinks": [
+        "l_1058854041_0",
+        "l_15534450_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_154780717",
+      "majorLinks": [
+        "l_183926041_1",
+        "l_85551216_0"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_155021143",
+      "majorLinks": [
+        "l_22801795_0",
+        "l_22801796_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1619274700",
+      "majorLinks": [
+        "l_148866535_0",
+        "l_148866535_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1619293844",
+      "majorLinks": [
+        "l_148868369_0",
+        "l_649691038_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1620396601",
+      "majorLinks": [
+        "l_38791083_0",
+        "l_38791083_1",
+        "l_866488798_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1620648792",
+      "majorLinks": [
+        "l_85550728_0",
+        "l_85550728_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1620648810",
+      "majorLinks": [
+        "l_643170821_0",
+        "l_643170821_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1620736592",
+      "majorLinks": [
+        "l_146803779_0",
+        "l_7984132_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1621493184",
+      "majorLinks": [
+        "l_645732306_0",
+        "l_7984147_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1621493186",
+      "majorLinks": [
+        "l_149125995_0",
+        "l_149125995_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621493197",
+      "majorLinks": [
+        "l_149125994_0",
+        "l_19210752_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1621493211",
+      "majorLinks": [
+        "l_43159704_0",
+        "l_43159704_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621493243",
+      "majorLinks": [
+        "l_25696174_2",
+        "l_25696174_3"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621771701",
+      "majorLinks": [
+        "l_43655272_0",
+        "l_866798128_0",
+        "l_866798128_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621771735",
+      "majorLinks": [
+        "l_762310458_0",
+        "l_866798129_0",
+        "l_866798129_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621771754",
+      "majorLinks": [
+        "l_22757767_0",
+        "l_22757767_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1621771780",
+      "majorLinks": [
+        "l_23991405_1",
+        "l_23991405_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1621771806",
+      "majorLinks": [
+        "l_149160142_0",
+        "l_149160142_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1621822791",
+      "majorLinks": [
+        "l_7984738_2",
+        "l_7984738_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1621822795",
+      "majorLinks": [
+        "l_149166955_0",
+        "l_85581313_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621822836",
+      "majorLinks": [
+        "l_294793418_0",
+        "l_546120389_0",
+        "l_546120393_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621822896",
+      "majorLinks": [
+        "l_638785947_1",
+        "l_638785947_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1621822930",
+      "majorLinks": [
+        "l_149166968_0",
+        "l_149166968_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1622867430",
+      "majorLinks": [
+        "l_1427538813_0",
+        "l_149283018_0",
+        "l_149283020_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1622867473",
+      "majorLinks": [
+        "l_1427538814_0",
+        "l_149283018_0",
+        "l_149283020_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1622867534",
+      "majorLinks": [
+        "l_149282981_0",
+        "l_149282981_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1622867538",
+      "majorLinks": [
+        "l_149282981_1",
+        "l_149282981_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1622867579",
+      "majorLinks": [
+        "l_149282984_0",
+        "l_149282984_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1622867647",
+      "majorLinks": [
+        "l_149282987_0",
+        "l_149282988_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1623854760",
+      "majorLinks": [
+        "l_649691042_1",
+        "l_649691042_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1623857889",
+      "majorLinks": [
+        "l_149402177_0",
+        "l_149402177_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1623857890",
+      "majorLinks": [
+        "l_149402172_0",
+        "l_149402177_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_1623857893",
+      "majorLinks": [
+        "l_149402173_0",
+        "l_149402178_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1695935414",
+      "majorLinks": [
+        "l_43159704_0",
+        "l_85551216_1",
+        "l_85551218_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_18236720",
+      "majorLinks": [
+        "l_22779053_3",
+        "l_22779053_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_18236721",
+      "majorLinks": [
+        "l_22779053_2",
+        "l_22779053_3",
+        "l_8128770_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_18236722",
+      "majorLinks": [
+        "l_109182580_0",
+        "l_109182580_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_18275894",
+      "majorLinks": [
+        "l_1267207112_0",
+        "l_85551219_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_1876827190",
+      "majorLinks": [
+        "l_177230202_0",
+        "l_866798125_0",
+        "l_866798125_1",
+        "l_866798126_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1876827220",
+      "majorLinks": [
+        "l_85580980_1",
+        "l_85580980_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_18834324",
+      "majorLinks": [
+        "l_1242995331_0",
+        "l_7984310_0",
+        "l_85548593_0"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_18855077",
+      "majorLinks": [
+        "l_25371174_0",
+        "l_85548593_1",
+        "l_85548593_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_18855078",
+      "majorLinks": [
+        "l_85550577_0",
+        "l_883057339_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_18855081",
+      "majorLinks": [
+        "l_15132985_0",
+        "l_15132985_6"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_18855084",
+      "majorLinks": [
+        "l_148994807_0",
+        "l_25371174_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_18855090",
+      "majorLinks": [
+        "l_15132985_2",
+        "l_15132985_3"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_19857051",
+      "majorLinks": [
+        "l_149125994_3",
+        "l_149125994_4",
+        "l_28423411_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_19857069",
+      "majorLinks": [
+        "l_28423411_0",
+        "l_28423411_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_199258586",
+      "majorLinks": [
+        "l_34019939_0",
+        "l_649691003_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_2011352927",
+      "majorLinks": [
+        "l_156364120_0",
+        "l_156364120_0",
+        "l_705005031_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_201409410",
+      "majorLinks": [
+        "l_140653958_0",
+        "l_140653958_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_201427663",
+      "majorLinks": [
+        "l_19373424_3",
+        "l_19373426_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_201427759",
+      "majorLinks": [
+        "l_85548593_0",
+        "l_85548593_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_201427766",
+      "majorLinks": [
+        "l_19373426_0",
+        "l_36799795_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_201427775",
+      "majorLinks": [
+        "l_15132985_4",
+        "l_15132985_5"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_201434885",
+      "majorLinks": [
+        "l_19373955_1",
+        "l_19373955_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_201442100",
+      "majorLinks": [
+        "l_118716556_0",
+        "l_311799312_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_201972258",
+      "majorLinks": [
+        "l_775832920_0",
+        "l_775832920_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_201972275",
+      "majorLinks": [
+        "l_146803784_0",
+        "l_7984738_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_21033215",
+      "majorLinks": [
+        "l_19422216_0",
+        "l_7984738_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_211536313",
+      "majorLinks": [
+        "l_857080244_0",
+        "l_86336372_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214841",
+      "majorLinks": [
+        "l_311810292_0",
+        "l_311810292_1",
+        "l_7984140_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214843",
+      "majorLinks": [
+        "l_311810292_1",
+        "l_311810292_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214844",
+      "majorLinks": [
+        "l_311810292_2",
+        "l_311810292_3",
+        "l_438845248_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214845",
+      "majorLinks": [
+        "l_311810292_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214846",
+      "majorLinks": [
+        "l_627857124_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214847",
+      "majorLinks": [
+        "l_627857124_0",
+        "l_631060503_0",
+        "l_7984132_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214912",
+      "majorLinks": [
+        "l_645732306_1",
+        "l_775826348_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214916",
+      "majorLinks": [
+        "l_645732297_2",
+        "l_645732298_0",
+        "l_7985852_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214918",
+      "majorLinks": [
+        "l_123075131_0",
+        "l_438851182_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214919",
+      "majorLinks": [
+        "l_123075131_1",
+        "l_86140139_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214922",
+      "majorLinks": [
+        "l_7984151_0",
+        "l_86140132_0",
+        "l_86140139_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214924",
+      "majorLinks": [
+        "l_25696174_4",
+        "l_85580987_0",
+        "l_86140132_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214925",
+      "majorLinks": [
+        "l_85580978_0",
+        "l_85580987_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214926",
+      "majorLinks": [
+        "l_85580975_0",
+        "l_85580978_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214928",
+      "majorLinks": [
+        "l_7984148_0",
+        "l_7985852_0",
+        "l_85580975_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214929",
+      "majorLinks": [
+        "l_7985852_0",
+        "l_7985852_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214958",
+      "majorLinks": [
+        "l_7984151_1",
+        "l_7984151_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214960",
+      "majorLinks": [
+        "l_7984151_2",
+        "l_7984151_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214963",
+      "majorLinks": [
+        "l_7984151_3",
+        "l_7984151_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214964",
+      "majorLinks": [
+        "l_25696204_0",
+        "l_7984151_5",
+        "l_879699936_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214967",
+      "majorLinks": [
+        "l_643170789_0",
+        "l_643170789_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214976",
+      "majorLinks": [
+        "l_23486739_0",
+        "l_25696172_0",
+        "l_897791706_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214977",
+      "majorLinks": [
+        "l_295111882_0",
+        "l_324026349_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214980",
+      "majorLinks": [
+        "l_153700206_0",
+        "l_641675310_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214983",
+      "majorLinks": [
+        "l_636402736_2",
+        "l_649691012_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214984",
+      "majorLinks": [
+        "l_636402736_0",
+        "l_636402736_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_214997",
+      "majorLinks": [
+        "l_25696174_0",
+        "l_85550726_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_214998",
+      "majorLinks": [
+        "l_25696127_1",
+        "l_25696128_0",
+        "l_85550730_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_214999",
+      "majorLinks": [
+        "l_25696128_0",
+        "l_86336509_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_215015",
+      "majorLinks": [
+        "l_25696206_0",
+        "l_86140128_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_215016",
+      "majorLinks": [
+        "l_22757760_0",
+        "l_649691038_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_215017",
+      "majorLinks": [
+        "l_649691042_0",
+        "l_649691042_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_215020",
+      "majorLinks": [
+        "l_295111883_0",
+        "l_649691042_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_215021",
+      "majorLinks": [
+        "l_295111883_0",
+        "l_295111884_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_215022",
+      "majorLinks": [
+        "l_34019939_0",
+        "l_684848393_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_215023",
+      "majorLinks": [
+        "l_295111886_0",
+        "l_649691003_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2200278255",
+      "majorLinks": [
+        "l_25696038_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2200285086",
+      "majorLinks": [
+        "l_209874063_0",
+        "l_669947458_0",
+        "l_669947458_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2200292666",
+      "majorLinks": [
+        "l_104334756_1",
+        "l_873327853_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2200295406",
+      "majorLinks": [
+        "l_209874063_0",
+        "l_209874063_1",
+        "l_209874063_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2200310173",
+      "majorLinks": [
+        "l_209875613_0",
+        "l_209875613_1",
+        "l_209875623_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2200310186",
+      "majorLinks": [
+        "l_25696038_0",
+        "l_25696038_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2200360687",
+      "majorLinks": [
+        "l_22757676_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2200360696",
+      "majorLinks": [
+        "l_22757676_0",
+        "l_22757676_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2200360756",
+      "majorLinks": [
+        "l_209878852_1",
+        "l_209878852_2",
+        "l_776095318_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2200360772",
+      "majorLinks": [
+        "l_209878858_0",
+        "l_776082062_0",
+        "l_776082062_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2297683615",
+      "majorLinks": [
+        "l_220679428_0",
+        "l_25689657_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2418996357",
+      "majorLinks": [
+        "l_22757716_0",
+        "l_22757716_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2418996358",
+      "majorLinks": [
+        "l_22757716_1",
+        "l_22757716_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2418996362",
+      "majorLinks": [
+        "l_233524875_0",
+        "l_233524875_1",
+        "l_880133461_0",
+        "l_880133461_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2418996366",
+      "majorLinks": [
+        "l_233524874_0",
+        "l_233524874_1",
+        "l_880133461_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223018",
+      "majorLinks": [
+        "l_22779135_2",
+        "l_22779135_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223020",
+      "majorLinks": [
+        "l_22779135_6",
+        "l_22779135_7"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223406",
+      "majorLinks": [
+        "l_15520106_1",
+        "l_15520106_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223407",
+      "majorLinks": [
+        "l_22757716_0",
+        "l_85580983_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223408",
+      "majorLinks": [
+        "l_22757716_3",
+        "l_22757717_0",
+        "l_85580979_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223411",
+      "majorLinks": [
+        "l_25696174_1",
+        "l_25696174_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223417",
+      "majorLinks": [
+        "l_22757718_1",
+        "l_85580974_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223421",
+      "majorLinks": [
+        "l_22757715_1",
+        "l_233524862_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223437",
+      "majorLinks": [
+        "l_534429536_2",
+        "l_534429536_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223454",
+      "majorLinks": [
+        "l_1251752305_0",
+        "l_1251752305_1",
+        "l_22757732_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223460",
+      "majorLinks": [
+        "l_22757736_1",
+        "l_866481294_0",
+        "l_866481294_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223480",
+      "majorLinks": [
+        "l_1058854041_0",
+        "l_183926041_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223487",
+      "majorLinks": [
+        "l_22757742_0",
+        "l_38791085_0",
+        "l_868591197_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223492",
+      "majorLinks": [
+        "l_22757740_0",
+        "l_38791085_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223503",
+      "majorLinks": [
+        "l_22757740_1",
+        "l_26996042_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223504",
+      "majorLinks": [
+        "l_1385720236_0",
+        "l_26996043_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223506",
+      "majorLinks": [
+        "l_22757741_0",
+        "l_22757742_0",
+        "l_26996042_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223509",
+      "majorLinks": [
+        "l_627988061_0",
+        "l_627988061_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223514",
+      "majorLinks": [
+        "l_627988061_3",
+        "l_627988061_4"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223615",
+      "majorLinks": [
+        "l_85580986_0",
+        "l_85580990_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244223869",
+      "majorLinks": [
+        "l_22757753_0",
+        "l_22757754_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244223880",
+      "majorLinks": [
+        "l_627988061_1",
+        "l_627988061_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223883",
+      "majorLinks": [
+        "l_35406701_0",
+        "l_491066196_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244223899",
+      "majorLinks": [
+        "l_491066196_0",
+        "l_853012424_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244227046",
+      "majorLinks": [
+        "l_7984148_1",
+        "l_85580980_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244227057",
+      "majorLinks": [
+        "l_491066198_0",
+        "l_491066198_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244227722",
+      "majorLinks": [
+        "l_23991405_2",
+        "l_85580977_0",
+        "l_85580986_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244227724",
+      "majorLinks": [
+        "l_149160142_3",
+        "l_149160142_4",
+        "l_22757917_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244227725",
+      "majorLinks": [
+        "l_7984145_0",
+        "l_852047642_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244228578",
+      "majorLinks": [
+        "l_86882780_0",
+        "l_86882780_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244235853",
+      "majorLinks": [
+        "l_22757922_0",
+        "l_22757955_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244244946",
+      "majorLinks": [
+        "l_15520106_2",
+        "l_85550728_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244397684",
+      "majorLinks": [
+        "l_491066197_0",
+        "l_7984137_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_244397720",
+      "majorLinks": [
+        "l_7984133_0",
+        "l_852170602_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244397721",
+      "majorLinks": [
+        "l_22766042_0",
+        "l_22766042_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_244397723",
+      "majorLinks": [
+        "l_118446711_0",
+        "l_534446325_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244576967",
+      "majorLinks": [
+        "l_148994805_0",
+        "l_38791088_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244576969",
+      "majorLinks": [
+        "l_22779198_1",
+        "l_38791088_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_244576971",
+      "majorLinks": [
+        "l_38791083_1",
+        "l_852047641_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_247761920",
+      "majorLinks": [
+        "l_43158989_1",
+        "l_7982408_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_24936164",
+      "majorLinks": [
+        "l_19373954_0",
+        "l_852018215_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_24936165",
+      "majorLinks": [
+        "l_19373955_0",
+        "l_7984133_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_250103526",
+      "majorLinks": [
+        "l_1267207113_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_270914872",
+      "majorLinks": [
+        "l_19373954_0",
+        "l_19373954_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_270914874",
+      "majorLinks": [
+        "l_24930290_0",
+        "l_24930290_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_270914877",
+      "majorLinks": [
+        "l_24930290_2",
+        "l_290002936_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_270914880",
+      "majorLinks": [
+        "l_24930294_0",
+        "l_24930295_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_270917117",
+      "majorLinks": [
+        "l_34106032_3",
+        "l_438845248_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_270917118",
+      "majorLinks": [
+        "l_438845248_0",
+        "l_438845248_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_270917121",
+      "majorLinks": [
+        "l_290002936_0",
+        "l_290002936_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271957",
+      "majorLinks": [
+        "l_22779027_0",
+        "l_24930294_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271958",
+      "majorLinks": [
+        "l_24930295_1",
+        "l_852018219_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271965",
+      "majorLinks": [
+        "l_22779028_5",
+        "l_22779028_6"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271966",
+      "majorLinks": [
+        "l_22779028_7",
+        "l_38791084_3",
+        "l_638785947_0",
+        "l_7984137_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271968",
+      "majorLinks": [
+        "l_638785947_2",
+        "l_7984142_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_271973",
+      "majorLinks": [
+        "l_22779135_5",
+        "l_22779135_6"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_271974",
+      "majorLinks": [
+        "l_22779135_11",
+        "l_534429536_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_271976",
+      "majorLinks": [
+        "l_22779029_3",
+        "l_38791083_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_271984",
+      "majorLinks": [
+        "l_491066197_2",
+        "l_78044200_0",
+        "l_854584202_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_271985",
+      "majorLinks": [
+        "l_7984136_0",
+        "l_854584202_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_271986",
+      "majorLinks": [
+        "l_852018215_0",
+        "l_852018215_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_276540397",
+      "majorLinks": [
+        "l_19373421_0",
+        "l_19373421_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_276540398",
+      "majorLinks": [
+        "l_19373421_1",
+        "l_19373421_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_279991356",
+      "majorLinks": [
+        "l_230809337_0",
+        "l_25682474_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280083592",
+      "majorLinks": [
+        "l_149038892_0",
+        "l_25689327_2",
+        "l_612926060_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280083596",
+      "majorLinks": [
+        "l_149038892_0",
+        "l_612926059_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280083597",
+      "majorLinks": [
+        "l_612926059_0",
+        "l_86628388_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280083637",
+      "majorLinks": [
+        "l_25689656_0",
+        "l_25689657_0",
+        "l_86628388_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280086958",
+      "majorLinks": [
+        "l_25689656_0",
+        "l_43158989_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280150349",
+      "majorLinks": [
+        "l_857080243_0",
+        "l_857080244_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_280151383",
+      "majorLinks": [
+        "l_153700206_0",
+        "l_295111882_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_280151389",
+      "majorLinks": [
+        "l_153700256_0",
+        "l_153700256_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280153342",
+      "majorLinks": [
+        "l_25696038_4",
+        "l_25696038_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_280154744",
+      "majorLinks": [
+        "l_643170804_1",
+        "l_86140128_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_280575641",
+      "majorLinks": [
+        "l_149283001_0",
+        "l_149402172_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_280575644",
+      "majorLinks": [
+        "l_149172600_0",
+        "l_25730738_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280575647",
+      "majorLinks": [
+        "l_149172600_0",
+        "l_149282984_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_280588815",
+      "majorLinks": [
+        "l_148868369_0",
+        "l_491066192_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_280593126",
+      "majorLinks": [
+        "l_649691038_0",
+        "l_649691038_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_280611264",
+      "majorLinks": [
+        "l_1427538812_0",
+        "l_149283000_0",
+        "l_149283001_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368327",
+      "majorLinks": [
+        "l_852793496_0",
+        "l_856102381_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368328",
+      "majorLinks": [
+        "l_852154912_0",
+        "l_852378904_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368329",
+      "majorLinks": [
+        "l_852039828_0",
+        "l_852186017_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368331",
+      "majorLinks": [
+        "l_852117141_0",
+        "l_852521077_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368332",
+      "majorLinks": [
+        "l_852288856_0",
+        "l_852378904_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368334",
+      "majorLinks": [
+        "l_854641675_0",
+        "l_856102381_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368335",
+      "majorLinks": [
+        "l_852039828_0",
+        "l_853501281_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368337",
+      "majorLinks": [
+        "l_852288856_0",
+        "l_854039537_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368338",
+      "majorLinks": [
+        "l_852117141_0",
+        "l_852502236_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368339",
+      "majorLinks": [
+        "l_854641675_0",
+        "l_854837641_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368340",
+      "majorLinks": [
+        "l_853501281_0",
+        "l_854337975_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368341",
+      "majorLinks": [
+        "l_854039537_0",
+        "l_854068182_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368342",
+      "majorLinks": [
+        "l_852463204_0",
+        "l_852502236_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2935368343",
+      "majorLinks": [
+        "l_140385489_0",
+        "l_854837641_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_295901969",
+      "majorLinks": [
+        "l_627988061_2",
+        "l_627988061_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_295901972",
+      "majorLinks": [
+        "l_22757739_0",
+        "l_22757739_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_295901974",
+      "majorLinks": [
+        "l_22757739_2",
+        "l_868591197_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_295901975",
+      "majorLinks": [
+        "l_22757741_0",
+        "l_627988061_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113024",
+      "majorLinks": [
+        "l_28423411_1",
+        "l_28423411_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113025",
+      "majorLinks": [
+        "l_149125994_4",
+        "l_149125994_5"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113026",
+      "majorLinks": [
+        "l_149125994_2",
+        "l_149125994_3"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113027",
+      "majorLinks": [
+        "l_149125994_1",
+        "l_149125994_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_2976113028",
+      "majorLinks": [
+        "l_294040786_0",
+        "l_294040786_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113029",
+      "majorLinks": [
+        "l_292033479_0",
+        "l_292033479_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2976113030",
+      "majorLinks": [
+        "l_292033479_1",
+        "l_292033479_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_3473842693",
+      "majorLinks": [
+        "l_775826356_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_3473842696",
+      "majorLinks": [
+        "l_86882780_1",
+        "l_86882780_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_3830953986",
+      "majorLinks": [
+        "l_123075131_0",
+        "l_123075131_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_3929131092",
+      "majorLinks": [
+        "l_866634692_0",
+        "l_866634693_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_3929131095",
+      "majorLinks": [
+        "l_866634693_1",
+        "l_866634693_2",
+        "l_866634695_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_3929131111",
+      "majorLinks": [
+        "l_86336509_3",
+        "l_86336509_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_438468",
+      "majorLinks": [
+        "l_19205886_2",
+        "l_7984310_0",
+        "l_7984419_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438470",
+      "majorLinks": [
+        "l_148868368_0",
+        "l_86306233_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438476",
+      "majorLinks": [
+        "l_491066194_0",
+        "l_85550391_0",
+        "l_85550392_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438480",
+      "majorLinks": [
+        "l_19366135_2",
+        "l_86336372_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_438481",
+      "majorLinks": [
+        "l_87055358_0",
+        "l_87055358_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_438484",
+      "majorLinks": [
+        "l_23151708_0",
+        "l_87055358_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438591",
+      "majorLinks": [
+        "l_19366138_0",
+        "l_19366139_0",
+        "l_19366140_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438598",
+      "majorLinks": [
+        "l_38791087_1",
+        "l_7984152_0",
+        "l_85548593_2",
+        "l_85550386_0",
+        "l_868384401_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_438601",
+      "majorLinks": [
+        "l_22766059_0",
+        "l_311799312_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438608",
+      "majorLinks": [
+        "l_19422216_1",
+        "l_22757916_1",
+        "l_22779029_0",
+        "l_35406700_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438610",
+      "majorLinks": [
+        "l_22758209_0",
+        "l_491066198_2",
+        "l_775832920_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_438626",
+      "majorLinks": [
+        "l_22757916_0",
+        "l_85580977_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_438627",
+      "majorLinks": [
+        "l_645715020_0",
+        "l_7984145_0"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_438628",
+      "majorLinks": [
+        "l_35406700_2",
+        "l_35406700_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_442357",
+      "majorLinks": [
+        "l_37852966_0",
+        "l_87055358_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_443927297",
+      "majorLinks": [
+        "l_86336372_0",
+        "l_86336372_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_4710007285",
+      "majorLinks": [
+        "l_135964083_0",
+        "l_22801795_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4710007286",
+      "majorLinks": [
+        "l_140385476_3",
+        "l_140653958_0",
+        "l_22779053_0",
+        "l_22801796_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4710007287",
+      "majorLinks": [
+        "l_140385476_0",
+        "l_22766059_0",
+        "l_22766061_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4710007288",
+      "majorLinks": [
+        "l_24930291_0",
+        "l_78044205_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_4832257641",
+      "majorLinks": [
+        "l_491066194_0",
+        "l_85550577_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4832257642",
+      "majorLinks": [
+        "l_35406701_0",
+        "l_491066195_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4981561691",
+      "majorLinks": [
+        "l_146803783_0",
+        "l_146803783_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_4981561692",
+      "majorLinks": [
+        "l_146803783_3",
+        "l_19373955_2",
+        "l_22766061_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_4981561695",
+      "majorLinks": [
+        "l_146803783_0",
+        "l_78044205_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_4981561696",
+      "majorLinks": [
+        "l_19373954_2",
+        "l_24930290_0",
+        "l_24930291_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5182987574",
+      "majorLinks": [
+        "l_534429536_3",
+        "l_85581313_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_5182987578",
+      "majorLinks": [
+        "l_7984738_0",
+        "l_7984738_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_5183020588",
+      "majorLinks": [
+        "l_15534450_1",
+        "l_15534450_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5183020590",
+      "majorLinks": [
+        "l_15534580_0",
+        "l_15534580_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5183020591",
+      "majorLinks": [
+        "l_534432395_0",
+        "l_534432395_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5183105885",
+      "majorLinks": [
+        "l_491066197_0",
+        "l_491066197_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5183105889",
+      "majorLinks": [
+        "l_534446325_0",
+        "l_78044200_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5183105890",
+      "majorLinks": [
+        "l_38791084_1",
+        "l_38791084_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277664254",
+      "majorLinks": [
+        "l_22766048_0",
+        "l_22766048_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5277664255",
+      "majorLinks": [
+        "l_546116272_0",
+        "l_546116272_1",
+        "l_878041692_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277664273",
+      "majorLinks": [
+        "l_546116271_0",
+        "l_546116272_1",
+        "l_546116272_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277664282",
+      "majorLinks": [
+        "l_852018215_0",
+        "l_854584201_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5277664303",
+      "majorLinks": [
+        "l_852018219_1",
+        "l_852018219_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5277711435",
+      "majorLinks": [
+        "l_22766041_2",
+        "l_22766041_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5277711443",
+      "majorLinks": [
+        "l_22779028_3",
+        "l_22779028_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5277711448",
+      "majorLinks": [
+        "l_546120389_4",
+        "l_546120389_5",
+        "l_546120401_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711458",
+      "majorLinks": [
+        "l_294793418_1",
+        "l_546120389_8",
+        "l_546120405_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711459",
+      "majorLinks": [
+        "l_546120389_6",
+        "l_546120389_7",
+        "l_546120393_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711464",
+      "majorLinks": [
+        "l_546120389_7",
+        "l_546120389_8",
+        "l_546120395_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711468",
+      "majorLinks": [
+        "l_294793418_0",
+        "l_294793418_1",
+        "l_546120395_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711469",
+      "majorLinks": [
+        "l_546120389_3",
+        "l_546120389_4",
+        "l_546120398_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711471",
+      "majorLinks": [
+        "l_546120389_2",
+        "l_546120389_3",
+        "l_546120398_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711472",
+      "majorLinks": [
+        "l_546120389_5",
+        "l_546120389_6",
+        "l_546120401_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711477",
+      "majorLinks": [
+        "l_546120405_1",
+        "l_546120408_0",
+        "l_546120415_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711483",
+      "majorLinks": [
+        "l_546120405_0",
+        "l_546120405_1",
+        "l_546120408_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711484",
+      "majorLinks": [
+        "l_546120408_0",
+        "l_546120408_1",
+        "l_546120412_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711485",
+      "majorLinks": [
+        "l_546120408_1",
+        "l_546120408_2",
+        "l_546120412_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711487",
+      "majorLinks": [
+        "l_546120408_2",
+        "l_546120408_3",
+        "l_546120415_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711509",
+      "majorLinks": [
+        "l_546120437_0",
+        "l_546120437_1",
+        "l_546120441_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5277711511",
+      "majorLinks": [
+        "l_546120437_1",
+        "l_546120437_2",
+        "l_546120439_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574244",
+      "majorLinks": [
+        "l_866798125_1",
+        "l_866798125_2",
+        "l_866798127_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574261",
+      "majorLinks": [
+        "l_149160142_2",
+        "l_149160142_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5278574264",
+      "majorLinks": [
+        "l_546203838_1",
+        "l_546203838_2",
+        "l_546203840_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574267",
+      "majorLinks": [
+        "l_546203838_7",
+        "l_850409858_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574270",
+      "majorLinks": [
+        "l_546203838_0",
+        "l_866798133_1",
+        "l_866798135_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574271",
+      "majorLinks": [
+        "l_546203838_4",
+        "l_546203838_5",
+        "l_546203840_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574272",
+      "majorLinks": [
+        "l_546203838_5",
+        "l_546203838_6",
+        "l_546203841_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574273",
+      "majorLinks": [
+        "l_546203838_0",
+        "l_546203838_1",
+        "l_546203841_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574274",
+      "majorLinks": [
+        "l_546203838_6",
+        "l_546203838_7",
+        "l_546203842_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5278574275",
+      "majorLinks": [
+        "l_546203842_0",
+        "l_866798133_0",
+        "l_866798133_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288170608",
+      "majorLinks": [
+        "l_37852781_0",
+        "l_37852781_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5288170610",
+      "majorLinks": [
+        "l_547307097_0",
+        "l_547307098_0",
+        "l_871187638_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288170613",
+      "majorLinks": [
+        "l_547307098_0",
+        "l_547307098_1",
+        "l_547307099_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288170615",
+      "majorLinks": [
+        "l_547307098_1",
+        "l_547307098_2",
+        "l_547307100_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288170617",
+      "majorLinks": [
+        "l_547307097_0",
+        "l_547307097_1",
+        "l_547307101_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288170619",
+      "majorLinks": [
+        "l_547307097_1",
+        "l_547307097_2",
+        "l_547307102_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5288175721",
+      "majorLinks": [
+        "l_37852781_2",
+        "l_37852781_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_540625309",
+      "majorLinks": [
+        "l_37852781_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_540700196",
+      "majorLinks": [
+        "l_43159706_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5456156657",
+      "majorLinks": [
+        "l_146803783_1",
+        "l_146803783_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5456156658",
+      "majorLinks": [
+        "l_140385476_1",
+        "l_140385476_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_552250039",
+      "majorLinks": [
+        "l_149160150_0",
+        "l_866798131_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_552250062",
+      "majorLinks": [
+        "l_149160150_0",
+        "l_43655272_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_565562316",
+      "majorLinks": [
+        "l_86140132_0",
+        "l_86140132_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5800389047",
+      "majorLinks": [
+        "l_22779135_7",
+        "l_22779135_8"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5800848178",
+      "majorLinks": [
+        "l_156594813_0",
+        "l_612926060_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5800848179",
+      "majorLinks": [
+        "l_295111884_0",
+        "l_295111884_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5800915955",
+      "majorLinks": [
+        "l_22766048_0",
+        "l_612932995_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_5933391010",
+      "majorLinks": [
+        "l_627988062_0",
+        "l_628486652_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_59751555",
+      "majorLinks": [
+        "l_153700257_0",
+        "l_153700257_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_59751589",
+      "majorLinks": [
+        "l_636402735_0",
+        "l_641675310_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_59751618",
+      "majorLinks": [
+        "l_19205886_0",
+        "l_19205886_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6053242780",
+      "majorLinks": [
+        "l_25696172_1",
+        "l_643170786_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6053242985",
+      "majorLinks": [
+        "l_643170804_0",
+        "l_879699937_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6053242987",
+      "majorLinks": [
+        "l_643170801_0",
+        "l_643170821_0",
+        "l_85550730_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6183725491",
+      "majorLinks": [
+        "l_292033478_5",
+        "l_292033478_6",
+        "l_735112581_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6183725492",
+      "majorLinks": [
+        "l_1267207113_0",
+        "l_294040782_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6183952523",
+      "majorLinks": [
+        "l_660495310_0",
+        "l_660495313_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6183952530",
+      "majorLinks": [
+        "l_660495307_0",
+        "l_660495310_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6360436464",
+      "majorLinks": [
+        "l_78044205_0",
+        "l_78044205_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6416777346",
+      "majorLinks": [
+        "l_25689327_0",
+        "l_25689327_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6419971897",
+      "majorLinks": [
+        "l_685156316_0",
+        "l_702172540_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6419971899",
+      "majorLinks": [
+        "l_702172540_1",
+        "l_702172540_2",
+        "l_878059592_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6468948517",
+      "majorLinks": [
+        "l_702172540_2",
+        "l_878059591_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6757107491",
+      "majorLinks": [
+        "l_25695784_1",
+        "l_25695784_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6757107492",
+      "majorLinks": [
+        "l_873294919_0",
+        "l_873294921_0",
+        "l_873294922_0",
+        "l_873294924_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6881806185",
+      "majorLinks": [
+        "l_19366135_1",
+        "l_19366135_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_6884766847",
+      "majorLinks": [
+        "l_292033478_2",
+        "l_292033478_3",
+        "l_735112578_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6884766849",
+      "majorLinks": [
+        "l_292033478_3",
+        "l_292033478_4",
+        "l_735112579_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6884766851",
+      "majorLinks": [
+        "l_292033478_4",
+        "l_292033478_5",
+        "l_735112580_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6884766854",
+      "majorLinks": [
+        "l_292033478_7",
+        "l_292033478_8",
+        "l_735112582_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_6884766856",
+      "majorLinks": [
+        "l_735112582_0",
+        "l_735112582_1",
+        "l_735112583_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237631451",
+      "majorLinks": [
+        "l_775830457_0",
+        "l_775830461_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237631452",
+      "majorLinks": [
+        "l_22757677_1",
+        "l_22757677_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7237631453",
+      "majorLinks": [
+        "l_775830456_0",
+        "l_775830457_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237631454",
+      "majorLinks": [
+        "l_775830460_0",
+        "l_775830461_0",
+        "l_775830461_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237631467",
+      "majorLinks": [
+        "l_22779135_8",
+        "l_22779135_9"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7237631473",
+      "majorLinks": [
+        "l_22779135_10",
+        "l_22779135_11"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7237631482",
+      "majorLinks": [
+        "l_22779135_10",
+        "l_22779135_9"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7237671776",
+      "majorLinks": [
+        "l_775832920_1",
+        "l_775832920_2"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237671780",
+      "majorLinks": [
+        "l_546203837_0",
+        "l_546203837_1",
+        "l_775826355_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237671781",
+      "majorLinks": [
+        "l_22757767_4",
+        "l_22757767_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7237678500",
+      "majorLinks": [
+        "l_775826358_0",
+        "l_775826359_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678501",
+      "majorLinks": [
+        "l_775826359_0",
+        "l_775826363_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678504",
+      "majorLinks": [
+        "l_340172717_0",
+        "l_775826362_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678505",
+      "majorLinks": [
+        "l_340172717_0",
+        "l_775826356_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678516",
+      "majorLinks": [
+        "l_775826365_0",
+        "l_775826366_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678517",
+      "majorLinks": [
+        "l_775826365_0",
+        "l_775826367_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7237678522",
+      "majorLinks": [
+        "l_118496186_0",
+        "l_118496186_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_7237678544",
+      "majorLinks": [
+        "l_753179410_0",
+        "l_866798140_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241007074",
+      "majorLinks": [
+        "l_22757677_0",
+        "l_22757677_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241007075",
+      "majorLinks": [
+        "l_22757677_2",
+        "l_22757677_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241007079",
+      "majorLinks": [
+        "l_776082040_0",
+        "l_776082050_0",
+        "l_776082050_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241048588",
+      "majorLinks": [
+        "l_776082042_0",
+        "l_776082043_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241048589",
+      "majorLinks": [
+        "l_776082042_0",
+        "l_776082048_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241048592",
+      "majorLinks": [
+        "l_776082050_1",
+        "l_868447058_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153761",
+      "majorLinks": [
+        "l_612851564_7",
+        "l_612851564_8",
+        "l_776095311_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153762",
+      "majorLinks": [
+        "l_612851564_6",
+        "l_612851564_7",
+        "l_776095312_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153763",
+      "majorLinks": [
+        "l_612851564_0",
+        "l_612851564_8",
+        "l_868431870_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153765",
+      "majorLinks": [
+        "l_612851564_5",
+        "l_612851564_6",
+        "l_776095312_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153769",
+      "majorLinks": [
+        "l_612851564_3",
+        "l_612851564_4",
+        "l_776095315_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153770",
+      "majorLinks": [
+        "l_612851564_2",
+        "l_612851564_3",
+        "l_776095316_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153773",
+      "majorLinks": [
+        "l_612851564_4",
+        "l_612851564_5",
+        "l_776095314_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153778",
+      "majorLinks": [
+        "l_612851564_1",
+        "l_612851564_2",
+        "l_776095313_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153779",
+      "majorLinks": [
+        "l_612851564_0",
+        "l_612851564_1",
+        "l_776095311_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241153780",
+      "majorLinks": [
+        "l_209878852_0",
+        "l_209878852_1",
+        "l_776095317_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168938",
+      "majorLinks": [
+        "l_22779029_2",
+        "l_22779029_3",
+        "l_866488798_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241168946",
+      "majorLinks": [
+        "l_776099122_0",
+        "l_776099133_0",
+        "l_776099133_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168957",
+      "majorLinks": [
+        "l_534429536_1",
+        "l_534429536_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241168958",
+      "majorLinks": [
+        "l_776099126_0",
+        "l_776099133_3",
+        "l_776099133_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168968",
+      "majorLinks": [
+        "l_22757678_2",
+        "l_22757678_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241168970",
+      "majorLinks": [
+        "l_22757678_1",
+        "l_22757678_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7241168975",
+      "majorLinks": [
+        "l_776099134_0",
+        "l_776099140_0",
+        "l_868439811_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168977",
+      "majorLinks": [
+        "l_776099139_0",
+        "l_776099139_1",
+        "l_776099140_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168981",
+      "majorLinks": [
+        "l_776099132_0",
+        "l_776099133_2",
+        "l_776099133_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241168982",
+      "majorLinks": [
+        "l_776099133_1",
+        "l_776099133_2",
+        "l_868439811_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7241201787",
+      "majorLinks": [
+        "l_776099133_4",
+        "l_776099133_5",
+        "l_776099135_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7243610601",
+      "majorLinks": [
+        "l_22766041_0",
+        "l_22766041_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7243610602",
+      "majorLinks": [
+        "l_22766041_1",
+        "l_22766041_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7243648157",
+      "majorLinks": [
+        "l_7984140_0",
+        "l_7984140_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7243648172",
+      "majorLinks": [
+        "l_22779028_4",
+        "l_22779028_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_7246237156",
+      "majorLinks": [
+        "l_852018219_0",
+        "l_852018219_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7246403396",
+      "majorLinks": [
+        "l_7984136_0",
+        "l_856640076_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403403",
+      "majorLinks": [
+        "l_22766042_1",
+        "l_22766042_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7246403404",
+      "majorLinks": [
+        "l_22766048_2",
+        "l_22766048_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7246403405",
+      "majorLinks": [
+        "l_22766048_1",
+        "l_22766048_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7246403411",
+      "majorLinks": [
+        "l_776640952_0",
+        "l_776640953_1",
+        "l_776640953_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403412",
+      "majorLinks": [
+        "l_776640939_0",
+        "l_776640945_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403414",
+      "majorLinks": [
+        "l_776640944_0",
+        "l_776640953_2",
+        "l_776640953_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403416",
+      "majorLinks": [
+        "l_776640944_0",
+        "l_776640953_0",
+        "l_776640953_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403420",
+      "majorLinks": [
+        "l_776640952_0",
+        "l_776640953_0",
+        "l_776640953_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7246403430",
+      "majorLinks": [
+        "l_776640951_0",
+        "l_776640953_3",
+        "l_776640953_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248730482",
+      "majorLinks": [
+        "l_776880584_0",
+        "l_776880590_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248730484",
+      "majorLinks": [
+        "l_776880584_0",
+        "l_776880585_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248871991",
+      "majorLinks": [
+        "l_22329181_0",
+        "l_22329181_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7248871994",
+      "majorLinks": [
+        "l_22329181_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7248872007",
+      "majorLinks": [
+        "l_776880590_0",
+        "l_776880590_1",
+        "l_776880593_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248890766",
+      "majorLinks": [
+        "l_233524862_1",
+        "l_233524862_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7248890768",
+      "majorLinks": [
+        "l_233524862_2",
+        "l_233524862_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7248900515",
+      "majorLinks": [
+        "l_776883997_0",
+        "l_776883997_1",
+        "l_880133463_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248900520",
+      "majorLinks": [
+        "l_341003652_0",
+        "l_776883999_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7248900521",
+      "majorLinks": [
+        "l_341003652_0",
+        "l_776883999_0",
+        "l_880133461_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364157",
+      "majorLinks": [
+        "l_813955360_0",
+        "l_813955362_2",
+        "l_813955362_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364160",
+      "majorLinks": [
+        "l_813955361_0",
+        "l_813955363_0",
+        "l_813955364_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364162",
+      "majorLinks": [
+        "l_813955360_0",
+        "l_813955362_1",
+        "l_813955362_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364163",
+      "majorLinks": [
+        "l_813955362_0",
+        "l_813955362_1",
+        "l_813955363_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364164",
+      "majorLinks": [
+        "l_813955358_2",
+        "l_813955362_0",
+        "l_813955362_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364168",
+      "majorLinks": [
+        "l_813955358_0",
+        "l_813955366_0",
+        "l_813955366_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364169",
+      "majorLinks": [
+        "l_813955358_0",
+        "l_813955358_1",
+        "l_813955359_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364171",
+      "majorLinks": [
+        "l_813955358_1",
+        "l_813955358_2",
+        "l_813955365_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7603364173",
+      "majorLinks": [
+        "l_813955364_0",
+        "l_813955365_0",
+        "l_813955365_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7915635149",
+      "majorLinks": [
+        "l_104334750_0",
+        "l_104334750_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7917232175",
+      "majorLinks": [
+        "l_23151708_1",
+        "l_23151708_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_7947558449",
+      "majorLinks": [
+        "l_854584201_0",
+        "l_856640076_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7947558451",
+      "majorLinks": [
+        "l_22779028_0",
+        "l_852018219_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7947858279",
+      "majorLinks": [
+        "l_38791084_0",
+        "l_852047641_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7948796384",
+      "majorLinks": [
+        "l_118446711_0",
+        "l_852170602_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7956224390",
+      "majorLinks": [
+        "l_853012424_0",
+        "l_85550390_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_7956406227",
+      "majorLinks": [
+        "l_853035674_0",
+        "l_85550390_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076192025",
+      "majorLinks": [
+        "l_19373424_1",
+        "l_19373424_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8076192031",
+      "majorLinks": [
+        "l_866481294_0",
+        "l_866481294_1",
+        "l_866481295_0",
+        "l_866481296_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076192045",
+      "majorLinks": [
+        "l_866481295_0",
+        "l_866481296_0",
+        "l_933358150_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076192053",
+      "majorLinks": [
+        "l_866481297_0",
+        "l_933358150_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076192057",
+      "majorLinks": [
+        "l_866481297_0",
+        "l_933358150_0",
+        "l_933358150_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076302027",
+      "majorLinks": [
+        "l_546120389_1",
+        "l_546120389_2",
+        "l_866493672_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076302032",
+      "majorLinks": [
+        "l_22779028_2",
+        "l_22779028_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8076302033",
+      "majorLinks": [
+        "l_546120389_0",
+        "l_546120389_1",
+        "l_866493673_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076302038",
+      "majorLinks": [
+        "l_22779028_1",
+        "l_22779028_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8076302043",
+      "majorLinks": [
+        "l_1267207112_0",
+        "l_294037858_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076302089",
+      "majorLinks": [
+        "l_292033479_2",
+        "l_292033479_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_8076302091",
+      "majorLinks": [
+        "l_866493675_0",
+        "l_866493675_1",
+        "l_866493676_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076341820",
+      "majorLinks": [
+        "l_85550388_0",
+        "l_85550388_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8076370694",
+      "majorLinks": [
+        "l_101292015_0",
+        "l_101292015_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_8076370715",
+      "majorLinks": [
+        "l_22758209_0",
+        "l_22758209_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8077756146",
+      "majorLinks": [
+        "l_866634683_0",
+        "l_866634683_1",
+        "l_866634684_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756148",
+      "majorLinks": [
+        "l_25696038_1",
+        "l_25696038_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8077756157",
+      "majorLinks": [
+        "l_866634686_0",
+        "l_866634686_1",
+        "l_866634687_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756158",
+      "majorLinks": [
+        "l_25696038_3",
+        "l_25696038_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8077756180",
+      "majorLinks": [
+        "l_866634689_0",
+        "l_866634689_1",
+        "l_866634690_0",
+        "l_866634690_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756181",
+      "majorLinks": [
+        "l_866634689_1",
+        "l_866634691_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756187",
+      "majorLinks": [
+        "l_866634691_0",
+        "l_866634691_1",
+        "l_866634692_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756196",
+      "majorLinks": [
+        "l_866634693_0",
+        "l_866634693_1",
+        "l_866634696_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756216",
+      "majorLinks": [
+        "l_86336509_0",
+        "l_86336509_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8077756220",
+      "majorLinks": [
+        "l_866634698_0",
+        "l_866634699_0",
+        "l_866634700_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756222",
+      "majorLinks": [
+        "l_866634698_0",
+        "l_866634698_1",
+        "l_866634701_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077756230",
+      "majorLinks": [
+        "l_86336509_1",
+        "l_86336509_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8077756231",
+      "majorLinks": [
+        "l_866634706_0",
+        "l_866634706_1",
+        "l_866634707_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8077876776",
+      "majorLinks": [
+        "l_37852781_1",
+        "l_37852781_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079205531",
+      "majorLinks": [
+        "l_73578821_0",
+        "l_73578821_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079304250",
+      "majorLinks": [
+        "l_19210752_0",
+        "l_19210752_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304251",
+      "majorLinks": [
+        "l_645732306_0",
+        "l_645732306_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304263",
+      "majorLinks": [
+        "l_866798125_0",
+        "l_866798127_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304270",
+      "majorLinks": [
+        "l_866798126_0",
+        "l_866798126_1",
+        "l_866798127_0",
+        "l_866798127_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304277",
+      "majorLinks": [
+        "l_762310457_0",
+        "l_866798128_1",
+        "l_866798128_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304303",
+      "majorLinks": [
+        "l_866798128_2",
+        "l_866798128_3",
+        "l_866798129_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304324",
+      "majorLinks": [
+        "l_866798128_0",
+        "l_866798128_1",
+        "l_866798129_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304336",
+      "majorLinks": [
+        "l_43655271_0",
+        "l_866798131_0",
+        "l_866798132_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304355",
+      "majorLinks": [
+        "l_149160142_1",
+        "l_149160142_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079304358",
+      "majorLinks": [
+        "l_546203838_2",
+        "l_546203838_3",
+        "l_866798134_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304360",
+      "majorLinks": [
+        "l_149160142_4",
+        "l_149160142_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079304381",
+      "majorLinks": [
+        "l_866798139_0",
+        "l_866798139_0",
+        "l_866798139_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079304386",
+      "majorLinks": [
+        "l_546203838_3",
+        "l_546203838_4",
+        "l_866798139_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079342740",
+      "majorLinks": [
+        "l_866802490_0",
+        "l_866802491_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8079342779",
+      "majorLinks": [
+        "l_85550577_0",
+        "l_85550577_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079342815",
+      "majorLinks": [
+        "l_38791087_0",
+        "l_38791087_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8079342816",
+      "majorLinks": [
+        "l_866802490_0",
+        "l_866802490_1",
+        "l_866802494_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8090626665",
+      "majorLinks": [
+        "l_22779135_3",
+        "l_22779135_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8090626666",
+      "majorLinks": [
+        "l_867987643_0",
+        "l_867987644_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8090626667",
+      "majorLinks": [
+        "l_22779135_4",
+        "l_22779135_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8090640534",
+      "majorLinks": [
+        "l_22779135_0",
+        "l_22779135_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8090640537",
+      "majorLinks": [
+        "l_867987659_0",
+        "l_867987661_0",
+        "l_867987661_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8090640538",
+      "majorLinks": [
+        "l_867987660_0",
+        "l_867987661_0",
+        "l_867987661_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8090640540",
+      "majorLinks": [
+        "l_22779135_1",
+        "l_22779135_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8090640552",
+      "majorLinks": [
+        "l_867987642_0",
+        "l_867987644_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8091111781",
+      "majorLinks": [
+        "l_7984419_0",
+        "l_7984419_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8091111786",
+      "majorLinks": [
+        "l_641675310_0",
+        "l_641675310_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8091111814",
+      "majorLinks": [
+        "l_643170792_0",
+        "l_643170792_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8093861462",
+      "majorLinks": [
+        "l_35406700_0",
+        "l_35406700_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8093861463",
+      "majorLinks": [
+        "l_22757916_0",
+        "l_22757916_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8093861464",
+      "majorLinks": [
+        "l_19422216_0",
+        "l_19422216_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8094722700",
+      "majorLinks": [
+        "l_868431850_0",
+        "l_868431851_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8094722702",
+      "majorLinks": [
+        "l_534429536_0",
+        "l_534429536_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8094722708",
+      "majorLinks": [
+        "l_868431852_0",
+        "l_868431853_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8094722709",
+      "majorLinks": [
+        "l_868431853_0",
+        "l_868431853_1",
+        "l_868431854_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8094722712",
+      "majorLinks": [
+        "l_868431850_0",
+        "l_868431850_1",
+        "l_868431854_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8094781043",
+      "majorLinks": [
+        "l_22779029_1",
+        "l_22779029_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_8097322200",
+      "majorLinks": [
+        "l_22779053_4",
+        "l_22779053_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8097322201",
+      "majorLinks": [
+        "l_868703513_0",
+        "l_868703514_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8108977419",
+      "majorLinks": [
+        "l_23151708_0",
+        "l_23151708_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8115253858",
+      "majorLinks": [
+        "l_871187620_0",
+        "l_871187621_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8115253898",
+      "majorLinks": [
+        "l_22757740_0",
+        "l_22757740_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8115253899",
+      "majorLinks": [
+        "l_871187625_0",
+        "l_871187625_1",
+        "l_871187627_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8115254331",
+      "majorLinks": [
+        "l_871187630_0",
+        "l_871187630_1",
+        "l_871187631_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8115254332",
+      "majorLinks": [
+        "l_15132985_3",
+        "l_15132985_4"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_8115345244",
+      "majorLinks": [
+        "l_22757739_1",
+        "l_22757739_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8115345246",
+      "majorLinks": [
+        "l_871199221_0",
+        "l_871199221_1",
+        "l_871199222_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8132683592",
+      "majorLinks": [
+        "l_873294922_0",
+        "l_873294922_1",
+        "l_873294923_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8132683593",
+      "majorLinks": [
+        "l_873294923_0",
+        "l_873294923_1",
+        "l_873294924_0",
+        "l_873294924_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8132683594",
+      "majorLinks": [
+        "l_873294924_1",
+        "l_873294924_2",
+        "l_873294925_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8132960125",
+      "majorLinks": [
+        "l_149282988_0",
+        "l_149282988_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8132960126",
+      "majorLinks": [
+        "l_873327857_1",
+        "l_873327858_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8132960128",
+      "majorLinks": [
+        "l_873327857_0",
+        "l_873327857_1",
+        "l_873327859_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8148726918",
+      "majorLinks": [
+        "l_759545884_0",
+        "l_759545884_1",
+        "l_875462667_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8148726952",
+      "majorLinks": [
+        "l_875462670_0",
+        "l_875462670_1",
+        "l_875462672_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8148726953",
+      "majorLinks": [
+        "l_875462670_1",
+        "l_875462671_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8148726954",
+      "majorLinks": [
+        "l_875462671_0",
+        "l_875462671_1",
+        "l_875462672_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8156347081",
+      "majorLinks": [
+        "l_233524862_0",
+        "l_233524862_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8156348793",
+      "majorLinks": [
+        "l_645715020_0",
+        "l_645715020_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8158236748",
+      "majorLinks": [
+        "l_22757736_0",
+        "l_22757736_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_8158236803",
+      "majorLinks": [
+        "l_1251752305_0",
+        "l_148994807_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8158558488",
+      "majorLinks": [
+        "l_19373424_2",
+        "l_19373424_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8168546599",
+      "majorLinks": [
+        "l_1242995331_0",
+        "l_22779053_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8169169524",
+      "majorLinks": [
+        "l_776640938_0",
+        "l_776640945_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8169183411",
+      "majorLinks": [
+        "l_878041691_0",
+        "l_878041691_1",
+        "l_878041692_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8169338239",
+      "majorLinks": [
+        "l_702172540_0",
+        "l_702172540_1",
+        "l_878059592_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8175315444",
+      "majorLinks": [
+        "l_878770488_0",
+        "l_878770489_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8175315445",
+      "majorLinks": [
+        "l_852018219_2",
+        "l_852018219_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8177710472",
+      "majorLinks": [
+        "l_22779199_0",
+        "l_22779199_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8177710482",
+      "majorLinks": [
+        "l_879046570_0",
+        "l_879046570_0",
+        "l_879046571_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8177710486",
+      "majorLinks": [
+        "l_38791088_0",
+        "l_38791088_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8183381166",
+      "majorLinks": [
+        "l_879693682_1",
+        "l_879693683_0",
+        "l_879693683_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8183381183",
+      "majorLinks": [
+        "l_879693682_0",
+        "l_879693682_1",
+        "l_879693684_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8186931873",
+      "majorLinks": [
+        "l_880133467_0",
+        "l_880133473_0",
+        "l_880133474_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8186931874",
+      "majorLinks": [
+        "l_22757716_2",
+        "l_22757716_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8203941877",
+      "majorLinks": [
+        "l_882170026_0",
+        "l_882170026_1",
+        "l_882170028_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203941880",
+      "majorLinks": [
+        "l_882170026_1",
+        "l_882170027_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203941883",
+      "majorLinks": [
+        "l_882170028_0",
+        "l_882170029_0",
+        "l_882170029_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969861",
+      "majorLinks": [
+        "l_25695784_0",
+        "l_25695784_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8203969872",
+      "majorLinks": [
+        "l_25695784_2",
+        "l_25695784_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8203969874",
+      "majorLinks": [
+        "l_882171631_0",
+        "l_882171631_1",
+        "l_882171633_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969875",
+      "majorLinks": [
+        "l_882171631_1",
+        "l_882171631_2",
+        "l_882171636_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969894",
+      "majorLinks": [
+        "l_882171635_0",
+        "l_882171635_1",
+        "l_882171636_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969910",
+      "majorLinks": [
+        "l_882171631_4",
+        "l_882171631_5",
+        "l_882171644_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969912",
+      "majorLinks": [
+        "l_882171631_3",
+        "l_882171631_4",
+        "l_882171645_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8203969914",
+      "majorLinks": [
+        "l_882171631_2",
+        "l_882171631_3",
+        "l_882171646_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_8211822419",
+      "majorLinks": [
+        "l_491066193_0",
+        "l_883057339_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426065",
+      "majorLinks": [
+        "l_86140128_0",
+        "l_86140128_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426094",
+      "majorLinks": [
+        "l_148868368_0",
+        "l_7984179_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992426103",
+      "majorLinks": [
+        "l_22757760_0",
+        "l_897791710_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992426111",
+      "majorLinks": [
+        "l_643170777_0",
+        "l_643170792_0",
+        "l_85550391_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426115",
+      "majorLinks": [
+        "l_25696170_1",
+        "l_649691042_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992426138",
+      "majorLinks": [
+        "l_85550385_0",
+        "l_85550385_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426141",
+      "majorLinks": [
+        "l_324026349_2",
+        "l_897791706_0",
+        "l_897791708_0",
+        "l_897791710_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992426149",
+      "majorLinks": [
+        "l_324026349_0",
+        "l_324026349_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426177",
+      "majorLinks": [
+        "l_38791086_0",
+        "l_853035674_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992426188",
+      "majorLinks": [
+        "l_23486739_0",
+        "l_897791707_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992426192",
+      "majorLinks": [
+        "l_148868372_0",
+        "l_148868372_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426196",
+      "majorLinks": [
+        "l_643170777_0",
+        "l_643170777_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426216",
+      "majorLinks": [
+        "l_85550387_0",
+        "l_85550387_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992426227",
+      "majorLinks": [
+        "l_491066193_0",
+        "l_7984152_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992438578",
+      "majorLinks": [
+        "l_25696204_0",
+        "l_879699937_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992438580",
+      "majorLinks": [
+        "l_643170789_2",
+        "l_85550726_0",
+        "l_879699934_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992455266",
+      "majorLinks": [
+        "l_645732297_0",
+        "l_645732297_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992455276",
+      "majorLinks": [
+        "l_438851182_0",
+        "l_645732298_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992455290",
+      "majorLinks": [
+        "l_24630821_0",
+        "l_294040782_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992455300",
+      "majorLinks": [
+        "l_85580978_0",
+        "l_85580978_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992455307",
+      "majorLinks": [
+        "l_1267207109_0",
+        "l_8128800_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992455310",
+      "majorLinks": [
+        "l_645732297_0",
+        "l_775826348_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992779014",
+      "majorLinks": [
+        "l_22757767_5",
+        "l_491066198_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992779034",
+      "majorLinks": [
+        "l_22757767_1",
+        "l_22757767_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992779047",
+      "majorLinks": [
+        "l_23991405_0",
+        "l_23991405_1",
+        "l_85580990_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992785866",
+      "majorLinks": [
+        "l_643170786_1",
+        "l_643170789_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_992785888",
+      "majorLinks": [
+        "l_22779029_0",
+        "l_22779029_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992785889",
+      "majorLinks": [
+        "l_85550730_0",
+        "l_85550730_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992785892",
+      "majorLinks": [
+        "l_85581305_1",
+        "l_879699934_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_992785902",
+      "majorLinks": [
+        "l_85581304_0",
+        "l_85581304_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_992785920",
+      "majorLinks": [
+        "l_85581304_2",
+        "l_879699936_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_999588966",
+      "majorLinks": [
+        "l_631060503_0",
+        "l_631060503_1"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    }
+  ],
+  "signalPlans": [
+    {
+      "nodeId": "n_1002882969",
+      "stages": [
+        [
+          "l_86336507_0",
+          "l_86336507_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_12559991292",
+      "stages": [
+        [
+          "l_34106032_1",
+          "l_34106032_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1470033181",
+      "stages": [
+        [
+          "l_86628390_0",
+          "l_86628390_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1470033201",
+      "stages": [
+        [
+          "l_43158989_0",
+          "l_43158989_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1472879000",
+      "stages": [
+        [
+          "l_140385473_0",
+          "l_148994809_0"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1472879002",
+      "stages": [
+        [
+          "l_133822045_0",
+          "l_133822045_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1472879754",
+      "stages": [
+        [
+          "l_133822331_0",
+          "l_133822331_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1538172911",
+      "stages": [
+        [
+          "l_649691042_2",
+          "l_649691042_3"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_154780717",
+      "stages": [
+        [
+          "l_183926041_1",
+          "l_85551216_0"
+        ],
+        [
+          "l_15520106_0",
+          "l_645715020_2"
+        ]
+      ],
+      "greenS": [
+        18,
+        14
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1619274700",
+      "stages": [
+        [
+          "l_148866535_0",
+          "l_148866535_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1620648792",
+      "stages": [
+        [
+          "l_85550728_0",
+          "l_85550728_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1620648810",
+      "stages": [
+        [
+          "l_643170821_0",
+          "l_643170821_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1621493186",
+      "stages": [
+        [
+          "l_149125995_0",
+          "l_149125995_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1621493211",
+      "stages": [
+        [
+          "l_43159704_0",
+          "l_43159704_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1621493243",
+      "stages": [
+        [
+          "l_25696174_2",
+          "l_25696174_3"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_1621822896",
+      "stages": [
+        [
+          "l_638785947_1",
+          "l_638785947_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_18834324",
+      "stages": [
+        [
+          "l_135964084_0",
+          "l_7984310_0",
+          "l_85548593_0"
+        ],
+        [
+          "l_1242995331_0"
+        ]
+      ],
+      "greenS": [
+        18,
+        14
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_201409410",
+      "stages": [
+        [
+          "l_140653958_0",
+          "l_140653958_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_201434885",
+      "stages": [
+        [
+          "l_19373955_1",
+          "l_19373955_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_214843",
+      "stages": [
+        [
+          "l_311810292_1",
+          "l_311810292_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_214929",
+      "stages": [
+        [
+          "l_7985852_0",
+          "l_7985852_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_214967",
+      "stages": [
+        [
+          "l_643170789_0",
+          "l_643170789_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_214984",
+      "stages": [
+        [
+          "l_636402736_0",
+          "l_636402736_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_244223514",
+      "stages": [
+        [
+          "l_627988061_3",
+          "l_627988061_4"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_244227057",
+      "stages": [
+        [
+          "l_491066198_0",
+          "l_491066198_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_24936165",
+      "stages": [
+        [
+          "l_19373955_0"
+        ],
+        [
+          "l_7984133_1"
+        ]
+      ],
+      "greenS": [
+        18,
+        14
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_270914874",
+      "stages": [
+        [
+          "l_24930290_0",
+          "l_24930290_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_270917118",
+      "stages": [
+        [
+          "l_438845248_0",
+          "l_438845248_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_270917121",
+      "stages": [
+        [
+          "l_290002936_0",
+          "l_290002936_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_271965",
+      "stages": [
+        [
+          "l_22779028_5",
+          "l_22779028_6"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_271986",
+      "stages": [
+        [
+          "l_852018215_0",
+          "l_852018215_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_280151389",
+      "stages": [
+        [
+          "l_153700256_0",
+          "l_153700256_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_280593126",
+      "stages": [
+        [
+          "l_649691038_0",
+          "l_649691038_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_2976113024",
+      "stages": [
+        [
+          "l_28423411_1",
+          "l_28423411_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_2976113025",
+      "stages": [
+        [
+          "l_149125994_4",
+          "l_149125994_5"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_2976113026",
+      "stages": [
+        [
+          "l_149125994_2",
+          "l_149125994_3"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_2976113028",
+      "stages": [
+        [
+          "l_294040786_0",
+          "l_294040786_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_2976113029",
+      "stages": [
+        [
+          "l_292033479_0",
+          "l_292033479_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_3830953986",
+      "stages": [
+        [
+          "l_123075131_0",
+          "l_123075131_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_438627",
+      "stages": [
+        [
+          "l_645715020_0",
+          "l_7984145_0"
+        ],
+        [
+          "l_86882780_4"
+        ]
+      ],
+      "greenS": [
+        18,
+        14
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5183020588",
+      "stages": [
+        [
+          "l_15534450_1",
+          "l_15534450_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5183020590",
+      "stages": [
+        [
+          "l_15534580_0",
+          "l_15534580_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5183020591",
+      "stages": [
+        [
+          "l_534432395_0",
+          "l_534432395_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5183105885",
+      "stages": [
+        [
+          "l_491066197_0",
+          "l_491066197_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5183105890",
+      "stages": [
+        [
+          "l_38791084_1",
+          "l_38791084_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5456156657",
+      "stages": [
+        [
+          "l_146803783_1",
+          "l_146803783_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5456156658",
+      "stages": [
+        [
+          "l_140385476_1",
+          "l_140385476_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_565562316",
+      "stages": [
+        [
+          "l_86140132_0",
+          "l_86140132_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_5800848179",
+      "stages": [
+        [
+          "l_295111884_0",
+          "l_295111884_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_59751555",
+      "stages": [
+        [
+          "l_153700257_0",
+          "l_153700257_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_59751618",
+      "stages": [
+        [
+          "l_19205886_0",
+          "l_19205886_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_6416777346",
+      "stages": [
+        [
+          "l_25689327_0",
+          "l_25689327_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_7237671776",
+      "stages": [
+        [
+          "l_775832920_1",
+          "l_775832920_2"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_7243648157",
+      "stages": [
+        [
+          "l_7984140_0",
+          "l_7984140_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8076341820",
+      "stages": [
+        [
+          "l_85550388_0",
+          "l_85550388_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8079304250",
+      "stages": [
+        [
+          "l_19210752_0",
+          "l_19210752_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8079304251",
+      "stages": [
+        [
+          "l_645732306_0",
+          "l_645732306_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8091111781",
+      "stages": [
+        [
+          "l_7984419_0",
+          "l_7984419_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8091111786",
+      "stages": [
+        [
+          "l_641675310_0",
+          "l_641675310_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8091111814",
+      "stages": [
+        [
+          "l_643170792_0",
+          "l_643170792_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8093861462",
+      "stages": [
+        [
+          "l_35406700_0",
+          "l_35406700_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8093861463",
+      "stages": [
+        [
+          "l_22757916_0",
+          "l_22757916_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_8093861464",
+      "stages": [
+        [
+          "l_19422216_0",
+          "l_19422216_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426065",
+      "stages": [
+        [
+          "l_86140128_0",
+          "l_86140128_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426138",
+      "stages": [
+        [
+          "l_85550385_0",
+          "l_85550385_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426149",
+      "stages": [
+        [
+          "l_324026349_0",
+          "l_324026349_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426192",
+      "stages": [
+        [
+          "l_148868372_0",
+          "l_148868372_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426196",
+      "stages": [
+        [
+          "l_643170777_0",
+          "l_643170777_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992426216",
+      "stages": [
+        [
+          "l_85550387_0",
+          "l_85550387_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992455266",
+      "stages": [
+        [
+          "l_645732297_0",
+          "l_645732297_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992455300",
+      "stages": [
+        [
+          "l_85580978_0",
+          "l_85580978_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_992785902",
+      "stages": [
+        [
+          "l_85581304_0",
+          "l_85581304_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    },
+    {
+      "nodeId": "n_999588966",
+      "stages": [
+        [
+          "l_631060503_0",
+          "l_631060503_1"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
     }
   ],
   "excluded": [

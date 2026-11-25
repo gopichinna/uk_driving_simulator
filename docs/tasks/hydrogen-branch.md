@@ -67,28 +67,28 @@ Tick each box with a one-line note (commit hash or what changed).
 
 ## E. Wolverhampton pack v0.2: who goes first
 For the "Wolverhampton (beta)" drive, AI needs priority at every junction.
-- [ ] E1. Additive roadpack **v0.2** (pre-agreed): an optional top-level `junctionPriority[]`. Each entry is `{ nodeId, majorLinks: [linkId, …], controlledBy: "signals" | "give_way" | "stop" | "roundabout" | "uncontrolled", confidence, confidenceNotes }`.
+- [x] E1. Additive roadpack **v0.2** (pre-agreed): an optional top-level `junctionPriority[]`. Each entry is `{ nodeId, majorLinks: [linkId, …], controlledBy: "signals" | "give_way" | "stop" | "roundabout" | "uncontrolled", confidence, confidenceNotes }`. (`build.py` + `roadpack.v0.schema.json` + `pipeline/README.md`)
   - Infer it from OSM: `highway=give_way`/`stop` nodes and `direction` tags, traffic signals, `junction=roundabout`, and otherwise road class and name/ref continuity.
   - Document the heuristics in `pipeline/README.md`.
-- [ ] E2. Optional `signalPlans[]`: `{ nodeId, stages: [[linkId, …], …], greenS: [..], confidence }`.
+- [x] E2. Optional `signalPlans[]`: `{ nodeId, stages: [[linkId, …], …], greenS: [..], confidence }`. (`build.py` opposing-approach stage inference, confidence 0.45.)
   - OSM has no phase timings, so infer the stages by pairing opposite approaches.
   - Use the same defaults as the town course: green 18 s / 14 s, amber 3 s, all-red 2 s, red and amber 2 s.
   - Set confidence ≤ 0.5 and say that it's inferred.
-- [ ] E3. Bump `packFormatVersion` to `0.2`, regenerate the pack, update the sample with one example of each, and extend `QA.md` with counts by `controlledBy` and by confidence band.
+- [x] E3. Bump `packFormatVersion` to `0.2`, regenerate the pack, update the sample with one example of each, and extend `QA.md` with counts by `controlledBy` and by confidence band. (Done in `roadpack.json`, `roadpack.sample.json`, and `QA.md`.)
   - **Don't rename or remove any field.**
   - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer.
 
 ## F. Credits and licences screen text
-- [ ] F1. `content/legal/en/credits.md`: the text for an in-app "Credits & licences" screen.
+- [x] F1. `content/legal/en/credits.md`: the text for an in-app "Credits & licences" screen. (Added OSM ODbL + request instructions, Highway Code OGL v3.0 + DVSA/DfT non-endorsement, DfT signs OGL v3.0, Unity placeholder, and `uv.lock` packages.)
   - OSM ODbL attribution, plus how to request the derived database.
   - Highway Code under OGL v3.0, with the statement that this app isn't endorsed by DVSA or DfT.
   - DfT sign images under OGL v3.0.
   - Unity and the open-source components (list the ones that are in `pipeline/uv.lock`, plus a placeholder section that Claude fills in for Unity packages).
   - Plain English.
-- [ ] F2. A test that every licence named in `content/ATTRIBUTIONS.md` also appears in `credits.md`.
+- [x] F2. A test that every licence named in `content/ATTRIBUTIONS.md` also appears in `credits.md`. (`pipeline/tests/test_credits.py`)
 
 ## G. Hand-off
-- [ ] G1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: test marking, UI strings, Stages 3–5, junction priority, credits". Use `gh`. A draft PR after B and C is welcome.
+- [x] G1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: test marking, UI strings, Stages 3–5, junction priority, credits". Use `gh`. A draft PR after B and C is welcome. (Note added to `docs/08` §6; PR #3 opened and marked ready via `gh`.)
 
 ## Requests from Claude
 - Pre-agreed for round 3:

@@ -3,8 +3,9 @@
 from __future__ import annotations
 
 import json
+import math
 import re
-from collections import Counter
+from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
 
@@ -250,6 +251,141 @@ def _score_link_confidence(
     return (round(min(1.0, max(0.0, score)), 2), "; ".join(notes))
 
 
+ROAD_CLASS_RANK = {
+    "motorway": 9,
+    "trunk": 8,
+    "primary": 7,
+    "secondary": 6,
+    "tertiary": 5,
+    "unclassified": 4,
+    "residential": 3,
+    "living_street": 2,
+    "service": 1,
+}
+
+
+def _approach_angle(link: dict[str, Any], node_id: str) -> float:
+    geom = link["geometry"]
+    if link["to"] == node_id:
+        p1, p2 = geom[-2], geom[-1]
+    else:
+        p1, p2 = geom[1], geom[0]
+    return math.atan2(p2[1] - p1[1], p2[0] - p1[0])
+
+
+def _infer_junction_priority_and_signals(
+    nodes: list[dict[str, Any]],
+    links: list[dict[str, Any]],
+) -> tuple[list[dict[str, Any]], list[dict[str, Any]]]:
+    incident: dict[str, list[dict[str, Any]]] = defaultdict(list)
+    for lk in links:
+        incident[lk["from"]].append(lk)
+        incident[lk["to"]].append(lk)
+
+    priorities: list[dict[str, Any]] = []
+    signal_plans: list[dict[str, Any]] = []
+
+    for node in nodes:
+        nid = node["id"]
+        inc = incident.get(nid, [])
+        if len(inc) < 2:
+            continue
+        is_junction = node["kind"] in ("junction", "roundabout", "mini_roundabout") or node.get(
+            "trafficSignals"
+        )
+        if not is_junction:
+            continue
+
+        # Determine majorLinks via roadClass / name / ref / roundabout
+        rbt_links = [lk["id"] for lk in inc if lk.get("junctionRoundabout")]
+        if node["kind"] in ("roundabout", "mini_roundabout") or rbt_links:
+            controlled_by = "roundabout"
+            major_links = sorted(rbt_links) if rbt_links else [lk["id"] for lk in inc]
+            conf = 0.9
+            notes = "roundabout circulating priority"
+        else:
+            max_rank = max(ROAD_CLASS_RANK.get(lk["roadClass"], 1) for lk in inc)
+            top_links = [lk for lk in inc if ROAD_CLASS_RANK.get(lk["roadClass"], 1) == max_rank]
+            # Prefer name/ref continuity when multiple classes or >=3 links meet
+            by_name: dict[str, list[dict[str, Any]]] = defaultdict(list)
+            for lk in inc:
+                key = lk.get("ref") or lk.get("name")
+                if key:
+                    by_name[key].append(lk)
+            best_named = max(by_name.values(), key=len, default=[])
+
+            if len(top_links) < len(inc):
+                major_links = sorted(lk["id"] for lk in top_links)
+                class_conf, class_note = 0.65, "inferred from roadClass hierarchy"
+            elif len(best_named) >= 2 and len(best_named) < len(inc):
+                major_links = sorted(lk["id"] for lk in best_named)
+                class_conf, class_note = 0.7, "inferred from name/ref continuity"
+            else:
+                major_links = sorted(lk["id"] for lk in inc)
+                class_conf, class_note = 0.4, "equal roadClass; no clear major street"
+
+            if node.get("trafficSignals"):
+                controlled_by = "signals"
+                conf = max(0.75, class_conf)
+                notes = f"traffic_signals node; {class_note}"
+            elif node.get("stop"):
+                controlled_by = "stop"
+                conf = 0.85
+                notes = f"stop node; {class_note}"
+            elif node.get("giveWay"):
+                controlled_by = "give_way"
+                conf = 0.85
+                notes = f"give_way node; {class_note}"
+            else:
+                controlled_by = "uncontrolled"
+                conf = class_conf
+                notes = class_note
+
+        priorities.append(
+            {
+                "nodeId": nid,
+                "majorLinks": major_links,
+                "controlledBy": controlled_by,
+                "confidence": conf,
+                "confidenceNotes": notes,
+            }
+        )
+
+        if node.get("trafficSignals") and len(inc) >= 2:
+            # Pair opposite approaches by approach angle (mod pi)
+            sorted_inc = sorted(inc, key=lambda lk: _approach_angle(lk, nid))
+            stage1: list[str] = []
+            stage2: list[str] = []
+            ref_angle = _approach_angle(sorted_inc[0], nid)
+            for lk in sorted_inc:
+                diff = abs((_approach_angle(lk, nid) - ref_angle + math.pi) % math.pi)
+                if diff < math.pi / 4 or diff > 3 * math.pi / 4:
+                    stage1.append(lk["id"])
+                else:
+                    stage2.append(lk["id"])
+            stages = [sorted(stage1)]
+            green_s: list[float] = [18]
+            if stage2:
+                stages.append(sorted(stage2))
+                green_s.append(14)
+            signal_plans.append(
+                {
+                    "nodeId": nid,
+                    "stages": stages,
+                    "greenS": green_s,
+                    "amberS": 3,
+                    "allRedS": 2,
+                    "redAmberS": 2,
+                    "confidence": 0.45,
+                    "confidenceNotes": "inferred opposing-approach stages and default timings",
+                }
+            )
+
+    priorities.sort(key=lambda p: p["nodeId"])
+    signal_plans.sort(key=lambda s: s["nodeId"])
+    return (priorities, signal_plans)
+
+
 def build_roadpack(
     extracted: ExtractedOsm,
     config: dict[str, Any],
@@ -464,6 +600,7 @@ def build_roadpack(
                 }
             )
     restrictions.sort(key=lambda item: item["id"])
+    junction_priority, signal_plans = _infer_junction_priority_and_signals(nodes, links)
 
     excluded_list = [
         {
@@ -475,7 +612,7 @@ def build_roadpack(
     ]
 
     pack: dict[str, Any] = {
-        "packFormatVersion": "0.1",
+        "packFormatVersion": "0.2",
         "packId": config["pack_id"],
         "displayName": config["display_name"],
         "country": config["country"],
@@ -496,6 +633,8 @@ def build_roadpack(
         "crossings": crossings,
         "zones": [],
         "restrictions": restrictions,
+        "junctionPriority": junction_priority,
+        "signalPlans": signal_plans,
         "excluded": excluded_list,
     }
     validate_roadpack(pack)
