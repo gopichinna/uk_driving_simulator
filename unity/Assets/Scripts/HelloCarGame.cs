@@ -34,7 +34,9 @@ namespace LToLocal.Game
         public float cockpitFov = 50f;
 
         [Header("Shoulder check (blind spot)")]
-        public float shoulderYaw = 120f;
+        public float shoulderYaw = 120f;      // over the right shoulder (driver's side)
+        public float shoulderYawLeft = 110f;  // across the car, over the left shoulder
+        public float shoulderPitch = 1f;
         public float shoulderTurnSpeed = 6f;
 
         private enum View { Chase, Cockpit }
@@ -46,7 +48,8 @@ namespace LToLocal.Game
         private TrafficSim _traffic;
 
         private View _view = View.Chase;
-        private bool _showMap = true;
+        private bool _showMap = false;     // mini-map removed from the HUD for now
+        private GameObject _interior;
         private float _lookBlend;          // -1..1, eased toward the held look direction
         private GameObject[] _mirrorHousings = new GameObject[0];
         private int _indicator;            // -1 left, 0 off, +1 right
@@ -70,6 +73,8 @@ namespace LToLocal.Game
             var housings = new System.Collections.Generic.List<GameObject>();
             foreach (Transform c in car) if (c.name.StartsWith("Mirror")) housings.Add(c.gameObject);
             _mirrorHousings = housings.ToArray();
+            var interior = car.Find("Interior");
+            if (interior != null) _interior = interior.gameObject;
             _traffic = new TrafficSim(Lanes, new TrafficParams { CarsPerLane = new[] { 5, 3, 4, 4 } }, seed: 2026);
             ResetDrive();
         }
@@ -134,6 +139,7 @@ namespace LToLocal.Game
             // Door-mirror housings block the view from the driver's seat; the HUD mirrors replace them.
             bool inside = _view == View.Cockpit || Mathf.Abs(_lookBlend) > 0.05f;
             foreach (var h in _mirrorHousings) if (h.activeSelf == inside) h.SetActive(!inside);
+            if (_interior != null && _interior.activeSelf != inside) _interior.SetActive(inside);
 
             // 1. Normal pose for the current view
             Vector3 pos;
@@ -162,7 +168,8 @@ namespace LToLocal.Game
             {
                 float t = Mathf.SmoothStep(0f, 1f, Mathf.Abs(_lookBlend));
                 Vector3 headPos = car.TransformPoint(cockpitOffset);
-                Quaternion headRot = car.rotation * Quaternion.Euler(6f, Mathf.Sign(_lookBlend) * shoulderYaw, 0f);
+                float yawTarget = _lookBlend > 0 ? shoulderYaw : -shoulderYawLeft;
+                Quaternion headRot = car.rotation * Quaternion.Euler(shoulderPitch, yawTarget, 0f);
                 pos = Vector3.Lerp(pos, headPos, t);
                 rot = Quaternion.Slerp(rot, headRot, t);
                 chaseCamera.fieldOfView = Mathf.Lerp(chaseCamera.fieldOfView, 60f, t);
@@ -207,11 +214,9 @@ namespace LToLocal.Game
             // View / map / reset under the rear-view mirror
             float rearMirrorBottom = H * 0.015f + W * 0.30f / 3.4f + 6f; // matches MirrorRig layout
             float bw = W * 0.085f, bh = H * 0.085f, by = rearMirrorBottom + H * 0.02f;
-            if (GUI.Button(new Rect(W * 0.5f - bw * 1.55f, by, bw, bh), _view == View.Chase ? "Seat" : "Chase", _buttonStyle))
+            if (GUI.Button(new Rect(W * 0.5f - bw * 1.03f, by, bw, bh), _view == View.Chase ? "Seat" : "Chase", _buttonStyle))
                 _view = _view == View.Chase ? View.Cockpit : View.Chase;
-            if (GUI.Button(new Rect(W * 0.5f - bw * 0.5f, by, bw, bh), _showMap ? "Map off" : "Map on", _buttonStyle))
-                _showMap = !_showMap;
-            if (GUI.Button(new Rect(W * 0.5f + bw * 0.55f, by, bw, bh), "Reset", _buttonStyle))
+            if (GUI.Button(new Rect(W * 0.5f + bw * 0.03f, by, bw, bh), "Reset", _buttonStyle))
                 ResetDrive();
 
             if (Mathf.Abs(_lookBlend) > 0.6f)
