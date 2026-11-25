@@ -21,6 +21,8 @@ RULEINDEX_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "ruleindex.v0.schema
 BUILDINGS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "buildings.v0.schema.json"
 SCENARIO_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "scenario.v0.schema.json"
 QUIZ_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "quiz.v0.schema.json"
+PROGRESSION_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "progression.v0.schema.json"
+PEDROUTES_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "pedroutes.v0.schema.json"
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -148,6 +150,28 @@ def validate_quiz_file(
     return data
 
 
+def validate_progression_file(
+    path: Path, schema_path: Path = PROGRESSION_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load progression.json and validate it against progression.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
+def validate_pedroutes_file(
+    path: Path, schema_path: Path = PEDROUTES_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load pedestrians.json and validate it against pedroutes.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -180,6 +204,8 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for lesson_path in sorted(root.glob("lessons/*/*.json")):
         if lesson_path.name == "rule_index.json":
             validate_ruleindex_file(lesson_path)
+        elif lesson_path.name == "progression.json":
+            validate_progression_file(lesson_path)
         else:
             validate_lesson_file(lesson_path)
         validated.append(lesson_path)
@@ -187,6 +213,10 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for routes_path in sorted(root.glob("cities/*/routes.json")):
         validate_routes_file(routes_path)
         validated.append(routes_path)
+
+    for ped_path in sorted(root.glob("cities/*/pedestrians.json")):
+        validate_pedroutes_file(ped_path)
+        validated.append(ped_path)
 
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)

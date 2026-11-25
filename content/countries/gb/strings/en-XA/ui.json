@@ -34,6 +34,17 @@
     "course.two_lane_roundabout": "[Twó-láné róúndábóút ~~~~~~~~]",
     "course.roundabout": "[Sínglé-láné róúndábóút ~~~~~~~~~]",
     "course.dual_carriageway": "[40 mph dúál cárríágéwáy ~~~~~~~~~~]",
-    "course.wolverhampton_beta": "[Wólvérhámptón (bétá) ~~~~~~~~]"
+    "course.wolverhampton_beta": "[Wólvérhámptón (bétá) ~~~~~~~~]",
+    "progress.title": "[Yóúr prógréss ~~~~~~]",
+    "progress.stage_locked": "[Stágé lóckéd ~~~~~]",
+    "progress.unlock_hint": "[Gét {stars} stárs ín Stágé {stage} tó únlóck. ~~~~~~~~~~~~~]",
+    "progress.stars": "[{stars} / 3 stárs ~~~~]",
+    "progress.review_due": "[{count, plural, one {# review drive} other {# review drives}} réády ~~~~]",
+    "lesson.start": "[Stárt léssón ~~~~~]",
+    "lesson.next": "[Néxt ~~~~]",
+    "lesson.retry": "[Try ágáín ~~~~]",
+    "lesson.quiz_title": "[Qúíck chéck ~~~~~]",
+    "lesson.correct": "[Córréct ~~~~]",
+    "lesson.incorrect": "[Nót qúíté ~~~~]"
   }
 }

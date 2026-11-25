@@ -61,78 +61,6 @@
           "direction": "backward"
         },
         {
-          "linkId": "l_85550577_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550577_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066194_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550391_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_23486739_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_897791707_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_25696206_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757760_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_897791710_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550392_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550392_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066194_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_85550577_1",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_85550577_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_883057339_0",
-          "direction": "backward"
-        },
-        {
           "linkId": "l_491066193_0",
           "direction": "backward"
         },
@@ -157,69 +85,72 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_883057339_0",
-          "direction": "forward"
-        },
-        {
           "linkId": "l_19373424_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_19373424_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19373424_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19373424_3",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19373426_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757736_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757736_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_866481294_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_866481294_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757736_1",
+          "linkId": "l_25371174_0",
           "direction": "backward"
         },
         {
-          "linkId": "l_22757736_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_36799795_0",
+          "linkId": "l_19373421_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_85548593_0",
+          "linkId": "l_19373421_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_104334752_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779053_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22779053_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_140385476_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_140385476_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_140385476_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_140385476_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_22766059_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_311799312_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_311799312_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_140653958_1",
           "direction": "backward"
         }
       ],
       "features": [
-        "bus_lane",
         "cycle_lane",
-        "pelican",
         "puffin",
         "roundabout",
-        "signals"
+        "signals",
+        "toucan"
       ],
       "instructions": [
         {
@@ -243,84 +174,66 @@
         {
           "atLinkIndex": 12,
           "distanceBeforeM": 53.0,
-          "text": "At the junction, turn right onto Stafford Street.",
-          "maneuver": "turn_right"
+          "text": "At the junction, turn left onto Stafford Street.",
+          "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 21,
-          "distanceBeforeM": 19.2,
-          "text": "At the junction, turn right.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 22,
-          "distanceBeforeM": 8.4,
-          "text": "At the junction, turn right onto Stafford Street.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 32,
+          "atLinkIndex": 14,
           "distanceBeforeM": 24.6,
           "text": "At the junction, bear left onto Princes Square.",
           "maneuver": "bear_left"
         },
         {
-          "atLinkIndex": 33,
+          "atLinkIndex": 15,
           "distanceBeforeM": 51.0,
           "text": "At the junction, turn right onto Princes Square.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 37,
-          "distanceBeforeM": 31.1,
+          "atLinkIndex": 18,
+          "distanceBeforeM": 67.8,
           "text": "At the junction, turn right onto Whitmore Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 41,
-          "distanceBeforeM": 23.5,
-          "text": "At the junction, bear right onto Westbury Street.",
-          "maneuver": "bear_right"
-        },
-        {
-          "atLinkIndex": 42,
-          "distanceBeforeM": 24.5,
-          "text": "At the junction, turn left onto Saint Mary's Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 44,
-          "distanceBeforeM": 14.3,
-          "text": "At the junction, turn left.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 45,
-          "distanceBeforeM": 16.9,
-          "text": "At the junction, turn right.",
+          "atLinkIndex": 19,
+          "distanceBeforeM": 53.0,
+          "text": "At the junction, turn right onto Thornley Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 46,
+          "atLinkIndex": 21,
+          "distanceBeforeM": 34.6,
+          "text": "At the junction, turn left onto Long Street.",
+          "maneuver": "turn_left"
+        },
+        {
+          "atLinkIndex": 23,
+          "distanceBeforeM": 93.3,
+          "text": "At the junction, turn right onto Fryer Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 29,
+          "distanceBeforeM": 6.7,
+          "text": "At the junction, turn right onto Berry Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 30,
           "distanceBeforeM": 100.0,
-          "text": "At the junction, turn left onto Saint Mary's Street.",
-          "maneuver": "turn_left"
+          "text": "At the junction, turn right onto Princess Street.",
+          "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 48,
-          "distanceBeforeM": 26.2,
-          "text": "At the junction, turn left onto Westbury Street.",
-          "maneuver": "turn_left"
+          "atLinkIndex": 32,
+          "distanceBeforeM": 54.4,
+          "text": "At the junction, turn right onto Lichfield Street.",
+          "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 49,
-          "distanceBeforeM": 63.4,
-          "text": "At the junction, turn left onto Broad Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 49,
-          "distanceBeforeM": 36.8,
+          "atLinkIndex": 32,
+          "distanceBeforeM": 50.0,
           "text": "You have arrived at your destination.",
           "maneuver": "arrive"
         }
@@ -353,19 +266,11 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_546203837_0",
-          "direction": "forward"
-        },
-        {
           "linkId": "l_775826355_0",
           "direction": "forward"
         },
         {
           "linkId": "l_22757767_5",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066198_0",
           "direction": "forward"
         },
         {
@@ -485,10 +390,6 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_38791084_0",
-          "direction": "forward"
-        },
-        {
           "linkId": "l_38791084_1",
           "direction": "forward"
         },
@@ -571,7 +472,6 @@
       ],
       "features": [
         "cycle_lane",
-        "pelican",
         "signals",
         "toucan",
         "zebra"
@@ -591,96 +491,90 @@
         },
         {
           "atLinkIndex": 4,
-          "distanceBeforeM": 4.7,
-          "text": "At the junction, turn right.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 5,
-          "distanceBeforeM": 96.4,
+          "distanceBeforeM": 100.0,
           "text": "At the junction, turn left.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 6,
+          "atLinkIndex": 5,
           "distanceBeforeM": 14.6,
           "text": "At the junction, turn left onto Peel Street.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 15,
+          "atLinkIndex": 13,
           "distanceBeforeM": 10.7,
           "text": "At the junction, turn right onto Cleveland Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 19,
+          "atLinkIndex": 17,
           "distanceBeforeM": 48.1,
           "text": "At the junction, turn right onto Summer Row.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 23,
+          "atLinkIndex": 21,
           "distanceBeforeM": 38.3,
           "text": "At the junction, turn right onto Temple Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 24,
+          "atLinkIndex": 22,
           "distanceBeforeM": 17.8,
           "text": "At the junction, turn left.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 26,
+          "atLinkIndex": 24,
           "distanceBeforeM": 16.0,
           "text": "At the junction, turn left.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 27,
+          "atLinkIndex": 25,
           "distanceBeforeM": 13.4,
           "text": "At the junction, turn left.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 29,
+          "atLinkIndex": 27,
           "distanceBeforeM": 9.9,
           "text": "At the junction, turn left onto Temple Street.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 30,
+          "atLinkIndex": 28,
           "distanceBeforeM": 5.9,
           "text": "At the junction, turn right onto Summer Row.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 41,
+          "atLinkIndex": 38,
           "distanceBeforeM": 21.5,
           "text": "At the junction, turn right onto Snow Hill.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 44,
+          "atLinkIndex": 41,
           "distanceBeforeM": 65.3,
           "text": "At the junction, turn right onto Temple Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 52,
+          "atLinkIndex": 49,
           "distanceBeforeM": 15.0,
           "text": "At the junction, turn right.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 55,
+          "atLinkIndex": 52,
           "distanceBeforeM": 11.5,
           "text": "At the junction, turn right.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 57,
+          "atLinkIndex": 54,
           "distanceBeforeM": 14.4,
           "text": "You have arrived at your destination.",
           "maneuver": "arrive"
@@ -798,10 +692,6 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_612926059_0",
-          "direction": "forward"
-        },
-        {
           "linkId": "l_86628388_0",
           "direction": "forward"
         },
@@ -858,51 +748,15 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_1242995331_0",
-          "direction": "backward"
+          "linkId": "l_135964084_0",
+          "direction": "forward"
         },
         {
-          "linkId": "l_22779053_5",
-          "direction": "backward"
+          "linkId": "l_135964084_1",
+          "direction": "forward"
         },
         {
-          "linkId": "l_22779053_4",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_22779053_3",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_22779053_2",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_22779053_1",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_22779053_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_140385476_3",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_140385476_2",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_140385476_1",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_140385476_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_22766059_0",
+          "linkId": "l_148994809_0",
           "direction": "forward"
         }
       ],
@@ -981,49 +835,49 @@
           "maneuver": "bear_left"
         },
         {
-          "atLinkIndex": 27,
+          "atLinkIndex": 26,
           "distanceBeforeM": 8.3,
           "text": "At the junction, turn right onto Wednesfield Road.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 31,
+          "atLinkIndex": 30,
           "distanceBeforeM": 14.3,
           "text": "At the junction, bear left onto Ring Road St. Davids.",
           "maneuver": "bear_left"
         },
         {
-          "atLinkIndex": 32,
+          "atLinkIndex": 31,
           "distanceBeforeM": 32.6,
           "text": "At the junction, bear right.",
           "maneuver": "bear_right"
         },
         {
-          "atLinkIndex": 33,
+          "atLinkIndex": 32,
           "distanceBeforeM": 27.9,
           "text": "At the traffic lights, bear right.",
           "maneuver": "bear_right"
         },
         {
-          "atLinkIndex": 34,
+          "atLinkIndex": 33,
           "distanceBeforeM": 10.0,
           "text": "At the junction, turn right onto Ring Road St. Davids.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 40,
+          "atLinkIndex": 39,
           "distanceBeforeM": 29.1,
-          "text": "At the traffic lights, turn left onto Fryer Street.",
+          "text": "At the traffic lights, turn left.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 51,
-          "distanceBeforeM": 6.7,
-          "text": "At the junction, turn right onto Berry Street.",
-          "maneuver": "turn_right"
+          "atLinkIndex": 40,
+          "distanceBeforeM": 47.9,
+          "text": "At the junction, bear right.",
+          "maneuver": "bear_right"
         },
         {
-          "atLinkIndex": 51,
+          "atLinkIndex": 41,
           "distanceBeforeM": 50.0,
           "text": "You have arrived at your destination.",
           "maneuver": "arrive"
@@ -1089,60 +943,28 @@
           "direction": "backward"
         },
         {
-          "linkId": "l_85550577_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550577_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066194_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550391_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_643170777_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_23486739_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_897791708_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550392_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550392_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066194_0",
+          "linkId": "l_491066193_0",
           "direction": "backward"
         },
         {
-          "linkId": "l_85550577_1",
+          "linkId": "l_7984152_0",
           "direction": "backward"
         },
         {
-          "linkId": "l_85550577_0",
-          "direction": "backward"
+          "linkId": "l_868384401_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550386_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984152_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_491066193_0",
+          "direction": "forward"
         },
         {
           "linkId": "l_19373424_0",
@@ -1153,23 +975,23 @@
           "direction": "backward"
         },
         {
-          "linkId": "l_85548593_2",
+          "linkId": "l_19373421_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_868384401_0",
+          "linkId": "l_19373421_1",
           "direction": "forward"
         },
         {
-          "linkId": "l_38791086_0",
+          "linkId": "l_104334752_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22779053_1",
           "direction": "backward"
         },
         {
-          "linkId": "l_140653958_1",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_140653958_0",
+          "linkId": "l_22779053_0",
           "direction": "backward"
         },
         {
@@ -1201,227 +1023,159 @@
           "direction": "forward"
         },
         {
-          "linkId": "l_118716556_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_853035674_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550390_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550390_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_853012424_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_491066196_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757754_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_22757753_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_627988061_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_627988061_3",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_627988061_4",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_627988061_5",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15534450_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15534450_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15534450_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_1058854041_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_183926041_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_183926041_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15520106_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15520106_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_15520106_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550728_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550728_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85550728_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85580973_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_85580973_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_879699933_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_25696127_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_25696127_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19366135_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19366135_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_19366135_2",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_86336372_0",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_86336372_1",
-          "direction": "forward"
-        },
-        {
-          "linkId": "l_23151708_2",
+          "linkId": "l_140653958_1",
           "direction": "backward"
         },
         {
-          "linkId": "l_23151708_1",
+          "linkId": "l_140653958_0",
           "direction": "backward"
         },
         {
-          "linkId": "l_23151708_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_87055358_0",
+          "linkId": "l_22779053_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_19366136_0",
+          "linkId": "l_22779053_1",
           "direction": "forward"
         },
         {
-          "linkId": "l_19366136_1",
+          "linkId": "l_22779053_2",
           "direction": "forward"
         },
         {
-          "linkId": "l_19366135_2",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_19366135_1",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_19366135_0",
-          "direction": "backward"
-        },
-        {
-          "linkId": "l_85550730_0",
+          "linkId": "l_22779053_3",
           "direction": "forward"
         },
         {
-          "linkId": "l_85550730_1",
+          "linkId": "l_22779053_4",
           "direction": "forward"
         },
         {
-          "linkId": "l_643170801_0",
+          "linkId": "l_22779053_5",
           "direction": "forward"
         },
         {
-          "linkId": "l_643170801_1",
+          "linkId": "l_135964084_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_643170804_0",
+          "linkId": "l_135964084_1",
           "direction": "forward"
         },
         {
-          "linkId": "l_643170804_1",
+          "linkId": "l_148994809_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_85550385_0",
+          "linkId": "l_140385473_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_85550385_1",
+          "linkId": "l_290002937_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_85550385_2",
+          "linkId": "l_852154912_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_897791707_0",
+          "linkId": "l_140385478_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_25696206_0",
+          "linkId": "l_636402736_0",
           "direction": "forward"
         },
         {
-          "linkId": "l_22757760_0",
+          "linkId": "l_636402736_1",
           "direction": "forward"
         },
         {
-          "linkId": "l_897791710_0",
+          "linkId": "l_636402736_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_649691012_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_636402735_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19205886_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19205886_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_19205886_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984419_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984419_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984419_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_153700206_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_295111882_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_324026349_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_324026349_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_324026349_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550392_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550392_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550391_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170777_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23486739_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_897791708_0",
           "direction": "forward"
         },
         {
@@ -1439,10 +1193,73 @@
         {
           "linkId": "l_643170786_0",
           "direction": "forward"
+        },
+        {
+          "linkId": "l_643170786_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170789_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170789_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643170789_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85550726_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696174_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696174_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696174_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696174_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_25696174_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85580987_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85551218_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43159704_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43159704_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_85580975_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_7984148_0",
+          "direction": "forward"
         }
       ],
       "features": [
-        "bus_lane",
         "cycle_lane",
         "pelican",
         "puffin",
@@ -1472,174 +1289,156 @@
         {
           "atLinkIndex": 12,
           "distanceBeforeM": 53.0,
-          "text": "At the junction, turn right onto Stafford Street.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 20,
-          "distanceBeforeM": 11.3,
-          "text": "At the junction, turn right.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 21,
-          "distanceBeforeM": 15.3,
-          "text": "At the junction, bear right onto Stafford Street.",
-          "maneuver": "bear_right"
-        },
-        {
-          "atLinkIndex": 26,
-          "distanceBeforeM": 36.5,
-          "text": "At the junction, turn left onto Whitmore Street.",
+          "text": "At the junction, turn left onto Stafford Street.",
           "maneuver": "turn_left"
         },
         {
-          "atLinkIndex": 27,
+          "atLinkIndex": 14,
+          "distanceBeforeM": 24.6,
+          "text": "At the junction, bear left onto Princes Square.",
+          "maneuver": "bear_left"
+        },
+        {
+          "atLinkIndex": 15,
+          "distanceBeforeM": 51.0,
+          "text": "At the junction, turn right onto Princes Square.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 18,
+          "distanceBeforeM": 67.8,
+          "text": "At the junction, turn right onto Whitmore Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 19,
           "distanceBeforeM": 53.0,
           "text": "At the junction, turn right onto Thornley Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 28,
-          "distanceBeforeM": 92.8,
-          "text": "At the junction, turn right onto Broad Street.",
+          "atLinkIndex": 21,
+          "distanceBeforeM": 34.6,
+          "text": "At the junction, turn left onto Long Street.",
+          "maneuver": "turn_left"
+        },
+        {
+          "atLinkIndex": 23,
+          "distanceBeforeM": 93.3,
+          "text": "At the junction, turn right onto Fryer Street.",
           "maneuver": "turn_right"
         },
         {
           "atLinkIndex": 29,
-          "distanceBeforeM": 60.1,
-          "text": "At the junction, turn left onto Princes Square.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 30,
-          "distanceBeforeM": 51.0,
-          "text": "At the junction, turn left onto Lichfield Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 33,
-          "distanceBeforeM": 20.5,
-          "text": "At the junction, turn right onto Victoria Square.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 37,
           "distanceBeforeM": 6.7,
           "text": "At the junction, turn right onto Berry Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 38,
+          "atLinkIndex": 30,
           "distanceBeforeM": 100.0,
           "text": "At the junction, turn right onto Princess Street.",
           "maneuver": "turn_right"
         },
         {
+          "atLinkIndex": 32,
+          "distanceBeforeM": 54.4,
+          "text": "At the junction, turn right onto Lichfield Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 34,
+          "distanceBeforeM": 20.5,
+          "text": "At the junction, turn left onto Fryer Street.",
+          "maneuver": "turn_left"
+        },
+        {
+          "atLinkIndex": 40,
+          "distanceBeforeM": 44.9,
+          "text": "At the traffic lights, turn right.",
+          "maneuver": "turn_right"
+        },
+        {
           "atLinkIndex": 41,
-          "distanceBeforeM": 42.3,
-          "text": "At the junction, turn left onto Lichfield Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 46,
-          "distanceBeforeM": 31.8,
-          "text": "At the junction, turn right onto Exchange Street.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 47,
-          "distanceBeforeM": 58.8,
-          "text": "At the junction, turn left onto Cheapside.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 48,
-          "distanceBeforeM": 85.3,
-          "text": "At the junction, turn left onto North Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 52,
-          "distanceBeforeM": 10.2,
-          "text": "At the junction, turn right onto Darlington Street.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 58,
-          "distanceBeforeM": 13.4,
-          "text": "At the traffic lights, turn right onto Waterloo Road.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 69,
-          "distanceBeforeM": 100.0,
-          "text": "At the junction, turn left onto Newhampton Road East.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 74,
-          "distanceBeforeM": 48.9,
-          "text": "At the junction, turn left onto Lansdowne Road.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 77,
-          "distanceBeforeM": 100.0,
-          "text": "At the junction, turn left onto Park Road East.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 78,
-          "distanceBeforeM": 100.0,
-          "text": "At the junction, turn left onto Park Avenue.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 80,
-          "distanceBeforeM": 100.0,
-          "text": "At the junction, turn right onto Newhampton Road East.",
-          "maneuver": "turn_right"
-        },
-        {
-          "atLinkIndex": 83,
-          "distanceBeforeM": 39.6,
-          "text": "At the junction, bear right onto Waterloo Road.",
+          "distanceBeforeM": 47.9,
+          "text": "At the junction, bear right.",
           "maneuver": "bear_right"
         },
         {
-          "atLinkIndex": 85,
-          "distanceBeforeM": 53.0,
-          "text": "At the junction, bear left onto Waterloo Road.",
-          "maneuver": "bear_left"
+          "atLinkIndex": 44,
+          "distanceBeforeM": 34.8,
+          "text": "At the junction, bear right.",
+          "maneuver": "bear_right"
         },
         {
-          "atLinkIndex": 92,
-          "distanceBeforeM": 11.0,
-          "text": "At the junction, turn left onto Stafford Street.",
-          "maneuver": "turn_left"
-        },
-        {
-          "atLinkIndex": 93,
-          "distanceBeforeM": 19.2,
+          "atLinkIndex": 45,
+          "distanceBeforeM": 10.7,
           "text": "At the junction, turn right.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 94,
-          "distanceBeforeM": 8.4,
+          "atLinkIndex": 46,
+          "distanceBeforeM": 100.0,
+          "text": "At the junction, turn left.",
+          "maneuver": "turn_left"
+        },
+        {
+          "atLinkIndex": 47,
+          "distanceBeforeM": 100.0,
+          "text": "At the junction, bear left onto Ring Road St. Davids.",
+          "maneuver": "bear_left"
+        },
+        {
+          "atLinkIndex": 55,
+          "distanceBeforeM": 23.9,
+          "text": "At the junction, turn right onto Broad Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 58,
+          "distanceBeforeM": 21.8,
+          "text": "At the junction, bear left onto Ring Road St Patricks.",
+          "maneuver": "bear_left"
+        },
+        {
+          "atLinkIndex": 63,
+          "distanceBeforeM": 12.5,
+          "text": "At the junction, turn left onto Stafford Street.",
+          "maneuver": "turn_left"
+        },
+        {
+          "atLinkIndex": 65,
+          "distanceBeforeM": 34.2,
           "text": "At the junction, turn right onto Stafford Street.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 96,
-          "distanceBeforeM": 16.8,
+          "atLinkIndex": 70,
+          "distanceBeforeM": 11.3,
+          "text": "At the junction, turn right.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 71,
+          "distanceBeforeM": 15.3,
           "text": "At the junction, turn right onto Ring Road St Patricks.",
           "maneuver": "turn_right"
         },
         {
-          "atLinkIndex": 99,
-          "distanceBeforeM": 50.0,
+          "atLinkIndex": 85,
+          "distanceBeforeM": 20.7,
+          "text": "At the junction, bear left onto Chapel Ash Island.",
+          "maneuver": "bear_left"
+        },
+        {
+          "atLinkIndex": 87,
+          "distanceBeforeM": 58.7,
+          "text": "At the junction, turn right onto Darlington Street.",
+          "maneuver": "turn_right"
+        },
+        {
+          "atLinkIndex": 90,
+          "distanceBeforeM": 38.5,
           "text": "You have arrived at your destination.",
           "maneuver": "arrive"
         }
