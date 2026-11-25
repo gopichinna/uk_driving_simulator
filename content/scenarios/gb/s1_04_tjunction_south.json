@@ -1,0 +1,24 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s1_04_tjunction_south",
+  "course": "town",
+  "anchor": "tjunction_south",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    },
+    {
+      "type": "car_emerges",
+      "junction": "tjunction_south",
+      "whenPlayerWithinM": 30,
+      "gapS": 3.5
+    },
+    {
+      "type": "finish_at",
+      "anchor": "tjunction_south",
+      "offsetM": 70
+    }
+  ]
+}

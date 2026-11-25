@@ -1,0 +1,28 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s1_05_h2_north",
+  "course": "town",
+  "anchor": "tjunction_north",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.3
+    },
+    {
+      "type": "pedestrian_waits",
+      "crossing": "mill_lane_mouth",
+      "whenPlayerWithinM": 40
+    },
+    {
+      "type": "pedestrian_steps_out",
+      "crossing": "mill_lane_mouth",
+      "whenPlayerWithinM": 28
+    },
+    {
+      "type": "finish_at",
+      "anchor": "tjunction_north",
+      "offsetM": 65
+    }
+  ]
+}

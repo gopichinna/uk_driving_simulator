@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s2_09_zebra_zigzags",
+  "course": "town",
+  "anchor": "zebra",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    },
+    {
+      "type": "pedestrian_waits",
+      "crossing": "zebra",
+      "whenPlayerWithinM": 40
+    },
+    {
+      "type": "finish_at",
+      "anchor": "zebra",
+      "offsetM": 60
+    }
+  ]
+}

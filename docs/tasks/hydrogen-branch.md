@@ -44,7 +44,7 @@ The round-4 draft claims things the app doesn't do yet: an in-app lesson player 
   **Don't rename or remove fields.**
 
 ## C. Scripted situations for lesson scenarios (pre-agreed vocabulary)
-- [ ] C1. `content/schemas/scenario.v0.schema.json` and one file per lesson scenario in `content/scenarios/gb/<scenarioId>.json`. Each file has:
+- [x] C1. `content/schemas/scenario.v0.schema.json` and one file per lesson scenario in `content/scenarios/gb/<scenarioId>.json`. Each file has: (`scenario.v0.schema.json` with strict `oneOf` event vocabulary.)
   - `scenarioId` (it must match a lesson's `scenarios[].id`);
   - `course` and `anchor`;
   - `durationS` (60–180);
@@ -62,8 +62,8 @@ The round-4 draft claims things the app doesn't do yet: an in-app lesson player 
   | `finish_at` | `anchor`; `offsetM` (where the scenario ends successfully) |
 
   The courses and anchors are the ones used in round 2 (`town`: `start`, `crossroads_signals`, `tjunction_north`, `tjunction_south`, `zebra`, `box_junction`, `school_street`; other courses: `start`).
-- [ ] C2. Write scenarios for **every scenario in lessons 1–10** (Stages 0–2). Each one sets up the situation its `rulesJudged` are about. For example, the zebra lesson has `pedestrian_waits` at the zebra, and the amber lesson has `lights_turn_amber` at a distance where stopping is comfortable (about 40–50 m at 30 mph). Use the GOV.UK stopping distances you verified: the 30 mph typical stopping distance is 23 m.
-- [ ] C3. Tests:
+- [x] C2. Write scenarios for **every scenario in lessons 1–10** (Stages 0–2). Each one sets up the situation its `rulesJudged` are about. For example, the zebra lesson has `pedestrian_waits` at the zebra, and the amber lesson has `lights_turn_amber` at a distance where stopping is comfortable (about 40–50 m at 30 mph). Use the GOV.UK stopping distances you verified: the 30 mph typical stopping distance is 23 m. (All 20 scenario files written under `content/scenarios/gb/`.)
+- [x] C3. Tests: (`pipeline/tests/test_scenarios.py`)
   - every lesson 1–10 scenario has a file;
   - the event types and fields come only from the table above;
   - anchors and crossings are valid for the course;
