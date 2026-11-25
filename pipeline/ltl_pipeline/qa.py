@@ -162,6 +162,19 @@ def generate_qa_markdown(
                 f"- **Spawn points:** {len(spawns)}",
             ]
         )
+
+    lane_conns = pack.get("laneConnections", [])
+    lc_high = sum(1 for lc in lane_conns if lc["confidence"] >= 0.8)
+    lc_med = sum(1 for lc in lane_conns if 0.5 <= lc["confidence"] < 0.8)
+    lc_low = sum(1 for lc in lane_conns if lc["confidence"] < 0.5)
+    lines.extend(
+        [
+            "",
+            "## Lane connections",
+            f"- **Total lane connections:** {len(lane_conns)} "
+            f"(high {lc_high}, medium {lc_med}, low {lc_low})",
+        ]
+    )
     lines.append("")
     return "\n".join(lines)
 

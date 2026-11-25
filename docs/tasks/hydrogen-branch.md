@@ -71,14 +71,14 @@ Review of round 5 found two problems:
 - [x] D2. The readability linter checks voice lines, including the 12-word limit. The en-XA pseudo-locale includes them. (`readability.py` `lint_voice_strings` + `pseudolocale.py` + `en-XA/voice.json`.)
 
 ## E. Wolverhampton lane connections (roadpack v0.5, additive, pre-agreed)
-- [ ] E1. For links with `turn:lanes` or more than one lane, add top-level `laneConnections[]`: `{ nodeId, fromLink, fromLane, toLink, toLane, confidence }`.
+- [x] E1. For links with `turn:lanes` or more than one lane, add top-level `laneConnections[]`: `{ nodeId, fromLink, fromLane, toLink, toLane, confidence }`. (`build.py` `_build_lane_connections`: lane 0 = nearside, turn:lanes + default fallback, respects `restrictions[]`.)
   - Lane 0 is the **nearside** (left in the UK).
   - Derive them from `turn:lanes` arrows when tagged; otherwise use a default: nearside lane for left and ahead, offside lane for right and ahead.
   - Respect `restrictions[]`.
-- [ ] E2. Bump `packFormatVersion` to `0.5`, update the sample with one example, and add a QA section with counts and confidence. **Don't rename or remove fields.**
+- [x] E2. Bump `packFormatVersion` to `0.5`, update the sample with one example, and add a QA section with counts and confidence. **Don't rename or remove fields.** (`roadpack.v0.schema.json`, `roadpack.sample.json`, `qa.py`, `roadpack.json`.)
 
 ## F. Hand-off
-- [ ] F1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: correct diagrams, lessons 11–18 scenarios, quizzes, voice lines, lane connections". Include the A2 diagram checklist in the PR description. Do A first and open a draft PR early.
+- [x] F1. Add a dated note to `docs/08` §6, then open a PR on `gopichinna/uk_driving_simulator` titled "Hydrogen: correct diagrams, lessons 11–18 scenarios, quizzes, voice lines, lane connections". Include the A2 diagram checklist in the PR description. Do A first and open a draft PR early. (Note added to `docs/08` §6; PR #6 marked ready with diagram checklist.)
 
 ## Requests from Claude
 - Pre-agreed for round 6:

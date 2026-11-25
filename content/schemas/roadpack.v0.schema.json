@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4"] },
+    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -46,6 +46,7 @@
       }
     },
     "spawnPoints": { "type": "array", "items": { "$ref": "#/$defs/spawnPoint" }, "default": [] },
+    "laneConnections": { "type": "array", "items": { "$ref": "#/$defs/laneConnection" }, "default": [] },
     "excluded": { "type": "array", "items": { "type": "object" }, "description": "Ways deliberately left out and why (e.g. tram streets)." }
   },
   "$defs": {
@@ -181,6 +182,19 @@
         "linkId": { "type": "string" },
         "offsetM": { "type": "number", "minimum": 0 },
         "heading": { "type": "number", "minimum": 0, "maximum": 360 }
+      }
+    },
+    "laneConnection": {
+      "type": "object",
+      "required": ["nodeId", "fromLink", "fromLane", "toLink", "toLane", "confidence"],
+      "additionalProperties": false,
+      "properties": {
+        "nodeId": { "type": "string" },
+        "fromLink": { "type": "string" },
+        "fromLane": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "toLink": { "type": "string" },
+        "toLane": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "confidence": { "$ref": "#/$defs/confidence" }
       }
     }
   }

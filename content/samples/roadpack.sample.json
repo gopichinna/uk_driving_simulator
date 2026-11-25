@@ -1,5 +1,5 @@
 {
-  "packFormatVersion": "0.4",
+  "packFormatVersion": "0.5",
   "packId": "sample-t-junction",
   "displayName": "Sample: T-junction with traffic lights and a zebra",
   "country": "GB",
@@ -76,5 +76,8 @@
   "mainNetwork": { "linkCount": 3, "nodeCount": 4 },
   "spawnPoints": [
     { "id": "sp_01", "linkId": "l_south", "offsetM": 60, "heading": 0 }
+  ],
+  "laneConnections": [
+    { "nodeId": "n_junction", "fromLink": "l_west", "fromLane": 0, "toLink": "l_east", "toLane": 0, "confidence": 0.85 }
   ]
 }
