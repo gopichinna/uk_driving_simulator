@@ -272,6 +272,41 @@ namespace LToLocal.EditorTools
                     Text(plate, name, new Vector3(0, 1.05f, -0.04f), 0.024f, Color.black, TextAnchor.MiddleCenter);
                 }
             }
+            // Speed-limit roundels, bus stop flags and school warning signs (round 9 street furniture).
+            string cityDir = "../content/cities/wolverhampton/";
+            Vec2 Pos(Dictionary<string, object> o) => new Vec2(MiniJson.Num(o["x"]), MiniJson.Num(o["z"]));
+            double Rad(Dictionary<string, object> o) => MiniJson.Num(o["heading"]) * System.Math.PI / 180;
+            if (File.Exists(cityDir + "speed_signs.json"))
+                foreach (var o in MiniJson.Arr(MiniJson.Obj(MiniJson.Parse(File.ReadAllText(cityDir + "speed_signs.json")))["speedSigns"]))
+                {
+                    var so = MiniJson.Obj(o);
+                    var at = Pos(so);
+                    if (!PushOffRoad(g, laneWidth, 1.3, ref at)) { skipped++; continue; }
+                    SpeedSign(root, at, Rad(so), (int)MiniJson.Num(so["mph"]), m);
+                }
+            if (File.Exists(cityDir + "warning_signs.json"))
+                foreach (var o in MiniJson.Arr(MiniJson.Obj(MiniJson.Parse(File.ReadAllText(cityDir + "warning_signs.json")))["warningSigns"]))
+                {
+                    var wo = MiniJson.Obj(o);
+                    if ((wo["kind"] as string) != "school") continue;
+                    var at = Pos(wo);
+                    if (!PushOffRoad(g, laneWidth, 1.3, ref at)) { skipped++; continue; }
+                    SchoolSign(root, at, Rad(wo), m, black);
+                }
+            if (File.Exists(cityDir + "bus_stops.json"))
+                foreach (var o in MiniJson.Arr(MiniJson.Obj(MiniJson.Parse(File.ReadAllText(cityDir + "bus_stops.json")))["busStops"]))
+                {
+                    var bo = MiniJson.Obj(o);
+                    var at = Pos(bo);
+                    if (!PushOffRoad(g, laneWidth, 1.3, ref at)) { skipped++; continue; }
+                    var stop = new GameObject($"BusStop {bo["name"]}").transform;
+                    stop.SetParent(root, false);
+                    stop.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)MiniJson.Num(bo["heading"]), 0));
+                    Prim(PrimitiveType.Cylinder, "Pole", stop, new Vector3(0, 1.4f, 0), new Vector3(0.08f, 1.4f, 0.08f), m.Pole);
+                    Prim(PrimitiveType.Cylinder, "Flag", stop, new Vector3(0, 2.7f, 0), new Vector3(0.55f, 0.02f, 0.55f), m.SignRed, new Vector3(90, 0, 0));
+                    Prim(PrimitiveType.Cylinder, "FlagInner", stop, new Vector3(0, 2.7f, -0.02f), new Vector3(0.38f, 0.02f, 0.38f), m.White, new Vector3(90, 0, 0));
+                    Text(stop, "BUS", new Vector3(0, 2.7f, -0.05f), 0.02f, Color.black, TextAnchor.MiddleCenter);
+                }
             Debug.Log($"[LToLocal] Placed signs: {skipped} skipped (no clear spot off the road).");
         }
 
