@@ -7,7 +7,7 @@
   "required": ["packFormatVersion", "packId", "country", "region", "drivingSide", "origin", "source", "nodes", "links"],
   "additionalProperties": false,
   "properties": {
-    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5"] },
+    "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6"] },
     "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
@@ -169,6 +169,8 @@
         "amberS": { "type": "number" },
         "allRedS": { "type": "number" },
         "redAmberS": { "type": "number" },
+        "pedestrianStageS": { "type": "number", "minimum": 1 },
+        "crossingIds": { "type": "array", "items": { "type": "string" } },
         "confidence": { "$ref": "#/$defs/confidence" },
         "confidenceNotes": { "type": "string" }
       }

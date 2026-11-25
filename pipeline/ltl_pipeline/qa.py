@@ -66,6 +66,12 @@ def generate_qa_markdown(
         for lk in links
         if _polyline_length_m(lk["geometry"]) < 2.0
     ]
+    under_10_links = [
+        (lk["id"], round(_polyline_length_m(lk["geometry"]), 2), lk["from"], lk["to"])
+        for lk in links
+        if _polyline_length_m(lk["geometry"]) < 10.0
+    ]
+    nodes_by_id = {n["id"]: n for n in nodes}
     components = _connected_components(pack)
 
     lines = [
@@ -173,8 +179,15 @@ def generate_qa_markdown(
             "## Lane connections",
             f"- **Total lane connections:** {len(lane_conns)} "
             f"(high {lc_high}, medium {lc_med}, low {lc_low})",
+            "",
+            "## Links under 10 m (after degree-2 merging)",
+            f"- **Count:** {len(under_10_links)} / {len(links)} total links",
         ]
     )
+    for lid, dist, f_nid, t_nid in under_10_links[:20]:
+        fk = nodes_by_id.get(f_nid, {}).get("kind", "node")
+        tk = nodes_by_id.get(t_nid, {}).get("kind", "node")
+        lines.append(f"  - `{lid}` ({dist} m): between `{fk}` and `{tk}`")
     lines.append("")
     return "\n".join(lines)
 

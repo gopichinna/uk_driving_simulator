@@ -1,0 +1,66 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/pedroutes.v0.schema.json",
+  "title": "L to Local Pedestrian Routes v0",
+  "description": "Footway walking routes with mapped crossings and side-road mouth crossings (rule H2). Shared contract (docs/08 §4).",
+  "type": "object",
+  "required": ["pedRoutesFormatVersion", "packId", "routes"],
+  "additionalProperties": false,
+  "properties": {
+    "pedRoutesFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "routes": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 40,
+      "items": { "$ref": "#/$defs/pedRoute" }
+    }
+  },
+  "$defs": {
+    "point": {
+      "type": "array",
+      "items": { "type": "number" },
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "pedRoute": {
+      "type": "object",
+      "required": ["id", "points", "crossings"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/point" }
+        },
+        "crossings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["crossingId", "fromIndex", "toIndex"],
+            "additionalProperties": false,
+            "properties": {
+              "crossingId": { "type": "string" },
+              "fromIndex": { "type": "integer", "minimum": 0 },
+              "toIndex": { "type": "integer", "minimum": 1 }
+            }
+          }
+        },
+        "mouthCrossings": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["nodeId", "fromIndex", "toIndex"],
+            "additionalProperties": false,
+            "properties": {
+              "nodeId": { "type": "string" },
+              "fromIndex": { "type": "integer", "minimum": 0 },
+              "toIndex": { "type": "integer", "minimum": 1 }
+            }
+          }
+        }
+      }
+    }
+  }
+}
