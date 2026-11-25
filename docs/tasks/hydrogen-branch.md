@@ -30,9 +30,9 @@ Tick each box with a one-line note.
 - Round 3 (PR #3, `ab1549e`): test marking (15 driving faults; any serious or dangerous fault fails), UI strings and pseudo-locale, Stages 3–5 lessons, `junctionPriority[]` and `signalPlans[]`, credits.
 
 ## A. Rule → lesson index (needed by Claude's debrief now)
-- [ ] A1. `content/schemas/ruleindex.v0.schema.json` (new, pre-agreed) and the generated `content/lessons/gb/rule_index.json`. It maps each rule id to the lessons that train it: `{ ruleId: [{ lessonId, scenarioId, title }] }`, ordered by curriculum order. It includes every rule in `rules.yaml` that has an `implementation`.
-- [ ] A2. CI regenerates the file and fails on any diff. A test checks that every implemented rule maps to at least one lesson, and lists the gaps if not.
-- [ ] A3. New implemented rules from Claude's branch: `GB.POS.KEEP_LEFT` (wrong side of the road) and `GB.SIG.TIMELY` (moving out without a signal) are being added in `core/Rules.Core/KeepLeftRule.cs`. Once that merges, make sure `rules.yaml` picks them up. They already exist in `docs/02`, so the scan should find them.
+- [x] A1. `content/schemas/ruleindex.v0.schema.json` (new, pre-agreed) and the generated `content/lessons/gb/rule_index.json`. It maps each rule id to the lessons that train it: `{ ruleId: [{ lessonId, scenarioId, title }] }`, ordered by curriculum order. It includes every rule in `rules.yaml` that has an `implementation`. (`pipeline/ltl_pipeline/rule_index.py`)
+- [x] A2. CI regenerates the file and fails on any diff. A test checks that every implemented rule maps to at least one lesson, and lists the gaps if not. (`pipeline.yml` + `pipeline/tests/test_rule_index.py`)
+- [x] A3. New implemented rules from Claude's branch: `GB.POS.KEEP_LEFT` (wrong side of the road) and `GB.SIG.TIMELY` (moving out without a signal) are being added in `core/Rules.Core/KeepLeftRule.cs`. Once that merges, make sure `rules.yaml` picks them up. They already exist in `docs/02`, so the scan should find them. (Verified `rulepack.py` scans `core/Rules.Core/*.cs` for `public const string Rule*`; `GB.POS.KEEP_LEFT` and `GB.SIG.TIMELY` are already in `docs/02` and `rule_index.json`.)
 
 ## B. Wolverhampton v0.3: what it looks like
 - [ ] B1. Additive roadpack **v0.3** (pre-agreed) link fields:

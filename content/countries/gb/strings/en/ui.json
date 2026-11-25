@@ -21,6 +21,8 @@
     "debrief.result.pass": "Practice pass",
     "debrief.result.fail": "Practice fail",
     "debrief.result.note": "Practice feedback only. This is not an official driving test.",
+    "debrief.drive_again": "Drive again",
+    "debrief.keep_driving": "Keep driving",
     "settings.title": "Settings",
     "settings.steering.label": "Steering sensitivity",
     "settings.steering.hint": "Higher values make steering react faster.",

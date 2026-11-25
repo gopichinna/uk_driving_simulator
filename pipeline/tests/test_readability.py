@@ -108,6 +108,8 @@ REQUIRED_UI_KEYS = [
     "debrief.result.pass",
     "debrief.result.fail",
     "debrief.result.note",
+    "debrief.drive_again",
+    "debrief.keep_driving",
     "settings.title",
     "settings.steering.label",
     "settings.steering.hint",
