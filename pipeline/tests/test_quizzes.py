@@ -26,8 +26,8 @@ def test_every_lesson_has_valid_original_quiz() -> None:
     allowed_abbrevs = extract_glossary_abbreviations(glossary_data)
     banned = load_banned_phrases()
 
-    lesson_files = sorted(LESSONS_DIR.glob("[01][0-9]-*.json"))
-    assert len(lesson_files) == 19
+    lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
+    assert len(lesson_files) == 27
 
     for lf in lesson_files:
         lesson = json.loads(lf.read_text(encoding="utf-8"))

@@ -28,6 +28,18 @@
     "voice.GB.RBT.WRONG_WAY.fault": "[Álwáys gó clóckwísé áróúnd ÚK róúndábóúts. ~~~~~~~~~~~~~~~~~]",
     "voice.GB.RBT.WRONG_WAY.good": "[Cléán clóckwísé páth áróúnd thé róúndábóút. ~~~~~~~~~~~~~~~~~~]",
     "voice.GB.VRU.PASS_CYCLIST.fault": "[Gívé cyclísts át léást 1.5 métrés whén pássíng. ~~~~~~~~~~~~~~~~~~~]",
-    "voice.GB.VRU.PASS_CYCLIST.good": "[Gréát wídé cléáráncé pást thé cyclíst. ~~~~~~~~~~~~~~~~]"
+    "voice.GB.VRU.PASS_CYCLIST.good": "[Gréát wídé cléáráncé pást thé cyclíst. ~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.HEADLIGHTS_NIGHT.fault": "[Swítch ón yóúr díppéd héádlíghts át níght. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.HEADLIGHTS_NIGHT.good": "[Góód díppéd héádlíght úsé át níght. ~~~~~~~~~~~~~~]",
+    "voice.GB.WX.NO_DAZZLE.fault": "[Díp yóúr héádlíghts só yóú dó nót dázzlé óthérs. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.NO_DAZZLE.good": "[Góód tímély díp fór óncómíng tráffíc. ~~~~~~~~~~~~~~~]",
+    "voice.GB.GAP.WET_ICY.fault": "[Dóúblé yóúr fóllówíng gáp ón wét róáds. ~~~~~~~~~~~~~~~~]",
+    "voice.GB.GAP.WET_ICY.good": "[Sáfé fóúr-sécónd gáp ín thé ráín. ~~~~~~~~~~~~~~]",
+    "voice.GB.WX.LOW_VISIBILITY.fault": "[Swítch ón héádlíghts whén vísíbílíty dróps bélów 100 métrés. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.LOW_VISIBILITY.good": "[Góód héádlíght úsé ín lów vísíbílíty. ~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.FOG_LIGHTS.fault": "[Swítch óff fóg líghts nów vísíbílíty hás ímpróvéd. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.FOG_LIGHTS.good": "[Góód fóg-líght díscíplíné ás cóndítíóns cléáréd. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.FOG_STOPPING.fault": "[Slów dówn só yóú cán stóp wíthín yóúr víéw. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.WX.FOG_STOPPING.good": "[Sáfé spééd fór thé vísíbílíty áhéád. ~~~~~~~~~~~~~~~]"
   }
 }

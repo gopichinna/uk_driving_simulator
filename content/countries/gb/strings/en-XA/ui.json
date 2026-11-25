@@ -45,6 +45,20 @@
     "lesson.retry": "[Try ágáín ~~~~]",
     "lesson.quiz_title": "[Qúíck chéck ~~~~~]",
     "lesson.correct": "[Córréct ~~~~]",
-    "lesson.incorrect": "[Nót qúíté ~~~~]"
+    "lesson.incorrect": "[Nót qúíté ~~~~]",
+    "a11y.hud.steer_left": "[Stéér léft ~~~~]",
+    "a11y.hud.steer_right": "[Stéér ríght ~~~~~]",
+    "a11y.hud.throttle": "[Áccéléráté ~~~~]",
+    "a11y.hud.brake": "[Bráké ~~~~]",
+    "a11y.hud.indicator_left": "[Sígnál léft ~~~~~]",
+    "a11y.hud.indicator_right": "[Sígnál ríght ~~~~~]",
+    "a11y.hud.shoulder_check": "[Lóók óvér yóúr shóúldér ~~~~~~~~~~]",
+    "a11y.hud.camera_toggle": "[Swítch bétwéén drívér séát ánd chásé víéw ~~~~~~~~~~~~~~~~~]",
+    "a11y.hud.finish_drive": "[Énd drívé ánd ópén débríéf ~~~~~~~~~~~]",
+    "a11y.hud.reset": "[Réstárt thé cúrrént cóúrsé ~~~~~~~~~~~]",
+    "a11y.hud.settings": "[Ópén séttíngs ~~~~~~]",
+    "a11y.screen.debrief": "[Drívé débríéf ánd fáúlt líst ~~~~~~~~~~~~]",
+    "a11y.screen.settings": "[Séttíngs scréén ~~~~~~]",
+    "a11y.screen.lessons": "[Léssón líst ánd prógréss ~~~~~~~~~~]"
   }
 }

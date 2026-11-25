@@ -1789,6 +1789,20 @@ rules:
   phase: M
   verifiedOn: '2026-11-25'
   detection: High beam with oncoming traffic < 150 m, or a lead car < 100 m
+- id: GB.WX.FOG_STOPPING
+  group: Q. Lights and weather (WX)
+  plainEnglish: In fog, be able to pull up well within the distance you can see clearly
+  source:
+    text: WX 235
+    rules:
+    - '235'
+    url: https://www.gov.uk/guidance/the-highway-code/driving-in-adverse-weather-conditions-226-to-237
+  force: should
+  verified: verified
+  severity: S
+  phase: V1
+  verifiedOn: '2026-11-25'
+  detection: Stopping distance exceeds `env.visibility`
 - id: GB.RUR.SINGLE_TRACK
   group: R. Rural and rare (RUR)
   plainEnglish: Pull into a passing place on your left, or wait opposite one on your right; give way to uphill traffic; never

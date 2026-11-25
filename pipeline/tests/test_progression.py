@@ -19,7 +19,7 @@ def test_progression_validates_and_matches_lessons() -> None:
 
     lesson_ids_from_files: list[str] = []
     free_from_files: list[str] = []
-    for lf in sorted(LESSONS_DIR.glob("[01][0-9]-*.json")):
+    for lf in sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json")):
         lesson = json.loads(lf.read_text(encoding="utf-8"))
         lesson_ids_from_files.append(lesson["id"])
         if lesson["freeTier"]:

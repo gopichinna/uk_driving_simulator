@@ -13,6 +13,7 @@ from typing import Any
 from shapely.geometry import LineString, Point
 
 from ltl_pipeline import __version__
+from ltl_pipeline.roundabout_furniture import extract_roundabout_clusters
 from ltl_pipeline.schema import REPO_ROOT, validate_signs_placed_file
 
 CITY_DIR = REPO_ROOT / "content" / "cities" / "wolverhampton"
@@ -25,6 +26,7 @@ GOV_UK_TRAFFIC_SIGNS_URL = "https://www.gov.uk/guidance/the-highway-code/traffic
 GOV_UK_KYTS_URL = "https://www.gov.uk/government/publications/know-your-traffic-signs"
 
 A_ROAD_RE = re.compile(r"\bA\d+\b")
+ROUTE_REF_RE = re.compile(r"\b[ABM]\d+\b")
 
 KIND_PRIORITY = {
     "city_centre": 0,
@@ -38,6 +40,8 @@ KIND_PRIORITY = {
     "police": 8,
     "other": 9,
 }
+
+LOCAL_KINDS = {"car_park", "university", "police", "shopping"}
 
 GENERIC_TEXT_AND_SYMBOL = {
     "railway_station": ("Railway Station", "rail"),
@@ -53,6 +57,15 @@ def is_primary_approach(link: dict[str, Any]) -> bool:
         return True
     ref = link.get("ref") or ""
     return bool(A_ROAD_RE.search(ref))
+
+
+def game_lane_half_width(link: dict[str, Any]) -> float:
+    """Half-width of the game's 3.25 m lane geometry for a link."""
+    if link.get("oneway", False):
+        lanes = max(1, int(link.get("lanesForward", 1)))
+    else:
+        lanes = max(1, int(link.get("lanesForward", 1)) + int(link.get("lanesBackward", 1)))
+    return (3.25 * lanes) / 2.0
 
 
 def _heading_deg(dx: float, dz: float) -> float:
@@ -156,6 +169,13 @@ def _format_row_text_and_symbol(poi: dict[str, Any]) -> tuple[str, str] | None:
     return name, "none"
 
 
+def _extract_primary_ref(link: dict[str, Any]) -> str | None:
+    raw = str(link.get("ref") or "").split(";")[0].strip()
+    if raw and ROUTE_REF_RE.fullmatch(raw):
+        return raw
+    return None
+
+
 class RoadGraph:
     """Directed traversal graph respecting oneway, restrictions, and laneConnections."""
 
@@ -170,6 +190,7 @@ class RoadGraph:
             for lid, lk in self.links.items()
             if len(lk["geometry"]) >= 2
         }
+        self.island_polys = [poly for _, poly in extract_roundabout_clusters(pack)]
 
         self.out_edges: dict[str, list[tuple[str, bool, str]]] = defaultdict(list)
         self.in_edges: dict[str, list[tuple[str, bool, str]]] = defaultdict(list)
@@ -220,44 +241,74 @@ class RoadGraph:
 
     def shortest_first_turns(
         self, approach_link: str, approach_fwd: bool, junction_node: str
-    ) -> dict[str, tuple[float, str]]:
-        """Dijkstra from (approach_link, junction_node) -> {link_id: (dist_m, first_out_link)}."""
-        best_link: dict[str, tuple[float, str]] = {}
+    ) -> dict[str, tuple[float, str, frozenset[str]]]:
+        """Dijkstra from (approach_link, junction_node) -> {link_id: (dist_m, first_out, refs)}."""
+        best_link: dict[str, tuple[float, str, frozenset[str]]] = {}
         visited: set[tuple[str, str]] = set()
-        pq: list[tuple[float, str, str, str]] = []
+        pq: list[tuple[float, int, str, str, str, frozenset[str]]] = []
+        seq = 0
 
         for out_link, _, next_node in self.allowed_next(approach_link, junction_node):
             cost = self.link_lengths.get(out_link, 1.0)
-            heapq.heappush(pq, (cost, out_link, out_link, next_node))
+            ref = _extract_primary_ref(self.links[out_link])
+            refs = frozenset([ref]) if ref else frozenset()
+            seq += 1
+            heapq.heappush(pq, (cost, seq, out_link, out_link, next_node, refs))
 
         while pq:
-            dist, first_out, cur_link, cur_node = heapq.heappop(pq)
+            dist, _, first_out, cur_link, cur_node, refs = heapq.heappop(pq)
             state = (cur_link, cur_node)
             if state in visited:
                 continue
             visited.add(state)
             if cur_link not in best_link or dist < best_link[cur_link][0]:
-                best_link[cur_link] = (dist, first_out)
+                best_link[cur_link] = (dist, first_out, refs)
             for nxt_link, _, nxt_node in self.allowed_next(cur_link, cur_node):
                 if (nxt_link, nxt_node) not in visited:
+                    nxt_ref = _extract_primary_ref(self.links[nxt_link])
+                    nxt_refs = refs | ({nxt_ref} if nxt_ref else set())
+                    seq += 1
                     heapq.heappush(
                         pq,
                         (
                             dist + self.link_lengths.get(nxt_link, 1.0),
+                            seq,
                             first_out,
                             nxt_link,
                             nxt_node,
+                            nxt_refs,
                         ),
                     )
         return best_link
 
     def on_carriageway(self, x: float, z: float, min_clearance_m: float = 0.5) -> bool:
+        """Check against both RoadPack widthM and game 3.25 m lane geometry + islands."""
         pt = Point(x, z)
+        for poly in self.island_polys:
+            if poly.contains(pt) or pt.distance(poly) < 0.5:
+                return True
         for lid, line in self.link_lines.items():
-            width = float(self.links[lid].get("widthM", 6.5))
-            if pt.distance(line) < (width / 2.0 + min_clearance_m):
+            lk = self.links[lid]
+            half_w = max(float(lk.get("widthM", 6.5)) / 2.0, game_lane_half_width(lk))
+            if pt.distance(line) < (half_w + min_clearance_m):
                 return True
         return False
+
+    def clears_game_geometry(
+        self, x: float, z: float, lane_clearance_m: float = 2.0
+    ) -> bool:
+        """True if (x, z) is outside roundabout islands and >= lane_clearance_m from game lanes."""
+        pt = Point(x, z)
+        for poly in self.island_polys:
+            if poly.contains(pt) or pt.distance(poly) < 0.8:
+                return False
+        for lid, line in self.link_lines.items():
+            lk = self.links[lid]
+            half_w = max(float(lk.get("widthM", 6.5)) / 2.0, game_lane_half_width(lk))
+            req = lane_clearance_m if lk.get("inMainNetwork", True) else 0.5
+            if pt.distance(line) < (half_w + req):
+                return False
+        return True
 
     def place_upstream(
         self,
@@ -277,7 +328,6 @@ class RoadGraph:
                 if res is not None:
                     px, pz, dx, dz = res
                     return px, pz, dx, dz, target_dist_m, cur_link
-            # Walk back into best-aligned predecessor
             start_node = lk["from"] if cur_fwd else lk["to"]
             remaining -= length
             if remaining <= 0.0:
@@ -292,7 +342,6 @@ class RoadGraph:
                 if best_pred is None or dot > best_pred[0]:
                     best_pred = (dot, p_link, p_fwd)
             if best_pred is None:
-                # Fallback: place at 30 m if link >= 22 m (clamped to 25 m)
                 if start_link == cur_link and length >= 25.0:
                     res = _point_and_dir_from_end(lk["geometry"], cur_fwd, min(30.0, length - 2.0))
                     if res is not None:
@@ -339,9 +388,6 @@ def build_direction_signs_and_street_names(
         nid = node["id"]
         for app_link, app_fwd, _ in sorted(graph.in_edges.get(nid, []), key=lambda e: e[0]):
             lk = graph.links[app_link]
-            # Skip internal roundabout ring approaches if the junction is the roundabout itself
-            # when another non-roundabout approach exists? No, R9.1 says every approach to every
-            # signalised junction and roundabout in main network.
             link_dists = graph.shortest_first_turns(app_link, app_fwd, nid)
             if not link_dists:
                 continue
@@ -358,13 +404,20 @@ def build_direction_signs_and_street_names(
             host_lk = graph.links[host_link_id]
             sx, sz = px, pz
             placed_on_verge = False
-            for extra in (1.2, 2.2, 3.2, 4.5):
-                verge_offset = float(host_lk.get("widthM", 6.5)) / 2.0 + extra
-                cand_x = round(px + (-dz) * verge_offset, 3)
-                cand_z = round(pz + dx * verge_offset, 3)
-                if not graph.on_carriageway(cand_x, cand_z, min_clearance_m=0.5):
-                    sx, sz = cand_x, cand_z
-                    placed_on_verge = True
+            host_half = max(float(host_lk.get("widthM", 6.5)) / 2.0, game_lane_half_width(host_lk))
+            # Prefer >= 3.0 m from lane edge (2.0 m + 1.0 m half panel), fallback >= 2.0 m
+            for req_clear in (3.0, 2.0):
+                for extra in (3.1, 3.8, 4.8, 6.0, 2.2):
+                    if extra < req_clear:
+                        continue
+                    verge_offset = host_half + extra
+                    cand_x = round(px + (-dz) * verge_offset, 3)
+                    cand_z = round(pz + dx * verge_offset, 3)
+                    if graph.clears_game_geometry(cand_x, cand_z, lane_clearance_m=req_clear):
+                        sx, sz = cand_x, cand_z
+                        placed_on_verge = True
+                        break
+                if placed_on_verge:
                     break
             if not placed_on_verge:
                 continue
@@ -377,7 +430,9 @@ def build_direction_signs_and_street_names(
                     _signed_turn_deg(in_dx, in_dz, out_dx, out_dz)
                 )
 
-            candidates: list[tuple[int, float, dict[str, Any], str, str, str, str]] = []
+            _Cand = tuple[int, float, dict[str, Any], str, str, str, str, frozenset[str]]
+            turning_candidates: list[_Cand] = []
+            ahead_candidates: list[_Cand] = []
             for poi in pois:
                 formatted = _format_row_text_and_symbol(poi)
                 if formatted is None:
@@ -385,44 +440,75 @@ def build_direction_signs_and_street_names(
                 acc = poi["accessLinkId"]
                 if acc not in link_dists:
                     continue
-                d_m, first_out = link_dists[acc]
+                d_m, first_out, route_refs = link_dists[acc]
                 direction = turn_dir_by_out.get(first_out)
                 if not direction:
                     continue
                 row_text, symbol = formatted
-                candidates.append(
-                    (
-                        KIND_PRIORITY.get(poi["kind"], 9),
-                        d_m,
-                        poi,
-                        direction,
-                        first_out,
-                        row_text,
-                        symbol,
-                    )
+                item = (
+                    KIND_PRIORITY.get(poi["kind"], 9),
+                    d_m,
+                    poi,
+                    direction,
+                    first_out,
+                    row_text,
+                    symbol,
+                    route_refs,
                 )
+                if direction == "ahead":
+                    ahead_candidates.append(item)
+                else:
+                    turning_candidates.append(item)
 
-            candidates.sort(key=lambda item: (item[0], item[1], item[2]["id"]))
+            # R12.2: only sign destinations that turn/fork at this junction, plus up to 2 local
+            # destinations and at most 1 ahead destination when multiple exits exist.
+            turning_candidates.sort(key=lambda it: (it[0], it[1], it[2]["id"]))
+            ahead_candidates.sort(key=lambda it: (it[0], it[1], it[2]["id"]))
+
             chosen_rows: list[dict[str, Any]] = []
             seen_kinds: set[str] = set()
             seen_texts: set[str] = set()
-            for _, _, poi, direction, first_out, row_text, symbol in candidates:
+            dir_counts: dict[str, int] = defaultdict(int)
+            local_count = 0
+
+            def _try_add(item: _Cand, max_per_dir: int = 2) -> bool:
+                nonlocal local_count
+                _, _, poi, direction, first_out, row_text, symbol, route_refs = item
                 if poi["kind"] in seen_kinds or row_text in seen_texts:
-                    continue
+                    return False
+                if dir_counts[direction] >= max_per_dir:
+                    return False
+                if poi["kind"] in LOCAL_KINDS and local_count >= 2:
+                    return False
                 seen_kinds.add(poi["kind"])
                 seen_texts.add(row_text)
+                dir_counts[direction] += 1
+                if poi["kind"] in LOCAL_KINDS:
+                    local_count += 1
                 row: dict[str, Any] = {
                     "text": row_text,
                     "poiId": poi["id"],
                     "symbol": symbol,
                     "direction": direction,
                 }
-                ref = graph.links[first_out].get("ref")
-                if ref:
-                    row["ref"] = str(ref).split(";")[0].strip()
+                out_ref = _extract_primary_ref(graph.links[first_out])
+                if out_ref and out_ref in route_refs:
+                    row["ref"] = out_ref
                 chosen_rows.append(row)
-                if len(chosen_rows) == 4:
+                return True
+
+            # First pick turning/forking destinations across distinct directions (max 2 per dir)
+            for it in turning_candidates:
+                if len(chosen_rows) >= 4:
                     break
+                _try_add(it, max_per_dir=2)
+
+            # Add at most 1 ahead destination when there are multiple exits or turning rows
+            if ahead_candidates and len(chosen_rows) < 4:
+                if turning_candidates or len(turn_dir_by_out) >= 2:
+                    _try_add(ahead_candidates[0], max_per_dir=1)
+                elif not chosen_rows:
+                    _try_add(ahead_candidates[0], max_per_dir=1)
 
             if not chosen_rows:
                 continue
@@ -443,7 +529,7 @@ def build_direction_signs_and_street_names(
                 }
             )
 
-    # Street-name plates at junction corners for named roads
+    # Street-name plates at back of footway at junction corners (>= 1.6 m from game lane edge)
     plates: list[dict[str, Any]] = []
     plate_idx = 0
     seen_plate_keys: set[tuple[str, str]] = set()
@@ -467,14 +553,22 @@ def build_direction_signs_and_street_names(
             if _polyline_length(pts) < 8.0:
                 continue
             ordered = pts if from_node else list(reversed(pts))
-            res = _point_and_dir_from_end(list(reversed(ordered)), True, 6.0)
+            res = _point_and_dir_from_end(list(reversed(ordered)), True, 7.0)
             if res is None:
                 continue
             px, pz, dx, dz = res
-            verge = float(lk.get("widthM", 6.5)) / 2.0 + 0.8
-            sx = round(px + (-dz) * verge, 3)
-            sz = round(pz + dx * verge, 3)
-            if graph.on_carriageway(sx, sz, min_clearance_m=0.5):
+            lane_half = game_lane_half_width(lk)
+            sx, sz = px, pz
+            placed_plate = False
+            for extra in (1.8, 2.4, 3.2):
+                verge = lane_half + extra
+                cand_x = round(px + (-dz) * verge, 3)
+                cand_z = round(pz + dx * verge, 3)
+                if graph.clears_game_geometry(cand_x, cand_z, lane_clearance_m=1.6):
+                    sx, sz = cand_x, cand_z
+                    placed_plate = True
+                    break
+            if not placed_plate:
                 continue
             seen_plate_keys.add((nid, name))
             plate_idx += 1

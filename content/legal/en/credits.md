@@ -16,6 +16,11 @@
 - **Source:** Department for Transport, GOV.UK — https://www.gov.uk/guidance/traffic-sign-images
 - **Licence:** Contains public sector information licensed under the **Open Government Licence v3.0** (**© Crown copyright**).
 
+## Audio & Coach Voice (`content/audio/`)
+- **Piper TTS Engine:** MIT Licence — https://github.com/rhasspy/piper
+- **Coach Voice (`en_GB-cori-medium`):** **CC BY 4.0** (`rhasspy/piper-voices`, Hi-Fi TTS dataset OpenSLR 109, Cori Samuel public-domain LibriVox recordings).
+- **Sound Effects:** Procedurally synthesised for L to Local (**CC0 1.0 Universal**).
+
 ## Engine & Unity Packages
 - **Unity:** Built with Unity 6.
 - *(Unity Asset Store / UPM package notices to be added by the Unity branch.)*

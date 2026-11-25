@@ -1,0 +1,463 @@
+{
+  "roundaboutFurnitureFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "origin": {
+    "lat": 52.56,
+    "lon": -2.1016
+  },
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ],
+    "diagramRefs": {
+      "roundabout_warning": "Diagram 510 (Roundabout ahead warning)",
+      "roundabout_blue": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)",
+      "chevron": "Diagram 515 (Sharp deviation of route chevron on central island)",
+      "give_way_line": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+    }
+  },
+  "roundabouts": [
+    {
+      "id": "rbt_002",
+      "nodeIds": [
+        "n_1635604406",
+        "n_1635604420",
+        "n_395927914",
+        "n_395927965",
+        "n_872146205"
+      ],
+      "islandPolygon": [
+        [
+          455.439,
+          -625.778
+        ],
+        [
+          447.608,
+          -621.764
+        ],
+        [
+          450.093,
+          -610.868
+        ],
+        [
+          461.822,
+          -613.177
+        ],
+        [
+          462.547,
+          -620.522
+        ]
+      ],
+      "roundaboutSigns": [
+        {
+          "id": "rs_2_1",
+          "approachLinkId": "l_150671506_0",
+          "x": 448.802,
+          "z": -597.574,
+          "heading": 151.71,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_2_2",
+          "approachLinkId": "l_150671506_13",
+          "x": 436.711,
+          "z": -621.978,
+          "heading": 55.73,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_2_3",
+          "approachLinkId": "l_56685885_1",
+          "x": 457.49,
+          "z": -635.591,
+          "heading": 312.74,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        }
+      ],
+      "chevronBoards": [
+        {
+          "id": "ch_2_1",
+          "approachLinkId": "l_150671506_0",
+          "x": 453.847,
+          "z": -616.234,
+          "heading": 151.71,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_2_2",
+          "approachLinkId": "l_150671506_13",
+          "x": 453.11,
+          "z": -619.016,
+          "heading": 55.73,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_2_3",
+          "approachLinkId": "l_56685885_1",
+          "x": 455.209,
+          "z": -620.248,
+          "heading": 312.74,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        }
+      ],
+      "giveWayLines": [
+        {
+          "id": "gw_2_1",
+          "approachLinkId": "l_150671506_0",
+          "x": 447.484,
+          "z": -606.625,
+          "heading": 151.71,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_2_2",
+          "approachLinkId": "l_150671506_13",
+          "x": 443.498,
+          "z": -623.948,
+          "heading": 55.73,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_2_3",
+          "approachLinkId": "l_56685885_1",
+          "x": 456.781,
+          "z": -629.728,
+          "heading": 312.74,
+          "widthM": 3.25,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        }
+      ]
+    },
+    {
+      "id": "rbt_003",
+      "nodeIds": [
+        "n_18236687",
+        "n_240137188",
+        "n_240137194",
+        "n_936437920",
+        "n_936437934",
+        "n_936437971",
+        "n_936437991"
+      ],
+      "islandPolygon": [
+        [
+          535.058,
+          -748.907
+        ],
+        [
+          515.831,
+          -747.852
+        ],
+        [
+          509.905,
+          -728.6
+        ],
+        [
+          512.878,
+          -723.411
+        ],
+        [
+          527.917,
+          -717.435
+        ],
+        [
+          536.65,
+          -720.95
+        ],
+        [
+          543.171,
+          -735.262
+        ]
+      ],
+      "roundaboutSigns": [
+        {
+          "id": "rs_3_1",
+          "approachLinkId": "l_23219406_0",
+          "x": 497.174,
+          "z": -729.205,
+          "heading": 52.04,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_3_2",
+          "approachLinkId": "l_24942500_1",
+          "x": 536.3,
+          "z": -769.085,
+          "heading": 342.39,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_3_3",
+          "approachLinkId": "l_56685888_2",
+          "x": 526.284,
+          "z": -706.071,
+          "heading": 143.62,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        }
+      ],
+      "chevronBoards": [
+        {
+          "id": "ch_3_1",
+          "approachLinkId": "l_23219406_0",
+          "x": 524.266,
+          "z": -733.166,
+          "heading": 52.04,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_3_2",
+          "approachLinkId": "l_24942500_1",
+          "x": 527.467,
+          "z": -735.682,
+          "heading": 342.39,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_3_3",
+          "approachLinkId": "l_56685888_2",
+          "x": 526.559,
+          "z": -731.576,
+          "heading": 143.62,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        }
+      ],
+      "giveWayLines": [
+        {
+          "id": "gw_3_1",
+          "approachLinkId": "l_23219406_0",
+          "x": 506.013,
+          "z": -729.222,
+          "heading": 52.04,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_3_2",
+          "approachLinkId": "l_24942500_1",
+          "x": 536.887,
+          "z": -752.916,
+          "heading": 342.39,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_3_3",
+          "approachLinkId": "l_56685888_2",
+          "x": 527.033,
+          "z": -713.535,
+          "heading": 143.62,
+          "widthM": 3.25,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        }
+      ]
+    },
+    {
+      "id": "rbt_006",
+      "nodeIds": [
+        "n_251837668",
+        "n_251837673",
+        "n_251837676",
+        "n_251837677",
+        "n_251837679",
+        "n_916899167"
+      ],
+      "islandPolygon": [
+        [
+          -778.945,
+          142.16
+        ],
+        [
+          -795.839,
+          146.003
+        ],
+        [
+          -796.916,
+          151.403
+        ],
+        [
+          -796.296,
+          153.838
+        ],
+        [
+          -782.976,
+          160.101
+        ],
+        [
+          -775.58,
+          147.288
+        ]
+      ],
+      "roundaboutSigns": [
+        {
+          "id": "rs_6_1",
+          "approachLinkId": "l_23271064_0",
+          "x": -776.078,
+          "z": 168.918,
+          "heading": 184.28,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_6_2",
+          "approachLinkId": "l_23271066_0",
+          "x": -801.391,
+          "z": 137.684,
+          "heading": 356.18,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_6_3",
+          "approachLinkId": "l_23271068_0",
+          "x": -767.732,
+          "z": 140.215,
+          "heading": 285.26,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        }
+      ],
+      "chevronBoards": [
+        {
+          "id": "ch_6_1",
+          "approachLinkId": "l_23271064_0",
+          "x": -785.517,
+          "z": 152.463,
+          "heading": 184.28,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_6_2",
+          "approachLinkId": "l_23271066_0",
+          "x": -788.13,
+          "z": 149.315,
+          "heading": 356.18,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_6_3",
+          "approachLinkId": "l_23271068_0",
+          "x": -784.058,
+          "z": 149.871,
+          "heading": 285.26,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        }
+      ],
+      "giveWayLines": [
+        {
+          "id": "gw_6_1",
+          "approachLinkId": "l_23271064_0",
+          "x": -781.848,
+          "z": 164.837,
+          "heading": 184.28,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_6_2",
+          "approachLinkId": "l_23271066_0",
+          "x": -797.874,
+          "z": 142.428,
+          "heading": 356.18,
+          "widthM": 3.25,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_6_3",
+          "approachLinkId": "l_23271068_0",
+          "x": -771.198,
+          "z": 146.809,
+          "heading": 285.26,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        }
+      ]
+    },
+    {
+      "id": "rbt_007",
+      "nodeIds": [
+        "n_251837789",
+        "n_251837791",
+        "n_251837793",
+        "n_251837796"
+      ],
+      "islandPolygon": [
+        [
+          -952.589,
+          -769.276
+        ],
+        [
+          -962.904,
+          -765.816
+        ],
+        [
+          -961.248,
+          -754.437
+        ],
+        [
+          -947.355,
+          -757.173
+        ]
+      ],
+      "roundaboutSigns": [
+        {
+          "id": "rs_7_1",
+          "approachLinkId": "l_23271072_0",
+          "x": -946.049,
+          "z": -790.463,
+          "heading": 327.24,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        },
+        {
+          "id": "rs_7_2",
+          "approachLinkId": "l_23271074_0",
+          "x": -926.352,
+          "z": -751.943,
+          "heading": 241.24,
+          "diagramRef": "Diagram 610 / 611.1 (Keep left / Mini-roundabout)"
+        }
+      ],
+      "chevronBoards": [
+        {
+          "id": "ch_7_1",
+          "approachLinkId": "l_23271072_0",
+          "x": -954.963,
+          "z": -763.483,
+          "heading": 327.24,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        },
+        {
+          "id": "ch_7_2",
+          "approachLinkId": "l_23271074_0",
+          "x": -953.86,
+          "z": -760.453,
+          "heading": 241.24,
+          "diagramRef": "Diagram 515 (Sharp deviation of route chevron on central island)"
+        }
+      ],
+      "giveWayLines": [
+        {
+          "id": "gw_7_1",
+          "approachLinkId": "l_23271072_0",
+          "x": -950.394,
+          "z": -773.638,
+          "heading": 327.24,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        },
+        {
+          "id": "gw_7_2",
+          "approachLinkId": "l_23271074_0",
+          "x": -942.515,
+          "z": -754.597,
+          "heading": 241.24,
+          "widthM": 6.5,
+          "diagramRef": "Diagram 1003.1 / 1003.3 (Give way line at roundabout entry)"
+        }
+      ]
+    }
+  ]
+}

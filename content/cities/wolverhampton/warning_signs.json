@@ -28,8 +28,8 @@
     {
       "id": "ws_001",
       "kind": "school",
-      "x": -338.285,
-      "z": 374.014,
+      "x": -338.926,
+      "z": 375.145,
       "heading": 60.46,
       "linkId": "l_19366136_1",
       "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
@@ -37,8 +37,8 @@
     {
       "id": "ws_002",
       "kind": "school",
-      "x": -462.301,
-      "z": 433.202,
+      "x": -462.965,
+      "z": 434.32,
       "heading": 59.28,
       "linkId": "l_23151708_0",
       "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
@@ -46,8 +46,8 @@
     {
       "id": "ws_003",
       "kind": "school",
-      "x": -402.611,
-      "z": 467.838,
+      "x": -403.242,
+      "z": 468.975,
       "heading": 60.97,
       "linkId": "l_23151708_2",
       "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
@@ -55,8 +55,8 @@
     {
       "id": "ws_004",
       "kind": "school",
-      "x": -516.015,
-      "z": 291.737,
+      "x": -514.732,
+      "z": 291.944,
       "heading": 170.85,
       "linkId": "l_87055358_0",
       "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
@@ -64,8 +64,8 @@
     {
       "id": "ws_005",
       "kind": "road_narrows",
-      "x": -193.4,
-      "z": 277.436,
+      "x": -193.976,
+      "z": 278.601,
       "heading": 63.71,
       "linkId": "l_37852781_2",
       "diagramRef": "Diagram 516 / 517 (Road narrows)"
@@ -73,8 +73,8 @@
     {
       "id": "ws_006",
       "kind": "road_humps",
-      "x": -236.168,
-      "z": -4.277,
+      "x": -237.443,
+      "z": -4.531,
       "heading": 348.72,
       "linkId": "l_15520106_2",
       "diagramRef": "Diagram 557.1 (Road humps)"

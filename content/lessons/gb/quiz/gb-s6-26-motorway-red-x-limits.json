@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s6-26-motorway-red-x-limits",
+  "questions": [
+    {
+      "id": "q_26_red_x",
+      "question": "What does a red X above a motorway lane mean?",
+      "options": [
+        "The lane is closed and you must not drive in it",
+        "Speed up to clear the lane",
+        "Only buses may use the lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "A red X closes the lane by law. Move into an open lane early.",
+      "ruleId": "GB.MWY.RED_X"
+    },
+    {
+      "id": "q_26_amber",
+      "question": "What should you do when amber lights flash on a motorway signal?",
+      "options": [
+        "Slow down and watch for a hazard ahead",
+        "Maintain 70 mph until you see a red light",
+        "Pull onto the hard shoulder immediately"
+      ],
+      "answerIndex": 0,
+      "explanation": "Flashing amber signals warn of a hazard ahead, so reduce your speed.",
+      "ruleId": "GB.MWY.AMBER_FLASH"
+    }
+  ]
+}

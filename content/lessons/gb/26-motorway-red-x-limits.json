@@ -1,0 +1,76 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s6-26-motorway-red-x-limits",
+  "stage": 6,
+  "order": 26,
+  "title": "Red X and variable limits",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "A red X above a lane means that lane is closed. You must not drive in it.",
+      "Move safely into an open lane well before passing the red X gantry.",
+      "Obey variable speed limits shown in red circles and slow down for flashing amber lights."
+    ],
+    "ruleIds": [
+      "GB.MWY.RED_X",
+      "GB.MWY.AMBER_FLASH",
+      "GB.SPD.OVER_LIMIT"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273",
+    "diagram": "content/lessons/gb/diagrams/gb-s6-26-motorway-red-x-limits.png"
+  },
+  "scenarios": [
+    {
+      "id": "s6_26_mwy_red_x",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Leave a lane closed by a red X gantry early and safely.",
+      "rulesJudged": [
+        "GB.MWY.RED_X",
+        "GB.OBS.LANE_CHANGE",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s6_26_mwy_var_limit",
+      "course": "motorway",
+      "anchor": "start",
+      "goal": "Slow down smoothly for flashing amber signals and variable gantry speed limits.",
+      "rulesJudged": [
+        "GB.MWY.AMBER_FLASH",
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Driving under a red X is illegal and puts stranded drivers and workers at risk.",
+    "Variable speed limits in red rings are enforceable legal limits."
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s7-23-fog-low-visibility",
+  "stage": 7,
+  "order": 23,
+  "title": "Fog and low visibility",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "You must use headlights when visibility drops below 100 metres.",
+      "You may use fog lights in thick fog. Switch them off when visibility improves.",
+      "Drive slowly enough to stop well within the distance you can see clearly."
+    ],
+    "ruleIds": [
+      "GB.WX.LOW_VISIBILITY",
+      "GB.WX.FOG_LIGHTS",
+      "GB.WX.FOG_STOPPING"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/driving-in-adverse-weather-conditions-226-to-237",
+    "diagram": "content/lessons/gb/diagrams/gb-s7-23-fog-low-visibility.png"
+  },
+  "scenarios": [
+    {
+      "id": "s7_23_fog_town",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Use headlights in fog under 100 m and match your speed to your view.",
+      "rulesJudged": [
+        "GB.WX.LOW_VISIBILITY",
+        "GB.WX.FOG_LIGHTS",
+        "GB.WX.FOG_STOPPING"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s7_23_fog_wolverhampton",
+      "course": "wolverhampton",
+      "anchor": "start",
+      "goal": "Navigate Wolverhampton junctions safely in fog and switch fog lights off if it clears.",
+      "rulesJudged": [
+        "GB.WX.LOW_VISIBILITY",
+        "GB.WX.FOG_LIGHTS",
+        "GB.WX.FOG_STOPPING"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Under 100 metres visibility requires headlights; switch fog lights off once it clears.",
+    "Never follow the car ahead's tail lights too closely in fog."
+  ]
+}

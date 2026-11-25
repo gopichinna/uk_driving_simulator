@@ -1,0 +1,29 @@
+pack_id: gb-m54-j2
+display_name: "M54 Junction 2 (Coven Heath)"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# M54 Junction 2 (Coven Heath Interchange, OSM highway=motorway_junction ref=2)
+# Chosen because it is the closest motorway junction directly north of Wolverhampton
+# with full eastbound/westbound slip roads onto A449 Stafford Road.
+origin:
+  lat: 52.6384
+  lon: -2.1300
+
+# ~3.4 km x 1.9 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-2.1550, 52.6300, -2.1050, 52.6470]
+
+bbox_reason: >
+  Covers M54 Junction 2 (Coven Heath Interchange) and adjacent eastbound/westbound
+  mainline carriageways, slip roads, and A449 Stafford Road roundabout interchange.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "Trams out of scope for v1"
