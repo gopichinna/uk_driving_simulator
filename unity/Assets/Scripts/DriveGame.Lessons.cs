@@ -187,7 +187,8 @@ namespace LToLocal.Game
                 {
                     last = l.Stage;
                     var ps = LessonSession.Progression?.StageOf(l.Stage);
-                    string head = ps != null ? $"Stage {l.Stage}: {ps.Title}" : StageName(l.Stage);
+                    // Stages 6-7 (motorways, conditions) aren't built yet, so the mock test shows as the final stage.
+                    string head = l.Stage == 8 ? $"Final test: {ps?.Title ?? "Mock driving test"}" : ps != null ? $"Stage {l.Stage}: {ps.Title}" : StageName(l.Stage);
                     if (ps != null && ps.UnlockAfterStage >= 0 && !LessonSession.Progress.Unlocked(l, lessons, LessonSession.Progression))
                         head += $"   (unlocks with {ps.MinStars} stars in Stage {ps.UnlockAfterStage})";
                     GUI.Label(new Rect(0, cy, w - 30, headH), head, _textStyle);

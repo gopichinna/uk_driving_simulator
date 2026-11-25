@@ -191,8 +191,35 @@ namespace LToLocal.EditorTools
             return hull;
         }
 
-        private static void PlacedSigns(Transform world, Palette m, Material black)
+        /// <summary>
+        /// Moves a point off the drawn road onto the footway: away from every lane or turning path closer than
+        /// half a lane plus <paramref name="clearance"/>. Returns false if no clear spot was found (the sign is skipped).
+        /// </summary>
+        private static bool PushOffRoad(LaneGraph g, double laneWidth, double clearance, ref Vec2 p)
         {
+            var near = new List<Segment>();
+            double need = laneWidth / 2 + clearance;
+            for (int iter = 0; iter < 12; iter++)
+            {
+                bool moved = false;
+                g.Near(p, need + 4, near);
+                foreach (var s in near)
+                {
+                    var (ss, _, d) = s.Path.Project(p);
+                    if (d >= need) continue;
+                    var (q, h) = s.Path.Sample(ss);
+                    Vec2 away = d > 0.05 ? (p - q) * (1.0 / d) : Vec2.FromHeading(h).LeftNormal;
+                    p = q + away * (need + 0.05);
+                    moved = true;
+                }
+                if (!moved) return true;
+            }
+            return false;
+        }
+
+        private static void PlacedSigns(Transform world, Palette m, Material black, LaneGraph g, double laneWidth)
+        {
+            int skipped = 0;
             var root = new GameObject("PlacedSigns").transform;
             root.SetParent(world, false);
             const string signsPath = "../content/cities/wolverhampton/direction_signs.json", platesPath = "../content/cities/wolverhampton/street_names.json";
@@ -212,7 +239,9 @@ namespace LToLocal.EditorTools
                         rows.Add((text, dir));
                     }
                     double heading = MiniJson.Num(s["heading"]) * System.Math.PI / 180;
-                    DirectionSign(root, new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"])), heading, rows.ToArray(), m, black, (s["style"] as string) == "primary");
+                    var at = new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"]));
+                    if (!PushOffRoad(g, laneWidth, 2.0, ref at)) { skipped++; continue; }
+                    DirectionSign(root, at, heading, rows.ToArray(), m, black, (s["style"] as string) == "primary");
                 }
             }
             if (File.Exists(platesPath))
@@ -225,7 +254,9 @@ namespace LToLocal.EditorTools
                     if (name.Length == 0) continue;
                     var plate = new GameObject($"StreetName {name}").transform;
                     plate.SetParent(root, false);
-                    plate.SetPositionAndRotation(V(new Vec2(MiniJson.Num(p["x"]), MiniJson.Num(p["z"])), 0), Quaternion.Euler(0, (float)MiniJson.Num(p["heading"]), 0));
+                    var at = new Vec2(MiniJson.Num(p["x"]), MiniJson.Num(p["z"]));
+                    if (!PushOffRoad(g, laneWidth, 1.6, ref at)) { skipped++; Object.DestroyImmediate(plate.gameObject); continue; }
+                    plate.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)MiniJson.Num(p["heading"]), 0));
                     float w = 0.6f + name.Length * 0.13f;
                     foreach (float x in new[] { -w / 2 + 0.1f, w / 2 - 0.1f }) Prim(PrimitiveType.Cube, "Leg", plate, new Vector3(x, 0.45f, 0.03f), new Vector3(0.06f, 0.9f, 0.06f), black);
                     Prim(PrimitiveType.Cube, "Border", plate, new Vector3(0, 1.05f, 0), new Vector3(w, 0.42f, 0.04f), black);
@@ -233,6 +264,7 @@ namespace LToLocal.EditorTools
                     Text(plate, name, new Vector3(0, 1.05f, -0.04f), 0.024f, Color.black, TextAnchor.MiddleCenter);
                 }
             }
+            Debug.Log($"[LToLocal] Placed signs: {skipped} skipped (no clear spot off the road).");
         }
 
         private static void BuildWolverhamptonScene()
@@ -365,7 +397,7 @@ namespace LToLocal.EditorTools
             }
 
             // Direction signs and street-name plates placed by the content pipeline (real destinations from OSM).
-            PlacedSigns(world, m, Mat("ZebraBlack", new Color(0.07f, 0.07f, 0.08f)));
+            PlacedSigns(world, m, Mat("ZebraBlack", new Color(0.07f, 0.07f, 0.08f)), g, built.LaneWidthM);
 
             // One signal head per signalised approach (nearside lane), facing the drivers.
             var heads = new HashSet<string>();
