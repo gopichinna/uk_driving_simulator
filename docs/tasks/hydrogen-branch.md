@@ -34,7 +34,7 @@ Work through the sections in order. Tick each box and add a one-line note (commi
 
 ## B. Player-facing strings (English, CEFR B1, ready for translation)
 See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no hard-coded text.
-- [ ] B1. `content/schemas/strings.v0.schema.json` (new file, pre-agreed). It defines **rule strings**, keyed by `rule_id`:
+- [x] B1. `content/schemas/strings.v0.schema.json` (new file, pre-agreed). It defines **rule strings**, keyed by `rule_id`:
 
   | Field | What it holds |
   |---|---|
@@ -45,17 +45,17 @@ See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no ha
   | `good` | praise when done well, 1 sentence, optional |
 
   Placeholders use ICU MessageFormat, e.g. `{speedMph}`, `{limitMph}`, `{gapS}`. It also defines **glossary entries**: `id`, `term`, `definition` (≤ 2 sentences), `relatedRules[]`, optional `kmhHint`.
-- [ ] B2. `content/countries/gb/strings/en/rules.json`: strings for **every rule with phase `P` first**, then phase `M`.
+- [x] B2. `content/countries/gb/strings/en/rules.json`: strings for **every rule with phase `P` first**, then phase `M`. (All 91 P+M rules included.)
   - The wording must keep the legal force: write "must" only where `force` is MUST or MUST NOT.
   - Don't repeat the Highway Code number in the text; the game takes it from `rules.yaml`.
   - All text is our own paraphrase. Don't copy Highway Code sentences word for word.
-- [ ] B3. `content/countries/gb/strings/en/glossary.json`: at least 40 terms, including:
+- [x] B3. `content/countries/gb/strings/en/glossary.json`: at least 40 terms, including: (42 terms with `kmhHint` on speed terms.)
   - give way, nearside, offside, dual carriageway, national speed limit, built-up area;
   - zig-zags, box junction, advanced stop line, filter arrow, hard shoulder, red X;
   - zebra / pelican / puffin / toucan crossing, mini-roundabout, MSM, blind spot, H2 (pedestrian priority at junctions).
 
   Speed terms get a `kmhHint` (e.g. "30 mph ≈ 48 km/h").
-- [ ] B4. `pipeline/ltl_pipeline/readability.py` and a CI step, which fail when any string breaks these rules:
+- [x] B4. `pipeline/ltl_pipeline/readability.py` and a CI step, which fail when any string breaks these rules: (Added `readability.py`, `banned_phrases.txt`, `test_readability.py`, and CI step.)
   - a sentence is over 15 words;
   - it uses a phrase from a banned-idiom list (put the list in `content/countries/gb/strings/en/banned_phrases.txt`);
   - it uses an abbreviation that isn't in the glossary;

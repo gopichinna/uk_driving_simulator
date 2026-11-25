@@ -12,6 +12,7 @@ import yaml
 REPO_ROOT = Path(__file__).resolve().parents[2]
 ROADPACK_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "roadpack.v0.schema.json"
 RULEPACK_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "rulepack.v0.schema.json"
+STRINGS_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "strings.v0.schema.json"
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -48,8 +49,17 @@ def validate_rulepack_file(path: Path, schema_path: Path = RULEPACK_SCHEMA_PATH)
     return data
 
 
+def validate_strings_file(path: Path, schema_path: Path = STRINGS_SCHEMA_PATH) -> dict[str, Any]:
+    """Load a strings/glossary JSON file and validate it against strings.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
-    """Validate all roadpack.json and rules.yaml files under content/."""
+    """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
     validated: list[Path] = []
 
@@ -64,5 +74,9 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for rules_path in sorted(root.glob("countries/*/rules.yaml")):
         validate_rulepack_file(rules_path)
         validated.append(rules_path)
+
+    for strings_path in sorted(root.glob("countries/*/strings/*/*.json")):
+        validate_strings_file(strings_path)
+        validated.append(strings_path)
 
     return validated
