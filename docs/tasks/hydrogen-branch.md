@@ -1,145 +1,103 @@
-# Tasks: Google Hydrogen, round 2, branch `hydrogen/content-layer`
+# Tasks: Google Hydrogen, round 3, branch `hydrogen/curriculum-and-test-data`
 
-**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 2 and §3 ownership), then this file. You own `pipeline/**`, `content/countries/**`, `content/cities/**`, `content/ATTRIBUTIONS.md`, the pipeline CI workflows, and edits to `docs/02-rules-catalogue.md`. Don't edit `core/**` or `unity/**`.
+**Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§2 round 3 and §3 ownership), then this file. You own:
+- `pipeline/**`;
+- `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`;
+- `content/ATTRIBUTIONS.md`;
+- the pipeline CI workflows;
+- edits to `docs/02-rules-catalogue.md`.
 
-**Goal (round 2):** build the **content layer**: everything the game reads that isn't code. That means:
-- player-facing words for every rule, in plain English, in string tables ready for translation;
-- a UK driving glossary;
-- a GB traffic-sign catalogue;
-- lesson definitions for curriculum Stages 0–2;
-- a better Wolverhampton pack with free-drive routes.
+Don't edit `core/**` or `unity/**`.
 
-Claude's branch `claude/town-centre-junctions` builds the town course, the debrief and the RoadPack loader at the same time, and will read these files.
+**Goal (round 3):** the data that turns drives into a **course with a verdict**:
+- the official way a driving test is marked, verified on GOV.UK;
+- the words for the debrief, settings and HUD screens;
+- lessons for Stages 3–5;
+- Wolverhampton junction priority and signal plans, so real-street AI knows who goes first;
+- the credits and licences text the app must show.
+
+**Why this order:** Claude is building the end-of-drive **debrief** (fault list, test-style pass/fail) and the **Settings** screen now. Sections B and C unblock that work, so do them first and push early (you can open a draft PR).
 
 **Done when:**
-- `pytest` and `ruff` pass;
+- `pytest`, `ruff` and the readability linter pass;
 - every new file validates against its schema;
-- the readability linter passes on all strings;
-- the CI workflows are green.
+- CI is green.
 
-Work through the sections in order. Tick each box and add a one-line note (commit hash or what changed).
+Tick each box with a one-line note (commit hash or what changed).
 
-## Round 1 (done, merged in PR #1 as `1a0ebd2`)
-- Pipeline, Wolverhampton road pack, `rules.yaml` (130 rules), GOV.UK verification and CI.
+## Done before
+- Round 1 (PR #1, `1a0ebd2`): pipeline, Wolverhampton pack, `rules.yaml`, GOV.UK verification, CI.
+- Round 2 (PR #2, `6266f74`): strings, glossary, signs, Stages 0–2 lessons, Wolverhampton QA, turn restrictions, routes.
 
-## A. Housekeeping
-- [x] A1. Commit `pipeline/uv.lock`. CI installs with `uv sync --frozen` (or the equivalent), so builds are reproducible. (`pipeline.yml` updated to `astral-sh/setup-uv@v5` + `uv sync --frozen --all-extras`.)
-- [x] A2. In CI, regenerate `content/countries/gb/rules.yaml` from `docs/02` and fail if the result differs from the committed file. (Added `git diff --exit-code ../content/countries/gb/rules.yaml` step.)
-- [x] A3. Align `docs/02` with the **no observation busywork** decision (`AGENTS.md` §4, rule 7). For the OBS / SIG / lane-change rules, rewrite the **Detection** column so it judges outcomes, not mirror-check inputs. For example:
-  - "a vehicle was in your blind spot when you moved";
-  - "a following car had to brake hard (> 3 m/s²)";
-  - "you signalled less than 2 s before moving".
+## A. Small fixes from the round-2 review
+- [ ] A1. `GB.POS.KEEP_LEFT.why` says "traffic stays on the left lane". Fix the grammar ("on the left"). Then read every `why` and `tip` once more for grammar a B1 reader would trip on.
+- [ ] A2. Lessons judge some rules that the game can't detect yet (e.g. `GB.TL.NO_TURN_ON_RED`, `GB.SIG.TIMELY`). Add a pipeline report, `content/lessons/gb/IMPLEMENTATION.md` (generated), listing each lesson's `rulesJudged` with ✅ (has an `implementation` in `rules.yaml`) or ⏳ (planned).
+  - The report is a warning, not a CI failure.
+  - Claude will use it to decide which rules to build next.
 
-  Keep the rule ids, the Highway Code sources and the force unchanged. Regenerate `rules.yaml`. (Updated `GB.OBS.MOVE_OFF_CHECKS`, `GB.OBS.MSM`, `GB.OBS.LANE_CHANGE`, `GB.SIG.HEADLIGHT_FLASH` and regenerated `rules.yaml`.)
+## B. Test-style marking (needed for Claude's debrief, task B3)
+- [ ] B1. Verify on **GOV.UK only** how the car practical test is marked: the number of driving faults allowed, and what serious and dangerous faults mean for the result. Use the "Driving test: cars" guidance or the DL25 marking pages. Record the URL and the date checked. **If you can't confirm a number, mark it `UNVERIFIED` and say why. Don't guess.**
+- [ ] B2. `content/schemas/testmarking.v0.schema.json` (new, pre-agreed) and `content/countries/gb/test_marking.yaml`. Fields:
+  - `maxDrivingFaults` (integer);
+  - `failOnSerious` and `failOnDangerous` (booleans);
+  - plain-English `summary` lines for pass and fail;
+  - `source { url, checkedOn, verified }`.
+- [ ] B3. Pytest: the file validates, and if it's verified, it has a gov.uk https URL.
 
-## B. Player-facing strings (English, CEFR B1, ready for translation)
-See `docs/03` §9 for why: string tables with keys, ICU MessageFormat, and no hard-coded text.
-- [x] B1. `content/schemas/strings.v0.schema.json` (new file, pre-agreed). It defines **rule strings**, keyed by `rule_id`:
+## C. UI strings for the debrief, settings and HUD (needed by Claude now)
+- [ ] C1. Extend `strings.v0` **additively** (pre-agreed) with a third `oneOf` branch: `kind: "ui"` and an `entries` object of `key → string`. Keys match `^[a-z0-9_]+(\.[a-z0-9_]+)+$`, and placeholders use ICU MessageFormat.
+- [ ] C2. `content/countries/gb/strings/en/ui.json` with at least these keys (Claude's code will read exactly these):
+  - `hud.finish_drive`, `hud.reset`, `hud.course`, `hud.view_seat`, `hud.view_chase`, `hud.settings`
+  - `debrief.title`, `debrief.no_faults`, `debrief.tap_to_replay`, `debrief.replay_close`
+  - `debrief.count.driving` (e.g. "{count, plural, one {# minor fault} other {# minor faults}}"), `debrief.count.serious`, `debrief.count.dangerous`, `debrief.count.good`
+  - `debrief.result.pass`, `debrief.result.fail`, `debrief.result.note` (a short note that this is practice, not a real test)
+  - `settings.title`, `settings.steering.label`, `settings.steering.hint`, `settings.units.hint` (the mph and km/h hint), `settings.reset_progress.label`, `settings.reset_progress.confirm`, `settings.close`
+  - `course.town`, `course.two_lane_roundabout`, `course.roundabout`, `course.dual_carriageway`, `course.wolverhampton_beta`
+- [ ] C3. The readability linter covers `ui.json`, and its tests prove that every key in the list above exists.
+- [ ] C4. Pseudo-locale for layout testing: generate `content/countries/gb/strings/en-XA/` from the `en` files. Make every string about 40% longer, with accented letters, and keep the placeholders intact. CI regenerates it and fails on any diff.
 
-  | Field | What it holds |
-  |---|---|
-  | `title` | ≤ 5 words |
-  | `fault` | what happened, ≤ 12 words |
-  | `why` | ≤ 2 sentences |
-  | `tip` | 1 sentence |
-  | `good` | praise when done well, 1 sentence, optional |
+## D. Lessons for Stages 3–5 (data only)
+- [ ] D1. `content/lessons/gb/11-…` onwards, about 8 lessons:
+  - **Stage 3, roundabouts:** give way to the right; lane choice and signals on a two-lane roundabout; leaving in lane; cyclists on roundabouts.
+  - **Stage 4, busy town:** overtaking cyclists (1.5 m); following distance in town.
+  - **Stage 5, faster roads:** lane discipline on a dual carriageway; the two-second rule at speed.
 
-  Placeholders use ICU MessageFormat, e.g. `{speedMph}`, `{limitMph}`, `{gapS}`. It also defines **glossary entries**: `id`, `term`, `definition` (≤ 2 sentences), `relatedRules[]`, optional `kmhHint`.
-- [x] B2. `content/countries/gb/strings/en/rules.json`: strings for **every rule with phase `P` first**, then phase `M`. (All 91 P+M rules included.)
-  - The wording must keep the legal force: write "must" only where `force` is MUST or MUST NOT.
-  - Don't repeat the Highway Code number in the text; the game takes it from `rules.yaml`.
-  - All text is our own paraphrase. Don't copy Highway Code sentences word for word.
-- [x] B3. `content/countries/gb/strings/en/glossary.json`: at least 40 terms, including: (42 terms with `kmhHint` on speed terms.)
-  - give way, nearside, offside, dual carriageway, national speed limit, built-up area;
-  - zig-zags, box junction, advanced stop line, filter arrow, hard shoulder, red X;
-  - zebra / pelican / puffin / toucan crossing, mini-roundabout, MSM, blind spot, H2 (pedestrian priority at junctions).
+  Use the existing courses: `roundabout`, `two_lane_roundabout` and `dual_carriageway` (anchor `start`), and `town` with the round-2 anchors. Prefer rules marked ✅ in A2. Lessons 1–3 stay the only free ones.
+- [ ] D2. The tests from round 2 cover the new lessons (schema, rule ids, course/anchor pairs, readability).
 
-  Speed terms get a `kmhHint` (e.g. "30 mph ≈ 48 km/h").
-- [x] B4. `pipeline/ltl_pipeline/readability.py` and a CI step, which fail when any string breaks these rules: (Added `readability.py`, `banned_phrases.txt`, `test_readability.py`, and CI step.)
-  - a sentence is over 15 words;
-  - it uses a phrase from a banned-idiom list (put the list in `content/countries/gb/strings/en/banned_phrases.txt`);
-  - it uses an abbreviation that isn't in the glossary;
-  - a rule exists in `rules.yaml` with phase `P` but has no strings.
+## E. Wolverhampton pack v0.2: who goes first
+For the "Wolverhampton (beta)" drive, AI needs priority at every junction.
+- [ ] E1. Additive roadpack **v0.2** (pre-agreed): an optional top-level `junctionPriority[]`. Each entry is `{ nodeId, majorLinks: [linkId, …], controlledBy: "signals" | "give_way" | "stop" | "roundabout" | "uncontrolled", confidence, confidenceNotes }`.
+  - Infer it from OSM: `highway=give_way`/`stop` nodes and `direction` tags, traffic signals, `junction=roundabout`, and otherwise road class and name/ref continuity.
+  - Document the heuristics in `pipeline/README.md`.
+- [ ] E2. Optional `signalPlans[]`: `{ nodeId, stages: [[linkId, …], …], greenS: [..], confidence }`.
+  - OSM has no phase timings, so infer the stages by pairing opposite approaches.
+  - Use the same defaults as the town course: green 18 s / 14 s, amber 3 s, all-red 2 s, red and amber 2 s.
+  - Set confidence ≤ 0.5 and say that it's inferred.
+- [ ] E3. Bump `packFormatVersion` to `0.2`, regenerate the pack, update the sample with one example of each, and extend `QA.md` with counts by `controlledBy` and by confidence band.
+  - **Don't rename or remove any field.**
+  - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer.
 
-  Tests cover each failure type.
+## F. Credits and licences screen text
+- [ ] F1. `content/legal/en/credits.md`: the text for an in-app "Credits & licences" screen.
+  - OSM ODbL attribution, plus how to request the derived database.
+  - Highway Code under OGL v3.0, with the statement that this app isn't endorsed by DVSA or DfT.
+  - DfT sign images under OGL v3.0.
+  - Unity and the open-source components (list the ones that are in `pipeline/uv.lock`, plus a placeholder section that Claude fills in for Unity packages).
+  - Plain English.
+- [ ] F2. A test that every licence named in `content/ATTRIBUTIONS.md` also appears in `credits.md`.
 
-## C. GB traffic-sign catalogue
-- [x] C1. **Check the licence first.** Find, on GOV.UK, the licence for DfT traffic sign images (the "traffic signs image database" or the Traffic Signs Regulations and General Directions (TSRGD) diagrams). Record the URL and the exact licence (e.g. OGL v3.0 or Crown copyright terms). **If you can't confirm it, write `UNVERIFIED`, don't download images, and say why.** (Verified `https://www.gov.uk/guidance/traffic-sign-images`: Open Government Licence v3.0 + Crown copyright, must be accurate, not misleading, and not used as manufacturing templates.)
-- [x] C2. `content/schemas/signs.v0.schema.json` (new file, pre-agreed) and `content/countries/gb/signs.yaml`. Each entry has: (17 signs covering Stages 0–2 and town course.)
-  - `id`, `name`, `tsrgdDiagram` (number), `category` (regulatory / warning / information);
-  - `meaning` (plain English, ≤ 2 sentences);
-  - `relatedRules[]`, `sourceUrl`, `image` (path, or null).
-
-  Start with what Stages 0–2 and the town course need:
-  - 20 and 30 limit roundels, the national speed limit sign, a 20 zone entry;
-  - give way, stop, no entry, one-way, ahead only, turn left/right only;
-  - traffic signals ahead, pedestrian crossing ahead, school / children, roundabout ahead;
-  - bus lane and cycle lane signs.
-- [x] C3. If C1 confirms the licence allows it: put the images (SVG preferred) in `content/countries/gb/signs/`, and add the attribution to `content/ATTRIBUTIONS.md` (new file; also list OSM ODbL and Highway Code OGL there). (17 SVGs in `content/countries/gb/signs/` + `content/ATTRIBUTIONS.md`.)
-
-## D. Lessons for Stages 0–2 (data only)
-See `docs/03` §2: Lesson = Learn card → 2–4 micro-scenarios → recap. Lessons 1–3 are the **free tier**.
-- [x] D1. `content/schemas/lesson.v0.schema.json` (new file, pre-agreed). A lesson has:
-  - `id`, `stage`, `order`, `title`, `freeTier` (bool);
-  - `learnCard`: `blocks[]` of plain text, `ruleIds[]`, and a `govUkUrl`;
-  - `scenarios[]`, each with:
-    - `id`, `course`, `anchor`, `goal` (one sentence);
-    - `rulesJudged[]` (rule ids);
-    - `variations` (`trafficDensity` [min, max], `cyclistShare`, `pedestrianIntent` ∈ {wait, cross, random}, `timeOfDay`);
-    - `passCriteria` (e.g. `{ "maxMinor": 2, "maxSerious": 0 }`);
-  - `recap` (2–3 lines).
-- [x] D2. `content/lessons/gb/*.json`: about 10 lessons: (10 lessons for Stages 0–2; lessons 1–3 are free tier.)
-  - **Stage 0**, lessons 1–3, the free tier: keeping left and the controls; moving off and MSM; speed limits;
-  - **Stage 1**: give way at T-junctions; pedestrians at junctions (H2); road position after turning;
-  - **Stage 2**: traffic lights and amber; advanced stop lines; zebra crossings and zig-zags; box junctions.
-
-  Use only rule ids that exist in `rules.yaml`. Use only these `course` / `anchor` values (Claude is building them):
-
-  | course | anchors |
-  |---|---|
-  | `town` | `crossroads_signals`, `tjunction_north`, `tjunction_south`, `zebra`, `box_junction`, `school_street`, `start` |
-  | `roundabout` | `start` |
-  | `two_lane_roundabout` | `start` |
-  | `dual_carriageway` | `start` |
-
-- [x] D3. Tests: (`pipeline/tests/test_lessons.py`)
-  - every lesson validates;
-  - rule ids exist;
-  - course / anchor pairs are in the allowed list;
-  - exactly lessons 1–3 have `freeTier: true`;
-  - learn-card text passes the readability linter.
-
-## E. Wolverhampton pack v0.1 and free-drive routes
-- [x] E1. `content/cities/wolverhampton/QA.md`, generated by the pipeline. It reports: (`pipeline/ltl_pipeline/qa.py` + `cli.py`; 953 nodes, 1079 links, 119 crossings, 13 turn restrictions, 455 high / 161 medium / 463 low confidence links, 15 components, 4 links < 2 m.)
-  - links by confidence band;
-  - links using a default speed limit;
-  - crossings with an unknown type;
-  - disconnected components;
-  - very short links (< 2 m).
-
-  Fix the pipeline issues it shows.
-- [x] E2. **Turn restrictions** (pre-agreed additive schema change, so roadpack format **v0.1**): (`extract.py` + `build.py` + `roadpack.v0.schema.json` + `roadpack.sample.json`; 13 turn restrictions in Wolverhampton.)
-  - add an optional top-level `restrictions[]`: `{ id, type, fromLink, viaNode, toLink, confidence }`, built from OSM `type=restriction` relations (`no_left_turn`, `no_right_turn`, `no_u_turn`, `only_straight_on`, …);
-  - bump `packFormatVersion` to `0.1`;
-  - **don't rename or remove any existing field**;
-  - keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer;
-  - update `content/samples/roadpack.sample.json` with one example restriction.
-- [x] E3. `content/schemas/route.v0.schema.json` (new file, pre-agreed) and `content/cities/wolverhampton/routes.json`. Make 3 free-drive routes of 3–6 minutes each. Each route has: (3 connected, legal ~3.6–3.7 min routes validated by `pipeline/tests/test_routes.py`.)
-  - an `id` and a `name`;
-  - a `description` (one line);
-  - `links[]`: ordered link ids, each with a direction;
-  - `start` (link + offset metres);
-  - a `features[]` summary (signals, zebra, roundabout, bus lane).
-
-  Choose routes that together cover a signalised junction, a zebra or light-controlled crossing, and a roundabout. A validator test checks that each route is connected, never drives the wrong way down a one-way link and never breaks a turn restriction.
-
-## F. Hand-off
-- [x] F1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: content layer (strings, glossary, signs, lessons, routes)". `gh` is installed on the Mac. (Note added to `docs/08` §6; PR opened via `gh`.)
+## G. Hand-off
+- [ ] G1. Add a dated note to `docs/08` §6, then open a PR to `main` titled "Hydrogen: test marking, UI strings, Stages 3–5, junction priority, credits". Use `gh`. A draft PR after B and C is welcome.
 
 ## Requests from Claude
-- The town course uses exactly the anchors listed in D2. Claude will tell you here if any change.
-- The C# loader reads the roadpack `v0.1` `restrictions[]` field as optional, so v0 packs still load.
-- New schema files under `content/schemas/` named in B1, C2, D1 and E3 are **pre-agreed**; create them on your branch. Any other schema change needs a note here and in `docs/tasks/claude-branch.md` first.
+- Pre-agreed for round 3:
+  - new schema `testmarking.v0`;
+  - an additive `strings.v0` branch, `kind: "ui"`;
+  - additive roadpack **v0.2** fields `junctionPriority[]` and `signalPlans[]`.
+
+  Anything else needs a note here and in `docs/tasks/claude-branch.md` first.
+- Claude's debrief reads `test_marking.yaml` and `strings/en/ui.json` by the exact keys in C2. If a key must change, tell Claude here.
 
 ## Requests from Hydrogen (to Claude)
 *(none yet)*

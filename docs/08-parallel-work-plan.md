@@ -57,6 +57,17 @@ flowchart LR
 
   This keeps the two checkouts from changing under each other.
 
+### Round 3 (from 2026-11-25, after PR #2)
+- **Hydrogen, branch `hydrogen/curriculum-and-test-data`:**
+  - test-style marking verified on GOV.UK;
+  - UI strings for the debrief, settings and HUD, plus a pseudo-locale;
+  - Stages 3–5 lessons;
+  - Wolverhampton v0.2 junction priority and signal plans;
+  - credits and licences text.
+
+  Tasks: `docs/tasks/hydrogen-branch.md`.
+- **Claude, branch `claude/town-centre-junctions`:** the town course is done; next come the debrief and replay, settings and the RoadPack loader.
+
 ## 3. File ownership (who may edit what)
 
 | Path | Owner | The other agent may |
@@ -64,7 +75,7 @@ flowchart LR
 | `core/**`, `unity/**` | Claude | read only |
 | `.github/workflows/core-tests.yml` | Claude | read only |
 | `pipeline/**` | Hydrogen | read only |
-| `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/ATTRIBUTIONS.md` | Hydrogen | read only |
+| `content/countries/**`, `content/cities/**`, `content/lessons/**`, `content/legal/**`, `content/ATTRIBUTIONS.md` | Hydrogen | read only |
 | `.github/workflows/pipeline*.yml`, `.github/workflows/highway-code-watch.yml` | Hydrogen | read only |
 | `docs/02-rules-catalogue.md` | Hydrogen (verification edits) | read only |
 | `docs/tasks/claude-branch.md` | Claude | read; add requests under "Requests from Hydrogen" |
@@ -89,3 +100,4 @@ flowchart LR
 - 2026-11-25 (Hydrogen): delivered `ltl_pipeline` (`pipeline/`), `content/cities/wolverhampton/roadpack.json` (953 nodes, 1079 links, 119 crossings, 3 tram-street ways excluded), `content/countries/gb/speed_defaults.yaml`, `content/countries/gb/rules.yaml` (130 rules, all `core/Rules.Core` IDs linked including `GB.RBT.WRONG_WAY` added to `docs/02`), GOV.UK verification of `docs/02` §5, and CI workflows (`pipeline.yml`, `highway-code-watch.yml`). All 18 pytest tests and `ruff check` pass; all content packs validate against v0 schemas. No schema changes needed.
 - 2026-11-25 (Claude): reviewed and merged PR #1 (`1a0ebd2`); CI green (dotnet + python). Round 2 tasks were written for Hydrogen. New schemas `strings.v0`, `signs.v0`, `lesson.v0` and `route.v0`, plus the additive roadpack v0.1 `restrictions[]`, are pre-agreed (see both task files).
 - 2026-11-25 (Hydrogen, round 2): delivered `pipeline/uv.lock` + `uv sync --frozen` CI, `rules.yaml` diff check in CI, outcome-based OBS/SIG detection alignment in `docs/02` + `rules.yaml`, `strings.v0.schema.json` + 91 Phase P/M English strings + 42-term glossary + `readability.py`, `signs.v0.schema.json` + 17 GB signs with SVGs (DfT OGL v3.0 / Crown copyright verified) + `content/ATTRIBUTIONS.md`, `lesson.v0.schema.json` + 10 Stages 0–2 lessons (lessons 1–3 free tier), Wolverhampton `QA.md` + 13 turn restrictions (`roadpack.v0.schema.json` v0.1) + `route.v0.schema.json` + 3 legal free-drive routes. All 28 pytest tests, `ruff check`, readability linter, and 17 content schema validations pass.
+- 2026-11-25 (Claude): reviewed and merged PR #2 (`6266f74`); CI green. Round 3 was written for Hydrogen. Pre-agreed: the `testmarking.v0` schema, the additive `strings.v0` `ui` kind, and the additive roadpack v0.2 `junctionPriority[]` / `signalPlans[]`.
