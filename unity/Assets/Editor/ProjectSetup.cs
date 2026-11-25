@@ -238,7 +238,9 @@ namespace LToLocal.EditorTools
             game.AddComponent<TouchControls>();
             var mirrors = game.AddComponent<MirrorRig>();
             mirrors.car = car;
+            var feedback = game.AddComponent<FeedbackView>();
             var hello = game.AddComponent<HelloCarGame>();
+            hello.feedback = feedback;
             hello.car = car;
             hello.chaseCamera = cam;
             hello.trafficView = trafficView;

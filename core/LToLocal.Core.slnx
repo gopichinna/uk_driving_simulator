@@ -1,4 +1,6 @@
 <Solution>
+  <Project Path="Rules.Core.Tests/Rules.Core.Tests.csproj" />
+  <Project Path="Rules.Core/Rules.Core.csproj" />
   <Project Path="Sim.Core.Tests/Sim.Core.Tests.csproj" />
   <Project Path="Sim.Core/Sim.Core.csproj" />
 </Solution>

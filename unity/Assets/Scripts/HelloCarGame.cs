@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using LToLocal.Rules;
 using LToLocal.Sim;
 using UnityEngine;
 
@@ -15,6 +17,7 @@ namespace LToLocal.Game
         public Camera chaseCamera;
         public TrafficView trafficView;
         public MirrorRig mirrors;
+        public FeedbackView feedback;
         public GameObject[] playerIndicatorLeft = new GameObject[0];
         public GameObject[] playerIndicatorRight = new GameObject[0];
 
@@ -49,6 +52,9 @@ namespace LToLocal.Game
         private TouchControls _controls;
         private CarState _prev, _curr;
         private TrafficSim _traffic;
+        private LaneChangeRule _laneChangeRule;
+        private readonly List<RuleEvent> _ruleEvents = new List<RuleEvent>();
+        private int _lookReported;          // side of the shoulder check already recorded (0 = none)
 
         private View _view = View.Chase;
         private bool _showMap = false;     // mini-map removed from the HUD for now
@@ -79,6 +85,8 @@ namespace LToLocal.Game
             var interior = car.Find("Interior");
             if (interior != null) _interior = interior.gameObject;
             _traffic = new TrafficSim(Lanes, new TrafficParams { CarsPerLane = new[] { 5, 3, 4, 4 } }, seed: 2026);
+            _laneChangeRule = new LaneChangeRule(_traffic, drivingSide: DrivingSide.Left);
+            if (mirrors != null) mirrors.Glanced += kind => _laneChangeRule.Observe(new ObservationEvent(kind, _clock.SimTime));
             ResetDrive();
         }
 
@@ -89,6 +97,8 @@ namespace LToLocal.Game
             _indicator = 0;
             if (trafficView != null) trafficView.Clear();
             _traffic.Reset(_curr.Z);
+            _laneChangeRule?.Reset();
+            if (feedback != null) feedback.ResetTally();
         }
 
         private void Update()
@@ -101,6 +111,10 @@ namespace LToLocal.Game
                 if (trafficView != null) trafficView.CapturePrevious(_traffic);
                 _curr = CarModel.Step(_curr, input, _params, _clock.StepSeconds);
                 _traffic.Step(_clock.StepSeconds, _curr);
+
+                _ruleEvents.Clear();
+                _laneChangeRule.OnFrame(new DriverFrame(_clock.SimTime, _curr, _indicator), _ruleEvents);
+                if (feedback != null) foreach (var e in _ruleEvents) feedback.Push(e);
             }
 
             if (_curr.Z > roadEndZ || Mathf.Abs((float)_curr.X) > 60f) ResetDrive();
@@ -167,6 +181,11 @@ namespace LToLocal.Game
 
             // 2. Shoulder check: turn the driver's head toward the blind spot while "Look" is held
             _lookBlend = Mathf.MoveTowards(_lookBlend, _controls.Look, shoulderTurnSpeed * Time.deltaTime);
+            // Record a shoulder check once the head has actually turned (UK: right = offside).
+            int lookingSide = _lookBlend > 0.8f ? 1 : _lookBlend < -0.8f ? -1 : 0;
+            if (lookingSide != 0 && lookingSide != _lookReported)
+                _laneChangeRule.Observe(new ObservationEvent(lookingSide > 0 ? ObservationKind.ShoulderOffside : ObservationKind.ShoulderNearside, _clock.SimTime));
+            _lookReported = lookingSide;
             if (Mathf.Abs(_lookBlend) > 0.001f)
             {
                 float t = Mathf.SmoothStep(0f, 1f, Mathf.Abs(_lookBlend));

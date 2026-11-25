@@ -3,6 +3,7 @@
     "rootNamespace": "LToLocal.Game",
     "references": [
         "LToLocal.Sim.Core",
+        "LToLocal.Rules.Core",
         "Unity.RenderPipelines.Core.Runtime",
         "Unity.RenderPipelines.Universal.Runtime"
     ],

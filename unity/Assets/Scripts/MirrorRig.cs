@@ -1,3 +1,5 @@
+using System;
+using LToLocal.Rules;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -15,6 +17,11 @@ namespace LToLocal.Game
         public Transform car;
 
         public bool showMirrors = true;
+
+        /// <summary>Raised when the player taps a mirror to check it (the observation mechanic, docs/03 §4).</summary>
+        public event Action<ObservationKind> Glanced;
+
+        private readonly float[] _glanceUntil = new float[3]; // left, rear, right
 
         private Camera _rear, _left, _right;
         private RenderTexture _rearTex, _leftTex, _rightTex;
@@ -62,16 +69,33 @@ namespace LToLocal.Game
             float W = Screen.width, H = Screen.height;
 
             float sideW = W * 0.17f, sideH = sideW / 1.55f;
-            DrawMirror(new Rect(W * 0.015f, H * 0.04f, sideW, sideH), _leftTex, 14f);
-            DrawMirror(new Rect(W * 0.985f - sideW, H * 0.04f, sideW, sideH), _rightTex, 14f);
+            // UK car: left = nearside, right = offside (driver's side)
+            Mirror(0, new Rect(W * 0.015f, H * 0.04f, sideW, sideH), _leftTex, 14f, ObservationKind.MirrorNearside);
+            Mirror(2, new Rect(W * 0.985f - sideW, H * 0.04f, sideW, sideH), _rightTex, 14f, ObservationKind.MirrorOffside);
 
             float rearW = W * 0.30f, rearH = rearW / 3.4f;
-            DrawMirror(new Rect((W - rearW) / 2f, H * 0.015f, rearW, rearH), _rearTex, 10f);
+            Mirror(1, new Rect((W - rearW) / 2f, H * 0.015f, rearW, rearH), _rearTex, 10f, ObservationKind.MirrorInterior);
         }
 
-        private static void DrawMirror(Rect r, Texture tex, float frame)
+        private void Mirror(int index, Rect r, Texture tex, float frame, ObservationKind kind)
         {
-            GUI.color = new Color(0.12f, 0.13f, 0.15f, 0.95f);
+            bool glancing = Time.time < _glanceUntil[index];
+            if (glancing) // briefly enlarge the mirror you're looking at
+            {
+                float grow = 0.12f;
+                r = new Rect(r.x - r.width * grow / 2, r.y, r.width * (1 + grow), r.height * (1 + grow));
+            }
+            DrawMirror(r, tex, frame, glancing);
+            if (GUI.Button(r, GUIContent.none, GUIStyle.none))
+            {
+                _glanceUntil[index] = Time.time + 0.7f;
+                Glanced?.Invoke(kind);
+            }
+        }
+
+        private static void DrawMirror(Rect r, Texture tex, float frame, bool highlight)
+        {
+            GUI.color = highlight ? new Color(1f, 0.8f, 0.2f, 1f) : new Color(0.12f, 0.13f, 0.15f, 0.95f);
             GUI.DrawTexture(new Rect(r.x - frame * 0.5f, r.y - frame * 0.5f, r.width + frame, r.height + frame), Texture2D.whiteTexture);
             GUI.color = Color.white;
             // Flip horizontally: a mirror shows the world reversed left-to-right.

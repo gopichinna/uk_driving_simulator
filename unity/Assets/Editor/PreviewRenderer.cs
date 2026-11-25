@@ -13,7 +13,7 @@ namespace LToLocal.EditorTools
         public static void RenderViews()
         {
             EditorSceneManager.OpenScene("Assets/Scenes/HelloCar.unity");
-            var game = Object.FindFirstObjectByType<LToLocal.Game.HelloCarGame>();
+            var game = Object.FindAnyObjectByType<LToLocal.Game.HelloCarGame>();
             var car = game.car;
             var cam = game.chaseCamera;
             Directory.CreateDirectory("Builds/Previews");

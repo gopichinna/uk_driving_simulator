@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.ltolocal.rules.core": "file:../../core/Rules.Core",
     "com.ltolocal.sim.core": "file:../../core/Sim.Core",
     "com.unity.ide.rider": "3.1.0",
     "com.unity.ide.visualstudio": "2.0.26",

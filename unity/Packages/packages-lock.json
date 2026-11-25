@@ -1,5 +1,13 @@
 {
   "dependencies": {
+    "com.ltolocal.rules.core": {
+      "version": "file:../../core/Rules.Core",
+      "depth": 0,
+      "source": "local",
+      "dependencies": {
+        "com.ltolocal.sim.core": "0.1.0"
+      }
+    },
     "com.ltolocal.sim.core": {
       "version": "file:../../core/Sim.Core",
       "depth": 0,

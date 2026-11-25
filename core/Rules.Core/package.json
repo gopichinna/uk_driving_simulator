@@ -1,0 +1,10 @@
+{
+  "name": "com.ltolocal.rules.core",
+  "version": "0.1.0",
+  "displayName": "L to Local Rules Core",
+  "description": "Engine-free rules engine: turns driving state into explained rule events. No UnityEngine references.",
+  "unity": "6000.0",
+  "dependencies": {
+    "com.ltolocal.sim.core": "0.1.0"
+  }
+}

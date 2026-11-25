@@ -1,0 +1,9 @@
+{
+    "name": "LToLocal.Rules.Core",
+    "rootNamespace": "LToLocal.Rules",
+    "references": [
+        "LToLocal.Sim.Core"
+    ],
+    "autoReferenced": true,
+    "noEngineReferences": true
+}

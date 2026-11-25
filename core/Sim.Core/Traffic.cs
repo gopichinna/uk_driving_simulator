@@ -33,6 +33,8 @@ namespace LToLocal.Sim
         public double SignalTimer;
         public int ColourIndex;
         public bool Active;
+        /// <summary>Acceleration applied on the last step (negative = braking). Used by rules to spot forced braking.</summary>
+        public double LastAccelMps2;
 
         public bool ChangingLane => TargetLane != Lane;
     }
@@ -132,7 +134,9 @@ namespace LToLocal.Sim
             for (int i = 0; i < _cars.Count; i++)
             {
                 var c = _cars[i];
-                c.SpeedMps = Math.Max(0, c.SpeedMps + accel[i] * dt);
+                double newSpeed = Math.Max(0, c.SpeedMps + accel[i] * dt);
+                c.LastAccelMps2 = (newSpeed - c.SpeedMps) / dt;
+                c.SpeedMps = newSpeed;
                 c.Z += _lanes[c.Lane].Direction * c.SpeedMps * dt;
             }
 
