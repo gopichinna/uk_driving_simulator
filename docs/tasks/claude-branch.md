@@ -52,13 +52,13 @@
 - [x] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD. (Settings: steering slider 30–150% in 5% steps, units hint, reset progress with confirm.)
 
 ## D. Real streets (prepare for the merge)
-- [ ] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths.
+- [x] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths. (`RoadPack` + `RoadPackGraph`: packs v0.1–0.4; tested on the sample and on Wolverhampton.)
   - Tests use `content/samples/roadpack.sample.json` **and** the merged `content/cities/wolverhampton/roadpack.json`.
   - Read v0.1 `restrictions[]` as optional.
-- [ ] D2. After Hydrogen's merge: a "Wolverhampton (beta)" course from `content/cities/wolverhampton/roadpack.json`. Roads are meshed from links, rules fire only on elements with confidence ≥ 0.7, and the ODbL attribution is shown.
+- [x] D2. After Hydrogen's merge: a "Wolverhampton (beta)" course from `content/cities/wolverhampton/roadpack.json`. Roads are meshed from links, rules fire only on elements with confidence ≥ 0.7, and the ODbL attribution is shown. (Wolverhampton (beta) scene and course: merged road, footway, marking and building meshes; AI around the player; ODbL credit on screen.)
 
 ## D+. Use Hydrogen's round-2 content as it lands
-- [ ] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text.
+- [x] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text. (Debrief and replay text come from `rules.json` and `ui.json`.)
 - [x] D4. The town course exposes the anchors promised to Hydrogen: (de2bd8a: all 7 anchors, tested)
   - `start`;
   - `crossroads_signals`;

@@ -87,6 +87,26 @@ namespace LToLocal.EditorTools
                 Save(cam, $"Builds/Previews/{name}.png");
             }
 
+            // Wolverhampton (beta): from above, and the driver's view at the start of the mock-test route
+            EditorSceneManager.OpenScene(ProjectSetup.WolverhamptonScene);
+            game = Object.FindAnyObjectByType<DriveGame>();
+            cam = game.chaseCamera;
+            Save(cam, "Builds/Previews/_warmup.png");
+            cam.fieldOfView = 60f;
+            cam.nearClipPlane = 0.3f;
+            cam.farClipPlane = 2000f;
+            RenderSettings.fog = false;
+            cam.transform.SetPositionAndRotation(new Vector3(0, 900, 30), Quaternion.Euler(90, 0, 0));
+            Save(cam, "Builds/Previews/wolverhampton_aerial.png");
+            car = game.car;
+            cam.transform.SetPositionAndRotation(car.position + new Vector3(0, 60, 0) - car.forward * 60, Quaternion.LookRotation(car.forward * 60 + Vector3.down * 60));
+            Save(cam, "Builds/Previews/wolverhampton_start_oblique.png");
+            RenderSettings.fog = true;
+            cam.fieldOfView = game.cockpitFov;
+            cam.nearClipPlane = 0.05f;
+            cam.transform.SetPositionAndRotation(car.TransformPoint(game.cockpitOffset), car.rotation * Quaternion.Euler(game.cockpitPitch, 0f, 0f));
+            Save(cam, "Builds/Previews/wolverhampton_seat.png");
+
             Debug.Log("[LToLocal] Previews rendered.");
         }
 

@@ -30,7 +30,7 @@ namespace LToLocal.EditorTools
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { TownScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
@@ -42,6 +42,7 @@ namespace LToLocal.EditorTools
             BuildRoundaboutScene();
             BuildTwoLaneRoundaboutScene();
             BuildTownScene();
+            BuildWolverhamptonScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));
@@ -83,6 +84,7 @@ namespace LToLocal.EditorTools
                 ("../content/countries/gb/strings/en/ui.json", "ui.json"),
                 ("../content/countries/gb/strings/en/rules.json", "rules.json"),
                 ("../content/countries/gb/test_marking.yaml", "test_marking.txt"),
+                ("../content/cities/wolverhampton/roadpack.json", "wolverhampton_roadpack.json"),
             };
             foreach (var (from, to) in files)
             {
