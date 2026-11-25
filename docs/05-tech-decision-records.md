@@ -27,7 +27,7 @@ Status of all ADRs: **Proposed**, waiting for your approval.
 - **Unity**: the Personal plan is free up to **US$200k revenue + funding** in the last 12 months. The Runtime Fee was cancelled (Sept 2024). Unity Pro is required above that threshold (~US$2,310/seat/yr after a 5% rise in Jan 2026; `UNVERIFIED` exact price on Unity's own page). The "Made with Unity" splash is optional from Unity 6. Sources: [unity.com/products/pricing-updates](https://unity.com/products/pricing-updates).
 - **Godot**: MIT licence, no fees. Ads and IAP on mobile depend on **community plugins** (e.g. Poing Studios AdMob, Godot IAP/OpenIAP). They exist and are active, but versions must be pinned and checked per Godot release.
 
-**Decision: Unity 6 LTS** (pick the newest LTS minor at project start), URP, IL2CPP, C#.
+**Decision: Unity 6**, URP, IL2CPP, C#. *Update 2026-11-25:* the prototype uses **Unity 6.6 (6000.6.10f1)**, the supported release that Unity Hub installed. We move to the next LTS (6.7 LTS, announced) before the vertical slice. Because the core is engine-free, this upgrade only touches the Unity view layer.
 
 **Consequences.**
 - The pricing risk Unity created in 2023 is real. We contain it by keeping **sim, rules, learning and packs in engine-free C#**: moving to Godot (C#) later would mean rewriting the view/input/platform layer, not the product's core.

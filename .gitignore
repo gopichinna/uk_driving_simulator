@@ -2,8 +2,7 @@
 .DS_Store
 
 # .NET core
-core/**/bin/
-core/**/obj/
+core/artifacts/
 *.user
 TestResults/
 
@@ -34,3 +33,4 @@ __pycache__/
 # Large downloaded data (OSM extracts are re-downloaded by the pipeline)
 *.osm.pbf
 pipeline/cache/
+unity/.utmp/

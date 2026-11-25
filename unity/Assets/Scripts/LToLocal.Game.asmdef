@@ -1,0 +1,9 @@
+{
+    "name": "LToLocal.Game",
+    "rootNamespace": "LToLocal.Game",
+    "references": [
+        "LToLocal.Sim.Core"
+    ],
+    "autoReferenced": true,
+    "noEngineReferences": false
+}

@@ -1,0 +1,7 @@
+{
+  "name": "com.ltolocal.sim.core",
+  "version": "0.1.0",
+  "displayName": "L to Local Sim Core",
+  "description": "Engine-free simulation core (fixed-step clock, RNG, vehicle model). No UnityEngine references.",
+  "unity": "6000.0"
+}
