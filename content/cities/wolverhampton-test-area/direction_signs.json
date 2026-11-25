@@ -1,0 +1,2057 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "origin": {
+    "lat": 52.56,
+    "lon": -2.1016
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "signs": [
+    {
+      "id": "ds_001",
+      "nodeId": "n_1615519948",
+      "approachLinkId": "l_148450692_1",
+      "x": 790.062,
+      "z": 410.602,
+      "heading": 9.52,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_002",
+      "nodeId": "n_1615519979",
+      "approachLinkId": "l_148450677_0",
+      "x": 855.209,
+      "z": 456.217,
+      "heading": 101.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_003",
+      "nodeId": "n_1621398668",
+      "approachLinkId": "l_638576678_1",
+      "x": 58.961,
+      "z": -633.55,
+      "heading": 348.43,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_004",
+      "nodeId": "n_1621398668",
+      "approachLinkId": "l_638576678_2",
+      "x": 53.971,
+      "z": -553.355,
+      "heading": 172.6,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Manor Primary School",
+          "poiId": "poi_school_268013709",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_005",
+      "nodeId": "n_1621398680",
+      "approachLinkId": "l_368626042_0",
+      "x": 96.723,
+      "z": -621.579,
+      "heading": 316.0,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_006",
+      "nodeId": "n_1621467566",
+      "approachLinkId": "l_87112816_0",
+      "x": 304.953,
+      "z": -913.905,
+      "heading": 332.13,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Manor Primary School",
+          "poiId": "poi_school_268013709",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_007",
+      "nodeId": "n_1621467567",
+      "approachLinkId": "l_78046026_0",
+      "x": 258.758,
+      "z": -788.487,
+      "heading": 141.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_008",
+      "nodeId": "n_1626612748",
+      "approachLinkId": "l_439936951_0",
+      "x": -747.754,
+      "z": 177.995,
+      "heading": 330.0,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_009",
+      "nodeId": "n_1626612752",
+      "approachLinkId": "l_3715178_0",
+      "x": -752.879,
+      "z": 244.947,
+      "heading": 232.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_010",
+      "nodeId": "n_1626612752",
+      "approachLinkId": "l_3715178_1",
+      "x": -791.234,
+      "z": 193.279,
+      "heading": 347.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_011",
+      "nodeId": "n_1635604406",
+      "approachLinkId": "l_638576692_0",
+      "x": 463.374,
+      "z": -606.239,
+      "heading": 127.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_012",
+      "nodeId": "n_1635604420",
+      "approachLinkId": "l_150671506_0",
+      "x": 433.396,
+      "z": -570.956,
+      "heading": 156.59,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_013",
+      "nodeId": "n_18236687",
+      "approachLinkId": "l_854931075_0",
+      "x": 516.509,
+      "z": -712.208,
+      "heading": 65.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_014",
+      "nodeId": "n_18236703",
+      "approachLinkId": "l_23219978_3",
+      "x": -316.994,
+      "z": -355.637,
+      "heading": 306.65,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_015",
+      "nodeId": "n_201470937",
+      "approachLinkId": "l_439935842_1",
+      "x": -977.348,
+      "z": 702.485,
+      "heading": 1.61,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Parkfield Primary School",
+          "poiId": "poi_school_268007650",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_016",
+      "nodeId": "n_201470939",
+      "approachLinkId": "l_439935835_0",
+      "x": -963.556,
+      "z": 817.131,
+      "heading": 157.44,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Parkfield Primary School",
+          "poiId": "poi_school_268007650",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_017",
+      "nodeId": "n_20959225",
+      "approachLinkId": "l_439936948_1",
+      "x": 6.442,
+      "z": -530.532,
+      "heading": 120.1,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Manor Primary School",
+          "poiId": "poi_school_268013709",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_018",
+      "nodeId": "n_240137188",
+      "approachLinkId": "l_22330596_0",
+      "x": 503.259,
+      "z": -742.731,
+      "heading": 341.91,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_019",
+      "nodeId": "n_240137188",
+      "approachLinkId": "l_56685888_2",
+      "x": 507.135,
+      "z": -680.625,
+      "heading": 147.26,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_020",
+      "nodeId": "n_240137194",
+      "approachLinkId": "l_24942500_1",
+      "x": 542.67,
+      "z": -790.269,
+      "heading": 355.19,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_021",
+      "nodeId": "n_240137194",
+      "approachLinkId": "l_638576683_0",
+      "x": 539.512,
+      "z": -714.289,
+      "heading": 124.6,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_022",
+      "nodeId": "n_251160632",
+      "approachLinkId": "l_23219405_0",
+      "x": 312.97,
+      "z": -910.987,
+      "heading": 334.27,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_023",
+      "nodeId": "n_251837668",
+      "approachLinkId": "l_23271062_4",
+      "x": -808.516,
+      "z": 114.044,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_024",
+      "nodeId": "n_251837673",
+      "approachLinkId": "l_23271062_0",
+      "x": -800.954,
+      "z": 136.271,
+      "heading": 9.86,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_025",
+      "nodeId": "n_251837673",
+      "approachLinkId": "l_23271064_0",
+      "x": -785.357,
+      "z": 203.752,
+      "heading": 160.92,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_026",
+      "nodeId": "n_251837676",
+      "approachLinkId": "l_23271062_1",
+      "x": -800.706,
+      "z": 157.28,
+      "heading": 32.31,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_027",
+      "nodeId": "n_251837676",
+      "approachLinkId": "l_23271068_0",
+      "x": -736.938,
+      "z": 130.956,
+      "heading": 300.19,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_028",
+      "nodeId": "n_251837677",
+      "approachLinkId": "l_23271062_2",
+      "x": -792.757,
+      "z": 165.002,
+      "heading": 68.4,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Goldthorn Park Primary School",
+          "poiId": "poi_school_203911293",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_029",
+      "nodeId": "n_251837679",
+      "approachLinkId": "l_23271062_3",
+      "x": -770.339,
+      "z": 155.34,
+      "heading": 155.49,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_030",
+      "nodeId": "n_251837679",
+      "approachLinkId": "l_23271066_0",
+      "x": -811.196,
+      "z": 106.748,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_031",
+      "nodeId": "n_251837789",
+      "approachLinkId": "l_23271072_0",
+      "x": -933.304,
+      "z": -808.423,
+      "heading": 327.24,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_032",
+      "nodeId": "n_251837791",
+      "approachLinkId": "l_87069497_0",
+      "x": -944.444,
+      "z": -751.159,
+      "heading": 129.4,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_033",
+      "nodeId": "n_251837793",
+      "approachLinkId": "l_87069515_0",
+      "x": -944.635,
+      "z": -771.118,
+      "heading": 234.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_034",
+      "nodeId": "n_251837796",
+      "approachLinkId": "l_23271074_0",
+      "x": -906.598,
+      "z": -739.748,
+      "heading": 239.52,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "left"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_035",
+      "nodeId": "n_3451655845",
+      "approachLinkId": "l_439936956_0",
+      "x": -902.573,
+      "z": 751.636,
+      "heading": 270.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "St Teresa's Catholic Primary Academy",
+          "poiId": "poi_school_395801579",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_036",
+      "nodeId": "n_3451655845",
+      "approachLinkId": "l_439936956_1",
+      "x": -976.407,
+      "z": 747.991,
+      "heading": 358.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Parkfield Primary School",
+          "poiId": "poi_school_268007650",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_037",
+      "nodeId": "n_3724787235",
+      "approachLinkId": "l_23219978_5",
+      "x": -384.244,
+      "z": -301.893,
+      "heading": 311.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_038",
+      "nodeId": "n_3724787238",
+      "approachLinkId": "l_23271069_4",
+      "x": -465.268,
+      "z": -294.109,
+      "heading": 41.85,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_039",
+      "nodeId": "n_3724787238",
+      "approachLinkId": "l_23271069_5",
+      "x": -431.81,
+      "z": -234.636,
+      "heading": 135.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_040",
+      "nodeId": "n_3724787253",
+      "approachLinkId": "l_638579026_2",
+      "x": -454.667,
+      "z": -211.23,
+      "heading": 135.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_041",
+      "nodeId": "n_3725203827",
+      "approachLinkId": "l_23219981_0",
+      "x": -368.519,
+      "z": -292.007,
+      "heading": 130.23,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_042",
+      "nodeId": "n_3725203827",
+      "approachLinkId": "l_23219981_1",
+      "x": -389.103,
+      "z": -358.903,
+      "heading": 40.37,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_043",
+      "nodeId": "n_3725203939",
+      "approachLinkId": "l_637984813_1",
+      "x": -402.608,
+      "z": -261.277,
+      "heading": 131.82,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4123"
+        },
+        {
+          "text": "Hill Avenue Academy",
+          "poiId": "poi_school_363802312",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4123"
+        }
+      ]
+    },
+    {
+      "id": "ds_044",
+      "nodeId": "n_395927914",
+      "approachLinkId": "l_56685885_1",
+      "x": 477.094,
+      "z": -662.256,
+      "heading": 326.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_045",
+      "nodeId": "n_395927965",
+      "approachLinkId": "l_638576692_3",
+      "x": 440.434,
+      "z": -617.038,
+      "heading": 3.36,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_046",
+      "nodeId": "n_4376191735",
+      "approachLinkId": "l_439936954_0",
+      "x": 19.702,
+      "z": 726.51,
+      "heading": 185.76,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_047",
+      "nodeId": "n_4376191735",
+      "approachLinkId": "l_439936954_1",
+      "x": 2.283,
+      "z": 647.869,
+      "heading": 5.51,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_048",
+      "nodeId": "n_4376191736",
+      "approachLinkId": "l_148450676_0",
+      "x": -0.901,
+      "z": 710.547,
+      "heading": 97.34,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_049",
+      "nodeId": "n_4376191736",
+      "approachLinkId": "l_148450676_1",
+      "x": 75.191,
+      "z": 683.044,
+      "heading": 285.21,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_050",
+      "nodeId": "n_4376191737",
+      "approachLinkId": "l_439936955_0",
+      "x": 31.513,
+      "z": 694.293,
+      "heading": 281.35,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_051",
+      "nodeId": "n_4376191737",
+      "approachLinkId": "l_439936955_1",
+      "x": -46.423,
+      "z": 714.055,
+      "heading": 94.85,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4039"
+        },
+        {
+          "text": "Bilston Church of England Primary School",
+          "poiId": "poi_school_166722513",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4039"
+        }
+      ]
+    },
+    {
+      "id": "ds_052",
+      "nodeId": "n_4376191739",
+      "approachLinkId": "l_7982754_0",
+      "x": 3.976,
+      "z": 681.957,
+      "heading": 5.58,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston Church of England Primary School",
+          "poiId": "poi_school_166722513",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_053",
+      "nodeId": "n_4376191739",
+      "approachLinkId": "l_7982754_1",
+      "x": 21.586,
+      "z": 761.429,
+      "heading": 173.81,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Windsor Nursery School",
+          "poiId": "poi_school_1311587947",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_054",
+      "nodeId": "n_540469884",
+      "approachLinkId": "l_638579038_5",
+      "x": 48.45,
+      "z": -515.04,
+      "heading": 171.93,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Manor Primary School",
+          "poiId": "poi_school_268013709",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_055",
+      "nodeId": "n_540469884",
+      "approachLinkId": "l_638579038_6",
+      "x": 52.947,
+      "z": -595.037,
+      "heading": 352.68,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A4126"
+        },
+        {
+          "text": "Lanesfield Primary School",
+          "poiId": "poi_school_204772615",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A4126"
+        }
+      ]
+    },
+    {
+      "id": "ds_056",
+      "nodeId": "n_540469927",
+      "approachLinkId": "l_87110690_0",
+      "x": 353.012,
+      "z": -828.433,
+      "heading": 243.8,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead",
+          "ref": "A463"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead",
+          "ref": "A463"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead",
+          "ref": "A463"
+        }
+      ]
+    },
+    {
+      "id": "ds_057",
+      "nodeId": "n_708947146",
+      "approachLinkId": "l_56684833_0",
+      "x": -796.514,
+      "z": 228.851,
+      "heading": 67.54,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_058",
+      "nodeId": "n_708947146",
+      "approachLinkId": "l_56684833_1",
+      "x": -735.491,
+      "z": 274.799,
+      "heading": 213.98,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_059",
+      "nodeId": "n_872146205",
+      "approachLinkId": "l_638576692_2",
+      "x": 446.385,
+      "z": -628.893,
+      "heading": 307.03,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_060",
+      "nodeId": "n_916899167",
+      "approachLinkId": "l_23271062_5",
+      "x": -807.047,
+      "z": 118.042,
+      "heading": 20.17,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "The Khalsa Academy Wolverhampton",
+          "poiId": "poi_school_203911295",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_061",
+      "nodeId": "n_936437920",
+      "approachLinkId": "l_854931073_0",
+      "x": 519.24,
+      "z": -757.792,
+      "heading": 288.87,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_062",
+      "nodeId": "n_936437934",
+      "approachLinkId": "l_854931076_0",
+      "x": 500.52,
+      "z": -728.629,
+      "heading": 12.37,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_063",
+      "nodeId": "n_936437971",
+      "approachLinkId": "l_638576683_1",
+      "x": 549.928,
+      "z": -739.347,
+      "heading": 188.02,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left",
+          "ref": "A463"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left",
+          "ref": "A463"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_064",
+      "nodeId": "n_936437991",
+      "approachLinkId": "l_23219406_0",
+      "x": 471.178,
+      "z": -744.889,
+      "heading": 63.83,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_065",
+      "nodeId": "n_936437991",
+      "approachLinkId": "l_854931074_0",
+      "x": 529.139,
+      "z": -758.602,
+      "heading": 262.71,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "primary",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Bilston C of E Primary School",
+          "poiId": "poi_car_park_166722521",
+          "symbol": "parking",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church CE Primary School",
+          "poiId": "poi_school_44044921",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    }
+  ]
+}

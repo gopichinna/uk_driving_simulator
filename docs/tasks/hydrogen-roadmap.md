@@ -61,19 +61,11 @@ Goal: audio content the game can ship, with every file's licence recorded.
 ## Round 11: The area around Wolverhampton's driving test centre
 Goal: let learners practise roads like the ones used on real tests near Wolverhampton. **DVSA doesn't publish test routes, so don't claim to copy them.** Model the *area* around the centre.
 
-- [ ] R11.1 **Verify on GOV.UK** ("Find a driving test centre") which car test centre(s) serve Wolverhampton: name, address and postcode. Record the URL and date. If you can't verify it, stop the round and report it under "Requests from Hydrogen".
-- [ ] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json` (same schema, the latest version): about 2 × 2 km around the centre. Include:
-  - residential streets, roundabouts, a dual carriageway section and signals if present;
-  - the same pipeline steps (main network, spawn points, signal plans, lane connections, buildings, POIs, signs and speed signs from R9).
-
-  Exclude tram streets, as before.
-- [ ] R11.3 **Practice routes** (`routes.json`): 3 routes of 15–25 minutes each that start and end at the test centre and mix road types. Include sat-nav instructions, plus one "follow the signs to …" segment per route. Label them as **practice routes, not official test routes**.
-- [ ] R11.4 **Lesson 20, "Roads near the test centre".** Stage 8, using the scenario `independent_driving` mode `mixed`. Add a learn card with plain-English advice on what to expect around a test centre (general, not route-specific), plus a quiz.
-- [ ] R11.5 **QA and tests:**
-  - `QA.md` for the new pack;
-  - routes are connected and legal;
-  - the pack validates;
-  - attribution is present.
+- [x] R11.1 **Verify on GOV.UK** ("Find a driving test centre", `https://www.gov.uk/find-driving-test-centre`, checked 2026-11-25): **Wolverhampton Practical Driving Test Centre**, 101 Spring Road, Spring Road Industrial Estate, Ettingshall, Wolverhampton, West Midlands **WV4 6JX**.
+- [x] R11.2 **A second road pack** `content/cities/wolverhampton-test-area/roadpack.json`: 2 × 2 km around the centre (`52.5600, -2.1016`), including residential streets, roundabouts, A4123 dual carriageway, signals, buildings, POIs, direction signs, street names, speed signs, bus stops, and warning signs; tramways excluded.
+- [x] R11.3 **Practice routes** (`content/cities/wolverhampton-test-area/routes.json`): 3 connected legal routes (18, 20, 22 min) starting and ending on Spring Road, mixing road types with sat-nav instructions and one `"Follow the signs towards City Centre ..."` segment per route, clearly labelled as **practice routes, not official DVSA test routes**.
+- [x] R11.4 **Lesson 20, "Roads near the test centre".** Stage 8 (`20-roads-near-test-centre.json`), using `independent_driving` (`s8_20_test_centre_mix.json` mode `mixed`, `s8_20_test_centre_signs.json` mode `signs`), general plain-English learn card, and original quiz (`gb-s8-20-roads-near-test-centre.json`).
+- [x] R11.5 **QA and tests** (`pipeline/tests/test_test_area.py`, 58/58 tests pass): `QA.md`, connected legal routes, schema validation (113 content files), ODbL attribution present.
 
 ---
 

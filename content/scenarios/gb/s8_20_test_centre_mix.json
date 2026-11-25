@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_20_test_centre_mix",
+  "course": "wolverhampton-test-area",
+  "anchor": "start",
+  "durationS": 180,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.55
+    },
+    {
+      "type": "independent_driving",
+      "minutes": 20,
+      "mode": "mixed",
+      "instruction": "Follow the practice route using sat nav and road signs."
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 170
+    }
+  ]
+}

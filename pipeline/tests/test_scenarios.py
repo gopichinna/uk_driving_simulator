@@ -23,17 +23,18 @@ ALLOWED_COURSE_ANCHORS: dict[str, set[str]] = {
     "two_lane_roundabout": {"start"},
     "dual_carriageway": {"start"},
     "wolverhampton": {"start"},
+    "wolverhampton-test-area": {"start"},
 }
 
 
 def test_every_lesson_scenario_has_valid_file() -> None:
     expected: dict[str, tuple[str, str]] = {}
-    for lf in sorted(LESSONS_DIR.glob("[01][0-9]-*.json")):
+    for lf in sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json")):
         lesson = json.loads(lf.read_text(encoding="utf-8"))
         for sc in lesson["scenarios"]:
             expected[sc["id"]] = (sc["course"], sc["anchor"])
 
-    assert len(expected) == 38
+    assert len(expected) == 40
     for sc_id, (course, anchor) in expected.items():
         path = SCENARIOS_DIR / f"{sc_id}.json"
         assert path.is_file(), f"Missing scenario file: {path}"

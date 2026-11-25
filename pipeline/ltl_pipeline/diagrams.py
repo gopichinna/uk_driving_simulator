@@ -408,7 +408,7 @@ def generate_all_diagrams() -> list[Path]:
     DIAGRAMS_DIR.mkdir(parents=True, exist_ok=True)
     written: list[Path] = []
     pngs: list[Path] = []
-    for lf in sorted(LESSONS_DIR.glob("[01][0-9]-*.json")):
+    for lf in sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json")):
         lesson = json.loads(lf.read_text(encoding="utf-8"))
         lid = lesson["id"]
         canvas = _render_lesson_diagram(lid)

@@ -1,0 +1,31 @@
+pack_id: gb-wolverhampton-test-area
+display_name: "Wolverhampton Test Centre Area"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# Centred on Wolverhampton Practical Driving Test Centre
+# 101 Spring Road, Spring Road Industrial Estate, Ettingshall, Wolverhampton WV4 6JX
+# Verified on GOV.UK ("Find a driving test centre", https://www.gov.uk/find-driving-test-centre, 2026-11-25)
+origin:
+  lat: 52.5600
+  lon: -2.1016
+
+# ~2.0 km x 2.0 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-2.1164, 52.5510, -2.0868, 52.5690]
+
+bbox_reason: >
+  Covers roughly 2.0 km x 2.0 km around Wolverhampton Practical Driving Test Centre
+  (101 Spring Road, WV4 6JX), including residential streets around Ettingshall,
+  the A4123 Birmingham New Road dual carriageway, A41 Bilston Road, roundabouts,
+  and signalised junctions.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "West Midlands Metro tramway street excluded (trams out of scope)"

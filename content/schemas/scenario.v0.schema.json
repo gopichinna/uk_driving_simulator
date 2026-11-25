@@ -10,7 +10,14 @@
     "scenarioFormatVersion": { "const": "0.1" },
     "scenarioId": { "type": "string", "pattern": "^[a-z0-9_]+$" },
     "course": {
-      "enum": ["town", "roundabout", "two_lane_roundabout", "dual_carriageway", "wolverhampton"]
+      "enum": [
+        "town",
+        "roundabout",
+        "two_lane_roundabout",
+        "dual_carriageway",
+        "wolverhampton",
+        "wolverhampton-test-area"
+      ]
     },
     "anchor": {
       "enum": [

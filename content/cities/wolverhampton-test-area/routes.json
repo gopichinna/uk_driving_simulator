@@ -1,0 +1,694 @@
+{
+  "routeFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "routes": [
+    {
+      "id": "test-area-practice-1",
+      "name": "Practice route 1: Ettingshall and A4123 dual carriageway",
+      "description": "Practice route (not an official DVSA test route) mixing Spring Road, roundabouts, and A4123.",
+      "estimatedMinutes": 18,
+      "start": {
+        "linkId": "l_106707297_0",
+        "offsetM": 5
+      },
+      "links": [
+        {
+          "linkId": "l_106707297_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_78046026_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_220471833_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23219406_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_854931073_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_22330596_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_854931076_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_854931075_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638576683_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638576683_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87108915_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87110690_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87110690_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_685882174_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_685882174_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626041_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626042_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626042_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87108616_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_6",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_6",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "roundabout",
+        "signals"
+      ],
+      "instructions": [
+        {
+          "atLinkIndex": 0,
+          "distanceBeforeM": 15,
+          "text": "Leave the test centre area on Spring Road and keep left.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 8,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Manor Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 16,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Black Country Route and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 24,
+          "distanceBeforeM": 40,
+          "text": "Follow the signs towards City Centre via Black Country Route.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 32,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Birmingham New Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 40,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Manor Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 48,
+          "distanceBeforeM": 20,
+          "text": "Return to Spring Road and stop safely on the left.",
+          "maneuver": "straight_on"
+        }
+      ]
+    },
+    {
+      "id": "test-area-practice-2",
+      "name": "Practice route 2: Bilston Road and residential streets",
+      "description": "Practice route (not an official DVSA test route) covering A41 Bilston Road and local residential turns.",
+      "estimatedMinutes": 20,
+      "start": {
+        "linkId": "l_106707297_0",
+        "offsetM": 5
+      },
+      "links": [
+        {
+          "linkId": "l_106707297_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87108616_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576678_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576678_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576678_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576687_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576687_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576687_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638576687_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_103925319_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_73589448_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112811_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112816_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112816_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87112821_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626041_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626042_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_368626042_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87108616_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_638579038_6",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_638579038_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_6",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "signals",
+        "zebra"
+      ],
+      "instructions": [
+        {
+          "atLinkIndex": 0,
+          "distanceBeforeM": 15,
+          "text": "Leave the test centre area on Spring Road and keep left.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 8,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Manor Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 16,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Rookery Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 24,
+          "distanceBeforeM": 40,
+          "text": "Follow the signs towards City Centre via Birmingham New Road.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 32,
+          "distanceBeforeM": 30,
+          "text": "Continue onto A4126 and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 40,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Spring Road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 47,
+          "distanceBeforeM": 20,
+          "text": "Return to Spring Road and stop safely on the left.",
+          "maneuver": "straight_on"
+        }
+      ]
+    },
+    {
+      "id": "test-area-practice-3",
+      "name": "Practice route 3: Mixed urban and roundabout loop",
+      "description": "Practice route (not an official DVSA test route) combining residential streets, crossings, and roundabouts.",
+      "estimatedMinutes": 22,
+      "start": {
+        "linkId": "l_106707297_0",
+        "offsetM": 5
+      },
+      "links": [
+        {
+          "linkId": "l_106707297_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_669870157_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_669870157_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_669870158_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_669870157_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_80458818_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_80458818_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_80458818_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1295640613_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_621691363_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_621691363_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_621691363_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1295640613_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_80458818_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_80458818_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_80458818_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_106707297_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "roundabout",
+        "zebra"
+      ],
+      "instructions": [
+        {
+          "atLinkIndex": 0,
+          "distanceBeforeM": 15,
+          "text": "Leave the test centre area on Spring Road and keep left.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 8,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Lanesfield Drive and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 16,
+          "distanceBeforeM": 40,
+          "text": "Follow the signs towards City Centre via Lanesfield Drive.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 24,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Lanesfield Drive and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 32,
+          "distanceBeforeM": 20,
+          "text": "Return to Spring Road and stop safely on the left.",
+          "maneuver": "straight_on"
+        }
+      ]
+    }
+  ]
+}

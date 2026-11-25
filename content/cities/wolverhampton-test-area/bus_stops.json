@@ -1,0 +1,534 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "origin": {
+    "lat": 52.56,
+    "lon": -2.1016
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "busStops": [
+    {
+      "id": "bs_001",
+      "x": 621.094,
+      "z": 488.583,
+      "heading": 282.63,
+      "name": "Millfields Rd / Tarmac Rd",
+      "linkId": "l_148450677_5",
+      "osmId": 369483449
+    },
+    {
+      "id": "bs_002",
+      "x": 541.012,
+      "z": 526.486,
+      "heading": 104.58,
+      "name": "Millfields Rd / Tarmac Rd",
+      "linkId": "l_410102342_0",
+      "osmId": 369483451
+    },
+    {
+      "id": "bs_003",
+      "x": 169.691,
+      "z": 649.021,
+      "heading": 107.51,
+      "name": "Millfields Rd / Rockwell Thompson Works",
+      "linkId": "l_148450676_2",
+      "osmId": 369483453
+    },
+    {
+      "id": "bs_004",
+      "x": 233.364,
+      "z": 638.808,
+      "heading": 115.16,
+      "name": "Millfields Rd / Rockwell Thompson Works",
+      "linkId": "l_148450676_3",
+      "osmId": 369483455
+    },
+    {
+      "id": "bs_005",
+      "x": 81.18,
+      "z": 695.333,
+      "heading": 105.21,
+      "name": "Millfields Rd / Ettingshall Rd",
+      "linkId": "l_148450676_1",
+      "osmId": 369483458
+    },
+    {
+      "id": "bs_006",
+      "x": 891.269,
+      "z": 439.952,
+      "heading": 270.21,
+      "name": "Millfields Rd / Chem Rd",
+      "linkId": "l_148450677_0",
+      "osmId": 369483460
+    },
+    {
+      "id": "bs_007",
+      "x": 891.253,
+      "z": 451.948,
+      "heading": 270.21,
+      "name": "Millfields Rd / Chem Rd",
+      "linkId": "l_148450677_0",
+      "osmId": 369483461
+    },
+    {
+      "id": "bs_008",
+      "x": -235.61,
+      "z": 745.479,
+      "heading": 277.88,
+      "name": "Parkfield Rd / Craven St",
+      "linkId": "l_22330051_2",
+      "osmId": 369483466
+    },
+    {
+      "id": "bs_009",
+      "x": -130.429,
+      "z": 717.242,
+      "heading": 281.5,
+      "name": "Parkfield Rd / Craven St",
+      "linkId": "l_1434004566_0",
+      "osmId": 369483468
+    },
+    {
+      "id": "bs_010",
+      "x": -387.976,
+      "z": 754.447,
+      "heading": 277.67,
+      "name": "Parkfield Rd / Windsor Nursery School",
+      "linkId": "l_645943178_1",
+      "osmId": 369483469
+    },
+    {
+      "id": "bs_011",
+      "x": -227.773,
+      "z": 866.539,
+      "heading": 184.24,
+      "name": "Durberville Rd / Bronte Rd",
+      "linkId": "l_87069523_1",
+      "osmId": 369483472
+    },
+    {
+      "id": "bs_012",
+      "x": -219.57,
+      "z": 841.489,
+      "heading": 182.74,
+      "name": "Hardy Sq / Ivanhoe Rd",
+      "linkId": "l_149716854_0",
+      "osmId": 369483483
+    },
+    {
+      "id": "bs_013",
+      "x": -560.316,
+      "z": 779.835,
+      "heading": 267.64,
+      "name": "Parkfield Rd / The Red Lion",
+      "linkId": "l_645943178_3",
+      "osmId": 369483526
+    },
+    {
+      "id": "bs_014",
+      "x": -559.443,
+      "z": 764.557,
+      "heading": 267.64,
+      "name": "Parkfield Rd / The Red Lion",
+      "linkId": "l_645943178_3",
+      "osmId": 369483527
+    },
+    {
+      "id": "bs_015",
+      "x": -931.914,
+      "z": 766.516,
+      "heading": 271.79,
+      "name": "Parkfield Rd / Thompson Avenue",
+      "linkId": "l_439936956_0",
+      "osmId": 369483530
+    },
+    {
+      "id": "bs_016",
+      "x": -1002.774,
+      "z": 757.75,
+      "heading": 358.18,
+      "name": "Parkfield Rd / Thompson Avenue",
+      "linkId": "l_439935842_2",
+      "osmId": 369483531
+    },
+    {
+      "id": "bs_017",
+      "x": -872.347,
+      "z": 377.444,
+      "heading": 327.82,
+      "name": "Birmingham New Rd / Parkfield",
+      "linkId": "l_439936945_1",
+      "osmId": 369483534
+    },
+    {
+      "id": "bs_018",
+      "x": -852.727,
+      "z": 385.931,
+      "heading": 148.4,
+      "name": "Birmingham New Rd / Parkfield",
+      "linkId": "l_164107352_4",
+      "osmId": 369483535
+    },
+    {
+      "id": "bs_019",
+      "x": 13.465,
+      "z": -61.496,
+      "heading": 180.3,
+      "name": "Spring Rd / Lanesfield Drive",
+      "linkId": "l_106707297_5",
+      "osmId": 369483539
+    },
+    {
+      "id": "bs_020",
+      "x": 5.398,
+      "z": -59.656,
+      "heading": 180.3,
+      "name": "Spring Rd / Lanesfield Drive",
+      "linkId": "l_106707297_5",
+      "osmId": 369483542
+    },
+    {
+      "id": "bs_021",
+      "x": -737.976,
+      "z": 155.544,
+      "heading": 327.99,
+      "name": "Birmingham New Rd / Walton Crescent",
+      "linkId": "l_637984827_2",
+      "osmId": 369483543
+    },
+    {
+      "id": "bs_022",
+      "x": -694.721,
+      "z": 127.689,
+      "heading": 148.83,
+      "name": "Birmingham New Rd / Walton Crescent",
+      "linkId": "l_638579026_1",
+      "osmId": 369483545
+    },
+    {
+      "id": "bs_023",
+      "x": -561.139,
+      "z": -82.874,
+      "heading": 144.11,
+      "name": "Birmingham New Rd / Crabtree Close",
+      "linkId": "l_638579026_1",
+      "osmId": 369483546
+    },
+    {
+      "id": "bs_024",
+      "x": -610.155,
+      "z": -46.32,
+      "heading": 146.81,
+      "name": "Birmingham New Rd / Crabtree Close",
+      "linkId": "l_23271068_0",
+      "osmId": 369483548
+    },
+    {
+      "id": "bs_025",
+      "x": -489.522,
+      "z": -198.785,
+      "heading": 317.87,
+      "name": "Birmingham New Rd / Laburnam Rd",
+      "linkId": "l_637984827_0",
+      "osmId": 369483549
+    },
+    {
+      "id": "bs_026",
+      "x": -436.543,
+      "z": -227.967,
+      "heading": 135.68,
+      "name": "Birmingham New Rd / Laburnam Rd",
+      "linkId": "l_638579026_2",
+      "osmId": 369483551
+    },
+    {
+      "id": "bs_027",
+      "x": -644.716,
+      "z": -510.968,
+      "heading": 38.36,
+      "name": "Laburnum Rd / Ettingshall Park Farm",
+      "linkId": "l_23271069_2",
+      "osmId": 369483554
+    },
+    {
+      "id": "bs_028",
+      "x": -610.733,
+      "z": -488.717,
+      "heading": 38.36,
+      "name": "Laburnum Rd / Ettingshall Park Farm",
+      "linkId": "l_23271069_2",
+      "osmId": 369483555
+    },
+    {
+      "id": "bs_029",
+      "x": -273.226,
+      "z": -390.311,
+      "heading": 305.11,
+      "name": "Birmingham New Rd / Hill Avenue",
+      "linkId": "l_23219978_3",
+      "osmId": 369483557
+    },
+    {
+      "id": "bs_030",
+      "x": -220.527,
+      "z": -400.952,
+      "heading": 125.45,
+      "name": "Birmingham New Rd / Hill Avenue",
+      "linkId": "l_637984813_4",
+      "osmId": 369483558
+    },
+    {
+      "id": "bs_031",
+      "x": 18.899,
+      "z": 456.729,
+      "heading": 178.3,
+      "name": "Spring Rd / Railway Bridge",
+      "linkId": "l_106707297_1",
+      "osmId": 369483560
+    },
+    {
+      "id": "bs_032",
+      "x": 30.346,
+      "z": 435.153,
+      "heading": 181.3,
+      "name": "Spring Rd / Railway Bridge",
+      "linkId": "l_106707297_1",
+      "osmId": 369483561
+    },
+    {
+      "id": "bs_033",
+      "x": 31.297,
+      "z": -373.443,
+      "heading": 173.01,
+      "name": "Spring Rd / Wood St",
+      "linkId": "l_638579038_3",
+      "osmId": 369483563
+    },
+    {
+      "id": "bs_034",
+      "x": 13.144,
+      "z": -327.958,
+      "heading": 170.39,
+      "name": "Spring Rd / Wood St",
+      "linkId": "l_638579038_2",
+      "osmId": 369483564
+    },
+    {
+      "id": "bs_035",
+      "x": 69.271,
+      "z": -636.643,
+      "heading": 348.43,
+      "name": "Rookery Rd / Bate St",
+      "linkId": "l_638576687_2",
+      "osmId": 369483565
+    },
+    {
+      "id": "bs_036",
+      "x": 60.271,
+      "z": -640.66,
+      "heading": 348.43,
+      "name": "Rookery Rd / Bate St",
+      "linkId": "l_638576687_2",
+      "osmId": 369483566
+    },
+    {
+      "id": "bs_037",
+      "x": 163.904,
+      "z": -885.435,
+      "heading": 336.85,
+      "name": "Rookery Rd / Woodcross Lane",
+      "linkId": "l_638576687_0",
+      "osmId": 369483568
+    },
+    {
+      "id": "bs_038",
+      "x": 130.886,
+      "z": -924.673,
+      "heading": 67.12,
+      "name": "Woodcross Lane / Health Centre",
+      "linkId": "l_637984844_5",
+      "osmId": 369483569
+    },
+    {
+      "id": "bs_039",
+      "x": 133.905,
+      "z": -935.667,
+      "heading": 67.12,
+      "name": "Woodcross Lane / Health Centre",
+      "linkId": "l_637984844_5",
+      "osmId": 369483570
+    },
+    {
+      "id": "bs_040",
+      "x": -796.851,
+      "z": -661.872,
+      "heading": 54.27,
+      "name": "Laburnum Rd / Dovedale Rd",
+      "linkId": "l_23271069_0",
+      "osmId": 369483571
+    },
+    {
+      "id": "bs_041",
+      "x": -810.379,
+      "z": -684.259,
+      "heading": 60.85,
+      "name": "Laburnum Rd / Dovedale Rd",
+      "linkId": "l_23271069_0",
+      "osmId": 369483572
+    },
+    {
+      "id": "bs_042",
+      "x": -774.555,
+      "z": -867.917,
+      "heading": 161.41,
+      "name": "Dovedale Rd / Grosvenor Rd",
+      "linkId": "l_637984820_4",
+      "osmId": 369483573
+    },
+    {
+      "id": "bs_043",
+      "x": -762.289,
+      "z": -862.476,
+      "heading": 161.41,
+      "name": "Dovedale Rd / Grosvenor Rd",
+      "linkId": "l_637984820_4",
+      "osmId": 369483574
+    },
+    {
+      "id": "bs_044",
+      "x": -501.918,
+      "z": -971.763,
+      "heading": 206.36,
+      "name": "Mount Rd / Ruskin Avenue",
+      "linkId": "l_637984837_2",
+      "osmId": 369483577
+    },
+    {
+      "id": "bs_045",
+      "x": -514.297,
+      "z": -977.594,
+      "heading": 206.36,
+      "name": "Mount Rd / Ruskin Avenue",
+      "linkId": "l_637984837_2",
+      "osmId": 369483578
+    },
+    {
+      "id": "bs_046",
+      "x": -329.583,
+      "z": -825.329,
+      "heading": 152.73,
+      "name": "Pugh Rd / Mount Rd",
+      "linkId": "l_56685579_0",
+      "osmId": 369483579
+    },
+    {
+      "id": "bs_047",
+      "x": -327.142,
+      "z": -848.383,
+      "heading": 152.73,
+      "name": "Pugh Rd / Mount Rd",
+      "linkId": "l_56685579_0",
+      "osmId": 369483580
+    },
+    {
+      "id": "bs_048",
+      "x": -264.17,
+      "z": -993.248,
+      "heading": 143.95,
+      "name": "Pugh Rd / Dawson Avenue",
+      "linkId": "l_56685579_1",
+      "osmId": 369483581
+    },
+    {
+      "id": "bs_049",
+      "x": 344.837,
+      "z": -930.616,
+      "heading": 174.97,
+      "name": "Birmingham New Rd / Meadow Lane",
+      "linkId": "l_944083506_2",
+      "osmId": 369483593
+    },
+    {
+      "id": "bs_050",
+      "x": 507.869,
+      "z": -674.585,
+      "heading": 147.26,
+      "name": "Overfield Drive / Black Country Route",
+      "linkId": "l_56685888_1",
+      "osmId": 369483597
+    },
+    {
+      "id": "bs_051",
+      "x": -954.832,
+      "z": 701.456,
+      "heading": 181.77,
+      "name": "Birmingham New Rd / Parkfield Rd",
+      "linkId": "l_164107352_0",
+      "osmId": 369484440
+    },
+    {
+      "id": "bs_052",
+      "x": -979.376,
+      "z": 680.318,
+      "heading": 356.93,
+      "name": "Birmingham New Rd / Parkfield Rd",
+      "linkId": "l_439936945_5",
+      "osmId": 369484441
+    },
+    {
+      "id": "bs_053",
+      "x": 106.82,
+      "z": -637.721,
+      "heading": 319.16,
+      "name": "Birmingham New Rd / Rookery Rd",
+      "linkId": "l_87112821_2",
+      "osmId": 369484559
+    },
+    {
+      "id": "bs_054",
+      "x": 109.166,
+      "z": -604.093,
+      "heading": 134.2,
+      "name": "Birmingham New Rd / Rookery Rd",
+      "linkId": "l_78046026_0",
+      "osmId": 369484560
+    },
+    {
+      "id": "bs_055",
+      "x": -456.224,
+      "z": -298.248,
+      "heading": 41.85,
+      "name": "Laburnum Rd / Birmingham New Rd",
+      "linkId": "l_23271069_3",
+      "osmId": 369484561
+    },
+    {
+      "id": "bs_056",
+      "x": -470.381,
+      "z": -300.269,
+      "heading": 41.85,
+      "name": "Laburnum Rd / Birmingham New Rd",
+      "linkId": "l_23271069_3",
+      "osmId": 4815874935
+    },
+    {
+      "id": "bs_057",
+      "x": 39.888,
+      "z": -513.915,
+      "heading": 171.93,
+      "name": "Spring Rd / Birmingham New Rd",
+      "linkId": "l_638579038_4",
+      "osmId": 4815875268
+    }
+  ]
+}
