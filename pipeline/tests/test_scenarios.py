@@ -63,3 +63,11 @@ def test_every_lesson_scenario_has_valid_file() -> None:
                 assert ev["anchor"] in ALLOWED_COURSE_ANCHORS[course]
             if ev["type"] in ("pedestrian_waits", "pedestrian_steps_out"):
                 assert course == "town"
+
+
+def test_motorway_scenarios_cover_new_motorway_events() -> None:
+    seen: set[str] = set()
+    for path in sorted(SCENARIOS_DIR.glob("s6_2*.json")):
+        data = validate_scenario_file(path)
+        seen.update(ev["type"] for ev in data["events"])
+    assert {"red_x", "variable_limit", "slow_vehicle_ahead", "breakdown"} <= seen

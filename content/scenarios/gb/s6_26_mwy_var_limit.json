@@ -6,6 +6,7 @@
   "durationS": 90,
   "events": [
     { "type": "traffic_density", "value": 0.5 },
+    { "type": "variable_limit", "mph": 50, "whenPlayerWithinM": 250 },
     { "type": "conditions", "timeOfDay": "dusk", "weather": "clear", "visibilityM": 250 },
     { "type": "finish_after_s", "seconds": 85 }
   ]

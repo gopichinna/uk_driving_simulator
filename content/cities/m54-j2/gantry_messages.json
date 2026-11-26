@@ -1,0 +1,705 @@
+{
+  "gantryMessagesFormatVersion": "0.1",
+  "packId": "gb-m54-j2",
+  "origin": {
+    "lat": 52.605,
+    "lon": -2.04
+  },
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "gantries": [
+    {
+      "id": "gantry_001",
+      "linkId": "l_144044873_0",
+      "x": -5324.648,
+      "z": 3696.542,
+      "heading": 269.91,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_002",
+      "linkId": "l_144044873_0",
+      "x": -5824.457,
+      "z": 3683.49,
+      "heading": 267.8,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_003",
+      "linkId": "l_144044873_0",
+      "x": -6324.058,
+      "z": 3666.368,
+      "heading": 270.25,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_004",
+      "linkId": "l_144044873_0",
+      "x": -6823.499,
+      "z": 3685.78,
+      "heading": 275.78,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_005",
+      "linkId": "l_144045364_0",
+      "x": -6953.118,
+      "z": 3711.482,
+      "heading": 95.91,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_006",
+      "linkId": "l_144045364_0",
+      "x": -6454.469,
+      "z": 3677.901,
+      "heading": 91.69,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_007",
+      "linkId": "l_144045364_0",
+      "x": -5954.668,
+      "z": 3687.978,
+      "heading": 87.36,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_008",
+      "linkId": "l_144045364_0",
+      "x": -5455.0,
+      "z": 3705.522,
+      "heading": 88.95,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_009",
+      "linkId": "l_3092141_0",
+      "x": 1687.411,
+      "z": -1247.14,
+      "heading": 353.86,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_010",
+      "linkId": "l_3092141_0",
+      "x": 1615.778,
+      "z": -752.529,
+      "heading": 347.51,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_011",
+      "linkId": "l_3092141_0",
+      "x": 1488.515,
+      "z": -269.212,
+      "heading": 342.81,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_012",
+      "linkId": "l_3092141_0",
+      "x": 1302.093,
+      "z": 194.388,
+      "heading": 334.97,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_013",
+      "linkId": "l_3092141_0",
+      "x": 1068.288,
+      "z": 636.05,
+      "heading": 330.32,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_014",
+      "linkId": "l_3092141_0",
+      "x": 815.946,
+      "z": 1067.683,
+      "heading": 329.93,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_015",
+      "linkId": "l_3092141_0",
+      "x": 549.545,
+      "z": 1490.454,
+      "heading": 324.58,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_016",
+      "linkId": "l_3092141_0",
+      "x": 231.385,
+      "z": 1875.282,
+      "heading": 315.59,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_017",
+      "linkId": "l_3092141_0",
+      "x": -127.561,
+      "z": 2223.218,
+      "heading": 313.75,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_018",
+      "linkId": "l_3092163_0",
+      "x": -208.291,
+      "z": 2322.045,
+      "heading": 133.37,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_019",
+      "linkId": "l_3092163_0",
+      "x": 154.079,
+      "z": 1977.579,
+      "heading": 135.24,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_020",
+      "linkId": "l_3092163_0",
+      "x": 485.148,
+      "z": 1603.479,
+      "heading": 142.92,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_021",
+      "linkId": "l_3092163_0",
+      "x": 761.681,
+      "z": 1187.379,
+      "heading": 149.0,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_022",
+      "linkId": "l_3092163_0",
+      "x": 1016.982,
+      "z": 757.561,
+      "heading": 150.0,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_023",
+      "linkId": "l_3092163_0",
+      "x": 1258.202,
+      "z": 319.738,
+      "heading": 153.02,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_024",
+      "linkId": "l_3092163_0",
+      "x": 1459.095,
+      "z": -137.836,
+      "heading": 160.54,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_025",
+      "linkId": "l_3092163_0",
+      "x": 1602.685,
+      "z": -616.55,
+      "heading": 166.83,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_026",
+      "linkId": "l_3092163_0",
+      "x": 1688.839,
+      "z": -1108.82,
+      "heading": 172.33,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_027",
+      "linkId": "l_405164894_0",
+      "x": 1724.024,
+      "z": -1745.466,
+      "heading": 177.46,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_028",
+      "linkId": "l_405164894_0",
+      "x": 1749.997,
+      "z": -2244.75,
+      "heading": 176.88,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_029",
+      "linkId": "l_405164894_0",
+      "x": 1771.988,
+      "z": -2744.146,
+      "heading": 173.73,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_030",
+      "linkId": "l_405164896_0",
+      "x": 1788.62,
+      "z": -3058.965,
+      "heading": 177.4,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_031",
+      "linkId": "l_405164896_0",
+      "x": 1862.723,
+      "z": -3552.164,
+      "heading": 166.36,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_032",
+      "linkId": "l_405164896_0",
+      "x": 2067.622,
+      "z": -4000.846,
+      "heading": 132.34,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_033",
+      "linkId": "l_405164897_0",
+      "x": 1748.478,
+      "z": -2560.486,
+      "heading": 357.86,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_034",
+      "linkId": "l_405164897_0",
+      "x": 1727.451,
+      "z": -2060.933,
+      "heading": 357.44,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_035",
+      "linkId": "l_405164897_0",
+      "x": 1705.09,
+      "z": -1561.433,
+      "heading": 357.44,
+      "lanes": 4,
+      "laneIndices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_036",
+      "linkId": "l_45258039_1",
+      "x": 2374.306,
+      "z": -4204.521,
+      "heading": 118.96,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_037",
+      "linkId": "l_45258039_2",
+      "x": 3057.345,
+      "z": -4485.347,
+      "heading": 107.32,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_038",
+      "linkId": "l_45258042_0",
+      "x": 3128.237,
+      "z": -4523.949,
+      "heading": 287.06,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_039",
+      "linkId": "l_45258042_1",
+      "x": 2590.828,
+      "z": -4327.821,
+      "heading": 293.86,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_040",
+      "linkId": "l_45258042_2",
+      "x": 1980.549,
+      "z": -3912.341,
+      "heading": 323.02,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_041",
+      "linkId": "l_45258042_2",
+      "x": 1819.501,
+      "z": -3441.641,
+      "heading": 349.19,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_042",
+      "linkId": "l_45258042_2",
+      "x": 1767.062,
+      "z": -2945.088,
+      "heading": 357.16,
+      "lanes": 3,
+      "laneIndices": [
+        0,
+        1,
+        2
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    },
+    {
+      "id": "gantry_043",
+      "linkId": "l_86333727_0",
+      "x": -5525.995,
+      "z": 3731.455,
+      "heading": 92.37,
+      "lanes": 2,
+      "laneIndices": [
+        0,
+        1
+      ],
+      "supportsRedX": true,
+      "supportsVariableLimit": true,
+      "defaultLimitMph": 70
+    }
+  ]
+}

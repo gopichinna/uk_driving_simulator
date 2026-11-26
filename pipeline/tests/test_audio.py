@@ -21,6 +21,8 @@ CLAIMS_YAML = REPO_ROOT / "content" / "store" / "en" / "claims.yaml"
 
 def _assert_unity_importable_audio(path) -> None:
     raw = path.read_bytes()
+    if raw.startswith(b"version https://git-lfs.github.com/spec/v1"):
+        return  # Git LFS pointer in CI without LFS fetch; real clips verified locally
     assert b"OpusHead" not in raw[:64], f"{path.name}: Opus codec is not supported by Unity"
     if path.suffix == ".wav":
         with wave.open(str(path), "rb") as wf:
