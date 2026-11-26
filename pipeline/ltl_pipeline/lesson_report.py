@@ -37,7 +37,7 @@ def generate_implementation_report(
         "|---|---|---|---|",
     ]
 
-    for lf in sorted(lessons_dir.glob("*.json")):
+    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
         lesson = json.loads(lf.read_text(encoding="utf-8"))
         seen: list[str] = []
         for sc in lesson["scenarios"]:
@@ -47,6 +47,29 @@ def generate_implementation_report(
         for rid in seen:
             status = "✅" if rid in implemented else "⏳"
             lines.append(f"| {lesson['order']} | {lesson['title']} | `{rid}` | {status} |")
+
+    practice_counts: dict[str, int] = {rid: 0 for rid in sorted(implemented)}
+    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
+        lesson = json.loads(lf.read_text(encoding="utf-8"))
+        if lesson["id"] == "gb-s8-19-mock-driving-test":
+            continue
+        for sc in lesson["scenarios"]:
+            for rid in sc["rulesJudged"]:
+                if rid in practice_counts:
+                    practice_counts[rid] += 1
+
+    lines.extend(
+        [
+            "",
+            "## Implemented Rule Practice Coverage (excluding mock test)",
+            "",
+            "| Rule ID | Practice Scenarios | Status |",
+            "|---|---|---|",
+        ]
+    )
+    for rid, count in practice_counts.items():
+        status = "✅ >= 2" if count >= 2 else f"⚠️ GAP ({count} < 2)"
+        lines.append(f"| `{rid}` | {count} | {status} |")
 
     lines.append("")
     return "\n".join(lines)

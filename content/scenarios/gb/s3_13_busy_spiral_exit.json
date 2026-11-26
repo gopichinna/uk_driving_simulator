@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s3_13_busy_spiral_exit",
+  "course": "two_lane_roundabout",
+  "anchor": "start",
+  "durationS": 105,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.65
+    },
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "rain",
+      "visibilityM": 300
+    },
+    {
+      "type": "take_exit",
+      "exitNumber": 3
+    }
+  ]
+}

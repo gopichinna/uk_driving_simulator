@@ -35,7 +35,7 @@ def test_every_lesson_scenario_has_valid_file() -> None:
         for sc in lesson["scenarios"]:
             expected[sc["id"]] = (sc["course"], sc["anchor"])
 
-    assert len(expected) == 54
+    assert len(expected) == 57
     for sc_id, (course, anchor) in expected.items():
         path = SCENARIOS_DIR / f"{sc_id}.json"
         assert path.is_file(), f"Missing scenario file: {path}"
@@ -71,3 +71,25 @@ def test_motorway_scenarios_cover_new_motorway_events() -> None:
         data = validate_scenario_file(path)
         seen.update(ev["type"] for ev in data["events"])
     assert {"red_x", "variable_limit", "slow_vehicle_ahead", "breakdown"} <= seen
+
+
+def test_every_implemented_rule_has_two_practice_scenarios() -> None:
+    import yaml
+
+    rules_yaml = REPO_ROOT / "content" / "countries" / "gb" / "rules.yaml"
+    rules = yaml.safe_load(rules_yaml.read_text(encoding="utf-8"))["rules"]
+    implemented = [
+        r["id"]
+        for r in rules
+        if r.get("implementation", {}).get("status") == "implemented"
+    ]
+    rule_index = json.loads((LESSONS_DIR / "rule_index.json").read_text(encoding="utf-8"))["rules"]
+    for rid in implemented:
+        practice = [
+            entry
+            for entry in rule_index.get(rid, [])
+            if entry.get("lessonId") != "gb-s8-19-mock-driving-test"
+        ]
+        assert len(practice) >= 2, (
+            f"{rid} has only {len(practice)} non-mock-test practice scenario(s): {practice}"
+        )

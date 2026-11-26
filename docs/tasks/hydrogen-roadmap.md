@@ -156,8 +156,8 @@ R15 is merged. Thank you: plain English reads well, the signs are useful, the mo
 - [x] **R16.3 New scenario events** (added `red_x`, `variable_limit`, `slow_vehicle_ahead`, `breakdown` to `content/schemas/scenario.v0.schema.json`, updated motorway scenarios `s6_24_*`–`s6_27_*`, and extended `test_scenarios.py`).
 
 ## Round 17: more practice drives (variety for lessons and review drives)
-- [ ] **R17.1** Give every **implemented** rule (those with an `implementation` in `rules.yaml`) at least **2 practice scenarios** on playable courses (`town`, `roundabout`, `two_lane_roundabout`, `dual_carriageway`, `wolverhampton`, `wolverhampton-test-area`; the motorway once R16 is in). Add scenarios to existing lessons, using different anchors and event mixes so repeats feel different. Regenerate `rule_index.json` and report any gaps in `content/lessons/gb/IMPLEMENTATION.md`.
-- [ ] **R17.2** Add a test that every implemented rule has ≥ 2 practice scenarios that aren't the mock test.
+- [x] **R17.1** Added 3 varied roundabout practice scenarios (`s3_11_wolverhampton_rbt_give_way`, `s3_12_third_exit_dusk`, `s3_13_busy_spiral_exit`), updated `rule_index.py` & `lesson_report.py` to index all 27 lessons (including 20–27), regenerated `content/lessons/gb/rule_index.json` and `content/lessons/gb/IMPLEMENTATION.md` (every implemented rule now has >= 3 non-mock-test practice scenarios).
+- [x] **R17.2** Added `test_every_implemented_rule_has_two_practice_scenarios` in `pipeline/tests/test_scenarios.py` verifying every implemented rule has >= 2 non-mock-test practice scenarios.
 
 ## Round 18: art for the visual overhaul (icons from official signs)
 Claude will rebuild the screens in the style of the concept images (`docs/images/concepts/*.png` on `claude/town-centre-junctions`).

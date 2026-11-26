@@ -1,0 +1,23 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s3_11_wolverhampton_rbt_give_way",
+  "course": "wolverhampton",
+  "anchor": "start",
+  "durationS": 110,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.55
+    },
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "rain",
+      "visibilityM": 400
+    },
+    {
+      "type": "take_exit",
+      "exitNumber": 2
+    }
+  ]
+}
