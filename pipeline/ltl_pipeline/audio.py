@@ -15,6 +15,7 @@ from piper import PiperVoice
 from ltl_pipeline.schema import REPO_ROOT
 
 VOICE_JSON = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "voice.json"
+LESSONS_DIR = REPO_ROOT / "content" / "lessons" / "gb"
 MODEL_PATH = REPO_ROOT / "pipeline" / "cache" / "piper" / "en_GB-cori-medium.onnx"
 VOICE_OUT_DIR = REPO_ROOT / "content" / "audio" / "voice" / "en"
 SFX_OUT_DIR = REPO_ROOT / "content" / "audio" / "sfx"
@@ -74,36 +75,57 @@ def _to_wav(
     return dur
 
 
+def collect_voice_and_narration_entries(
+    voice_json_path: Path = VOICE_JSON,
+    lessons_dir: Path = LESSONS_DIR,
+) -> dict[str, str]:
+    """Return {key: text} for voice.json plus lesson learn cards and scenario briefings."""
+    voice_data = json.loads(voice_json_path.read_text(encoding="utf-8"))
+    entries: dict[str, str] = dict(voice_data["entries"])
+    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
+        lesson = json.loads(lf.read_text(encoding="utf-8"))
+        lid = lesson["id"]
+        entries[f"lesson.{lid}.learn"] = " ".join(lesson["learnCard"]["blocks"])
+        for sc in lesson["scenarios"]:
+            entries[f"scenario.{sc['id']}.brief"] = sc["goal"]
+    return entries
+
+
 def generate_voice_audio(
     voice_json_path: Path = VOICE_JSON,
     model_path: Path = MODEL_PATH,
     out_dir: Path = VOICE_OUT_DIR,
+    lessons_dir: Path = LESSONS_DIR,
 ) -> Path:
-    """Synthesise every entry in voice.json to mono 22.05 kHz OGG (~ -3 dBFS peak)."""
+    """Synthesise voice.json + lesson/scenario narration to 44.1 kHz mono 16-bit PCM WAV."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    voice_data = json.loads(voice_json_path.read_text(encoding="utf-8"))
-    entries: dict[str, str] = voice_data["entries"]
-    voice = PiperVoice.load(str(model_path))
+    entries = collect_voice_and_narration_entries(voice_json_path, lessons_dir)
+    voice: PiperVoice | None = None
 
     manifest_items: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
         for key, text in sorted(entries.items()):
-            raw_wav = tmp_dir / f"{key}.wav"
-            with wave.open(str(raw_wav), "wb") as wf:
-                voice.synthesize_wav(text, wf)
-
-            # Trim leading/trailing silence and normalise peak to ~ -3 dBFS
             wav_name = f"{key}.wav"
             wav_path = out_dir / wav_name
-            af = (
-                "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
-                "areverse,"
-                "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
-                "areverse,"
-                "loudnorm=I=-16:TP=-3.0:LRA=7"
-            )
-            dur = _to_wav(raw_wav, wav_path, af)
+            if wav_path.is_file() and wav_path.stat().st_size > 1000:
+                dur, codec, sr, ch = _probe_audio(wav_path)
+                assert codec == "pcm_s16le" and sr == SAMPLE_RATE and ch == 1
+            else:
+                if voice is None:
+                    voice = PiperVoice.load(str(model_path))
+                raw_wav = tmp_dir / f"{key}.wav"
+                with wave.open(str(raw_wav), "wb") as wf:
+                    voice.synthesize_wav(text, wf)
+                af = (
+                    "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
+                    "areverse,"
+                    "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
+                    "areverse,"
+                    "loudnorm=I=-16:TP=-3.0:LRA=7"
+                )
+                dur = _to_wav(raw_wav, wav_path, af)
+            assert dur <= 25.0, f"{key} exceeds 25 s limit: {dur}s"
             manifest_items.append(
                 {
                     "key": key,

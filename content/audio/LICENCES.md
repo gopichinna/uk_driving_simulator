@@ -9,6 +9,7 @@ Every audio asset shipped in `content/audio/` has its engine, voice model, or so
 | TTS Engine | Piper (`piper-tts` 1.8.0) | https://github.com/rhasspy/piper | MIT Licence | Yes |
 | Voice Model | `en_GB-cori-medium` (22,050 Hz, `en_GB`) | https://huggingface.co/rhasspy/piper-voices/tree/main/en/en_GB/cori/medium | CC BY 4.0 (model card & Hi-Fi TTS dataset) | Yes (with attribution) |
 | Training Dataset | Hi-Fi Multi-Speaker English TTS Dataset (reader 92, Cori Samuel LibriVox recordings) | https://www.openslr.org/109/ | CC BY 4.0 (NVIDIA Corporation); underlying LibriVox recordings Public Domain | Yes (with attribution) |
+| Line Count | 127 voice WAVs (43 rule/UI coach lines + 27 lesson learn-card narrations + 57 scenario briefing lines) | `content/audio/voice/en/manifest.json` | Same as above | Yes |
 
 Required attribution (included in `content/ATTRIBUTIONS.md` and `content/legal/en/credits.md`):
 > Coach voice generated with Piper (MIT) using `en_GB-cori-medium` (CC BY 4.0), trained on the Hi-Fi TTS dataset (NVIDIA, OpenSLR 109) from Cori Samuel's public-domain LibriVox recordings.
