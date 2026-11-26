@@ -8,7 +8,7 @@
   "additionalProperties": false,
   "properties": {
     "packFormatVersion": { "enum": ["0.1", "0.2", "0.3", "0.4", "0.5", "0.6", "0.7"] },
-    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$", "examples": ["gb-wolverhampton-centre"] },
+    "packId": { "type": "string", "pattern": "^[a-z0-9_-]+$", "examples": ["gb-wolverhampton-centre"] },
     "displayName": { "type": "string" },
     "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
     "region": { "type": "string", "enum": ["GB-ENG", "GB-SCT", "GB-WLS"] },

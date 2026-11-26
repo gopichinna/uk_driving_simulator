@@ -1,0 +1,381 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "suburb_practice",
+  "origin": {
+    "lat": 52.5965,
+    "lon": -2.187
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "speedSigns": [
+    {
+      "id": "sp_001",
+      "x": -95.997,
+      "z": 1088.04,
+      "heading": 151.8,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_23389071_0"
+    },
+    {
+      "id": "sp_002",
+      "x": -84.629,
+      "z": 1095.41,
+      "heading": 110.72,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_11"
+    },
+    {
+      "id": "sp_003",
+      "x": 535.591,
+      "z": 757.871,
+      "heading": 27.67,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_208625943_3"
+    },
+    {
+      "id": "sp_004",
+      "x": 545.245,
+      "z": 752.809,
+      "heading": 27.67,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_208625943_3"
+    },
+    {
+      "id": "sp_005",
+      "x": 545.566,
+      "z": 751.684,
+      "heading": 120.45,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_5"
+    },
+    {
+      "id": "sp_006",
+      "x": 540.043,
+      "z": 742.287,
+      "heading": 120.45,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_5"
+    },
+    {
+      "id": "sp_007",
+      "x": 529.703,
+      "z": 748.345,
+      "heading": 300.28,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_6"
+    },
+    {
+      "id": "sp_008",
+      "x": 535.199,
+      "z": 757.758,
+      "heading": 300.28,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_6"
+    },
+    {
+      "id": "sp_009",
+      "x": 784.58,
+      "z": 614.292,
+      "heading": 37.99,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43140272_3"
+    },
+    {
+      "id": "sp_010",
+      "x": 787.687,
+      "z": 598.5,
+      "heading": 119.76,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_2"
+    },
+    {
+      "id": "sp_011",
+      "x": 777.257,
+      "z": 604.51,
+      "heading": 300.15,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_3"
+    },
+    {
+      "id": "sp_012",
+      "x": 782.732,
+      "z": 613.935,
+      "heading": 300.15,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_3"
+    },
+    {
+      "id": "sp_013",
+      "x": 831.871,
+      "z": 584.521,
+      "heading": 125.59,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_1"
+    },
+    {
+      "id": "sp_014",
+      "x": 815.867,
+      "z": 582.014,
+      "heading": 301.1,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_2"
+    },
+    {
+      "id": "sp_015",
+      "x": 821.497,
+      "z": 591.348,
+      "heading": 301.1,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_2"
+    },
+    {
+      "id": "sp_016",
+      "x": 689.455,
+      "z": 654.089,
+      "heading": 202.38,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43140274_0"
+    },
+    {
+      "id": "sp_017",
+      "x": 704.705,
+      "z": 659.261,
+      "heading": 120.15,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_3"
+    },
+    {
+      "id": "sp_018",
+      "x": 688.851,
+      "z": 655.873,
+      "heading": 300.22,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_4"
+    },
+    {
+      "id": "sp_019",
+      "x": 694.338,
+      "z": 665.291,
+      "heading": 300.22,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_4"
+    },
+    {
+      "id": "sp_020",
+      "x": 887.415,
+      "z": 522.76,
+      "heading": 242.41,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43073383_0"
+    },
+    {
+      "id": "sp_021",
+      "x": 889.26,
+      "z": 538.419,
+      "heading": 311.03,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_1"
+    },
+    {
+      "id": "sp_022",
+      "x": 34.108,
+      "z": 1018.223,
+      "heading": 193.02,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43073394_0"
+    },
+    {
+      "id": "sp_023",
+      "x": 48.627,
+      "z": 1024.835,
+      "heading": 118.01,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_10"
+    },
+    {
+      "id": "sp_024",
+      "x": 32.889,
+      "z": 1020.947,
+      "heading": 298.74,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_11"
+    },
+    {
+      "id": "sp_025",
+      "x": 38.13,
+      "z": 1030.505,
+      "heading": 298.74,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_11"
+    },
+    {
+      "id": "sp_026",
+      "x": 251.303,
+      "z": 901.283,
+      "heading": 223.29,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43073394_0"
+    },
+    {
+      "id": "sp_027",
+      "x": 248.766,
+      "z": 917.035,
+      "heading": 298.41,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_10"
+    },
+    {
+      "id": "sp_028",
+      "x": 259.311,
+      "z": 911.364,
+      "heading": 118.13,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_9"
+    },
+    {
+      "id": "sp_029",
+      "x": 254.172,
+      "z": 901.752,
+      "heading": 118.13,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_9"
+    },
+    {
+      "id": "sp_030",
+      "x": 365.695,
+      "z": 839.342,
+      "heading": 221.09,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43073395_0"
+    },
+    {
+      "id": "sp_031",
+      "x": 372.516,
+      "z": 850.003,
+      "heading": 118.53,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_8"
+    },
+    {
+      "id": "sp_032",
+      "x": 367.31,
+      "z": 840.426,
+      "heading": 118.53,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_8"
+    },
+    {
+      "id": "sp_033",
+      "x": 356.765,
+      "z": 846.168,
+      "heading": 298.6,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_9"
+    },
+    {
+      "id": "sp_034",
+      "x": 361.984,
+      "z": 855.737,
+      "heading": 298.6,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_9"
+    },
+    {
+      "id": "sp_035",
+      "x": 675.498,
+      "z": 663.414,
+      "heading": 206.72,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43140274_0"
+    },
+    {
+      "id": "sp_036",
+      "x": 665.762,
+      "z": 668.315,
+      "heading": 206.72,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_43140274_0"
+    },
+    {
+      "id": "sp_037",
+      "x": 681.256,
+      "z": 672.913,
+      "heading": 120.22,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_4"
+    },
+    {
+      "id": "sp_038",
+      "x": 675.769,
+      "z": 663.495,
+      "heading": 120.22,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_4"
+    },
+    {
+      "id": "sp_039",
+      "x": 665.405,
+      "z": 669.511,
+      "heading": 300.05,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_5"
+    },
+    {
+      "id": "sp_040",
+      "x": 670.863,
+      "z": 678.946,
+      "heading": 300.05,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_195588955_5"
+    }
+  ]
+}

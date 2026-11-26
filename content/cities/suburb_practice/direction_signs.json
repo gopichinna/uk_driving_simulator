@@ -1,0 +1,483 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "suburb_practice",
+  "origin": {
+    "lat": 52.5965,
+    "lon": -2.187
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "signs": [
+    {
+      "id": "ds_001",
+      "nodeId": "n_247062577",
+      "approachLinkId": "l_101008255_0",
+      "x": -74.639,
+      "z": -275.368,
+      "heading": 179.59,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "left"
+        },
+        {
+          "text": "Wightwick Hall School",
+          "poiId": "poi_school_267064364",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_002",
+      "nodeId": "n_247062577",
+      "approachLinkId": "l_852013519_1",
+      "x": -45.326,
+      "z": -323.499,
+      "heading": 282.13,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "left"
+        },
+        {
+          "text": "Perton Middle School",
+          "poiId": "poi_school_258769265",
+          "symbol": "none",
+          "direction": "right"
+        }
+      ]
+    },
+    {
+      "id": "ds_003",
+      "nodeId": "n_247062577",
+      "approachLinkId": "l_86128112_5",
+      "x": -97.711,
+      "z": -353.957,
+      "heading": 3.77,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "right"
+        },
+        {
+          "text": "Perton Middle School",
+          "poiId": "poi_school_258769265",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_004",
+      "nodeId": "n_4579388424",
+      "approachLinkId": "l_43144629_3",
+      "x": 889.988,
+      "z": -511.657,
+      "heading": 199.42,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_14170476704",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Tettenhall College",
+          "poiId": "poi_school_47636019",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_005",
+      "nodeId": "n_4618676261",
+      "approachLinkId": "l_31953686_1",
+      "x": 405.921,
+      "z": -780.994,
+      "heading": 324.79,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_006",
+      "nodeId": "n_4618676261",
+      "approachLinkId": "l_31953686_2",
+      "x": 369.174,
+      "z": -708.967,
+      "heading": 144.19,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Tettenhall College",
+          "poiId": "poi_school_47636019",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_007",
+      "nodeId": "n_4618676262",
+      "approachLinkId": "l_23486317_0",
+      "x": 404.29,
+      "z": -728.102,
+      "heading": 243.74,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_008",
+      "nodeId": "n_4618676262",
+      "approachLinkId": "l_23486317_1",
+      "x": 327.064,
+      "z": -752.354,
+      "heading": 63.83,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_009",
+      "nodeId": "n_4618676263",
+      "approachLinkId": "l_31953693_0",
+      "x": 355.949,
+      "z": -738.16,
+      "heading": 63.83,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_010",
+      "nodeId": "n_4618676263",
+      "approachLinkId": "l_31953693_1",
+      "x": 433.152,
+      "z": -713.862,
+      "heading": 243.74,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_011",
+      "nodeId": "n_4618676264",
+      "approachLinkId": "l_23486318_0",
+      "x": 390.05,
+      "z": -758.5,
+      "heading": 324.79,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_012",
+      "nodeId": "n_4618676264",
+      "approachLinkId": "l_23486318_1",
+      "x": 353.196,
+      "z": -686.648,
+      "heading": 144.92,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_296134111",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Christ Church",
+          "poiId": "poi_school_47701781",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    },
+    {
+      "id": "ds_013",
+      "nodeId": "n_540480555",
+      "approachLinkId": "l_43144629_4",
+      "x": 862.151,
+      "z": -521.833,
+      "heading": 299.18,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_14170476704",
+          "symbol": "hospital",
+          "direction": "left"
+        }
+      ]
+    },
+    {
+      "id": "ds_014",
+      "nodeId": "n_540480555",
+      "approachLinkId": "l_43144630_0",
+      "x": 864.204,
+      "z": -447.598,
+      "heading": 134.24,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_left"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_14170476704",
+          "symbol": "hospital",
+          "direction": "ahead_left"
+        }
+      ]
+    },
+    {
+      "id": "ds_015",
+      "nodeId": "n_7628049848",
+      "approachLinkId": "l_43144629_0",
+      "x": 856.714,
+      "z": -516.718,
+      "heading": 333.7,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead_right"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_14170476704",
+          "symbol": "hospital",
+          "direction": "ahead_right"
+        }
+      ]
+    },
+    {
+      "id": "ds_016",
+      "nodeId": "n_7628049852",
+      "approachLinkId": "l_43144629_1",
+      "x": 854.3,
+      "z": -507.94,
+      "heading": 354.5,
+      "distanceBeforeJunctionM": 40.0,
+      "style": "local",
+      "rows": [
+        {
+          "text": "City Centre",
+          "poiId": "poi_city_centre_queen_square",
+          "symbol": "city_centre",
+          "direction": "ahead"
+        },
+        {
+          "text": "Hospital",
+          "poiId": "poi_hospital_14170476704",
+          "symbol": "hospital",
+          "direction": "ahead"
+        },
+        {
+          "text": "Tettenhall College",
+          "poiId": "poi_school_47636019",
+          "symbol": "none",
+          "direction": "ahead"
+        }
+      ]
+    }
+  ]
+}

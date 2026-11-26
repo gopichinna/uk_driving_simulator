@@ -1,0 +1,282 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "suburb_practice",
+  "origin": {
+    "lat": 52.5965,
+    "lon": -2.187
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "busStops": [
+    {
+      "id": "bs_001",
+      "x": 496.472,
+      "z": 17.912,
+      "heading": 28.96,
+      "name": "Woodhouse Rd North / Regina Crescent",
+      "linkId": "l_43144587_2",
+      "osmId": 369483255
+    },
+    {
+      "id": "bs_002",
+      "x": 514.916,
+      "z": 29.538,
+      "heading": 28.96,
+      "name": "Woodhouse Rd North / Regina Crescent",
+      "linkId": "l_43144587_2",
+      "osmId": 369483257
+    },
+    {
+      "id": "bs_003",
+      "x": 399.55,
+      "z": -277.684,
+      "heading": 36.13,
+      "name": "Woodhouse Rd / Kingsley Avenue",
+      "linkId": "l_43144601_1",
+      "osmId": 369483260
+    },
+    {
+      "id": "bs_004",
+      "x": 431.14,
+      "z": -245.072,
+      "heading": 26.45,
+      "name": "Woodhouse Rd / Kingsley Avenue",
+      "linkId": "l_43144601_1",
+      "osmId": 369483263
+    },
+    {
+      "id": "bs_005",
+      "x": 480.03,
+      "z": -829.064,
+      "heading": 296.44,
+      "name": "Church Rd / Grove Lane",
+      "linkId": "l_31953686_0",
+      "osmId": 369483270
+    },
+    {
+      "id": "bs_006",
+      "x": 505.208,
+      "z": -841.363,
+      "heading": 294.62,
+      "name": "Church Rd / Grove Lane",
+      "linkId": "l_31953686_0",
+      "osmId": 369483272
+    },
+    {
+      "id": "bs_007",
+      "x": 360.269,
+      "z": -716.793,
+      "heading": 324.19,
+      "name": "School Rd / Tettenhall Wood Institute",
+      "linkId": "l_23486318_1",
+      "osmId": 369483274
+    },
+    {
+      "id": "bs_008",
+      "x": 356.321,
+      "z": -712.448,
+      "heading": 324.19,
+      "name": "School Rd / Tettenhall Wood Institute",
+      "linkId": "l_23486318_1",
+      "osmId": 369483275
+    },
+    {
+      "id": "bs_009",
+      "x": 255.65,
+      "z": -592.655,
+      "heading": 310.55,
+      "name": "School Rd / Woodland Avenue",
+      "linkId": "l_23486318_5",
+      "osmId": 369483277
+    },
+    {
+      "id": "bs_010",
+      "x": 224.692,
+      "z": -489.71,
+      "heading": 45.64,
+      "name": "The Crescent / School Rd",
+      "linkId": "l_43144602_0",
+      "osmId": 369483278
+    },
+    {
+      "id": "bs_011",
+      "x": -50.702,
+      "z": -307.374,
+      "heading": 282.13,
+      "name": "School Rd / Penk Rise",
+      "linkId": "l_852013517_1",
+      "osmId": 369483280
+    },
+    {
+      "id": "bs_012",
+      "x": -5.774,
+      "z": -345.242,
+      "heading": 309.15,
+      "name": "School Rd / Penk Rise",
+      "linkId": "l_147060981_1",
+      "osmId": 369483283
+    },
+    {
+      "id": "bs_013",
+      "x": 246.771,
+      "z": 228.553,
+      "heading": 292.32,
+      "name": "Regis Rd / Kings Comp School",
+      "linkId": "l_87055374_5",
+      "osmId": 369483285
+    },
+    {
+      "id": "bs_014",
+      "x": 524.23,
+      "z": 751.54,
+      "heading": 300.28,
+      "name": "Wergs Rd / Danescourt Cemetery",
+      "linkId": "l_195588955_6",
+      "osmId": 369483287
+    },
+    {
+      "id": "bs_015",
+      "x": 533.132,
+      "z": 760.908,
+      "heading": 300.28,
+      "name": "Wergs Rd / Danescourt Cemetery",
+      "linkId": "l_195588955_6",
+      "osmId": 369483289
+    },
+    {
+      "id": "bs_016",
+      "x": 1004.639,
+      "z": 422.684,
+      "heading": 181.78,
+      "name": "Wergs Rd / Wrottesley Rd",
+      "linkId": "l_550433432_0",
+      "osmId": 369483324
+    },
+    {
+      "id": "bs_017",
+      "x": 793.46,
+      "z": 193.303,
+      "heading": 250.93,
+      "name": "Regis Rd / Grange Rd",
+      "linkId": "l_43072868_3",
+      "osmId": 369483327
+    },
+    {
+      "id": "bs_018",
+      "x": 818.219,
+      "z": 201.862,
+      "heading": 250.93,
+      "name": "Regis Rd / Grange Rd",
+      "linkId": "l_43072868_3",
+      "osmId": 369483329
+    },
+    {
+      "id": "bs_019",
+      "x": 790.47,
+      "z": 595.461,
+      "heading": 299.76,
+      "name": "Wergs Rd / Danescourt Rd",
+      "linkId": "l_195588955_2",
+      "osmId": 369483339
+    },
+    {
+      "id": "bs_020",
+      "x": 751.555,
+      "z": 619.441,
+      "heading": 300.15,
+      "name": "Wergs Rd / Danescourt Rd",
+      "linkId": "l_195588955_3",
+      "osmId": 369483342
+    },
+    {
+      "id": "bs_021",
+      "x": 405.369,
+      "z": 819.284,
+      "heading": 299.25,
+      "name": "Wergs Rd / Coppice Lane",
+      "linkId": "l_195588955_7",
+      "osmId": 369483344
+    },
+    {
+      "id": "bs_022",
+      "x": 402.422,
+      "z": 821.367,
+      "heading": 298.42,
+      "name": "Wergs Rd / Coppice Lane",
+      "linkId": "l_195588955_7",
+      "osmId": 369483346
+    },
+    {
+      "id": "bs_023",
+      "x": 135.422,
+      "z": -475.851,
+      "heading": 316.19,
+      "name": "School Rd / The Crescent",
+      "linkId": "l_147060981_0",
+      "osmId": 369484464
+    },
+    {
+      "id": "bs_024",
+      "x": -357.59,
+      "z": -86.05,
+      "heading": 349.92,
+      "name": "Dippons Lane",
+      "linkId": "l_101008255_1",
+      "osmId": 533879030
+    },
+    {
+      "id": "bs_025",
+      "x": 461.61,
+      "z": -702.58,
+      "heading": 63.74,
+      "name": "Wood Rd / Church Road",
+      "linkId": "l_31953693_1",
+      "osmId": 4815874948
+    },
+    {
+      "id": "bs_026",
+      "x": 409.61,
+      "z": -709.718,
+      "heading": 63.74,
+      "name": "Wood Rd / Church Road",
+      "linkId": "l_31953693_1",
+      "osmId": 4815874949
+    },
+    {
+      "id": "bs_027",
+      "x": 857.097,
+      "z": -413.592,
+      "heading": 44.25,
+      "name": "Wood Rd / Corfton Drive",
+      "linkId": "l_31953693_10",
+      "osmId": 4815874950
+    },
+    {
+      "id": "bs_028",
+      "x": 938.025,
+      "z": -793.371,
+      "heading": 71.5,
+      "name": "Henwood Rd / High Meadows",
+      "linkId": "l_43144606_3",
+      "osmId": 4815874974
+    },
+    {
+      "id": "bs_029",
+      "x": 877.228,
+      "z": -879.567,
+      "heading": 19.53,
+      "name": "Henwood Rd / Bridgnorth Rd",
+      "linkId": "l_23389064_0",
+      "osmId": 4815874975
+    }
+  ]
+}

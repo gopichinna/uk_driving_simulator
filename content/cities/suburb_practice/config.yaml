@@ -1,0 +1,30 @@
+pack_id: suburb_practice
+display_name: "Tettenhall & Claregate Suburban Practice"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# Tettenhall / Claregate, Wolverhampton (West Midlands)
+# Includes 30 mph residential grid, A41 Wergs Road / Tettenhall Road 40 mph distributor,
+# two OSM mini-roundabouts, and Woodthorne Primary School.
+origin:
+  lat: 52.5965
+  lon: -2.1870
+
+# ~2.0 km x 1.9 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-2.2020, 52.5880, -2.1720, 52.6050]
+
+bbox_reason: >
+  Suburban West Midlands area in Tettenhall and Claregate (Wolverhampton)
+  containing a 30 mph residential street grid, distributor roads (A41 Wergs Road),
+  two OSM mini-roundabouts, bus stops, traffic signals, and Woodthorne Primary School.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "No trams in this area; keep extract config consistent with Wolverhampton packs"
