@@ -40,6 +40,12 @@
     "voice.GB.WX.FOG_LIGHTS.fault": "[Swítch óff fóg líghts nów vísíbílíty hás ímpróvéd. ~~~~~~~~~~~~~~~~~~~~]",
     "voice.GB.WX.FOG_LIGHTS.good": "[Góód fóg-líght díscíplíné ás cóndítíóns cléáréd. ~~~~~~~~~~~~~~~~~~~~]",
     "voice.GB.WX.FOG_STOPPING.fault": "[Slów dówn só yóú cán stóp wíthín yóúr víéw. ~~~~~~~~~~~~~~~~~~]",
-    "voice.GB.WX.FOG_STOPPING.good": "[Sáfé spééd fór thé vísíbílíty áhéád. ~~~~~~~~~~~~~~~]"
+    "voice.GB.WX.FOG_STOPPING.good": "[Sáfé spééd fór thé vísíbílíty áhéád. ~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.GIVE_WAY.fault": "[Gívé wáy tó tráffíc álréády ón thé máín róád. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.GIVE_WAY.good": "[Cléán gívé-wáy chéck béfóré jóíníng. ~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.BOX.fault": "[Wáít úntíl yóúr éxít fróm thé bóx ís cléár. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.BOX.good": "[Góód pátíéncé kéépíng thé bóx júnctíón cléár. ~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.XNG.ZIGZAG_OVERTAKE.fault": "[Névér óvértáké ínsídé thé cróssíng zíg-zág línés. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.XNG.ZIGZAG_OVERTAKE.good": "[Góód hóld báck ínsídé thé zíg-zág zóné. ~~~~~~~~~~~~~~~~]"
   }
 }

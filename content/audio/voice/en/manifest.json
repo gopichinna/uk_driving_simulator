@@ -14,217 +14,253 @@
       "key": "voice.GB.GAP.TWO_SECOND.good",
       "file": "voice.GB.GAP.TWO_SECOND.good.wav",
       "text": "Good safe following gap.",
-      "durationS": 1.304
+      "durationS": 1.321
     },
     {
       "key": "voice.GB.GAP.WET_ICY.fault",
       "file": "voice.GB.GAP.WET_ICY.fault.wav",
       "text": "Double your following gap on wet roads.",
-      "durationS": 2.11
+      "durationS": 2.084
     },
     {
       "key": "voice.GB.GAP.WET_ICY.good",
       "file": "voice.GB.GAP.WET_ICY.good.wav",
       "text": "Safe four-second gap in the rain.",
-      "durationS": 1.802
+      "durationS": 1.815
+    },
+    {
+      "key": "voice.GB.JCT.BOX.fault",
+      "file": "voice.GB.JCT.BOX.fault.wav",
+      "text": "Wait until your exit from the box is clear.",
+      "durationS": 2.099
+    },
+    {
+      "key": "voice.GB.JCT.BOX.good",
+      "file": "voice.GB.JCT.BOX.good.wav",
+      "text": "Good patience keeping the box junction clear.",
+      "durationS": 2.183
+    },
+    {
+      "key": "voice.GB.JCT.GIVE_WAY.fault",
+      "file": "voice.GB.JCT.GIVE_WAY.fault.wav",
+      "text": "Give way to traffic already on the main road.",
+      "durationS": 2.317
+    },
+    {
+      "key": "voice.GB.JCT.GIVE_WAY.good",
+      "file": "voice.GB.JCT.GIVE_WAY.good.wav",
+      "text": "Clean give-way check before joining.",
+      "durationS": 1.727
     },
     {
       "key": "voice.GB.OBS.LANE_CHANGE.fault",
       "file": "voice.GB.OBS.LANE_CHANGE.fault.wav",
       "text": "Check your blind spot and signal before changing lanes.",
-      "durationS": 3.275
+      "durationS": 3.254
     },
     {
       "key": "voice.GB.OBS.LANE_CHANGE.good",
       "file": "voice.GB.OBS.LANE_CHANGE.good.wav",
       "text": "Nice smooth lane change with a clear gap.",
-      "durationS": 2.15
+      "durationS": 2.105
     },
     {
       "key": "voice.GB.RBT.APPROACH_LANE.fault",
       "file": "voice.GB.RBT.APPROACH_LANE.fault.wav",
       "text": "Pick the lane matching your exit before the roundabout.",
-      "durationS": 2.467
+      "durationS": 2.5
     },
     {
       "key": "voice.GB.RBT.APPROACH_LANE.good",
       "file": "voice.GB.RBT.APPROACH_LANE.good.wav",
       "text": "Good early lane choice on the approach.",
-      "durationS": 1.899
+      "durationS": 1.913
     },
     {
       "key": "voice.GB.RBT.GIVE_WAY_RIGHT.fault",
       "file": "voice.GB.RBT.GIVE_WAY_RIGHT.fault.wav",
       "text": "Give way to traffic coming from your right.",
-      "durationS": 1.857
+      "durationS": 1.888
     },
     {
       "key": "voice.GB.RBT.GIVE_WAY_RIGHT.good",
       "file": "voice.GB.RBT.GIVE_WAY_RIGHT.good.wav",
       "text": "Good roundabout priority check to the right.",
-      "durationS": 2.197
+      "durationS": 2.173
     },
     {
       "key": "voice.GB.RBT.SIGNAL_APPROACH.fault",
       "file": "voice.GB.RBT.SIGNAL_APPROACH.fault.wav",
       "text": "Match your approach signal to your roundabout exit.",
-      "durationS": 2.397
+      "durationS": 2.342
     },
     {
       "key": "voice.GB.RBT.SIGNAL_APPROACH.good",
       "file": "voice.GB.RBT.SIGNAL_APPROACH.good.wav",
       "text": "Clear roundabout approach signal.",
-      "durationS": 1.52
+      "durationS": 1.543
     },
     {
       "key": "voice.GB.RBT.SIGNAL_EXIT.fault",
       "file": "voice.GB.RBT.SIGNAL_EXIT.fault.wav",
       "text": "Signal left after passing the exit before yours.",
-      "durationS": 2.537
+      "durationS": 2.596
     },
     {
       "key": "voice.GB.RBT.SIGNAL_EXIT.good",
       "file": "voice.GB.RBT.SIGNAL_EXIT.good.wav",
       "text": "Well-timed exit signal.",
-      "durationS": 1.442
+      "durationS": 1.377
     },
     {
       "key": "voice.GB.RBT.STAY_IN_LANE.fault",
       "file": "voice.GB.RBT.STAY_IN_LANE.fault.wav",
       "text": "Hold your marked lane around the roundabout.",
-      "durationS": 1.939
+      "durationS": 2.021
     },
     {
       "key": "voice.GB.RBT.STAY_IN_LANE.good",
       "file": "voice.GB.RBT.STAY_IN_LANE.good.wav",
       "text": "Smooth lane discipline around the island.",
-      "durationS": 2.073
+      "durationS": 2.087
     },
     {
       "key": "voice.GB.RBT.WRONG_WAY.fault",
       "file": "voice.GB.RBT.WRONG_WAY.fault.wav",
       "text": "Always go clockwise around UK roundabouts.",
-      "durationS": 2.327
+      "durationS": 2.398
     },
     {
       "key": "voice.GB.RBT.WRONG_WAY.good",
       "file": "voice.GB.RBT.WRONG_WAY.good.wav",
       "text": "Clean clockwise path around the roundabout.",
-      "durationS": 2.157
+      "durationS": 2.094
     },
     {
       "key": "voice.GB.SIG.TIMELY.fault",
       "file": "voice.GB.SIG.TIMELY.fault.wav",
       "text": "Signal earlier so other drivers have time to react.",
-      "durationS": 2.78
+      "durationS": 2.731
     },
     {
       "key": "voice.GB.SIG.TIMELY.good",
       "file": "voice.GB.SIG.TIMELY.good.wav",
       "text": "Clear, early signalling.",
-      "durationS": 1.197
+      "durationS": 1.146
     },
     {
       "key": "voice.GB.SPD.OVER_LIMIT.fault",
       "file": "voice.GB.SPD.OVER_LIMIT.fault.wav",
       "text": "Ease off the speed, you are over the limit.",
-      "durationS": 1.933
+      "durationS": 2.007
     },
     {
       "key": "voice.GB.SPD.OVER_LIMIT.good",
       "file": "voice.GB.SPD.OVER_LIMIT.good.wav",
       "text": "Steady speed within the limit.",
-      "durationS": 1.444
+      "durationS": 1.513
     },
     {
       "key": "voice.GB.VRU.PASS_CYCLIST.fault",
       "file": "voice.GB.VRU.PASS_CYCLIST.fault.wav",
       "text": "Give cyclists at least 1.5 metres when passing.",
-      "durationS": 3.147
+      "durationS": 2.974
     },
     {
       "key": "voice.GB.VRU.PASS_CYCLIST.good",
       "file": "voice.GB.VRU.PASS_CYCLIST.good.wav",
       "text": "Great wide clearance past the cyclist.",
-      "durationS": 2.292
+      "durationS": 2.312
     },
     {
       "key": "voice.GB.WX.FOG_LIGHTS.fault",
       "file": "voice.GB.WX.FOG_LIGHTS.fault.wav",
       "text": "Switch off fog lights now visibility has improved.",
-      "durationS": 3.077
+      "durationS": 3.262
     },
     {
       "key": "voice.GB.WX.FOG_LIGHTS.good",
       "file": "voice.GB.WX.FOG_LIGHTS.good.wav",
       "text": "Good fog-light discipline as conditions cleared.",
-      "durationS": 2.542
+      "durationS": 2.447
     },
     {
       "key": "voice.GB.WX.FOG_STOPPING.fault",
       "file": "voice.GB.WX.FOG_STOPPING.fault.wav",
       "text": "Slow down so you can stop within your view.",
-      "durationS": 1.987
+      "durationS": 1.946
     },
     {
       "key": "voice.GB.WX.FOG_STOPPING.good",
       "file": "voice.GB.WX.FOG_STOPPING.good.wav",
       "text": "Safe speed for the visibility ahead.",
-      "durationS": 1.867
+      "durationS": 1.852
     },
     {
       "key": "voice.GB.WX.HEADLIGHTS_NIGHT.fault",
       "file": "voice.GB.WX.HEADLIGHTS_NIGHT.fault.wav",
       "text": "Switch on your dipped headlights at night.",
-      "durationS": 1.754
+      "durationS": 1.771
     },
     {
       "key": "voice.GB.WX.HEADLIGHTS_NIGHT.good",
       "file": "voice.GB.WX.HEADLIGHTS_NIGHT.good.wav",
       "text": "Good dipped headlight use at night.",
-      "durationS": 1.562
+      "durationS": 1.552
     },
     {
       "key": "voice.GB.WX.LOW_VISIBILITY.fault",
       "file": "voice.GB.WX.LOW_VISIBILITY.fault.wav",
       "text": "Switch on headlights when visibility drops below 100 metres.",
-      "durationS": 3.637
+      "durationS": 3.604
     },
     {
       "key": "voice.GB.WX.LOW_VISIBILITY.good",
       "file": "voice.GB.WX.LOW_VISIBILITY.good.wav",
       "text": "Good headlight use in low visibility.",
-      "durationS": 1.829
+      "durationS": 1.995
     },
     {
       "key": "voice.GB.WX.NO_DAZZLE.fault",
       "file": "voice.GB.WX.NO_DAZZLE.fault.wav",
       "text": "Dip your headlights so you do not dazzle others.",
-      "durationS": 1.931
+      "durationS": 1.857
     },
     {
       "key": "voice.GB.WX.NO_DAZZLE.good",
       "file": "voice.GB.WX.NO_DAZZLE.good.wav",
       "text": "Good timely dip for oncoming traffic.",
-      "durationS": 1.99
+      "durationS": 1.992
+    },
+    {
+      "key": "voice.GB.XNG.ZIGZAG_OVERTAKE.fault",
+      "file": "voice.GB.XNG.ZIGZAG_OVERTAKE.fault.wav",
+      "text": "Never overtake inside the crossing zig-zag lines.",
+      "durationS": 2.51
+    },
+    {
+      "key": "voice.GB.XNG.ZIGZAG_OVERTAKE.good",
+      "file": "voice.GB.XNG.ZIGZAG_OVERTAKE.good.wav",
+      "text": "Good hold back inside the zig-zag zone.",
+      "durationS": 2.011
     },
     {
       "key": "voice.lesson.passed",
       "file": "voice.lesson.passed.wav",
       "text": "Well done, you passed this lesson cleanly.",
-      "durationS": 2.065
+      "durationS": 2.032
     },
     {
       "key": "voice.lesson.start",
       "file": "voice.lesson.start.wav",
       "text": "Keep left, scan ahead, and drive smoothly.",
-      "durationS": 2.811
+      "durationS": 2.865
     },
     {
       "key": "voice.lesson.try_again",
       "file": "voice.lesson.try_again.wav",
       "text": "Let us review what happened and try again.",
-      "durationS": 2.325
+      "durationS": 2.379
     }
   ]
 }
