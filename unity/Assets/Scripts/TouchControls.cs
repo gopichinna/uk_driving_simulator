@@ -6,8 +6,8 @@ namespace LToLocal.Game
     /// <summary>
     /// Prototype on-screen controls (landscape):
     ///   bottom-left  – a fixed steering wheel: put a thumb on it and turn it (it springs back to centre)
-    ///   above wheel  – two big indicator buttons, drawn by DriveGame at IndicatorLeftRect / IndicatorRightRect
-    ///   bottom-right – hold GO to accelerate, BRAKE to slow down
+    ///   above wheel  – the left indicator; above the brake – the right indicator (both drawn by DriveGame)
+    ///   bottom-right – two pedals: the wide BRAKE, and the tall GAS beside it
     /// Keyboard fallback for the Unity editor: arrow keys or WASD.
     /// Drawn with IMGUI for now; replaced by the real HUD in the vertical slice.
     /// </summary>
@@ -46,15 +46,16 @@ namespace LToLocal.Game
         public static Rect LookLeftRect => new Rect(Screen.width * 0.015f, MirrorBottom + Screen.height * 0.025f, Screen.width * 0.17f, Screen.height * 0.11f);
         public static Rect LookRightRect => new Rect(Screen.width * 0.815f, MirrorBottom + Screen.height * 0.025f, Screen.width * 0.17f, Screen.height * 0.11f);
 
-        // The wheel never moves: bottom-left, where the left thumb rests. Indicators sit right above it.
-        public static Vector2 WheelCentre => new Vector2(Screen.width * 0.13f, Screen.height * 0.79f);  // GUI coordinates (y down)
+        // The wheel never moves: lower left, a little in from the edge. The left indicator sits right above it.
+        public static Vector2 WheelCentre => new Vector2(Screen.width * 0.20f, Screen.height * 0.79f);  // GUI coordinates (y down)
         public static float WheelRadius => Screen.height * 0.15f;
-        public static Rect IndicatorLeftRect => new Rect(Screen.width * 0.03f, Screen.height * 0.46f, Screen.width * 0.075f, Screen.height * 0.13f);
-        public static Rect IndicatorRightRect => new Rect(Screen.width * 0.115f, Screen.height * 0.46f, Screen.width * 0.075f, Screen.height * 0.13f);
+        public static Rect IndicatorLeftRect => new Rect(WheelCentre.x - Screen.width * 0.0375f, Screen.height * 0.47f, Screen.width * 0.075f, Screen.height * 0.13f);
 
-        // Pedals: bigger and further apart so the thumb can't hit the wrong one.
-        private Rect GoRect => new Rect(Screen.width * 0.86f, Screen.height * 0.45f, Screen.width * 0.12f, Screen.height * 0.50f);
-        private Rect BrakeRect => new Rect(Screen.width * 0.70f, Screen.height * 0.62f, Screen.width * 0.12f, Screen.height * 0.33f);
+        // Pedals, like a real car: the wide brake on the left, the tall gas on the right, a gap between them.
+        // The right indicator sits right above the brake.
+        private static Rect GasRect => new Rect(Screen.width * 0.87f, Screen.height * 0.50f, Screen.width * 0.11f, Screen.height * 0.45f);
+        private static Rect BrakeRect => new Rect(Screen.width * 0.72f, Screen.height * 0.68f, Screen.width * 0.12f, Screen.height * 0.27f);
+        public static Rect IndicatorRightRect => new Rect(BrakeRect.x + (BrakeRect.width - Screen.width * 0.075f) / 2f, Screen.height * 0.47f, Screen.width * 0.075f, Screen.height * 0.13f);
 
         private static float AngleAround(Vector2 centre, Vector2 p) => Mathf.Atan2(p.x - centre.x, -(p.y - centre.y)) * Mathf.Rad2Deg; // 0 = straight up, + = clockwise
         private static float SensitivityFactor => Mathf.Clamp(SteeringSensitivity / 0.6f, 0.5f, 2.5f);
@@ -73,7 +74,7 @@ namespace LToLocal.Game
 
                 if (LookLeftRect.Contains(gui)) { _look = -1; continue; }
                 if (LookRightRect.Contains(gui)) { _look = 1; continue; }
-                if (GoRect.Contains(gui)) { _go = true; continue; }
+                if (GasRect.Contains(gui)) { _go = true; continue; }
                 if (BrakeRect.Contains(gui)) { _brake = true; continue; }
 
                 // Steering wheel: a finger that lands on the wheel grabs it, and turning it steers.
@@ -129,10 +130,8 @@ namespace LToLocal.Game
             GUI.color = _look > 0 ? new Color(1f, 0.85f, 0.3f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
             GUI.Box(LookRightRect, "Look right", lookStyle);
 
-            GUI.color = _go ? new Color(0.5f, 1f, 0.6f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
-            GUI.Box(GoRect, "GO", style);
-            GUI.color = _brake ? new Color(1f, 0.55f, 0.55f, 0.95f) : new Color(1f, 1f, 1f, 0.7f);
-            GUI.Box(BrakeRect, "BRAKE", style);
+            DrawPedal(GasRect, "GAS", _go, new Color(0.35f, 0.85f, 0.45f), style);
+            DrawPedal(BrakeRect, "BRAKE", _brake, new Color(0.95f, 0.4f, 0.4f), style);
 
             // The wheel: fixed in place, turning with your thumb (or with the keyboard in the editor).
             if (s_wheel == null) s_wheel = MakeWheelTexture();
@@ -144,6 +143,41 @@ namespace LToLocal.Game
             GUI.DrawTexture(new Rect(c.x - r, c.y - r, r * 2, r * 2), s_wheel);
             GUI.matrix = old;
             GUI.color = Color.white;
+        }
+
+        private static Texture2D s_pedal;
+
+        /// <summary>A pedal: a rounded rubber pad with ridges across it; it sinks and lights up while pressed.</summary>
+        private static void DrawPedal(Rect r, string label, bool pressed, Color tint, GUIStyle style)
+        {
+            if (s_pedal == null) s_pedal = MakePedalTexture();
+            if (pressed) r = new Rect(r.x + r.width * 0.03f, r.y + r.height * 0.02f, r.width * 0.94f, r.height * 0.96f);
+            GUI.color = pressed ? tint : Color.Lerp(Color.white, tint, 0.35f) * new Color(1f, 1f, 1f, 0.85f);
+            GUI.DrawTexture(r, s_pedal);
+            GUI.color = pressed ? Color.black : new Color(0.1f, 0.1f, 0.1f, 0.9f);
+            GUI.Label(r, label, style);
+        }
+
+        private static Texture2D MakePedalTexture()
+        {
+            const int W = 128, H = 256;
+            var tex = new Texture2D(W, H, TextureFormat.RGBA32, false) { filterMode = FilterMode.Bilinear, wrapMode = TextureWrapMode.Clamp };
+            var px = new Color32[W * H];
+            const float corner = 28f;
+            for (int y = 0; y < H; y++)
+                for (int x = 0; x < W; x++)
+                {
+                    float cx = Mathf.Max(corner - x, 0f, x - (W - 1 - corner)), cy = Mathf.Max(corner - y, 0f, y - (H - 1 - corner));
+                    float d = Mathf.Sqrt(cx * cx + cy * cy);
+                    if (d > corner) { px[y * W + x] = new Color32(0, 0, 0, 0); continue; }
+                    float edge = Mathf.Clamp01((corner - d) / 3f);                     // soft rounded edge
+                    float ridge = (y % 22) < 5 ? 0.78f : 1f;                              // anti-slip ridges
+                    float shade = (0.78f + 0.22f * (x / (float)W)) * ridge;               // light from the left
+                    px[y * W + x] = new Color(shade, shade, shade, edge);
+                }
+            tex.SetPixels32(px);
+            tex.Apply();
+            return tex;
         }
 
         /// <summary>A steering wheel picture: dark rim, three spokes, a hub and a yellow mark at the top so you can see it turn.</summary>

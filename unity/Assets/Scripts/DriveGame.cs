@@ -230,13 +230,13 @@ namespace LToLocal.Game
             // Speed
             GUI.Box(new Rect(W * 0.5f - H * 0.16f, H * 0.84f, H * 0.32f, H * 0.13f), $"{_curr.SpeedMph:0} mph", _hudStyle);
 
-            // Speed limit (beside the steering wheel)
+            // Speed limit (below the nearside mirror)
             double limit = _course.SpeedLimitMph(_curr);
             GUI.color = _curr.SpeedMph > limit + 0.5 ? new Color(1f, 0.5f, 0.5f) : Color.white;
-            GUI.Box(new Rect(W * 0.215f, H * 0.64f, H * 0.14f, H * 0.14f), limit.ToString("0"), _signStyle);
+            GUI.Box(new Rect(W * 0.02f, H * 0.47f, H * 0.14f, H * 0.14f), limit.ToString("0"), _signStyle);
             GUI.color = Color.white;
 
-            // Indicators: two big buttons right above the steering wheel, so one thumb can steer and signal
+            // Indicators: left above the steering wheel, right above the brake, so each thumb can signal without moving
             bool blink = Mathf.Repeat(Time.time, 0.8f) < 0.4f;
             GUI.color = _indicator < 0 && blink ? new Color(0.4f, 1f, 0.45f) : Color.white;
             if (GUI.Button(TouchControls.IndicatorLeftRect, "<<", _buttonStyle)) ToggleIndicator(-1);
