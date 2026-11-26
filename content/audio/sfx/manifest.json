@@ -52,10 +52,31 @@
       "loop": false
     },
     {
+      "key": "footsteps_pedestrian",
+      "file": "footsteps_pedestrian.wav",
+      "durationS": 1.4,
+      "targetLufs": -18,
+      "loop": false
+    },
+    {
+      "key": "gravel_verge",
+      "file": "gravel_verge.wav",
+      "durationS": 3.0,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
       "key": "horn",
       "file": "horn.wav",
       "durationS": 0.65,
       "targetLufs": -16,
+      "loop": false
+    },
+    {
+      "key": "horn_short",
+      "file": "horn_short.wav",
+      "durationS": 0.25,
+      "targetLufs": -18,
       "loop": false
     },
     {
@@ -73,11 +94,32 @@
       "loop": false
     },
     {
+      "key": "rain_loop",
+      "file": "rain_loop.wav",
+      "durationS": 4.0,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "road_noise_town",
+      "file": "road_noise_town.wav",
+      "durationS": 4.0,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
       "key": "tyre_squeal",
       "file": "tyre_squeal.wav",
       "durationS": 1.2,
       "targetLufs": -16,
       "loop": false
+    },
+    {
+      "key": "wipers",
+      "file": "wipers.wav",
+      "durationS": 3.0,
+      "targetLufs": -16,
+      "loop": true
     },
     {
       "key": "chime_fault",

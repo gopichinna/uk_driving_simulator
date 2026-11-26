@@ -33,6 +33,12 @@ All driving effects and loops are sourced from **CC0** recordings and normalised
 | `tyre_squeal.wav` | Recorded tyre squeal | audible-edge | https://freesound.org/people/audible-edge/sounds/71736/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
 | `crossing_beep.wav` | Recorded pedestrian crossing beep | roisin.gleeson | https://freesound.org/people/roisin.gleeson/sounds/699144/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
 | `ambience_town.wav` | Recorded city street traffic ambience | szegvari | https://freesound.org/people/szegvari/sounds/608158/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −23 LUFS |
+| `rain_loop.wav` | Rain drops on metal/roof loop | hargissssound | https://freesound.org/people/hargissssound/sounds/321647/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
+| `wipers.wav` | Car windshield wipers loop | Breviceps | https://freesound.org/people/Breviceps/sounds/573586/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 3/5 | −16 LUFS |
+| `horn_short.wav` | Alfa Romeo MiTo short horn tap | boedie | https://freesound.org/people/boedie/sounds/457425/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 5/5 | −18 LUFS |
+| `road_noise_town.wav` | Town street tyre/traffic cabin loop | szegvari | https://freesound.org/people/szegvari/sounds/608158/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 3/5 | −16 LUFS |
+| `gravel_verge.wav` | Car driving on gravel verge loop | cognito perceptu | https://freesound.org/people/cognito%20perceptu/sounds/97605/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
+| `footsteps_pedestrian.wav` | Pedestrian footsteps on wet pavement | evsecrets | https://freesound.org/people/evsecrets/sounds/334457/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −18 LUFS |
 | `ui_click.wav` | UI button click | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | 4/5 | −16 LUFS |
 | `chime_success.wav` | Gentle UI success chime | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | 4/5 | −16 LUFS |
 | `chime_fault.wav` | Gentle UI fault chime | L to Local contributors | `pipeline/ltl_pipeline/audio.py` | CC0 1.0 Universal | 4/5 | −16 LUFS |

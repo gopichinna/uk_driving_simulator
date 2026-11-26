@@ -98,6 +98,12 @@ def test_game_loaded_audio_assets_are_16bit_pcm_wav() -> None:
         "engine_idle.wav",
         "engine_low.wav",
         "engine_mid.wav",
+        "rain_loop.wav",
+        "wipers.wav",
+        "horn_short.wav",
+        "road_noise_town.wav",
+        "gravel_verge.wav",
+        "footsteps_pedestrian.wav",
     ]
     for fname in required_sfx:
         clip = AUDIO_DIR / "sfx" / fname

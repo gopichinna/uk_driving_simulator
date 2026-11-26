@@ -212,9 +212,15 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
         "indicator_on.wav": (cache_dir / "blinkers.mp3", 0.35, 0.14, -16, False),
         "indicator_off.wav": (cache_dir / "blinkers.mp3", 0.72, 0.14, -16, False),
         "horn.wav": (cache_dir / "horn.mp3", 0.25, 0.65, -16, False),
+        "horn_short.wav": (cache_dir / "horn.mp3", 0.25, 0.25, -18, False),
         "tyre_squeal.wav": (cache_dir / "tyre_squeal.mp3", 0.5, 1.2, -16, False),
         "crossing_beep.wav": (cache_dir / "crossing_beep.mp3", 12.0, 0.8, -16, False),
         "ambience_town.wav": (cache_dir / "ambience_town.mp3", 10.0, 4.0, -23, True),
+        "rain_loop.wav": (cache_dir / "rain_321647.mp3", 1.0, 4.0, -16, True),
+        "wipers.wav": (cache_dir / "wipers_573586.mp3", 0.2, 3.0, -16, True),
+        "road_noise_town.wav": (cache_dir / "ambience_town.mp3", 2.0, 4.0, -16, True),
+        "gravel_verge.wav": (cache_dir / "gravel_97605.mp3", 1.0, 3.0, -16, True),
+        "footsteps_pedestrian.wav": (cache_dir / "footsteps_334457.mp3", 1.0, 1.4, -18, False),
     }
 
     with tempfile.TemporaryDirectory() as tmp:

@@ -234,7 +234,7 @@ Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when 
 - [x] Added 80 plain-English `.v2` and `.v3` wordings (<= 12 words, 0 jargon) for all 40 `voice.<rule>.fault|good` keys in `voice.json`, generated Piper `en_GB-cori-medium` 16-bit PCM mono 44.1 kHz WAVs, updated `manifest.json` (207 total entries), regenerated `en-XA`, extended `test_audio.py`, and updated `content/audio/LICENCES.md`.
 
 ## Round 28: weather, vehicle and street sounds (audio, free CC0 only)
-Source and normalise to −16 LUFS (loops) / −18 LUFS (one-shots): `sfx/rain_loop.wav` (steady rain on a roof, loop), `sfx/wipers.wav` (loop), `sfx/horn_short.wav`, `sfx/road_noise_town.wav` and `sfx/road_noise_motorway.wav` (tyre/wind loops, seamless), `sfx/brake_squeal_soft.wav`, `sfx/gravel_verge.wav` (loop, for driving on the verge), `sfx/footsteps_pedestrian.wav`. Same rules as R20.1 (seamless loops of 2–6 s, 16-bit mono 44.1 kHz WAV, source and licence in `LICENCES.md`, rating 1–5). If a sound has no good CC0 source, leave it out and say so in the PR. Add every file to the R20.3 audio test.
+- [x] Added CC0 WAVs (`rain_loop.wav`, `wipers.wav`, `horn_short.wav`, `road_noise_town.wav`, `gravel_verge.wav`, `footsteps_pedestrian.wav`; 16-bit mono 44.1 kHz, −16 LUFS loops / −18 LUFS one-shots), updated `LICENCES.md` with source/licence/ratings, and extended `test_audio.py`. Left out `road_noise_motorway.wav` and `brake_squeal_soft.wav` (no suitable CC0 source found).
 
 ## Round 29: two more practice areas (pipeline data)
 As R25 (same pack schema v0.7, honest `confidence`, `SOURCE.md`, anchors, signal plans where there are lights, POIs, three scenarios each, **not yet in `progression.json`**):
