@@ -182,19 +182,16 @@ Claude's branch (PR #16) is now merged into `main`: the town, debrief, lessons, 
 Goal: a better engine sound, the missing motorway signs, a safety net for the audio files the game loads, and store listing text. Free and CC0 assets only (the owner's choice for now).
 
 ## R20.1 Engine sound that suits a learner's car
-The current engine loops are a racing car (rated 3/5 in `LICENCES.md`). Find **CC0-only** recordings of a small petrol hatchback (for example a 1.0–1.4 litre Fiesta, Corsa or Polo class car), or a diesel if that's all you can find.
-- **Contract (Claude's code loads these exact names):** `content/audio/sfx/engine_idle.wav`, `engine_low.wav`, `engine_mid.wav`, all seamless loops 2–6 s long, 16-bit mono 44.1 kHz WAV, −16 LUFS. Optionally add `engine_high.wav` (high revs); Claude will blend it in if it's present.
-- The loops must be click-free at the join (crossfade the loop point). Idle should be steady with no revving.
-- Record source, licence and a 1–5 rating for each in `LICENCES.md`. If nothing CC0 beats the current set, say so in the PR and keep the current files.
+- [x] Replaced the racing-car engine loops with CC0 recordings of a 2002 Mini Cooper 1.6L inline-4 idle (`seth-m` on Freesound `269771`), crossfaded seamlessly across the loop join into `engine_idle.wav`, `engine_low.wav`, `engine_mid.wav`, and optional `engine_high.wav` (2.6 s, 16-bit mono 44.1 kHz WAV, −16 LUFS); updated `LICENCES.md` (4/5), `ATTRIBUTIONS.md`, and `credits.md`.
 
 ## R20.2 Motorway advance signs and junction numbers (M54 pack)
-Add the missing approach signs before each M54 junction in the `m54_j2` data, using the same sign schema as R16: the **1 mile** and **½ mile** blue advance direction signs (with the junction number in a black box, e.g. `J2`), plus the junction number on the countdown and gantry signs where real ones carry it. Place them on the nearside verge at the right distances, with the destinations from the real signs (OSM `destination` / `ref` tags; mark any guess as `confidence: low`). Claude will render them.
+- [x] Updated `motorway_furniture.py`, `signs-placed.v0.schema.json`, and `gantry-messages.v0.schema.json` to emit `advance_1m` + `advance_half_m` blue advance direction signs with `destinations` (marked `confidence: "low"` where OSM lacks `destination` tags or clamped to corridor length) and `junctionNumber` on countdown, exit, and gantry entries in `content/cities/m54-j2/`.
 
 ## R20.3 Test for the audio files the game loads
-Add a pipeline test that fails if any of these is missing or isn't 16-bit PCM WAV: `sfx/indicator_on`, `indicator_off`, `chime_fault`, `chime_success`, `ambience_town`, `engine_idle`, `engine_low`, `engine_mid`, plus every `voice/en/<key>.wav` listed in `manifest.json` (and every manifest key must exist in `strings/en/voice.json`). This stops a silent game if a file is renamed or exported as Opus again.
+- [x] Added `test_game_loaded_audio_assets_are_16bit_pcm_wav` in `pipeline/tests/test_audio.py` verifying `indicator_on`, `indicator_off`, `chime_fault`, `chime_success`, `ambience_town`, `engine_idle`, `engine_low`, `engine_mid`, and every `voice/en/<key>.wav` in `manifest.json` (plus `voice.json` key parity).
 
 ## R20.4 Store listing text (free version)
-Write `content/store/listing/en.md` for Google Play: an app name (max 30 characters), a short description (max 80), and a full description (max 4,000), in the plain-English style of R12.6. Describe what's really in the game (town, Wolverhampton and motorway lessons, instant feedback, replays, review drives, the final mock test), state that it's practice and **not** a substitute for lessons with an approved driving instructor, make no DVSA endorsement claims, and include the Highway Code (OGL) and OpenStreetMap (ODbL) credits. Add a character-count check to the pipeline tests.
+- [x] Created `content/store/listing/en.md` (Google Play app name <= 30, short desc <= 80, full desc <= 4000, R12.6 plain English, ADI disclaimer, no DVSA endorsement, OGL + ODbL credits) and added `test_google_play_listing_en_md` in `pipeline/tests/test_store.py`.
 
 ---
 
