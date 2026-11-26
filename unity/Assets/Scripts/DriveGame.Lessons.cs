@@ -78,6 +78,7 @@ namespace LToLocal.Game
         /// <summary>Night, dusk, rain and fog for Stage 7 lessons: darker light, headlight beams, and fog at the scenario's visibility.</summary>
         private void ApplyConditions(string timeOfDay, string weather, double visibilityM)
         {
+            _raining = weather == "rain";
             if (!_conditionsSaved)
             {
                 _conditionsSaved = true;

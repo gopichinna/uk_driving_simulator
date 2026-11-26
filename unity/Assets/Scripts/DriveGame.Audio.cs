@@ -17,7 +17,9 @@ namespace LToLocal.Game
         public static bool VoiceOn { get => PlayerPrefs.GetInt(VoiceKey, 1) == 1; set { PlayerPrefs.SetInt(VoiceKey, value ? 1 : 0); PlayerPrefs.Save(); } }
 
         private AudioSource _sfx, _voice, _ambience;
-        private readonly AudioSource[] _engine = new AudioSource[3];
+        private readonly AudioSource[] _engine = new AudioSource[4];
+        private AudioSource _rain, _wipers;
+        private bool _raining;
         private AudioClip _tickOn, _tickOff, _chimeFault, _chimeGood;
         private readonly Dictionary<string, AudioClip> _voiceClips = new Dictionary<string, AudioClip>();
         private bool _lastBlink;
@@ -33,8 +35,8 @@ namespace LToLocal.Game
             _tickOff = Resources.Load<AudioClip>("Content/audio/sfx/indicator_off");
             _chimeFault = Resources.Load<AudioClip>("Content/audio/sfx/chime_fault");
             _chimeGood = Resources.Load<AudioClip>("Content/audio/sfx/chime_success");
-            string[] engineClips = { "engine_idle", "engine_low", "engine_mid" };
-            for (int i = 0; i < 3; i++)
+            string[] engineClips = { "engine_idle", "engine_low", "engine_mid", "engine_high" };
+            for (int i = 0; i < 4; i++)
             {
                 var clip = Resources.Load<AudioClip>($"Content/audio/sfx/{engineClips[i]}");
                 if (clip == null) continue;
@@ -46,6 +48,7 @@ namespace LToLocal.Game
                 _engine[i].spatialBlend = 0f;
                 if (SoundOn) _engine[i].Play();
             }
+            _rain = MakeLoop("rain_loop"); _wipers = MakeLoop("wipers");
             var amb = Resources.Load<AudioClip>("Content/audio/sfx/ambience_town");
             Debug.Log($"[LToLocal] Audio: tick={(_tickOn != null)} chime={(_chimeFault != null)} ambience={(amb != null)} listeners={FindObjectsByType<AudioListener>().Length} rate={AudioSettings.outputSampleRate} sound={SoundOn} voice={VoiceOn} volume={AudioListener.volume} paused={AudioListener.pause}");
             if (amb != null)
@@ -54,6 +57,28 @@ namespace LToLocal.Game
                 _ambience.loop = true;
                 _ambience.volume = 0.35f;
                 if (SoundOn) _ambience.Play();
+            }
+        }
+
+        private AudioSource MakeLoop(string name)
+        {
+            var clip = Resources.Load<AudioClip>($"Content/audio/sfx/{name}");
+            if (clip == null) return null;
+            var src = gameObject.AddComponent<AudioSource>();
+            src.clip = clip; src.loop = true; src.volume = 0f; src.playOnAwake = false; src.spatialBlend = 0f;
+            return src;
+        }
+
+        /// <summary>Rain on the roof and wipers in rain lessons, only while driving with sound on.</summary>
+        private void WeatherAudio()
+        {
+            bool on = SoundOn && _mode == Mode.Driving && _raining;
+            foreach (var (src, vol) in new[] { (_rain, 0.35f), (_wipers, 0.25f) })
+            {
+                if (src == null) continue;
+                src.volume = on ? vol : 0f;
+                if (on && !src.isPlaying) src.Play();
+                if (!on && src.isPlaying) src.Stop();
             }
         }
 
@@ -79,7 +104,15 @@ namespace LToLocal.Game
             }
             if (!VoiceOn || good || Time.time < _nextVoiceAt || _voice.isPlaying) return;
             string key = $"voice.{e.RuleId}.fault";
-            if (!_voiceClips.TryGetValue(key, out var clip))
+            // The coach has up to three wordings per fault (key, key.v2, key.v3): pick one at random.
+            string[] variants = { key, key + ".v2", key + ".v3" };
+            string pick = variants[Random.Range(0, variants.Length)];
+            if (!_voiceClips.TryGetValue(pick, out var clip))
+            {
+                clip = Resources.Load<AudioClip>($"Content/audio/voice/{pick}");
+                _voiceClips[pick] = clip;
+            }
+            if (clip == null && !_voiceClips.TryGetValue(key, out clip))
             {
                 clip = Resources.Load<AudioClip>($"Content/audio/voice/{key}");
                 _voiceClips[key] = clip;
@@ -95,15 +128,16 @@ namespace LToLocal.Game
         {
             bool on = SoundOn && _mode == Mode.Driving;
             float revs = Mathf.Clamp01(speedMph / 70f) * 0.8f + throttle * 0.2f;  // 0 idle … 1 flat out
-            float[] centre = { 0f, 0.4f, 0.85f };
-            for (int i = 0; i < 3; i++)
+            float[] centre = { 0f, 0.33f, 0.66f, 1f };
+            for (int i = 0; i < 4; i++)
             {
                 var src = _engine[i];
                 if (src == null) continue;
-                float w = Mathf.Clamp01(1f - Mathf.Abs(revs - centre[i]) / 0.45f);
+                float w = Mathf.Clamp01(1f - Mathf.Abs(revs - centre[i]) / 0.38f);
                 src.volume = on ? w * 0.35f : 0f;
                 src.pitch = 0.85f + Mathf.Clamp(revs - centre[i], -0.3f, 0.45f) * 0.9f + 0.15f;
             }
+            WeatherAudio();
         }
 
         private void ApplySoundSetting()
