@@ -222,6 +222,31 @@ Goal: a better engine sound, the missing motorway signs, a safety net for the au
 # Self-merge rule (owner-approved 2026-11-26, while Claude's usage is limited)
 Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when **all** of these are true: the PR's CI is green; the diff touches nothing in `core/**`, `unity/**` or `.github/**`; no file over 5 MB is added except WAV/PNG assets listed in `LICENCES.md`; every new sound or image has its source and licence recorded (free / CC0 only); and the round's own tasks are done. Merge in round order, and after each merge pull `main` before starting the next round. If any condition fails, leave the PR open, say why in a PR comment, and carry on with the next round (stacked). Claude reviews merged PRs afterwards and will open fix-up requests under "Requests from Claude" if needed.
 
+
+---
+
+# Rounds 26–30 (added by Claude, 2026-11-26). Same protocol and the **self-merge rule** above (finish #26 first). Work in order, one PR per round.
+
+## Round 26: theory-test sets (data)
+From the R21 quiz bank, first grow it to **8 questions per implemented rule** (same schema and checks as R21). Then build `content/quizzes/gb/tests/set-01.json` … `set-10.json`: each a 50-question mock theory test, balanced by topic (no topic over 15%, difficulty mix 40% easy / 40% medium / 20% hard), no question repeated inside a set, and any one question in at most 3 sets. Add `content/quizzes/gb/tests/README.md` (pass mark 43/50, time limit 57 minutes, as the real test) and pipeline tests for those rules.
+
+## Round 27: coach voice variety (audio)
+The coach repeats the same line every time a rule is broken. For every voice key `voice.<rule>.fault` and `.good`, write **two more plain-English wordings** and record them with the same Piper voice: `voice.<rule>.fault.v2` / `.v3` (same for `.good`), WAV 16-bit mono 44.1 kHz, ≤ 12 words each, same meaning, different words (no scolding, no jargon). Add them to `manifest.json` and `strings/en/voice.json` (and `en-XA`), extend the R20.3 audio test, and record the count in `LICENCES.md`. Contract: the game will pick randomly among `X`, `X.v2`, `X.v3` when they exist (Claude will do that later).
+
+## Round 28: weather, vehicle and street sounds (audio, free CC0 only)
+Source and normalise to −16 LUFS (loops) / −18 LUFS (one-shots): `sfx/rain_loop.wav` (steady rain on a roof, loop), `sfx/wipers.wav` (loop), `sfx/horn_short.wav`, `sfx/road_noise_town.wav` and `sfx/road_noise_motorway.wav` (tyre/wind loops, seamless), `sfx/brake_squeal_soft.wav`, `sfx/gravel_verge.wav` (loop, for driving on the verge), `sfx/footsteps_pedestrian.wav`. Same rules as R20.1 (seamless loops of 2–6 s, 16-bit mono 44.1 kHz WAV, source and licence in `LICENCES.md`, rating 1–5). If a sound has no good CC0 source, leave it out and say so in the PR. Add every file to the R20.3 audio test.
+
+## Round 29: two more practice areas (pipeline data)
+As R25 (same pack schema v0.7, honest `confidence`, `SOURCE.md`, anchors, signal plans where there are lights, POIs, three scenarios each, **not yet in `progression.json`**):
+- `rural_practice`: a **single-carriageway rural road** (national speed limit 60 mph with bends, a narrow section with passing places, a farm junction, a village 30 limit) in the West Midlands or nearby. Scenarios `s5_rural_bends`, `s5_rural_narrow`, `s5_rural_village`.
+- `ring_road_practice`: a **town ring road / dual carriageway with roundabouts and a few signalled junctions** (Wolverhampton Ring Road or similar). Scenarios `s4_ring_lanes`, `s4_ring_rbt_multilane`, `s4_ring_lights`.
+Use scenario event types that already exist in `content/scenarios/gb/` (see `docs/04-architecture.md` and the existing files); if a situation needs a new event type, list it under "Requests from Hydrogen" instead of inventing one.
+
+## Round 30: tester guide and contributor docs (docs)
+- `docs/TESTING.md`: a manual test checklist for the OnePlus 12 build, one section per stage (what to drive, what the coach should say, what should and shouldn't count as a fault, the star targets), written so a non-developer can follow it. Cover sound (engine, indicator, voices, weather), controls, the review drive, the final mock test, and a short "known rough edges" list drawn from `docs/` and open requests.
+- `docs/CONTENT_GUIDE.md`: how to add a lesson, scenario, quiz question, voice line and road pack from scratch (file locations, schemas, the commands to validate, the contracts with Claude's code), using real examples from the repo.
+- Update `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` to include everything from R20–R30.
+
 ---
 
 ## Requests from Claude
