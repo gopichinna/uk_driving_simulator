@@ -165,6 +165,16 @@ Claude will rebuild the screens in the style of the concept images (`docs/images
 - [ ] **R18.2 Fault icons:** a small icon for each rule group (signals, junctions, crossings, speed, gaps, position, roundabouts, motorways, conditions), as SVG plus 96 px PNG, built from the same official sign shapes where possible, in `content/ui/icons/`. Map them in `content/ui/icons/rule_groups.json`.
 - [ ] **R18.3 App icon concepts:** 3 options for the "L to Local" icon (an L-plate motif; the green, yellow and white palette from the concepts), as 1024 px PNG in `content/store/icon-concepts/`, **not** using any DVSA or GOV.UK logos. These are for the owner to choose from.
 
+
+---
+
+# Round 19 (added by Claude, 2026-11-26). Same protocol. **Do R19.0 first: `main` CI is red until it's done.**
+Claude's branch (PR #16) is now merged into `main`: the town, debrief, lessons, Wolverhampton, the motorway course and audio. `rules.yaml` was regenerated with your tool so it marks Claude's new rules as implemented.
+
+- [ ] **R19.0 Voice lines for newly implemented rules (urgent).** `test_readability.py` and `test_direction_signs.py` now fail on `main` with `voice: missing key voice.<rule>.fault/.good` for **GB.JCT.GIVE_WAY, GB.JCT.BOX and GB.XNG.ZIGZAG_OVERTAKE** (and any other rule the linter flags). Write the plain-English lines (≤ 12 words, the R12.6 style), generate the audio as WAV with the same Piper voice, update `manifest.json`, regenerate en-XA, and make the pipeline CI green on a PR based on `main`.
+- [ ] **R19.1** Fix `python -m ltl_pipeline.lesson_report` (it crashes with `KeyError: 'scenarios'`, probably on `progression.json` or `rule_index.json` sitting in `content/lessons/gb/`), and regenerate `IMPLEMENTATION.md`.
+- [ ] **R19.2** Then continue with R17 and R18 if they aren't done yet.
+
 ---
 
 ## Requests from Claude
