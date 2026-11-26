@@ -18,6 +18,8 @@ namespace LToLocal.Game
         public float startOffset = 5f;
         /// <summary>Which city pack this course shows: Resources/Content/&lt;prefix&gt;_roadpack and _pois.</summary>
         public string resourcePrefix = "wolverhampton";
+        /// <summary>Lesson start point: "start", or on motorways "join" / "leave".</summary>
+        public string startAnchor = "start";
         public Transform pedestrianRoot;
 
         private RoadPackGraph _built;
@@ -41,7 +43,7 @@ namespace LToLocal.Game
         private readonly List<(int group, GameObject red, GameObject amber, GameObject green)> _heads = new List<(int, GameObject, GameObject, GameObject)>();
         private GUIStyle _credit;
 
-        public string DisplayName => resourcePrefix == "wolverhampton" ? "Wolverhampton city centre (beta)" : $"{Built.Pack.DisplayName} (beta)";
+        public string DisplayName => resourcePrefix == "wolverhampton" ? "Wolverhampton city centre (beta)" : resourcePrefix == "m54_j2" ? "M54 motorway (beta)" : $"{Built.Pack.DisplayName} (beta)";
         public LaneGraph Graph => Built.Graph;
 
         private RoadPackGraph Built
@@ -62,8 +64,14 @@ namespace LToLocal.Game
             {
                 var b = Built;
                 int lane = b.LinkLanes.TryGetValue(startLink, out var l) && l.forward.Count > 0 ? l.forward[0] : b.Spawns[0].lane;
+                double s0 = startOffset;
+                if (startAnchor != "start" || startLink.Length == 0)
+                {
+                    var a = b.Anchor(startAnchor);
+                    if (a.HasValue) { lane = a.Value.lane; s0 = a.Value.s; }
+                }
                 var seg = b.Graph.Segments[lane];
-                var (pos, heading) = seg.Path.Sample(Mathf.Min(startOffset, (float)seg.Length - 1));
+                var (pos, heading) = seg.Path.Sample(System.Math.Min(s0, seg.Length - 1));
                 return new CarState { X = pos.X, Z = pos.Z, Heading = heading };
             }
         }
@@ -236,11 +244,11 @@ namespace LToLocal.Game
         public bool TryLocate(string name, out Vec2 position, out double heading)
         {
             heading = 0;
-            if (name == "start")
+            if (name == "start" || name == "join" || name == "leave")
             {
-                var st = StartState;
-                position = new Vec2(st.X, st.Z);
-                heading = st.Heading;
+                var a = name == "start" ? null : Built.Anchor(name);
+                if (a.HasValue) (position, heading) = Built.Graph.Segments[a.Value.lane].Path.Sample(a.Value.s);
+                else { var st = StartState; position = new Vec2(st.X, st.Z); heading = st.Heading; }
                 return true;
             }
             if (_pois == null)

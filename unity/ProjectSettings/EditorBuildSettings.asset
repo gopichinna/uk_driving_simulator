@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/WolverhamptonTestArea.unity
     guid: f542a438d5e4548169316135ac176c44
   - enabled: 1
+    path: Assets/Scenes/Motorway.unity
+    guid: cae0e584b8a3343f9997deac6cabe8ff
+  - enabled: 1
     path: Assets/Scenes/TwoLaneRoundabout.unity
     guid: ec987cd0e91e54e4db9337238a9252dc
   - enabled: 1

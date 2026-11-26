@@ -204,12 +204,42 @@ namespace LToLocal.Sim
                 if (g < gap) { gap = Math.Max(0, g); leaderSpeed = speed; playerIsLimit = isPlayer; }
             }
 
-            // Vehicles ahead along the route.
+            // Vehicles ahead along the route (an exact tie is broken by id so two cars never ignore each other).
             foreach (var o in _cars)
             {
                 if (o == c) continue;
                 double d = DistanceAlong(c, o.Segment, o.S);
-                if (!double.IsNaN(d) && d > 0 && d < 80) Consider(d - o.LengthM, o.SpeedMps, false);
+                if (!double.IsNaN(d) && (d > 0 || (d == 0 && o.Id < c.Id)) && d < 120) Consider(d - o.LengthM, o.SpeedMps, false);
+            }
+
+            // Zipper merge: on a path that merges into another (lane drops, slip roads), whoever is closer to the
+            // merge point goes first; treat them as the vehicle in front.
+            for (int k = 0; k < 3; k++)
+            {
+                int sid = SegmentAhead(c, k);
+                if (sid < 0) break;
+                var conn = _g.Segments[sid];
+                if (conn.Kind != SegmentKind.Connector) continue;
+                double myToEnd = DistanceAlong(c, sid, conn.Length);
+                if (double.IsNaN(myToEnd) || myToEnd > 150) continue;
+                foreach (var cp in conn.Conflicts)
+                {
+                    if (!cp.Merge) continue;
+                    var other = _g.Segments[cp.Other];
+                    // Only lane drops on the same road; elsewhere give-way priority decides who goes first.
+                    int g1 = _g.Segments[conn.FromLane].Group, g2 = _g.Segments[other.FromLane].Group;
+                    if (g1 < 0 || g1 != g2) continue;
+                    foreach (var o in _cars)
+                    {
+                        if (o == c) continue;
+                        double theirToEnd = double.NaN;
+                        if (o.Segment == other.Id) theirToEnd = other.Length - o.S;
+                        else if (o.Segment == other.FromLane && SegmentAhead(o, 1) == other.Id) theirToEnd = _g.Segments[other.FromLane].Length - o.S + other.Length;
+                        if (double.IsNaN(theirToEnd)) continue;
+                        if (theirToEnd < myToEnd || (theirToEnd == myToEnd && o.Id < c.Id))
+                            Consider(myToEnd - theirToEnd - o.LengthM, o.SpeedMps, false);
+                    }
+                }
             }
 
             // Vehicles that just turned off our lane onto another path still fill the shared space for a few metres.
@@ -284,7 +314,8 @@ namespace LToLocal.Sim
                         else if (light == LightState.Amber)
                             hold = toLine >= c.SpeedMps * c.SpeedMps / (2 * _p.ComfortDecelMps2);
                     }
-                    if (!hold && toLine < 35)
+                    double lookAhead = System.Math.Max(35, c.SpeedMps * c.SpeedMps / (2 * _p.ComfortDecelMps2) + 10);
+                    if (!hold && toLine < lookAhead)
                     {
                         if (!CanProceed(c, conn, player, out holdForPlayer)) hold = true;
                         else if (!ExitClear(c, conn)) hold = true;
@@ -498,11 +529,14 @@ namespace LToLocal.Sim
                 var (pos, _) = lane.Path.Sample(s);
                 double d = (pos - pp).Length;
                 if (d < _p.SpawnMinM || d > _p.SpawnMaxM) continue;
+                // Cyclists aren't allowed on motorways (Highway Code rule 253); keep them off 50 mph+ roads.
+                bool cyclist = lane.SpeedLimitMph < 50 && _rng.NextDouble() < _p.CyclistChance;
+                double speed = cyclist ? _p.CyclistSpeedMps : lane.SpeedLimitMph / 2.236936 * 0.8;
+                // Room to settle in: nobody within a 3-second gap (+20 m) of where it appears.
                 bool free = true;
-                foreach (var o in _cars) if ((o.Position - pos).Length < 25) free = false;
+                foreach (var o in _cars) if ((o.Position - pos).Length < speed * _p.TimeHeadwayS + 20) free = false;
                 if (!free) continue;
-                bool cyclist = _rng.NextDouble() < _p.CyclistChance;
-                Add(lane.Id, s, cyclist ? _p.CyclistSpeedMps : lane.SpeedLimitMph / 2.236936 * 0.8, cyclist);
+                Add(lane.Id, s, speed, cyclist);
                 return;
             }
         }
@@ -512,7 +546,7 @@ namespace LToLocal.Sim
             if (_p.SpawnAroundPlayer) { SpawnAround(player); return; }
             if (_cars.Count >= _p.TargetCars || _sources.Count == 0) return;
             int lane = _sources[_rng.Range(0, _sources.Count)];
-            bool cyclist = _rng.NextDouble() < _p.CyclistChance;
+            bool cyclist = _g.Segments[lane].SpeedLimitMph < 50 && _rng.NextDouble() < _p.CyclistChance;
             foreach (var o in _cars)
                 if (o.Segment == lane && o.S < 25) return;
             var (start, _) = _g.Segments[lane].Path.Sample(0);

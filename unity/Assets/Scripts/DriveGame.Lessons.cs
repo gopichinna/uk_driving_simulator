@@ -32,6 +32,7 @@ namespace LToLocal.Game
         {
             var r = LessonSession.CurrentRef;
             if (LessonSession.ScenarioPending && r != null && _course is TownCourse town) town.startAnchor = r.Anchor;
+            if (LessonSession.ScenarioPending && r != null && _course is WolverhamptonCourse city) city.startAnchor = r.Anchor;
         }
 
         /// <summary>After every reset: (re)start the scenario or mock test this scene is running.</summary>

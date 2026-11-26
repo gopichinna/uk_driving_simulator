@@ -26,6 +26,9 @@ namespace LToLocal.Sim
             public int SpeedLimitMph = 30, LanesForward = 1, LanesBackward = 1;
             public double WidthM, Confidence = 1;
             public string Sidewalk = "";
+            /// <summary>Motorways (pack v0.7): slip roads carry the junction number; some sections have a hard shoulder.</summary>
+            public string JunctionNumber = "";
+            public bool HardShoulder;
         }
 
         public sealed class Crossing
@@ -109,6 +112,8 @@ namespace LToLocal.Sim
                     WidthM = Num(o, "widthM", 0),
                     Confidence = Num(o, "confidence", 1),
                     Sidewalk = Str(o, "sidewalk"),
+                    JunctionNumber = Str(o, "junctionNumber"),
+                    HardShoulder = o.Get("hardShoulder") is bool hs && hs,
                 };
                 bool hasF = o.Get("lanesForward") is double, hasB = o.Get("lanesBackward") is double;
                 l.LanesForward = Math.Max(1, (int)Num(o, "lanesForward", 1));
@@ -318,6 +323,34 @@ namespace LToLocal.Sim
                     var lane = Graph.Segments[lanes.forward[0]];
                     Spawns.Add((lane.Id, Math.Max(0, Math.Min(lane.Length - 1, sp.OffsetM))));
                 }
+        }
+
+        /// <summary>
+        /// A named place to start a lesson drive: "start" (a long main road, preferring the motorway main carriageway),
+        /// "join" (a motorway slip road) or "leave" (the main carriageway shortly before a slip road leaves it).
+        /// </summary>
+        public (int lane, double s)? Anchor(string name)
+        {
+            RoadPack.Link? LinkOf(Segment seg) => Pack.Links.Find(l => l.Id == seg.SourceId);
+            bool Motorway(RoadPack.Link? l) => l != null && l.RoadClass == "motorway";
+            bool Slip(RoadPack.Link? l) => Motorway(l) && l!.JunctionNumber.Length > 0 && l.LanesForward + l.LanesBackward <= 2 && l.OneWay;
+            Segment? best = null;
+            double bestLen = 0;
+            foreach (var seg in Graph.Segments)
+            {
+                if (seg.Kind != SegmentKind.Lane || seg.Next.Count == 0) continue;
+                var link = LinkOf(seg);
+                bool fits = name switch
+                {
+                    "join" => Slip(link) && seg.Length > 60,
+                    "leave" => Motorway(link) && !Slip(link) && seg.Length > 150 && seg.Next.Exists(c => Slip(LinkOf(Graph.Segments[Graph.Segments[c].ToLane]))),
+                    _ => Motorway(link) && !Slip(link),
+                };
+                if (fits && seg.Length > bestLen) { best = seg; bestLen = seg.Length; }
+            }
+            if (best == null) return name == "start" && Spawns.Count > 0 ? Spawns[0] : ((int, double)?)null;
+            double s = name == "leave" ? System.Math.Max(5, best.Length - 250) : System.Math.Min(30, best.Length / 3);
+            return (best.Id, s);
         }
 
         /// <summary>

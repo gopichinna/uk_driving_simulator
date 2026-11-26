@@ -18,6 +18,7 @@ namespace LToLocal.EditorTools
     {
         public const string WolverhamptonScene = "Assets/Scenes/Wolverhampton.unity";
         public const string TestAreaScene = "Assets/Scenes/WolverhamptonTestArea.unity";
+        public const string MotorwayScene = "Assets/Scenes/Motorway.unity";
         /// <summary>The content/cities folder being built (a city builder is shared by every real-streets course).</summary>
         private static string s_city = "wolverhampton";
         private static string CityFile(string name) => $"../content/cities/{s_city}/{name}";
@@ -319,6 +320,7 @@ namespace LToLocal.EditorTools
 
         private static void BuildWolverhamptonScene() => BuildCityScene("wolverhampton", WolverhamptonScene);
         private static void BuildTestAreaScene() => BuildCityScene("wolverhampton-test-area", TestAreaScene);
+        private static void BuildMotorwayScene() => BuildCityScene("m54-j2", MotorwayScene);
 
         private static void BuildCityScene(string city, string scenePath)
         {

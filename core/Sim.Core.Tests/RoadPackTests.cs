@@ -67,6 +67,37 @@ namespace LToLocal.Sim.Tests
         }
 
         [Test]
+        public void MotorwayHasJoinLeaveAndStartPointsAndSafeTraffic()
+        {
+            var b = new RoadPackGraph(RoadPack.Parse(Content("cities/m54-j2/roadpack.json")));
+            RoadPack.Link LinkOf(int lane) => b.Pack.Links.Find(l => l.Id == b.Graph.Segments[lane].SourceId)!;
+            var start = b.Anchor("start")!.Value;
+            var join = b.Anchor("join")!.Value;
+            var leave = b.Anchor("leave")!.Value;
+            Assert.That(LinkOf(start.lane).RoadClass, Is.EqualTo("motorway"));
+            Assert.That(LinkOf(join.lane).JunctionNumber, Is.Not.Empty, "join starts on a slip road");
+            Assert.That(b.Graph.Segments[leave.lane].Next.Any(c => LinkOf(b.Graph.Segments[c].ToLane).JunctionNumber.Length > 0), "leave is just before an exit slip");
+            Assert.That(b.Graph.Segments[start.lane].SpeedLimitMph, Is.EqualTo(70));
+
+            var (p, h) = b.Graph.Segments[start.lane].Path.Sample(start.s);
+            var player = new CarState { X = p.X, Z = p.Z, Heading = h };
+            var traffic = new TownTraffic(b.Graph, b.Signals, new TownTrafficParams { TargetCars = 16, SpawnAroundPlayer = true }, 9);
+            int overlaps = 0;
+            for (int i = 0; i < 50 * 120; i++)
+            {
+                traffic.Step(0.02, player, i * 0.02);
+                var cars = traffic.Cars;
+                for (int x = 0; x < cars.Count; x++)
+                    for (int y = x + 1; y < cars.Count; y++)
+                        if ((cars[x].Position - cars[y].Position).Length < 1.6)
+                        {
+                            if (overlaps++ % 200 == 0) TestContext.Progress.WriteLine($"overlap t={i * 0.02:0.0} {b.Graph.Segments[cars[x].Segment].Name} s={cars[x].S:0.0} v={cars[x].SpeedMps:0.0} / {b.Graph.Segments[cars[y].Segment].Name} s={cars[y].S:0.0} v={cars[y].SpeedMps:0.0}");
+                        }
+            }
+            Assert.That(overlaps, Is.LessThan(50));
+        }
+
+                [Test]
         public void WolverhamptonPedestriansCrossSafely()
         {
             var b = new RoadPackGraph(RoadPack.Parse(Content("cities/wolverhampton/roadpack.json")));

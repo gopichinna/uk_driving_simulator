@@ -30,7 +30,7 @@ namespace LToLocal.EditorTools
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TestAreaScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TestAreaScene, MotorwayScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
@@ -44,6 +44,7 @@ namespace LToLocal.EditorTools
             BuildTownScene();
             BuildWolverhamptonScene();
             BuildTestAreaScene();
+            BuildMotorwayScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));
@@ -91,6 +92,7 @@ namespace LToLocal.EditorTools
                 ("../content/cities/wolverhampton-test-area/pedestrians.json", "wolverhampton_test_area_pedestrians.json"),
                 ("../content/cities/wolverhampton-test-area/roadpack.json", "wolverhampton_test_area_roadpack.json"),
                 ("../content/cities/wolverhampton-test-area/pois.json", "wolverhampton_test_area_pois.json"),
+                ("../content/cities/m54-j2/roadpack.json", "m54_j2_roadpack.json"),
                 ("../content/lessons/gb/progression.json", "progression.json"),
                 ("../content/lessons/gb/rule_index.json", "rule_index.json"),
             };
