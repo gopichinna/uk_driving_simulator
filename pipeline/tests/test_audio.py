@@ -43,6 +43,18 @@ def test_every_voice_key_has_audio_and_valid_duration() -> None:
     by_key = {e["key"]: e for e in manifest["entries"]}
     assert set(by_key.keys()) == set(expected_entries.keys())
     assert not list(VOICE_MANIFEST.parent.glob("*.ogg")), "Stale Opus .ogg files remain"
+    voice_keys = set(json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"].keys())
+    base_rule_keys = [
+        k
+        for k in voice_keys
+        if k.startswith("voice.GB.") and k.endswith((".fault", ".good"))
+    ]
+    assert len(base_rule_keys) >= 40
+    for base in base_rule_keys:
+        for suffix in (".v2", ".v3"):
+            vkey = f"{base}{suffix}"
+            assert vkey in voice_keys, f"Missing voice variety key {vkey} in voice.json"
+            assert vkey in by_key, f"Missing voice variety key {vkey} in manifest.json"
     for key, entry in by_key.items():
         assert entry["text"] == expected_entries[key], f"Text mismatch for {key}"
         clip = VOICE_MANIFEST.parent / entry["file"]
