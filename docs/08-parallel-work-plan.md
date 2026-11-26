@@ -177,3 +177,4 @@ flowchart LR
 - 2026-11-26 (Hydrogen): completed Round 27 (added 80 plain-English `.v2`/`.v3` coach voice variants + Piper WAVs + `manifest.json` + `en-XA`, extended `test_audio.py`, and recorded 207 voice lines in `LICENCES.md`).
 - 2026-11-26 (Hydrogen): completed Round 28 (added CC0 `rain_loop.wav`, `wipers.wav`, `horn_short.wav`, `road_noise_town.wav`, `gravel_verge.wav`, `footsteps_pedestrian.wav`, updated `LICENCES.md` and `test_audio.py`; omitted `road_noise_motorway.wav` and `brake_squeal_soft.wav` due to no suitable CC0 source).
 - 2026-11-26 (Hydrogen): completed Round 29 (built `rural_practice` and `ring_road_practice` OSM packs v0.7 + `SOURCE.md` + 6 scenarios not yet in `progression.json` + `test_practice_areas.py`).
+- 2026-11-26 (Hydrogen): completed Round 30 (wrote `docs/TESTING.md` and `docs/CONTENT_GUIDE.md`, and refreshed `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` through R30).

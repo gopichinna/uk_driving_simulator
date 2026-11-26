@@ -240,9 +240,9 @@ Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when 
 - [x] Built `content/cities/rural_practice/` (Meriden & Berkswell rural lanes, 60/30 mph, `SOURCE.md`, `anchors.json`, `pedestrian_routes.json`, `pois.json`, furniture) and `content/cities/ring_road_practice/` (Wolverhampton Ring Road A4150, dual carriageway + roundabouts + signals), added the 6 scenarios (`s5_rural_bends`, `s5_rural_narrow`, `s5_rural_village`, `s4_ring_lanes`, `s4_ring_rbt_multilane`, `s4_ring_lights`) not yet in `progression.json`, and added `pipeline/tests/test_practice_areas.py`.
 
 ## Round 30: tester guide and contributor docs (docs)
-- `docs/TESTING.md`: a manual test checklist for the OnePlus 12 build, one section per stage (what to drive, what the coach should say, what should and shouldn't count as a fault, the star targets), written so a non-developer can follow it. Cover sound (engine, indicator, voices, weather), controls, the review drive, the final mock test, and a short "known rough edges" list drawn from `docs/` and open requests.
-- `docs/CONTENT_GUIDE.md`: how to add a lesson, scenario, quiz question, voice line and road pack from scratch (file locations, schemas, the commands to validate, the contracts with Claude's code), using real examples from the repo.
-- Update `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` to include everything from R20–R30.
+- [x] Added `docs/TESTING.md` (stage-by-stage OnePlus 12 manual test checklist covering audio, controls, mirrors, star targets, review drives, mock test, and known rough edges).
+- [x] Added `docs/CONTENT_GUIDE.md` (how to add lessons, scenarios, quiz bank questions, voice lines, and OSM road packs with exact validation commands).
+- [x] Regenerated `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` to reflect everything through Round 30.
 
 ---
 
