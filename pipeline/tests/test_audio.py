@@ -36,16 +36,20 @@ def _assert_unity_importable_audio(path) -> None:
 
 
 def test_every_voice_key_has_audio_and_valid_duration() -> None:
-    voice_keys = set(json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"].keys())
+    from ltl_pipeline.audio import collect_voice_and_narration_entries
+
+    expected_entries = collect_voice_and_narration_entries()
     manifest = json.loads(VOICE_MANIFEST.read_text(encoding="utf-8"))
     by_key = {e["key"]: e for e in manifest["entries"]}
-    assert set(by_key.keys()) == voice_keys
+    assert set(by_key.keys()) == set(expected_entries.keys())
     assert not list(VOICE_MANIFEST.parent.glob("*.ogg")), "Stale Opus .ogg files remain"
     for key, entry in by_key.items():
+        assert entry["text"] == expected_entries[key], f"Text mismatch for {key}"
         clip = VOICE_MANIFEST.parent / entry["file"]
         assert clip.is_file() and clip.stat().st_size > 0, f"Missing voice clip for {key}"
         _assert_unity_importable_audio(clip)
-        assert 0.3 <= entry["durationS"] <= 6.0, (
+        max_dur = 25.0 if key.startswith(("lesson.", "scenario.")) else 6.0
+        assert 0.3 <= entry["durationS"] <= max_dur, (
             f"{key} duration {entry['durationS']}s out of range"
         )
 
@@ -88,10 +92,14 @@ def test_game_loaded_audio_assets_are_16bit_pcm_wav() -> None:
         assert clip.is_file() and clip.stat().st_size > 0, f"Missing game SFX: {clip}"
         _assert_unity_importable_audio(clip)
 
-    voice_keys = set(json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"].keys())
+    from ltl_pipeline.audio import collect_voice_and_narration_entries
+
+    expected_entries = collect_voice_and_narration_entries()
     manifest = json.loads(VOICE_MANIFEST.read_text(encoding="utf-8"))
     for entry in manifest["entries"]:
-        assert entry["key"] in voice_keys, f"Manifest key {entry['key']} missing from voice.json"
+        assert entry["key"] in expected_entries, (
+            f"Manifest key {entry['key']} missing from expected voice/narration entries"
+        )
         clip = AUDIO_DIR / "voice" / "en" / entry["file"]
         assert clip.is_file() and clip.stat().st_size > 0, f"Missing voice WAV: {clip}"
         _assert_unity_importable_audio(clip)
