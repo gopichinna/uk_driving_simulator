@@ -138,6 +138,7 @@ namespace LToLocal.Game
             UpdateIndicator();
             bool blink = Mathf.Repeat(Time.time, 0.8f) < 0.4f;
             IndicatorAudio(blink);
+            EngineAudio((float)_curr.SpeedMph, (float)input.Throttle);
             foreach (var l in playerIndicatorLeft) l.SetActive(_indicator < 0 && blink);
             foreach (var l in playerIndicatorRight) l.SetActive(_indicator > 0 && blink);
             _course.Render(a, blink);

@@ -109,7 +109,7 @@ namespace LToLocal.EditorTools
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
             // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
             // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.
-            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", f => !Path.GetFileName(f).StartsWith("engine_")); // engine loops (3/5, a racing car) wait for the owner's choice of pack
+            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", _ => true); // free CC0 recordings (owner chose free sounds only)
             ConvertAudioDir("../content/audio/voice/en", $"{dest}/audio/voice", _ => true);
             AssetDatabase.Refresh();
         }
