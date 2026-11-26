@@ -8,7 +8,7 @@
   "learnCard": {
     "blocks": [
       "Broken double white lines mean you must give way.",
-      "Check both ways and wait until priority traffic will not brake.",
+      "Check both ways and wait until main-road cars will not slow down.",
       "Creep forward slowly if parked cars block your view."
     ],
     "ruleIds": [
@@ -23,7 +23,7 @@
       "id": "s1_04_tjunction_north",
       "course": "town",
       "anchor": "tjunction_north",
-      "goal": "Give way to major road traffic and emerge into a safe gap.",
+      "goal": "Give way to main-road traffic and pull out into a safe gap.",
       "rulesJudged": [
         "GB.JCT.GIVE_WAY",
         "GB.JCT.EMERGE_LOOK"
@@ -67,7 +67,7 @@
     }
   ],
   "recap": [
-    "Never force a driver on the major road to slow down.",
+    "Never force a driver on the main road to slow down.",
     "Slow down and creep forward when your sightline is restricted."
   ]
 }

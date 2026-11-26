@@ -106,7 +106,7 @@ namespace LToLocal.EditorTools
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
             // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
             // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.
-            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", f => !Path.GetFileName(f).StartsWith("engine_") && !Path.GetFileName(f).StartsWith("ambience_")); // synthetic loops sound like tape hiss: not shipped
+            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", f => !Path.GetFileName(f).StartsWith("engine_")); // engine loops (3/5, a racing car) wait for the owner's choice of pack
             ConvertAudioDir("../content/audio/voice/en", $"{dest}/audio/voice", _ => true);
             AssetDatabase.Refresh();
         }
@@ -118,10 +118,12 @@ namespace LToLocal.EditorTools
             Directory.CreateDirectory(to);
             string ffmpeg = File.Exists("/opt/homebrew/bin/ffmpeg") ? "/opt/homebrew/bin/ffmpeg" : File.Exists("/usr/local/bin/ffmpeg") ? "/usr/local/bin/ffmpeg" : "ffmpeg";
             int ok = 0, failed = 0;
-            foreach (var f in Directory.GetFiles(from, "*.ogg"))
+            foreach (var f in Directory.GetFiles(from))
             {
                 if (!keep(f)) continue;
                 string outPath = Path.Combine(to, Path.GetFileNameWithoutExtension(f) + ".wav");
+                if (f.EndsWith(".wav")) { File.Copy(f, outPath, overwrite: true); ok++; continue; } // already Unity-friendly
+                if (!f.EndsWith(".ogg")) continue;
                 var psi = new System.Diagnostics.ProcessStartInfo(ffmpeg, $"-y -loglevel error -i \"{Path.GetFullPath(f)}\" -ar 44100 -ac 1 -c:a pcm_s16le \"{Path.GetFullPath(outPath)}\"")
                 { UseShellExecute = false, RedirectStandardError = true, CreateNoWindow = true };
                 try

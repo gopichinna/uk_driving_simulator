@@ -6,17 +6,17 @@
       "id": "q_04_lines",
       "question": "What do broken double white lines at a junction mean?",
       "options": [
-        "You must give way to the major road",
+        "You must give way to the main road",
         "You have priority over oncoming cars",
         "You must always stop for five seconds"
       ],
       "answerIndex": 0,
-      "explanation": "Broken double white lines mean give way to traffic on the major road.",
+      "explanation": "Broken double white lines mean give way to traffic on the main road.",
       "ruleId": "GB.JCT.GIVE_WAY"
     },
     {
       "id": "q_04_blind",
-      "question": "How should you emerge if parked cars block your view?",
+      "question": "How should you pull out if parked cars block your view?",
       "options": [
         "Slow down and creep forward carefully",
         "Accelerate quickly into the gap",

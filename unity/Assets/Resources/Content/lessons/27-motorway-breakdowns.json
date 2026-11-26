@@ -7,7 +7,7 @@
   "freeTier": false,
   "learnCard": {
     "blocks": [
-      "Never stop on a motorway carriageway, slip road, or hard shoulder except in an emergency.",
+      "Never stop on a motorway lane, slip road, or hard shoulder except in an emergency.",
       "If you break down, pull into an emergency area or hard shoulder. Exit away from traffic.",
       "Never put a warning triangle on a motorway, and wait behind the safety barrier."
     ],
@@ -72,6 +72,6 @@
   ],
   "recap": [
     "Use the hard shoulder or an emergency area only in a genuine emergency.",
-    "Get out on the side away from traffic, stay behind the barrier, and never place a warning triangle."
+    "Get out away from traffic and wait behind the barrier. Never place a warning triangle."
   ]
 }
