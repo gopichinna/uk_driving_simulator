@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s7-21-night-dipped-headlights",
+  "questions": [
+    {
+      "id": "q_21_night_lights",
+      "question": "Which lights must you use at night on a road with lit street lamps?",
+      "options": [
+        "Sidelights and rear lights, with dipped headlights in built-up areas",
+        "Front and rear fog lights",
+        "Main-beam headlights at all times"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use sidelights and rear lights at night, and dipped headlights in built-up areas.",
+      "ruleId": "GB.WX.HEADLIGHTS_NIGHT"
+    },
+    {
+      "id": "q_21_dazzle",
+      "question": "When must you dip your main-beam headlights?",
+      "options": [
+        "When meeting oncoming traffic or following another vehicle",
+        "Only when driving in a car park",
+        "Only on one-way streets"
+      ],
+      "answerIndex": 0,
+      "explanation": "Main beam dazzles oncoming drivers and drivers ahead of you.",
+      "ruleId": "GB.WX.NO_DAZZLE"
+    }
+  ]
+}

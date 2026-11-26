@@ -7,7 +7,7 @@ using UnityEngine;
 namespace LToLocal.Game
 {
     /// <summary>40 mph dual carriageway with overtaking traffic. Judges lane changes.</summary>
-    public sealed class DualCarriagewayCourse : MonoBehaviour, ICourse
+    public sealed class DualCarriagewayCourse : MonoBehaviour, ICourse, IScenarioWorld
     {
         public TrafficView trafficView;
         public float roadEndZ = 1900f;
@@ -68,6 +68,46 @@ namespace LToLocal.Game
             foreach (var c in _traffic.Cars)
                 into.Add(new RoadUser(c.Id, new Vec2(c.X, c.Z), _traffic.Lanes[c.Lane].Direction > 0 ? 0 : Math.PI, c.SpeedMps, c.IsCyclist));
         }
+
+        private readonly List<VehicleSnapshot> _replay = new List<VehicleSnapshot>();
+
+        public void Record(List<ActorPose> actors, List<LightState> lights)
+        {
+            actors.Clear();
+            lights.Clear();
+            Snapshot();
+            Replay.AddVehicles(actors, _snap);
+        }
+
+        public void ShowRecorded(RecordedFrame frame, bool blink)
+        {
+            Replay.Vehicles(frame, _replay);
+            if (trafficView != null) trafficView.Render(_replay, 1f, blink);
+        }
+
+
+        // ---------------- scenarios (IScenarioWorld) ----------------
+
+        public bool TryLocate(string name, out Vec2 position, out double heading)
+        {
+            var st = StartState;
+            position = new Vec2(st.X, st.Z);
+            heading = st.Heading;
+            return name == "start";
+        }
+
+        public void PedestrianWaits(string crossing) { }
+        public void PedestrianStepsOut(string crossing) { }
+        public void CarEmerges(string junction, double gapS, in CarState player) { }
+        public void ParkedCar(string anchor, double offsetM) { }
+        public bool LightsTurnAmber(in CarState player) => false;
+        public void SetTrafficDensity(double v)
+        {
+            int n = Mathf.RoundToInt(1 + Mathf.Clamp01((float)v) * 6);
+            _params.CarsPerLane = new[] { n, Mathf.Max(1, n - 2), n, n };
+        }
+        public void CyclistAhead(string anchor, double offsetM, double speedMph) { }
+        public int ExitTaken(in CarState player) => 0;
 
         private void Snapshot()
         {

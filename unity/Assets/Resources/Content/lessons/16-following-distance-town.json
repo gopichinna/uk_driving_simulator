@@ -1,0 +1,73 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s4-16-following-distance-town",
+  "stage": 4,
+  "order": 16,
+  "title": "Following distance in town",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Keep enough space behind the car ahead to stop safely.",
+      "Drop back calmly whenever another vehicle cuts into your gap.",
+      "Watch brake lights far ahead so you can slow smoothly."
+    ],
+    "ruleIds": [
+      "GB.GAP.TWO_SECOND",
+      "GB.GAP.CUT_IN"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158",
+    "diagram": "content/lessons/gb/diagrams/gb-s4-16-following-distance-town.png"
+  },
+  "scenarios": [
+    {
+      "id": "s4_16_town_traffic",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Maintain a safe following gap in steady town traffic.",
+      "rulesJudged": [
+        "GB.GAP.TWO_SECOND",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.5,
+          0.7
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_16_signals_queue",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Keep a safe gap approaching and leaving the busy crossroads.",
+      "rulesJudged": [
+        "GB.GAP.TWO_SECOND",
+        "GB.TL.RED"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.5,
+          0.8
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Never tailgate in town traffic; leave room to see hazards ahead.",
+    "Ease off the throttle if another car moves into your space."
+  ]
+}

@@ -7,9 +7,12 @@ namespace LToLocal.Rules
     /// <summary>Another road user, as the rules see them.</summary>
     public readonly struct RoadUser
     {
-        public RoadUser(int id, Vec2 position, double heading, double speedMps, bool isCyclist, double lengthM = 0)
+        public RoadUser(int id, Vec2 position, double heading, double speedMps, bool isCyclist, double lengthM = 0,
+            double lastAccelMps2 = 0, bool brakingForPlayer = false)
         {
             LengthM = lengthM > 0 ? lengthM : (isCyclist ? 1.8 : 4.3);
+            LastAccelMps2 = lastAccelMps2;
+            BrakingForPlayer = brakingForPlayer;
             Id = id;
             Position = position;
             Heading = heading;
@@ -23,6 +26,10 @@ namespace LToLocal.Rules
         public double SpeedMps { get; }
         public bool IsCyclist { get; }
         public double LengthM { get; }
+        /// <summary>Last acceleration (negative = braking), m/s².</summary>
+        public double LastAccelMps2 { get; }
+        /// <summary>True when the player is what this road user is slowing down for.</summary>
+        public bool BrakingForPlayer { get; }
     }
 
     /// <summary>

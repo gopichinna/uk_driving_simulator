@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s8-19-mock-driving-test",
+  "questions": [
+    {
+      "id": "q_19_test_parts",
+      "question": "How long is the driving part of the practical car test?",
+      "options": [
+        "About 35 minutes",
+        "About 10 minutes",
+        "About 90 minutes"
+      ],
+      "answerIndex": 0,
+      "explanation": "The practical drive lasts around 35 minutes, including independent driving.",
+      "ruleId": "GB.POS.KEEP_LEFT"
+    },
+    {
+      "id": "q_19_serious_fault",
+      "question": "What happens if you make one serious or dangerous fault on the test?",
+      "options": [
+        "You fail the driving test",
+        "You get a warning and continue",
+        "It counts as two driving faults"
+      ],
+      "answerIndex": 0,
+      "explanation": "Even one serious or dangerous fault means you do not pass the test.",
+      "ruleId": "GB.SPD.OVER_LIMIT"
+    },
+    {
+      "id": "q_19_independent",
+      "question": "What should you do if you miss a turn during independent driving?",
+      "options": [
+        "Carry on safely and follow the new route",
+        "Stop in the road and reverse back",
+        "Turn sharply across lanes at the last moment"
+      ],
+      "answerIndex": 0,
+      "explanation": "Taking a wrong turn safely is not a fault; unsafe corrections are.",
+      "ruleId": "GB.POS.LANE_FOR_ROUTE"
+    }
+  ]
+}

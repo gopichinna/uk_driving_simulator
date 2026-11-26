@@ -1,0 +1,12 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s6_24_mwy_leave",
+  "course": "motorway",
+  "anchor": "leave",
+  "durationS": 90,
+  "events": [
+    { "type": "traffic_density", "value": 0.5 },
+    { "type": "slow_vehicle_ahead", "lane": 0, "speedMph": 52, "offsetM": 150 },
+    { "type": "finish_after_s", "seconds": 85 }
+  ]
+}

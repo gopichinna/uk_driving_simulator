@@ -19,7 +19,7 @@ namespace LToLocal.EditorTools
     ///   Unity -batchmode -projectPath unity -buildTarget Android -executeMethod LToLocal.EditorTools.ProjectSetup.BuildAndroid -quit
     /// Every scene is generated from code, so the scenes never drift from the simulation's geometry.
     /// </summary>
-    public static class ProjectSetup
+    public static partial class ProjectSetup
     {
         private const string SettingsDir = "Assets/Settings";
         private const string MaterialsDir = "Assets/Materials";
@@ -30,16 +30,21 @@ namespace LToLocal.EditorTools
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TestAreaScene, MotorwayScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
         {
+            CopyContent();
             ConfigurePlayer();
             ConfigureUrp();
             BuildDualCarriagewayScene();
             BuildRoundaboutScene();
             BuildTwoLaneRoundaboutScene();
+            BuildTownScene();
+            BuildWolverhamptonScene();
+            BuildTestAreaScene();
+            BuildMotorwayScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));
@@ -51,6 +56,7 @@ namespace LToLocal.EditorTools
         [MenuItem("L to Local/Build Android APK")]
         public static void BuildAndroid()
         {
+            CopyContent();
             EditorUserBuildSettings.buildAppBundle = false;
             Directory.CreateDirectory(Path.GetDirectoryName(ApkPath)!);
             var options = new BuildPlayerOptions
@@ -65,6 +71,82 @@ namespace LToLocal.EditorTools
             Debug.Log($"[LToLocal] Android build: {report.summary.result}, {report.summary.totalSize / (1024 * 1024)} MB, {report.summary.totalErrors} errors");
             if (Application.isBatchMode && report.summary.result != BuildResult.Succeeded)
                 EditorApplication.Exit(1);
+        }
+
+        /// <summary>
+        /// Copies the content files the app reads at runtime (owned by the content pipeline, see docs/08) into
+        /// Resources, so builds always ship the current text and test marking.
+        /// </summary>
+        private static void CopyContent()
+        {
+            const string dest = "Assets/Resources/Content";
+            Directory.CreateDirectory(dest);
+            var files = new (string from, string to)[]
+            {
+                ("../content/countries/gb/strings/en/ui.json", "ui.json"),
+                ("../content/countries/gb/strings/en/rules.json", "rules.json"),
+                ("../content/countries/gb/test_marking.yaml", "test_marking.txt"),
+                ("../content/cities/wolverhampton/roadpack.json", "wolverhampton_roadpack.json"),
+                ("../content/cities/wolverhampton/pois.json", "wolverhampton_pois.json"),
+                ("../content/cities/wolverhampton/pedestrians.json", "wolverhampton_pedestrians.json"),
+                ("../content/cities/wolverhampton-test-area/pedestrians.json", "wolverhampton_test_area_pedestrians.json"),
+                ("../content/cities/wolverhampton-test-area/roadpack.json", "wolverhampton_test_area_roadpack.json"),
+                ("../content/cities/wolverhampton-test-area/pois.json", "wolverhampton_test_area_pois.json"),
+                ("../content/cities/m54-j2/roadpack.json", "m54_j2_roadpack.json"),
+                ("../content/cities/m54-j2/pois.json", "m54_j2_pois.json"),
+                ("../content/lessons/gb/progression.json", "progression.json"),
+                ("../content/lessons/gb/rule_index.json", "rule_index.json"),
+            };
+            foreach (var (from, to) in files)
+            {
+                if (!File.Exists(from)) { Debug.Log($"[LToLocal] Optional content file not present: {from}"); continue; }
+                File.Copy(from, $"{dest}/{to}", overwrite: true);
+            }
+            // Lessons (numbered files only), their scenarios and quizzes, and the learn-card diagrams.
+            CopyDir("../content/lessons/gb", $"{dest}/lessons", "*.json", f => char.IsDigit(Path.GetFileName(f)[0]));
+            CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
+            CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
+            CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
+            // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
+            // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.
+            ConvertAudioDir("../content/audio/sfx", $"{dest}/audio/sfx", _ => true); // free CC0 recordings (owner chose free sounds only)
+            ConvertAudioDir("../content/audio/voice/en", $"{dest}/audio/voice", _ => true);
+            AssetDatabase.Refresh();
+        }
+
+        private static void ConvertAudioDir(string from, string to, System.Func<string, bool> keep)
+        {
+            if (!Directory.Exists(from)) return;
+            if (Directory.Exists(to)) foreach (var old in Directory.GetFiles(to)) File.Delete(old);
+            Directory.CreateDirectory(to);
+            string ffmpeg = File.Exists("/opt/homebrew/bin/ffmpeg") ? "/opt/homebrew/bin/ffmpeg" : File.Exists("/usr/local/bin/ffmpeg") ? "/usr/local/bin/ffmpeg" : "ffmpeg";
+            int ok = 0, failed = 0;
+            foreach (var f in Directory.GetFiles(from))
+            {
+                if (!keep(f)) continue;
+                string outPath = Path.Combine(to, Path.GetFileNameWithoutExtension(f) + ".wav");
+                if (f.EndsWith(".wav")) { File.Copy(f, outPath, overwrite: true); ok++; continue; } // already Unity-friendly
+                if (!f.EndsWith(".ogg")) continue;
+                var psi = new System.Diagnostics.ProcessStartInfo(ffmpeg, $"-y -loglevel error -i \"{Path.GetFullPath(f)}\" -ar 44100 -ac 1 -c:a pcm_s16le \"{Path.GetFullPath(outPath)}\"")
+                { UseShellExecute = false, RedirectStandardError = true, CreateNoWindow = true };
+                try
+                {
+                    using var p = System.Diagnostics.Process.Start(psi);
+                    p.WaitForExit(20000);
+                    if (p.ExitCode == 0 && File.Exists(outPath)) ok++; else failed++;
+                }
+                catch (System.Exception e) { failed++; Debug.LogWarning($"[LToLocal] ffmpeg not available ({e.Message}); audio skipped."); break; }
+            }
+            Debug.Log($"[LToLocal] Audio converted to WAV: {ok} ok, {failed} failed ({from}).");
+        }
+
+        private static void CopyDir(string from, string to, string pattern, System.Func<string, bool> keep)
+        {
+            if (!Directory.Exists(from)) { Debug.LogWarning($"[LToLocal] Content folder missing: {from}"); return; }
+            if (Directory.Exists(to)) foreach (var old in Directory.GetFiles(to)) File.Delete(old);
+            Directory.CreateDirectory(to);
+            foreach (var f in Directory.GetFiles(from, pattern))
+                if (keep(f)) File.Copy(f, Path.Combine(to, Path.GetFileName(f)), overwrite: true);
         }
 
         // =====================================================================

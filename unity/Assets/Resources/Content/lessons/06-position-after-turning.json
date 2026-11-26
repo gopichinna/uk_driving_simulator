@@ -1,0 +1,76 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s1-06-position-after-turning",
+  "stage": 1,
+  "order": 6,
+  "title": "Road position after turning",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Always finish every turn in the left lane of the new road.",
+      "Keep close to the left kerb when turning left.",
+      "When turning right, go past the centre before steering left."
+    ],
+    "ruleIds": [
+      "GB.POS.AFTER_TURN",
+      "GB.JCT.TURN_NEAR",
+      "GB.JCT.TURN_FAR_POSITION"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s1-06-position-after-turning.png"
+  },
+  "scenarios": [
+    {
+      "id": "s1_06_turn_north",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Complete a left and right turn cleanly into the left lane.",
+      "rulesJudged": [
+        "GB.POS.AFTER_TURN",
+        "GB.POS.KEEP_LEFT",
+        "GB.JCT.TURN_NEAR"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.2,
+          0.5
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_06_turn_south",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Position neatly near the centre line and turn into the left lane.",
+      "rulesJudged": [
+        "GB.POS.AFTER_TURN",
+        "GB.JCT.TURN_FAR_POSITION",
+        "GB.JCT.TURN_FAR_GAP"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Look into the left lane of the new road as you steer.",
+    "Never drift into the opposing lane after finishing a turn."
+  ]
+}

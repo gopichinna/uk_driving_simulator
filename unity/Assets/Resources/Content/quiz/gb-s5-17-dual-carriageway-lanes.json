@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s5-17-dual-carriageway-lanes",
+  "questions": [
+    {
+      "id": "q_17_left",
+      "question": "Which lane should you normally use on a two-lane dual carriageway?",
+      "options": [
+        "The left lane",
+        "The right lane",
+        "Either lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "Keep in the left lane unless overtaking or turning right.",
+      "ruleId": "GB.POS.DUAL_KEEP_LEFT"
+    },
+    {
+      "id": "q_17_return",
+      "question": "What should you check before moving back left after overtaking?",
+      "options": [
+        "Mirrors and blind spot",
+        "Only the road ahead",
+        "Only your indicator"
+      ],
+      "answerIndex": 0,
+      "explanation": "Make sure you are well clear of the overtaken vehicle first.",
+      "ruleId": "GB.OBS.LANE_CHANGE"
+    }
+  ]
+}

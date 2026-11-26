@@ -7,7 +7,7 @@ using UnityEngine;
 namespace LToLocal.Game
 {
     /// <summary>Single-lane 4-arm UK roundabout, 30 mph. Judges give way, signals and direction.</summary>
-    public sealed class RoundaboutCourse : MonoBehaviour, ICourse
+    public sealed class RoundaboutCourse : MonoBehaviour, ICourse, IScenarioWorld
     {
         public TrafficView trafficView;
         public static readonly Vec2 Centre = new Vec2(0, 0);
@@ -35,7 +35,7 @@ namespace LToLocal.Game
 
         private void Awake()
         {
-            _traffic = new RoundaboutTraffic(Geometry, new RoundaboutTrafficParams { TargetCars = 10 }, seed: 2026);
+            _traffic = new RoundaboutTraffic(Geometry, _params, seed: 2026);
             _rule = new RoundaboutRule(_traffic);
         }
 
@@ -72,6 +72,54 @@ namespace LToLocal.Game
         {
             into.Clear();
             foreach (var c in _traffic.Cars) into.Add(new RoadUser(c.Id, c.Position, c.Heading, c.SpeedMps, c.IsCyclist));
+        }
+
+        private readonly List<VehicleSnapshot> _replay = new List<VehicleSnapshot>();
+
+        public void Record(List<ActorPose> actors, List<LightState> lights)
+        {
+            actors.Clear();
+            lights.Clear();
+            Snapshot();
+            Replay.AddVehicles(actors, _snap);
+        }
+
+        public void ShowRecorded(RecordedFrame frame, bool blink)
+        {
+            Replay.Vehicles(frame, _replay);
+            if (trafficView != null) trafficView.Render(_replay, 1f, blink);
+        }
+
+
+        // ---------------- scenarios (IScenarioWorld) ----------------
+
+        public bool TryLocate(string name, out Vec2 position, out double heading)
+        {
+            var st = StartState;
+            position = new Vec2(st.X, st.Z);
+            heading = st.Heading;
+            return name == "start";
+        }
+
+        public void PedestrianWaits(string crossing) { }
+        public void PedestrianStepsOut(string crossing) { }
+        public void CarEmerges(string junction, double gapS, in CarState player) { }
+        public void ParkedCar(string anchor, double offsetM) { }
+        public bool LightsTurnAmber(in CarState player) => false;
+        private readonly RoundaboutTrafficParams _params = new RoundaboutTrafficParams { TargetCars = 10 };
+        public void SetTrafficDensity(double v) => _params.TargetCars = Mathf.RoundToInt(3 + Mathf.Clamp01((float)v) * 12);
+        public void CyclistAhead(string anchor, double offsetM, double speedMph) { }
+
+        /// <summary>Which exit (1 = first left) the player has left by, once clearly on an exit road.</summary>
+        public int ExitTaken(in CarState player)
+        {
+            var p = new Vec2(player.X, player.Z);
+            for (int k = 0; k < Geometry.ArmCount; k++)
+            {
+                var (s, _, d) = Geometry.Exit[k].Project(p);
+                if (d < 3 && s > 12) { int n = ((k - StartArm) % Geometry.ArmCount + Geometry.ArmCount) % Geometry.ArmCount; return n == 0 ? Geometry.ArmCount : n; }
+            }
+            return 0;
         }
 
         private void Snapshot()

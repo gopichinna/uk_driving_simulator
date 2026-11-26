@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s3-12-roundabout-lanes-signals",
+  "questions": [
+    {
+      "id": "q_12_right_lane",
+      "question": "Which approach lane should you usually pick for a right exit?",
+      "options": [
+        "The right-hand lane",
+        "The left-hand lane",
+        "Any lane if you signal"
+      ],
+      "answerIndex": 0,
+      "explanation": "Use the right lane for exits past 12 o'clock unless arrows show otherwise.",
+      "ruleId": "GB.RBT.APPROACH_LANE"
+    },
+    {
+      "id": "q_12_exit_sig",
+      "question": "When should you signal left to leave a roundabout?",
+      "options": [
+        "Right after passing the exit before yours",
+        "Before entering the roundabout",
+        "After you have left the roundabout"
+      ],
+      "answerIndex": 0,
+      "explanation": "Signal left after passing the exit before the one you want.",
+      "ruleId": "GB.RBT.SIGNAL_EXIT"
+    }
+  ]
+}

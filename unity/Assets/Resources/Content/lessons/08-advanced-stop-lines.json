@@ -1,0 +1,74 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s2-08-advanced-stop-lines",
+  "stage": 2,
+  "order": 8,
+  "title": "Advanced stop lines",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "An ASL box at traffic lights gives cyclists space ahead of cars.",
+      "You must stop at the first white line on red or amber.",
+      "Leave cyclists plenty of room when pulling away on green."
+    ],
+    "ruleIds": [
+      "GB.TL.ASL",
+      "GB.VRU.PASS_CYCLIST"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s2-08-advanced-stop-lines.png"
+  },
+  "scenarios": [
+    {
+      "id": "s2_08_asl_stop",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Stop before the first white line of the cyclist box on red.",
+      "rulesJudged": [
+        "GB.TL.ASL",
+        "GB.TL.RED"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.25,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s2_08_asl_cyclists",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Keep the ASL clear and give cyclists space after green.",
+      "rulesJudged": [
+        "GB.TL.ASL",
+        "GB.VRU.PASS_CYCLIST",
+        "GB.JCT.H3_CYCLISTS"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.3,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Always stop at the first white line before the bike box.",
+    "Watch for cyclists pulling away beside you when the light turns green."
+  ]
+}

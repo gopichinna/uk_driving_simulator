@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s8-20-roads-near-test-centre",
+  "questions": [
+    {
+      "id": "q_20_routes_disclaimer",
+      "question": "Are official practical driving test routes published?",
+      "options": [
+        "No, test routes are not published",
+        "Yes, they are posted online",
+        "Yes, every centre uses one fixed route"
+      ],
+      "answerIndex": 0,
+      "explanation": "Official test routes are not published, so practise reading signs and road markings.",
+      "ruleId": "GB.POS.LANE_FOR_ROUTE"
+    },
+    {
+      "id": "q_20_speed_change",
+      "question": "What should you watch for when turning onto a main road?",
+      "options": [
+        "New speed-limit signs and faster traffic",
+        "Only traffic from the left",
+        "Wait until cars behind sound their horn"
+      ],
+      "answerIndex": 0,
+      "explanation": "Speed limits often change at junctions with main roads, so scan for roundels early.",
+      "ruleId": "GB.SPD.OVER_LIMIT"
+    },
+    {
+      "id": "q_20_leave_estate",
+      "question": "What is a common hazard when leaving a business or industrial estate?",
+      "options": [
+        "Parked vehicles and limited view at the junction",
+        "Motorway hard shoulders",
+        "National speed limit signs on every gate"
+      ],
+      "answerIndex": 0,
+      "explanation": "Parked vans and narrow exits can block your view. Pull out slowly and safely.",
+      "ruleId": "GB.SIG.TIMELY"
+    }
+  ]
+}

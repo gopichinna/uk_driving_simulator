@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s0-03-speed-limits",
+  "questions": [
+    {
+      "id": "q_03_lights",
+      "question": "What speed limit usually applies in England when street lights have no signs?",
+      "options": [
+        "30 mph",
+        "40 mph",
+        "50 mph"
+      ],
+      "answerIndex": 0,
+      "explanation": "Regular street lights without other signs usually mean 30 mph in England.",
+      "ruleId": "GB.SPD.BUILT_UP"
+    },
+    {
+      "id": "q_03_conditions",
+      "question": "When should you drive slower than the posted speed limit?",
+      "options": [
+        "Near schools, bends, or wet roads",
+        "Only on motorways",
+        "Only at night"
+      ],
+      "answerIndex": 0,
+      "explanation": "The speed limit is a maximum, not a target.",
+      "ruleId": "GB.SPD.APPROPRIATE"
+    }
+  ]
+}

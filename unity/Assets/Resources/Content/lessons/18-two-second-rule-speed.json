@@ -1,0 +1,74 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s5-18-two-second-rule-speed",
+  "stage": 5,
+  "order": 18,
+  "title": "The two-second rule at speed",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "At 40 mph and above, leave at least a two-second gap.",
+      "Count two seconds after the car ahead passes a roadside sign.",
+      "Double the gap on wet roads to allow extra braking distance."
+    ],
+    "ruleIds": [
+      "GB.GAP.TWO_SECOND",
+      "GB.SPD.OVER_LIMIT"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158",
+    "diagram": "content/lessons/gb/diagrams/gb-s5-18-two-second-rule-speed.png"
+  },
+  "scenarios": [
+    {
+      "id": "s5_18_two_sec_cruise",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Hold at least a two-second gap behind traffic at 40 mph.",
+      "rulesJudged": [
+        "GB.GAP.TWO_SECOND",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s5_18_two_sec_dusk",
+      "course": "dual_carriageway",
+      "anchor": "start",
+      "goal": "Keep a safe two-second gap and steady speed in dusk light.",
+      "rulesJudged": [
+        "GB.GAP.TWO_SECOND",
+        "GB.SPD.OVER_LIMIT",
+        "GB.POS.DUAL_KEEP_LEFT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.7
+        ],
+        "cyclistShare": 0.0,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "At higher speeds, a two-second gap gives you time to react.",
+    "Drop back early whenever traffic ahead slows or merges."
+  ]
+}

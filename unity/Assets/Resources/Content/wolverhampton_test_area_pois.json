@@ -1,0 +1,338 @@
+{
+  "poisFormatVersion": "0.1",
+  "packId": "gb-wolverhampton-test-area",
+  "origin": {
+    "lat": 52.56,
+    "lon": -2.1016
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-24T21:21:23Z",
+    "bbox": [
+      -2.1164,
+      52.551,
+      -2.0868,
+      52.569
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "pois": [
+    {
+      "id": "poi_car_park_1012992196",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -89.952,
+      "z": -368.228,
+      "accessLinkId": "l_637984813_5",
+      "osmId": 1012992196
+    },
+    {
+      "id": "poi_car_park_1183398444",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 49.457,
+      "z": 922.649,
+      "accessLinkId": "l_265632250_0",
+      "osmId": 1183398444
+    },
+    {
+      "id": "poi_car_park_1337744826",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 113.256,
+      "z": -891.161,
+      "accessLinkId": "l_637984844_5",
+      "osmId": 1337744826
+    },
+    {
+      "id": "poi_car_park_1337744827",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 121.158,
+      "z": -914.881,
+      "accessLinkId": "l_637984844_5",
+      "osmId": 1337744827
+    },
+    {
+      "id": "poi_car_park_1338909215",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 442.953,
+      "z": 194.329,
+      "accessLinkId": "l_148450720_8",
+      "osmId": 1338909215
+    },
+    {
+      "id": "poi_car_park_1338909216",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 418.855,
+      "z": 213.587,
+      "accessLinkId": "l_148450720_9",
+      "osmId": 1338909216
+    },
+    {
+      "id": "poi_car_park_1563819554",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -746.544,
+      "z": 382.709,
+      "accessLinkId": "l_56684774_0",
+      "osmId": 1563819554
+    },
+    {
+      "id": "poi_car_park_166722521",
+      "name": "Bilston C of E Primary School",
+      "kind": "car_park",
+      "x": 736.666,
+      "z": 870.402,
+      "accessLinkId": "l_672204179_0",
+      "osmId": 166722521
+    },
+    {
+      "id": "poi_car_park_363755472",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -536.283,
+      "z": 931.131,
+      "accessLinkId": "l_645943178_3",
+      "osmId": 363755472
+    },
+    {
+      "id": "poi_car_park_363796919",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -623.405,
+      "z": 526.095,
+      "accessLinkId": "l_1309957140_1",
+      "osmId": 363796919
+    },
+    {
+      "id": "poi_car_park_363796920",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -615.048,
+      "z": 437.083,
+      "accessLinkId": "l_1309957138_0",
+      "osmId": 363796920
+    },
+    {
+      "id": "poi_car_park_363796921",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -596.081,
+      "z": 525.1,
+      "accessLinkId": "l_1309957140_1",
+      "osmId": 363796921
+    },
+    {
+      "id": "poi_car_park_363796922",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -517.665,
+      "z": 436.589,
+      "accessLinkId": "l_56684778_2",
+      "osmId": 363796922
+    },
+    {
+      "id": "poi_car_park_363796923",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -500.219,
+      "z": 415.742,
+      "accessLinkId": "l_106707301_1",
+      "osmId": 363796923
+    },
+    {
+      "id": "poi_car_park_363796924",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -501.356,
+      "z": 433.32,
+      "accessLinkId": "l_56684785_1",
+      "osmId": 363796924
+    },
+    {
+      "id": "poi_car_park_363796925",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -514.822,
+      "z": 416.611,
+      "accessLinkId": "l_56684778_2",
+      "osmId": 363796925
+    },
+    {
+      "id": "poi_car_park_465757521",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 976.293,
+      "z": 135.317,
+      "accessLinkId": "l_150644980_4",
+      "osmId": 465757521
+    },
+    {
+      "id": "poi_car_park_467485745",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 31.583,
+      "z": 962.226,
+      "accessLinkId": "l_265632250_0",
+      "osmId": 467485745
+    },
+    {
+      "id": "poi_car_park_592324223",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 399.503,
+      "z": 747.811,
+      "accessLinkId": "l_466498688_0",
+      "osmId": 592324223
+    },
+    {
+      "id": "poi_car_park_695509455",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 28.911,
+      "z": 143.786,
+      "accessLinkId": "l_106707297_4",
+      "osmId": 695509455
+    },
+    {
+      "id": "poi_car_park_755563333",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 30.974,
+      "z": 25.101,
+      "accessLinkId": "l_106707297_5",
+      "osmId": 755563333
+    },
+    {
+      "id": "poi_city_centre_queen_square",
+      "name": "City Centre (Queen Square)",
+      "kind": "city_centre",
+      "x": -1802.873,
+      "z": 2926.949,
+      "accessLinkId": "l_56459901_1",
+      "osmId": 0,
+      "reason": "Queen Square is Wolverhampton's civic centre used on local direction signs"
+    },
+    {
+      "id": "poi_school_1311587947",
+      "name": "Windsor Nursery School",
+      "kind": "school",
+      "x": -327.092,
+      "z": 688.29,
+      "accessLinkId": "l_645943178_1",
+      "osmId": 1311587947
+    },
+    {
+      "id": "poi_school_166722513",
+      "name": "Bilston Church of England Primary School",
+      "kind": "school",
+      "x": 754.735,
+      "z": 891.782,
+      "accessLinkId": "l_672204179_0",
+      "osmId": 166722513
+    },
+    {
+      "id": "poi_school_203911293",
+      "name": "Goldthorn Park Primary School",
+      "kind": "school",
+      "x": -1509.758,
+      "z": 341.141,
+      "accessLinkId": "l_23271065_0",
+      "osmId": 203911293,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_203911295",
+      "name": "The Khalsa Academy Wolverhampton",
+      "kind": "school",
+      "x": -1032.91,
+      "z": 301.16,
+      "accessLinkId": "l_439936945_1",
+      "osmId": 203911295,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_204772615",
+      "name": "Lanesfield Primary School",
+      "kind": "school",
+      "x": -147.23,
+      "z": -283.857,
+      "accessLinkId": "l_56685073_0",
+      "osmId": 204772615
+    },
+    {
+      "id": "poi_school_268007650",
+      "name": "Parkfield Primary School",
+      "kind": "school",
+      "x": -705.511,
+      "z": 669.673,
+      "accessLinkId": "l_56632707_2",
+      "osmId": 268007650
+    },
+    {
+      "id": "poi_school_268013709",
+      "name": "Manor Primary School",
+      "kind": "school",
+      "x": 376.751,
+      "z": -1275.046,
+      "accessLinkId": "l_73589448_0",
+      "osmId": 268013709,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_363802312",
+      "name": "Hill Avenue Academy",
+      "kind": "school",
+      "x": -387.4,
+      "z": -670.323,
+      "accessLinkId": "l_759553436_1",
+      "osmId": 363802312
+    },
+    {
+      "id": "poi_school_395801579",
+      "name": "St Teresa's Catholic Primary Academy",
+      "kind": "school",
+      "x": -1055.322,
+      "z": 473.425,
+      "accessLinkId": "l_439936945_2",
+      "osmId": 395801579,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_395802093",
+      "name": "The Kairos Academy",
+      "kind": "school",
+      "x": -1047.934,
+      "z": 240.733,
+      "accessLinkId": "l_23271065_0",
+      "osmId": 395802093,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_44044921",
+      "name": "Christ Church CE Primary School (Nursery Centre)",
+      "kind": "school",
+      "x": 1438.605,
+      "z": -1459.292,
+      "accessLinkId": "l_24942501_0",
+      "osmId": 44044921,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_44044928",
+      "name": "Rosewood School",
+      "kind": "school",
+      "x": 1160.627,
+      "z": -1045.518,
+      "accessLinkId": "l_24942501_0",
+      "osmId": 44044928,
+      "outsideArea": true
+    }
+  ]
+}

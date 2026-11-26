@@ -1,0 +1,120 @@
+{
+  "progressionFormatVersion": "0.1",
+  "country": "GB",
+  "stages": [
+    {
+      "stage": 0,
+      "title": "First steps",
+      "lessonIds": [
+        "gb-s0-01-keep-left-controls",
+        "gb-s0-02-moving-off-msm",
+        "gb-s0-03-speed-limits"
+      ],
+      "unlockAfter": null
+    },
+    {
+      "stage": 1,
+      "title": "Junctions and turns",
+      "lessonIds": [
+        "gb-s1-04-give-way-tjunctions",
+        "gb-s1-05-pedestrians-h2",
+        "gb-s1-06-position-after-turning"
+      ],
+      "unlockAfter": { "stage": 0, "minStars": 3 }
+    },
+    {
+      "stage": 2,
+      "title": "Traffic lights and crossings",
+      "lessonIds": [
+        "gb-s2-07-traffic-lights-amber",
+        "gb-s2-08-advanced-stop-lines",
+        "gb-s2-09-zebra-zigzags",
+        "gb-s2-10-box-junctions"
+      ],
+      "unlockAfter": { "stage": 1, "minStars": 4 }
+    },
+    {
+      "stage": 3,
+      "title": "Roundabouts",
+      "lessonIds": [
+        "gb-s3-11-roundabout-give-way",
+        "gb-s3-12-roundabout-lanes-signals",
+        "gb-s3-13-roundabout-stay-in-lane",
+        "gb-s3-14-roundabout-cyclists"
+      ],
+      "unlockAfter": { "stage": 2, "minStars": 5 }
+    },
+    {
+      "stage": 4,
+      "title": "Busy town",
+      "lessonIds": [
+        "gb-s4-15-overtaking-cyclists",
+        "gb-s4-16-following-distance-town"
+      ],
+      "unlockAfter": { "stage": 3, "minStars": 5 }
+    },
+    {
+      "stage": 5,
+      "title": "Faster roads",
+      "lessonIds": [
+        "gb-s5-17-dual-carriageway-lanes",
+        "gb-s5-18-two-second-rule-speed"
+      ],
+      "unlockAfter": { "stage": 4, "minStars": 3 }
+    },
+    {
+      "stage": 6,
+      "title": "Motorways",
+      "lessonIds": [
+        "gb-s6-24-motorway-joining-leaving",
+        "gb-s6-25-motorway-lane-discipline",
+        "gb-s6-26-motorway-red-x-limits",
+        "gb-s6-27-motorway-breakdowns"
+      ],
+      "unlockAfter": { "stage": 5, "minStars": 3 }
+    },
+    {
+      "stage": 7,
+      "title": "Conditions",
+      "lessonIds": [
+        "gb-s7-21-night-dipped-headlights",
+        "gb-s7-22-rain-stopping-distances",
+        "gb-s7-23-fog-low-visibility"
+      ],
+      "unlockAfter": { "stage": 6, "minStars": 5 }
+    },
+    {
+      "stage": 8,
+      "title": "Mock driving test",
+      "lessonIds": [
+        "gb-s8-19-mock-driving-test",
+        "gb-s8-20-roads-near-test-centre"
+      ],
+      "unlockAfter": { "stage": 7, "minStars": 4 }
+    }
+  ],
+  "stars": {
+    "one": {
+      "requirement": "completed",
+      "label": "Finished all scenarios"
+    },
+    "two": {
+      "requirement": "test_marking_pass",
+      "testMarkingRefs": ["maxDrivingFaults", "failOnSerious", "failOnDangerous"],
+      "label": "Passed within test-marking limits"
+    },
+    "three": {
+      "requirement": "zero_faults_and_quiz_perfect",
+      "label": "Zero faults and all quiz questions correct"
+    }
+  },
+  "review": {
+    "intervalsDays": [1, 3, 7, 14],
+    "maxPerDay": 3
+  },
+  "freeTier": [
+    "gb-s0-01-keep-left-controls",
+    "gb-s0-02-moving-off-msm",
+    "gb-s0-03-speed-limits"
+  ]
+}

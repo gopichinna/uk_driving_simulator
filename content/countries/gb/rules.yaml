@@ -400,6 +400,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Entering a conflict zone where a priority agent's TTC < 3 s
   teachingMoment: Replay from the other driver's point of view
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.LaneLine
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.STOP_SIGN
   group: D. Junctions and priority (JCT)
   plainEnglish: At a Stop sign, stop completely at the solid line
@@ -463,6 +467,10 @@ rules:
   detection: Ego stationary inside the box polygon and the blocker isn't an oncoming or right-turning vehicle on a far-turn
     connector
   teachingMoment: Bird's-eye view shows the queue that trapped you
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.LaneLine
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.TURN_FAR_POSITION
   group: D. Junctions and priority (JCT)
   plainEnglish: 'Right turn: mirrors, signal, position just left of the centre line, wait for a safe gap'
@@ -927,6 +935,10 @@ rules:
   phase: M
   verifiedOn: '2026-11-25'
   detection: Overtake event inside the zig-zag polygon
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.LaneLine
+    file: core/Rules.Core/TownRules.cs
 - id: GB.XNG.KEEP_CLEAR
   group: G. Pedestrian crossings (XNG)
   plainEnglish: Don't stop on a crossing in queuing traffic

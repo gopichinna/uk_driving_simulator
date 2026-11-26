@@ -1,0 +1,30 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s1-06-position-after-turning",
+  "questions": [
+    {
+      "id": "q_06_turn_end",
+      "question": "Which half of the new road should you enter after turning?",
+      "options": [
+        "The left side",
+        "The right side",
+        "Either side if clear"
+      ],
+      "answerIndex": 0,
+      "explanation": "Always finish your turn on the left side of the new road.",
+      "ruleId": "GB.POS.AFTER_TURN"
+    },
+    {
+      "id": "q_06_right_pos",
+      "question": "Where should you position your car before turning right from a main road?",
+      "options": [
+        "Just left of the centre line",
+        "Close to the left kerb",
+        "Over the centre line"
+      ],
+      "answerIndex": 0,
+      "explanation": "Keep just left of the centre line so traffic can pass on your left.",
+      "ruleId": "GB.JCT.TURN_FAR_POSITION"
+    }
+  ]
+}

@@ -3,23 +3,23 @@
 **Goal:** see `docs/08-parallel-work-plan.md` §2. Claude owns `core/**`, `unity/**` and `core-tests.yml`. Claude doesn't edit `pipeline/**`, `content/countries/**`, `content/cities/**` or `docs/02`.
 
 ## A. Town-centre course (hand-authored)
-- [ ] A1. Core: `TownGeometry`: a small grid of two-way streets (one lane each way, 30 mph, with a 20 mph school street). It has:
+- [x] A1. Core: `TownGeometry`: a small grid of two-way streets (one lane each way, 30 mph, with a 20 mph school street). It has: (de2bd8a: `LaneGraph` + `TownGeometry`)
   - a **signalised crossroads** (with an advanced stop line for cyclists);
   - two **give-way T-junctions**;
   - a **zebra crossing** with zig-zags;
   - a **box junction**.
 
   Lane paths, conflict zones and stop/give-way lines all come from one geometry.
-- [ ] A2. Core: `TrafficSignals`: a GB light sequence (red → red+amber → green → amber) per signal group, with configurable timings; deterministic.
-- [ ] A3. Core: town traffic AI:
+- [x] A2. Core: `TrafficSignals`: a GB light sequence (red → red+amber → green → amber) per signal group, with configurable timings; deterministic. (de2bd8a: `TrafficSignals`)
+- [x] A3. Core: town traffic AI: (de2bd8a: `TownTraffic`; soak-tested over 3 seeds)
   - IDM along lane paths;
   - stops for red and amber;
   - gives way at give-way lines and to pedestrians at junctions (H2);
   - doesn't block box junctions;
   - 10% cyclists;
   - 3-second gaps.
-- [ ] A4. Core: pedestrians: walk footways, wait at the zebra and cross; some cross at junction mouths (to test H2). Deterministic and seeded.
-- [ ] A5. Rules (Rules.Core), each with pass/minor/serious fixtures:
+- [x] A4. Core: pedestrians: walk footways, wait at the zebra and cross; some cross at junction mouths (to test H2). Deterministic and seeded. (de2bd8a: `TownPedestrians`)
+- [x] A5. Rules (Rules.Core), each with pass/minor/serious fixtures: (c620ae1: `TownRules.cs`, 26 fixtures)
 
   | Rule | Highway Code |
   |---|---|
@@ -32,7 +32,7 @@
   | `GB.JCT.H2_PEDESTRIANS` | H2, 170 |
   | `GB.JCT.BOX` | 174 |
 
-- [ ] A6. Unity: generated `Town` scene with road markings:
+- [x] A6. Unity: generated `Town` scene with road markings: (6f5b9e0: Town scene, now the first course; APK builds)
   - stop lines and ASL boxes;
   - give-way lines and triangles;
   - zebra stripes, Belisha beacons and zig-zags;
@@ -44,22 +44,22 @@
   Add it to the Course list.
 
 ## B. Debrief and replay (prototype P5)
-- [ ] B1. Core: `DriveRecorder`: an input log plus a state snapshot every second, and a 60 s ring buffer; restore the nearest snapshot and re-simulate. Test: replaying matches the original run.
-- [ ] B2. Unity: end-of-drive **Debrief** screen with the fault list grouped by rule. Tapping a fault replays from 6 s before to 3 s after, from a bird's-eye camera, with the explanation and the Highway Code rule.
-- [ ] B3. Unity: "Finish drive" button and a short summary (good / minor / serious / dangerous, and pass/fail in test style).
+- [x] B1. Core: `DriveRecorder`: an input log plus a state snapshot every second, and a 60 s ring buffer; restore the nearest snapshot and re-simulate. Test: replaying matches the original run. (Done with a pose recording at 10 Hz rather than input re-simulation: an exact replay without cloning AI state. `DriveRecorder`, tested.)
+- [x] B2. Unity: end-of-drive **Debrief** screen with the fault list grouped by rule. Tapping a fault replays from 6 s before to 3 s after, from a bird's-eye camera, with the explanation and the Highway Code rule. (Debrief + bird's-eye replay loop; text from `ui.json`/`rules.json`.)
+- [x] B3. Unity: "Finish drive" button and a short summary (good / minor / serious / dangerous, and pass/fail in test style). (Finish button; pass/fail from `test_marking.yaml`: ≤ 15 driving faults, no serious or dangerous.)
 
 ## C. Settings
-- [ ] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD.
+- [x] C1. Unity: **Settings** screen: steering sensitivity slider (30–150%, default 60%, saved), units hint (mph), and reset progress. Reachable from the HUD. (Settings: steering slider 30–150% in 5% steps, units hint, reset progress with confirm.)
 
 ## D. Real streets (prepare for the merge)
-- [ ] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths.
+- [x] D1. Core: `RoadPackLoader`: parse RoadPack v0 JSON (`content/schemas/roadpack.v0.schema.json`) into a link graph with lane paths. (`RoadPack` + `RoadPackGraph`: packs v0.1–0.4; tested on the sample and on Wolverhampton.)
   - Tests use `content/samples/roadpack.sample.json` **and** the merged `content/cities/wolverhampton/roadpack.json`.
   - Read v0.1 `restrictions[]` as optional.
-- [ ] D2. After Hydrogen's merge: a "Wolverhampton (beta)" course from `content/cities/wolverhampton/roadpack.json`. Roads are meshed from links, rules fire only on elements with confidence ≥ 0.7, and the ODbL attribution is shown.
+- [x] D2. After Hydrogen's merge: a "Wolverhampton (beta)" course from `content/cities/wolverhampton/roadpack.json`. Roads are meshed from links, rules fire only on elements with confidence ≥ 0.7, and the ODbL attribution is shown. (Wolverhampton (beta) scene and course: merged road, footway, marking and building meshes; AI around the player; ODbL credit on screen.)
 
 ## D+. Use Hydrogen's round-2 content as it lands
-- [ ] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text.
-- [ ] D4. The town course exposes the anchors promised to Hydrogen:
+- [x] D3. Take the debrief and toast text from `content/countries/gb/strings/en/rules.json` when it exists; otherwise use the built-in text. (Debrief and replay text come from `rules.json` and `ui.json`.)
+- [x] D4. The town course exposes the anchors promised to Hydrogen: (de2bd8a: all 7 anchors, tested)
   - `start`;
   - `crossroads_signals`;
   - `tjunction_north`, `tjunction_south`;
@@ -77,3 +77,4 @@
 
 ## Requests to Hydrogen
 - Keep `geometry` as `[[x, z], …]` metres and `speedLimitMph` as an integer (as in the schema).
+- Please add UI keys `debrief.drive_again` ("Drive again") and `debrief.keep_driving` ("Keep driving"); the debrief uses built-in English for these until then.
