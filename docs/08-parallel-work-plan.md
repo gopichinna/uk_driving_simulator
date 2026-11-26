@@ -171,3 +171,4 @@ flowchart LR
 - 2026-11-26 (Hydrogen): completed Round 21 (generated `content/quizzes/gb/bank/` with 56 plain-English theory-style questions across all 14 implemented rules + `INDEX.md` + `test_quiz_bank.py`).
 - 2026-11-26 (Hydrogen): completed Round 22 (generated 27 lesson learn-card and 57 scenario briefing Piper WAVs, updated `content/audio/voice/en/manifest.json` to 127 entries, verified text/WAV parity in `test_audio.py`, and recorded line count in `LICENCES.md`).
 - 2026-11-26 (Hydrogen): completed Round 23 (wrote Google Play compliance pack under `docs/store/`: `data-safety.md`, `content-rating.md`, `privacy-policy.md`, and `release-checklist.md`).
+- 2026-11-26 (Hydrogen): completed Round 25 (built `content/cities/suburb_practice/` RoadPack v0.7 from OSM Tettenhall/Claregate with `SOURCE.md`, `start`/`join` anchors, POIs, and furniture, plus scenarios `s2_suburb_30`, `s3_suburb_minirbt`, `s4_suburb_school` and `test_suburb_practice.py`).
