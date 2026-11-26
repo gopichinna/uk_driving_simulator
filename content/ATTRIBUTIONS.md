@@ -18,6 +18,6 @@
 ## Coach Voice & Sound Effects (`content/audio/`)
 - **TTS Engine:** Piper (`rhasspy/piper`) — MIT Licence.
 - **Coach Voice Model:** `en_GB-cori-medium` (`rhasspy/piper-voices`) — **CC BY 4.0**, trained on the NVIDIA Hi-Fi Multi-Speaker English TTS Dataset (OpenSLR 109) from Cori Samuel's public-domain LibriVox recordings.
-- **Recorded Engine Loops (`content/audio/sfx/engine_*.wav`):** `racing car engine sound loops` by `domasx2` (`https://opengameart.org/content/racing-car-engine-sound-loops`) — **CC0 1.0 Universal**.
+- **Recorded Engine Loops (`content/audio/sfx/engine_*.wav`):** `car idle` (2002 Mini Cooper 1.6L) by `seth-m` (`https://freesound.org/people/seth-m/sounds/269771/`) — **CC0 1.0 Universal**.
 - **Recorded Car & Street SFX (`content/audio/sfx/`):** Freesound CC0 recordings by `GiocoSound` (`401558`), `j1987` (`94999`), `boedie` (`457425`), `audible-edge` (`71736`), `roisin.gleeson` (`699144`), and `szegvari` (`608158`) — **CC0 1.0 Universal**.
 - **UI Tones (`content/audio/sfx/ui_click.wav`, `chime_*.wav`):** Procedurally synthesised for L to Local — **CC0 1.0 Universal**.

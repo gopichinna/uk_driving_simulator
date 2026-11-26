@@ -65,11 +65,36 @@ def test_every_sfx_has_licence_and_valid_duration() -> None:
             assert 2.0 <= entry["durationS"] <= 4.0, (
                 f"Engine loop {entry['file']} duration {entry['durationS']}s outside 2-4 s"
             )
-            assert "domasx2" in licences_text
+            assert "seth-m" in licences_text
         elif not entry["loop"]:
             assert 0.02 <= entry["durationS"] <= 3.0, (
                 f"SFX {entry['file']} duration {entry['durationS']}s > 3s"
             )
+
+
+def test_game_loaded_audio_assets_are_16bit_pcm_wav() -> None:
+    required_sfx = [
+        "indicator_on.wav",
+        "indicator_off.wav",
+        "chime_fault.wav",
+        "chime_success.wav",
+        "ambience_town.wav",
+        "engine_idle.wav",
+        "engine_low.wav",
+        "engine_mid.wav",
+    ]
+    for fname in required_sfx:
+        clip = AUDIO_DIR / "sfx" / fname
+        assert clip.is_file() and clip.stat().st_size > 0, f"Missing game SFX: {clip}"
+        _assert_unity_importable_audio(clip)
+
+    voice_keys = set(json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"].keys())
+    manifest = json.loads(VOICE_MANIFEST.read_text(encoding="utf-8"))
+    for entry in manifest["entries"]:
+        assert entry["key"] in voice_keys, f"Manifest key {entry['key']} missing from voice.json"
+        clip = AUDIO_DIR / "voice" / "en" / entry["file"]
+        assert clip.is_file() and clip.stat().st_size > 0, f"Missing voice WAV: {clip}"
+        _assert_unity_importable_audio(clip)
 
 
 def test_attributions_and_credits_list_audio_sources() -> None:
