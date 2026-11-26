@@ -1,0 +1,59 @@
+{
+  "version": "0.1",
+  "groups": {
+    "signals": {
+      "label": "Signals & lights",
+      "svg": "content/ui/icons/signals.svg",
+      "png": "content/ui/icons/signals.png",
+      "sourceSign": "content/countries/gb/signs/traffic_signals_ahead.svg"
+    },
+    "junctions": {
+      "label": "Junctions & priority",
+      "svg": "content/ui/icons/junctions.svg",
+      "png": "content/ui/icons/junctions.png",
+      "sourceSign": "content/countries/gb/signs/give_way.svg"
+    },
+    "crossings": {
+      "label": "Crossings & VRUs",
+      "svg": "content/ui/icons/crossings.svg",
+      "png": "content/ui/icons/crossings.png",
+      "sourceSign": "content/countries/gb/signs/pedestrian_crossing_ahead.svg"
+    },
+    "speed": {
+      "label": "Speed limits",
+      "svg": "content/ui/icons/speed.svg",
+      "png": "content/ui/icons/speed.png",
+      "sourceSign": "content/countries/gb/signs/speed_30.svg"
+    },
+    "gaps": {
+      "label": "Following gaps",
+      "svg": "content/ui/icons/gaps.svg",
+      "png": "content/ui/icons/gaps.png",
+      "sourceSign": "content/countries/gb/signs/stop.svg"
+    },
+    "position": {
+      "label": "Lane position",
+      "svg": "content/ui/icons/position.svg",
+      "png": "content/ui/icons/position.png",
+      "sourceSign": "content/countries/gb/signs/ahead_only.svg"
+    },
+    "roundabouts": {
+      "label": "Roundabouts",
+      "svg": "content/ui/icons/roundabouts.svg",
+      "png": "content/ui/icons/roundabouts.png",
+      "sourceSign": "content/countries/gb/signs/roundabout_ahead.svg"
+    },
+    "motorways": {
+      "label": "Motorways",
+      "svg": "content/ui/icons/motorways.svg",
+      "png": "content/ui/icons/motorways.png",
+      "sourceSign": "content/countries/gb/signs/national_speed_limit.svg"
+    },
+    "conditions": {
+      "label": "Weather & lighting",
+      "svg": "content/ui/icons/conditions.svg",
+      "png": "content/ui/icons/conditions.png",
+      "sourceSign": "content/countries/gb/signs/school_children.svg"
+    }
+  }
+}

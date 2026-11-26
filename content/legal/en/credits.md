@@ -15,6 +15,7 @@
 ## Traffic Sign Images (DfT / TSRGD)
 - **Source:** Department for Transport, GOV.UK — https://www.gov.uk/guidance/traffic-sign-images
 - **Licence:** Contains public sector information licensed under the **Open Government Licence v3.0** (**© Crown copyright**).
+- **Scope:** Used in `content/countries/gb/signs/`, lesson badges (`content/lessons/gb/badges/`), and UI rule-group fault icons (`content/ui/icons/`).
 
 ## Audio & Coach Voice (`content/audio/`)
 - **Piper TTS Engine:** MIT Licence — https://github.com/rhasspy/piper

@@ -13,7 +13,7 @@
 ## DfT Traffic Sign Images & TSRGD Diagrams
 - **Source:** Department for Transport, GOV.UK — https://www.gov.uk/guidance/traffic-sign-images
 - **Licence:** Contains public sector information licensed under the Open Government Licence v3.0 (© Crown copyright).
-- **Conditions:** Sign reproductions in `content/countries/gb/signs/` must remain accurate, must not be used in a misleading context, and must not be used as manufacturing templates.
+- **Conditions:** Sign reproductions in `content/countries/gb/signs/`, `content/lessons/gb/badges/`, and `content/ui/icons/` must remain accurate, must not be used in a misleading context, and must not be used as manufacturing templates.
 
 ## Coach Voice & Sound Effects (`content/audio/`)
 - **TTS Engine:** Piper (`rhasspy/piper`) — MIT Licence.

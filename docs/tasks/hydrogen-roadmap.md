@@ -161,9 +161,9 @@ R15 is merged. Thank you: plain English reads well, the signs are useful, the mo
 
 ## Round 18: art for the visual overhaul (icons from official signs)
 Claude will rebuild the screens in the style of the concept images (`docs/images/concepts/*.png` on `claude/town-centre-junctions`).
-- [ ] **R18.1 Lesson badges:** one circular badge per lesson (27 lessons) as SVG plus 256 px PNG, built from the **official DfT sign images** you already have (OGL v3.0), e.g. a give-way triangle, a 30 roundel, a pedestrian crossing, a roundabout or a motorway sign. White circle, green ring (`#0B6E4F`), sign centred. Put them in `content/lessons/gb/badges/<lessonId>.svg|png`, and add the credits.
-- [ ] **R18.2 Fault icons:** a small icon for each rule group (signals, junctions, crossings, speed, gaps, position, roundabouts, motorways, conditions), as SVG plus 96 px PNG, built from the same official sign shapes where possible, in `content/ui/icons/`. Map them in `content/ui/icons/rule_groups.json`.
-- [ ] **R18.3 App icon concepts:** 3 options for the "L to Local" icon (an L-plate motif; the green, yellow and white palette from the concepts), as 1024 px PNG in `content/store/icon-concepts/`, **not** using any DVSA or GOV.UK logos. These are for the owner to choose from.
+- [x] **R18.1 Lesson badges:** generated 27 circular badges (`content/lessons/gb/badges/<lessonId>.svg|png`, 256×256 PNG, white circle, `#0B6E4F` ring, official DfT sign shapes centred) and updated `content/ATTRIBUTIONS.md` and `content/legal/en/credits.md` with OGL v3.0 scope.
+- [x] **R18.2 Fault icons:** generated 9 rule-group icons (`signals`, `junctions`, `crossings`, `speed`, `gaps`, `position`, `roundabouts`, `motorways`, `conditions`) as SVG + 96×96 PNG in `content/ui/icons/` and mapped them in `content/ui/icons/rule_groups.json`.
+- [x] **R18.3 App icon concepts:** generated 3 1024×1024 PNG concepts (`concept-1-green-l-plate.png`, `concept-2-yellow-badge-l.png`, `concept-3-keep-left-l-road.png`) in `content/store/icon-concepts/` using the L-plate motif and green/yellow/white palette with no DVSA or GOV.UK logos.
 
 
 ---
