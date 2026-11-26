@@ -176,10 +176,13 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
     manifest_items: list[dict[str, Any]] = []
     cache_dir = REPO_ROOT / "pipeline" / "cache" / "sfx"
 
+    # (src_file, pitch_ratio) -> seamless crossfaded loop of a 1.6L petrol hatchback
+    mini_idle = cache_dir / "mini_cooper_idle_269771.mp3"
     recorded_engines = {
-        "engine_idle.wav": (cache_dir / "loop_0.wav", 3),
-        "engine_low.wav": (cache_dir / "loop_2_0.wav", 4),
-        "engine_mid.wav": (cache_dir / "loop_4_0.wav", 4),
+        "engine_idle.wav": (mini_idle, 1.00),
+        "engine_low.wav": (mini_idle, 1.35),
+        "engine_mid.wav": (mini_idle, 1.85),
+        "engine_high.wav": (mini_idle, 2.45),
     }
     # (src_file, ss_offset, duration_s, target_lufs, is_loop)
     recorded_clips = {
@@ -194,9 +197,16 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
-        for fname, (src_wav, repeats) in sorted(recorded_engines.items()):
+        for fname, (src_audio, pitch_ratio) in sorted(recorded_engines.items()):
             out_wav = out_dir / fname
-            tiled_wav = tmp_dir / f"{fname}.tiled.wav"
+            pitched_wav = tmp_dir / f"{fname}.pitched.wav"
+            xfade_wav = tmp_dir / f"{fname}.xfade.wav"
+            pitched_rate = int(round(SAMPLE_RATE * pitch_ratio))
+            af_pitch = (
+                f"asetrate={pitched_rate},aresample={SAMPLE_RATE}"
+                if pitch_ratio != 1.0
+                else "anull"
+            )
             subprocess.run(
                 [
                     "ffmpeg",
@@ -204,14 +214,38 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
                     "-loglevel",
                     "error",
                     "-stream_loop",
-                    str(repeats - 1),
+                    "2",
                     "-i",
-                    str(src_wav),
-                    str(tiled_wav),
+                    str(src_audio),
+                    "-ac",
+                    "1",
+                    "-ar",
+                    str(SAMPLE_RATE),
+                    "-af",
+                    af_pitch,
+                    str(pitched_wav),
                 ],
                 check=True,
             )
-            dur = _to_wav(tiled_wav, out_wav, "loudnorm=I=-16:TP=-1.5:LRA=7")
+            # Seamless 0.20 s crossfade across loop join, trimmed to 2.6 s
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-loglevel",
+                    "error",
+                    "-i",
+                    str(pitched_wav),
+                    "-i",
+                    str(pitched_wav),
+                    "-filter_complex",
+                    "[0:a]atrim=0:2.8[a0];[1:a]atrim=0.2:3.0[a1];"
+                    "[a0][a1]acrossfade=d=0.2:c1=tri:c2=tri,atrim=0:2.6",
+                    str(xfade_wav),
+                ],
+                check=True,
+            )
+            dur = _to_wav(xfade_wav, out_wav, "loudnorm=I=-16:TP=-1.5:LRA=7")
             manifest_items.append(
                 {
                     "key": Path(fname).stem,
