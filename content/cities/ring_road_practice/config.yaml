@@ -1,0 +1,27 @@
+pack_id: ring_road_practice
+display_name: "Wolverhampton Ring Road Practice"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# Wolverhampton Ring Road (A4150)
+origin:
+  lat: 52.5860
+  lon: -2.1280
+
+# ~1.4 km x 1.8 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-2.1380, 52.5780, -2.1180, 52.5940]
+
+bbox_reason: >
+  Wolverhampton Ring Road (A4150) dual carriageway with multi-lane roundabouts
+  and signalised junctions.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "West Midlands Metro tramway street excluded (trams out of scope)"

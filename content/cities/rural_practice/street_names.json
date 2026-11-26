@@ -1,0 +1,939 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "plates": [
+    {
+      "id": "sn_001",
+      "nodeId": "n_1149140971",
+      "linkId": "l_328607368_0",
+      "x": -1012.497,
+      "z": -1901.081,
+      "heading": 76.89,
+      "name": "Hallmeadow Road"
+    },
+    {
+      "id": "sn_002",
+      "nodeId": "n_12648362386",
+      "linkId": "l_332654026_2",
+      "x": 92.843,
+      "z": -844.306,
+      "heading": 68.25,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_003",
+      "nodeId": "n_1354003718",
+      "linkId": "l_120845194_0",
+      "x": 969.834,
+      "z": -513.982,
+      "heading": 245.99,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_004",
+      "nodeId": "n_13650379845",
+      "linkId": "l_36337180_1",
+      "x": -1175.194,
+      "z": -1781.933,
+      "heading": 327.75,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_005",
+      "nodeId": "n_13653164174",
+      "linkId": "l_1489558884_1",
+      "x": -671.238,
+      "z": -1883.174,
+      "heading": 57.01,
+      "name": "Lavender Hall Lane"
+    },
+    {
+      "id": "sn_006",
+      "nodeId": "n_1406796129",
+      "linkId": "l_127031144_0",
+      "x": 148.83,
+      "z": -1852.905,
+      "heading": 88.58,
+      "name": "Baulk Lane"
+    },
+    {
+      "id": "sn_007",
+      "nodeId": "n_1452876609",
+      "linkId": "l_283244181_0",
+      "x": -49.905,
+      "z": 952.851,
+      "heading": 174.15,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_008",
+      "nodeId": "n_148989282",
+      "linkId": "l_332654026_3",
+      "x": 183.367,
+      "z": -808.174,
+      "heading": 68.24,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_009",
+      "nodeId": "n_1563734570",
+      "linkId": "l_122571862_1",
+      "x": 1339.804,
+      "z": -1559.167,
+      "heading": 175.09,
+      "name": "Benton Green Lane"
+    },
+    {
+      "id": "sn_010",
+      "nodeId": "n_1602098342",
+      "linkId": "l_220071197_0",
+      "x": 1282.733,
+      "z": 1953.995,
+      "heading": 177.33,
+      "name": "Showell Lane"
+    },
+    {
+      "id": "sn_011",
+      "nodeId": "n_1681700010",
+      "linkId": "l_4020606_1",
+      "x": -104.721,
+      "z": 1818.913,
+      "heading": 182.32,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_012",
+      "nodeId": "n_1681824259",
+      "linkId": "l_122141471_1",
+      "x": -1170.625,
+      "z": 908.249,
+      "heading": 307.21,
+      "name": "Cornets End Lane"
+    },
+    {
+      "id": "sn_013",
+      "nodeId": "n_1739847004",
+      "linkId": "l_99210095_0",
+      "x": -1676.992,
+      "z": 1064.892,
+      "heading": 92.73,
+      "name": "Cornets End Lane"
+    },
+    {
+      "id": "sn_014",
+      "nodeId": "n_1746672742",
+      "linkId": "l_122683107_0",
+      "x": -97.868,
+      "z": 1381.789,
+      "heading": 171.31,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_015",
+      "nodeId": "n_1809728976",
+      "linkId": "l_37329351_1",
+      "x": 751.427,
+      "z": 1869.435,
+      "heading": 157.6,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_016",
+      "nodeId": "n_2015840697",
+      "linkId": "l_26002937_1",
+      "x": -1475.826,
+      "z": -1799.393,
+      "heading": 220.68,
+      "name": "Wootton Green Lane"
+    },
+    {
+      "id": "sn_017",
+      "nodeId": "n_2089987963",
+      "linkId": "l_122137557_0",
+      "x": 1266.066,
+      "z": 416.051,
+      "heading": 271.87,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_018",
+      "nodeId": "n_2110807800",
+      "linkId": "l_4020606_2",
+      "x": -108.39,
+      "z": 1762.611,
+      "heading": 191.94,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_019",
+      "nodeId": "n_2110807924",
+      "linkId": "l_201126429_0",
+      "x": -140.981,
+      "z": 1590.41,
+      "heading": 16.93,
+      "name": "Highbury driveways"
+    },
+    {
+      "id": "sn_020",
+      "nodeId": "n_2110807947",
+      "linkId": "l_201126429_2",
+      "x": -153.523,
+      "z": 1631.792,
+      "heading": 285.49,
+      "name": "Highbury driveways"
+    },
+    {
+      "id": "sn_021",
+      "nodeId": "n_2110807947",
+      "linkId": "l_4020606_5",
+      "x": -164.268,
+      "z": 1631.096,
+      "heading": 357.09,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_022",
+      "nodeId": "n_2110807961",
+      "linkId": "l_201126429_0",
+      "x": -136.832,
+      "z": 1575.526,
+      "heading": 240.14,
+      "name": "Highbury driveways"
+    },
+    {
+      "id": "sn_023",
+      "nodeId": "n_2110807961",
+      "linkId": "l_4020606_5",
+      "x": -143.467,
+      "z": 1585.728,
+      "heading": 162.01,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_024",
+      "nodeId": "n_2110807975",
+      "linkId": "l_201126429_2",
+      "x": -151.029,
+      "z": 1641.581,
+      "heading": 105.49,
+      "name": "Highbury driveways"
+    },
+    {
+      "id": "sn_025",
+      "nodeId": "n_2110842616",
+      "linkId": "l_4020606_3",
+      "x": -152.722,
+      "z": 1647.807,
+      "heading": 186.96,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_026",
+      "nodeId": "n_2111037030",
+      "linkId": "l_283244181_2",
+      "x": -96.757,
+      "z": 658.194,
+      "heading": 189.56,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_027",
+      "nodeId": "n_2111102188",
+      "linkId": "l_162872529_1",
+      "x": 463.11,
+      "z": 444.88,
+      "heading": 290.68,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_028",
+      "nodeId": "n_2111102412",
+      "linkId": "l_162872528_0",
+      "x": 690.107,
+      "z": 463.793,
+      "heading": 270.88,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_029",
+      "nodeId": "n_2114150191",
+      "linkId": "l_123700452_1",
+      "x": 522.519,
+      "z": -731.186,
+      "heading": 255.52,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_030",
+      "nodeId": "n_2114441360",
+      "linkId": "l_37329351_2",
+      "x": 776.53,
+      "z": 1761.214,
+      "heading": 175.35,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_031",
+      "nodeId": "n_2114573540",
+      "linkId": "l_162872529_3",
+      "x": 280.34,
+      "z": 446.057,
+      "heading": 264.02,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_032",
+      "nodeId": "n_2114573640",
+      "linkId": "l_162872529_3",
+      "x": 295.651,
+      "z": 457.816,
+      "heading": 84.02,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_033",
+      "nodeId": "n_2114573699",
+      "linkId": "l_162872529_5",
+      "x": 208.188,
+      "z": 440.796,
+      "heading": 268.51,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_034",
+      "nodeId": "n_2116751964",
+      "linkId": "l_122138514_0",
+      "x": 486.576,
+      "z": 1638.267,
+      "heading": 335.0,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_035",
+      "nodeId": "n_21278898",
+      "linkId": "l_123700456_1",
+      "x": 429.957,
+      "z": -1635.212,
+      "heading": 214.67,
+      "name": "Baulk Lane"
+    },
+    {
+      "id": "sn_036",
+      "nodeId": "n_21279035",
+      "linkId": "l_4016067_2",
+      "x": -32.421,
+      "z": -713.586,
+      "heading": 339.81,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_037",
+      "nodeId": "n_21290589",
+      "linkId": "l_4017321_0",
+      "x": -101.107,
+      "z": -930.971,
+      "heading": 47.46,
+      "name": "Lavender Hall Lane"
+    },
+    {
+      "id": "sn_038",
+      "nodeId": "n_21290589",
+      "linkId": "l_8132365_0",
+      "x": -91.307,
+      "z": -922.499,
+      "heading": 162.85,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_039",
+      "nodeId": "n_21290604",
+      "linkId": "l_8132365_0",
+      "x": -107.428,
+      "z": -904.51,
+      "heading": 342.85,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_040",
+      "nodeId": "n_21290693",
+      "linkId": "l_4017318_0",
+      "x": -64.792,
+      "z": -901.508,
+      "heading": 104.61,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_041",
+      "nodeId": "n_21290759",
+      "linkId": "l_122141471_1",
+      "x": -843.36,
+      "z": 556.794,
+      "heading": 150.44,
+      "name": "Cornets End Lane"
+    },
+    {
+      "id": "sn_042",
+      "nodeId": "n_21290759",
+      "linkId": "l_162855679_0",
+      "x": -850.444,
+      "z": 546.347,
+      "heading": 45.2,
+      "name": "Mercote Hall Lane"
+    },
+    {
+      "id": "sn_043",
+      "nodeId": "n_21290812",
+      "linkId": "l_122137557_1",
+      "x": 1094.931,
+      "z": 425.946,
+      "heading": 274.74,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_044",
+      "nodeId": "n_21290829",
+      "linkId": "l_162872529_5",
+      "x": 260.322,
+      "z": 453.969,
+      "heading": 85.43,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_045",
+      "nodeId": "n_21290904",
+      "linkId": "l_162872529_7",
+      "x": -117.355,
+      "z": 497.687,
+      "heading": 254.91,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_046",
+      "nodeId": "n_21290904",
+      "linkId": "l_37330644_3",
+      "x": -131.539,
+      "z": 494.645,
+      "heading": 9.26,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_047",
+      "nodeId": "n_21320530",
+      "linkId": "l_123700452_1",
+      "x": 902.101,
+      "z": -536.832,
+      "heading": 63.68,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_048",
+      "nodeId": "n_21320530",
+      "linkId": "l_4013717_0",
+      "x": 908.236,
+      "z": -546.551,
+      "heading": 340.19,
+      "name": "Benton Green Lane"
+    },
+    {
+      "id": "sn_049",
+      "nodeId": "n_2368199498",
+      "linkId": "l_4017321_3",
+      "x": -45.155,
+      "z": -906.913,
+      "heading": 244.13,
+      "name": "Lavender Hall Lane"
+    },
+    {
+      "id": "sn_050",
+      "nodeId": "n_2368199554",
+      "linkId": "l_4017318_2",
+      "x": -137.605,
+      "z": -887.72,
+      "heading": 293.38,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_051",
+      "nodeId": "n_25687172",
+      "linkId": "l_1201705532_0",
+      "x": -1070.464,
+      "z": -1888.692,
+      "heading": 111.64,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_052",
+      "nodeId": "n_25687175",
+      "linkId": "l_328607367_1",
+      "x": -1074.627,
+      "z": -1938.848,
+      "heading": 342.9,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_053",
+      "nodeId": "n_283688012",
+      "linkId": "l_22938790_1",
+      "x": -1321.076,
+      "z": -1601.789,
+      "heading": 103.79,
+      "name": "Wootton Lane"
+    },
+    {
+      "id": "sn_054",
+      "nodeId": "n_283688013",
+      "linkId": "l_36337180_2",
+      "x": -1268.108,
+      "z": -1618.667,
+      "heading": 336.13,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_055",
+      "nodeId": "n_283688013",
+      "linkId": "l_99346359_0",
+      "x": -1274.424,
+      "z": -1607.244,
+      "heading": 74.38,
+      "name": "Wootton Lane"
+    },
+    {
+      "id": "sn_056",
+      "nodeId": "n_372690503",
+      "linkId": "l_123700456_1",
+      "x": 435.776,
+      "z": -1551.657,
+      "heading": 0.75,
+      "name": "Baulk Lane"
+    },
+    {
+      "id": "sn_057",
+      "nodeId": "n_372690503",
+      "linkId": "l_332654027_0",
+      "x": 438.585,
+      "z": -1536.414,
+      "heading": 128.51,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_058",
+      "nodeId": "n_4264196831",
+      "linkId": "l_154291434_0",
+      "x": 1282.232,
+      "z": 1930.816,
+      "heading": 276.89,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_059",
+      "nodeId": "n_435099030",
+      "linkId": "l_169759981_0",
+      "x": -115.945,
+      "z": -335.883,
+      "heading": 352.18,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_060",
+      "nodeId": "n_435099030",
+      "linkId": "l_37326801_0",
+      "x": -104.973,
+      "z": -333.417,
+      "heading": 270.87,
+      "name": "Blind Lane"
+    },
+    {
+      "id": "sn_061",
+      "nodeId": "n_435099052",
+      "linkId": "l_122574775_3",
+      "x": 847.526,
+      "z": 469.623,
+      "heading": 286.38,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_062",
+      "nodeId": "n_446283708",
+      "linkId": "l_147013728_0",
+      "x": 1264.143,
+      "z": 1940.064,
+      "heading": 96.7,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_063",
+      "nodeId": "n_446283711",
+      "linkId": "l_43649610_0",
+      "x": 1261.349,
+      "z": 1948.088,
+      "heading": 70.34,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_064",
+      "nodeId": "n_467406143",
+      "linkId": "l_283270978_1",
+      "x": 29.698,
+      "z": -880.263,
+      "heading": 337.16,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_065",
+      "nodeId": "n_467406143",
+      "linkId": "l_4016067_0",
+      "x": 33.891,
+      "z": -863.52,
+      "heading": 159.34,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_066",
+      "nodeId": "n_467406143",
+      "linkId": "l_4020604_0",
+      "x": 39.374,
+      "z": -875.677,
+      "heading": 260.5,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_067",
+      "nodeId": "n_495631796",
+      "linkId": "l_1360921931_0",
+      "x": 98.24,
+      "z": 1927.167,
+      "heading": 283.05,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_068",
+      "nodeId": "n_546660453",
+      "linkId": "l_169825792_0",
+      "x": 784.188,
+      "z": 1992.741,
+      "heading": 95.61,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_069",
+      "nodeId": "n_546660453",
+      "linkId": "l_37329351_0",
+      "x": 782.822,
+      "z": 1983.418,
+      "heading": 29.45,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_070",
+      "nodeId": "n_552077605",
+      "linkId": "l_147013728_0",
+      "x": 1215.655,
+      "z": 1938.866,
+      "heading": 276.7,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_071",
+      "nodeId": "n_552077615",
+      "linkId": "l_43649639_0",
+      "x": 1285.412,
+      "z": 1938.274,
+      "heading": 296.71,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_072",
+      "nodeId": "n_552077704",
+      "linkId": "l_154291433_0",
+      "x": 1341.755,
+      "z": 1920.82,
+      "heading": 277.07,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_073",
+      "nodeId": "n_6483713777",
+      "linkId": "l_120845844_1",
+      "x": 1311.95,
+      "z": -1452.687,
+      "heading": 148.5,
+      "name": "Benton Green Lane"
+    },
+    {
+      "id": "sn_074",
+      "nodeId": "n_6494536411",
+      "linkId": "l_120845844_1",
+      "x": 1090.186,
+      "z": -941.364,
+      "heading": 296.89,
+      "name": "Benton Green Lane"
+    },
+    {
+      "id": "sn_075",
+      "nodeId": "n_6494740893",
+      "linkId": "l_283270978_0",
+      "x": 43.117,
+      "z": -914.69,
+      "heading": 339.64,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_076",
+      "nodeId": "n_6527774558",
+      "linkId": "l_1489558884_0",
+      "x": -664.677,
+      "z": -1877.244,
+      "heading": 56.97,
+      "name": "Lavender Hall Lane"
+    },
+    {
+      "id": "sn_077",
+      "nodeId": "n_667454544",
+      "linkId": "l_328607368_1",
+      "x": -1039.185,
+      "z": -1920.34,
+      "heading": 235.29,
+      "name": "Hallmeadow Road"
+    },
+    {
+      "id": "sn_078",
+      "nodeId": "n_687535937",
+      "linkId": "l_37330644_1",
+      "x": -129.451,
+      "z": -120.278,
+      "heading": 175.06,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_079",
+      "nodeId": "n_687536124",
+      "linkId": "l_37330644_1",
+      "x": -143.218,
+      "z": -79.868,
+      "heading": 354.79,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_080",
+      "nodeId": "n_6885595168",
+      "linkId": "l_332654027_0",
+      "x": 383.283,
+      "z": -1499.757,
+      "heading": 314.47,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_081",
+      "nodeId": "n_6889965199",
+      "linkId": "l_41987465_0",
+      "x": 269.543,
+      "z": 1922.604,
+      "heading": 249.27,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_082",
+      "nodeId": "n_7111703070",
+      "linkId": "l_120847075_0",
+      "x": 847.769,
+      "z": -1897.446,
+      "heading": 308.56,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_083",
+      "nodeId": "n_7207774981",
+      "linkId": "l_332654026_1",
+      "x": 64.356,
+      "z": -855.703,
+      "heading": 68.0,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_084",
+      "nodeId": "n_7324959132",
+      "linkId": "l_37329351_0",
+      "x": 749.966,
+      "z": 1909.928,
+      "heading": 201.88,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_085",
+      "nodeId": "n_8020547916",
+      "linkId": "l_122574775_1",
+      "x": 1003.357,
+      "z": 436.453,
+      "heading": 271.51,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_086",
+      "nodeId": "n_8237396962",
+      "linkId": "l_4020606_0",
+      "x": -102.763,
+      "z": 1867.294,
+      "heading": 182.31,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_087",
+      "nodeId": "n_8278615644",
+      "linkId": "l_122574775_2",
+      "x": 917.778,
+      "z": 446.449,
+      "heading": 287.57,
+      "name": "Back Lane"
+    },
+    {
+      "id": "sn_088",
+      "nodeId": "n_8295267142",
+      "linkId": "l_41987465_1",
+      "x": 230.068,
+      "z": 1915.551,
+      "heading": 262.87,
+      "name": "Main Road"
+    },
+    {
+      "id": "sn_089",
+      "nodeId": "n_8404915549",
+      "linkId": "l_332654027_1",
+      "x": 317.318,
+      "z": -1435.84,
+      "heading": 313.41,
+      "name": "Spencers Lane"
+    },
+    {
+      "id": "sn_090",
+      "nodeId": "n_8555745190",
+      "linkId": "l_37329351_3",
+      "x": 702.099,
+      "z": 1662.086,
+      "heading": 196.49,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_091",
+      "nodeId": "n_8747865268",
+      "linkId": "l_37330644_2",
+      "x": -149.959,
+      "z": 7.022,
+      "heading": 358.05,
+      "name": "Meriden Road"
+    },
+    {
+      "id": "sn_092",
+      "nodeId": "n_8747884738",
+      "linkId": "l_37330567_1",
+      "x": 609.183,
+      "z": 1605.195,
+      "heading": 274.62,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_093",
+      "nodeId": "n_8748562558",
+      "linkId": "l_122141471_2",
+      "x": -495.622,
+      "z": 580.887,
+      "heading": 97.44,
+      "name": "Cornets End Lane"
+    },
+    {
+      "id": "sn_094",
+      "nodeId": "n_8768412131",
+      "linkId": "l_283244181_1",
+      "x": -72.287,
+      "z": 799.2,
+      "heading": 192.52,
+      "name": "Berkswell Road"
+    },
+    {
+      "id": "sn_095",
+      "nodeId": "n_8837242984",
+      "linkId": "l_120845194_0",
+      "x": 1238.685,
+      "z": -400.262,
+      "heading": 73.49,
+      "name": "Coventry Road"
+    },
+    {
+      "id": "sn_096",
+      "nodeId": "n_9779534432",
+      "linkId": "l_26002937_0",
+      "x": -1315.878,
+      "z": -1614.783,
+      "heading": 235.25,
+      "name": "Wootton Green Lane"
+    },
+    {
+      "id": "sn_097",
+      "nodeId": "n_9779534433",
+      "linkId": "l_1064876601_0",
+      "x": -1330.789,
+      "z": -1613.455,
+      "heading": 332.77,
+      "name": "Wootton Green Lane"
+    },
+    {
+      "id": "sn_098",
+      "nodeId": "n_9779534433",
+      "linkId": "l_22938790_0",
+      "x": -1335.135,
+      "z": -1598.381,
+      "heading": 103.45,
+      "name": "Wootton Lane"
+    },
+    {
+      "id": "sn_099",
+      "nodeId": "n_9885535579",
+      "linkId": "l_36337180_3",
+      "x": -1337.147,
+      "z": -1441.21,
+      "heading": 304.24,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_100",
+      "nodeId": "n_9885535594",
+      "linkId": "l_1078268660_0",
+      "x": -1309.372,
+      "z": -1407.103,
+      "heading": 204.63,
+      "name": "Park Lane"
+    },
+    {
+      "id": "sn_101",
+      "nodeId": "n_9885535597",
+      "linkId": "l_1118955861_0",
+      "x": -1346.379,
+      "z": -1376.159,
+      "heading": 106.99,
+      "name": "Kenilworth Road"
+    },
+    {
+      "id": "sn_102",
+      "nodeId": "n_9885535616",
+      "linkId": "l_1078268659_0",
+      "x": -1294.908,
+      "z": -1381.855,
+      "heading": 84.26,
+      "name": "Park Lane"
+    }
+  ]
+}

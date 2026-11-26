@@ -18,7 +18,9 @@
         "wolverhampton",
         "wolverhampton-test-area",
         "motorway",
-        "suburb_practice"
+        "suburb_practice",
+        "rural_practice",
+        "ring_road_practice"
       ]
     },
     "anchor": {

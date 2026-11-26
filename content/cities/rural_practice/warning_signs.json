@@ -1,0 +1,65 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ],
+    "diagramRefs": {
+      "school": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)",
+      "road_humps": "Diagram 557.1 (Road humps)",
+      "road_narrows": "Diagram 516 / 517 (Road narrows)",
+      "pedestrians_in_road": "Diagram 544 (Pedestrians in road ahead)",
+      "queues_likely": "Diagram 584 (Traffic queues likely ahead)",
+      "bend_ahead": "Diagram 512 (Bend ahead)"
+    }
+  },
+  "warningSigns": [
+    {
+      "id": "ws_001",
+      "kind": "school",
+      "x": 23.74,
+      "z": -866.359,
+      "heading": 339.34,
+      "linkId": "l_4016067_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_002",
+      "kind": "school",
+      "x": -26.584,
+      "z": -730.618,
+      "heading": 339.81,
+      "linkId": "l_4016067_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_003",
+      "kind": "school",
+      "x": -83.354,
+      "z": -907.52,
+      "heading": 284.61,
+      "linkId": "l_4017318_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_004",
+      "kind": "road_humps",
+      "x": 42.827,
+      "z": -863.969,
+      "heading": 67.99,
+      "linkId": "l_332654026_0",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    }
+  ]
+}

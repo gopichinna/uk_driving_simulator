@@ -1,0 +1,20 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "signs": []
+}
