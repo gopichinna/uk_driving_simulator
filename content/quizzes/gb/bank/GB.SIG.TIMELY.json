@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_sig_1",
+    "rule": "GB.SIG.TIMELY",
+    "question": "When should you give a signal before turning or changing lanes?",
+    "options": [
+      "After you start steering",
+      "In good time before you make the move",
+      "Only when another car is behind you",
+      "Only at night or in rain"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 103 tells you to give clear signals in good time.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sig_2",
+    "rule": "GB.SIG.TIMELY",
+    "question": "What should you do with your indicator after completing a turn?",
+    "options": [
+      "Leave it flashing for 100 metres",
+      "Make sure it cancels straight away",
+      "Flash your headlights once",
+      "Switch on hazard lights briefly"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 103 says to cancel your signal after finishing the turn so it does not mislead.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sig_3",
+    "rule": "GB.SIG.TIMELY",
+    "question": "If you signal early, does that give you the right to pull out?",
+    "options": [
+      "Yes, other drivers must stop for you",
+      "No, you must still wait until it is safe",
+      "Yes, if you signal for three seconds",
+      "Only on dual carriageways"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 103 reminds drivers that signals show intent and never give priority.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sig_4",
+    "rule": "GB.SIG.TIMELY",
+    "question": "Why could a late signal confuse other road users?",
+    "options": [
+      "It drains the car battery",
+      "It gives them too little time to react safely",
+      "It breaks the speed limit rule",
+      "It turns off your brake lights"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 103 stresses signalling early enough for others to read and react.",
+    "hc_rule": "103",
+    "difficulty": 2
+  }
+]

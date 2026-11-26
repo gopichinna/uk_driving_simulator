@@ -8,7 +8,7 @@
   "additionalProperties": false,
   "properties": {
     "buildingsFormatVersion": { "const": "0.1" },
-    "packId": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "packId": { "type": "string", "pattern": "^[a-z0-9_-]+$" },
     "origin": {
       "type": "object",
       "required": ["lat", "lon"],

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_spd_1",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What is the national speed limit for a car in a built-up area with street lights, unless signed otherwise?",
+    "options": [
+      "20 mph",
+      "30 mph",
+      "40 mph",
+      "50 mph"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 124 sets 30 mph as the standard built-up area limit for cars.",
+    "hc_rule": "124",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_spd_2",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What is the maximum speed limit for a car on a UK motorway unless signs show lower?",
+    "options": [
+      "60 mph",
+      "70 mph",
+      "80 mph",
+      "50 mph"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 124 states the motorway limit for cars is 70 mph.",
+    "hc_rule": "124",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_spd_3",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What is the national speed limit for a car on a single-lane-each-way rural road?",
+    "options": [
+      "40 mph",
+      "50 mph",
+      "60 mph",
+      "70 mph"
+    ],
+    "answer": 2,
+    "explain": "Highway Code Rule 124 sets 60 mph for cars on single rural roads without lower signs.",
+    "hc_rule": "124",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_spd_4",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "Can you drive above the speed limit briefly while overtaking?",
+    "options": [
+      "Yes, for up to five seconds",
+      "No, you must never exceed the speed limit",
+      "Yes, on dual carriageways only",
+      "Yes, if no cameras are nearby"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 124 makes clear that speed limits are the legal maximum at all times.",
+    "hc_rule": "124",
+    "difficulty": 2
+  }
+]

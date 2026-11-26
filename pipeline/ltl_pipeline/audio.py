@@ -15,6 +15,7 @@ from piper import PiperVoice
 from ltl_pipeline.schema import REPO_ROOT
 
 VOICE_JSON = REPO_ROOT / "content" / "countries" / "gb" / "strings" / "en" / "voice.json"
+LESSONS_DIR = REPO_ROOT / "content" / "lessons" / "gb"
 MODEL_PATH = REPO_ROOT / "pipeline" / "cache" / "piper" / "en_GB-cori-medium.onnx"
 VOICE_OUT_DIR = REPO_ROOT / "content" / "audio" / "voice" / "en"
 SFX_OUT_DIR = REPO_ROOT / "content" / "audio" / "sfx"
@@ -74,36 +75,57 @@ def _to_wav(
     return dur
 
 
+def collect_voice_and_narration_entries(
+    voice_json_path: Path = VOICE_JSON,
+    lessons_dir: Path = LESSONS_DIR,
+) -> dict[str, str]:
+    """Return {key: text} for voice.json plus lesson learn cards and scenario briefings."""
+    voice_data = json.loads(voice_json_path.read_text(encoding="utf-8"))
+    entries: dict[str, str] = dict(voice_data["entries"])
+    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
+        lesson = json.loads(lf.read_text(encoding="utf-8"))
+        lid = lesson["id"]
+        entries[f"lesson.{lid}.learn"] = " ".join(lesson["learnCard"]["blocks"])
+        for sc in lesson["scenarios"]:
+            entries[f"scenario.{sc['id']}.brief"] = sc["goal"]
+    return entries
+
+
 def generate_voice_audio(
     voice_json_path: Path = VOICE_JSON,
     model_path: Path = MODEL_PATH,
     out_dir: Path = VOICE_OUT_DIR,
+    lessons_dir: Path = LESSONS_DIR,
 ) -> Path:
-    """Synthesise every entry in voice.json to mono 22.05 kHz OGG (~ -3 dBFS peak)."""
+    """Synthesise voice.json + lesson/scenario narration to 44.1 kHz mono 16-bit PCM WAV."""
     out_dir.mkdir(parents=True, exist_ok=True)
-    voice_data = json.loads(voice_json_path.read_text(encoding="utf-8"))
-    entries: dict[str, str] = voice_data["entries"]
-    voice = PiperVoice.load(str(model_path))
+    entries = collect_voice_and_narration_entries(voice_json_path, lessons_dir)
+    voice: PiperVoice | None = None
 
     manifest_items: list[dict[str, Any]] = []
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
         for key, text in sorted(entries.items()):
-            raw_wav = tmp_dir / f"{key}.wav"
-            with wave.open(str(raw_wav), "wb") as wf:
-                voice.synthesize_wav(text, wf)
-
-            # Trim leading/trailing silence and normalise peak to ~ -3 dBFS
             wav_name = f"{key}.wav"
             wav_path = out_dir / wav_name
-            af = (
-                "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
-                "areverse,"
-                "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
-                "areverse,"
-                "loudnorm=I=-16:TP=-3.0:LRA=7"
-            )
-            dur = _to_wav(raw_wav, wav_path, af)
+            if wav_path.is_file() and wav_path.stat().st_size > 1000:
+                dur, codec, sr, ch = _probe_audio(wav_path)
+                assert codec == "pcm_s16le" and sr == SAMPLE_RATE and ch == 1
+            else:
+                if voice is None:
+                    voice = PiperVoice.load(str(model_path))
+                raw_wav = tmp_dir / f"{key}.wav"
+                with wave.open(str(raw_wav), "wb") as wf:
+                    voice.synthesize_wav(text, wf)
+                af = (
+                    "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
+                    "areverse,"
+                    "silenceremove=start_periods=1:start_silence=0.04:start_threshold=-45dB,"
+                    "areverse,"
+                    "loudnorm=I=-16:TP=-3.0:LRA=7"
+                )
+                dur = _to_wav(raw_wav, wav_path, af)
+            assert dur <= 25.0, f"{key} exceeds 25 s limit: {dur}s"
             manifest_items.append(
                 {
                     "key": key,
@@ -176,10 +198,13 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
     manifest_items: list[dict[str, Any]] = []
     cache_dir = REPO_ROOT / "pipeline" / "cache" / "sfx"
 
+    # (src_file, pitch_ratio) -> seamless crossfaded loop of a 1.6L petrol hatchback
+    mini_idle = cache_dir / "mini_cooper_idle_269771.mp3"
     recorded_engines = {
-        "engine_idle.wav": (cache_dir / "loop_0.wav", 3),
-        "engine_low.wav": (cache_dir / "loop_2_0.wav", 4),
-        "engine_mid.wav": (cache_dir / "loop_4_0.wav", 4),
+        "engine_idle.wav": (mini_idle, 1.00),
+        "engine_low.wav": (mini_idle, 1.35),
+        "engine_mid.wav": (mini_idle, 1.85),
+        "engine_high.wav": (mini_idle, 2.45),
     }
     # (src_file, ss_offset, duration_s, target_lufs, is_loop)
     recorded_clips = {
@@ -194,9 +219,16 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
-        for fname, (src_wav, repeats) in sorted(recorded_engines.items()):
+        for fname, (src_audio, pitch_ratio) in sorted(recorded_engines.items()):
             out_wav = out_dir / fname
-            tiled_wav = tmp_dir / f"{fname}.tiled.wav"
+            pitched_wav = tmp_dir / f"{fname}.pitched.wav"
+            xfade_wav = tmp_dir / f"{fname}.xfade.wav"
+            pitched_rate = int(round(SAMPLE_RATE * pitch_ratio))
+            af_pitch = (
+                f"asetrate={pitched_rate},aresample={SAMPLE_RATE}"
+                if pitch_ratio != 1.0
+                else "anull"
+            )
             subprocess.run(
                 [
                     "ffmpeg",
@@ -204,14 +236,38 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
                     "-loglevel",
                     "error",
                     "-stream_loop",
-                    str(repeats - 1),
+                    "2",
                     "-i",
-                    str(src_wav),
-                    str(tiled_wav),
+                    str(src_audio),
+                    "-ac",
+                    "1",
+                    "-ar",
+                    str(SAMPLE_RATE),
+                    "-af",
+                    af_pitch,
+                    str(pitched_wav),
                 ],
                 check=True,
             )
-            dur = _to_wav(tiled_wav, out_wav, "loudnorm=I=-16:TP=-1.5:LRA=7")
+            # Seamless 0.20 s crossfade across loop join, trimmed to 2.6 s
+            subprocess.run(
+                [
+                    "ffmpeg",
+                    "-y",
+                    "-loglevel",
+                    "error",
+                    "-i",
+                    str(pitched_wav),
+                    "-i",
+                    str(pitched_wav),
+                    "-filter_complex",
+                    "[0:a]atrim=0:2.8[a0];[1:a]atrim=0.2:3.0[a1];"
+                    "[a0][a1]acrossfade=d=0.2:c1=tri:c2=tri,atrim=0:2.6",
+                    str(xfade_wav),
+                ],
+                check=True,
+            )
+            dur = _to_wav(xfade_wav, out_wav, "loudnorm=I=-16:TP=-1.5:LRA=7")
             manifest_items.append(
                 {
                     "key": Path(fname).stem,
