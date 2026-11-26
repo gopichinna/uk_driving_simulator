@@ -28,6 +28,9 @@ SIGNS_PLACED_SCHEMA_PATH = REPO_ROOT / "content" / "schemas" / "signs-placed.v0.
 ROUNDABOUT_FURNITURE_SCHEMA_PATH = (
     REPO_ROOT / "content" / "schemas" / "roundabout-furniture.v0.schema.json"
 )
+GANTRY_MESSAGES_SCHEMA_PATH = (
+    REPO_ROOT / "content" / "schemas" / "gantry-messages.v0.schema.json"
+)
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -208,6 +211,17 @@ def validate_roundabout_furniture_file(
     return data
 
 
+def validate_gantry_messages_file(
+    path: Path, schema_path: Path = GANTRY_MESSAGES_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load gantry_messages.json and validate against gantry-messages.v0."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
 def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     """Validate all roadpack, rules, strings, signs, lesson, and route files under content/."""
     root = content_dir or (REPO_ROOT / "content")
@@ -274,6 +288,14 @@ def validate_all_content(content_dir: Path | None = None) -> list[Path]:
     for rf_path in sorted(root.glob("cities/*/roundabout_furniture.json")):
         validate_roundabout_furniture_file(rf_path)
         validated.append(rf_path)
+
+    for ms_path in sorted(root.glob("cities/*/motorway_signs.json")):
+        validate_signs_placed_file(ms_path)
+        validated.append(ms_path)
+
+    for gm_path in sorted(root.glob("cities/*/gantry_messages.json")):
+        validate_gantry_messages_file(gm_path)
+        validated.append(gm_path)
 
     for tm_path in sorted(root.glob("countries/*/test_marking.yaml")):
         validate_testmarking_file(tm_path)

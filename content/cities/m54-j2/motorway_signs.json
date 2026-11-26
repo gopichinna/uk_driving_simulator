@@ -1,0 +1,205 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "gb-m54-j2",
+  "origin": {
+    "lat": 52.605,
+    "lon": -2.04
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "motorwaySigns": [
+    {
+      "id": "ms_001",
+      "kind": "advance_half_m",
+      "x": 1830.05,
+      "z": -3370.528,
+      "heading": 168.97,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "text": "J1 1/2 mile"
+    },
+    {
+      "id": "ms_002",
+      "kind": "countdown_3",
+      "x": 1982.809,
+      "z": -3872.683,
+      "heading": 148.68,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "bars": 3
+    },
+    {
+      "id": "ms_003",
+      "kind": "countdown_2",
+      "x": 2033.554,
+      "z": -3947.332,
+      "heading": 144.22,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "bars": 2
+    },
+    {
+      "id": "ms_004",
+      "kind": "countdown_1",
+      "x": 2094.423,
+      "z": -4013.532,
+      "heading": 132.34,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "bars": 1
+    },
+    {
+      "id": "ms_005",
+      "kind": "final_exit",
+      "x": 2152.735,
+      "z": -4060.847,
+      "heading": 126.89,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "text": "Exit J1"
+    },
+    {
+      "id": "ms_006",
+      "kind": "junction_number",
+      "x": 2160.732,
+      "z": -4066.849,
+      "heading": 126.89,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "text": "J1"
+    },
+    {
+      "id": "ms_007",
+      "kind": "advance_half_m",
+      "x": 1852.488,
+      "z": -3607.786,
+      "heading": 344.04,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "text": "J1 1/2 mile"
+    },
+    {
+      "id": "ms_008",
+      "kind": "countdown_3",
+      "x": 1765.45,
+      "z": -3084.364,
+      "heading": 356.65,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "bars": 3
+    },
+    {
+      "id": "ms_009",
+      "kind": "countdown_2",
+      "x": 1760.769,
+      "z": -2993.407,
+      "heading": 357.16,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "bars": 2
+    },
+    {
+      "id": "ms_010",
+      "kind": "countdown_1",
+      "x": 1756.219,
+      "z": -2901.52,
+      "heading": 357.16,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "bars": 1
+    },
+    {
+      "id": "ms_011",
+      "kind": "final_exit",
+      "x": 1752.46,
+      "z": -2825.613,
+      "heading": 357.16,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "text": "Exit J1"
+    },
+    {
+      "id": "ms_012",
+      "kind": "junction_number",
+      "x": 1751.965,
+      "z": -2815.625,
+      "heading": 357.16,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "text": "J1"
+    },
+    {
+      "id": "ms_013",
+      "kind": "emergency_area",
+      "x": -6070.944,
+      "z": 3665.819,
+      "heading": 267.59,
+      "style": "emergency_area",
+      "text": "Emergency Area SOS",
+      "linkId": "l_144044873_0"
+    },
+    {
+      "id": "ms_014",
+      "kind": "emergency_area",
+      "x": -6206.937,
+      "z": 3684.415,
+      "heading": 88.73,
+      "style": "emergency_area",
+      "text": "Emergency Area SOS",
+      "linkId": "l_144045364_0"
+    },
+    {
+      "id": "ms_015",
+      "kind": "emergency_area",
+      "x": 1038.324,
+      "z": 673.733,
+      "heading": 330.32,
+      "style": "emergency_area",
+      "text": "Emergency Area SOS",
+      "linkId": "l_3092141_0"
+    },
+    {
+      "id": "ms_016",
+      "kind": "emergency_area",
+      "x": 1057.95,
+      "z": 701.341,
+      "heading": 150.0,
+      "style": "emergency_area",
+      "text": "Emergency Area SOS",
+      "linkId": "l_3092163_0"
+    }
+  ]
+}

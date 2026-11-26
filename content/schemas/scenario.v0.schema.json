@@ -159,6 +159,46 @@
               "weather": { "enum": ["clear", "rain", "fog"] },
               "visibilityM": { "type": "number", "minimum": 10, "maximum": 5000 }
             }
+          },
+          {
+            "type": "object",
+            "required": ["type", "lane", "whenPlayerWithinM"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "red_x" },
+              "lane": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "whenPlayerWithinM": { "type": "number", "minimum": 10 }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "mph", "whenPlayerWithinM"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "variable_limit" },
+              "mph": { "type": "integer", "minimum": 20, "maximum": 70 },
+              "whenPlayerWithinM": { "type": "number", "minimum": 10 }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "lane", "speedMph", "offsetM"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "slow_vehicle_ahead" },
+              "lane": { "type": "integer", "minimum": 0, "maximum": 5 },
+              "speedMph": { "type": "number", "minimum": 10, "maximum": 65 },
+              "offsetM": { "type": "number", "minimum": 10 }
+            }
+          },
+          {
+            "type": "object",
+            "required": ["type", "atM"],
+            "additionalProperties": false,
+            "properties": {
+              "type": { "const": "breakdown" },
+              "atM": { "type": "number", "minimum": 20 }
+            }
           }
         ]
       }
