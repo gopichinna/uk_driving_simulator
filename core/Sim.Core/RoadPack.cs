@@ -73,6 +73,10 @@ namespace LToLocal.Sim
         public readonly Dictionary<string, Priority> Priorities = new Dictionary<string, Priority>();
         public readonly Dictionary<string, SignalPlan> SignalPlans = new Dictionary<string, SignalPlan>();
         public readonly List<SpawnPoint> SpawnPoints = new List<SpawnPoint>();
+        /// <summary>Motorway emergency areas (pack v0.7), as positions.</summary>
+        public readonly List<Vec2> EmergencyAreas = new List<Vec2>();
+        /// <summary>Motorway gantries (pack v0.7): position, heading of the traffic under it (radians) and lane count.</summary>
+        public readonly List<(Vec2 pos, double heading, int lanes)> Gantries = new List<(Vec2, double, int)>();
 
         public static RoadPack Parse(string json)
         {
@@ -166,6 +170,11 @@ namespace LToLocal.Sim
             foreach (var o in Objects(root, "spawnPoints"))
                 pack.SpawnPoints.Add(new SpawnPoint { Id = Str(o, "id"), LinkId = Str(o, "linkId"), OffsetM = Num(o, "offsetM", 0) });
 
+            foreach (var o in Objects(root, "emergencyAreas"))
+                if (o.Get("x") is double ex && o.Get("z") is double ez) pack.EmergencyAreas.Add(new Vec2(ex, ez));
+            foreach (var o in Objects(root, "gantries"))
+                if (o.Get("x") is double gx && o.Get("z") is double gz)
+                    pack.Gantries.Add((new Vec2(gx, gz), Num(o, "heading") * Math.PI / 180, (int)Num(o, "lanes", 2)));
             return pack;
         }
 

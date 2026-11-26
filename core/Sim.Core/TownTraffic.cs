@@ -21,6 +21,8 @@ namespace LToLocal.Sim
         public double Heading;
         /// <summary>True when the player is the reason this vehicle is slowing or waiting.</summary>
         public bool BrakingForPlayer;
+        /// <summary>Speed cap for this vehicle (scenarios: a slow lorry ahead); infinity = drive at the limit.</summary>
+        public double MaxSpeedMps = double.PositiveInfinity;
         public int Segment => Route[RouteIndex];
     }
 
@@ -387,7 +389,7 @@ namespace LToLocal.Sim
                 v = Math.Min(v, Math.Sqrt(vNext * vNext + 2 * 1.5 * Math.Max(0, offset)));
                 offset += next.Length;
             }
-            return Math.Max(1.0, v);
+            return Math.Max(1.0, Math.Min(v, c.MaxSpeedMps));
         }
 
         private double CurveSpeed(Segment s)

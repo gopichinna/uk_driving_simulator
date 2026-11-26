@@ -23,6 +23,16 @@ namespace LToLocal.Rules
         bool LightsTurnAmber(in CarState player);
         /// <summary>Roundabouts: 0 while still on it or approaching, else the exit number the player left by.</summary>
         int ExitTaken(in CarState player);
+
+        // Motorways (scenario.v0 R16 events). Courses without motorways keep the defaults.
+        /// <summary>The next gantry ahead shows a red X over a lane (0 = left). False if there's no gantry ahead.</summary>
+        bool RedX(int lane, in CarState player) => false;
+        /// <summary>The next gantry ahead shows a lower limit in a red ring.</summary>
+        bool VariableLimit(int mph, in CarState player) => false;
+        /// <summary>A slower vehicle appears ahead in a lane (0 = left).</summary>
+        void SlowVehicleAhead(int lane, double speedMph, double offsetM, in CarState player) { }
+        /// <summary>Is the car stopped somewhere safe after a breakdown (hard shoulder or emergency area)?</summary>
+        bool SafeStopPlace(in CarState player) => false;
     }
 
     /// <summary>
@@ -62,6 +72,9 @@ namespace LToLocal.Rules
         public string TimeOfDay { get; private set; } = "day";
         public string Weather { get; private set; } = "clear";
         public double VisibilityM { get; private set; } = 1000;
+        /// <summary>The car has lost power (breakdown event): the player should coast to a safe place and stop.</summary>
+        public bool BrokenDown { get; private set; }
+        private double _breakdownAtM = double.NaN, _brokeDownAt;
 
         public void Start(IScenarioWorld world, in CarState player)
         {
@@ -75,6 +88,8 @@ namespace LToLocal.Rules
                     case "parked_car": world.ParkedCar(e.Str("anchor"), e.Num("offsetM")); _fired[i] = true; break;
                     case "cyclist_ahead": world.CyclistAhead(e.Str("anchor"), e.Num("offsetM", 40), e.Num("speedMph", 12)); _fired[i] = true; break;
                     case "take_exit": RequiredExit = (int)e.Num("exitNumber", 1); _fired[i] = true; break;
+                    case "breakdown": _breakdownAtM = e.Num("atM", 200); _fired[i] = true; break;
+                    case "slow_vehicle_ahead": world.SlowVehicleAhead((int)e.Num("lane"), e.Num("speedMph", 50), e.Num("offsetM", 120), player); _fired[i] = true; break;
                     case "conditions":
                         TimeOfDay = e.Str("timeOfDay") is { Length: > 0 } tod ? tod : "day";
                         Weather = e.Str("weather") is { Length: > 0 } w ? w : "clear";
@@ -114,6 +129,12 @@ namespace LToLocal.Rules
                     case "car_emerges":
                         if (!_fired[i] && Within(world, e.Str("junction"), p, e.Num("whenPlayerWithinM", 40))) { world.CarEmerges(e.Str("junction"), e.Num("gapS", 4), player); _fired[i] = true; }
                         break;
+                    case "red_x":
+                        if (!_fired[i] && _elapsed > 1 && world.RedX((int)e.Num("lane"), player)) _fired[i] = true;
+                        break;
+                    case "variable_limit":
+                        if (!_fired[i] && _elapsed > 1 && world.VariableLimit((int)e.Num("mph", 50), player)) _fired[i] = true;
+                        break;
                     case "lights_turn_amber":
                         if (!_fired[i] && Within(world, "crossroads_signals_line", p, e.Num("whenPlayerWithinM", 45)) && world.LightsTurnAmber(player)) _fired[i] = true;
                         break;
@@ -125,7 +146,7 @@ namespace LToLocal.Rules
                         }
                         break;
                     case "finish_after_s":
-                        if (!IsIndependentDriving && _elapsed >= e.Num("seconds", 90)) Finish(true, "");
+                        if (!IsIndependentDriving && !WaitingForBreakdownStop && _elapsed >= e.Num("seconds", 90)) Finish(true, "");
                         break;
                     case "take_exit":
                         int exit = world.ExitTaken(player);
@@ -134,12 +155,23 @@ namespace LToLocal.Rules
                 }
                 if (Finished) return;
             }
+            if (!double.IsNaN(_breakdownAtM) && !BrokenDown && _travelled >= _breakdownAtM) { BrokenDown = true; _brokeDownAt = _elapsed; }
+            if (BrokenDown && _elapsed - _brokeDownAt > 2 && player.SpeedMps < 0.3)
+            {
+                bool safe = world.SafeStopPlace(player);
+                Finish(safe, safe ? "You stopped safely off the live lanes."
+                                  : "You stopped in a live lane. After a breakdown, get onto the hard shoulder or into an emergency area.");
+                return;
+            }
             if (IndependentDestination.Length > 0 && world.TryLocate(IndependentDestination, out var dest, out _) && (dest - p).Length < 35)
                 Finish(true, "You reached the destination by following the signs.");
             if (Finished) return;
             double limit = IsIndependentDriving ? IndependentMinutes * 60 : _def.DurationS;
             if (_elapsed >= limit) Finish(true, IsIndependentDriving ? "" : "Time is up for this drive.");
         }
+
+        /// <summary>Breakdown scenarios don't end on the clock while the car is still rolling to a stop.</summary>
+        private bool WaitingForBreakdownStop => BrokenDown;
 
         private void Finish(bool completed, string note)
         {

@@ -26,6 +26,7 @@ namespace LToLocal.Game
         private bool _mockDebrief;
 
         private IScenarioWorld World => _course as IScenarioWorld;
+        private bool BrokenDown => _director != null && _director.BrokenDown;
 
         /// <summary>Before the first reset: put the car at the scenario's anchor.</summary>
         private void PrepareLessonStart()
@@ -186,6 +187,7 @@ namespace LToLocal.Game
                 else
                 {
                 if (_director.RequiredExit > 0) line += $"  Take exit {_director.RequiredExit}.";
+                if (_director.BrokenDown) line = "Your car has lost power. Signal left, steer onto the hard shoulder or into an emergency area, and stop.";
                 line += $"   ({(int)_director.TimeLeft / 60}:{(int)_director.TimeLeft % 60:00} left)";
                 }
             }

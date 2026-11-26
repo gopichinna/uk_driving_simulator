@@ -318,6 +318,90 @@ namespace LToLocal.EditorTools
             Debug.Log($"[LToLocal] Placed signs: {skipped} skipped (no clear spot off the road).");
         }
 
+        /// <summary>Gantries with a panel over each lane (red X / limit shown by scenarios) and the motorway signs.</summary>
+        private static Transform MotorwayFurniture(Transform world, Palette m, RoadPack pack, RoadPackGraph built)
+        {
+            var root = new GameObject("Gantries").transform;
+            root.SetParent(world, false);
+            var dark = Mat("ZebraBlack", new Color(0.07f, 0.07f, 0.08f));
+            var steel = Mat("Gantry", new Color(0.55f, 0.57f, 0.60f));
+            var blue = Mat("SignBlueMotorway", new Color(0.0f, 0.25f, 0.62f));
+            for (int g = 0; g < pack.Gantries.Count; g++)
+            {
+                var (pos, heading, lanes) = pack.Gantries[g];
+                var gt = new GameObject($"Gantry{g}").transform;
+                gt.SetParent(root, false);
+                gt.SetPositionAndRotation(V(pos, 0), Quaternion.Euler(0, (float)(heading * Mathf.Rad2Deg) + 180f, 0)); // +Z faces drivers
+                float span = lanes * 3.25f + 6f;
+                foreach (float x in new[] { -span / 2, span / 2 }) Prim(PrimitiveType.Cube, "Post", gt, new Vector3(x, 3.5f, 0), new Vector3(0.4f, 7f, 0.4f), steel);
+                Prim(PrimitiveType.Cube, "Beam", gt, new Vector3(0, 6.8f, 0), new Vector3(span, 0.6f, 0.6f), steel);
+                for (int i = 0; i < lanes; i++)
+                {
+                    // Lane 0 is the left lane for the drivers; facing them, their left is our +X.
+                    float x = ((lanes - 1) / 2f - i) * 3.25f;
+                    var panel = new GameObject($"Panel{i}").transform;
+                    panel.SetParent(gt, false);
+                    panel.localPosition = new Vector3(x, 5.8f, 0.35f);
+                    Prim(PrimitiveType.Cube, "Face", panel, Vector3.zero, new Vector3(1.4f, 1.4f, 0.12f), dark);
+                    var redX = new GameObject("RedX").transform;
+                    redX.SetParent(panel, false);
+                    redX.localPosition = new Vector3(0, 0, 0.08f);
+                    foreach (float a in new[] { 45f, -45f }) Prim(PrimitiveType.Cube, "Bar", redX, Vector3.zero, new Vector3(1.5f, 0.16f, 0.02f), Glow("LampRed", new Color(1f, 0.12f, 0.10f)), new Vector3(0, 0, a));
+                    redX.gameObject.SetActive(false);
+                    var lim = new GameObject("Limit").transform;
+                    lim.SetParent(panel, false);
+                    lim.localPosition = new Vector3(0, 0, 0.08f);
+                    Prim(PrimitiveType.Cylinder, "Ring", lim, Vector3.zero, new Vector3(1.2f, 0.02f, 1.2f), Glow("LampRed", new Color(1f, 0.12f, 0.10f)), new Vector3(90, 0, 0));
+                    Prim(PrimitiveType.Cylinder, "Inner", lim, new Vector3(0, 0, 0.01f), new Vector3(0.9f, 0.02f, 0.9f), dark, new Vector3(90, 0, 0));
+                    var t = new GameObject("Text").transform;
+                    t.SetParent(lim, false);
+                    t.localPosition = new Vector3(0, 0, 0.03f);
+                    t.localRotation = Quaternion.Euler(0, 180, 0);
+                    Text(t, "50", Vector3.zero, 0.05f, Color.white, TextAnchor.MiddleCenter);
+                    lim.gameObject.SetActive(false);
+                }
+            }
+
+            string path = CityFile("motorway_signs.json");
+            if (!File.Exists(path)) return root;
+            var signs = new GameObject("MotorwaySigns").transform;
+            signs.SetParent(world, false);
+            foreach (var so in MiniJson.Arr(MiniJson.Obj(MiniJson.Parse(File.ReadAllText(path)))["motorwaySigns"]))
+            {
+                var s = MiniJson.Obj(so);
+                var at = new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"]));
+                if (!PushOffRoad(built.Graph, built.LaneWidthM, 2.5, ref at)) continue;
+                string kind = s["kind"] as string ?? "";
+                var t = new GameObject($"MwySign {kind}").transform;
+                t.SetParent(signs, false);
+                t.SetPositionAndRotation(V(at, 0), Quaternion.Euler(0, (float)MiniJson.Num(s["heading"]), 0)); // drivers look along +Z
+                if (kind.StartsWith("countdown_"))
+                {
+                    int bars = kind[kind.Length - 1] - '0';
+                    Prim(PrimitiveType.Cube, "Board", t, new Vector3(0, 1.1f, 0), new Vector3(0.6f, 1.6f, 0.05f), blue);
+                    for (int b = 0; b < bars; b++)
+                        Prim(PrimitiveType.Cube, "Bar", t, new Vector3(0, 0.55f + b * 0.45f, -0.03f), new Vector3(0.62f, 0.12f, 0.01f), m.White, new Vector3(0, 0, 25));
+                }
+                else if (kind == "junction_number")
+                {
+                    Prim(PrimitiveType.Cube, "Post", t, new Vector3(0, 1.0f, 0.05f), new Vector3(0.08f, 2f, 0.08f), m.Pole);
+                    Prim(PrimitiveType.Cube, "Plate", t, new Vector3(0, 2.1f, 0), new Vector3(0.9f, 0.5f, 0.05f), dark);
+                    Text(t, (s.TryGetValue("junctionNumber", out var jn) ? $"J{jn}" : "J"), new Vector3(0, 2.1f, -0.04f), 0.03f, Color.white, TextAnchor.MiddleCenter);
+                }
+                else
+                {
+                    bool sos = kind == "emergency_area";
+                    string text = sos ? "Emergency area\nSOS" : (s.TryGetValue("text", out var tx) ? tx as string ?? "" : "");
+                    float w = sos ? 2.2f : Mathf.Max(3f, 0.8f + text.Length * 0.17f);
+                    foreach (float x in new[] { -w / 2 + 0.3f, w / 2 - 0.3f }) Prim(PrimitiveType.Cube, "Post", t, new Vector3(x, 1.5f, 0.06f), new Vector3(0.1f, 3f, 0.1f), m.Pole);
+                    Prim(PrimitiveType.Cube, "Panel", t, new Vector3(0, 3.1f, 0), new Vector3(w, 1.4f, 0.05f), blue);
+                    Prim(PrimitiveType.Cube, "Back", t, new Vector3(0, 3.1f, 0.04f), new Vector3(w, 1.4f, 0.02f), Mat("SignBack", new Color(0.62f, 0.64f, 0.66f)));
+                    Text(t, text, new Vector3(0, 3.1f, -0.04f), 0.034f, sos ? new Color(1f, 0.6f, 0.1f) : Color.white, TextAnchor.MiddleCenter);
+                }
+            }
+            return root;
+        }
+
         private static void BuildWolverhamptonScene() => BuildCityScene("wolverhampton", WolverhamptonScene);
         private static void BuildTestAreaScene() => BuildCityScene("wolverhampton-test-area", TestAreaScene);
         private static void BuildMotorwayScene() => BuildCityScene("m54-j2", MotorwayScene);
@@ -505,7 +589,9 @@ namespace LToLocal.EditorTools
                 Prim(PrimitiveType.Capsule, "Body", p, new Vector3(0, 1.17f, 0), new Vector3(0.46f, 0.36f, 0.30f), shirts[i % shirts.Length]);
                 Prim(PrimitiveType.Sphere, "Head", p, new Vector3(0, 1.66f, 0), new Vector3(0.24f, 0.27f, 0.24f), skin);
             }
+            var gantries = MotorwayFurniture(world, m, pack, built);
             var course = game.AddComponent<WolverhamptonCourse>();
+            course.gantryRoot = gantries;
             course.pedestrianRoot = people;
             course.trafficView = trafficView;
             course.signalsRoot = signals;

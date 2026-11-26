@@ -93,6 +93,7 @@ namespace LToLocal.EditorTools
                 ("../content/cities/wolverhampton-test-area/roadpack.json", "wolverhampton_test_area_roadpack.json"),
                 ("../content/cities/wolverhampton-test-area/pois.json", "wolverhampton_test_area_pois.json"),
                 ("../content/cities/m54-j2/roadpack.json", "m54_j2_roadpack.json"),
+                ("../content/cities/m54-j2/pois.json", "m54_j2_pois.json"),
                 ("../content/lessons/gb/progression.json", "progression.json"),
                 ("../content/lessons/gb/rule_index.json", "rule_index.json"),
             };

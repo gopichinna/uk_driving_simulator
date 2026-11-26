@@ -105,6 +105,7 @@ namespace LToLocal.Game
         {
             if (_mode != Mode.Driving) { UpdatePaused(); return; }
             CarControls input = _controls.Read();
+            if (BrokenDown) input = new CarControls(input.Steer, 0, input.Brake); // breakdown scenario: no power
             int steps = _clock.Advance(Time.deltaTime);
             for (int i = 0; i < steps; i++)
             {

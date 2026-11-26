@@ -78,6 +78,7 @@ namespace LToLocal.Game
 
         public double SpeedLimitMph(in CarState p)
         {
+            if (_activeLimitMph > 0) return _activeLimitMph;
             var seg = Built.Graph.Nearest(new Vec2(p.X, p.Z), out _, out _, lanesOnly: true);
             return seg?.SpeedLimitMph ?? 30;
         }
@@ -124,6 +125,11 @@ namespace LToLocal.Game
             _pedViews.Clear();
             _rules.Reset();
             _keepLeft.Reset();
+            _redXGantry = _redXLane = _limitGantry = _watchGantry = -1;
+            _activeLimitMph = 0;
+            if (gantryRoot != null)
+                foreach (var t in gantryRoot.GetComponentsInChildren<Transform>(true))
+                    if (t.name == "RedX" || t.name == "Limit") t.gameObject.SetActive(false);
             var start = StartState;
             for (int i = 0; i < 50 * 20; i++) { _peds?.Step(0.02, _traffic, start); _traffic.Step(0.02, start, i * 0.02); }
             _time = 20;
@@ -147,6 +153,7 @@ namespace LToLocal.Game
             var frame = new DriverFrame(simTime, player, indicator);
             _rules.OnFrame(frame, _lights, _peds != null ? _peds.People : _noPeople, _users, events);
             _keepLeft.OnFrame(frame, _users, events);
+            WatchGantry(player, simTime, events);
         }
 
         private void UpdateLights()
@@ -266,6 +273,123 @@ namespace LToLocal.Game
         }
 
         public void SetTrafficDensity(double v) => _traffic.Params.TargetCars = Mathf.RoundToInt(6 + Mathf.Clamp01((float)v) * 20);
+
+        // ---------------- motorway: gantries, red X, variable limits, slow vehicles, breakdowns ----------------
+
+        public Transform gantryRoot;
+        private int _redXGantry = -1, _redXLane = -1, _limitGantry = -1, _limitMph, _activeLimitMph;
+        private double _lastGantryAlong = double.NaN;
+        private int _watchGantry = -1;
+
+        /// <summary>Lane number from the left (0) of the player's carriageway, or -1.</summary>
+        private int LaneIndex(in CarState p)
+        {
+            var seg = Built.Graph.Nearest(new Vec2(p.X, p.Z), out _, out double d, lanesOnly: true);
+            if (seg == null || d > 2.5 || !Built.LinkLanes.TryGetValue(seg.SourceId, out var lanes)) return -1;
+            int i = lanes.forward.IndexOf(seg.Id);
+            return i >= 0 ? i : lanes.backward.IndexOf(seg.Id);
+        }
+
+        /// <summary>The next gantry over the player's carriageway, 50–1500 m ahead.</summary>
+        private int GantryAhead(in CarState p)
+        {
+            var me = new Vec2(p.X, p.Z);
+            Vec2 f = Vec2.FromHeading(p.Heading);
+            int best = -1;
+            double bestAlong = double.MaxValue;
+            for (int i = 0; i < Built.Pack.Gantries.Count; i++)
+            {
+                var (pos, heading, _) = Built.Pack.Gantries[i];
+                Vec2 d = pos - me;
+                double along = d.Dot(f), side = System.Math.Abs(d.Dot(f.LeftNormal));
+                if (along < 50 || along > 1500 || side > 25 || System.Math.Cos(heading - p.Heading) < 0.7) continue;
+                if (along < bestAlong) { bestAlong = along; best = i; }
+            }
+            return best;
+        }
+
+        public bool RedX(int lane, in CarState player)
+        {
+            int g = GantryAhead(player);
+            if (g < 0) return false;
+            _redXGantry = g; _redXLane = lane; _watchGantry = g; _lastGantryAlong = double.NaN;
+            ShowGantry(g);
+            return true;
+        }
+
+        public bool VariableLimit(int mph, in CarState player)
+        {
+            int g = GantryAhead(player);
+            if (g < 0) return false;
+            _limitGantry = g; _limitMph = mph; _watchGantry = g; _lastGantryAlong = double.NaN;
+            ShowGantry(g);
+            return true;
+        }
+
+        public void SlowVehicleAhead(int lane, double speedMph, double offsetM, in CarState player)
+        {
+            var seg = Built.Graph.Nearest(new Vec2(player.X, player.Z), out double s, out _, lanesOnly: true);
+            if (seg == null || !Built.LinkLanes.TryGetValue(seg.SourceId, out var lanes)) return;
+            var side = lanes.forward.Contains(seg.Id) ? lanes.forward : lanes.backward;
+            int target = side[Mathf.Clamp(lane, 0, side.Count - 1)];
+            var t = Built.Graph.Segments[target];
+            double at = System.Math.Min(t.Length - 5, s + offsetM);
+            if (at < 5) at = t.Length / 2;
+            var car = _traffic.Add(target, at, speedMph / 2.236936);
+            car.MaxSpeedMps = speedMph / 2.236936;
+        }
+
+        public bool SafeStopPlace(in CarState p)
+        {
+            var me = new Vec2(p.X, p.Z);
+            foreach (var ea in Built.Pack.EmergencyAreas) if ((ea - me).Length < 45) return true;
+            // Hard shoulder: left of the nearside lane by more than half a lane.
+            var seg = Built.Graph.Nearest(me, out double s, out _, lanesOnly: true);
+            if (seg == null || !Built.LinkLanes.TryGetValue(seg.SourceId, out var lanes)) return false;
+            var side = lanes.forward.Contains(seg.Id) ? lanes.forward : lanes.backward;
+            var nearside = Built.Graph.Segments[side[0]];
+            var (_, lateral, _) = nearside.Path.Project(me);
+            return lateral > Built.LaneWidthM * 0.55;
+        }
+
+        /// <summary>Judges driving under a red X (Highway Code rule 258) and switches on a variable limit once passed.</summary>
+        private void WatchGantry(in CarState p, double simTime, List<RuleEvent> events)
+        {
+            if (_watchGantry < 0) return;
+            var (pos, heading, _) = Built.Pack.Gantries[_watchGantry];
+            double along = (pos - new Vec2(p.X, p.Z)).Dot(Vec2.FromHeading(heading));
+            if (!double.IsNaN(_lastGantryAlong) && _lastGantryAlong > 0 && along <= 0)
+            {
+                if (_watchGantry == _redXGantry && LaneIndex(p) == _redXLane)
+                    events.Add(new RuleEvent("GB.MWY.RED_X", RuleOutcome.Violation, Severity.Serious, simTime,
+                        "You drove under a red X. That lane is closed. Move to an open lane in good time.", "Highway Code rule 258"));
+                if (_watchGantry == _limitGantry) _activeLimitMph = _limitMph;
+                _watchGantry = -1;
+            }
+            _lastGantryAlong = along;
+        }
+
+        private void ShowGantry(int g)
+        {
+            if (gantryRoot == null) return;
+            var t = gantryRoot.Find($"Gantry{g}");
+            if (t == null) return;
+            foreach (Transform panel in t)
+            {
+                if (!panel.name.StartsWith("Panel")) continue;
+                int lane = int.Parse(panel.name.Substring(5));
+                var x = panel.Find("RedX");
+                var lim = panel.Find("Limit");
+                if (x != null) x.gameObject.SetActive(g == _redXGantry && lane == _redXLane);
+                if (lim != null)
+                {
+                    bool showLimit = g == _limitGantry && !(g == _redXGantry && lane == _redXLane);
+                    lim.gameObject.SetActive(showLimit);
+                    var tm = lim.GetComponentInChildren<TextMesh>(true);
+                    if (tm != null) tm.text = _limitMph.ToString();
+                }
+            }
+        }
         public void PedestrianWaits(string crossing) { }
         public void PedestrianStepsOut(string crossing) { }
         public void CarEmerges(string junction, double gapS, in CarState player) { }

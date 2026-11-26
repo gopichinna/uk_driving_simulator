@@ -34,7 +34,7 @@ namespace LToLocal.Rules.Tests
                 {
                     var def = ScenarioDef.FromJson(File.ReadAllText(Path.Combine(Root(), "scenarios/gb", s.Id + ".json")));
                     Assert.That(def.Course, Is.EqualTo(s.Course), s.Id);
-                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s", "independent_driving", "conditions" }));
+                    Assert.That(def.Events.Select(e => e.Type), Is.SubsetOf(new[] { "pedestrian_waits", "pedestrian_steps_out", "car_emerges", "parked_car", "cyclist_ahead", "lights_turn_amber", "traffic_density", "finish_at", "take_exit", "finish_after_s", "independent_driving", "conditions", "red_x", "variable_limit", "slow_vehicle_ahead", "breakdown" }));
                 }
                 var quiz = QuizDef.FromJson(File.ReadAllText(Path.Combine(Root(), "lessons/gb/quiz", l.Id + ".json")));
                 Assert.That(quiz.Questions.All(q => q.AnswerIndex >= 0 && q.AnswerIndex < q.Options.Count), l.Id);
@@ -94,6 +94,24 @@ namespace LToLocal.Rules.Tests
         }
 
                 [Test]
+        public void BreakdownPassesOnlyWhenStoppedSafely()
+        {
+            var world = new FakeWorld();
+            var d = new ScenarioDirector(Def("{\"scenarioId\":\"b\",\"course\":\"motorway\",\"anchor\":\"start\",\"durationS\":90,\"events\":[{\"type\":\"breakdown\",\"atM\":100},{\"type\":\"finish_after_s\",\"seconds\":20}]}"));
+            var car = new CarState { SpeedMps = 25 };
+            d.Start(world, car);
+            for (int i = 0; i < 50 * 6; i++) { car.Z += car.SpeedMps * 0.02; d.Step(0.02, world, car); }
+            Assert.That(d.BrokenDown, Is.True);
+            car.SpeedMps = 10;
+            for (int i = 0; i < 50 * 30; i++) d.Step(0.02, world, car);
+            Assert.That(d.Finished, Is.False, "still rolling: the clock doesn't end it");
+            car.SpeedMps = 0;
+            d.Step(0.02, world, car);
+            Assert.That(d.Finished && !d.Completed, "stopped in a live lane");
+            Assert.That(d.Note, Does.Contain("hard shoulder"));
+        }
+
+        [Test]
         public void IndependentDrivingRunsForItsMinutes()
         {
             var world = new FakeWorld();
