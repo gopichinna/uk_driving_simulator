@@ -40,3 +40,6 @@ jobs:
         run: |
           uv run python -m ltl_pipeline.rule_index
           git diff --exit-code ../content/lessons/gb/rule_index.json
+      - name: Generate content health report (warning only)
+        continue-on-error: true
+        run: uv run python -m ltl_pipeline.health
