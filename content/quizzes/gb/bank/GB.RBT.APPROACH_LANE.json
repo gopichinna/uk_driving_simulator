@@ -58,5 +58,155 @@
     "explain": "Highway Code Rule 186 recommends the left-hand lane for straight ahead unless signs direct otherwise.",
     "hc_rule": "186",
     "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_lane_5",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "When taking the first exit on the left at a roundabout, which lane do you choose?",
+    "options": [
+      "The left-hand lane",
+      "The right-hand lane",
+      "Either lane",
+      "The bus lane"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 says to approach in the left-hand lane for the first exit.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_lane_6",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "Where can you check which lane leads to your exit before reaching a busy roundabout?",
+    "options": [
+      "Advance signs and painted arrows on the road",
+      "Only your rear-view mirror",
+      "Street lights",
+      "Your fuel gauge"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 tells drivers to read signs and road markings early.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_lane_7",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "When taking the third exit to the right at a two-lane roundabout, which lane is usual?",
+    "options": [
+      "The right-hand lane",
+      "The left-hand lane",
+      "The cycle lane",
+      "Any lane"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 uses the right-hand lane for exits to the right unless signed otherwise.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_lane_8",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "Why should you choose your roundabout approach lane early?",
+    "options": [
+      "To avoid last-second swerving across other drivers",
+      "To use less washer fluid",
+      "To drive faster",
+      "So you do not need signals"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 encourages early lane selection for smooth, safe driving.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_lane_9",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "At a roundabout with three approach lanes, the middle lane is marked straight ahead. Which lane should you use to go straight?",
+    "options": [
+      "The middle lane as marked",
+      "Always the far right lane",
+      "Always the bus lane",
+      "Straddle two lanes"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 says to follow painted lane markings on multi-lane approaches.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_lane_10",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "If you approach a roundabout in the wrong lane and traffic is beside you, what is safest?",
+    "options": [
+      "Follow your lane safely and turn around later",
+      "Cut across the car beside you",
+      "Stop dead on the roundabout",
+      "Reverse back to the approach"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 avoids sudden lane changes across circulating traffic.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_lane_11",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "When can the right-hand approach lane also be used for going straight ahead?",
+    "options": [
+      "When road signs or lane arrows direct straight-ahead traffic into that lane",
+      "Never",
+      "Only at night",
+      "Only for small cars"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 notes that signs and markings can override the default left lane.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_lane_12",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "On a dual-lane exit roundabout where both lanes lead straight ahead, how should you pick your approach lane?",
+    "options": [
+      "Use the left lane unless you are overtaking or signs direct otherwise",
+      "Always use the right lane",
+      "Drive down the middle line",
+      "Use the hard shoulder"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 keeps traffic left unless overtaking or directed by markings.",
+    "hc_rule": "186",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_lane_13",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "What if a cyclist ahead is in the left lane and intends to turn right at the roundabout?",
+    "options": [
+      "Give them room and do not overtake closely on the approach",
+      "Squeeze past them on the left",
+      "Sound your horn",
+      "Cut across them"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 warns that cyclists may stay in the left lane even when turning right.",
+    "hc_rule": "186",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_lane_14",
+    "rule": "GB.RBT.APPROACH_LANE",
+    "question": "Why do some large roundabouts paint route numbers like 'M6' inside the approach lanes?",
+    "options": [
+      "To help you pick the right lane early for your destination",
+      "For decoration only",
+      "To mark parking bays",
+      "For pedestrians"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 uses lane markings to guide drivers cleanly through big junctions.",
+    "hc_rule": "186",
+    "difficulty": 3
   }
 ]

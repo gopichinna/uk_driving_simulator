@@ -58,5 +58,155 @@
     "explain": "Highway Code Rule 124 makes clear that speed limits are the legal maximum at all times.",
     "hc_rule": "124",
     "difficulty": 2
+  },
+  {
+    "id": "qb_spd_5",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What is the speed limit in a signed 20 mph zone?",
+    "options": [
+      "20 mph",
+      "30 mph",
+      "25 mph",
+      "15 mph"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 requires obeying signed speed limits including 20 mph zones.",
+    "hc_rule": "124",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_spd_6",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "Where do street lights usually show a 30 mph limit for cars unless signs say otherwise?",
+    "options": [
+      "In built-up towns and villages",
+      "Only on motorways",
+      "Only in car parks",
+      "Only on rural tracks"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 explains street-lit roads default to 30 mph unless signed.",
+    "hc_rule": "124",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_spd_7",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What is the national speed limit for a car on a dual carriageway with a central barrier?",
+    "options": [
+      "50 mph",
+      "60 mph",
+      "70 mph",
+      "40 mph"
+    ],
+    "answer": 2,
+    "explain": "Highway Code Rule 124 sets 70 mph for cars on dual carriageways unless signed lower.",
+    "hc_rule": "124",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_spd_8",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What does a round white sign with a black diagonal stripe mean?",
+    "options": [
+      "National speed limit applies",
+      "No entry",
+      "End of all rules",
+      "20 mph limit"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 links the national speed limit sign to 60 or 70 mph limits.",
+    "hc_rule": "124",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_spd_9",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "When you see temporary orange or red 50 mph roadworks signs, what is the legal limit?",
+    "options": [
+      "50 mph",
+      "70 mph",
+      "60 mph",
+      "40 mph"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 applies to temporary mandatory speed limits at roadworks.",
+    "hc_rule": "124",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_spd_10",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "Why should you often drive slower than the speed limit?",
+    "options": [
+      "Roadworks, rain, bends, or parked cars can make the limit unsafe",
+      "To save brake pads only",
+      "Because speed limits are just suggestions",
+      "To annoy cars behind"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 and 125 state the limit is a maximum, not a target.",
+    "hc_rule": "124",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_spd_11",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What tells you a 20 mph zone has ended?",
+    "options": [
+      "A sign showing the new limit, such as 30",
+      "A zebra crossing",
+      "A bus stop",
+      "A yellow box"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 requires following the signed limit until a new limit sign appears.",
+    "hc_rule": "124",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_spd_12",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "If you drive down a steep hill, what must you watch to stay within the limit?",
+    "options": [
+      "Your speed can creep up without pressing the accelerator",
+      "Your wipers slow down",
+      "The steering locks",
+      "Your mirrors fold in"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 applies downhill too; use gears and brakes to stay legal.",
+    "hc_rule": "124",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_spd_13",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "If a car is towing a trailer on a dual carriageway, does it share the 70 mph car limit?",
+    "options": [
+      "No, towing vehicles have a lower 60 mph limit",
+      "Yes, 70 mph",
+      "Yes, 80 mph",
+      "No, 30 mph"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 sets a 60 mph limit for cars towing trailers on dual carriageways.",
+    "hc_rule": "124",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_spd_14",
+    "rule": "GB.SPD.OVER_LIMIT",
+    "question": "What happens when variable gantry signs show a speed inside a red ring on a motorway?",
+    "options": [
+      "That lower limit is legally enforced",
+      "It is only advice",
+      "It applies only to lorries",
+      "It starts next week"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 124 and 258 make red-ring gantry limits legally binding.",
+    "hc_rule": "124",
+    "difficulty": 3
   }
 ]

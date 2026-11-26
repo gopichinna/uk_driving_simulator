@@ -58,5 +58,140 @@
     "explain": "Highway Code Rule 133 advises not weaving between lanes or cutting across other drivers.",
     "hc_rule": "133",
     "difficulty": 3
+  },
+  {
+    "id": "qb_obs_lc_5",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "What should you do right after checking your mirrors before changing lanes?",
+    "options": [
+      "Check your blind spot over your shoulder",
+      "Speed up sharply",
+      "Flash your brake lights",
+      "Turn on hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 says to check mirrors and blind spots before changing lanes.",
+    "hc_rule": "133",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_obs_lc_6",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "Before moving back to the left lane after overtaking, what must you be sure of?",
+    "options": [
+      "There is plenty of room ahead of the passed vehicle",
+      "The car behind flashes its lights",
+      "You are going at least 70 mph",
+      "Your left indicator is off"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 warns not to cut in front of the vehicle you overtook.",
+    "hc_rule": "133",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_obs_lc_7",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "When a lane ahead is closed by cones, when should you merge?",
+    "options": [
+      "Early and smoothly when you see a safe gap",
+      "At the very last cone by forcing in",
+      "By driving onto the pavement",
+      "Without using any signal"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 advises changing lanes smoothly in good time.",
+    "hc_rule": "133",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_obs_lc_8",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "What can happen if you change lanes without checking your blind spot?",
+    "options": [
+      "You could hit a cyclist, rider, or car beside you",
+      "Your tyres wear out faster",
+      "Your fuel gauge drops",
+      "Your horn stops working"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 highlights that motorcycles and cars can hide in blind spots.",
+    "hc_rule": "133",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_obs_lc_9",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "If the lane you want to enter has faster traffic, what should you do?",
+    "options": [
+      "Pull out and let them brake",
+      "Wait for a safe gap so they do not have to slow down",
+      "Signal for one second then steer",
+      "Straddle the white line"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 requires waiting so faster vehicles do not have to slow down.",
+    "hc_rule": "133",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_obs_lc_10",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "On a three-lane road, why should you avoid changing two lanes in one sweep?",
+    "options": [
+      "It wastes fuel",
+      "You cannot check all blind spots and traffic at once",
+      "It is only allowed for lorries",
+      "Road paint becomes slippery"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 says to make each lane change carefully with fresh checks.",
+    "hc_rule": "133",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_obs_lc_11",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "When two lanes merge into one, how should you treat a driver alongside you?",
+    "options": [
+      "Race ahead to beat them",
+      "Leave space and merge in turn safely",
+      "Block them with your car",
+      "Sound your horn continuously"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 and merging advice promote safe, courteous lane changes.",
+    "hc_rule": "133",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_obs_lc_12",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "In heavy rain, why do blind-spot checks matter even more before changing lanes?",
+    "options": [
+      "Spray reduces what you can see in side mirrors",
+      "Wipers turn off automatically",
+      "Indicators flash slower",
+      "Speed limits double"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 and wet-weather advice warn that spray hides vehicles in mirrors.",
+    "hc_rule": "133",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_obs_lc_13",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "You see a motorcycle filtering between lanes as you plan to move right. What should you do?",
+    "options": [
+      "Steer right anyway because you are bigger",
+      "Hold your lane and wait until the rider has passed safely",
+      "Open your door to warn them",
+      "Brake hard in your lane"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 requires watching for motorcyclists before changing lanes.",
+    "hc_rule": "133",
+    "difficulty": 3
   }
 ]

@@ -58,5 +58,155 @@
     "explain": "Highway Code Rule 185 reminds drivers to watch out for cyclists, riders, and pedestrians.",
     "hc_rule": "185",
     "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_5",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "What road marking sits across each entrance to a roundabout?",
+    "options": [
+      "A broken white give-way line",
+      "A yellow box",
+      "Zig-zag lines",
+      "A solid red line"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 marks roundabout entrances with broken give-way lines.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_gw_6",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "When approaching a roundabout, which side should you look to first for circulating traffic?",
+    "options": [
+      "Your right",
+      "Your left",
+      "Directly behind you",
+      "Straight up"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 tells you to give way to traffic coming from your right.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_gw_7",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "Does an entering car have priority over a car already on the roundabout?",
+    "options": [
+      "No, traffic already on the roundabout from the right has priority",
+      "Yes, always",
+      "Yes, if travelling faster",
+      "Only on single-lane roundabouts"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 gives priority to circulating traffic from the right.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_gw_8",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "What should you do if a car is already on the roundabout to your right and close?",
+    "options": [
+      "Stop behind the give-way line and wait for a safe gap",
+      "Accelerate hard in front of it",
+      "Sound your horn and enter",
+      "Wave it to stop"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 requires waiting until there is a safe gap.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_9",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "Why should you also glance left and ahead as you pull onto a roundabout?",
+    "options": [
+      "Traffic ahead may stop suddenly or a pedestrian may cross",
+      "Cars circulate anti-clockwise",
+      "To check shop signs",
+      "Nothing can be ahead of you"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 checks both circulating traffic from the right and hazards ahead.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_10",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "At a mini-roundabout, does the same give-way-to-the-right rule apply?",
+    "options": [
+      "Yes, give way to traffic from your right just like a full roundabout",
+      "No, mini-roundabouts have no priority",
+      "Only buses give way",
+      "Traffic from the left goes first"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and 188 apply the same give-way-to-the-right rule at mini-roundabouts.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_11",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "If the roundabout is completely clear to your right, must you still stop?",
+    "options": [
+      "No, keep moving smoothly if it is safe and clear",
+      "Yes, stop for three seconds every time",
+      "Yes, turn off the engine",
+      "Only in daylight"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 requires giving way, not stopping unnecessarily when the way is clear.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_12",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "At a mini-roundabout, three cars arrive at once and nobody has clear priority. What should you do?",
+    "options": [
+      "Make eye contact, proceed slowly, and give way if unsure",
+      "Speed across first",
+      "Sound your horn",
+      "Reverse back"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and courtesy advice help resolve deadlocks safely.",
+    "hc_rule": "185",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_gw_13",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "A lorry on the roundabout is taking the next exit, blocking your view of the lane behind it. What should you do?",
+    "options": [
+      "Wait until the lorry clears so you can see any hidden vehicles behind it",
+      "Pull out beside the lorry",
+      "Follow the lorry closely",
+      "Flash your lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 warns not to enter when a large vehicle hides traffic to your right.",
+    "hc_rule": "185",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_gw_14",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "Why must you watch the outer lane carefully when joining a two-lane roundabout?",
+    "options": [
+      "A driver in the inner lane might switch outward or a cyclist might be riding there",
+      "The outer lane is always closed",
+      "Speed limits are 70 mph",
+      "Traffic travels anti-clockwise there"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 advises watching all circulating lanes and cyclists before entering.",
+    "hc_rule": "185",
+    "difficulty": 3
   }
 ]

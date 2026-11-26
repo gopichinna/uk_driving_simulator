@@ -58,5 +58,140 @@
     "explain": "Highway Code Rule 186 shows you must travel clockwise around the roundabout to return.",
     "hc_rule": "186",
     "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_ww_5",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "In which direction do all roundabouts flow in Great Britain?",
+    "options": [
+      "Clockwise",
+      "Anti-clockwise",
+      "Alternating by time of day",
+      "Left then right"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and Rule 186 require clockwise travel on UK roundabouts.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_ww_6",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "Where should the central island of a UK roundabout always stay?",
+    "options": [
+      "On your right-hand side",
+      "On your left-hand side",
+      "Directly under your car",
+      "Behind you"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 keeps the central island on your right as you travel clockwise.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_ww_7",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "What should you do if you miss your exit on a roundabout?",
+    "options": [
+      "Stay on and go clockwise all the way around again",
+      "Stop and reverse back to the exit",
+      "Turn around anti-clockwise",
+      "Drive over the grass island"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 says never reverse or turn back; simply go around clockwise.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_ww_8",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "At a double mini-roundabout, how do you pass each painted white circle?",
+    "options": [
+      "Go clockwise around each mini-roundabout in turn",
+      "Cut straight across the second one anti-clockwise",
+      "Stop between them and reverse",
+      "Drive over the centre of both"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and Rule 188 require treating each mini-roundabout separately and passing clockwise.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_ww_9",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "Why must you NEVER drive anti-clockwise around a roundabout?",
+    "options": [
+      "You would drive head-on into oncoming circulating traffic",
+      "It wears out the left tyres",
+      "It is allowed only for emergency vans",
+      "It turns off your brakes"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 prevents head-on collisions by keeping all traffic clockwise.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_ww_10",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "When turning right at a small mini-roundabout, what mistake do learners sometimes make?",
+    "options": [
+      "Cutting the corner on the wrong side of the white circle",
+      "Signalling right",
+      "Slowing down",
+      "Looking right"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and Rule 188 warn drivers not to cut across the wrong side of the central marking.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_ww_11",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "Can large lorries sometimes touch the edge of a painted mini-roundabout circle?",
+    "options": [
+      "Yes, long vehicles may need to, but cars must drive around it clockwise",
+      "No, never",
+      "Only cars may drive over it",
+      "Only motorcycles"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and Rule 188 note cars must pass around the circle clockwise.",
+    "hc_rule": "185",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_ww_12",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "You are visiting from a right-hand-driving country. What habit must you watch at UK roundabouts?",
+    "options": [
+      "Do not turn anti-clockwise onto the roundabout; keep left and go clockwise",
+      "Drive on the right",
+      "Ignore give-way lines",
+      "Sound your horn at every exit"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 reminds newcomers that UK roundabouts always go clockwise.",
+    "hc_rule": "185",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_ww_13",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "What sign sits on the central island facing approaching traffic on many roundabouts?",
+    "options": [
+      "A blue sign with white keep-left arrows or white chevrons pointing left",
+      "A red stop sign",
+      "A green 70 sign",
+      "A yellow box"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 uses keep-left arrows and chevrons to guide traffic clockwise.",
+    "hc_rule": "185",
+    "difficulty": 3
   }
 ]

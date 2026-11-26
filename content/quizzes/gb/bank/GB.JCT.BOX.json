@@ -58,5 +58,155 @@
     "explain": "Highway Code Rule 174 says you must wait before the box even on a green light if the exit is blocked.",
     "hc_rule": "174",
     "difficulty": 2
+  },
+  {
+    "id": "qb_box_5",
+    "rule": "GB.JCT.BOX",
+    "question": "What colour are the criss-cross lines of a box junction?",
+    "options": [
+      "Yellow",
+      "White",
+      "Blue",
+      "Red"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 marks box junctions with yellow criss-cross lines.",
+    "hc_rule": "174",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_box_6",
+    "rule": "GB.JCT.BOX",
+    "question": "If you want to go straight across a box junction, what must be clear first?",
+    "options": [
+      "The exit road on the far side of the box",
+      "Only the lane behind you",
+      "Only the left pavement",
+      "Nothing if the light is green"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 says your exit must be clear before entering a box junction.",
+    "hc_rule": "174",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_box_7",
+    "rule": "GB.JCT.BOX",
+    "question": "Why do busy crossroads have yellow box junctions?",
+    "options": [
+      "To stop queuing cars from blocking crossing traffic",
+      "For parking delivery vans",
+      "To show a 20 mph zone",
+      "For cyclists only"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 keeps the centre of busy junctions clear for cross traffic.",
+    "hc_rule": "174",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_box_8",
+    "rule": "GB.JCT.BOX",
+    "question": "What should you do if a car in front stops inside a box junction and leaves no room on the far side?",
+    "options": [
+      "Wait behind the box line until space opens past the box",
+      "Drive onto the yellow lines behind them",
+      "Sound your horn",
+      "Pass on the pavement"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 requires waiting outside the box until your exit is clear.",
+    "hc_rule": "174",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_box_9",
+    "rule": "GB.JCT.BOX",
+    "question": "You are turning right at a box junction. Your exit road is clear, but oncoming cars block your turn. May you wait in the box?",
+    "options": [
+      "Yes, you may wait in the box to turn right",
+      "No, never",
+      "Only if you turn on hazard lights",
+      "Only at night"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 makes a specific exception when turning right and waiting for oncoming traffic.",
+    "hc_rule": "174",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_box_10",
+    "rule": "GB.JCT.BOX",
+    "question": "You are turning right at a box junction, and the road you want to turn into is jammed full. May you enter the box?",
+    "options": [
+      "No, because your exit road is blocked",
+      "Yes, always when turning right",
+      "Yes, for 10 seconds",
+      "Yes, if you signal right"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 only allows waiting in the box if your exit road itself is clear.",
+    "hc_rule": "174",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_box_11",
+    "rule": "GB.JCT.BOX",
+    "question": "If the traffic light is green but the exit past the box is full, what could happen if you enter?",
+    "options": [
+      "You will be stuck in the box when the cross traffic gets a green light",
+      "Your engine will stall",
+      "The lights stay green forever",
+      "Nothing happens"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 prevents drivers getting trapped across live junctions.",
+    "hc_rule": "174",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_box_12",
+    "rule": "GB.JCT.BOX",
+    "question": "At a box junction, you follow a tall van and cannot see if space is clear beyond the box. What should you do?",
+    "options": [
+      "Hold back before the box until you can see your exit is clear",
+      "Follow the van closely into the box",
+      "Flash your lights",
+      "Overtake the van inside the box"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 means never entering blindly when a tall vehicle hides the exit.",
+    "hc_rule": "174",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_box_13",
+    "rule": "GB.JCT.BOX",
+    "question": "Which turning direction has the special exception to wait inside a yellow box junction?",
+    "options": [
+      "Turning right (when only oncoming traffic stops you)",
+      "Turning left",
+      "Going straight ahead",
+      "Reversing"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 grants the exception only for right turns blocked by oncoming traffic.",
+    "hc_rule": "174",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_box_14",
+    "rule": "GB.JCT.BOX",
+    "question": "Are half-box junctions sometimes painted on only one side of a T-junction?",
+    "options": [
+      "Yes, to keep that side clear for turning traffic",
+      "No, they are always full squares",
+      "Only on motorways",
+      "Only in car parks"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 covers full and half-box yellow markings at busy junctions.",
+    "hc_rule": "174",
+    "difficulty": 3
   }
 ]

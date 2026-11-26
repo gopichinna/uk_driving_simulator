@@ -58,5 +58,140 @@
     "explain": "Highway Code Rule 191 applies across the zig-zag markings approaching the crossing.",
     "hc_rule": "191",
     "difficulty": 2
+  },
+  {
+    "id": "qb_zz_5",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "What colour are the zig-zag lines at a zebra or pelican crossing?",
+    "options": [
+      "White",
+      "Yellow",
+      "Red",
+      "Blue"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 uses white zig-zag lines on both sides of crossings.",
+    "hc_rule": "191",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_zz_6",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "May you drop off a passenger for 10 seconds on crossing zig-zag lines?",
+    "options": [
+      "No, stopping and parking are banned on the zig-zags",
+      "Yes, if you stay in the car",
+      "Yes, at night",
+      "Yes, with hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 forbids parking or waiting on crossing zig-zag lines.",
+    "hc_rule": "191",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_zz_7",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "What must you NOT do to a moving vehicle ahead of you inside crossing zig-zags?",
+    "options": [
+      "Overtake it",
+      "Leave a two-second gap behind it",
+      "Slow down behind it",
+      "Look at the beacons"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 bans overtaking any leading moving or stopped vehicle at a crossing.",
+    "hc_rule": "191",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_zz_8",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "Does the zig-zag no-overtaking rule apply at signal-controlled crossings like pelican crossings too?",
+    "options": [
+      "Yes, it applies at all pedestrian crossings with zig-zags",
+      "No, only zebra crossings",
+      "Only in school zones",
+      "Only on single roads"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 applies to zebra, pelican, puffin, and toucan crossings with zig-zags.",
+    "hc_rule": "191",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_zz_9",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "What if a bus stops just before a zebra crossing to let someone cross? May you pass the bus?",
+    "options": [
+      "No, you must wait behind the bus",
+      "Yes, pass slowly on the right",
+      "Yes, if you sound your horn",
+      "Only if no stripes are visible"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 bans passing the lead vehicle because it can hide pedestrians.",
+    "hc_rule": "191",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_zz_10",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "You are approaching a crossing and see a cyclist ahead inside the zig-zag lines. What should you do?",
+    "options": [
+      "Hold back behind the cyclist until past the crossing",
+      "Overtake them inside the zig-zags",
+      "Flash your lights",
+      "Mount the kerb"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 forbids overtaking any vehicle inside the zig-zag zone.",
+    "hc_rule": "191",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_zz_11",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "When you are stopped in a queue, where should you wait if space ends at a zebra crossing?",
+    "options": [
+      "Before the stripes so the crossing stays clear",
+      "On top of the black and white stripes",
+      "Across the pedestrian path",
+      "On the central island"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 and 192 keep crossings clear for people on foot.",
+    "hc_rule": "191",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_zz_12",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "May you overtake a parked car that broke down on the zig-zags? Only if safe?",
+    "options": [
+      "Wait if unsure, and pass slowly only if it is clearly stationary and broken down, watching for pedestrians",
+      "Speed past at 40 mph",
+      "Never pass a broken-down car even after checking",
+      "Drive on the pavement"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 forbids overtaking moving or stopped-for-crossing lead vehicles; pass broken-down obstructions only with extreme care.",
+    "hc_rule": "191",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_zz_13",
+    "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+    "question": "Why are zig-zag lines painted on BOTH the approach and exit sides of a crossing?",
+    "options": [
+      "To keep views clear in both directions and stop overtaking or parking near the stripes",
+      "To mark cycle parking",
+      "To show a bus stop",
+      "To warn of speed humps"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 191 keeps both sides of the crossing clear for pedestrians and drivers.",
+    "hc_rule": "191",
+    "difficulty": 3
   }
 ]

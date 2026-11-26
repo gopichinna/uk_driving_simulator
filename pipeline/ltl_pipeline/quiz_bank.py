@@ -14,6 +14,7 @@ from ltl_pipeline.schema import REPO_ROOT
 
 RULES_YAML = REPO_ROOT / "content" / "countries" / "gb" / "rules.yaml"
 BANK_DIR = REPO_ROOT / "content" / "quizzes" / "gb" / "bank"
+TESTS_DIR = REPO_ROOT / "content" / "quizzes" / "gb" / "tests"
 
 
 def validate_bank_question(item: dict[str, Any], banned: list[str]) -> list[str]:
@@ -82,6 +83,77 @@ def write_quiz_bank_index(
     return index_path
 
 
+def build_theory_test_sets(
+    bank_dir: Path = BANK_DIR,
+    tests_dir: Path = TESTS_DIR,
+    num_sets: int = 10,
+) -> list[Path]:
+    """Build 10 balanced 50-question theory mock-test sets (40% easy, 40% med, 20% hard)."""
+    tests_dir.mkdir(parents=True, exist_ok=True)
+    all_questions: list[dict[str, Any]] = []
+    for p in sorted(bank_dir.glob("GB.*.json")):
+        all_questions.extend(json.loads(p.read_text(encoding="utf-8")))
+
+    by_diff: dict[int, list[dict[str, Any]]] = {1: [], 2: [], 3: []}
+    for q in all_questions:
+        by_diff[q["difficulty"]].append(q)
+
+    # Deterministic round-robin with usage cap <= 3 and per-set topic cap <= 7 (14% <= 15%)
+    usage: dict[str, int] = {q["id"]: 0 for q in all_questions}
+    targets = {1: 20, 2: 20, 3: 10}
+    out_paths: list[Path] = []
+
+    for set_idx in range(1, num_sets + 1):
+        chosen: list[dict[str, Any]] = []
+        rule_counts: dict[str, int] = {}
+        seen_ids: set[str] = set()
+
+        for diff, need in targets.items():
+            pool = sorted(
+                by_diff[diff],
+                key=lambda q: (
+                    usage[q["id"]],
+                    rule_counts.get(q["rule"], 0),
+                    (hash(f"{set_idx}:{q['id']}") if False else (set_idx * 7 + len(q["id"]))),
+                    q["id"],
+                ),
+            )
+            picked = 0
+            # Multi-pass: prefer lowest usage & lowest rule count
+            while picked < need:
+                candidates = [
+                    q
+                    for q in pool
+                    if q["id"] not in seen_ids
+                    and usage[q["id"]] < 3
+                    and rule_counts.get(q["rule"], 0) < 7
+                ]
+                assert candidates, f"Ran out of candidates for set {set_idx} diff {diff}"
+                candidates.sort(key=lambda q: (usage[q["id"]], rule_counts.get(q["rule"], 0)))
+                q = candidates[0]
+                chosen.append(q)
+                seen_ids.add(q["id"])
+                usage[q["id"]] += 1
+                rule_counts[q["rule"]] = rule_counts.get(q["rule"], 0) + 1
+                picked += 1
+
+        doc = {
+            "theoryTestFormatVersion": "0.1",
+            "id": f"gb-theory-set-{set_idx:02d}",
+            "setNumber": set_idx,
+            "passMark": 43,
+            "questionCount": len(chosen),
+            "timeLimitMinutes": 57,
+            "questions": chosen,
+        }
+        out_path = tests_dir / f"set-{set_idx:02d}.json"
+        out_path.write_text(json.dumps(doc, indent=2) + "\n", encoding="utf-8")
+        out_paths.append(out_path)
+
+    return out_paths
+
+
 if __name__ == "__main__":
     idx = write_quiz_bank_index()
-    print(f"Wrote {idx}")
+    sets = build_theory_test_sets()
+    print(f"Wrote {idx} and {len(sets)} theory test sets")
