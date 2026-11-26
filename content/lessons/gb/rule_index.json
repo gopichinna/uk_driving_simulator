@@ -2,6 +2,13 @@
   "ruleIndexVersion": "0.1",
   "country": "GB",
   "rules": {
+    "GB.BRK.NO_TRIANGLE_MWY": [
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_emergency_area",
+        "title": "Breakdowns and emergency areas"
+      }
+    ],
     "GB.GAP.TWO_SECOND": [
       {
         "lessonId": "gb-s0-03-speed-limits",
@@ -29,9 +36,36 @@
         "title": "The two-second rule at speed"
       },
       {
+        "lessonId": "gb-s6-25-motorway-lane-discipline",
+        "scenarioId": "s6_25_mwy_keep_left",
+        "title": "Motorway lane discipline"
+      },
+      {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_var_limit",
+        "title": "Red X and variable limits"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      }
+    ],
+    "GB.GAP.WET_ICY": [
+      {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_town",
+        "title": "Rain and stopping distances"
+      },
+      {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_dual",
+        "title": "Rain and stopping distances"
       }
     ],
     "GB.JCT.BOX": [
@@ -120,10 +154,95 @@
         "title": "Road position after turning"
       }
     ],
+    "GB.MWY.AMBER_FLASH": [
+      {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_var_limit",
+        "title": "Red X and variable limits"
+      }
+    ],
+    "GB.MWY.EMERGENCY_AREA": [
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_emergency_area",
+        "title": "Breakdowns and emergency areas"
+      }
+    ],
+    "GB.MWY.HARD_SHOULDER": [
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_breakdown",
+        "title": "Breakdowns and emergency areas"
+      }
+    ],
+    "GB.MWY.JOIN": [
+      {
+        "lessonId": "gb-s6-24-motorway-joining-leaving",
+        "scenarioId": "s6_24_mwy_join",
+        "title": "Joining and leaving motorways"
+      }
+    ],
+    "GB.MWY.KEEP_LEFT": [
+      {
+        "lessonId": "gb-s6-25-motorway-lane-discipline",
+        "scenarioId": "s6_25_mwy_keep_left",
+        "title": "Motorway lane discipline"
+      },
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_breakdown",
+        "title": "Breakdowns and emergency areas"
+      }
+    ],
+    "GB.MWY.LEAVE": [
+      {
+        "lessonId": "gb-s6-24-motorway-joining-leaving",
+        "scenarioId": "s6_24_mwy_leave",
+        "title": "Joining and leaving motorways"
+      }
+    ],
+    "GB.MWY.NO_STOP": [
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_breakdown",
+        "title": "Breakdowns and emergency areas"
+      },
+      {
+        "lessonId": "gb-s6-27-motorway-breakdowns",
+        "scenarioId": "s6_27_mwy_emergency_area",
+        "title": "Breakdowns and emergency areas"
+      }
+    ],
+    "GB.MWY.NO_UNDERTAKE": [
+      {
+        "lessonId": "gb-s6-25-motorway-lane-discipline",
+        "scenarioId": "s6_25_mwy_overtake",
+        "title": "Motorway lane discipline"
+      }
+    ],
+    "GB.MWY.OVERTAKE_RIGHT": [
+      {
+        "lessonId": "gb-s6-25-motorway-lane-discipline",
+        "scenarioId": "s6_25_mwy_overtake",
+        "title": "Motorway lane discipline"
+      }
+    ],
+    "GB.MWY.RED_X": [
+      {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_red_x",
+        "title": "Red X and variable limits"
+      }
+    ],
     "GB.OBS.LANE_CHANGE": [
       {
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_inner_to_exit",
+        "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_busy_spiral_exit",
         "title": "Staying in lane on roundabouts"
       },
       {
@@ -140,6 +259,21 @@
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
         "scenarioId": "s5_17_busy_dual",
         "title": "Dual carriageway lane discipline"
+      },
+      {
+        "lessonId": "gb-s6-24-motorway-joining-leaving",
+        "scenarioId": "s6_24_mwy_join",
+        "title": "Joining and leaving motorways"
+      },
+      {
+        "lessonId": "gb-s6-25-motorway-lane-discipline",
+        "scenarioId": "s6_25_mwy_overtake",
+        "title": "Motorway lane discipline"
+      },
+      {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_red_x",
+        "title": "Red X and variable limits"
       }
     ],
     "GB.OBS.MOVE_OFF_CHECKS": [
@@ -188,6 +322,16 @@
         "lessonId": "gb-s5-18-two-second-rule-speed",
         "scenarioId": "s5_18_two_sec_dusk",
         "title": "The two-second rule at speed"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_dual",
+        "title": "Night driving and headlights"
+      },
+      {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_dual",
+        "title": "Rain and stopping distances"
       }
     ],
     "GB.POS.KEEP_LEFT": [
@@ -220,6 +364,16 @@
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test_signs",
         "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_signs",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.POS.LANE_FOR_ROUTE": [
@@ -232,6 +386,16 @@
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test_signs",
         "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_signs",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.RBT.APPROACH_LANE": [
@@ -243,6 +407,11 @@
       {
         "lessonId": "gb-s3-12-roundabout-lanes-signals",
         "scenarioId": "s3_12_right_exit",
+        "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_third_exit_dusk",
         "title": "Roundabout lanes and signals"
       }
     ],
@@ -270,6 +439,11 @@
         "title": "Roundabout priority"
       },
       {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_wolverhampton_rbt_give_way",
+        "title": "Roundabout priority"
+      },
+      {
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_inner_to_exit",
         "title": "Staying in lane on roundabouts"
@@ -290,6 +464,11 @@
         "lessonId": "gb-s3-12-roundabout-lanes-signals",
         "scenarioId": "s3_12_right_exit",
         "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_third_exit_dusk",
+        "title": "Roundabout lanes and signals"
       }
     ],
     "GB.RBT.SIGNAL_EXIT": [
@@ -304,8 +483,18 @@
         "title": "Roundabout lanes and signals"
       },
       {
+        "lessonId": "gb-s3-12-roundabout-lanes-signals",
+        "scenarioId": "s3_12_third_exit_dusk",
+        "title": "Roundabout lanes and signals"
+      },
+      {
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_hold_lane_ahead",
+        "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_busy_spiral_exit",
         "title": "Staying in lane on roundabouts"
       }
     ],
@@ -319,6 +508,11 @@
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_inner_to_exit",
         "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s3-13-roundabout-stay-in-lane",
+        "scenarioId": "s3_13_busy_spiral_exit",
+        "title": "Staying in lane on roundabouts"
       }
     ],
     "GB.RBT.WRONG_WAY": [
@@ -330,6 +524,11 @@
       {
         "lessonId": "gb-s3-11-roundabout-give-way",
         "scenarioId": "s3_11_two_lane_rbt_give_way",
+        "title": "Roundabout priority"
+      },
+      {
+        "lessonId": "gb-s3-11-roundabout-give-way",
+        "scenarioId": "s3_11_wolverhampton_rbt_give_way",
         "title": "Roundabout priority"
       }
     ],
@@ -372,6 +571,21 @@
         "title": "Dual carriageway lane discipline"
       },
       {
+        "lessonId": "gb-s6-24-motorway-joining-leaving",
+        "scenarioId": "s6_24_mwy_join",
+        "title": "Joining and leaving motorways"
+      },
+      {
+        "lessonId": "gb-s6-24-motorway-joining-leaving",
+        "scenarioId": "s6_24_mwy_leave",
+        "title": "Joining and leaving motorways"
+      },
+      {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_red_x",
+        "title": "Red X and variable limits"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -380,6 +594,16 @@
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test_signs",
         "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_signs",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.SPD.APPROPRIATE": [
@@ -426,6 +650,26 @@
         "title": "The two-second rule at speed"
       },
       {
+        "lessonId": "gb-s6-26-motorway-red-x-limits",
+        "scenarioId": "s6_26_mwy_var_limit",
+        "title": "Red X and variable limits"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_town",
+        "title": "Night driving and headlights"
+      },
+      {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_town",
+        "title": "Rain and stopping distances"
+      },
+      {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_dual",
+        "title": "Rain and stopping distances"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -434,6 +678,16 @@
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test_signs",
         "title": "Mock driving test"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_signs",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.TL.AMBER": [
@@ -523,6 +777,66 @@
         "lessonId": "gb-s4-15-overtaking-cyclists",
         "scenarioId": "s4_15_dual_cyclist",
         "title": "Overtaking cyclists"
+      }
+    ],
+    "GB.WX.FOG_LIGHTS": [
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_town",
+        "title": "Fog and low visibility"
+      },
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_wolverhampton",
+        "title": "Fog and low visibility"
+      }
+    ],
+    "GB.WX.FOG_STOPPING": [
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_town",
+        "title": "Fog and low visibility"
+      },
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_wolverhampton",
+        "title": "Fog and low visibility"
+      }
+    ],
+    "GB.WX.HEADLIGHTS_NIGHT": [
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_town",
+        "title": "Night driving and headlights"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_dual",
+        "title": "Night driving and headlights"
+      }
+    ],
+    "GB.WX.LOW_VISIBILITY": [
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_town",
+        "title": "Fog and low visibility"
+      },
+      {
+        "lessonId": "gb-s7-23-fog-low-visibility",
+        "scenarioId": "s7_23_fog_wolverhampton",
+        "title": "Fog and low visibility"
+      }
+    ],
+    "GB.WX.NO_DAZZLE": [
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_town",
+        "title": "Night driving and headlights"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_dual",
+        "title": "Night driving and headlights"
       }
     ],
     "GB.XNG.KEEP_CLEAR": [

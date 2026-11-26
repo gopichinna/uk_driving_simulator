@@ -67,6 +67,30 @@
         "maxMinor": 2,
         "maxSerious": 0
       }
+    },
+    {
+      "id": "s3_12_third_exit_dusk",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Pick the right lane at dusk, signal right, then signal left to exit.",
+      "rulesJudged": [
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

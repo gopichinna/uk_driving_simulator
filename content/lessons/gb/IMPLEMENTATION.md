@@ -9,9 +9,9 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 1 | Keeping left and the controls | `GB.POS.KEEP_LEFT` | ⏳ |
 | 1 | Keeping left and the controls | `GB.SPD.OVER_LIMIT` | ✅ |
 | 1 | Keeping left and the controls | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
-| 2 | Moving off and MSM | `GB.OBS.MOVE_OFF_CHECKS` | ⏳ |
-| 2 | Moving off and MSM | `GB.SIG.TIMELY` | ✅ |
-| 2 | Moving off and MSM | `GB.OBS.MSM` | ⏳ |
+| 2 | Pulling away and MSM | `GB.OBS.MOVE_OFF_CHECKS` | ⏳ |
+| 2 | Pulling away and MSM | `GB.SIG.TIMELY` | ✅ |
+| 2 | Pulling away and MSM | `GB.OBS.MSM` | ⏳ |
 | 3 | Speed limits | `GB.SPD.OVER_LIMIT` | ✅ |
 | 3 | Speed limits | `GB.SPD.APPROPRIATE` | ⏳ |
 | 3 | Speed limits | `GB.SCH.SLOW` | ⏳ |
@@ -68,3 +68,59 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 18 | The two-second rule at speed | `GB.GAP.TWO_SECOND` | ✅ |
 | 18 | The two-second rule at speed | `GB.SPD.OVER_LIMIT` | ✅ |
 | 18 | The two-second rule at speed | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
+| 19 | Mock driving test | `GB.POS.KEEP_LEFT` | ⏳ |
+| 19 | Mock driving test | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
+| 19 | Mock driving test | `GB.SIG.TIMELY` | ✅ |
+| 19 | Mock driving test | `GB.SPD.OVER_LIMIT` | ✅ |
+| 19 | Mock driving test | `GB.GAP.TWO_SECOND` | ✅ |
+| 20 | Roads near the test centre | `GB.POS.KEEP_LEFT` | ⏳ |
+| 20 | Roads near the test centre | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
+| 20 | Roads near the test centre | `GB.SIG.TIMELY` | ✅ |
+| 20 | Roads near the test centre | `GB.SPD.OVER_LIMIT` | ✅ |
+| 20 | Roads near the test centre | `GB.GAP.TWO_SECOND` | ✅ |
+| 21 | Night driving and headlights | `GB.WX.HEADLIGHTS_NIGHT` | ⏳ |
+| 21 | Night driving and headlights | `GB.WX.NO_DAZZLE` | ⏳ |
+| 21 | Night driving and headlights | `GB.SPD.OVER_LIMIT` | ✅ |
+| 21 | Night driving and headlights | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
+| 22 | Rain and stopping distances | `GB.GAP.WET_ICY` | ⏳ |
+| 22 | Rain and stopping distances | `GB.SPD.OVER_LIMIT` | ✅ |
+| 22 | Rain and stopping distances | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
+| 23 | Fog and low visibility | `GB.WX.LOW_VISIBILITY` | ⏳ |
+| 23 | Fog and low visibility | `GB.WX.FOG_LIGHTS` | ⏳ |
+| 23 | Fog and low visibility | `GB.WX.FOG_STOPPING` | ⏳ |
+| 24 | Joining and leaving motorways | `GB.MWY.JOIN` | ⏳ |
+| 24 | Joining and leaving motorways | `GB.OBS.LANE_CHANGE` | ✅ |
+| 24 | Joining and leaving motorways | `GB.SIG.TIMELY` | ✅ |
+| 24 | Joining and leaving motorways | `GB.MWY.LEAVE` | ⏳ |
+| 25 | Motorway lane discipline | `GB.MWY.KEEP_LEFT` | ⏳ |
+| 25 | Motorway lane discipline | `GB.GAP.TWO_SECOND` | ✅ |
+| 25 | Motorway lane discipline | `GB.MWY.OVERTAKE_RIGHT` | ⏳ |
+| 25 | Motorway lane discipline | `GB.MWY.NO_UNDERTAKE` | ⏳ |
+| 25 | Motorway lane discipline | `GB.OBS.LANE_CHANGE` | ✅ |
+| 26 | Red X and variable limits | `GB.MWY.RED_X` | ⏳ |
+| 26 | Red X and variable limits | `GB.OBS.LANE_CHANGE` | ✅ |
+| 26 | Red X and variable limits | `GB.SIG.TIMELY` | ✅ |
+| 26 | Red X and variable limits | `GB.MWY.AMBER_FLASH` | ⏳ |
+| 26 | Red X and variable limits | `GB.SPD.OVER_LIMIT` | ✅ |
+| 26 | Red X and variable limits | `GB.GAP.TWO_SECOND` | ✅ |
+| 27 | Breakdowns and emergency areas | `GB.MWY.HARD_SHOULDER` | ⏳ |
+| 27 | Breakdowns and emergency areas | `GB.MWY.NO_STOP` | ⏳ |
+| 27 | Breakdowns and emergency areas | `GB.MWY.KEEP_LEFT` | ⏳ |
+| 27 | Breakdowns and emergency areas | `GB.MWY.EMERGENCY_AREA` | ⏳ |
+| 27 | Breakdowns and emergency areas | `GB.BRK.NO_TRIANGLE_MWY` | ⏳ |
+
+## Implemented Rule Practice Coverage (excluding mock test)
+
+| Rule ID | Practice Scenarios | Status |
+|---|---|---|
+| `GB.GAP.TWO_SECOND` | 8 | ✅ >= 2 |
+| `GB.OBS.LANE_CHANGE` | 8 | ✅ >= 2 |
+| `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
+| `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
+| `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
+| `GB.RBT.SIGNAL_EXIT` | 5 | ✅ >= 2 |
+| `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
+| `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
+| `GB.SIG.TIMELY` | 11 | ✅ >= 2 |
+| `GB.SPD.OVER_LIMIT` | 13 | ✅ >= 2 |
+| `GB.VRU.PASS_CYCLIST` | 5 | ✅ >= 2 |

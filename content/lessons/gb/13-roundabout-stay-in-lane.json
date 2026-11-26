@@ -65,6 +65,30 @@
         "maxMinor": 1,
         "maxSerious": 0
       }
+    },
+    {
+      "id": "s3_13_busy_spiral_exit",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Hold your lane in wet busy traffic until the third exit.",
+      "rulesJudged": [
+        "GB.RBT.STAY_IN_LANE",
+        "GB.OBS.LANE_CHANGE",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.5,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [
