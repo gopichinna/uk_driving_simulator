@@ -224,6 +224,12 @@ Add `python -m ltl_pipeline.health` that writes `docs/CONTENT_HEALTH.md`: per st
 ## Round 25: a second area for practice (pipeline data)
 Using the same OSM pipeline and licence record as the Wolverhampton packs, build one more `roadpack`: a **suburban area with a 30 mph residential grid, a 40 mph distributor road, a mini-roundabout and a primary school with zig-zags**, somewhere in the West Midlands (pick it from OSM, state the bounding box and the OSM date in the pack's `SOURCE.md`). Contract: same pack schema as `wolverhampton_test_area` (v0.7), id `suburb_practice`, with `start`/`join` anchors, signal plans, pedestrian routes and POIs (school, bus stops). Add 3 scenarios in `content/scenarios/gb/` that use it (`s2_suburb_30`, `s3_suburb_minirbt`, `s4_suburb_school`) in the same format as the existing ones, **not yet listed in `progression.json`** (Claude will wire the scene and progression after checking it in Unity). Keep `confidence` honest and list any road segments you had to hand-fix.
 
+
+---
+
+# Self-merge rule (owner-approved 2026-11-26, while Claude's usage is limited)
+Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when **all** of these are true: the PR's CI is green; the diff touches nothing in `core/**`, `unity/**` or `.github/**`; no file over 5 MB is added except WAV/PNG assets listed in `LICENCES.md`; every new sound or image has its source and licence recorded (free / CC0 only); and the round's own tasks are done. Merge in round order, and after each merge pull `main` before starting the next round. If any condition fails, leave the PR open, say why in a PR comment, and carry on with the next round (stacked). Claude reviews merged PRs afterwards and will open fix-up requests under "Requests from Claude" if needed.
+
 ---
 
 ## Requests from Claude
