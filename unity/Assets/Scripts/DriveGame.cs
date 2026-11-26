@@ -85,8 +85,11 @@ namespace LToLocal.Game
             if (LessonSession.OpenMenuOnLoad) { LessonSession.OpenMenuOnLoad = false; OpenLessonMenu(); }
         }
 
+        private readonly SteeringAssistor _assistor = new SteeringAssistor();
+
         private void ResetDrive()
         {
+            _assistor.Reset();
             _curr = _course.StartState;
             _prev = _curr;
             _indicator = 0;
@@ -104,6 +107,8 @@ namespace LToLocal.Game
         private void Update()
         {
             if (_mode != Mode.Driving) { UpdatePaused(); return; }
+            int tap = _controls.ConsumeIndicatorTap();
+            if (tap != 0) ToggleIndicator(tap);
             CarControls input = _controls.Read();
             if (BrokenDown) input = new CarControls(input.Steer, 0, input.Brake); // breakdown scenario: no power
             int steps = _clock.Advance(Time.deltaTime);
@@ -112,9 +117,8 @@ namespace LToLocal.Game
                 _prev = _curr;
                 _course.CapturePrevious();
                 // Aim assist: when your turn is roughly right for a line ahead (your lane, a turn, an exit), the game nudges the wheel onto it.
-                var driven = SteeringAssist.Apply(_curr, input, _course.SteeringGuide, _params, AssistSetting);
-                _controls.AssistedSteer = (float)driven.Steer;
-                _controls.AssistAmount = Mathf.Lerp(_controls.AssistAmount, Mathf.Abs((float)(driven.Steer - input.Steer)), 0.15f);
+                var driven = _assistor.Apply(_curr, input, _course.SteeringGuide, _params, AssistSetting, _clock.StepSeconds);
+                _controls.AssistAmount = Mathf.Abs((float)_assistor.Correction);
                 _curr = CarModel.Step(_curr, driven, _params, _clock.StepSeconds);
 
                 _events.Clear();
@@ -240,12 +244,12 @@ namespace LToLocal.Game
             GUI.Box(new Rect(W * 0.02f, H * 0.47f, H * 0.14f, H * 0.14f), limit.ToString("0"), _signStyle);
             GUI.color = Color.white;
 
-            // Indicators: left above the steering wheel, right above the brake, so each thumb can signal without moving
+            // Indicators: both above the brake, side by side, so the right thumb signals without leaving the pedals
             bool blink = Mathf.Repeat(Time.time, 0.8f) < 0.4f;
             GUI.color = _indicator < 0 && blink ? new Color(0.4f, 1f, 0.45f) : Color.white;
-            if (GUI.Button(TouchControls.IndicatorLeftRect, "<<", _buttonStyle)) ToggleIndicator(-1);
+            GUI.Box(TouchControls.IndicatorLeftRect, "<<", _buttonStyle);          // taps are read from the raw touches in TouchControls
             GUI.color = _indicator > 0 && blink ? new Color(0.4f, 1f, 0.45f) : Color.white;
-            if (GUI.Button(TouchControls.IndicatorRightRect, ">>", _buttonStyle)) ToggleIndicator(+1);
+            GUI.Box(TouchControls.IndicatorRightRect, ">>", _buttonStyle);
             GUI.color = Color.white;
 
             // View / reset / course / finish / settings under the rear-view mirror

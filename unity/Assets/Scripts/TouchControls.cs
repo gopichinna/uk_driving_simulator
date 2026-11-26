@@ -36,8 +36,6 @@ namespace LToLocal.Game
         private bool _go, _brake;
         private int _look; // -1 over left shoulder, +1 over right shoulder, 0 ahead
 
-        /// <summary>What the car is really steering at (with steering help), so the wheel picture matches the car.</summary>
-        public float? AssistedSteer;
         /// <summary>How much the steering help is adding right now (smoothed), for the on-screen "Assist" marker.</summary>
         public float AssistAmount;
 
@@ -54,13 +52,18 @@ namespace LToLocal.Game
         // The wheel never moves: lower left, a little in from the edge. The left indicator sits right above it.
         public static Vector2 WheelCentre => new Vector2(Screen.width * 0.20f, Screen.height * 0.79f);  // GUI coordinates (y down)
         public static float WheelRadius => Screen.height * 0.15f;
-        public static Rect IndicatorLeftRect => new Rect(WheelCentre.x - Screen.width * 0.0375f, Screen.height * 0.47f, Screen.width * 0.075f, Screen.height * 0.13f);
+        // Both indicators sit above the brake, side by side, where the right thumb already is.
+        public static Rect IndicatorLeftRect => new Rect(Screen.width * 0.70f, Screen.height * 0.47f, Screen.width * 0.07f, Screen.height * 0.13f);
 
         // Pedals, like a real car: the wide brake on the left, the tall gas on the right, a gap between them.
         // The right indicator sits right above the brake.
         private static Rect GasRect => new Rect(Screen.width * 0.87f, Screen.height * 0.50f, Screen.width * 0.11f, Screen.height * 0.45f);
         private static Rect BrakeRect => new Rect(Screen.width * 0.72f, Screen.height * 0.68f, Screen.width * 0.12f, Screen.height * 0.27f);
-        public static Rect IndicatorRightRect => new Rect(BrakeRect.x + (BrakeRect.width - Screen.width * 0.075f) / 2f, Screen.height * 0.47f, Screen.width * 0.075f, Screen.height * 0.13f);
+        public static Rect IndicatorRightRect => new Rect(Screen.width * 0.775f, Screen.height * 0.47f, Screen.width * 0.07f, Screen.height * 0.13f);
+
+        private int _indicatorTap;
+        /// <summary>A tap on an indicator button since last asked: -1 left, +1 right, 0 none. Read from the raw touches so a tap works while the other thumb is steering.</summary>
+        public int ConsumeIndicatorTap() { int t = _indicatorTap; _indicatorTap = 0; return t; }
 
         private static float AngleAround(Vector2 centre, Vector2 p) => Mathf.Atan2(p.x - centre.x, -(p.y - centre.y)) * Mathf.Rad2Deg; // 0 = straight up, + = clockwise
         private static float SensitivityFactor => Mathf.Clamp(SteeringSensitivity / 0.6f, 0.5f, 2.5f);
@@ -77,6 +80,11 @@ namespace LToLocal.Game
                 Touch t = Input.GetTouch(i);
                 Vector2 gui = new Vector2(t.position.x, Screen.height - t.position.y); // IMGUI has y pointing down
 
+                if (t.phase == TouchPhase.Began)
+                {
+                    if (IndicatorLeftRect.Contains(gui)) { _indicatorTap = -1; continue; }
+                    if (IndicatorRightRect.Contains(gui)) { _indicatorTap = 1; continue; }
+                }
                 if (LookLeftRect.Contains(gui)) { _look = -1; continue; }
                 if (LookRightRect.Contains(gui)) { _look = 1; continue; }
                 if (GasRect.Contains(gui)) { _go = true; continue; }
@@ -105,6 +113,13 @@ namespace LToLocal.Game
                         steering = true;
                     }
                 }
+            }
+
+            if (Input.touchCount == 0 && Input.GetMouseButtonDown(0))   // mouse, in the editor
+            {
+                var m = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+                if (IndicatorLeftRect.Contains(m)) _indicatorTap = -1;
+                else if (IndicatorRightRect.Contains(m)) _indicatorTap = 1;
             }
 
             // Keyboard (editor / desktop testing)
@@ -144,7 +159,7 @@ namespace LToLocal.Game
             float r = WheelRadius;
             GUI.color = _steerFingerId >= 0 ? new Color(1f, 1f, 1f, 0.95f) : new Color(1f, 1f, 1f, 0.8f);
             Matrix4x4 old = GUI.matrix;
-            GUIUtility.RotateAroundPivot(_steerFingerId >= 0 && AssistedSteer == null ? _steer / SensitivityFactor * fullLockDegrees : (AssistedSteer ?? _steer) * fullLockDegrees, c);
+            GUIUtility.RotateAroundPivot(_steer / SensitivityFactor * fullLockDegrees, c);   // your wheel, as you turn it
             GUI.DrawTexture(new Rect(c.x - r, c.y - r, r * 2, r * 2), s_wheel);
             GUI.matrix = old;
 

@@ -5,7 +5,7 @@ namespace LToLocal.Sim
 {
     /// <summary>
     /// Guide for the hand-built two-lane roundabout. On the ring it offers: stay in your ring lane, the other ring lane,
-    /// and the next exit ahead. Which one gets help is decided by how you turn the wheel.
+    /// and the next exit ahead. Which one gets help is decided by how you turn the wheel. Changing ring lane is left free.
     /// </summary>
     public sealed class TwoLaneRoundaboutGuide : ISteeringGuide
     {
@@ -14,7 +14,7 @@ namespace LToLocal.Sim
         public TwoLaneRoundaboutGuide(TwoLaneRoundaboutGeometry geometry) => _g = geometry;
         public void Reset() { }
 
-        public void GetTargets(in CarState car, double lookahead, List<Vec2> targets)
+        public void GetTargets(in CarState car, double lookahead, List<AimPoint> targets)
         {
             var pos = new Vec2(car.X, car.Z);
 
@@ -23,7 +23,7 @@ namespace LToLocal.Sim
             {
                 var path = _g.Entry[arm, lane];
                 double remain = path.Length - s;
-                if (lookahead <= remain) { targets.Add(path.Sample(s + lookahead).pos); return; }
+                if (lookahead <= remain) { targets.Add(new AimPoint(path.Sample(s + lookahead).pos, EntryWeight(s, _g.GiveWayS[arm, lane]))); return; }
                 RingLines(_g.MergeBearing[arm, lane], lane, lookahead - remain, targets, otherLane: false);
                 return;
             }
@@ -38,18 +38,18 @@ namespace LToLocal.Sim
 
             // 3. Leaving along an exit arm.
             if (FindPath(pos, car.Heading, entry: false, out arm, out lane, out s))
-                targets.Add(ExitTarget(arm, lane, s, lookahead));
+                targets.Add(new AimPoint(ExitTarget(arm, lane, s, lookahead), 1 - SteeringAssist.Smooth(15, 30, s)));
         }
 
-        private void RingLines(double theta, int ringLane, double distance, List<Vec2> targets, bool otherLane)
+        private void RingLines(double theta, int ringLane, double distance, List<AimPoint> targets, bool otherLane)
         {
             double radius = TwoLaneRoundaboutGeometry.LaneRadius(ringLane);
-            targets.Add(_g.RingPoint(theta + distance / radius, radius));                       // stay in this lane, round the ring
+            targets.Add(new AimPoint(_g.RingPoint(theta + distance / radius, radius)));                 // stay in this lane, round the ring
             if (otherLane)
             {
                 int other = 1 - ringLane;
                 double r2 = TwoLaneRoundaboutGeometry.LaneRadius(other);
-                targets.Add(_g.RingPoint(theta + distance / r2, r2));                           // move to the other ring lane
+                targets.Add(new AimPoint(_g.RingPoint(theta + distance / r2, r2), 1, neutral: true));        // move to the other ring lane: free choice
             }
 
             int exitArm = -1;                                                                    // the next exit ahead
@@ -61,7 +61,7 @@ namespace LToLocal.Sim
             }
             if (exitArm < 0) return;
             double arc = best * radius;
-            targets.Add(distance >= arc ? ExitTarget(exitArm, ringLane, 0, distance - arc) : _g.RingPoint(theta + distance / radius, radius));
+            targets.Add(new AimPoint(distance >= arc ? ExitTarget(exitArm, ringLane, 0, distance - arc) : _g.RingPoint(theta + distance / radius, radius)));
         }
 
         private bool FindPath(Vec2 pos, double heading, bool entry, out int arm, out int lane, out double s)
@@ -80,6 +80,9 @@ namespace LToLocal.Sim
                 }
             return arm >= 0;
         }
+
+        /// <summary>No help on the straight approach: it fades in as you near the give-way line.</summary>
+        private static double EntryWeight(double s, double giveWayS) => SteeringAssist.Smooth(giveWayS - 14, giveWayS - 4, s);
 
         private Vec2 ExitTarget(int arm, int lane, double s, double ahead)
         {
