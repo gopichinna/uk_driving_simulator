@@ -16,12 +16,12 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 3 | Speed limits | `GB.SPD.APPROPRIATE` | ⏳ |
 | 3 | Speed limits | `GB.SCH.SLOW` | ⏳ |
 | 3 | Speed limits | `GB.GAP.TWO_SECOND` | ✅ |
-| 4 | Give way at T-junctions | `GB.JCT.GIVE_WAY` | ⏳ |
+| 4 | Give way at T-junctions | `GB.JCT.GIVE_WAY` | ✅ |
 | 4 | Give way at T-junctions | `GB.JCT.EMERGE_LOOK` | ⏳ |
 | 4 | Give way at T-junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
 | 5 | Pedestrians at junctions (H2) | `GB.JCT.H2_PEDESTRIANS` | ⏳ |
 | 5 | Pedestrians at junctions (H2) | `GB.SIG.TIMELY` | ✅ |
-| 5 | Pedestrians at junctions (H2) | `GB.JCT.GIVE_WAY` | ⏳ |
+| 5 | Pedestrians at junctions (H2) | `GB.JCT.GIVE_WAY` | ✅ |
 | 6 | Road position after turning | `GB.POS.AFTER_TURN` | ⏳ |
 | 6 | Road position after turning | `GB.POS.KEEP_LEFT` | ⏳ |
 | 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ⏳ |
@@ -38,8 +38,8 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 8 | Advanced stop lines | `GB.JCT.H3_CYCLISTS` | ⏳ |
 | 9 | Zebra crossings and zig-zags | `GB.XNG.ZEBRA` | ⏳ |
 | 9 | Zebra crossings and zig-zags | `GB.XNG.KEEP_CLEAR` | ⏳ |
-| 9 | Zebra crossings and zig-zags | `GB.XNG.ZIGZAG_OVERTAKE` | ⏳ |
-| 10 | Box junctions | `GB.JCT.BOX` | ⏳ |
+| 9 | Zebra crossings and zig-zags | `GB.XNG.ZIGZAG_OVERTAKE` | ✅ |
+| 10 | Box junctions | `GB.JCT.BOX` | ✅ |
 | 10 | Box junctions | `GB.TL.CLEAR_JUNCTION` | ⏳ |
 | 10 | Box junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
 | 11 | Roundabout priority | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
@@ -114,6 +114,8 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | Rule ID | Practice Scenarios | Status |
 |---|---|---|
 | `GB.GAP.TWO_SECOND` | 8 | ✅ >= 2 |
+| `GB.JCT.BOX` | 2 | ✅ >= 2 |
+| `GB.JCT.GIVE_WAY` | 3 | ✅ >= 2 |
 | `GB.OBS.LANE_CHANGE` | 8 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
@@ -124,3 +126,4 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.SIG.TIMELY` | 11 | ✅ >= 2 |
 | `GB.SPD.OVER_LIMIT` | 13 | ✅ >= 2 |
 | `GB.VRU.PASS_CYCLIST` | 5 | ✅ >= 2 |
+| `GB.XNG.ZIGZAG_OVERTAKE` | 2 | ✅ >= 2 |

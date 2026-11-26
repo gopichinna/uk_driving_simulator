@@ -861,6 +861,11 @@
     "GB.XNG.ZIGZAG_OVERTAKE": [
       {
         "lessonId": "gb-s2-09-zebra-zigzags",
+        "scenarioId": "s2_09_zebra_yield",
+        "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s2-09-zebra-zigzags",
         "scenarioId": "s2_09_zebra_zigzags",
         "title": "Zebra crossings and zig-zags"
       }
