@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_rbt_sil_1",
+    "rule": "GB.RBT.STAY_IN_LANE",
+    "question": "How should you drive around a multi-lane roundabout?",
+    "options": [
+      "Keep inside your marked lane until you are ready to leave",
+      "Cut straight across the painted lines",
+      "Straddle two lanes so nobody passes",
+      "Always drift to the outer edge on bends"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 instructs drivers to stay in their lane around multi-lane roundabouts.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sil_2",
+    "rule": "GB.RBT.STAY_IN_LANE",
+    "question": "What happens if you drift sideways out of your lane on a roundabout?",
+    "options": [
+      "You could collide with a car or cyclist beside you",
+      "You save fuel",
+      "You gain extra priority",
+      "Nothing happens"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 warns against cutting across another driver's lane when circulating.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sil_3",
+    "rule": "GB.RBT.STAY_IN_LANE",
+    "question": "What should you do if you realise you are in the wrong lane on a busy roundabout?",
+    "options": [
+      "Stop dead and reverse",
+      "Swerve across two lanes immediately",
+      "Follow your lane safely, take that exit, and turn around later",
+      "Drive clockwise twice without signalling"
+    ],
+    "answer": 2,
+    "explain": "Highway Code Rule 186 recommends staying safe in your lane rather than cutting across traffic.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_sil_4",
+    "rule": "GB.RBT.STAY_IN_LANE",
+    "question": "On a spiral roundabout, how do the lane markings guide you?",
+    "options": [
+      "They gradually lead you outward toward your exit",
+      "They mean you must stop on the island",
+      "They are only for buses",
+      "They reverse direction at night"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 advises following lane markings that guide you cleanly out to your exit.",
+    "hc_rule": "186",
+    "difficulty": 3
+  }
+]

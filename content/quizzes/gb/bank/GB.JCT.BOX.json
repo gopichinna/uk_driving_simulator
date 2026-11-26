@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_box_1",
+    "rule": "GB.JCT.BOX",
+    "question": "When may you enter a yellow criss-cross box junction to go straight ahead?",
+    "options": [
+      "Whenever the traffic lights are green",
+      "Only when your exit road is clear",
+      "When the car ahead is still moving slowly",
+      "At any time if you signal"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 174 states you must not enter a box junction unless your exit is clear.",
+    "hc_rule": "174",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_box_2",
+    "rule": "GB.JCT.BOX",
+    "question": "When are you allowed to stop inside a yellow box junction?",
+    "options": [
+      "To pick up a passenger",
+      "When turning right and waiting for oncoming traffic to clear",
+      "When queuing to go straight ahead",
+      "Never under any circumstance"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 174 allows stopping in the box only when turning right and blocked by oncoming cars.",
+    "hc_rule": "174",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_box_3",
+    "rule": "GB.JCT.BOX",
+    "question": "What problem happens if you enter a box junction without a clear exit?",
+    "options": [
+      "You could block cross traffic when the lights change",
+      "Your tyres lose grip on the yellow paint",
+      "Your mirrors stop working",
+      "It cancels your right turn"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 174 keeps box junctions clear so cross traffic is not trapped.",
+    "hc_rule": "174",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_box_4",
+    "rule": "GB.JCT.BOX",
+    "question": "The traffic light is green, but cars are queued just past the box junction. What should you do?",
+    "options": [
+      "Drive into the box so cars behind you can cross",
+      "Wait behind the junction until space opens beyond the box",
+      "Sound your horn to make the queue move",
+      "Stop halfway inside the box"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 174 says you must wait before the box even on a green light if the exit is blocked.",
+    "hc_rule": "174",
+    "difficulty": 2
+  }
+]
