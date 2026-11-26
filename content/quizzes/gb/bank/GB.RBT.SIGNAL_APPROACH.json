@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_rbt_sa_1",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "What signal should you give on approach when turning left at a roundabout?",
+    "options": [
+      "Signal left on approach",
+      "Signal right on approach",
+      "Give no signal at all",
+      "Use hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 requires signalling left on approach when taking the first exit.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sa_2",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "What signal should you give on approach when going straight ahead at a roundabout?",
+    "options": [
+      "Signal left before entering",
+      "Do not signal on approach",
+      "Signal right on approach",
+      "Flash your headlights"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 186 says not to signal on approach when going straight ahead.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sa_3",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "What signal should you give on approach when taking an exit to the right?",
+    "options": [
+      "Signal right on approach",
+      "Signal left on approach",
+      "No signal until after you leave",
+      "Sound your horn"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 tells you to signal right on approach for exits past straight ahead.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sa_4",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "Why should you avoid signalling left too early when going straight ahead?",
+    "options": [
+      "Waiting drivers may think you are taking the first exit and pull out",
+      "It slows down your car",
+      "It turns off your speedometer",
+      "It is illegal on motorways only"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 avoids early left signals so waiting traffic is not misled.",
+    "hc_rule": "186",
+    "difficulty": 2
+  }
+]

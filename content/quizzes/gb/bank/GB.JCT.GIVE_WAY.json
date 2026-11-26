@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_jct_gw_1",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "What do double broken white lines across the end of your road mean?",
+    "options": [
+      "You have priority over cross traffic",
+      "Give way to traffic on the road you are joining",
+      "No left turn ahead",
+      "Stop for five seconds even if clear"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 172 says double broken lines mean give way to traffic on the main road.",
+    "hc_rule": "172",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_gw_2",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "Before joining a busier road from a give-way line, where should you look?",
+    "options": [
+      "Only to the left",
+      "Both right and left for vehicles, cyclists, and pedestrians",
+      "Only in your rear-view mirror",
+      "Straight ahead only"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 172 tells you to look both ways for all road users before pulling out.",
+    "hc_rule": "172",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_gw_3",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "When must you stop completely behind a solid white line with a red octagonal STOP sign?",
+    "options": [
+      "Only when cars are coming",
+      "Every time, even if the road looks clear",
+      "Only during rush hour",
+      "Only when turning right"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a STOP sign and line.",
+    "hc_rule": "172",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_gw_4",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "If a vehicle on the main road is flashing its headlights at you, what should you assume?",
+    "options": [
+      "It is always safe to pull out",
+      "Wait until you are sure the way is clear and safe",
+      "You must reverse back",
+      "You have legal priority"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 172 means you stay responsible for pulling out only when it is genuinely safe.",
+    "hc_rule": "172",
+    "difficulty": 3
+  }
+]

@@ -5,6 +5,510 @@
   "licence": "CC-BY-4.0 (model/dataset) + MIT (Piper)",
   "entries": [
     {
+      "key": "lesson.gb-s0-01-keep-left-controls.learn",
+      "file": "lesson.gb-s0-01-keep-left-controls.learn.wav",
+      "text": "In the UK, drive on the left side of the road. Steer smoothly and hold a steady line away from the kerb. Move back to the left lane after overtaking on dual carriageways.",
+      "durationS": 9.376
+    },
+    {
+      "key": "lesson.gb-s0-02-moving-off-msm.learn",
+      "file": "lesson.gb-s0-02-moving-off-msm.learn.wav",
+      "text": "Check your mirrors and signal before pulling away or changing speed. Only pull out when the road behind and beside you is clear. Signal early enough for other drivers to react, then cancel promptly.",
+      "durationS": 10.46
+    },
+    {
+      "key": "lesson.gb-s0-03-speed-limits.learn",
+      "file": "lesson.gb-s0-03-speed-limits.learn.wav",
+      "text": "You must never drive faster than the road's speed limit. Street lights with no signs usually mean 30 mph in England. Slow down below the limit near schools and parked cars.",
+      "durationS": 9.467
+    },
+    {
+      "key": "lesson.gb-s1-04-give-way-tjunctions.learn",
+      "file": "lesson.gb-s1-04-give-way-tjunctions.learn.wav",
+      "text": "Broken double white lines mean you must give way. Check both ways and wait until main-road cars will not slow down. Creep forward slowly if parked cars block your view.",
+      "durationS": 9.685
+    },
+    {
+      "key": "lesson.gb-s1-05-pedestrians-h2.learn",
+      "file": "lesson.gb-s1-05-pedestrians-h2.learn.wav",
+      "text": "Under H2, pedestrians crossing a side road have priority. Give way to anyone waiting to cross the road you turn into. Slow down early so you can stop smoothly before the mouth.",
+      "durationS": 9.651
+    },
+    {
+      "key": "lesson.gb-s1-06-position-after-turning.learn",
+      "file": "lesson.gb-s1-06-position-after-turning.learn.wav",
+      "text": "Always finish every turn in the left lane of the new road. Keep close to the left kerb when turning left. When turning right, go past the centre before steering left.",
+      "durationS": 9.131
+    },
+    {
+      "key": "lesson.gb-s2-07-traffic-lights-amber.learn",
+      "file": "lesson.gb-s2-07-traffic-lights-amber.learn.wav",
+      "text": "You must stop behind the white line on red. Amber means stop unless you are too close to stop safely. Wait for green on red and amber; never turn on red.",
+      "durationS": 8.659
+    },
+    {
+      "key": "lesson.gb-s2-08-advanced-stop-lines.learn",
+      "file": "lesson.gb-s2-08-advanced-stop-lines.learn.wav",
+      "text": "An ASL box at traffic lights gives cyclists space ahead of cars. You must stop at the first white line on red or amber. Leave cyclists plenty of room when pulling away on green.",
+      "durationS": 10.156
+    },
+    {
+      "key": "lesson.gb-s2-09-zebra-zigzags.learn",
+      "file": "lesson.gb-s2-09-zebra-zigzags.learn.wav",
+      "text": "Flashing orange beacons warn you of a zebra crossing ahead. You must give way once someone steps onto the stripes. You must not overtake inside the white zig-zag lines.",
+      "durationS": 8.744
+    },
+    {
+      "key": "lesson.gb-s2-10-box-junctions.learn",
+      "file": "lesson.gb-s2-10-box-junctions.learn.wav",
+      "text": "A yellow box junction keeps busy crossroads clear. You must not enter unless your exit road is clear. You may wait inside only when turning right and blocked by oncoming cars.",
+      "durationS": 9.203
+    },
+    {
+      "key": "lesson.gb-s3-11-roundabout-give-way.learn",
+      "file": "lesson.gb-s3-11-roundabout-give-way.learn.wav",
+      "text": "In the UK, all roundabouts circulate clockwise around the central island. You must give way to traffic approaching from your right. Enter only when there is a safe gap without forcing anyone to brake.",
+      "durationS": 10.296
+    },
+    {
+      "key": "lesson.gb-s3-12-roundabout-lanes-signals.learn",
+      "file": "lesson.gb-s3-12-roundabout-lanes-signals.learn.wav",
+      "text": "Read lane arrows early on the approach to a two-lane roundabout. Signal left for a left exit and right for exits past straight ahead. Signal left just after passing the exit before yours.",
+      "durationS": 10.039
+    },
+    {
+      "key": "lesson.gb-s3-13-roundabout-stay-in-lane.learn",
+      "file": "lesson.gb-s3-13-roundabout-stay-in-lane.learn.wav",
+      "text": "Hold your marked lane all the way around multi-lane roundabouts. Do not drift sideways into another driver's path when leaving. Check beside you before changing lanes on a roundabout.",
+      "durationS": 10.019
+    },
+    {
+      "key": "lesson.gb-s3-14-roundabout-cyclists.learn",
+      "file": "lesson.gb-s3-14-roundabout-cyclists.learn.wav",
+      "text": "Cyclists may stay in the left lane even when turning right. Give cyclists on the roundabout priority and plenty of room. Never overtake a cyclist only to cut across them at an exit.",
+      "durationS": 10.39
+    },
+    {
+      "key": "lesson.gb-s4-15-overtaking-cyclists.learn",
+      "file": "lesson.gb-s4-15-overtaking-cyclists.learn.wav",
+      "text": "Leave at least 1.5 metres when passing a cyclist up to 30 mph. Give even more room at speeds above 30 mph. Wait behind if oncoming traffic prevents a wide, safe pass.",
+      "durationS": 12.24
+    },
+    {
+      "key": "lesson.gb-s4-16-following-distance-town.learn",
+      "file": "lesson.gb-s4-16-following-distance-town.learn.wav",
+      "text": "Keep enough space behind the car ahead to stop safely. Drop back calmly whenever another vehicle cuts into your gap. Watch brake lights far ahead so you can slow smoothly.",
+      "durationS": 8.839
+    },
+    {
+      "key": "lesson.gb-s5-17-dual-carriageway-lanes.learn",
+      "file": "lesson.gb-s5-17-dual-carriageway-lanes.learn.wav",
+      "text": "Drive in the left lane on a two-lane dual carriageway. Use the right lane only to overtake slower traffic or turn right. Signal early and check your blind spot before changing lanes.",
+      "durationS": 10.532
+    },
+    {
+      "key": "lesson.gb-s5-18-two-second-rule-speed.learn",
+      "file": "lesson.gb-s5-18-two-second-rule-speed.learn.wav",
+      "text": "At 40 mph and above, leave at least a two-second gap. Count two seconds after the car ahead passes a roadside sign. Double the gap on wet roads to allow extra braking distance.",
+      "durationS": 10.413
+    },
+    {
+      "key": "lesson.gb-s6-24-motorway-joining-leaving.learn",
+      "file": "lesson.gb-s6-24-motorway-joining-leaving.learn.wav",
+      "text": "Build up speed on the slip road to match traffic in the left lane. Give way to traffic already on the motorway and never cross solid white lines. Signal left in good time before leaving and slow down on the exit slip road.",
+      "durationS": 12.364
+    },
+    {
+      "key": "lesson.gb-s6-25-motorway-lane-discipline.learn",
+      "file": "lesson.gb-s6-25-motorway-lane-discipline.learn.wav",
+      "text": "Always drive in the left lane unless you are overtaking slower traffic. Overtake on the right, then move back left as soon as it is safe. Do not overtake on the left unless traffic is moving in slow queues.",
+      "durationS": 10.96
+    },
+    {
+      "key": "lesson.gb-s6-26-motorway-red-x-limits.learn",
+      "file": "lesson.gb-s6-26-motorway-red-x-limits.learn.wav",
+      "text": "A red X above a lane means that lane is closed. You must not drive in it. Move safely into an open lane well before passing the red X gantry. Obey variable speed limits shown in red circles and slow down for flashing amber lights.",
+      "durationS": 13.784
+    },
+    {
+      "key": "lesson.gb-s6-27-motorway-breakdowns.learn",
+      "file": "lesson.gb-s6-27-motorway-breakdowns.learn.wav",
+      "text": "Never stop on a motorway lane, slip road, or hard shoulder except in an emergency. If you break down, pull into an emergency area or hard shoulder. Exit away from traffic. Never put a warning triangle on a motorway, and wait behind the safety barrier.",
+      "durationS": 14.728
+    },
+    {
+      "key": "lesson.gb-s7-21-night-dipped-headlights.learn",
+      "file": "lesson.gb-s7-21-night-dipped-headlights.learn.wav",
+      "text": "You must switch on sidelights and rear lights between sunset and sunrise. Use headlights at night on unlit roads and dipped headlights in built-up areas. Dip your headlights when meeting oncoming traffic or following closely so you do not dazzle.",
+      "durationS": 13.3
+    },
+    {
+      "key": "lesson.gb-s7-22-rain-stopping-distances.learn",
+      "file": "lesson.gb-s7-22-rain-stopping-distances.learn.wav",
+      "text": "In wet weather, stopping distances are at least double those on dry roads. Leave at least a four-second gap behind the vehicle ahead in rain and spray. Ease off the accelerator if steering feels light, and watch for pedestrians and cyclists.",
+      "durationS": 13.983
+    },
+    {
+      "key": "lesson.gb-s7-23-fog-low-visibility.learn",
+      "file": "lesson.gb-s7-23-fog-low-visibility.learn.wav",
+      "text": "You must use headlights when visibility drops below 100 metres. You may use fog lights in thick fog. Switch them off when visibility improves. Drive slowly enough to stop well within the distance you can see clearly.",
+      "durationS": 11.439
+    },
+    {
+      "key": "lesson.gb-s8-19-mock-driving-test.learn",
+      "file": "lesson.gb-s8-19-mock-driving-test.learn.wav",
+      "text": "The real driving test starts with an eyesight check and two safety questions. You then drive for about 35 minutes on varied roads. This includes 20 to 35 minutes of independent driving by signs or sat nav. You also complete one reversing exercise, plus an optional emergency stop. This game covers the driving and independent driving parts across Wolverhampton.",
+      "durationS": 22.561
+    },
+    {
+      "key": "lesson.gb-s8-20-roads-near-test-centre.learn",
+      "file": "lesson.gb-s8-20-roads-near-test-centre.learn.wav",
+      "text": "Expect a mix of residential streets, roundabouts, and faster main roads near a test centre. Watch for parked cars, narrow industrial estate exits, and sudden speed-limit changes. Official driving test routes are not published, so practise reading signs and markings early. Keep calm and follow independent driving directions safely, even if you miss a turn.",
+      "durationS": 20.911
+    },
+    {
+      "key": "scenario.s0_01_dual_keep_left.brief",
+      "file": "scenario.s0_01_dual_keep_left.brief.wav",
+      "text": "Return to the left lane smoothly after passing slower traffic.",
+      "durationS": 3.381
+    },
+    {
+      "key": "scenario.s0_01_town_keep_left.brief",
+      "file": "scenario.s0_01_town_keep_left.brief.wav",
+      "text": "Drive along the town street while keeping safely on the left.",
+      "durationS": 3.041
+    },
+    {
+      "key": "scenario.s0_02_move_off_town.brief",
+      "file": "scenario.s0_02_move_off_town.brief.wav",
+      "text": "Pull away from the side of the road only when it is safe. The cars behind you should not have to slow down.",
+      "durationS": 5.065
+    },
+    {
+      "key": "scenario.s0_02_msm_approach.brief",
+      "file": "scenario.s0_02_msm_approach.brief.wav",
+      "text": "Signal in good time and slow smoothly for the junction.",
+      "durationS": 2.902
+    },
+    {
+      "key": "scenario.s0_03_dual_40.brief",
+      "file": "scenario.s0_03_dual_40.brief.wav",
+      "text": "Hold a steady speed within the 40 mph limit.",
+      "durationS": 2.926
+    },
+    {
+      "key": "scenario.s0_03_school_street.brief",
+      "file": "scenario.s0_03_school_street.brief.wav",
+      "text": "Stay within the speed limit and slow down past the school.",
+      "durationS": 3.264
+    },
+    {
+      "key": "scenario.s1_04_tjunction_north.brief",
+      "file": "scenario.s1_04_tjunction_north.brief.wav",
+      "text": "Give way to main-road traffic and pull out into a safe gap.",
+      "durationS": 2.965
+    },
+    {
+      "key": "scenario.s1_04_tjunction_south.brief",
+      "file": "scenario.s1_04_tjunction_south.brief.wav",
+      "text": "Judge approaching speeds from both sides before turning out.",
+      "durationS": 2.997
+    },
+    {
+      "key": "scenario.s1_05_h2_north.brief",
+      "file": "scenario.s1_05_h2_north.brief.wav",
+      "text": "Let waiting pedestrians cross the side road before you turn.",
+      "durationS": 3.089
+    },
+    {
+      "key": "scenario.s1_05_h2_south.brief",
+      "file": "scenario.s1_05_h2_south.brief.wav",
+      "text": "Scan the pavement as you turn and yield to pedestrians.",
+      "durationS": 2.602
+    },
+    {
+      "key": "scenario.s1_06_turn_north.brief",
+      "file": "scenario.s1_06_turn_north.brief.wav",
+      "text": "Complete a left and right turn cleanly into the left lane.",
+      "durationS": 3.229
+    },
+    {
+      "key": "scenario.s1_06_turn_south.brief",
+      "file": "scenario.s1_06_turn_south.brief.wav",
+      "text": "Position neatly near the centre line and turn into the left lane.",
+      "durationS": 3.733
+    },
+    {
+      "key": "scenario.s2_07_signals_left.brief",
+      "file": "scenario.s2_07_signals_left.brief.wav",
+      "text": "Wait on red even when turning left at the crossroads.",
+      "durationS": 2.797
+    },
+    {
+      "key": "scenario.s2_07_signals_stop.brief",
+      "file": "scenario.s2_07_signals_stop.brief.wav",
+      "text": "Stop cleanly behind the white line on amber and red.",
+      "durationS": 3.067
+    },
+    {
+      "key": "scenario.s2_08_asl_cyclists.brief",
+      "file": "scenario.s2_08_asl_cyclists.brief.wav",
+      "text": "Keep the ASL clear and give cyclists space after green.",
+      "durationS": 3.432
+    },
+    {
+      "key": "scenario.s2_08_asl_stop.brief",
+      "file": "scenario.s2_08_asl_stop.brief.wav",
+      "text": "Stop before the first white line of the cyclist box on red.",
+      "durationS": 3.245
+    },
+    {
+      "key": "scenario.s2_09_zebra_yield.brief",
+      "file": "scenario.s2_09_zebra_yield.brief.wav",
+      "text": "Slow down and stop smoothly for pedestrians at the zebra crossing.",
+      "durationS": 3.491
+    },
+    {
+      "key": "scenario.s2_09_zebra_zigzags.brief",
+      "file": "scenario.s2_09_zebra_zigzags.brief.wav",
+      "text": "Hold back behind stopped cars through the zig-zag zone.",
+      "durationS": 2.88
+    },
+    {
+      "key": "scenario.s2_10_box_right_turn.brief",
+      "file": "scenario.s2_10_box_right_turn.brief.wav",
+      "text": "Cross the yellow box cleanly only when your turn is clear.",
+      "durationS": 2.738
+    },
+    {
+      "key": "scenario.s2_10_box_straight.brief",
+      "file": "scenario.s2_10_box_straight.brief.wav",
+      "text": "Wait behind the yellow grid until your exit road clears.",
+      "durationS": 2.738
+    },
+    {
+      "key": "scenario.s3_11_single_rbt_give_way.brief",
+      "file": "scenario.s3_11_single_rbt_give_way.brief.wav",
+      "text": "Give way to circulating traffic from the right before entering.",
+      "durationS": 3.131
+    },
+    {
+      "key": "scenario.s3_11_two_lane_rbt_give_way.brief",
+      "file": "scenario.s3_11_two_lane_rbt_give_way.brief.wav",
+      "text": "Join the two-lane roundabout clockwise without cutting off circulating cars.",
+      "durationS": 3.949
+    },
+    {
+      "key": "scenario.s3_11_wolverhampton_rbt_give_way.brief",
+      "file": "scenario.s3_11_wolverhampton_rbt_give_way.brief.wav",
+      "text": "Give way to traffic from the right at a wet town roundabout.",
+      "durationS": 2.688
+    },
+    {
+      "key": "scenario.s3_12_left_and_ahead.brief",
+      "file": "scenario.s3_12_left_and_ahead.brief.wav",
+      "text": "Pick the correct approach lane and signal clearly before exiting.",
+      "durationS": 3.258
+    },
+    {
+      "key": "scenario.s3_12_right_exit.brief",
+      "file": "scenario.s3_12_right_exit.brief.wav",
+      "text": "Use the right approach lane, signal right, then signal left to exit.",
+      "durationS": 4.051
+    },
+    {
+      "key": "scenario.s3_12_third_exit_dusk.brief",
+      "file": "scenario.s3_12_third_exit_dusk.brief.wav",
+      "text": "Pick the right lane at dusk, signal right, then signal left to exit.",
+      "durationS": 4.08
+    },
+    {
+      "key": "scenario.s3_13_busy_spiral_exit.brief",
+      "file": "scenario.s3_13_busy_spiral_exit.brief.wav",
+      "text": "Hold your lane in wet busy traffic until the third exit.",
+      "durationS": 2.756
+    },
+    {
+      "key": "scenario.s3_13_hold_lane_ahead.brief",
+      "file": "scenario.s3_13_hold_lane_ahead.brief.wav",
+      "text": "Keep inside your lane while circulating and leaving the roundabout.",
+      "durationS": 3.448
+    },
+    {
+      "key": "scenario.s3_13_inner_to_exit.brief",
+      "file": "scenario.s3_13_inner_to_exit.brief.wav",
+      "text": "Exit from the inner lane into the right exit lane cleanly.",
+      "durationS": 2.734
+    },
+    {
+      "key": "scenario.s3_14_single_rbt_cyclist.brief",
+      "file": "scenario.s3_14_single_rbt_cyclist.brief.wav",
+      "text": "Give priority to a cyclist circulating on the roundabout.",
+      "durationS": 3.207
+    },
+    {
+      "key": "scenario.s3_14_two_lane_rbt_cyclist.brief",
+      "file": "scenario.s3_14_two_lane_rbt_cyclist.brief.wav",
+      "text": "Hold back and avoid cutting across cyclists near your exit.",
+      "durationS": 3.423
+    },
+    {
+      "key": "scenario.s4_15_dual_cyclist.brief",
+      "file": "scenario.s4_15_dual_cyclist.brief.wav",
+      "text": "Change lanes smoothly to give cyclists extra space at 40 mph.",
+      "durationS": 4.258
+    },
+    {
+      "key": "scenario.s4_15_town_cyclist.brief",
+      "file": "scenario.s4_15_town_cyclist.brief.wav",
+      "text": "Leave at least 1.5 metres when overtaking cyclists in town.",
+      "durationS": 3.765
+    },
+    {
+      "key": "scenario.s4_16_signals_queue.brief",
+      "file": "scenario.s4_16_signals_queue.brief.wav",
+      "text": "Keep a safe gap approaching and leaving the busy crossroads.",
+      "durationS": 2.797
+    },
+    {
+      "key": "scenario.s4_16_town_traffic.brief",
+      "file": "scenario.s4_16_town_traffic.brief.wav",
+      "text": "Maintain a safe following gap in steady town traffic.",
+      "durationS": 2.808
+    },
+    {
+      "key": "scenario.s5_17_busy_dual.brief",
+      "file": "scenario.s5_17_busy_dual.brief.wav",
+      "text": "Keep left when clear and stay within the 40 mph limit.",
+      "durationS": 3.207
+    },
+    {
+      "key": "scenario.s5_17_overtake_and_return.brief",
+      "file": "scenario.s5_17_overtake_and_return.brief.wav",
+      "text": "Overtake slower vehicles safely, then move back to the left lane.",
+      "durationS": 3.917
+    },
+    {
+      "key": "scenario.s5_18_two_sec_cruise.brief",
+      "file": "scenario.s5_18_two_sec_cruise.brief.wav",
+      "text": "Hold at least a two-second gap behind traffic at 40 mph.",
+      "durationS": 3.597
+    },
+    {
+      "key": "scenario.s5_18_two_sec_dusk.brief",
+      "file": "scenario.s5_18_two_sec_dusk.brief.wav",
+      "text": "Keep a safe two-second gap and steady speed in dusk light.",
+      "durationS": 3.25
+    },
+    {
+      "key": "scenario.s6_24_mwy_join.brief",
+      "file": "scenario.s6_24_mwy_join.brief.wav",
+      "text": "Match motorway speed on the slip road and merge smoothly into a safe gap.",
+      "durationS": 4.137
+    },
+    {
+      "key": "scenario.s6_24_mwy_leave.brief",
+      "file": "scenario.s6_24_mwy_leave.brief.wav",
+      "text": "Signal early, move to the left slip road cleanly, and slow down after leaving.",
+      "durationS": 4.728
+    },
+    {
+      "key": "scenario.s6_25_mwy_keep_left.brief",
+      "file": "scenario.s6_25_mwy_keep_left.brief.wav",
+      "text": "Cruise in lane 1 and return left promptly after passing slower vehicles.",
+      "durationS": 3.978
+    },
+    {
+      "key": "scenario.s6_25_mwy_overtake.brief",
+      "file": "scenario.s6_25_mwy_overtake.brief.wav",
+      "text": "Overtake slower traffic on the right without undertaking on the left.",
+      "durationS": 3.389
+    },
+    {
+      "key": "scenario.s6_26_mwy_red_x.brief",
+      "file": "scenario.s6_26_mwy_red_x.brief.wav",
+      "text": "Leave a lane closed by a red X gantry early and safely.",
+      "durationS": 3.274
+    },
+    {
+      "key": "scenario.s6_26_mwy_var_limit.brief",
+      "file": "scenario.s6_26_mwy_var_limit.brief.wav",
+      "text": "Slow down smoothly for flashing amber signals and variable gantry speed limits.",
+      "durationS": 4.497
+    },
+    {
+      "key": "scenario.s6_27_mwy_breakdown.brief",
+      "file": "scenario.s6_27_mwy_breakdown.brief.wav",
+      "text": "Keep off the hard shoulder unless directed and pass stopped vehicles with care.",
+      "durationS": 4.118
+    },
+    {
+      "key": "scenario.s6_27_mwy_emergency_area.brief",
+      "file": "scenario.s6_27_mwy_emergency_area.brief.wav",
+      "text": "Use emergency areas only for breakdowns and never stop in a live lane.",
+      "durationS": 4.225
+    },
+    {
+      "key": "scenario.s7_21_night_dual.brief",
+      "file": "scenario.s7_21_night_dual.brief.wav",
+      "text": "Keep left on an unlit dual carriageway at night and dip headlights for traffic.",
+      "durationS": 4.08
+    },
+    {
+      "key": "scenario.s7_21_night_town.brief",
+      "file": "scenario.s7_21_night_town.brief.wav",
+      "text": "Drive through town at night using dipped headlights without dazzling others.",
+      "durationS": 3.592
+    },
+    {
+      "key": "scenario.s7_22_rain_dual.brief",
+      "file": "scenario.s7_22_rain_dual.brief.wav",
+      "text": "Keep a doubled following gap in rain and spray on a dual carriageway.",
+      "durationS": 3.613
+    },
+    {
+      "key": "scenario.s7_22_rain_town.brief",
+      "file": "scenario.s7_22_rain_town.brief.wav",
+      "text": "Hold at least a four-second gap in heavy rain through town.",
+      "durationS": 3.381
+    },
+    {
+      "key": "scenario.s7_23_fog_town.brief",
+      "file": "scenario.s7_23_fog_town.brief.wav",
+      "text": "Use headlights in fog under 100 m and match your speed to your view.",
+      "durationS": 3.455
+    },
+    {
+      "key": "scenario.s7_23_fog_wolverhampton.brief",
+      "file": "scenario.s7_23_fog_wolverhampton.brief.wav",
+      "text": "Navigate Wolverhampton junctions safely in fog and switch fog lights off if it clears.",
+      "durationS": 5.415
+    },
+    {
+      "key": "scenario.s8_19_mock_test.brief",
+      "file": "scenario.s8_19_mock_test.brief.wav",
+      "text": "Complete a 35-minute independent drive mixing sat nav and road signs.",
+      "durationS": 4.816
+    },
+    {
+      "key": "scenario.s8_19_mock_test_signs.brief",
+      "file": "scenario.s8_19_mock_test_signs.brief.wav",
+      "text": "Follow the direction signs to City Centre (Queen Square).",
+      "durationS": 2.722
+    },
+    {
+      "key": "scenario.s8_20_test_centre_mix.brief",
+      "file": "scenario.s8_20_test_centre_mix.brief.wav",
+      "text": "Drive safely through residential streets, roundabouts, and main roads near the test centre.",
+      "durationS": 4.95
+    },
+    {
+      "key": "scenario.s8_20_test_centre_signs.brief",
+      "file": "scenario.s8_20_test_centre_signs.brief.wav",
+      "text": "Follow the direction signs from Spring Road towards the main road network.",
+      "durationS": 3.709
+    },
+    {
       "key": "voice.GB.GAP.TWO_SECOND.fault",
       "file": "voice.GB.GAP.TWO_SECOND.fault.wav",
       "text": "Drop back a little, leave at least two seconds.",
