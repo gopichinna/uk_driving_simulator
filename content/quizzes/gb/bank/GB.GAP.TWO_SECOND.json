@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_gap_1",
+    "rule": "GB.GAP.TWO_SECOND",
+    "question": "What minimum gap should you leave behind the car in front on a dry road?",
+    "options": [
+      "One second",
+      "Two seconds",
+      "Five seconds",
+      "Half a second"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 126 sets at least a two-second gap in dry conditions.",
+    "hc_rule": "126",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_gap_2",
+    "rule": "GB.GAP.TWO_SECOND",
+    "question": "How do you check the two-second rule while driving?",
+    "options": [
+      "Count two seconds after the car ahead passes a fixed landmark",
+      "Leave two car lengths at every speed",
+      "Watch the speedometer needle",
+      "Use your full-beam headlights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 126 explains counting two seconds from a fixed point the car ahead passes.",
+    "hc_rule": "126",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_gap_3",
+    "rule": "GB.GAP.TWO_SECOND",
+    "question": "Why is a fixed two-car-length gap unsafe at 70 mph?",
+    "options": [
+      "It uses more fuel",
+      "Stopping distance grows sharply at high speed",
+      "It is only for motorcycles",
+      "It makes steering harder"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 126 uses time rather than car lengths because stopping distance rises with speed.",
+    "hc_rule": "126",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_gap_4",
+    "rule": "GB.GAP.TWO_SECOND",
+    "question": "What should you do if a car pulls into your safe two-second gap?",
+    "options": [
+      "Sound your horn and stay close",
+      "Ease off gently to rebuild your two-second gap",
+      "Overtake immediately",
+      "Flash your headlights"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 126 advises dropping back smoothly whenever the gap shrinks.",
+    "hc_rule": "126",
+    "difficulty": 2
+  }
+]

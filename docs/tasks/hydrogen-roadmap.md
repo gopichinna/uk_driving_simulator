@@ -202,10 +202,7 @@ Goal: a better engine sound, the missing motorway signs, a safety net for the au
 - Free and CC0 assets only. Plain English everywhere (R12.6 style). Every PR: `ruff`, `pytest`, `validate_all_content()` and the readability check must pass.
 
 ## Round 21: theory-style quiz bank (data)
-The game already has a quiz per stage. Build a bigger bank for the later theory-test mode.
-- `content/quizzes/gb/bank/<rule-id>.json`: for every implemented rule, **4 multiple-choice questions** (3 wrong answers that are plausible, 1 right), each with a one-line plain-English explanation that quotes the Highway Code rule number it comes from. Use only rules in `docs/02-rules-catalogue.md` and gov.uk/highway-code (OGL); never invent a rule, and mark anything you can't source as `confidence: low`.
-- Schema: `{"id","rule","question","options":[4 strings],"answer":0-3,"explain","hc_rule":"257","difficulty":1-3}`. Validate in the pipeline (4 options, answer in range, question ≤ 25 words, no jargon from the R12.6 banned list).
-- Add `content/quizzes/gb/bank/INDEX.md` with counts per rule and a test that every implemented rule has ≥ 4 questions.
+- [x] Generated `content/quizzes/gb/bank/<rule-id>.json` (4 original plain-English questions per implemented rule, 56 questions across 14 implemented rules, quoting Highway Code rule numbers, <= 25 words, 0 banned jargon), `content/quizzes/gb/bank/INDEX.md`, `pipeline/ltl_pipeline/quiz_bank.py`, and `pipeline/tests/test_quiz_bank.py`.
 
 ## Round 22: narrate the lessons (audio)
 - Piper `en_GB-cori-medium` (same voice as the fault lines) reads each lesson's **learn card** text and each scenario's **briefing** line: `content/audio/voice/en/lesson.<lessonId>.learn.wav` and `scenario.<scenarioId>.brief.wav`, 16-bit PCM mono 44.1 kHz. Keep each under 25 seconds (split long cards into parts `.learn.1.wav`, `.learn.2.wav`).
