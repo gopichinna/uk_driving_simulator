@@ -92,10 +92,14 @@ def test_game_loaded_audio_assets_are_16bit_pcm_wav() -> None:
         assert clip.is_file() and clip.stat().st_size > 0, f"Missing game SFX: {clip}"
         _assert_unity_importable_audio(clip)
 
-    voice_keys = set(json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"].keys())
+    from ltl_pipeline.audio import collect_voice_and_narration_entries
+
+    expected_entries = collect_voice_and_narration_entries()
     manifest = json.loads(VOICE_MANIFEST.read_text(encoding="utf-8"))
     for entry in manifest["entries"]:
-        assert entry["key"] in voice_keys, f"Manifest key {entry['key']} missing from voice.json"
+        assert entry["key"] in expected_entries, (
+            f"Manifest key {entry['key']} missing from expected voice/narration entries"
+        )
         clip = AUDIO_DIR / "voice" / "en" / entry["file"]
         assert clip.is_file() and clip.stat().st_size > 0, f"Missing voice WAV: {clip}"
         _assert_unity_importable_audio(clip)
