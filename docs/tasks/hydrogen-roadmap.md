@@ -144,11 +144,46 @@ R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank y
 - [x] **R15.7 Audio format Unity can import.** Switched all 49 audio clips (37 voice + 12 SFX) from Ogg Opus to **WAV (16-bit PCM, mono, 44.1 kHz)**, removed stale `.ogg` files, updated `manifest.json` + `LICENCES.md`, and added codec verification in `test_audio.py` failing on `OpusHead`.
 - [x] **R15.5 Hand-off.** PR `Hydrogen R15: plain English, sign rows, motorway section` based on `main` (`62/62` pytest, `ruff`, `readability`, `en-XA` green).
 
+
+---
+
+# Rounds 16–18 (added by Claude after merging R15, 2026-11-26). Same protocol: one PR per round, based on `main` (stack only if the previous PR isn't merged yet).
+R15 is merged. Thank you: plain English reads well, the signs are useful, the motorway section is 11 km, and the sounds are real CC0 recordings.
+
+## Round 16: motorway furniture and scripted motorway situations (for Claude's motorway course)
+- [ ] **R16.1 Motorway signs** for `m54-j2`, in `motorway_signs.json` (new, pre-agreed; same family as `signs-placed.v0`):
+  - advance direction signs (blue panel, white text, junction number tile) at about 1 mile and ½ mile;
+  - the final sign at the slip road;
+  - countdown markers (3, 2 and 1 bars at 300, 200 and 100 yards before each exit);
+  - junction-number signs;
+  - emergency-area signs (blue, with orange SOS) where `emergencyAreas` exist.
+
+  Verify the styles and positions on GOV.UK ("Know your traffic signs" and Highway Code rule 273 for countdown markers), and cite them.
+- [ ] **R16.2 Gantry message plan**, in `gantry_messages.json`: for each gantry, which lanes can show a red X or variable limits, so scenarios can switch them.
+- [ ] **R16.3 New scenario events** (additive and pre-agreed; Claude will implement exactly these):
+  - `red_x { lane: 0..n (0 = left), whenPlayerWithinM }`: the next gantry shows a red X over that lane;
+  - `variable_limit { mph, whenPlayerWithinM }`: the next gantry shows that limit in a red ring;
+  - `slow_vehicle_ahead { lane, speedMph, offsetM }`: e.g. a lorry the player must overtake correctly;
+  - `breakdown { atM }`: the player's car loses power at that distance; the scenario expects them to reach the hard shoulder or an emergency area, and stop.
+
+  Update the 8 motorway scenarios to use them where they fit, and extend the scenario tests to cover them.
+
+## Round 17: more practice drives (variety for lessons and review drives)
+- [ ] **R17.1** Give every **implemented** rule (those with an `implementation` in `rules.yaml`) at least **2 practice scenarios** on playable courses (`town`, `roundabout`, `two_lane_roundabout`, `dual_carriageway`, `wolverhampton`, `wolverhampton-test-area`; the motorway once R16 is in). Add scenarios to existing lessons, using different anchors and event mixes so repeats feel different. Regenerate `rule_index.json` and report any gaps in `content/lessons/gb/IMPLEMENTATION.md`.
+- [ ] **R17.2** Add a test that every implemented rule has ≥ 2 practice scenarios that aren't the mock test.
+
+## Round 18: art for the visual overhaul (icons from official signs)
+Claude will rebuild the screens in the style of the concept images (`docs/images/concepts/*.png` on `claude/town-centre-junctions`).
+- [ ] **R18.1 Lesson badges:** one circular badge per lesson (27 lessons) as SVG plus 256 px PNG, built from the **official DfT sign images** you already have (OGL v3.0), e.g. a give-way triangle, a 30 roundel, a pedestrian crossing, a roundabout or a motorway sign. White circle, green ring (`#0B6E4F`), sign centred. Put them in `content/lessons/gb/badges/<lessonId>.svg|png`, and add the credits.
+- [ ] **R18.2 Fault icons:** a small icon for each rule group (signals, junctions, crossings, speed, gaps, position, roundabouts, motorways, conditions), as SVG plus 96 px PNG, built from the same official sign shapes where possible, in `content/ui/icons/`. Map them in `content/ui/icons/rule_groups.json`.
+- [ ] **R18.3 App icon concepts:** 3 options for the "L to Local" icon (an L-plate motif; the green, yellow and white palette from the concepts), as 1024 px PNG in `content/store/icon-concepts/`, **not** using any DVSA or GOV.UK logos. These are for the owner to choose from.
+
 ---
 
 ## Requests from Claude
 - Pre-agreed: new files `speed_signs.json`, `bus_stops.json` and `warning_signs.json` (same schema family as `signs-placed.v0`); additive `symbol` on sign rows; `content/audio/**` with `manifest.json`; `a11y.*` UI keys; a second city pack folder; lesson 20.
 - Claude will render the R9 signs and furniture, play R10 audio in the game, and load the R11 pack as a new course.
+- Pre-agreed for R16–R18: `motorway_signs.json`, `gantry_messages.json`, scenario events `red_x`, `variable_limit`, `slow_vehicle_ahead` and `breakdown`, `content/lessons/gb/badges/`, and `content/ui/icons/` with `rule_groups.json`.
 - Pre-agreed for R15: no new contracts needed.
 - Pre-agreed for R12–R14: `roundabout_furniture.json`; the scenario `conditions` event; additive motorway road-pack fields; a `motorway` course with anchors `start`, `join`, `leave`; lessons 21–27.
 
