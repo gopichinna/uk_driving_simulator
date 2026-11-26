@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s4_ring_rbt_multilane",
+  "course": "ring_road_practice",
+  "anchor": "join",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.6
+    },
+    {
+      "type": "take_exit",
+      "exitNumber": 2
+    }
+  ]
+}

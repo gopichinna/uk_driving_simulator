@@ -1,0 +1,6915 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "ring_road_practice",
+  "origin": {
+    "lat": 52.586,
+    "lon": -2.128
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "plates": [
+    {
+      "id": "sn_001",
+      "nodeId": "n_10003464291",
+      "linkId": "l_22757767_3",
+      "x": -359.211,
+      "z": -371.991,
+      "heading": 172.19,
+      "name": "Peel Street"
+    },
+    {
+      "id": "sn_002",
+      "nodeId": "n_1002882978",
+      "linkId": "l_19366135_0",
+      "x": -327.424,
+      "z": 345.417,
+      "heading": 317.43,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_003",
+      "nodeId": "n_1005339693",
+      "linkId": "l_491066186_1",
+      "x": 125.272,
+      "z": 753.569,
+      "heading": 169.7,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_004",
+      "nodeId": "n_1007447785",
+      "linkId": "l_341679272_2",
+      "x": 638.422,
+      "z": -91.545,
+      "heading": 38.36,
+      "name": "Middle Cross"
+    },
+    {
+      "id": "sn_005",
+      "nodeId": "n_1007447841",
+      "linkId": "l_86873249_0",
+      "x": 598.282,
+      "z": -70.736,
+      "heading": 280.28,
+      "name": "Horseley Fields"
+    },
+    {
+      "id": "sn_006",
+      "nodeId": "n_1007447867",
+      "linkId": "l_7985680_1",
+      "x": 605.949,
+      "z": -84.955,
+      "heading": 298.95,
+      "name": "Gough Street"
+    },
+    {
+      "id": "sn_007",
+      "nodeId": "n_1007478105",
+      "linkId": "l_649691012_0",
+      "x": 360.07,
+      "z": 193.517,
+      "heading": 328.14,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_008",
+      "nodeId": "n_1007478118",
+      "linkId": "l_295113277_0",
+      "x": 550.095,
+      "z": 328.351,
+      "heading": 256.27,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_009",
+      "nodeId": "n_1011093058",
+      "linkId": "l_22757678_0",
+      "x": -73.576,
+      "z": -354.341,
+      "heading": 185.66,
+      "name": "Summer Row"
+    },
+    {
+      "id": "sn_010",
+      "nodeId": "n_1012606620",
+      "linkId": "l_149125994_0",
+      "x": -447.347,
+      "z": -453.051,
+      "heading": 258.57,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_011",
+      "nodeId": "n_1012606620",
+      "linkId": "l_87061708_0",
+      "x": -458.122,
+      "z": -457.613,
+      "heading": 343.92,
+      "name": "Hallet Drive"
+    },
+    {
+      "id": "sn_012",
+      "nodeId": "n_10226248335",
+      "linkId": "l_491066199_1",
+      "x": 138.24,
+      "z": -820.81,
+      "heading": 188.12,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_013",
+      "nodeId": "n_10226248336",
+      "linkId": "l_1357053480_0",
+      "x": 125.874,
+      "z": -805.227,
+      "heading": 64.78,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_014",
+      "nodeId": "n_10226248336",
+      "linkId": "l_1357053481_0",
+      "x": 141.244,
+      "z": -799.331,
+      "heading": 187.94,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_015",
+      "nodeId": "n_10303863839",
+      "linkId": "l_15132985_2",
+      "x": -44.317,
+      "z": 160.87,
+      "heading": 131.76,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_016",
+      "nodeId": "n_10983157491",
+      "linkId": "l_294040783_1",
+      "x": -653.706,
+      "z": -222.963,
+      "heading": 239.63,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_017",
+      "nodeId": "n_11385521149",
+      "linkId": "l_104334754_0",
+      "x": 617.498,
+      "z": 764.913,
+      "heading": 283.36,
+      "name": "Yarwell Close"
+    },
+    {
+      "id": "sn_018",
+      "nodeId": "n_11385521151",
+      "linkId": "l_104334754_2",
+      "x": 538.956,
+      "z": 790.776,
+      "heading": 335.41,
+      "name": "Yarwell Close"
+    },
+    {
+      "id": "sn_019",
+      "nodeId": "n_11446007312",
+      "linkId": "l_104334755_0",
+      "x": -92.228,
+      "z": 851.497,
+      "heading": 323.81,
+      "name": "Lomas Street"
+    },
+    {
+      "id": "sn_020",
+      "nodeId": "n_1169117787",
+      "linkId": "l_101292015_1",
+      "x": -216.298,
+      "z": -394.531,
+      "heading": 177.37,
+      "name": "London Place"
+    },
+    {
+      "id": "sn_021",
+      "nodeId": "n_1169117787",
+      "linkId": "l_22758209_1",
+      "x": -228.389,
+      "z": -397.258,
+      "heading": 85.59,
+      "name": "Pitt Street"
+    },
+    {
+      "id": "sn_022",
+      "nodeId": "n_1169178769",
+      "linkId": "l_101293206_0",
+      "x": -505.323,
+      "z": -577.536,
+      "heading": 74.75,
+      "name": "Russell Street"
+    },
+    {
+      "id": "sn_023",
+      "nodeId": "n_1169178769",
+      "linkId": "l_28423411_0",
+      "x": -500.932,
+      "z": -587.131,
+      "heading": 346.7,
+      "name": "Graiseley Street"
+    },
+    {
+      "id": "sn_024",
+      "nodeId": "n_1169178772",
+      "linkId": "l_101293208_0",
+      "x": -521.722,
+      "z": -515.145,
+      "heading": 70.35,
+      "name": "Dale Street"
+    },
+    {
+      "id": "sn_025",
+      "nodeId": "n_1169178772",
+      "linkId": "l_28423411_2",
+      "x": -517.04,
+      "z": -524.139,
+      "heading": 344.38,
+      "name": "Graiseley Street"
+    },
+    {
+      "id": "sn_026",
+      "nodeId": "n_1169178787",
+      "linkId": "l_101293206_0",
+      "x": -679.895,
+      "z": -633.801,
+      "heading": 254.18,
+      "name": "Russell Street"
+    },
+    {
+      "id": "sn_027",
+      "nodeId": "n_1169178787",
+      "linkId": "l_87061725_0",
+      "x": -690.894,
+      "z": -640.377,
+      "heading": 346.88,
+      "name": "Zoar Street"
+    },
+    {
+      "id": "sn_028",
+      "nodeId": "n_1169178789",
+      "linkId": "l_101293207_0",
+      "x": -503.849,
+      "z": -809.473,
+      "heading": 85.91,
+      "name": "Penn Street"
+    },
+    {
+      "id": "sn_029",
+      "nodeId": "n_1169178789",
+      "linkId": "l_19210750_0",
+      "x": -502.974,
+      "z": -819.725,
+      "heading": 12.73,
+      "name": "Retreat Street"
+    },
+    {
+      "id": "sn_030",
+      "nodeId": "n_1169178790",
+      "linkId": "l_101293208_0",
+      "x": -696.391,
+      "z": -563.375,
+      "heading": 250.83,
+      "name": "Dale Street"
+    },
+    {
+      "id": "sn_031",
+      "nodeId": "n_1169178790",
+      "linkId": "l_87061725_1",
+      "x": -707.43,
+      "z": -570.414,
+      "heading": 346.68,
+      "name": "Zoar Street"
+    },
+    {
+      "id": "sn_032",
+      "nodeId": "n_1203785172",
+      "linkId": "l_104334751_0",
+      "x": 616.2,
+      "z": 704.697,
+      "heading": 66.98,
+      "name": "Water Street"
+    },
+    {
+      "id": "sn_033",
+      "nodeId": "n_1203785172",
+      "linkId": "l_35406702_1",
+      "x": 631.167,
+      "z": 708.407,
+      "heading": 193.56,
+      "name": "Hilton Street"
+    },
+    {
+      "id": "sn_034",
+      "nodeId": "n_1203785173",
+      "linkId": "l_104334750_0",
+      "x": 168.287,
+      "z": 38.674,
+      "heading": 74.34,
+      "name": "Wheeler's Fold"
+    },
+    {
+      "id": "sn_035",
+      "nodeId": "n_1203785173",
+      "linkId": "l_311799312_1",
+      "x": 179.649,
+      "z": 43.694,
+      "heading": 166.37,
+      "name": "Princess Street"
+    },
+    {
+      "id": "sn_036",
+      "nodeId": "n_1203785180",
+      "linkId": "l_104334754_0",
+      "x": 633.941,
+      "z": 771.389,
+      "heading": 103.36,
+      "name": "Yarwell Close"
+    },
+    {
+      "id": "sn_037",
+      "nodeId": "n_1203785180",
+      "linkId": "l_35406702_1",
+      "x": 633.035,
+      "z": 759.238,
+      "heading": 13.56,
+      "name": "Hilton Street"
+    },
+    {
+      "id": "sn_038",
+      "nodeId": "n_1203785181",
+      "linkId": "l_104334756_0",
+      "x": -25.601,
+      "z": 446.517,
+      "heading": 78.41,
+      "name": "Deanery Row"
+    },
+    {
+      "id": "sn_039",
+      "nodeId": "n_1203785187",
+      "linkId": "l_104334756_0",
+      "x": -51.955,
+      "z": 433.448,
+      "heading": 264.83,
+      "name": "Deanery Row"
+    },
+    {
+      "id": "sn_040",
+      "nodeId": "n_1203785187",
+      "linkId": "l_25696038_5",
+      "x": -52.787,
+      "z": 443.406,
+      "heading": 194.01,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_041",
+      "nodeId": "n_1203785189",
+      "linkId": "l_104334754_1",
+      "x": 595.274,
+      "z": 768.226,
+      "heading": 265.32,
+      "name": "Yarwell Close"
+    },
+    {
+      "id": "sn_042",
+      "nodeId": "n_1203785192",
+      "linkId": "l_22779053_1",
+      "x": 306.622,
+      "z": 104.821,
+      "heading": 338.63,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_043",
+      "nodeId": "n_1203815132",
+      "linkId": "l_104337298_0",
+      "x": 664.136,
+      "z": 892.746,
+      "heading": 104.07,
+      "name": "Tuxford Close"
+    },
+    {
+      "id": "sn_044",
+      "nodeId": "n_1203815132",
+      "linkId": "l_35406702_2",
+      "x": 663.11,
+      "z": 880.569,
+      "heading": 13.94,
+      "name": "Hilton Street"
+    },
+    {
+      "id": "sn_045",
+      "nodeId": "n_1227797052",
+      "linkId": "l_106753276_0",
+      "x": -613.97,
+      "z": -922.332,
+      "heading": 147.41,
+      "name": "Fern Road"
+    },
+    {
+      "id": "sn_046",
+      "nodeId": "n_1227797052",
+      "linkId": "l_87122055_1",
+      "x": -605.962,
+      "z": -932.493,
+      "heading": 244.49,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_047",
+      "nodeId": "n_1227797064",
+      "linkId": "l_106753275_0",
+      "x": -449.995,
+      "z": -614.81,
+      "heading": 341.25,
+      "name": "Williamson Street"
+    },
+    {
+      "id": "sn_048",
+      "nodeId": "n_1227797064",
+      "linkId": "l_87061728_0",
+      "x": -455.574,
+      "z": -603.607,
+      "heading": 74.18,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_049",
+      "nodeId": "n_1227797081",
+      "linkId": "l_101293210_1",
+      "x": -441.718,
+      "z": -756.655,
+      "heading": 279.19,
+      "name": "Mander Street"
+    },
+    {
+      "id": "sn_050",
+      "nodeId": "n_1227797081",
+      "linkId": "l_106753275_2",
+      "x": -441.856,
+      "z": -744.313,
+      "heading": 187.9,
+      "name": "Williamson Street"
+    },
+    {
+      "id": "sn_051",
+      "nodeId": "n_12431863742",
+      "linkId": "l_1007424548_1",
+      "x": 471.893,
+      "z": -428.37,
+      "heading": 21.63,
+      "name": "Tramway Drive"
+    },
+    {
+      "id": "sn_052",
+      "nodeId": "n_12431863743",
+      "linkId": "l_1007424548_2",
+      "x": 483.029,
+      "z": -400.283,
+      "heading": 21.62,
+      "name": "Tramway Drive"
+    },
+    {
+      "id": "sn_053",
+      "nodeId": "n_12431863747",
+      "linkId": "l_24930301_1",
+      "x": 677.126,
+      "z": -235.945,
+      "heading": 273.49,
+      "name": "Walsall Street"
+    },
+    {
+      "id": "sn_054",
+      "nodeId": "n_12618370228",
+      "linkId": "l_25696031_3",
+      "x": 7.753,
+      "z": 851.574,
+      "heading": 71.21,
+      "name": "Boscobel Crescent"
+    },
+    {
+      "id": "sn_055",
+      "nodeId": "n_12618370258",
+      "linkId": "l_25696031_0",
+      "x": 39.575,
+      "z": 880.364,
+      "heading": 178.59,
+      "name": "Boscobel Crescent"
+    },
+    {
+      "id": "sn_056",
+      "nodeId": "n_12618445859",
+      "linkId": "l_25695775_0",
+      "x": -402.573,
+      "z": 880.295,
+      "heading": 44.83,
+      "name": "Great Hampton Street"
+    },
+    {
+      "id": "sn_057",
+      "nodeId": "n_1332657697",
+      "linkId": "l_118496186_1",
+      "x": -231.034,
+      "z": -191.055,
+      "heading": 11.78,
+      "name": "Victoria Fold"
+    },
+    {
+      "id": "sn_058",
+      "nodeId": "n_1332657697",
+      "linkId": "l_86882780_2",
+      "x": -220.104,
+      "z": -190.854,
+      "heading": 277.95,
+      "name": "Skinner Street"
+    },
+    {
+      "id": "sn_059",
+      "nodeId": "n_1343216091",
+      "linkId": "l_15132985_0",
+      "x": -36.14,
+      "z": 146.406,
+      "heading": 300.18,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_060",
+      "nodeId": "n_1343216094",
+      "linkId": "l_15132985_5",
+      "x": -21.818,
+      "z": 174.694,
+      "heading": 146.65,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_061",
+      "nodeId": "n_13891657307",
+      "linkId": "l_25689657_1",
+      "x": 420.912,
+      "z": 286.839,
+      "heading": 255.74,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_062",
+      "nodeId": "n_1538172599",
+      "linkId": "l_636402736_0",
+      "x": 438.735,
+      "z": 45.518,
+      "heading": 163.11,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_063",
+      "nodeId": "n_1538231333",
+      "linkId": "l_7985680_2",
+      "x": 581.262,
+      "z": -122.709,
+      "heading": 189.07,
+      "name": "Gough Street"
+    },
+    {
+      "id": "sn_064",
+      "nodeId": "n_15404314",
+      "linkId": "l_19366136_0",
+      "x": -500.731,
+      "z": 335.813,
+      "heading": 59.33,
+      "name": "Park Avenue"
+    },
+    {
+      "id": "sn_065",
+      "nodeId": "n_15404314",
+      "linkId": "l_25695784_0",
+      "x": -493.876,
+      "z": 326.586,
+      "heading": 335.84,
+      "name": "Bath Avenue"
+    },
+    {
+      "id": "sn_066",
+      "nodeId": "n_154780713",
+      "linkId": "l_15534450_0",
+      "x": -99.265,
+      "z": -29.085,
+      "heading": 79.14,
+      "name": "Darlington Street"
+    },
+    {
+      "id": "sn_067",
+      "nodeId": "n_154780713",
+      "linkId": "l_15534580_1",
+      "x": -83.569,
+      "z": -36.271,
+      "heading": 258.44,
+      "name": "Queen Square"
+    },
+    {
+      "id": "sn_068",
+      "nodeId": "n_154780713",
+      "linkId": "l_534432395_1",
+      "x": -95.647,
+      "z": -40.262,
+      "heading": 353.37,
+      "name": "Victoria Street"
+    },
+    {
+      "id": "sn_069",
+      "nodeId": "n_154780713",
+      "linkId": "l_627988061_5",
+      "x": -90.226,
+      "z": -25.028,
+      "heading": 162.88,
+      "name": "North Street"
+    },
+    {
+      "id": "sn_070",
+      "nodeId": "n_154780717",
+      "linkId": "l_15520106_0",
+      "x": -263.647,
+      "z": -65.13,
+      "heading": 168.03,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_071",
+      "nodeId": "n_154780717",
+      "linkId": "l_183926041_1",
+      "x": -259.137,
+      "z": -76.268,
+      "heading": 256.26,
+      "name": "Darlington Street"
+    },
+    {
+      "id": "sn_072",
+      "nodeId": "n_154780717",
+      "linkId": "l_645715020_2",
+      "x": -270.682,
+      "z": -80.894,
+      "heading": 348.45,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_073",
+      "nodeId": "n_1619293844",
+      "linkId": "l_148868369_0",
+      "x": 105.61,
+      "z": 436.062,
+      "heading": 186.01,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_074",
+      "nodeId": "n_1620396601",
+      "linkId": "l_38791083_0",
+      "x": -64.531,
+      "z": -314.965,
+      "heading": 84.76,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_075",
+      "nodeId": "n_1620736592",
+      "linkId": "l_146803779_0",
+      "x": 447.706,
+      "z": -199.138,
+      "heading": 203.17,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_076",
+      "nodeId": "n_1621467601",
+      "linkId": "l_34106028_0",
+      "x": -195.984,
+      "z": -603.67,
+      "heading": 95.8,
+      "name": "Ring Road St. John's"
+    },
+    {
+      "id": "sn_077",
+      "nodeId": "n_1621467621",
+      "linkId": "l_7984735_2",
+      "x": 71.109,
+      "z": -581.576,
+      "heading": 88.19,
+      "name": "Ring Road St. Johns"
+    },
+    {
+      "id": "sn_078",
+      "nodeId": "n_1621467622",
+      "linkId": "l_438849964_0",
+      "x": -244.824,
+      "z": -565.689,
+      "heading": 158.88,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_079",
+      "nodeId": "n_1621493184",
+      "linkId": "l_7984147_0",
+      "x": -393.586,
+      "z": -475.374,
+      "heading": 346.67,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_080",
+      "nodeId": "n_1621493197",
+      "linkId": "l_149125994_0",
+      "x": -445.352,
+      "z": -442.343,
+      "heading": 78.57,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_081",
+      "nodeId": "n_1621555175",
+      "linkId": "l_149132126_2",
+      "x": -471.117,
+      "z": -882.26,
+      "heading": 302.38,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_082",
+      "nodeId": "n_1621555181",
+      "linkId": "l_7982068_5",
+      "x": -422.327,
+      "z": -865.326,
+      "heading": 205.28,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_083",
+      "nodeId": "n_1621555181",
+      "linkId": "l_866467300_0",
+      "x": -437.271,
+      "z": -871.975,
+      "heading": 45.4,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_084",
+      "nodeId": "n_1621771754",
+      "linkId": "l_22757767_0",
+      "x": -375.323,
+      "z": -268.505,
+      "heading": 190.22,
+      "name": "Peel Street"
+    },
+    {
+      "id": "sn_085",
+      "nodeId": "n_1621771780",
+      "linkId": "l_23991405_1",
+      "x": -387.878,
+      "z": -235.234,
+      "heading": 109.59,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_086",
+      "nodeId": "n_1621771806",
+      "linkId": "l_149160142_0",
+      "x": -370.834,
+      "z": -221.234,
+      "heading": 22.18,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_087",
+      "nodeId": "n_1621790616",
+      "linkId": "l_7984140_2",
+      "x": 248.752,
+      "z": -590.789,
+      "heading": 236.01,
+      "name": "Ring Road St. George's"
+    },
+    {
+      "id": "sn_088",
+      "nodeId": "n_1621822791",
+      "linkId": "l_22757766_0",
+      "x": -220.116,
+      "z": -440.334,
+      "heading": 104.82,
+      "name": "Little Brickiln Street"
+    },
+    {
+      "id": "sn_089",
+      "nodeId": "n_1621822791",
+      "linkId": "l_7984738_3",
+      "x": -220.157,
+      "z": -452.209,
+      "heading": 18.25,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_090",
+      "nodeId": "n_1622867534",
+      "linkId": "l_149282981_0",
+      "x": 207.368,
+      "z": 409.734,
+      "heading": 283.35,
+      "name": "Faulkland Street"
+    },
+    {
+      "id": "sn_091",
+      "nodeId": "n_1622867538",
+      "linkId": "l_149282981_2",
+      "x": 182.936,
+      "z": 424.004,
+      "heading": 99.59,
+      "name": "Faulkland Street"
+    },
+    {
+      "id": "sn_092",
+      "nodeId": "n_1622867579",
+      "linkId": "l_149282981_0",
+      "x": 252.832,
+      "z": 422.514,
+      "heading": 75.22,
+      "name": "Faulkland Street"
+    },
+    {
+      "id": "sn_093",
+      "nodeId": "n_1622867579",
+      "linkId": "l_149282984_0",
+      "x": 263.881,
+      "z": 427.512,
+      "heading": 164.48,
+      "name": "Great Western Street"
+    },
+    {
+      "id": "sn_094",
+      "nodeId": "n_1622867647",
+      "linkId": "l_149282981_2",
+      "x": 135.707,
+      "z": 465.537,
+      "heading": 336.14,
+      "name": "Faulkland Street"
+    },
+    {
+      "id": "sn_095",
+      "nodeId": "n_1622867647",
+      "linkId": "l_149282987_0",
+      "x": 128.994,
+      "z": 475.483,
+      "heading": 64.2,
+      "name": "Herbert Street"
+    },
+    {
+      "id": "sn_096",
+      "nodeId": "n_1623854760",
+      "linkId": "l_1427538812_0",
+      "x": 256.015,
+      "z": 354.875,
+      "heading": 169.63,
+      "name": "Little's Lane"
+    },
+    {
+      "id": "sn_097",
+      "nodeId": "n_1623854760",
+      "linkId": "l_649691042_2",
+      "x": 258.545,
+      "z": 338.698,
+      "heading": 297.31,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_098",
+      "nodeId": "n_1623857889",
+      "linkId": "l_149402177_0",
+      "x": 328.981,
+      "z": 392.187,
+      "heading": 335.64,
+      "name": "Southampton Street"
+    },
+    {
+      "id": "sn_099",
+      "nodeId": "n_1623857890",
+      "linkId": "l_149402172_0",
+      "x": 326.064,
+      "z": 415.228,
+      "heading": 133.97,
+      "name": "Little's Lane"
+    },
+    {
+      "id": "sn_100",
+      "nodeId": "n_1625357654",
+      "linkId": "l_7982068_5",
+      "x": -403.519,
+      "z": -802.087,
+      "heading": 27.14,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_101",
+      "nodeId": "n_1625357662",
+      "linkId": "l_149573862_1",
+      "x": -372.346,
+      "z": -783.785,
+      "heading": 138.83,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_102",
+      "nodeId": "n_1695923444",
+      "linkId": "l_103263369_0",
+      "x": -637.245,
+      "z": -68.172,
+      "heading": 114.1,
+      "name": "Brewery Road"
+    },
+    {
+      "id": "sn_103",
+      "nodeId": "n_1695935414",
+      "linkId": "l_85551216_1",
+      "x": -356.845,
+      "z": -98.03,
+      "heading": 257.72,
+      "name": "Darlington Street"
+    },
+    {
+      "id": "sn_104",
+      "nodeId": "n_18236612",
+      "linkId": "l_22812039_0",
+      "x": 74.714,
+      "z": -812.131,
+      "heading": 15.39,
+      "name": "Bell Place"
+    },
+    {
+      "id": "sn_105",
+      "nodeId": "n_18236612",
+      "linkId": "l_22812041_1",
+      "x": 87.424,
+      "z": -812.944,
+      "heading": 280.31,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_106",
+      "nodeId": "n_18236614",
+      "linkId": "l_22812039_0",
+      "x": 76.251,
+      "z": -880.93,
+      "heading": 183.12,
+      "name": "Bell Place"
+    },
+    {
+      "id": "sn_107",
+      "nodeId": "n_18236640",
+      "linkId": "l_22983009_0",
+      "x": 620.194,
+      "z": 72.038,
+      "heading": 88.94,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_108",
+      "nodeId": "n_18236712",
+      "linkId": "l_776351320_0",
+      "x": 169.831,
+      "z": -674.274,
+      "heading": 180.48,
+      "name": "Birmingham New Road"
+    },
+    {
+      "id": "sn_109",
+      "nodeId": "n_18236712",
+      "linkId": "l_7984141_2",
+      "x": 169.669,
+      "z": -675.21,
+      "heading": 193.32,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_110",
+      "nodeId": "n_18236712",
+      "linkId": "l_87108306_0",
+      "x": 157.772,
+      "z": -687.958,
+      "heading": 2.3,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_111",
+      "nodeId": "n_18236715",
+      "linkId": "l_87108306_1",
+      "x": 178.948,
+      "z": -752.444,
+      "heading": 169.17,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_112",
+      "nodeId": "n_18236720",
+      "linkId": "l_19373421_2",
+      "x": 285.244,
+      "z": 153.819,
+      "heading": 68.36,
+      "name": "Long Street"
+    },
+    {
+      "id": "sn_113",
+      "nodeId": "n_18236720",
+      "linkId": "l_22779053_3",
+      "x": 290.889,
+      "z": 144.851,
+      "heading": 338.44,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_114",
+      "nodeId": "n_18236721",
+      "linkId": "l_22779053_3",
+      "x": 308.994,
+      "z": 126.509,
+      "heading": 158.44,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_115",
+      "nodeId": "n_18236721",
+      "linkId": "l_8128770_0",
+      "x": 315.226,
+      "z": 115.985,
+      "heading": 248.67,
+      "name": "Chubb Street"
+    },
+    {
+      "id": "sn_116",
+      "nodeId": "n_18236722",
+      "linkId": "l_109182580_0",
+      "x": 363.296,
+      "z": 142.915,
+      "heading": 195.7,
+      "name": "Railway Street"
+    },
+    {
+      "id": "sn_117",
+      "nodeId": "n_18236722",
+      "linkId": "l_8128770_0",
+      "x": 348.184,
+      "z": 139.7,
+      "heading": 68.67,
+      "name": "Chubb Street"
+    },
+    {
+      "id": "sn_118",
+      "nodeId": "n_18275894",
+      "linkId": "l_1267207112_0",
+      "x": -557.991,
+      "z": -161.725,
+      "heading": 76.05,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_119",
+      "nodeId": "n_1876827220",
+      "linkId": "l_85580980_1",
+      "x": -358.245,
+      "z": -460.262,
+      "heading": 167.86,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_120",
+      "nodeId": "n_18834315",
+      "linkId": "l_149573865_0",
+      "x": -66.183,
+      "z": -622.722,
+      "heading": 68.77,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_121",
+      "nodeId": "n_18834317",
+      "linkId": "l_19210427_1",
+      "x": -92.455,
+      "z": -909.487,
+      "heading": 293.04,
+      "name": "Pountney Street"
+    },
+    {
+      "id": "sn_122",
+      "nodeId": "n_18834320",
+      "linkId": "l_7982034_3",
+      "x": -63.452,
+      "z": -716.622,
+      "heading": 358.97,
+      "name": "Thomas Street"
+    },
+    {
+      "id": "sn_123",
+      "nodeId": "n_18834321",
+      "linkId": "l_22812041_5",
+      "x": -51.293,
+      "z": -786.848,
+      "heading": 280.51,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_124",
+      "nodeId": "n_18834321",
+      "linkId": "l_7982034_2",
+      "x": -62.405,
+      "z": -787.532,
+      "heading": 0.83,
+      "name": "Thomas Street"
+    },
+    {
+      "id": "sn_125",
+      "nodeId": "n_18834324",
+      "linkId": "l_22779053_5",
+      "x": 277.579,
+      "z": 190.78,
+      "heading": 348.04,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_126",
+      "nodeId": "n_18834324",
+      "linkId": "l_7984310_0",
+      "x": 290.568,
+      "z": 199.278,
+      "heading": 223.7,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_127",
+      "nodeId": "n_18855036",
+      "linkId": "l_149573865_0",
+      "x": -127.433,
+      "z": -639.148,
+      "heading": 264.63,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_128",
+      "nodeId": "n_18855036",
+      "linkId": "l_19210504_2",
+      "x": -139.828,
+      "z": -641.844,
+      "heading": 359.21,
+      "name": "Stewart Street"
+    },
+    {
+      "id": "sn_129",
+      "nodeId": "n_18855041",
+      "linkId": "l_19210427_3",
+      "x": -148.183,
+      "z": -885.082,
+      "heading": 293.92,
+      "name": "Pountney Street"
+    },
+    {
+      "id": "sn_130",
+      "nodeId": "n_18855046",
+      "linkId": "l_101292016_4",
+      "x": -288.451,
+      "z": -830.77,
+      "heading": 286.61,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_131",
+      "nodeId": "n_18855047",
+      "linkId": "l_56631795_1",
+      "x": -311.503,
+      "z": -889.672,
+      "heading": 310.34,
+      "name": "Sidney Street"
+    },
+    {
+      "id": "sn_132",
+      "nodeId": "n_18855051",
+      "linkId": "l_101292016_0",
+      "x": -206.494,
+      "z": -846.214,
+      "heading": 111.37,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_133",
+      "nodeId": "n_18855051",
+      "linkId": "l_19210427_4",
+      "x": -197.183,
+      "z": -860.75,
+      "heading": 291.73,
+      "name": "Pountney Street"
+    },
+    {
+      "id": "sn_134",
+      "nodeId": "n_18855051",
+      "linkId": "l_19371364_0",
+      "x": -208.576,
+      "z": -858.835,
+      "heading": 15.75,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_135",
+      "nodeId": "n_18855058",
+      "linkId": "l_19371364_0",
+      "x": -200.803,
+      "z": -877.056,
+      "heading": 178.82,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_136",
+      "nodeId": "n_18855077",
+      "linkId": "l_19373421_0",
+      "x": 192.79,
+      "z": 146.267,
+      "heading": 337.25,
+      "name": "Long Street"
+    },
+    {
+      "id": "sn_137",
+      "nodeId": "n_18855077",
+      "linkId": "l_25371174_0",
+      "x": 196.155,
+      "z": 162.172,
+      "heading": 163.92,
+      "name": "Thornley Street"
+    },
+    {
+      "id": "sn_138",
+      "nodeId": "n_18855077",
+      "linkId": "l_85548593_1",
+      "x": 201.721,
+      "z": 152.434,
+      "heading": 244.97,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_139",
+      "nodeId": "n_18855078",
+      "linkId": "l_19373424_0",
+      "x": 127.86,
+      "z": 219.428,
+      "heading": 245.37,
+      "name": "Whitmore Street"
+    },
+    {
+      "id": "sn_140",
+      "nodeId": "n_18855078",
+      "linkId": "l_491066193_0",
+      "x": 114.008,
+      "z": 213.066,
+      "heading": 350.19,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_141",
+      "nodeId": "n_18855081",
+      "linkId": "l_15132985_6",
+      "x": -15.4,
+      "z": 152.377,
+      "heading": 162.06,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_142",
+      "nodeId": "n_18855081",
+      "linkId": "l_38791087_0",
+      "x": -10.761,
+      "z": 137.607,
+      "heading": 279.71,
+      "name": "Wulfruna Street"
+    },
+    {
+      "id": "sn_143",
+      "nodeId": "n_18855084",
+      "linkId": "l_148994807_0",
+      "x": 170.614,
+      "z": 251.247,
+      "heading": 165.02,
+      "name": "Thornley Street"
+    },
+    {
+      "id": "sn_144",
+      "nodeId": "n_18855084",
+      "linkId": "l_19373424_0",
+      "x": 159.077,
+      "z": 244.853,
+      "heading": 65.37,
+      "name": "Whitmore Street"
+    },
+    {
+      "id": "sn_145",
+      "nodeId": "n_18855090",
+      "linkId": "l_15132985_2",
+      "x": -53.627,
+      "z": 165.75,
+      "heading": 347.23,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_146",
+      "nodeId": "n_1894343908",
+      "linkId": "l_637984824_0",
+      "x": 580.298,
+      "z": -392.409,
+      "heading": 132.73,
+      "name": "Bilston Road"
+    },
+    {
+      "id": "sn_147",
+      "nodeId": "n_1894343998",
+      "linkId": "l_179095490_0",
+      "x": 574.519,
+      "z": -426.058,
+      "heading": 26.95,
+      "name": "Hospital Street"
+    },
+    {
+      "id": "sn_148",
+      "nodeId": "n_1904211791",
+      "linkId": "l_203454024_2",
+      "x": -464.627,
+      "z": -912.992,
+      "heading": 19.03,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_149",
+      "nodeId": "n_1904211794",
+      "linkId": "l_866467807_0",
+      "x": -511.081,
+      "z": -889.725,
+      "heading": 258.18,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_150",
+      "nodeId": "n_19093809",
+      "linkId": "l_643160366_0",
+      "x": -429.8,
+      "z": -851.472,
+      "heading": 205.03,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_151",
+      "nodeId": "n_19093809",
+      "linkId": "l_677127919_2",
+      "x": -444.841,
+      "z": -857.78,
+      "heading": 48.28,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_152",
+      "nodeId": "n_19093815",
+      "linkId": "l_677127905_0",
+      "x": -460.08,
+      "z": -874.4,
+      "heading": 282.31,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_153",
+      "nodeId": "n_19094578",
+      "linkId": "l_1357053481_0",
+      "x": 131.951,
+      "z": -769.301,
+      "heading": 7.94,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_154",
+      "nodeId": "n_19094583",
+      "linkId": "l_7985908_0",
+      "x": 195.907,
+      "z": -817.446,
+      "heading": 254.95,
+      "name": "Howard Street"
+    },
+    {
+      "id": "sn_155",
+      "nodeId": "n_19094583",
+      "linkId": "l_87108306_2",
+      "x": 192.515,
+      "z": -805.921,
+      "heading": 165.29,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_156",
+      "nodeId": "n_19094584",
+      "linkId": "l_7985908_0",
+      "x": 248.045,
+      "z": -804.82,
+      "heading": 87.9,
+      "name": "Howard Street"
+    },
+    {
+      "id": "sn_157",
+      "nodeId": "n_19857051",
+      "linkId": "l_149125994_3",
+      "x": -518.538,
+      "z": -469.953,
+      "heading": 255.97,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_158",
+      "nodeId": "n_19857051",
+      "linkId": "l_28423411_4",
+      "x": -529.721,
+      "z": -474.908,
+      "heading": 344.29,
+      "name": "Graiseley Street"
+    },
+    {
+      "id": "sn_159",
+      "nodeId": "n_19857051",
+      "linkId": "l_292033479_0",
+      "x": -524.315,
+      "z": -458.415,
+      "heading": 159.23,
+      "name": "Alexandra Street"
+    },
+    {
+      "id": "sn_160",
+      "nodeId": "n_19857053",
+      "linkId": "l_19210750_3",
+      "x": -493.837,
+      "z": -626.281,
+      "heading": 351.79,
+      "name": "Retreat Street"
+    },
+    {
+      "id": "sn_161",
+      "nodeId": "n_19857053",
+      "linkId": "l_28423410_1",
+      "x": -497.723,
+      "z": -615.892,
+      "heading": 72.44,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_162",
+      "nodeId": "n_19857053",
+      "linkId": "l_28423411_0",
+      "x": -485.26,
+      "z": -611.09,
+      "heading": 173.81,
+      "name": "Graiseley Street"
+    },
+    {
+      "id": "sn_163",
+      "nodeId": "n_19857069",
+      "linkId": "l_28423411_1",
+      "x": -506.784,
+      "z": -561.987,
+      "heading": 346.97,
+      "name": "Graiseley Street"
+    },
+    {
+      "id": "sn_164",
+      "nodeId": "n_19857069",
+      "linkId": "l_87061708_0",
+      "x": -496.031,
+      "z": -558.305,
+      "heading": 264.86,
+      "name": "Hallet Drive"
+    },
+    {
+      "id": "sn_165",
+      "nodeId": "n_19857071",
+      "linkId": "l_19210750_1",
+      "x": -495.369,
+      "z": -782.54,
+      "heading": 11.3,
+      "name": "Retreat Street"
+    },
+    {
+      "id": "sn_166",
+      "nodeId": "n_199258586",
+      "linkId": "l_34019939_0",
+      "x": 385.202,
+      "z": 228.841,
+      "heading": 148.61,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_167",
+      "nodeId": "n_199377779",
+      "linkId": "l_22812130_0",
+      "x": 72.262,
+      "z": -615.742,
+      "heading": 274.06,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_168",
+      "nodeId": "n_199386778",
+      "linkId": "l_101293210_2",
+      "x": -477.09,
+      "z": -751.153,
+      "heading": 278.76,
+      "name": "Mander Street"
+    },
+    {
+      "id": "sn_169",
+      "nodeId": "n_199386778",
+      "linkId": "l_19210750_2",
+      "x": -489.473,
+      "z": -751.067,
+      "heading": 10.42,
+      "name": "Retreat Street"
+    },
+    {
+      "id": "sn_170",
+      "nodeId": "n_201427759",
+      "linkId": "l_36799795_0",
+      "x": 250.15,
+      "z": 189.734,
+      "heading": 153.77,
+      "name": "Westbury Street"
+    },
+    {
+      "id": "sn_171",
+      "nodeId": "n_201427759",
+      "linkId": "l_85548593_0",
+      "x": 257.274,
+      "z": 180.117,
+      "heading": 241.56,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_172",
+      "nodeId": "n_201427766",
+      "linkId": "l_19373426_0",
+      "x": 224.815,
+      "z": 247.359,
+      "heading": 157.96,
+      "name": "Westbury Street"
+    },
+    {
+      "id": "sn_173",
+      "nodeId": "n_201427766",
+      "linkId": "l_22757736_0",
+      "x": 231.116,
+      "z": 236.809,
+      "heading": 248.73,
+      "name": "Saint Mary's Street"
+    },
+    {
+      "id": "sn_174",
+      "nodeId": "n_201427775",
+      "linkId": "l_15132985_5",
+      "x": -32.556,
+      "z": 176.642,
+      "heading": 308.68,
+      "name": "St. Peter's Square"
+    },
+    {
+      "id": "sn_175",
+      "nodeId": "n_201460325",
+      "linkId": "l_193576403_3",
+      "x": 540.816,
+      "z": -35.891,
+      "heading": 183.75,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_176",
+      "nodeId": "n_201460330",
+      "linkId": "l_193576403_3",
+      "x": 531.818,
+      "z": -18.733,
+      "heading": 3.75,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_177",
+      "nodeId": "n_201460330",
+      "linkId": "l_24774767_2",
+      "x": 543.71,
+      "z": -17.875,
+      "heading": 276.39,
+      "name": "Albion Street"
+    },
+    {
+      "id": "sn_178",
+      "nodeId": "n_201460487",
+      "linkId": "l_87069528_1",
+      "x": 438.926,
+      "z": -690.797,
+      "heading": 182.33,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_179",
+      "nodeId": "n_201460496",
+      "linkId": "l_87069528_4",
+      "x": 438.655,
+      "z": -828.132,
+      "heading": 180.32,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_180",
+      "nodeId": "n_201972258",
+      "linkId": "l_22757766_0",
+      "x": -295.372,
+      "z": -456.363,
+      "heading": 259.31,
+      "name": "Little Brickiln Street"
+    },
+    {
+      "id": "sn_181",
+      "nodeId": "n_201972258",
+      "linkId": "l_775832920_0",
+      "x": -304.533,
+      "z": -461.913,
+      "heading": 346.13,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_182",
+      "nodeId": "n_201972275",
+      "linkId": "l_146803784_0",
+      "x": -224.607,
+      "z": -462.972,
+      "heading": 25.5,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_183",
+      "nodeId": "n_201972275",
+      "linkId": "l_85581313_1",
+      "x": -211.421,
+      "z": -454.874,
+      "heading": 219.25,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_184",
+      "nodeId": "n_21033215",
+      "linkId": "l_19422216_0",
+      "x": -197.4,
+      "z": -404.965,
+      "heading": 251.52,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_185",
+      "nodeId": "n_21033215",
+      "linkId": "l_22758209_2",
+      "x": -213.241,
+      "z": -396.231,
+      "heading": 86.58,
+      "name": "Pitt Street"
+    },
+    {
+      "id": "sn_186",
+      "nodeId": "n_21033220",
+      "linkId": "l_25695987_4",
+      "x": -234.472,
+      "z": 712.864,
+      "heading": 118.16,
+      "name": "Staveley Road"
+    },
+    {
+      "id": "sn_187",
+      "nodeId": "n_21033220",
+      "linkId": "l_38288592_4",
+      "x": -222.751,
+      "z": 710.371,
+      "heading": 203.86,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_188",
+      "nodeId": "n_21033221",
+      "linkId": "l_25695989_0",
+      "x": -20.499,
+      "z": 877.638,
+      "heading": 87.89,
+      "name": "Oxley Street"
+    },
+    {
+      "id": "sn_189",
+      "nodeId": "n_21033221",
+      "linkId": "l_25696030_1",
+      "x": -16.358,
+      "z": 865.389,
+      "heading": 344.35,
+      "name": "North Road"
+    },
+    {
+      "id": "sn_190",
+      "nodeId": "n_21033224",
+      "linkId": "l_25695779_0",
+      "x": 38.497,
+      "z": 726.443,
+      "heading": 251.25,
+      "name": "Red Hill Street"
+    },
+    {
+      "id": "sn_191",
+      "nodeId": "n_21033224",
+      "linkId": "l_25696030_0",
+      "x": 34.256,
+      "z": 736.618,
+      "heading": 171.89,
+      "name": "North Road"
+    },
+    {
+      "id": "sn_192",
+      "nodeId": "n_21033224",
+      "linkId": "l_25696038_0",
+      "x": 24.575,
+      "z": 722.467,
+      "heading": 5.25,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_193",
+      "nodeId": "n_21033225",
+      "linkId": "l_25696038_2",
+      "x": -21.902,
+      "z": 565.018,
+      "heading": 200.87,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_194",
+      "nodeId": "n_21033225",
+      "linkId": "l_645054780_1",
+      "x": -34.853,
+      "z": 566.723,
+      "heading": 102.52,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_195",
+      "nodeId": "n_21033230",
+      "linkId": "l_35066213_1",
+      "x": -134.112,
+      "z": 657.144,
+      "heading": 107.86,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_196",
+      "nodeId": "n_21033231",
+      "linkId": "l_25695926_0",
+      "x": -191.234,
+      "z": 661.691,
+      "heading": 89.23,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_197",
+      "nodeId": "n_211536313",
+      "linkId": "l_23151708_2",
+      "x": -442.263,
+      "z": 499.21,
+      "heading": 60.97,
+      "name": "Lansdowne Road"
+    },
+    {
+      "id": "sn_198",
+      "nodeId": "n_211536313",
+      "linkId": "l_857080244_0",
+      "x": -434.075,
+      "z": 506.814,
+      "heading": 141.65,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_199",
+      "nodeId": "n_211536322",
+      "linkId": "l_25695781_0",
+      "x": -508.743,
+      "z": 578.021,
+      "heading": 226.63,
+      "name": "Paget Street"
+    },
+    {
+      "id": "sn_200",
+      "nodeId": "n_211536322",
+      "linkId": "l_857080243_1",
+      "x": -515.407,
+      "z": 568.462,
+      "heading": 311.53,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_201",
+      "nodeId": "n_211536334",
+      "linkId": "l_23151707_1",
+      "x": -625.762,
+      "z": 657.929,
+      "heading": 45.22,
+      "name": "Devon Road"
+    },
+    {
+      "id": "sn_202",
+      "nodeId": "n_211536334",
+      "linkId": "l_25695783_2",
+      "x": -608.746,
+      "z": 660.834,
+      "heading": 223.79,
+      "name": "Great Hampton Street"
+    },
+    {
+      "id": "sn_203",
+      "nodeId": "n_211536334",
+      "linkId": "l_86336508_1",
+      "x": -613.984,
+      "z": 651.28,
+      "heading": 302.06,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_204",
+      "nodeId": "n_214837",
+      "linkId": "l_438847745_1",
+      "x": 525.265,
+      "z": -270.549,
+      "heading": 206.12,
+      "name": "Middle Cross"
+    },
+    {
+      "id": "sn_205",
+      "nodeId": "n_214837",
+      "linkId": "l_638584304_0",
+      "x": 506.808,
+      "z": -279.362,
+      "heading": 9.92,
+      "name": "Bilston Street Island"
+    },
+    {
+      "id": "sn_206",
+      "nodeId": "n_214841",
+      "linkId": "l_311810292_0",
+      "x": 475.811,
+      "z": -324.844,
+      "heading": 258.83,
+      "name": "Bilston Street Island"
+    },
+    {
+      "id": "sn_207",
+      "nodeId": "n_214844",
+      "linkId": "l_438845248_1",
+      "x": 398.198,
+      "z": -298.092,
+      "heading": 356.17,
+      "name": "Ring Road St. Georges"
+    },
+    {
+      "id": "sn_208",
+      "nodeId": "n_214847",
+      "linkId": "l_631060503_0",
+      "x": 430.546,
+      "z": -237.098,
+      "heading": 252.02,
+      "name": "Bilston Street Island"
+    },
+    {
+      "id": "sn_209",
+      "nodeId": "n_214851",
+      "linkId": "l_438847746_1",
+      "x": 485.411,
+      "z": -216.027,
+      "heading": 152.8,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_210",
+      "nodeId": "n_214851",
+      "linkId": "l_631060503_2",
+      "x": 485.752,
+      "z": -235.716,
+      "heading": 293.68,
+      "name": "Bilston Street Island"
+    },
+    {
+      "id": "sn_211",
+      "nodeId": "n_214865",
+      "linkId": "l_438849972_2",
+      "x": 128.551,
+      "z": -614.296,
+      "heading": 272.52,
+      "name": "Ring Road St. John's"
+    },
+    {
+      "id": "sn_212",
+      "nodeId": "n_214865",
+      "linkId": "l_877889275_0",
+      "x": 126.231,
+      "z": -613.395,
+      "heading": 294.18,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_213",
+      "nodeId": "n_214884",
+      "linkId": "l_295111886_0",
+      "x": 453.186,
+      "z": 38.981,
+      "heading": 165.8,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_214",
+      "nodeId": "n_214884",
+      "linkId": "l_7982205_0",
+      "x": 447.763,
+      "z": 22.621,
+      "heading": 339.26,
+      "name": "Horseley Fields"
+    },
+    {
+      "id": "sn_215",
+      "nodeId": "n_214897",
+      "linkId": "l_890840662_0",
+      "x": -260.096,
+      "z": -611.191,
+      "heading": 69.67,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_216",
+      "nodeId": "n_214903",
+      "linkId": "l_146803781_0",
+      "x": -324.768,
+      "z": -601.259,
+      "heading": 172.49,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_217",
+      "nodeId": "n_214903",
+      "linkId": "l_438849966_1",
+      "x": -337.755,
+      "z": -615.435,
+      "heading": 5.22,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_218",
+      "nodeId": "n_214904",
+      "linkId": "l_146803781_0",
+      "x": -338.802,
+      "z": -596.942,
+      "heading": 352.49,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_219",
+      "nodeId": "n_214906",
+      "linkId": "l_438851184_1",
+      "x": -312.558,
+      "z": -548.153,
+      "heading": 100.85,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_220",
+      "nodeId": "n_214906",
+      "linkId": "l_645732305_0",
+      "x": -298.303,
+      "z": -560.382,
+      "heading": 253.13,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_221",
+      "nodeId": "n_214907",
+      "linkId": "l_645732305_0",
+      "x": -299.875,
+      "z": -546.909,
+      "heading": 73.13,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_222",
+      "nodeId": "n_214912",
+      "linkId": "l_19210752_2",
+      "x": -406.876,
+      "z": -415.832,
+      "heading": 358.2,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_223",
+      "nodeId": "n_214912",
+      "linkId": "l_645732306_1",
+      "x": -406.502,
+      "z": -416.63,
+      "heading": 347.6,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_224",
+      "nodeId": "n_214918",
+      "linkId": "l_123075131_0",
+      "x": -493.314,
+      "z": -136.877,
+      "heading": 152.09,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_225",
+      "nodeId": "n_214919",
+      "linkId": "l_86140139_0",
+      "x": -491.275,
+      "z": -115.813,
+      "heading": 215.07,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_226",
+      "nodeId": "n_214922",
+      "linkId": "l_86140132_0",
+      "x": -478.725,
+      "z": -98.176,
+      "heading": 216.21,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_227",
+      "nodeId": "n_214924",
+      "linkId": "l_25696174_4",
+      "x": -433.791,
+      "z": -76.854,
+      "heading": 140.23,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_228",
+      "nodeId": "n_214924",
+      "linkId": "l_85580987_0",
+      "x": -429.632,
+      "z": -94.457,
+      "heading": 294.74,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_229",
+      "nodeId": "n_214925",
+      "linkId": "l_85580978_0",
+      "x": -421.248,
+      "z": -100.248,
+      "heading": 311.71,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_230",
+      "nodeId": "n_214926",
+      "linkId": "l_43159704_1",
+      "x": -403.311,
+      "z": -117.68,
+      "heading": 219.08,
+      "name": "Darlington Street"
+    },
+    {
+      "id": "sn_231",
+      "nodeId": "n_214926",
+      "linkId": "l_85580975_0",
+      "x": -422.143,
+      "z": -122.24,
+      "heading": 28.21,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_232",
+      "nodeId": "n_214928",
+      "linkId": "l_7985852_0",
+      "x": -435.331,
+      "z": -152.916,
+      "heading": 31.32,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_233",
+      "nodeId": "n_214958",
+      "linkId": "l_7984151_1",
+      "x": -510.44,
+      "z": 22.517,
+      "heading": 1.44,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_234",
+      "nodeId": "n_214960",
+      "linkId": "l_7984151_2",
+      "x": -494.907,
+      "z": 95.233,
+      "heading": 23.26,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_235",
+      "nodeId": "n_214963",
+      "linkId": "l_7984151_3",
+      "x": -370.501,
+      "z": 196.7,
+      "heading": 72.67,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_236",
+      "nodeId": "n_214964",
+      "linkId": "l_7984151_5",
+      "x": -329.154,
+      "z": 208.967,
+      "heading": 68.3,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_237",
+      "nodeId": "n_214976",
+      "linkId": "l_25696172_0",
+      "x": 85.184,
+      "z": 349.121,
+      "heading": 87.74,
+      "name": "Ring Road Saint Peters"
+    },
+    {
+      "id": "sn_238",
+      "nodeId": "n_214976",
+      "linkId": "l_643170777_2",
+      "x": 88.805,
+      "z": 334.899,
+      "heading": 349.12,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_239",
+      "nodeId": "n_214977",
+      "linkId": "l_295111882_0",
+      "x": 167.166,
+      "z": 333.436,
+      "heading": 280.47,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_240",
+      "nodeId": "n_214980",
+      "linkId": "l_153700206_0",
+      "x": 313.29,
+      "z": 271.278,
+      "heading": 138.49,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_241",
+      "nodeId": "n_214980",
+      "linkId": "l_7984419_2",
+      "x": 308.377,
+      "z": 252.574,
+      "heading": 346.93,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_242",
+      "nodeId": "n_214983",
+      "linkId": "l_636402736_2",
+      "x": 364.503,
+      "z": 186.395,
+      "heading": 328.09,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_243",
+      "nodeId": "n_214997",
+      "linkId": "l_25696174_0",
+      "x": -326.919,
+      "z": 177.346,
+      "heading": 73.24,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_244",
+      "nodeId": "n_214997",
+      "linkId": "l_85550728_2",
+      "x": -321.347,
+      "z": 167.177,
+      "heading": 353.31,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_245",
+      "nodeId": "n_214998",
+      "linkId": "l_25696127_1",
+      "x": -309.088,
+      "z": 319.341,
+      "heading": 17.87,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_246",
+      "nodeId": "n_214999",
+      "linkId": "l_86336509_0",
+      "x": -287.96,
+      "z": 361.505,
+      "heading": 191.82,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_247",
+      "nodeId": "n_215015",
+      "linkId": "l_86140128_2",
+      "x": 81.401,
+      "z": 378.865,
+      "heading": 83.81,
+      "name": "Ring Road St. Peter's"
+    },
+    {
+      "id": "sn_248",
+      "nodeId": "n_215015",
+      "linkId": "l_897791707_0",
+      "x": 84.595,
+      "z": 365.609,
+      "heading": 355.5,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_249",
+      "nodeId": "n_215016",
+      "linkId": "l_25696170_0",
+      "x": 104.888,
+      "z": 367.434,
+      "heading": 266.28,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_250",
+      "nodeId": "n_215016",
+      "linkId": "l_649691038_2",
+      "x": 103.601,
+      "z": 381.122,
+      "heading": 175.69,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_251",
+      "nodeId": "n_215017",
+      "linkId": "l_649691042_0",
+      "x": 182.748,
+      "z": 377.355,
+      "heading": 98.74,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_252",
+      "nodeId": "n_215020",
+      "linkId": "l_295111883_0",
+      "x": 327.605,
+      "z": 290.744,
+      "heading": 318.84,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_253",
+      "nodeId": "n_215021",
+      "linkId": "l_295111883_0",
+      "x": 337.566,
+      "z": 299.633,
+      "heading": 138.84,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_254",
+      "nodeId": "n_215022",
+      "linkId": "l_34019939_0",
+      "x": 364.139,
+      "z": 237.733,
+      "heading": 328.61,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_255",
+      "nodeId": "n_215022",
+      "linkId": "l_7982408_0",
+      "x": 373.766,
+      "z": 253.199,
+      "heading": 187.92,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_256",
+      "nodeId": "n_215023",
+      "linkId": "l_649691003_0",
+      "x": 391.992,
+      "z": 218.899,
+      "heading": 142.09,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_257",
+      "nodeId": "n_215035",
+      "linkId": "l_25695927_0",
+      "x": -235.025,
+      "z": 627.268,
+      "heading": 220.57,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_258",
+      "nodeId": "n_215036",
+      "linkId": "l_35066191_0",
+      "x": -238.547,
+      "z": 643.458,
+      "heading": 20.72,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_259",
+      "nodeId": "n_215040",
+      "linkId": "l_220679442_1",
+      "x": 529.263,
+      "z": 342.768,
+      "heading": 73.16,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_260",
+      "nodeId": "n_215040",
+      "linkId": "l_644532351_0",
+      "x": 537.67,
+      "z": 348.591,
+      "heading": 145.81,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_261",
+      "nodeId": "n_2200285086",
+      "linkId": "l_209874063_0",
+      "x": 14.284,
+      "z": 466.483,
+      "heading": 164.1,
+      "name": "Deanery Row"
+    },
+    {
+      "id": "sn_262",
+      "nodeId": "n_2200310186",
+      "linkId": "l_25696038_3",
+      "x": -33.059,
+      "z": 523.764,
+      "heading": 194.07,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_263",
+      "nodeId": "n_2200310192",
+      "linkId": "l_645054779_0",
+      "x": -109.613,
+      "z": 646.018,
+      "heading": 118.54,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_264",
+      "nodeId": "n_2200311472",
+      "linkId": "l_35066213_0",
+      "x": -148.431,
+      "z": 661.736,
+      "heading": 107.69,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_265",
+      "nodeId": "n_2200360687",
+      "linkId": "l_22757676_1",
+      "x": 112.778,
+      "z": -477.416,
+      "heading": 117.34,
+      "name": "Convent Close"
+    },
+    {
+      "id": "sn_266",
+      "nodeId": "n_2200360696",
+      "linkId": "l_22757676_0",
+      "x": 101.929,
+      "z": -459.861,
+      "heading": 177.45,
+      "name": "Convent Close"
+    },
+    {
+      "id": "sn_267",
+      "nodeId": "n_2200360722",
+      "linkId": "l_7985846_0",
+      "x": 90.585,
+      "z": -547.148,
+      "heading": 272.83,
+      "name": "George Street"
+    },
+    {
+      "id": "sn_268",
+      "nodeId": "n_224449201",
+      "linkId": "l_644532351_2",
+      "x": 462.676,
+      "z": 460.588,
+      "heading": 13.67,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_269",
+      "nodeId": "n_224449201",
+      "linkId": "l_73578821_0",
+      "x": 465.879,
+      "z": 471.975,
+      "heading": 117.55,
+      "name": "Grimstone Street"
+    },
+    {
+      "id": "sn_270",
+      "nodeId": "n_224449208",
+      "linkId": "l_612916938_0",
+      "x": 611.432,
+      "z": 634.027,
+      "heading": 193.45,
+      "name": "Hilton Street"
+    },
+    {
+      "id": "sn_271",
+      "nodeId": "n_224449208",
+      "linkId": "l_644532351_6",
+      "x": 598.237,
+      "z": 622.897,
+      "heading": 14.64,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_272",
+      "nodeId": "n_224449208",
+      "linkId": "l_73578821_2",
+      "x": 598.491,
+      "z": 632.839,
+      "heading": 98.71,
+      "name": "Grimstone Street"
+    },
+    {
+      "id": "sn_273",
+      "nodeId": "n_2297683590",
+      "linkId": "l_644532351_1",
+      "x": 462.874,
+      "z": 447.653,
+      "heading": 347.11,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_274",
+      "nodeId": "n_2298419582",
+      "linkId": "l_1267936467_0",
+      "x": 661.09,
+      "z": 330.322,
+      "heading": 267.3,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_275",
+      "nodeId": "n_240131307",
+      "linkId": "l_87069506_0",
+      "x": 543.946,
+      "z": -479.659,
+      "heading": 111.52,
+      "name": "Cleveland Road"
+    },
+    {
+      "id": "sn_276",
+      "nodeId": "n_240131315",
+      "linkId": "l_645943174_2",
+      "x": 593.159,
+      "z": -417.849,
+      "heading": 311.63,
+      "name": "Bilston Road"
+    },
+    {
+      "id": "sn_277",
+      "nodeId": "n_240131319",
+      "linkId": "l_19375796_0",
+      "x": 445.718,
+      "z": -560.003,
+      "heading": 202.4,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_278",
+      "nodeId": "n_240131324",
+      "linkId": "l_19375796_0",
+      "x": 470.333,
+      "z": -467.507,
+      "heading": 25.39,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_279",
+      "nodeId": "n_240131324",
+      "linkId": "l_22329181_2",
+      "x": 474.289,
+      "z": -456.501,
+      "heading": 113.58,
+      "name": "Cleveland Road"
+    },
+    {
+      "id": "sn_280",
+      "nodeId": "n_240132006",
+      "linkId": "l_23136988_0",
+      "x": 343.703,
+      "z": -814.098,
+      "heading": 0.78,
+      "name": "Raby Street"
+    },
+    {
+      "id": "sn_281",
+      "nodeId": "n_240132006",
+      "linkId": "l_7985908_3",
+      "x": 341.717,
+      "z": -802.305,
+      "heading": 88.48,
+      "name": "Howard Street"
+    },
+    {
+      "id": "sn_282",
+      "nodeId": "n_2418996357",
+      "linkId": "l_22757716_0",
+      "x": -415.125,
+      "z": 6.412,
+      "heading": 346.35,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_283",
+      "nodeId": "n_244223018",
+      "linkId": "l_22757676_0",
+      "x": 90.455,
+      "z": -429.296,
+      "heading": 357.45,
+      "name": "Convent Close"
+    },
+    {
+      "id": "sn_284",
+      "nodeId": "n_244223018",
+      "linkId": "l_22779135_3",
+      "x": 88.137,
+      "z": -418.759,
+      "heading": 89.14,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_285",
+      "nodeId": "n_244223020",
+      "linkId": "l_22757677_0",
+      "x": -18.508,
+      "z": -430.556,
+      "heading": 1.76,
+      "name": "Bond Street"
+    },
+    {
+      "id": "sn_286",
+      "nodeId": "n_244223020",
+      "linkId": "l_22779135_6",
+      "x": -6.233,
+      "z": -427.116,
+      "heading": 269.8,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_287",
+      "nodeId": "n_244223021",
+      "linkId": "l_22757677_3",
+      "x": -10.645,
+      "z": -490.725,
+      "heading": 182.8,
+      "name": "Bond Street"
+    },
+    {
+      "id": "sn_288",
+      "nodeId": "n_244223021",
+      "linkId": "l_7985844_1",
+      "x": -22.854,
+      "z": -493.704,
+      "heading": 92.82,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_289",
+      "nodeId": "n_244223406",
+      "linkId": "l_15520106_1",
+      "x": -283.282,
+      "z": -21.739,
+      "heading": 347.88,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_290",
+      "nodeId": "n_244223407",
+      "linkId": "l_22757716_0",
+      "x": -395.098,
+      "z": -33.241,
+      "heading": 166.35,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_291",
+      "nodeId": "n_244223407",
+      "linkId": "l_233524862_3",
+      "x": -390.409,
+      "z": -44.612,
+      "heading": 257.22,
+      "name": "Clarence Street"
+    },
+    {
+      "id": "sn_292",
+      "nodeId": "n_244223408",
+      "linkId": "l_22757716_3",
+      "x": -427.22,
+      "z": 54.509,
+      "heading": 345.78,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_293",
+      "nodeId": "n_244223411",
+      "linkId": "l_25696174_1",
+      "x": -448.972,
+      "z": 25.432,
+      "heading": 188.45,
+      "name": "Ring Road St. Andrews"
+    },
+    {
+      "id": "sn_294",
+      "nodeId": "n_244223411",
+      "linkId": "l_85580979_0",
+      "x": -449.295,
+      "z": 24.563,
+      "heading": 200.94,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_295",
+      "nodeId": "n_244223417",
+      "linkId": "l_22757717_0",
+      "x": -368.947,
+      "z": 81.276,
+      "heading": 76.19,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_296",
+      "nodeId": "n_244223417",
+      "linkId": "l_85580974_0",
+      "x": -362.04,
+      "z": 70.326,
+      "heading": 342.01,
+      "name": "Clarence Road"
+    },
+    {
+      "id": "sn_297",
+      "nodeId": "n_244223421",
+      "linkId": "l_22757715_1",
+      "x": -326.867,
+      "z": -29.837,
+      "heading": 256.89,
+      "name": "Clarence Street"
+    },
+    {
+      "id": "sn_298",
+      "nodeId": "n_244223437",
+      "linkId": "l_534429536_2",
+      "x": -160.313,
+      "z": -430.913,
+      "heading": 268.22,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_299",
+      "nodeId": "n_244223454",
+      "linkId": "l_1251752305_0",
+      "x": 135.489,
+      "z": 319.589,
+      "heading": 245.37,
+      "name": "Little's Lane"
+    },
+    {
+      "id": "sn_300",
+      "nodeId": "n_244223460",
+      "linkId": "l_22757736_1",
+      "x": 252.182,
+      "z": 255.845,
+      "heading": 68.74,
+      "name": "Saint Mary's Street"
+    },
+    {
+      "id": "sn_301",
+      "nodeId": "n_244223480",
+      "linkId": "l_15534450_2",
+      "x": -206.8,
+      "z": -63.678,
+      "heading": 256.77,
+      "name": "Darlington Street"
+    },
+    {
+      "id": "sn_302",
+      "nodeId": "n_244223480",
+      "linkId": "l_22757739_0",
+      "x": -211.477,
+      "z": -52.386,
+      "heading": 166.62,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_303",
+      "nodeId": "n_244223487",
+      "linkId": "l_22757742_0",
+      "x": -243.27,
+      "z": 71.808,
+      "heading": 258.77,
+      "name": "Mitre Fold"
+    },
+    {
+      "id": "sn_304",
+      "nodeId": "n_244223487",
+      "linkId": "l_38791085_0",
+      "x": -246.141,
+      "z": 82.449,
+      "heading": 179.42,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_305",
+      "nodeId": "n_244223492",
+      "linkId": "l_22757740_0",
+      "x": -248.885,
+      "z": 145.636,
+      "heading": 255.92,
+      "name": "Paternoster Row"
+    },
+    {
+      "id": "sn_306",
+      "nodeId": "n_244223492",
+      "linkId": "l_38791085_0",
+      "x": -260.991,
+      "z": 141.229,
+      "heading": 352.46,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_307",
+      "nodeId": "n_244223503",
+      "linkId": "l_22757740_1",
+      "x": -178.036,
+      "z": 170.762,
+      "heading": 79.47,
+      "name": "Paternoster Row"
+    },
+    {
+      "id": "sn_308",
+      "nodeId": "n_244223506",
+      "linkId": "l_22757741_0",
+      "x": -155.836,
+      "z": 94.718,
+      "heading": 342.57,
+      "name": "North Street"
+    },
+    {
+      "id": "sn_309",
+      "nodeId": "n_244223506",
+      "linkId": "l_22757742_0",
+      "x": -162.692,
+      "z": 105.596,
+      "heading": 75.76,
+      "name": "Mitre Fold"
+    },
+    {
+      "id": "sn_310",
+      "nodeId": "n_244223509",
+      "linkId": "l_22757741_0",
+      "x": -135.356,
+      "z": 51.91,
+      "heading": 162.88,
+      "name": "North Street"
+    },
+    {
+      "id": "sn_311",
+      "nodeId": "n_244223615",
+      "linkId": "l_22757767_0",
+      "x": -384.361,
+      "z": -263.446,
+      "heading": 21.87,
+      "name": "Peel Street"
+    },
+    {
+      "id": "sn_312",
+      "nodeId": "n_244223615",
+      "linkId": "l_85580986_0",
+      "x": -370.21,
+      "z": -258.688,
+      "heading": 254.51,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_313",
+      "nodeId": "n_244223880",
+      "linkId": "l_22757753_0",
+      "x": -122.243,
+      "z": 19.734,
+      "heading": 247.75,
+      "name": "Cheapside"
+    },
+    {
+      "id": "sn_314",
+      "nodeId": "n_244223880",
+      "linkId": "l_627988061_1",
+      "x": -129.142,
+      "z": 29.406,
+      "heading": 164.97,
+      "name": "North Street"
+    },
+    {
+      "id": "sn_315",
+      "nodeId": "n_244223883",
+      "linkId": "l_22757754_0",
+      "x": -20.487,
+      "z": 10.289,
+      "heading": 143.98,
+      "name": "Exchange Street"
+    },
+    {
+      "id": "sn_316",
+      "nodeId": "n_244223883",
+      "linkId": "l_35406701_0",
+      "x": -29.06,
+      "z": 0.986,
+      "heading": 49.73,
+      "name": "Queen Square"
+    },
+    {
+      "id": "sn_317",
+      "nodeId": "n_244223899",
+      "linkId": "l_22757757_0",
+      "x": 7.043,
+      "z": 28.092,
+      "heading": 153.01,
+      "name": "Lich Gates"
+    },
+    {
+      "id": "sn_318",
+      "nodeId": "n_244223899",
+      "linkId": "l_491066196_0",
+      "x": -2.788,
+      "z": 21.02,
+      "heading": 63.91,
+      "name": "Queen Square"
+    },
+    {
+      "id": "sn_319",
+      "nodeId": "n_244223899",
+      "linkId": "l_85550390_1",
+      "x": 13.843,
+      "z": 15.954,
+      "heading": 255.61,
+      "name": "Lichfield Street"
+    },
+    {
+      "id": "sn_320",
+      "nodeId": "n_244227046",
+      "linkId": "l_7984148_1",
+      "x": -417.364,
+      "z": -200.565,
+      "heading": 166.3,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_321",
+      "nodeId": "n_244227722",
+      "linkId": "l_22757917_0",
+      "x": -322.279,
+      "z": -260.74,
+      "heading": 197.82,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_322",
+      "nodeId": "n_244227722",
+      "linkId": "l_23991405_2",
+      "x": -330.874,
+      "z": -258.336,
+      "heading": 122.49,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_323",
+      "nodeId": "n_244227724",
+      "linkId": "l_149160142_4",
+      "x": -303.7,
+      "z": -216.395,
+      "heading": 281.07,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_324",
+      "nodeId": "n_244227725",
+      "linkId": "l_149160142_5",
+      "x": -271.176,
+      "z": -211.802,
+      "heading": 103.46,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_325",
+      "nodeId": "n_244227725",
+      "linkId": "l_7984145_0",
+      "x": -258.959,
+      "z": -212.762,
+      "heading": 193.91,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_326",
+      "nodeId": "n_244228578",
+      "linkId": "l_118496186_0",
+      "x": -164.366,
+      "z": -201.712,
+      "heading": 14.11,
+      "name": "Victoria Fold"
+    },
+    {
+      "id": "sn_327",
+      "nodeId": "n_244228578",
+      "linkId": "l_132617789_0",
+      "x": -152.744,
+      "z": -190.188,
+      "heading": 194.0,
+      "name": "Victoria Passage"
+    },
+    {
+      "id": "sn_328",
+      "nodeId": "n_244228578",
+      "linkId": "l_86882780_0",
+      "x": -155.226,
+      "z": -203.347,
+      "heading": 295.75,
+      "name": "Skinner Street"
+    },
+    {
+      "id": "sn_329",
+      "nodeId": "n_244235853",
+      "linkId": "l_132617789_0",
+      "x": -158.801,
+      "z": -172.73,
+      "heading": 14.0,
+      "name": "Victoria Passage"
+    },
+    {
+      "id": "sn_330",
+      "nodeId": "n_244235853",
+      "linkId": "l_22757922_0",
+      "x": -145.542,
+      "z": -161.675,
+      "heading": 194.74,
+      "name": "Victoria Fold"
+    },
+    {
+      "id": "sn_331",
+      "nodeId": "n_244244946",
+      "linkId": "l_15520106_2",
+      "x": -312.329,
+      "z": 125.67,
+      "heading": 350.11,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_332",
+      "nodeId": "n_244397720",
+      "linkId": "l_109182581_0",
+      "x": 153.956,
+      "z": -106.883,
+      "heading": 76.44,
+      "name": "Castle Yard"
+    },
+    {
+      "id": "sn_333",
+      "nodeId": "n_244397720",
+      "linkId": "l_118446711_0",
+      "x": 158.57,
+      "z": -118.096,
+      "heading": 347.21,
+      "name": "Market Street"
+    },
+    {
+      "id": "sn_334",
+      "nodeId": "n_244397720",
+      "linkId": "l_22766042_2",
+      "x": 168.045,
+      "z": -110.494,
+      "heading": 257.49,
+      "name": "Castle Street"
+    },
+    {
+      "id": "sn_335",
+      "nodeId": "n_244397721",
+      "linkId": "l_22766042_0",
+      "x": 256.208,
+      "z": -89.772,
+      "heading": 256.21,
+      "name": "Castle Street"
+    },
+    {
+      "id": "sn_336",
+      "nodeId": "n_244397723",
+      "linkId": "l_118446711_0",
+      "x": 177.583,
+      "z": -158.935,
+      "heading": 168.09,
+      "name": "Market Street"
+    },
+    {
+      "id": "sn_337",
+      "nodeId": "n_244397723",
+      "linkId": "l_22766048_3",
+      "x": 181.752,
+      "z": -170.792,
+      "heading": 261.54,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_338",
+      "nodeId": "n_244576967",
+      "linkId": "l_148994805_0",
+      "x": -35.842,
+      "z": -256.831,
+      "heading": 14.51,
+      "name": "Bell Street"
+    },
+    {
+      "id": "sn_339",
+      "nodeId": "n_244576969",
+      "linkId": "l_22779198_1",
+      "x": -111.927,
+      "z": -217.927,
+      "heading": 110.57,
+      "name": "Bell Street"
+    },
+    {
+      "id": "sn_340",
+      "nodeId": "n_244576969",
+      "linkId": "l_22779199_0",
+      "x": -113.727,
+      "z": -230.703,
+      "heading": 13.85,
+      "name": "Cleveland Passage"
+    },
+    {
+      "id": "sn_341",
+      "nodeId": "n_244576971",
+      "linkId": "l_148994805_0",
+      "x": -40.492,
+      "z": -316.836,
+      "heading": 190.76,
+      "name": "Bell Street"
+    },
+    {
+      "id": "sn_342",
+      "nodeId": "n_244576971",
+      "linkId": "l_38791083_1",
+      "x": -51.056,
+      "z": -316.767,
+      "heading": 101.14,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_343",
+      "nodeId": "n_245404530",
+      "linkId": "l_56631899_1",
+      "x": -213.759,
+      "z": -664.802,
+      "heading": 354.21,
+      "name": "Bloomsbury Street"
+    },
+    {
+      "id": "sn_344",
+      "nodeId": "n_245404530",
+      "linkId": "l_87067262_1",
+      "x": -201.038,
+      "z": -659.302,
+      "heading": 247.41,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_345",
+      "nodeId": "n_245404532",
+      "linkId": "l_22812132_3",
+      "x": -243.812,
+      "z": -671.681,
+      "heading": 7.22,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_346",
+      "nodeId": "n_245404532",
+      "linkId": "l_56631900_3",
+      "x": -231.873,
+      "z": -659.212,
+      "heading": 159.39,
+      "name": "Paul Street"
+    },
+    {
+      "id": "sn_347",
+      "nodeId": "n_245404532",
+      "linkId": "l_87067262_3",
+      "x": -225.737,
+      "z": -669.531,
+      "heading": 247.52,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_348",
+      "nodeId": "n_245404533",
+      "linkId": "l_101292016_1",
+      "x": -216.373,
+      "z": -853.401,
+      "heading": 288.13,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_349",
+      "nodeId": "n_245404533",
+      "linkId": "l_22812132_0",
+      "x": -214.993,
+      "z": -840.699,
+      "heading": 192.65,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_350",
+      "nodeId": "n_245406441",
+      "linkId": "l_7982068_3",
+      "x": -373.041,
+      "z": -762.896,
+      "heading": 203.13,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_351",
+      "nodeId": "n_245407504",
+      "linkId": "l_22812302_1",
+      "x": -679.764,
+      "z": -685.567,
+      "heading": 342.23,
+      "name": "Upper Zoar Street"
+    },
+    {
+      "id": "sn_352",
+      "nodeId": "n_245407504",
+      "linkId": "l_28423410_0",
+      "x": -668.92,
+      "z": -680.14,
+      "heading": 252.98,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_353",
+      "nodeId": "n_245407504",
+      "linkId": "l_87061698_0",
+      "x": -685.236,
+      "z": -674.504,
+      "heading": 73.52,
+      "name": "Merridale Street West"
+    },
+    {
+      "id": "sn_354",
+      "nodeId": "n_245407504",
+      "linkId": "l_87061725_0",
+      "x": -673.761,
+      "z": -669.397,
+      "heading": 166.88,
+      "name": "Zoar Street"
+    },
+    {
+      "id": "sn_355",
+      "nodeId": "n_245407506",
+      "linkId": "l_22812302_0",
+      "x": -584.361,
+      "z": -909.249,
+      "heading": 158.56,
+      "name": "Upper Zoar Street"
+    },
+    {
+      "id": "sn_356",
+      "nodeId": "n_245407506",
+      "linkId": "l_87122055_0",
+      "x": -578.025,
+      "z": -919.237,
+      "heading": 245.05,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_357",
+      "nodeId": "n_245407509",
+      "linkId": "l_149125994_6",
+      "x": -714.271,
+      "z": -496.03,
+      "heading": 259.81,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_358",
+      "nodeId": "n_245407509",
+      "linkId": "l_87061725_2",
+      "x": -725.213,
+      "z": -500.33,
+      "heading": 345.66,
+      "name": "Zoar Street"
+    },
+    {
+      "id": "sn_359",
+      "nodeId": "n_247065292",
+      "linkId": "l_25682475_1",
+      "x": -674.526,
+      "z": -122.858,
+      "heading": 293.9,
+      "name": "Chapel Ash"
+    },
+    {
+      "id": "sn_360",
+      "nodeId": "n_247065294",
+      "linkId": "l_103263369_0",
+      "x": -652.331,
+      "z": -72.488,
+      "heading": 294.1,
+      "name": "Brewery Road"
+    },
+    {
+      "id": "sn_361",
+      "nodeId": "n_247065299",
+      "linkId": "l_103263369_1",
+      "x": -592.19,
+      "z": -82.91,
+      "heading": 97.82,
+      "name": "Brewery Road"
+    },
+    {
+      "id": "sn_362",
+      "nodeId": "n_249810075",
+      "linkId": "l_23136987_0",
+      "x": 175.776,
+      "z": -733.984,
+      "heading": 258.84,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_363",
+      "nodeId": "n_249810075",
+      "linkId": "l_87108306_0",
+      "x": 173.437,
+      "z": -722.432,
+      "heading": 171.06,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_364",
+      "nodeId": "n_249810083",
+      "linkId": "l_23136987_4",
+      "x": 341.607,
+      "z": -717.645,
+      "heading": 88.21,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_365",
+      "nodeId": "n_249810083",
+      "linkId": "l_23136988_1",
+      "x": 343.718,
+      "z": -729.479,
+      "heading": 359.94,
+      "name": "Raby Street"
+    },
+    {
+      "id": "sn_366",
+      "nodeId": "n_249810086",
+      "linkId": "l_23136988_4",
+      "x": 348.313,
+      "z": -563.489,
+      "heading": 7.01,
+      "name": "Raby Street"
+    },
+    {
+      "id": "sn_367",
+      "nodeId": "n_249810086",
+      "linkId": "l_23136990_0",
+      "x": 347.583,
+      "z": -551.471,
+      "heading": 94.24,
+      "name": "Powlett Street"
+    },
+    {
+      "id": "sn_368",
+      "nodeId": "n_251167526",
+      "linkId": "l_193576403_0",
+      "x": 542.673,
+      "z": -50.355,
+      "heading": 140.67,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_369",
+      "nodeId": "n_251167526",
+      "linkId": "l_25691801_3",
+      "x": 538.347,
+      "z": -65.065,
+      "heading": 12.48,
+      "name": "Union Street"
+    },
+    {
+      "id": "sn_370",
+      "nodeId": "n_254343277",
+      "linkId": "l_25695775_1",
+      "x": -374.855,
+      "z": 908.159,
+      "heading": 44.85,
+      "name": "Great Hampton Street"
+    },
+    {
+      "id": "sn_371",
+      "nodeId": "n_254343277",
+      "linkId": "l_25695987_1",
+      "x": -367.927,
+      "z": 917.189,
+      "heading": 142.16,
+      "name": "Staveley Road"
+    },
+    {
+      "id": "sn_372",
+      "nodeId": "n_254343278",
+      "linkId": "l_25695772_0",
+      "x": -417.221,
+      "z": 963.738,
+      "heading": 52.74,
+      "name": "Mostyn Street"
+    },
+    {
+      "id": "sn_373",
+      "nodeId": "n_254343278",
+      "linkId": "l_25695987_0",
+      "x": -409.761,
+      "z": 971.661,
+      "heading": 145.3,
+      "name": "Staveley Road"
+    },
+    {
+      "id": "sn_374",
+      "nodeId": "n_267745524",
+      "linkId": "l_230809337_0",
+      "x": -612.196,
+      "z": -201.173,
+      "heading": 326.87,
+      "name": "Saint Mark's Street"
+    },
+    {
+      "id": "sn_375",
+      "nodeId": "n_267745524",
+      "linkId": "l_294040783_0",
+      "x": -603.209,
+      "z": -193.461,
+      "heading": 240.25,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_376",
+      "nodeId": "n_270914872",
+      "linkId": "l_19373954_0",
+      "x": 319.771,
+      "z": -205.414,
+      "heading": 60.37,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_377",
+      "nodeId": "n_270917136",
+      "linkId": "l_34106032_0",
+      "x": 178.396,
+      "z": -574.575,
+      "heading": 84.95,
+      "name": "Ring Road St. Georges"
+    },
+    {
+      "id": "sn_378",
+      "nodeId": "n_2713545928",
+      "linkId": "l_87113144_1",
+      "x": 594.053,
+      "z": -312.28,
+      "heading": 141.47,
+      "name": "Oxford Street"
+    },
+    {
+      "id": "sn_379",
+      "nodeId": "n_2713545989",
+      "linkId": "l_87113144_0",
+      "x": 556.418,
+      "z": -264.694,
+      "heading": 143.16,
+      "name": "Oxford Street"
+    },
+    {
+      "id": "sn_380",
+      "nodeId": "n_271966",
+      "linkId": "l_22779028_7",
+      "x": 158.223,
+      "z": -344.537,
+      "heading": 291.93,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_381",
+      "nodeId": "n_271966",
+      "linkId": "l_38791084_3",
+      "x": 148.925,
+      "z": -331.014,
+      "heading": 116.93,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_382",
+      "nodeId": "n_271966",
+      "linkId": "l_638785947_0",
+      "x": 145.13,
+      "z": -338.823,
+      "heading": 43.61,
+      "name": "Snow Hill"
+    },
+    {
+      "id": "sn_383",
+      "nodeId": "n_271966",
+      "linkId": "l_7984137_0",
+      "x": 161.838,
+      "z": -334.615,
+      "heading": 216.5,
+      "name": "Garrick Street"
+    },
+    {
+      "id": "sn_384",
+      "nodeId": "n_271968",
+      "linkId": "l_22779135_0",
+      "x": 133.285,
+      "z": -417.487,
+      "heading": 88.25,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_385",
+      "nodeId": "n_271968",
+      "linkId": "l_638785947_2",
+      "x": 144.975,
+      "z": -413.387,
+      "heading": 176.31,
+      "name": "Snow Hill"
+    },
+    {
+      "id": "sn_386",
+      "nodeId": "n_271969",
+      "linkId": "l_776351323_1",
+      "x": 144.171,
+      "z": -536.576,
+      "heading": 0.53,
+      "name": "Snow Hill"
+    },
+    {
+      "id": "sn_387",
+      "nodeId": "n_271971",
+      "linkId": "l_776351321_0",
+      "x": 162.2,
+      "z": -588.387,
+      "heading": 351.63,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_388",
+      "nodeId": "n_271971",
+      "linkId": "l_776351326_1",
+      "x": 168.104,
+      "z": -573.175,
+      "heading": 168.25,
+      "name": "Snow Hill"
+    },
+    {
+      "id": "sn_389",
+      "nodeId": "n_271973",
+      "linkId": "l_22779135_5",
+      "x": 48.083,
+      "z": -426.909,
+      "heading": 269.66,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_390",
+      "nodeId": "n_271974",
+      "linkId": "l_22757678_3",
+      "x": -79.827,
+      "z": -417.698,
+      "heading": 185.84,
+      "name": "Summer Row"
+    },
+    {
+      "id": "sn_391",
+      "nodeId": "n_271974",
+      "linkId": "l_534429536_0",
+      "x": -92.73,
+      "z": -419.344,
+      "heading": 88.05,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_392",
+      "nodeId": "n_271976",
+      "linkId": "l_22757678_0",
+      "x": -81.469,
+      "z": -333.416,
+      "heading": 8.61,
+      "name": "Summer Row"
+    },
+    {
+      "id": "sn_393",
+      "nodeId": "n_271976",
+      "linkId": "l_38791083_0",
+      "x": -67.056,
+      "z": -327.769,
+      "heading": 246.53,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_394",
+      "nodeId": "n_271984",
+      "linkId": "l_78044200_0",
+      "x": 184.694,
+      "z": -204.424,
+      "heading": 174.56,
+      "name": "Market Street"
+    },
+    {
+      "id": "sn_395",
+      "nodeId": "n_271984",
+      "linkId": "l_854584202_0",
+      "x": 188.521,
+      "z": -214.592,
+      "heading": 252.57,
+      "name": "Bilston Street"
+    },
+    {
+      "id": "sn_396",
+      "nodeId": "n_276540397",
+      "linkId": "l_19373421_0",
+      "x": 207.06,
+      "z": 129.946,
+      "heading": 157.25,
+      "name": "Long Street"
+    },
+    {
+      "id": "sn_397",
+      "nodeId": "n_276540398",
+      "linkId": "l_104334752_0",
+      "x": 225.357,
+      "z": 118.861,
+      "heading": 285.86,
+      "name": "Short Street"
+    },
+    {
+      "id": "sn_398",
+      "nodeId": "n_276540398",
+      "linkId": "l_19373421_1",
+      "x": 212.136,
+      "z": 126.44,
+      "heading": 81.64,
+      "name": "Long Street"
+    },
+    {
+      "id": "sn_399",
+      "nodeId": "n_279991336",
+      "linkId": "l_25682474_0",
+      "x": -691.884,
+      "z": -247.744,
+      "heading": 328.13,
+      "name": "Stephenson Street"
+    },
+    {
+      "id": "sn_400",
+      "nodeId": "n_279991336",
+      "linkId": "l_294040783_2",
+      "x": -682.698,
+      "z": -239.951,
+      "heading": 239.63,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_401",
+      "nodeId": "n_279991371",
+      "linkId": "l_149125994_5",
+      "x": -654.08,
+      "z": -485.238,
+      "heading": 260.17,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_402",
+      "nodeId": "n_279991371",
+      "linkId": "l_25682482_1",
+      "x": -660.587,
+      "z": -472.917,
+      "heading": 152.54,
+      "name": "Lord Street"
+    },
+    {
+      "id": "sn_403",
+      "nodeId": "n_280083592",
+      "linkId": "l_25689327_2",
+      "x": 367.169,
+      "z": 283.031,
+      "heading": 66.97,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_404",
+      "nodeId": "n_280083592",
+      "linkId": "l_612926060_0",
+      "x": 365.435,
+      "z": 282.847,
+      "heading": 48.73,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_405",
+      "nodeId": "n_280083624",
+      "linkId": "l_644532346_0",
+      "x": 643.415,
+      "z": 348.217,
+      "heading": 88.7,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_406",
+      "nodeId": "n_280083637",
+      "linkId": "l_86628388_0",
+      "x": 403.521,
+      "z": 294.635,
+      "heading": 91.83,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_407",
+      "nodeId": "n_280083639",
+      "linkId": "l_25689657_1",
+      "x": 458.519,
+      "z": 307.987,
+      "heading": 74.65,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_408",
+      "nodeId": "n_280112803",
+      "linkId": "l_102224534_0",
+      "x": 605.516,
+      "z": -226.698,
+      "heading": 157.6,
+      "name": "Mary Ann Street"
+    },
+    {
+      "id": "sn_409",
+      "nodeId": "n_280112803",
+      "linkId": "l_24930301_3",
+      "x": 611.31,
+      "z": -235.877,
+      "heading": 246.69,
+      "name": "Walsall Street"
+    },
+    {
+      "id": "sn_410",
+      "nodeId": "n_280112803",
+      "linkId": "l_25691804_0",
+      "x": 596.406,
+      "z": -242.096,
+      "heading": 354.07,
+      "name": "Warwick Street"
+    },
+    {
+      "id": "sn_411",
+      "nodeId": "n_280112810",
+      "linkId": "l_25691804_0",
+      "x": 628.844,
+      "z": -310.167,
+      "heading": 160.54,
+      "name": "Warwick Street"
+    },
+    {
+      "id": "sn_412",
+      "nodeId": "n_280112810",
+      "linkId": "l_87113144_2",
+      "x": 618.16,
+      "z": -315.927,
+      "heading": 71.19,
+      "name": "Oxford Street"
+    },
+    {
+      "id": "sn_413",
+      "nodeId": "n_280112812",
+      "linkId": "l_25691804_1",
+      "x": 638.331,
+      "z": -354.56,
+      "heading": 176.74,
+      "name": "Warwick Street"
+    },
+    {
+      "id": "sn_414",
+      "nodeId": "n_280112812",
+      "linkId": "l_25691806_0",
+      "x": 640.505,
+      "z": -367.129,
+      "heading": 272.02,
+      "name": "Bath Street"
+    },
+    {
+      "id": "sn_415",
+      "nodeId": "n_280112839",
+      "linkId": "l_24930301_3",
+      "x": 659.84,
+      "z": -225.107,
+      "heading": 92.02,
+      "name": "Walsall Street"
+    },
+    {
+      "id": "sn_416",
+      "nodeId": "n_280112839",
+      "linkId": "l_25691810_0",
+      "x": 663.13,
+      "z": -238.279,
+      "heading": 348.32,
+      "name": "Duke Street"
+    },
+    {
+      "id": "sn_417",
+      "nodeId": "n_280112848",
+      "linkId": "l_25696261_2",
+      "x": 627.732,
+      "z": -139.231,
+      "heading": 212.67,
+      "name": "Middle Cross"
+    },
+    {
+      "id": "sn_418",
+      "nodeId": "n_280150349",
+      "linkId": "l_25695780_1",
+      "x": -438.228,
+      "z": 514.096,
+      "heading": 228.11,
+      "name": "Dunkley Street"
+    },
+    {
+      "id": "sn_419",
+      "nodeId": "n_280150349",
+      "linkId": "l_857080243_0",
+      "x": -448.497,
+      "z": 521.646,
+      "heading": 132.93,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_420",
+      "nodeId": "n_280150354",
+      "linkId": "l_25695782_0",
+      "x": -555.471,
+      "z": 619.845,
+      "heading": 225.73,
+      "name": "Bright Street"
+    },
+    {
+      "id": "sn_421",
+      "nodeId": "n_280150354",
+      "linkId": "l_86336508_0",
+      "x": -562.083,
+      "z": 610.16,
+      "heading": 311.31,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_422",
+      "nodeId": "n_280150355",
+      "linkId": "l_25695782_0",
+      "x": -317.52,
+      "z": 854.54,
+      "heading": 46.26,
+      "name": "Bright Street"
+    },
+    {
+      "id": "sn_423",
+      "nodeId": "n_280150355",
+      "linkId": "l_25695987_2",
+      "x": -311.182,
+      "z": 863.204,
+      "heading": 137.45,
+      "name": "Staveley Road"
+    },
+    {
+      "id": "sn_424",
+      "nodeId": "n_280151383",
+      "linkId": "l_153700206_0",
+      "x": 302.504,
+      "z": 258.416,
+      "heading": 318.49,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_425",
+      "nodeId": "n_280153278",
+      "linkId": "l_25696030_2",
+      "x": -46.876,
+      "z": 971.42,
+      "heading": 344.86,
+      "name": "North Road"
+    },
+    {
+      "id": "sn_426",
+      "nodeId": "n_280153278",
+      "linkId": "l_25696031_0",
+      "x": -35.652,
+      "z": 976.736,
+      "heading": 252.84,
+      "name": "Boscobel Crescent"
+    },
+    {
+      "id": "sn_427",
+      "nodeId": "n_280153287",
+      "linkId": "l_25696030_0",
+      "x": -7.133,
+      "z": 833.802,
+      "heading": 341.44,
+      "name": "North Road"
+    },
+    {
+      "id": "sn_428",
+      "nodeId": "n_280153287",
+      "linkId": "l_25696031_3",
+      "x": 3.68,
+      "z": 839.519,
+      "heading": 251.21,
+      "name": "Boscobel Crescent"
+    },
+    {
+      "id": "sn_429",
+      "nodeId": "n_280153289",
+      "linkId": "l_25696032_0",
+      "x": -13.326,
+      "z": 577.62,
+      "heading": 261.71,
+      "name": "Camp Street"
+    },
+    {
+      "id": "sn_430",
+      "nodeId": "n_280153289",
+      "linkId": "l_25696038_2",
+      "x": -28.193,
+      "z": 576.866,
+      "heading": 20.87,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_431",
+      "nodeId": "n_280153290",
+      "linkId": "l_25696032_0",
+      "x": 71.275,
+      "z": 600.183,
+      "heading": 81.69,
+      "name": "Camp Street"
+    },
+    {
+      "id": "sn_432",
+      "nodeId": "n_280153290",
+      "linkId": "l_25696033_0",
+      "x": 75.367,
+      "z": 588.337,
+      "heading": 348.58,
+      "name": "Nursery Street"
+    },
+    {
+      "id": "sn_433",
+      "nodeId": "n_280153342",
+      "linkId": "l_25696038_7",
+      "x": -82.085,
+      "z": 347.524,
+      "heading": 257.48,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_434",
+      "nodeId": "n_280154744",
+      "linkId": "l_643170804_1",
+      "x": -4.651,
+      "z": 361.664,
+      "heading": 68.31,
+      "name": "Ring Road St. Peters"
+    },
+    {
+      "id": "sn_435",
+      "nodeId": "n_280154744",
+      "linkId": "l_86140128_0",
+      "x": 12.881,
+      "z": 353.411,
+      "heading": 254.5,
+      "name": "Ring Road St. Peter's"
+    },
+    {
+      "id": "sn_436",
+      "nodeId": "n_280575641",
+      "linkId": "l_149282984_1",
+      "x": 274.465,
+      "z": 394.653,
+      "heading": 158.79,
+      "name": "Great Western Street"
+    },
+    {
+      "id": "sn_437",
+      "nodeId": "n_280575641",
+      "linkId": "l_149283001_0",
+      "x": 263.866,
+      "z": 388.186,
+      "heading": 66.81,
+      "name": "Little's Lane"
+    },
+    {
+      "id": "sn_438",
+      "nodeId": "n_280575644",
+      "linkId": "l_149172600_0",
+      "x": 208.886,
+      "z": 582.576,
+      "heading": 342.5,
+      "name": "Great Western Street"
+    },
+    {
+      "id": "sn_439",
+      "nodeId": "n_280575644",
+      "linkId": "l_25730738_0",
+      "x": 199.145,
+      "z": 590.746,
+      "heading": 72.09,
+      "name": "The Maltings"
+    },
+    {
+      "id": "sn_440",
+      "nodeId": "n_280575645",
+      "linkId": "l_155829604_2",
+      "x": 124.603,
+      "z": 578.572,
+      "heading": 187.87,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_441",
+      "nodeId": "n_280575647",
+      "linkId": "l_149172600_0",
+      "x": 234.942,
+      "z": 524.723,
+      "heading": 162.5,
+      "name": "Great Western Street"
+    },
+    {
+      "id": "sn_442",
+      "nodeId": "n_280575647",
+      "linkId": "l_149282988_0",
+      "x": 225.306,
+      "z": 518.656,
+      "heading": 65.14,
+      "name": "Herbert Street"
+    },
+    {
+      "id": "sn_443",
+      "nodeId": "n_280588815",
+      "linkId": "l_155829604_3",
+      "x": 109.982,
+      "z": 488.342,
+      "heading": 189.41,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_444",
+      "nodeId": "n_280588815",
+      "linkId": "l_25730738_0",
+      "x": 109.55,
+      "z": 486.89,
+      "heading": 204.54,
+      "name": "The Maltings"
+    },
+    {
+      "id": "sn_445",
+      "nodeId": "n_280608545",
+      "linkId": "l_706733519_0",
+      "x": 159.806,
+      "z": 732.224,
+      "heading": 47.4,
+      "name": "Cannock Road"
+    },
+    {
+      "id": "sn_446",
+      "nodeId": "n_280611264",
+      "linkId": "l_149283000_0",
+      "x": 251.056,
+      "z": 381.087,
+      "heading": 67.99,
+      "name": "Little's Lane"
+    },
+    {
+      "id": "sn_447",
+      "nodeId": "n_2880462659",
+      "linkId": "l_295120207_0",
+      "x": 640.714,
+      "z": 305.707,
+      "heading": 113.27,
+      "name": "Broad Gauge Way"
+    },
+    {
+      "id": "sn_448",
+      "nodeId": "n_2935705653",
+      "linkId": "l_104334755_1",
+      "x": -136.869,
+      "z": 880.971,
+      "heading": 349.91,
+      "name": "Lomas Street"
+    },
+    {
+      "id": "sn_449",
+      "nodeId": "n_295901969",
+      "linkId": "l_26996038_0",
+      "x": -129.974,
+      "z": 8.034,
+      "heading": 66.24,
+      "name": "Blossom's Fold"
+    },
+    {
+      "id": "sn_450",
+      "nodeId": "n_295901969",
+      "linkId": "l_627988061_2",
+      "x": -123.164,
+      "z": 13.233,
+      "heading": 149.05,
+      "name": "North Street"
+    },
+    {
+      "id": "sn_451",
+      "nodeId": "n_295901972",
+      "linkId": "l_22757739_0",
+      "x": -224.412,
+      "z": -41.646,
+      "heading": 346.62,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_452",
+      "nodeId": "n_295901974",
+      "linkId": "l_22757739_2",
+      "x": -241.005,
+      "z": 13.777,
+      "heading": 341.76,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_453",
+      "nodeId": "n_295901974",
+      "linkId": "l_627988062_0",
+      "x": -230.105,
+      "z": 19.618,
+      "heading": 250.25,
+      "name": "Corporation Street"
+    },
+    {
+      "id": "sn_454",
+      "nodeId": "n_2976113027",
+      "linkId": "l_149125994_1",
+      "x": -491.225,
+      "z": -461.131,
+      "heading": 259.75,
+      "name": "Great Brickkiln Street"
+    },
+    {
+      "id": "sn_455",
+      "nodeId": "n_2976113030",
+      "linkId": "l_292033479_1",
+      "x": -539.277,
+      "z": -445.241,
+      "heading": 342.34,
+      "name": "Alexandra Street"
+    },
+    {
+      "id": "sn_456",
+      "nodeId": "n_2976114937",
+      "linkId": "l_292033479_3",
+      "x": -583.378,
+      "z": -415.108,
+      "heading": 271.28,
+      "name": "Alexandra Street"
+    },
+    {
+      "id": "sn_457",
+      "nodeId": "n_2976114955",
+      "linkId": "l_294040783_0",
+      "x": -591.959,
+      "z": -175.398,
+      "heading": 60.25,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_458",
+      "nodeId": "n_2977333933",
+      "linkId": "l_87061728_1",
+      "x": -392.625,
+      "z": -585.382,
+      "heading": 73.81,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_459",
+      "nodeId": "n_2977333935",
+      "linkId": "l_1023926871_0",
+      "x": -362.82,
+      "z": -592.197,
+      "heading": 268.2,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_460",
+      "nodeId": "n_2977333939",
+      "linkId": "l_294165574_0",
+      "x": -375.961,
+      "z": -575.641,
+      "heading": 355.54,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_461",
+      "nodeId": "n_3263045410",
+      "linkId": "l_23151707_0",
+      "x": -646.397,
+      "z": 637.486,
+      "heading": 45.41,
+      "name": "Devon Road"
+    },
+    {
+      "id": "sn_462",
+      "nodeId": "n_3319902115",
+      "linkId": "l_25695778_0",
+      "x": -204.154,
+      "z": 649.0,
+      "heading": 253.82,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_463",
+      "nodeId": "n_3319902123",
+      "linkId": "l_25695926_0",
+      "x": -207.092,
+      "z": 656.746,
+      "heading": 288.35,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_464",
+      "nodeId": "n_3473842696",
+      "linkId": "l_775826356_0",
+      "x": -199.241,
+      "z": -181.754,
+      "heading": 189.65,
+      "name": "Townwell Fold"
+    },
+    {
+      "id": "sn_465",
+      "nodeId": "n_3473842696",
+      "linkId": "l_86882780_1",
+      "x": -198.971,
+      "z": -193.783,
+      "heading": 277.76,
+      "name": "Skinner Street"
+    },
+    {
+      "id": "sn_466",
+      "nodeId": "n_358283",
+      "linkId": "l_491066186_3",
+      "x": 129.457,
+      "z": 708.545,
+      "heading": 176.31,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_467",
+      "nodeId": "n_3711993527",
+      "linkId": "l_87069528_0",
+      "x": 439.874,
+      "z": -661.757,
+      "heading": 180.43,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_468",
+      "nodeId": "n_3711993528",
+      "linkId": "l_23136988_2",
+      "x": 344.584,
+      "z": -674.154,
+      "heading": 1.04,
+      "name": "Raby Street"
+    },
+    {
+      "id": "sn_469",
+      "nodeId": "n_3711993528",
+      "linkId": "l_367253590_1",
+      "x": 356.671,
+      "z": -672.417,
+      "heading": 270.99,
+      "name": "Mike Swain Drive"
+    },
+    {
+      "id": "sn_470",
+      "nodeId": "n_385154695",
+      "linkId": "l_220750898_1",
+      "x": 489.793,
+      "z": 306.64,
+      "heading": 256.11,
+      "name": "Wednesfield Road"
+    },
+    {
+      "id": "sn_471",
+      "nodeId": "n_3927300231",
+      "linkId": "l_25695780_0",
+      "x": -381.465,
+      "z": 565.312,
+      "heading": 226.33,
+      "name": "Dunkley Street"
+    },
+    {
+      "id": "sn_472",
+      "nodeId": "n_3927382489",
+      "linkId": "l_193576403_5",
+      "x": 542.971,
+      "z": 2.694,
+      "heading": 182.05,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_473",
+      "nodeId": "n_3929010841",
+      "linkId": "l_101293210_1",
+      "x": -415.943,
+      "z": -750.595,
+      "heading": 99.19,
+      "name": "Mander Street"
+    },
+    {
+      "id": "sn_474",
+      "nodeId": "n_3929131111",
+      "linkId": "l_86336509_3",
+      "x": -279.326,
+      "z": 442.83,
+      "heading": 8.52,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_475",
+      "nodeId": "n_418214250",
+      "linkId": "l_22812041_2",
+      "x": 57.626,
+      "z": -806.964,
+      "heading": 281.66,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_476",
+      "nodeId": "n_438468",
+      "linkId": "l_19205886_2",
+      "x": 309.623,
+      "z": 217.961,
+      "heading": 245.86,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_477",
+      "nodeId": "n_438476",
+      "linkId": "l_491066194_0",
+      "x": 102.091,
+      "z": 292.613,
+      "heading": 348.02,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_478",
+      "nodeId": "n_438480",
+      "linkId": "l_19366136_1",
+      "x": -377.287,
+      "z": 405.932,
+      "heading": 60.46,
+      "name": "Park Avenue"
+    },
+    {
+      "id": "sn_479",
+      "nodeId": "n_438480",
+      "linkId": "l_86336372_0",
+      "x": -368.852,
+      "z": 413.62,
+      "heading": 143.23,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_480",
+      "nodeId": "n_438481",
+      "linkId": "l_19366136_0",
+      "x": -561.759,
+      "z": 287.883,
+      "heading": 239.33,
+      "name": "Park Avenue"
+    },
+    {
+      "id": "sn_481",
+      "nodeId": "n_438481",
+      "linkId": "l_87055358_1",
+      "x": -574.097,
+      "z": 280.877,
+      "heading": 349.87,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_482",
+      "nodeId": "n_438484",
+      "linkId": "l_23151708_0",
+      "x": -579.019,
+      "z": 407.618,
+      "heading": 239.28,
+      "name": "Lansdowne Road"
+    },
+    {
+      "id": "sn_483",
+      "nodeId": "n_438484",
+      "linkId": "l_87055358_0",
+      "x": -592.189,
+      "z": 401.062,
+      "heading": 356.17,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_484",
+      "nodeId": "n_438488",
+      "linkId": "l_37852955_1",
+      "x": -654.09,
+      "z": 588.419,
+      "heading": 129.15,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_485",
+      "nodeId": "n_438563",
+      "linkId": "l_23151707_0",
+      "x": -668.709,
+      "z": 601.311,
+      "heading": 225.41,
+      "name": "Devon Road"
+    },
+    {
+      "id": "sn_486",
+      "nodeId": "n_438563",
+      "linkId": "l_37852955_0",
+      "x": -680.386,
+      "z": 608.031,
+      "heading": 122.81,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_487",
+      "nodeId": "n_438590",
+      "linkId": "l_19366137_0",
+      "x": -604.009,
+      "z": 67.757,
+      "heading": 156.24,
+      "name": "Southgate"
+    },
+    {
+      "id": "sn_488",
+      "nodeId": "n_438590",
+      "linkId": "l_19366138_2",
+      "x": -597.296,
+      "z": 57.899,
+      "heading": 243.64,
+      "name": "Bath Road"
+    },
+    {
+      "id": "sn_489",
+      "nodeId": "n_438591",
+      "linkId": "l_19366138_2",
+      "x": -559.794,
+      "z": 87.756,
+      "heading": 63.64,
+      "name": "Bath Road"
+    },
+    {
+      "id": "sn_490",
+      "nodeId": "n_438598",
+      "linkId": "l_38791087_1",
+      "x": 129.706,
+      "z": 133.885,
+      "heading": 74.75,
+      "name": "Wulfruna Street"
+    },
+    {
+      "id": "sn_491",
+      "nodeId": "n_438598",
+      "linkId": "l_7984152_0",
+      "x": 139.706,
+      "z": 139.27,
+      "heading": 157.03,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_492",
+      "nodeId": "n_438598",
+      "linkId": "l_85548593_2",
+      "x": 146.136,
+      "z": 128.661,
+      "heading": 248.91,
+      "name": "Broad Street"
+    },
+    {
+      "id": "sn_493",
+      "nodeId": "n_438598",
+      "linkId": "l_85550386_0",
+      "x": 135.135,
+      "z": 123.527,
+      "heading": 353.84,
+      "name": "Princes Square"
+    },
+    {
+      "id": "sn_494",
+      "nodeId": "n_438608",
+      "linkId": "l_22757916_1",
+      "x": -182.415,
+      "z": -290.523,
+      "heading": 99.44,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_495",
+      "nodeId": "n_438608",
+      "linkId": "l_22779029_0",
+      "x": -170.748,
+      "z": -304.596,
+      "heading": 281.46,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_496",
+      "nodeId": "n_438610",
+      "linkId": "l_22758209_0",
+      "x": -288.831,
+      "z": -414.917,
+      "heading": 258.66,
+      "name": "Pitt Street"
+    },
+    {
+      "id": "sn_497",
+      "nodeId": "n_438610",
+      "linkId": "l_491066198_2",
+      "x": -304.671,
+      "z": -408.061,
+      "heading": 76.54,
+      "name": "Peel Street"
+    },
+    {
+      "id": "sn_498",
+      "nodeId": "n_438618",
+      "linkId": "l_146803784_0",
+      "x": -240.394,
+      "z": -511.982,
+      "heading": 205.5,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_499",
+      "nodeId": "n_438618",
+      "linkId": "l_149160141_6",
+      "x": -242.223,
+      "z": -524.324,
+      "heading": 294.49,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_500",
+      "nodeId": "n_438620",
+      "linkId": "l_1358224421_0",
+      "x": -94.26,
+      "z": -525.773,
+      "heading": 93.04,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_501",
+      "nodeId": "n_438620",
+      "linkId": "l_7985844_5",
+      "x": -91.452,
+      "z": -537.926,
+      "heading": 4.07,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_502",
+      "nodeId": "n_438623",
+      "linkId": "l_7985844_2",
+      "x": 51.695,
+      "z": -532.548,
+      "heading": 183.73,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_503",
+      "nodeId": "n_438623",
+      "linkId": "l_7985846_1",
+      "x": 54.464,
+      "z": -544.824,
+      "heading": 273.89,
+      "name": "George Street"
+    },
+    {
+      "id": "sn_504",
+      "nodeId": "n_438626",
+      "linkId": "l_22757916_0",
+      "x": -274.413,
+      "z": -288.219,
+      "heading": 280.39,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_505",
+      "nodeId": "n_438626",
+      "linkId": "l_852047642_0",
+      "x": -273.579,
+      "z": -274.729,
+      "heading": 193.2,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_506",
+      "nodeId": "n_438627",
+      "linkId": "l_645715020_0",
+      "x": -250.063,
+      "z": -174.523,
+      "heading": 189.46,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_507",
+      "nodeId": "n_438627",
+      "linkId": "l_86882780_4",
+      "x": -250.212,
+      "z": -186.82,
+      "heading": 280.31,
+      "name": "Skinner Street"
+    },
+    {
+      "id": "sn_508",
+      "nodeId": "n_438628",
+      "linkId": "l_22779198_0",
+      "x": -127.862,
+      "z": -222.514,
+      "heading": 292.82,
+      "name": "Bell Street"
+    },
+    {
+      "id": "sn_509",
+      "nodeId": "n_438628",
+      "linkId": "l_35406700_2",
+      "x": -141.608,
+      "z": -217.961,
+      "heading": 29.43,
+      "name": "Victoria Street"
+    },
+    {
+      "id": "sn_510",
+      "nodeId": "n_438686",
+      "linkId": "l_153700192_0",
+      "x": 327.386,
+      "z": 875.613,
+      "heading": 242.74,
+      "name": "Cannock Road"
+    },
+    {
+      "id": "sn_511",
+      "nodeId": "n_438686",
+      "linkId": "l_38288577_0",
+      "x": 319.766,
+      "z": 885.479,
+      "heading": 150.28,
+      "name": "Cross Street North"
+    },
+    {
+      "id": "sn_512",
+      "nodeId": "n_442357",
+      "linkId": "l_25696126_0",
+      "x": -558.19,
+      "z": 208.035,
+      "heading": 340.92,
+      "name": "Park Crescent"
+    },
+    {
+      "id": "sn_513",
+      "nodeId": "n_442357",
+      "linkId": "l_37852966_0",
+      "x": -564.212,
+      "z": 217.762,
+      "heading": 63.93,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_514",
+      "nodeId": "n_442368",
+      "linkId": "l_19375796_1",
+      "x": 440.315,
+      "z": -612.37,
+      "heading": 181.03,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_515",
+      "nodeId": "n_442368",
+      "linkId": "l_684848390_0",
+      "x": 442.31,
+      "z": -624.084,
+      "heading": 268.03,
+      "name": "Sutherland Place"
+    },
+    {
+      "id": "sn_516",
+      "nodeId": "n_443927280",
+      "linkId": "l_25695987_3",
+      "x": -264.991,
+      "z": 786.254,
+      "heading": 157.7,
+      "name": "Staveley Road"
+    },
+    {
+      "id": "sn_517",
+      "nodeId": "n_443927280",
+      "linkId": "l_37851949_0",
+      "x": -274.1,
+      "z": 777.691,
+      "heading": 48.96,
+      "name": "Sherwood Street"
+    },
+    {
+      "id": "sn_518",
+      "nodeId": "n_443927297",
+      "linkId": "l_37851951_0",
+      "x": -397.564,
+      "z": 458.032,
+      "heading": 232.98,
+      "name": "Drummond Street"
+    },
+    {
+      "id": "sn_519",
+      "nodeId": "n_443927297",
+      "linkId": "l_86336372_0",
+      "x": -406.536,
+      "z": 449.225,
+      "heading": 326.46,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_520",
+      "nodeId": "n_443927300",
+      "linkId": "l_37851952_0",
+      "x": -687.76,
+      "z": 692.006,
+      "heading": 216.99,
+      "name": "Fawdry Street"
+    },
+    {
+      "id": "sn_521",
+      "nodeId": "n_443927300",
+      "linkId": "l_86336508_2",
+      "x": -691.099,
+      "z": 682.351,
+      "heading": 289.55,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_522",
+      "nodeId": "n_443927304",
+      "linkId": "l_37851947_1",
+      "x": -556.774,
+      "z": 842.412,
+      "heading": 133.92,
+      "name": "Harrow Street"
+    },
+    {
+      "id": "sn_523",
+      "nodeId": "n_443927304",
+      "linkId": "l_37851952_1",
+      "x": -563.748,
+      "z": 832.496,
+      "heading": 44.71,
+      "name": "Fawdry Street"
+    },
+    {
+      "id": "sn_524",
+      "nodeId": "n_443927306",
+      "linkId": "l_37851953_0",
+      "x": -754.858,
+      "z": 727.043,
+      "heading": 217.02,
+      "name": "Rugby Street"
+    },
+    {
+      "id": "sn_525",
+      "nodeId": "n_443927306",
+      "linkId": "l_86336508_3",
+      "x": -759.72,
+      "z": 716.553,
+      "heading": 301.11,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_526",
+      "nodeId": "n_443927312",
+      "linkId": "l_37851947_0",
+      "x": -610.805,
+      "z": 894.214,
+      "heading": 132.59,
+      "name": "Harrow Street"
+    },
+    {
+      "id": "sn_527",
+      "nodeId": "n_443927312",
+      "linkId": "l_37851953_0",
+      "x": -617.581,
+      "z": 884.334,
+      "heading": 44.69,
+      "name": "Rugby Street"
+    },
+    {
+      "id": "sn_528",
+      "nodeId": "n_443937830",
+      "linkId": "l_104334755_2",
+      "x": -129.029,
+      "z": 910.91,
+      "heading": 23.45,
+      "name": "Lomas Street"
+    },
+    {
+      "id": "sn_529",
+      "nodeId": "n_443937830",
+      "linkId": "l_25695989_0",
+      "x": -117.267,
+      "z": 907.864,
+      "heading": 293.98,
+      "name": "Oxley Street"
+    },
+    {
+      "id": "sn_530",
+      "nodeId": "n_4578059113",
+      "linkId": "l_22983009_0",
+      "x": 573.67,
+      "z": 64.633,
+      "heading": 294.37,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_531",
+      "nodeId": "n_460051777",
+      "linkId": "l_86306233_1",
+      "x": 103.984,
+      "z": 614.953,
+      "heading": 9.32,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_532",
+      "nodeId": "n_460051779",
+      "linkId": "l_706733518_0",
+      "x": 114.135,
+      "z": 720.087,
+      "heading": 173.23,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_533",
+      "nodeId": "n_4705010072",
+      "linkId": "l_645054780_0",
+      "x": -94.144,
+      "z": 633.401,
+      "heading": 136.76,
+      "name": "Jack Hayward Way"
+    },
+    {
+      "id": "sn_534",
+      "nodeId": "n_4710007286",
+      "linkId": "l_140385476_3",
+      "x": 323.502,
+      "z": 62.915,
+      "heading": 348.46,
+      "name": "Victoria Square"
+    },
+    {
+      "id": "sn_535",
+      "nodeId": "n_4710007286",
+      "linkId": "l_22779053_0",
+      "x": 328.69,
+      "z": 79.258,
+      "heading": 155.14,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_536",
+      "nodeId": "n_4710007286",
+      "linkId": "l_22801796_1",
+      "x": 335.149,
+      "z": 67.799,
+      "heading": 254.42,
+      "name": "Railway Drive"
+    },
+    {
+      "id": "sn_537",
+      "nodeId": "n_4710007288",
+      "linkId": "l_24930291_0",
+      "x": 353.282,
+      "z": -144.283,
+      "heading": 3.85,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_538",
+      "nodeId": "n_4710007288",
+      "linkId": "l_612932995_0",
+      "x": 351.018,
+      "z": -133.747,
+      "heading": 80.21,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_539",
+      "nodeId": "n_4981561691",
+      "linkId": "l_146803783_0",
+      "x": 347.506,
+      "z": -76.037,
+      "heading": 353.13,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_540",
+      "nodeId": "n_4981561691",
+      "linkId": "l_22766042_0",
+      "x": 345.187,
+      "z": -62.671,
+      "heading": 96.82,
+      "name": "Castle Street"
+    },
+    {
+      "id": "sn_541",
+      "nodeId": "n_4981561692",
+      "linkId": "l_19373955_2",
+      "x": 333.088,
+      "z": -7.32,
+      "heading": 71.54,
+      "name": "Queen Street"
+    },
+    {
+      "id": "sn_542",
+      "nodeId": "n_4981561692",
+      "linkId": "l_22766061_0",
+      "x": 345.076,
+      "z": -2.61,
+      "heading": 168.78,
+      "name": "Five Ways"
+    },
+    {
+      "id": "sn_543",
+      "nodeId": "n_4981561695",
+      "linkId": "l_146803783_0",
+      "x": 360.898,
+      "z": -102.12,
+      "heading": 172.66,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_544",
+      "nodeId": "n_4981561696",
+      "linkId": "l_19373954_2",
+      "x": 343.638,
+      "z": -174.166,
+      "heading": 39.51,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_545",
+      "nodeId": "n_5182987574",
+      "linkId": "l_534429536_3",
+      "x": -175.717,
+      "z": -432.063,
+      "heading": 258.03,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_546",
+      "nodeId": "n_5182987578",
+      "linkId": "l_7984738_0",
+      "x": -196.729,
+      "z": -408.201,
+      "heading": 172.74,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_547",
+      "nodeId": "n_5183864827",
+      "linkId": "l_22766041_5",
+      "x": 219.541,
+      "z": -522.503,
+      "heading": 174.31,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_548",
+      "nodeId": "n_5183864827",
+      "linkId": "l_534557941_0",
+      "x": 222.452,
+      "z": -534.667,
+      "heading": 267.16,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_549",
+      "nodeId": "n_5277631363",
+      "linkId": "l_19366137_0",
+      "x": -633.264,
+      "z": 106.11,
+      "heading": 332.68,
+      "name": "Southgate"
+    },
+    {
+      "id": "sn_550",
+      "nodeId": "n_5277631363",
+      "linkId": "l_19366454_0",
+      "x": -640.561,
+      "z": 115.671,
+      "heading": 61.01,
+      "name": "Park Road West"
+    },
+    {
+      "id": "sn_551",
+      "nodeId": "n_5277631363",
+      "linkId": "l_37852966_0",
+      "x": -623.407,
+      "z": 115.54,
+      "heading": 228.26,
+      "name": "Park Road East"
+    },
+    {
+      "id": "sn_552",
+      "nodeId": "n_5277664254",
+      "linkId": "l_22766048_0",
+      "x": 309.222,
+      "z": -150.897,
+      "heading": 261.1,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_553",
+      "nodeId": "n_5277664282",
+      "linkId": "l_852018215_0",
+      "x": 285.118,
+      "z": -216.242,
+      "heading": 274.45,
+      "name": "Bilston Street"
+    },
+    {
+      "id": "sn_554",
+      "nodeId": "n_5277664303",
+      "linkId": "l_852018219_1",
+      "x": 303.59,
+      "z": -251.216,
+      "heading": 181.04,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_555",
+      "nodeId": "n_5277711435",
+      "linkId": "l_22766041_2",
+      "x": 211.65,
+      "z": -430.934,
+      "heading": 174.33,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_556",
+      "nodeId": "n_5277711443",
+      "linkId": "l_22779028_4",
+      "x": 253.999,
+      "z": -370.845,
+      "heading": 84.61,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_557",
+      "nodeId": "n_5277735136",
+      "linkId": "l_25693978_0",
+      "x": 549.784,
+      "z": -132.149,
+      "heading": 277.79,
+      "name": "Little Park Street"
+    },
+    {
+      "id": "sn_558",
+      "nodeId": "n_5277735150",
+      "linkId": "l_25691801_0",
+      "x": 528.889,
+      "z": -103.532,
+      "heading": 14.81,
+      "name": "Union Street"
+    },
+    {
+      "id": "sn_559",
+      "nodeId": "n_5278574247",
+      "linkId": "l_19422217_0",
+      "x": -288.037,
+      "z": -520.896,
+      "heading": 341.67,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_560",
+      "nodeId": "n_5278574261",
+      "linkId": "l_149160142_2",
+      "x": -322.3,
+      "z": -202.303,
+      "heading": 102.72,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_561",
+      "nodeId": "n_5288170608",
+      "linkId": "l_37852781_0",
+      "x": -282.137,
+      "z": 287.505,
+      "heading": 78.54,
+      "name": "Whitmore Hill"
+    },
+    {
+      "id": "sn_562",
+      "nodeId": "n_5288175721",
+      "linkId": "l_37852781_2",
+      "x": -228.051,
+      "z": 310.372,
+      "heading": 63.69,
+      "name": "Whitmore Hill"
+    },
+    {
+      "id": "sn_563",
+      "nodeId": "n_5322195349",
+      "linkId": "l_19210750_0",
+      "x": -487.238,
+      "z": -863.746,
+      "heading": 153.42,
+      "name": "Retreat Street"
+    },
+    {
+      "id": "sn_564",
+      "nodeId": "n_5322195349",
+      "linkId": "l_87122060_0",
+      "x": -497.013,
+      "z": -872.109,
+      "heading": 67.04,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_565",
+      "nodeId": "n_540302766",
+      "linkId": "l_7985908_1",
+      "x": 286.68,
+      "z": -803.611,
+      "heading": 88.57,
+      "name": "Howard Street"
+    },
+    {
+      "id": "sn_566",
+      "nodeId": "n_540302768",
+      "linkId": "l_438845245_0",
+      "x": 206.887,
+      "z": -883.462,
+      "heading": 335.36,
+      "name": "Birmingham Road"
+    },
+    {
+      "id": "sn_567",
+      "nodeId": "n_540302768",
+      "linkId": "l_7985914_0",
+      "x": 205.641,
+      "z": -882.65,
+      "heading": 347.85,
+      "name": "Grove Street"
+    },
+    {
+      "id": "sn_568",
+      "nodeId": "n_540302769",
+      "linkId": "l_23136987_1",
+      "x": 240.43,
+      "z": -721.315,
+      "heading": 87.92,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_569",
+      "nodeId": "n_540313393",
+      "linkId": "l_87069528_3",
+      "x": 438.981,
+      "z": -771.216,
+      "heading": 180.36,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_570",
+      "nodeId": "n_540313394",
+      "linkId": "l_87069528_2",
+      "x": 438.834,
+      "z": -732.03,
+      "heading": 179.69,
+      "name": "Vicarage Road"
+    },
+    {
+      "id": "sn_571",
+      "nodeId": "n_540313417",
+      "linkId": "l_43126017_1",
+      "x": 614.703,
+      "z": -828.716,
+      "heading": 88.76,
+      "name": "Maxwell Road"
+    },
+    {
+      "id": "sn_572",
+      "nodeId": "n_540313417",
+      "linkId": "l_43126021_0",
+      "x": 627.084,
+      "z": -826.781,
+      "heading": 181.86,
+      "name": "Adelaide Walk"
+    },
+    {
+      "id": "sn_573",
+      "nodeId": "n_540313417",
+      "linkId": "l_43133345_0",
+      "x": 616.69,
+      "z": -840.563,
+      "heading": 0.57,
+      "name": "Gower Street"
+    },
+    {
+      "id": "sn_574",
+      "nodeId": "n_540313419",
+      "linkId": "l_43126016_1",
+      "x": 519.195,
+      "z": -771.882,
+      "heading": 89.16,
+      "name": "Granville Street"
+    },
+    {
+      "id": "sn_575",
+      "nodeId": "n_540313419",
+      "linkId": "l_43126018_0",
+      "x": 531.394,
+      "z": -769.883,
+      "heading": 180.62,
+      "name": "Granville Close"
+    },
+    {
+      "id": "sn_576",
+      "nodeId": "n_540313428",
+      "linkId": "l_294164310_0",
+      "x": 519.673,
+      "z": -716.05,
+      "heading": 87.67,
+      "name": "Granville Close"
+    },
+    {
+      "id": "sn_577",
+      "nodeId": "n_540700196",
+      "linkId": "l_25696126_0",
+      "x": -493.726,
+      "z": 133.909,
+      "heading": 125.89,
+      "name": "Park Crescent"
+    },
+    {
+      "id": "sn_578",
+      "nodeId": "n_5800389047",
+      "linkId": "l_22779135_7",
+      "x": -21.258,
+      "z": -427.176,
+      "heading": 269.74,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_579",
+      "nodeId": "n_5800792905",
+      "linkId": "l_104334751_0",
+      "x": 596.294,
+      "z": 684.932,
+      "heading": 245.87,
+      "name": "Water Street"
+    },
+    {
+      "id": "sn_580",
+      "nodeId": "n_5800792917",
+      "linkId": "l_1189655633_0",
+      "x": 491.854,
+      "z": 799.166,
+      "heading": 248.79,
+      "name": "Peterhouse Close"
+    },
+    {
+      "id": "sn_581",
+      "nodeId": "n_5800792917",
+      "linkId": "l_612864196_0",
+      "x": 481.598,
+      "z": 792.922,
+      "heading": 336.93,
+      "name": "Cambridge Street"
+    },
+    {
+      "id": "sn_582",
+      "nodeId": "n_5800915955",
+      "linkId": "l_22766048_0",
+      "x": 320.221,
+      "z": -138.952,
+      "heading": 81.1,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_583",
+      "nodeId": "n_5848902339",
+      "linkId": "l_43126014_1",
+      "x": 606.398,
+      "z": -686.017,
+      "heading": 87.84,
+      "name": "Gordon Street"
+    },
+    {
+      "id": "sn_584",
+      "nodeId": "n_5848902341",
+      "linkId": "l_618807678_1",
+      "x": 619.57,
+      "z": -745.251,
+      "heading": 179.01,
+      "name": "Granville Street"
+    },
+    {
+      "id": "sn_585",
+      "nodeId": "n_5865313368",
+      "linkId": "l_23136988_3",
+      "x": 346.05,
+      "z": -619.564,
+      "heading": 1.61,
+      "name": "Raby Street"
+    },
+    {
+      "id": "sn_586",
+      "nodeId": "n_59751589",
+      "linkId": "l_636402735_0",
+      "x": 345.097,
+      "z": 215.173,
+      "heading": 324.36,
+      "name": "Ring Road St. Davids"
+    },
+    {
+      "id": "sn_587",
+      "nodeId": "n_59764403",
+      "linkId": "l_7982205_0",
+      "x": 498.45,
+      "z": -42.796,
+      "heading": 114.35,
+      "name": "Horseley Fields"
+    },
+    {
+      "id": "sn_588",
+      "nodeId": "n_59764467",
+      "linkId": "l_7985684_0",
+      "x": 616.801,
+      "z": -122.109,
+      "heading": 36.72,
+      "name": "Middle Cross"
+    },
+    {
+      "id": "sn_589",
+      "nodeId": "n_59764486",
+      "linkId": "l_631060503_2",
+      "x": 494.894,
+      "z": -221.6,
+      "heading": 113.68,
+      "name": "Bilston Street Island"
+    },
+    {
+      "id": "sn_590",
+      "nodeId": "n_6053242780",
+      "linkId": "l_643170786_0",
+      "x": 55.61,
+      "z": 348.193,
+      "heading": 89.66,
+      "name": "Ring Road Saint Peters"
+    },
+    {
+      "id": "sn_591",
+      "nodeId": "n_6053242780",
+      "linkId": "l_643170792_2",
+      "x": 67.04,
+      "z": 335.121,
+      "heading": 299.63,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_592",
+      "nodeId": "n_6053242985",
+      "linkId": "l_643170801_1",
+      "x": -292.115,
+      "z": 220.835,
+      "heading": 93.91,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_593",
+      "nodeId": "n_6053242985",
+      "linkId": "l_643170804_0",
+      "x": -276.855,
+      "z": 211.128,
+      "heading": 253.53,
+      "name": "Ring Road St. Peters"
+    },
+    {
+      "id": "sn_594",
+      "nodeId": "n_6053242987",
+      "linkId": "l_85550730_1",
+      "x": -304.195,
+      "z": 239.367,
+      "heading": 183.54,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_595",
+      "nodeId": "n_6183725492",
+      "linkId": "l_1267207113_0",
+      "x": -496.274,
+      "z": -199.215,
+      "heading": 290.96,
+      "name": "Raglan Street"
+    },
+    {
+      "id": "sn_596",
+      "nodeId": "n_6183849554",
+      "linkId": "l_25682475_1",
+      "x": -654.355,
+      "z": -113.64,
+      "heading": 113.9,
+      "name": "Chapel Ash"
+    },
+    {
+      "id": "sn_597",
+      "nodeId": "n_6285216403",
+      "linkId": "l_24774767_0",
+      "x": 612.054,
+      "z": -31.261,
+      "heading": 286.6,
+      "name": "Albion Street"
+    },
+    {
+      "id": "sn_598",
+      "nodeId": "n_6285216406",
+      "linkId": "l_24774767_1",
+      "x": 572.732,
+      "z": -21.648,
+      "heading": 280.77,
+      "name": "Albion Street"
+    },
+    {
+      "id": "sn_599",
+      "nodeId": "n_6305842402",
+      "linkId": "l_25695989_1",
+      "x": -153.82,
+      "z": 924.024,
+      "heading": 292.25,
+      "name": "Oxley Street"
+    },
+    {
+      "id": "sn_600",
+      "nodeId": "n_6305842402",
+      "linkId": "l_38288592_0",
+      "x": -151.528,
+      "z": 936.588,
+      "heading": 196.82,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_601",
+      "nodeId": "n_6340402931",
+      "linkId": "l_203454024_4",
+      "x": -453.734,
+      "z": -882.934,
+      "heading": 23.45,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_602",
+      "nodeId": "n_6340402931",
+      "linkId": "l_677127905_2",
+      "x": -450.042,
+      "z": -871.056,
+      "heading": 117.99,
+      "name": "Lea Road"
+    },
+    {
+      "id": "sn_603",
+      "nodeId": "n_6360436464",
+      "linkId": "l_78044205_0",
+      "x": 353.54,
+      "z": -131.659,
+      "heading": 358.1,
+      "name": "Pipers Row"
+    },
+    {
+      "id": "sn_604",
+      "nodeId": "n_6413669062",
+      "linkId": "l_25696038_0",
+      "x": 26.514,
+      "z": 686.677,
+      "heading": 200.89,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_605",
+      "nodeId": "n_6413669064",
+      "linkId": "l_491066186_1",
+      "x": 95.358,
+      "z": 833.149,
+      "heading": 344.27,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_606",
+      "nodeId": "n_6428217407",
+      "linkId": "l_23135886_0",
+      "x": 174.321,
+      "z": -624.282,
+      "heading": 172.68,
+      "name": "Birmingham New Road"
+    },
+    {
+      "id": "sn_607",
+      "nodeId": "n_6428217407",
+      "linkId": "l_776351321_2",
+      "x": 173.88,
+      "z": -625.058,
+      "heading": 180.12,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_608",
+      "nodeId": "n_6654591034",
+      "linkId": "l_73578821_1",
+      "x": 472.304,
+      "z": 569.333,
+      "heading": 41.06,
+      "name": "Grimstone Street"
+    },
+    {
+      "id": "sn_609",
+      "nodeId": "n_6757107491",
+      "linkId": "l_25695784_1",
+      "x": -456.879,
+      "z": 268.8,
+      "heading": 155.83,
+      "name": "Bath Avenue"
+    },
+    {
+      "id": "sn_610",
+      "nodeId": "n_6881806185",
+      "linkId": "l_19366135_1",
+      "x": -364.793,
+      "z": 391.501,
+      "heading": 322.1,
+      "name": "Newhampton Road East"
+    },
+    {
+      "id": "sn_611",
+      "nodeId": "n_6903851600",
+      "linkId": "l_25695783_1",
+      "x": -578.894,
+      "z": 692.247,
+      "heading": 222.26,
+      "name": "Great Hampton Street"
+    },
+    {
+      "id": "sn_612",
+      "nodeId": "n_6903851604",
+      "linkId": "l_37851952_0",
+      "x": -679.125,
+      "z": 720.125,
+      "heading": 45.71,
+      "name": "Fawdry Street"
+    },
+    {
+      "id": "sn_613",
+      "nodeId": "n_708344002",
+      "linkId": "l_56631795_2",
+      "x": -325.301,
+      "z": -880.342,
+      "heading": 300.03,
+      "name": "Sidney Street"
+    },
+    {
+      "id": "sn_614",
+      "nodeId": "n_708344002",
+      "linkId": "l_56631799_0",
+      "x": -336.269,
+      "z": -876.851,
+      "heading": 23.66,
+      "name": "The Hollies"
+    },
+    {
+      "id": "sn_615",
+      "nodeId": "n_708344100",
+      "linkId": "l_19210427_2",
+      "x": -123.481,
+      "z": -895.998,
+      "heading": 293.62,
+      "name": "Pountney Street"
+    },
+    {
+      "id": "sn_616",
+      "nodeId": "n_708344100",
+      "linkId": "l_56631804_0",
+      "x": -134.877,
+      "z": -893.61,
+      "heading": 18.44,
+      "name": "Little Pountney Street"
+    },
+    {
+      "id": "sn_617",
+      "nodeId": "n_708345041",
+      "linkId": "l_22812132_2",
+      "x": -228.963,
+      "z": -767.021,
+      "heading": 349.1,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_618",
+      "nodeId": "n_708345044",
+      "linkId": "l_56631901_2",
+      "x": -63.194,
+      "z": -839.71,
+      "heading": 292.13,
+      "name": "Dobbs Street"
+    },
+    {
+      "id": "sn_619",
+      "nodeId": "n_708345044",
+      "linkId": "l_7982034_1",
+      "x": -75.135,
+      "z": -836.905,
+      "heading": 22.69,
+      "name": "Thomas Street"
+    },
+    {
+      "id": "sn_620",
+      "nodeId": "n_708345050",
+      "linkId": "l_22812132_1",
+      "x": -221.18,
+      "z": -809.339,
+      "heading": 352.09,
+      "name": "Pool Street"
+    },
+    {
+      "id": "sn_621",
+      "nodeId": "n_7122928025",
+      "linkId": "l_101293207_0",
+      "x": -585.553,
+      "z": -825.446,
+      "heading": 265.91,
+      "name": "Penn Street"
+    },
+    {
+      "id": "sn_622",
+      "nodeId": "n_7237631449",
+      "linkId": "l_7985844_6",
+      "x": -89.71,
+      "z": -508.453,
+      "heading": 3.17,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_623",
+      "nodeId": "n_7237631457",
+      "linkId": "l_7985844_1",
+      "x": -62.914,
+      "z": -498.587,
+      "heading": 272.82,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_624",
+      "nodeId": "n_7237631467",
+      "linkId": "l_22779135_8",
+      "x": -38.415,
+      "z": -427.477,
+      "heading": 268.48,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_625",
+      "nodeId": "n_7237631473",
+      "linkId": "l_22779135_10",
+      "x": -72.652,
+      "z": -427.555,
+      "heading": 269.77,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_626",
+      "nodeId": "n_7237631482",
+      "linkId": "l_22779135_10",
+      "x": -62.488,
+      "z": -420.664,
+      "heading": 89.77,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_627",
+      "nodeId": "n_7237671781",
+      "linkId": "l_22757767_5",
+      "x": -365.649,
+      "z": -391.975,
+      "heading": 347.22,
+      "name": "Peel Street"
+    },
+    {
+      "id": "sn_628",
+      "nodeId": "n_7237678522",
+      "linkId": "l_118496186_0",
+      "x": -222.32,
+      "z": -263.546,
+      "heading": 279.05,
+      "name": "Victoria Fold"
+    },
+    {
+      "id": "sn_629",
+      "nodeId": "n_7237689682",
+      "linkId": "l_438849964_0",
+      "x": -257.683,
+      "z": -569.449,
+      "heading": 338.88,
+      "name": "Penn Road Island"
+    },
+    {
+      "id": "sn_630",
+      "nodeId": "n_7237689682",
+      "linkId": "l_775832921_1",
+      "x": -249.679,
+      "z": -553.957,
+      "heading": 184.0,
+      "name": "Worcester Street"
+    },
+    {
+      "id": "sn_631",
+      "nodeId": "n_7237730011",
+      "linkId": "l_149160141_2",
+      "x": -152.283,
+      "z": -522.548,
+      "heading": 94.25,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_632",
+      "nodeId": "n_7237730012",
+      "linkId": "l_149160141_2",
+      "x": -162.118,
+      "z": -531.944,
+      "heading": 274.25,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_633",
+      "nodeId": "n_7241007074",
+      "linkId": "l_22757677_0",
+      "x": -9.168,
+      "z": -455.421,
+      "heading": 181.76,
+      "name": "Bond Street"
+    },
+    {
+      "id": "sn_634",
+      "nodeId": "n_7241007075",
+      "linkId": "l_22757677_3",
+      "x": -19.953,
+      "z": -474.27,
+      "heading": 2.8,
+      "name": "Bond Street"
+    },
+    {
+      "id": "sn_635",
+      "nodeId": "n_7241048618",
+      "linkId": "l_7985844_3",
+      "x": 50.228,
+      "z": -561.254,
+      "heading": 182.67,
+      "name": "St John's Square"
+    },
+    {
+      "id": "sn_636",
+      "nodeId": "n_7241168938",
+      "linkId": "l_22779029_3",
+      "x": -112.514,
+      "z": -316.644,
+      "heading": 285.13,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_637",
+      "nodeId": "n_7241168957",
+      "linkId": "l_534429536_1",
+      "x": -141.405,
+      "z": -430.429,
+      "heading": 268.98,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_638",
+      "nodeId": "n_7241168968",
+      "linkId": "l_22757678_2",
+      "x": -75.974,
+      "z": -379.534,
+      "heading": 185.44,
+      "name": "Summer Row"
+    },
+    {
+      "id": "sn_639",
+      "nodeId": "n_7241168970",
+      "linkId": "l_22757678_2",
+      "x": -85.817,
+      "z": -376.357,
+      "heading": 5.44,
+      "name": "Summer Row"
+    },
+    {
+      "id": "sn_640",
+      "nodeId": "n_7243610601",
+      "linkId": "l_22766041_0",
+      "x": 207.264,
+      "z": -382.156,
+      "heading": 175.13,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_641",
+      "nodeId": "n_7243610602",
+      "linkId": "l_22766041_1",
+      "x": 209.67,
+      "z": -410.092,
+      "heading": 175.06,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_642",
+      "nodeId": "n_7243610609",
+      "linkId": "l_22766041_4",
+      "x": 218.079,
+      "z": -505.702,
+      "heading": 176.06,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_643",
+      "nodeId": "n_7243610610",
+      "linkId": "l_7984142_0",
+      "x": 143.851,
+      "z": -514.669,
+      "heading": 352.52,
+      "name": "Snow Hill"
+    },
+    {
+      "id": "sn_644",
+      "nodeId": "n_7243610628",
+      "linkId": "l_1242995317_0",
+      "x": 162.091,
+      "z": -592.376,
+      "heading": 177.12,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_645",
+      "nodeId": "n_7243610629",
+      "linkId": "l_438849972_1",
+      "x": 150.828,
+      "z": -600.426,
+      "heading": 88.72,
+      "name": "Ring Road St. John's"
+    },
+    {
+      "id": "sn_646",
+      "nodeId": "n_7243610629",
+      "linkId": "l_7984661_0",
+      "x": 153.123,
+      "z": -614.082,
+      "heading": 358.4,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_647",
+      "nodeId": "n_7243610644",
+      "linkId": "l_776351321_1",
+      "x": 173.369,
+      "z": -599.589,
+      "heading": 175.62,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_648",
+      "nodeId": "n_7243610644",
+      "linkId": "l_87108308_2",
+      "x": 176.344,
+      "z": -613.092,
+      "heading": 265.75,
+      "name": "Ring Road St. George's"
+    },
+    {
+      "id": "sn_649",
+      "nodeId": "n_7243610659",
+      "linkId": "l_1242995317_0",
+      "x": 151.778,
+      "z": -588.394,
+      "heading": 357.12,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_650",
+      "nodeId": "n_7243610661",
+      "linkId": "l_776351327_1",
+      "x": 175.982,
+      "z": -588.337,
+      "heading": 220.39,
+      "name": "Dudley Road"
+    },
+    {
+      "id": "sn_651",
+      "nodeId": "n_7243648172",
+      "linkId": "l_22766041_0",
+      "x": 196.468,
+      "z": -364.855,
+      "heading": 5.55,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_652",
+      "nodeId": "n_7243648172",
+      "linkId": "l_22779028_4",
+      "x": 208.338,
+      "z": -366.111,
+      "heading": 292.44,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_653",
+      "nodeId": "n_7243744903",
+      "linkId": "l_22766041_3",
+      "x": 217.001,
+      "z": -491.837,
+      "heading": 175.06,
+      "name": "Tempest Street"
+    },
+    {
+      "id": "sn_654",
+      "nodeId": "n_7246237156",
+      "linkId": "l_852018219_0",
+      "x": 305.406,
+      "z": -240.227,
+      "heading": 219.15,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_655",
+      "nodeId": "n_7246403403",
+      "linkId": "l_22766042_1",
+      "x": 196.935,
+      "z": -103.967,
+      "heading": 256.57,
+      "name": "Castle Street"
+    },
+    {
+      "id": "sn_656",
+      "nodeId": "n_7246403404",
+      "linkId": "l_22766048_2",
+      "x": 212.237,
+      "z": -166.253,
+      "heading": 261.49,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_657",
+      "nodeId": "n_7246403405",
+      "linkId": "l_22766048_1",
+      "x": 267.128,
+      "z": -157.908,
+      "heading": 260.43,
+      "name": "Tower Street"
+    },
+    {
+      "id": "sn_658",
+      "nodeId": "n_7246428029",
+      "linkId": "l_23136987_3",
+      "x": 298.114,
+      "z": -719.015,
+      "heading": 88.13,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_659",
+      "nodeId": "n_7246428030",
+      "linkId": "l_7985908_2",
+      "x": 300.133,
+      "z": -803.333,
+      "heading": 89.09,
+      "name": "Howard Street"
+    },
+    {
+      "id": "sn_660",
+      "nodeId": "n_7248871991",
+      "linkId": "l_22329181_0",
+      "x": 436.436,
+      "z": -440.004,
+      "heading": 131.91,
+      "name": "Cleveland Road"
+    },
+    {
+      "id": "sn_661",
+      "nodeId": "n_7248871995",
+      "linkId": "l_23136990_1",
+      "x": 390.407,
+      "z": -554.708,
+      "heading": 94.12,
+      "name": "Powlett Street"
+    },
+    {
+      "id": "sn_662",
+      "nodeId": "n_7248872018",
+      "linkId": "l_23136987_0",
+      "x": 179.568,
+      "z": -723.585,
+      "heading": 87.41,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_663",
+      "nodeId": "n_7248872019",
+      "linkId": "l_23136987_2",
+      "x": 272.113,
+      "z": -719.951,
+      "heading": 87.42,
+      "name": "Lever Street"
+    },
+    {
+      "id": "sn_664",
+      "nodeId": "n_7248890766",
+      "linkId": "l_233524862_1",
+      "x": -345.781,
+      "z": -34.329,
+      "heading": 256.48,
+      "name": "Clarence Street"
+    },
+    {
+      "id": "sn_665",
+      "nodeId": "n_7248890768",
+      "linkId": "l_233524862_3",
+      "x": -371.18,
+      "z": -29.893,
+      "heading": 77.22,
+      "name": "Clarence Street"
+    },
+    {
+      "id": "sn_666",
+      "nodeId": "n_7249311080",
+      "linkId": "l_25695783_0",
+      "x": -570.795,
+      "z": 701.159,
+      "heading": 222.26,
+      "name": "Great Hampton Street"
+    },
+    {
+      "id": "sn_667",
+      "nodeId": "n_7915635149",
+      "linkId": "l_104334750_0",
+      "x": 113.672,
+      "z": 25.384,
+      "heading": 263.87,
+      "name": "Wheeler's Fold"
+    },
+    {
+      "id": "sn_668",
+      "nodeId": "n_7917232175",
+      "linkId": "l_23151708_1",
+      "x": -484.533,
+      "z": 475.515,
+      "heading": 59.29,
+      "name": "Lansdowne Road"
+    },
+    {
+      "id": "sn_669",
+      "nodeId": "n_7920244667",
+      "linkId": "l_104334755_0",
+      "x": -77.315,
+      "z": 840.611,
+      "heading": 161.12,
+      "name": "Lomas Street"
+    },
+    {
+      "id": "sn_670",
+      "nodeId": "n_7920244667",
+      "linkId": "l_37852779_0",
+      "x": -88.386,
+      "z": 833.48,
+      "heading": 61.7,
+      "name": "Oxley Lane"
+    },
+    {
+      "id": "sn_671",
+      "nodeId": "n_7920244681",
+      "linkId": "l_38288592_2",
+      "x": -182.427,
+      "z": 836.93,
+      "heading": 197.17,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_672",
+      "nodeId": "n_7934003797",
+      "linkId": "l_644532351_3",
+      "x": 505.309,
+      "z": 491.686,
+      "heading": 66.62,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_673",
+      "nodeId": "n_7938191857",
+      "linkId": "l_25682482_0",
+      "x": -700.267,
+      "z": -396.739,
+      "heading": 151.92,
+      "name": "Lord Street"
+    },
+    {
+      "id": "sn_674",
+      "nodeId": "n_7938191860",
+      "linkId": "l_25682474_0",
+      "x": -652.131,
+      "z": -284.637,
+      "heading": 81.48,
+      "name": "Stephenson Street"
+    },
+    {
+      "id": "sn_675",
+      "nodeId": "n_8076118691",
+      "linkId": "l_101293207_2",
+      "x": -605.83,
+      "z": -816.466,
+      "heading": 87.26,
+      "name": "Penn Street"
+    },
+    {
+      "id": "sn_676",
+      "nodeId": "n_8076192025",
+      "linkId": "l_19373424_1",
+      "x": 175.105,
+      "z": 252.577,
+      "heading": 63.57,
+      "name": "Whitmore Street"
+    },
+    {
+      "id": "sn_677",
+      "nodeId": "n_8076221631",
+      "linkId": "l_1118138349_0",
+      "x": 119.544,
+      "z": -820.557,
+      "heading": 314.95,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_678",
+      "nodeId": "n_8076302038",
+      "linkId": "l_22779028_1",
+      "x": 297.363,
+      "z": -356.071,
+      "heading": 209.53,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_679",
+      "nodeId": "n_8076302043",
+      "linkId": "l_1267207112_0",
+      "x": -553.256,
+      "z": -167.04,
+      "heading": 238.4,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_680",
+      "nodeId": "n_8076302045",
+      "linkId": "l_866493682_0",
+      "x": -576.202,
+      "z": -166.306,
+      "heading": 49.63,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_681",
+      "nodeId": "n_8076302089",
+      "linkId": "l_292033479_2",
+      "x": -548.133,
+      "z": -419.789,
+      "heading": 340.47,
+      "name": "Alexandra Street"
+    },
+    {
+      "id": "sn_682",
+      "nodeId": "n_8076307350",
+      "linkId": "l_1267207116_0",
+      "x": -584.575,
+      "z": -166.01,
+      "heading": 5.52,
+      "name": "Saint Mark's Road"
+    },
+    {
+      "id": "sn_683",
+      "nodeId": "n_8076370694",
+      "linkId": "l_101292015_0",
+      "x": -207.414,
+      "z": -330.72,
+      "heading": 280.36,
+      "name": "London Place"
+    },
+    {
+      "id": "sn_684",
+      "nodeId": "n_8076370715",
+      "linkId": "l_22758209_0",
+      "x": -241.266,
+      "z": -398.586,
+      "heading": 82.91,
+      "name": "Pitt Street"
+    },
+    {
+      "id": "sn_685",
+      "nodeId": "n_8077738514",
+      "linkId": "l_86336509_4",
+      "x": -262.639,
+      "z": 557.195,
+      "heading": 10.52,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_686",
+      "nodeId": "n_8077756148",
+      "linkId": "l_25696038_4",
+      "x": -39.443,
+      "z": 497.592,
+      "heading": 193.58,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_687",
+      "nodeId": "n_8077756158",
+      "linkId": "l_25696038_6",
+      "x": -56.394,
+      "z": 429.171,
+      "heading": 194.42,
+      "name": "Molineux Street"
+    },
+    {
+      "id": "sn_688",
+      "nodeId": "n_8077756216",
+      "linkId": "l_86336509_0",
+      "x": -295.521,
+      "z": 374.686,
+      "heading": 11.82,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_689",
+      "nodeId": "n_8077756230",
+      "linkId": "l_86336509_1",
+      "x": -289.485,
+      "z": 401.138,
+      "heading": 13.22,
+      "name": "Waterloo Road"
+    },
+    {
+      "id": "sn_690",
+      "nodeId": "n_8077876776",
+      "linkId": "l_37852781_1",
+      "x": -272.535,
+      "z": 290.027,
+      "heading": 68.94,
+      "name": "Whitmore Hill"
+    },
+    {
+      "id": "sn_691",
+      "nodeId": "n_8079008012",
+      "linkId": "l_22983011_0",
+      "x": 553.956,
+      "z": 63.623,
+      "heading": 39.98,
+      "name": "Corn Hill"
+    },
+    {
+      "id": "sn_692",
+      "nodeId": "n_8079205531",
+      "linkId": "l_73578821_0",
+      "x": 437.329,
+      "z": 509.322,
+      "heading": 336.34,
+      "name": "Grimstone Street"
+    },
+    {
+      "id": "sn_693",
+      "nodeId": "n_8079304355",
+      "linkId": "l_149160142_1",
+      "x": -355.823,
+      "z": -207.545,
+      "heading": 56.28,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_694",
+      "nodeId": "n_8079304360",
+      "linkId": "l_149160142_4",
+      "x": -305.884,
+      "z": -205.676,
+      "heading": 101.07,
+      "name": "Fold Street"
+    },
+    {
+      "id": "sn_695",
+      "nodeId": "n_8079342779",
+      "linkId": "l_85550577_0",
+      "x": 108.227,
+      "z": 249.239,
+      "heading": 351.1,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_696",
+      "nodeId": "n_8079342815",
+      "linkId": "l_38791087_0",
+      "x": 62.934,
+      "z": 130.381,
+      "heading": 98.17,
+      "name": "Wulfruna Street"
+    },
+    {
+      "id": "sn_697",
+      "nodeId": "n_8086106573",
+      "linkId": "l_28423410_0",
+      "x": -581.961,
+      "z": -641.364,
+      "heading": 71.9,
+      "name": "Merridale Street"
+    },
+    {
+      "id": "sn_698",
+      "nodeId": "n_8086448103",
+      "linkId": "l_101293210_5",
+      "x": -617.09,
+      "z": -738.136,
+      "heading": 74.74,
+      "name": "Mander Street"
+    },
+    {
+      "id": "sn_699",
+      "nodeId": "n_8086473937",
+      "linkId": "l_106753275_1",
+      "x": -438.447,
+      "z": -720.904,
+      "heading": 189.21,
+      "name": "Williamson Street"
+    },
+    {
+      "id": "sn_700",
+      "nodeId": "n_8086473959",
+      "linkId": "l_106753275_0",
+      "x": -440.031,
+      "z": -612.739,
+      "heading": 161.25,
+      "name": "Williamson Street"
+    },
+    {
+      "id": "sn_701",
+      "nodeId": "n_8088222981",
+      "linkId": "l_87067262_0",
+      "x": -182.039,
+      "z": -651.832,
+      "heading": 252.29,
+      "name": "Church Lane"
+    },
+    {
+      "id": "sn_702",
+      "nodeId": "n_8088223000",
+      "linkId": "l_56631900_1",
+      "x": -329.62,
+      "z": -703.77,
+      "heading": 49.75,
+      "name": "Paul Street"
+    },
+    {
+      "id": "sn_703",
+      "nodeId": "n_8088953496",
+      "linkId": "l_56631902_0",
+      "x": -276.46,
+      "z": -759.159,
+      "heading": 84.36,
+      "name": "Jeddo Street"
+    },
+    {
+      "id": "sn_704",
+      "nodeId": "n_8088953498",
+      "linkId": "l_101292016_3",
+      "x": -266.849,
+      "z": -837.335,
+      "heading": 287.58,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_705",
+      "nodeId": "n_8089990297",
+      "linkId": "l_22812041_3",
+      "x": 7.089,
+      "z": -797.659,
+      "heading": 280.24,
+      "name": "Frederick Street"
+    },
+    {
+      "id": "sn_706",
+      "nodeId": "n_8090015633",
+      "linkId": "l_19210504_1",
+      "x": -154.24,
+      "z": -856.472,
+      "heading": 9.16,
+      "name": "Stewart Street"
+    },
+    {
+      "id": "sn_707",
+      "nodeId": "n_8090626665",
+      "linkId": "l_22779135_3",
+      "x": 90.425,
+      "z": -425.575,
+      "heading": 269.14,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_708",
+      "nodeId": "n_8090626667",
+      "linkId": "l_22779135_4",
+      "x": 69.384,
+      "z": -426.096,
+      "heading": 268.31,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_709",
+      "nodeId": "n_8090640534",
+      "linkId": "l_22779135_0",
+      "x": 119.384,
+      "z": -424.765,
+      "heading": 268.25,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_710",
+      "nodeId": "n_8090640540",
+      "linkId": "l_22779135_1",
+      "x": 108.988,
+      "z": -425.084,
+      "heading": 268.22,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_711",
+      "nodeId": "n_8094722702",
+      "linkId": "l_534429536_0",
+      "x": -96.174,
+      "z": -429.567,
+      "heading": 268.05,
+      "name": "Temple Street"
+    },
+    {
+      "id": "sn_712",
+      "nodeId": "n_8094781043",
+      "linkId": "l_22779199_1",
+      "x": -120.54,
+      "z": -302.62,
+      "heading": 193.08,
+      "name": "Cleveland Passage"
+    },
+    {
+      "id": "sn_713",
+      "nodeId": "n_8097322200",
+      "linkId": "l_22779053_5",
+      "x": 295.286,
+      "z": 163.459,
+      "heading": 163.42,
+      "name": "Fryer Street"
+    },
+    {
+      "id": "sn_714",
+      "nodeId": "n_8105198358",
+      "linkId": "l_22812302_0",
+      "x": -646.343,
+      "z": -780.977,
+      "heading": 338.06,
+      "name": "Upper Zoar Street"
+    },
+    {
+      "id": "sn_715",
+      "nodeId": "n_8105198362",
+      "linkId": "l_101293210_3",
+      "x": -591.156,
+      "z": -741.526,
+      "heading": 254.74,
+      "name": "Mander Street"
+    },
+    {
+      "id": "sn_716",
+      "nodeId": "n_8108977419",
+      "linkId": "l_23151708_0",
+      "x": -501.505,
+      "z": 465.433,
+      "heading": 59.28,
+      "name": "Lansdowne Road"
+    },
+    {
+      "id": "sn_717",
+      "nodeId": "n_8115253898",
+      "linkId": "l_22757740_0",
+      "x": -232.016,
+      "z": 160.281,
+      "heading": 75.92,
+      "name": "Paternoster Row"
+    },
+    {
+      "id": "sn_718",
+      "nodeId": "n_8115345244",
+      "linkId": "l_22757739_1",
+      "x": -232.596,
+      "z": -12.472,
+      "heading": 343.66,
+      "name": "Red Lion Street"
+    },
+    {
+      "id": "sn_719",
+      "nodeId": "n_8132960125",
+      "linkId": "l_149282988_0",
+      "x": 181.125,
+      "z": 487.253,
+      "heading": 246.74,
+      "name": "Herbert Street"
+    },
+    {
+      "id": "sn_720",
+      "nodeId": "n_8148726957",
+      "linkId": "l_19366138_0",
+      "x": -619.705,
+      "z": 58.237,
+      "heading": 63.92,
+      "name": "Bath Road"
+    },
+    {
+      "id": "sn_721",
+      "nodeId": "n_8155227191",
+      "linkId": "l_87069534_0",
+      "x": 633.289,
+      "z": -512.981,
+      "heading": 110.37,
+      "name": "Cleveland Road"
+    },
+    {
+      "id": "sn_722",
+      "nodeId": "n_8156347081",
+      "linkId": "l_233524862_1",
+      "x": -347.094,
+      "z": -24.257,
+      "heading": 76.48,
+      "name": "Clarence Street"
+    },
+    {
+      "id": "sn_723",
+      "nodeId": "n_8156348793",
+      "linkId": "l_645715020_0",
+      "x": -261.071,
+      "z": -123.443,
+      "heading": 347.38,
+      "name": "School Street"
+    },
+    {
+      "id": "sn_724",
+      "nodeId": "n_8158236748",
+      "linkId": "l_22757736_0",
+      "x": 238.824,
+      "z": 250.647,
+      "heading": 68.73,
+      "name": "Saint Mary's Street"
+    },
+    {
+      "id": "sn_725",
+      "nodeId": "n_8158558488",
+      "linkId": "l_19373424_3",
+      "x": 200.752,
+      "z": 253.79,
+      "heading": 244.33,
+      "name": "Whitmore Street"
+    },
+    {
+      "id": "sn_726",
+      "nodeId": "n_8169338220",
+      "linkId": "l_149401727_0",
+      "x": 528.195,
+      "z": 264.515,
+      "heading": 331.61,
+      "name": "Broad Gauge Way"
+    },
+    {
+      "id": "sn_727",
+      "nodeId": "n_8169338222",
+      "linkId": "l_149401727_1",
+      "x": 532.982,
+      "z": 284.106,
+      "heading": 32.46,
+      "name": "Broad Gauge Way"
+    },
+    {
+      "id": "sn_728",
+      "nodeId": "n_8169338224",
+      "linkId": "l_149401727_2",
+      "x": 542.951,
+      "z": 296.654,
+      "heading": 54.18,
+      "name": "Broad Gauge Way"
+    },
+    {
+      "id": "sn_729",
+      "nodeId": "n_8169338246",
+      "linkId": "l_155829604_0",
+      "x": 130.971,
+      "z": 624.575,
+      "heading": 187.86,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_730",
+      "nodeId": "n_8169338247",
+      "linkId": "l_155829604_1",
+      "x": 128.263,
+      "z": 605.02,
+      "heading": 187.89,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_731",
+      "nodeId": "n_8175315445",
+      "linkId": "l_852018219_3",
+      "x": 293.447,
+      "z": -271.301,
+      "heading": 359.98,
+      "name": "St George's Parade"
+    },
+    {
+      "id": "sn_732",
+      "nodeId": "n_8177710472",
+      "linkId": "l_22779199_0",
+      "x": -112.201,
+      "z": -266.745,
+      "heading": 193.09,
+      "name": "Cleveland Passage"
+    },
+    {
+      "id": "sn_733",
+      "nodeId": "n_8177710486",
+      "linkId": "l_38791088_0",
+      "x": -99.182,
+      "z": -222.672,
+      "heading": 110.26,
+      "name": "Bell Street"
+    },
+    {
+      "id": "sn_734",
+      "nodeId": "n_8177970757",
+      "linkId": "l_149160141_5",
+      "x": -206.88,
+      "z": -528.75,
+      "heading": 274.37,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_735",
+      "nodeId": "n_8177970769",
+      "linkId": "l_149160141_0",
+      "x": -129.565,
+      "z": -534.017,
+      "heading": 273.03,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_736",
+      "nodeId": "n_8183381150",
+      "linkId": "l_149160141_5",
+      "x": -197.776,
+      "z": -519.317,
+      "heading": 94.37,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_737",
+      "nodeId": "n_8183381154",
+      "linkId": "l_149160141_3",
+      "x": -178.092,
+      "z": -530.838,
+      "heading": 273.74,
+      "name": "Church Street"
+    },
+    {
+      "id": "sn_738",
+      "nodeId": "n_8186931874",
+      "linkId": "l_22757716_3",
+      "x": -411.486,
+      "z": 33.537,
+      "heading": 165.78,
+      "name": "Birch Street"
+    },
+    {
+      "id": "sn_739",
+      "nodeId": "n_8193862434",
+      "linkId": "l_148868368_0",
+      "x": 100.262,
+      "z": 590.929,
+      "heading": 7.57,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_740",
+      "nodeId": "n_8193862434",
+      "linkId": "l_25696032_1",
+      "x": 101.528,
+      "z": 602.917,
+      "heading": 97.58,
+      "name": "Camp Street"
+    },
+    {
+      "id": "sn_741",
+      "nodeId": "n_8203969861",
+      "linkId": "l_25695784_0",
+      "x": -462.502,
+      "z": 281.331,
+      "heading": 155.84,
+      "name": "Bath Avenue"
+    },
+    {
+      "id": "sn_742",
+      "nodeId": "n_8203969872",
+      "linkId": "l_25695784_2",
+      "x": -431.823,
+      "z": 206.767,
+      "heading": 158.26,
+      "name": "Bath Avenue"
+    },
+    {
+      "id": "sn_743",
+      "nodeId": "n_872000065",
+      "linkId": "l_644532351_5",
+      "x": 595.152,
+      "z": 600.332,
+      "heading": 2.85,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_744",
+      "nodeId": "n_872000065",
+      "linkId": "l_73578822_0",
+      "x": 606.475,
+      "z": 600.801,
+      "heading": 280.79,
+      "name": "Field Street"
+    },
+    {
+      "id": "sn_745",
+      "nodeId": "n_872000148",
+      "linkId": "l_644532351_4",
+      "x": 551.241,
+      "z": 519.892,
+      "heading": 53.97,
+      "name": "Culwell Street"
+    },
+    {
+      "id": "sn_746",
+      "nodeId": "n_872000148",
+      "linkId": "l_73578825_0",
+      "x": 557.921,
+      "z": 511.517,
+      "heading": 337.26,
+      "name": "Kennedy Road"
+    },
+    {
+      "id": "sn_747",
+      "nodeId": "n_8830877104",
+      "linkId": "l_101292016_5",
+      "x": -361.749,
+      "z": -802.097,
+      "heading": 303.89,
+      "name": "Ablow Street"
+    },
+    {
+      "id": "sn_748",
+      "nodeId": "n_8830877105",
+      "linkId": "l_7982068_2",
+      "x": -360.673,
+      "z": -734.023,
+      "heading": 203.41,
+      "name": "Penn Road"
+    },
+    {
+      "id": "sn_749",
+      "nodeId": "n_9294110418",
+      "linkId": "l_1007424548_0",
+      "x": 472.781,
+      "z": -453.532,
+      "heading": 201.62,
+      "name": "Tramway Drive"
+    },
+    {
+      "id": "sn_750",
+      "nodeId": "n_9294110418",
+      "linkId": "l_22329181_1",
+      "x": 461.165,
+      "z": -450.718,
+      "heading": 113.99,
+      "name": "Cleveland Road"
+    },
+    {
+      "id": "sn_751",
+      "nodeId": "n_992426103",
+      "linkId": "l_22757760_0",
+      "x": 103.317,
+      "z": 366.923,
+      "heading": 173.51,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_752",
+      "nodeId": "n_992426111",
+      "linkId": "l_85550391_0",
+      "x": 98.061,
+      "z": 302.942,
+      "heading": 327.66,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_753",
+      "nodeId": "n_992426115",
+      "linkId": "l_649691042_0",
+      "x": 127.177,
+      "z": 367.616,
+      "heading": 270.61,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_754",
+      "nodeId": "n_992426141",
+      "linkId": "l_324026349_2",
+      "x": 107.402,
+      "z": 337.137,
+      "heading": 273.79,
+      "name": "Ring Road St Patricks"
+    },
+    {
+      "id": "sn_755",
+      "nodeId": "n_992426141",
+      "linkId": "l_897791710_0",
+      "x": 105.086,
+      "z": 350.103,
+      "heading": 174.34,
+      "name": "Stafford Street"
+    },
+    {
+      "id": "sn_756",
+      "nodeId": "n_992426177",
+      "linkId": "l_140653958_1",
+      "x": 163.789,
+      "z": 82.884,
+      "heading": 253.9,
+      "name": "Lichfield Street"
+    },
+    {
+      "id": "sn_757",
+      "nodeId": "n_992426177",
+      "linkId": "l_311799312_1",
+      "x": 154.044,
+      "z": 77.32,
+      "heading": 335.0,
+      "name": "Princess Street"
+    },
+    {
+      "id": "sn_758",
+      "nodeId": "n_992426177",
+      "linkId": "l_868384401_0",
+      "x": 158.892,
+      "z": 92.89,
+      "heading": 178.41,
+      "name": "Princes Square"
+    },
+    {
+      "id": "sn_759",
+      "nodeId": "n_992455276",
+      "linkId": "l_438851182_0",
+      "x": -465.409,
+      "z": -155.799,
+      "heading": 125.21,
+      "name": "Chapel Ash Island"
+    },
+    {
+      "id": "sn_760",
+      "nodeId": "n_992455290",
+      "linkId": "l_24630821_0",
+      "x": -543.788,
+      "z": -170.124,
+      "heading": 144.65,
+      "name": "Raglan Street"
+    },
+    {
+      "id": "sn_761",
+      "nodeId": "n_992455310",
+      "linkId": "l_645732297_0",
+      "x": -432.949,
+      "z": -239.888,
+      "heading": 178.09,
+      "name": "Ring Road St Marks"
+    },
+    {
+      "id": "sn_762",
+      "nodeId": "n_992779047",
+      "linkId": "l_23991405_0",
+      "x": -403.525,
+      "z": -226.872,
+      "heading": 123.32,
+      "name": "Salop Street"
+    },
+    {
+      "id": "sn_763",
+      "nodeId": "n_992785866",
+      "linkId": "l_643170786_1",
+      "x": -181.286,
+      "z": 210.744,
+      "heading": 248.74,
+      "name": "Ring Road Saint Peters"
+    },
+    {
+      "id": "sn_764",
+      "nodeId": "n_992785888",
+      "linkId": "l_22779029_0",
+      "x": -138.201,
+      "z": -300.887,
+      "heading": 101.46,
+      "name": "Cleveland Street"
+    },
+    {
+      "id": "sn_765",
+      "nodeId": "n_992785889",
+      "linkId": "l_37852781_0",
+      "x": -298.502,
+      "z": 278.848,
+      "heading": 283.4,
+      "name": "Whitmore Hill"
+    },
+    {
+      "id": "sn_766",
+      "nodeId": "n_992785889",
+      "linkId": "l_85550730_0",
+      "x": -298.738,
+      "z": 292.115,
+      "heading": 182.94,
+      "name": "Waterloo Road"
+    }
+  ]
+}

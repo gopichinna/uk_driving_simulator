@@ -1,0 +1,28 @@
+pack_id: rural_practice
+display_name: "Meriden & Berkswell Rural Practice"
+country: GB
+region: GB-ENG
+driving_side: left
+
+# Meriden / Berkswell rural lanes (Solihull / West Midlands)
+origin:
+  lat: 52.4175
+  lon: -1.6400
+
+# ~2.7 km x 3.9 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-1.6600, 52.4000, -1.6200, 52.4350]
+
+bbox_reason: >
+  Rural West Midlands area around Meriden and Berkswell with single-carriageway
+  national-speed-limit (60 mph) country lanes, bends, narrow sections, farm
+  accesses, and a 30 mph village centre.
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "Keep extract config consistent with West Midlands packs"

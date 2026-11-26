@@ -1,0 +1,201 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "speedSigns": [
+    {
+      "id": "sp_001",
+      "x": -73.883,
+      "z": -508.564,
+      "heading": 167.49,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_4016067_3"
+    },
+    {
+      "id": "sp_002",
+      "x": -84.524,
+      "z": -510.925,
+      "heading": 167.49,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_4016067_3"
+    },
+    {
+      "id": "sp_003",
+      "x": -87.076,
+      "z": -499.144,
+      "heading": 348.07,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_169759981_0"
+    },
+    {
+      "id": "sp_004",
+      "x": -76.412,
+      "z": -496.89,
+      "heading": 348.07,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_169759981_0"
+    },
+    {
+      "id": "sp_005",
+      "x": 451.908,
+      "z": 447.151,
+      "heading": 190.33,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_201159135_0"
+    },
+    {
+      "id": "sp_006",
+      "x": 465.883,
+      "z": 455.057,
+      "heading": 110.68,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_1"
+    },
+    {
+      "id": "sp_007",
+      "x": 450.747,
+      "z": 449.195,
+      "heading": 291.64,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_2"
+    },
+    {
+      "id": "sp_008",
+      "x": 454.766,
+      "z": 459.327,
+      "heading": 291.64,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_2"
+    },
+    {
+      "id": "sp_009",
+      "x": 684.835,
+      "z": 462.171,
+      "heading": 202.79,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_888210413_0"
+    },
+    {
+      "id": "sp_010",
+      "x": 677.268,
+      "z": 474.489,
+      "heading": 270.86,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_1"
+    },
+    {
+      "id": "sp_011",
+      "x": 266.654,
+      "z": 455.947,
+      "heading": 356.31,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_201466549_0"
+    },
+    {
+      "id": "sp_012",
+      "x": 277.532,
+      "z": 456.649,
+      "heading": 356.31,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_201466549_0"
+    },
+    {
+      "id": "sp_013",
+      "x": 278.251,
+      "z": 456.396,
+      "heading": 84.02,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_3"
+    },
+    {
+      "id": "sp_014",
+      "x": -130.021,
+      "z": 507.42,
+      "heading": 7.74,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_283244181_3"
+    },
+    {
+      "id": "sp_015",
+      "x": -121.015,
+      "z": 493.942,
+      "heading": 189.26,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_37330644_3"
+    },
+    {
+      "id": "sp_016",
+      "x": -121.217,
+      "z": 493.332,
+      "heading": 74.91,
+      "mph": 40,
+      "kind": "start",
+      "linkId": "l_162872529_7"
+    },
+    {
+      "id": "sp_017",
+      "x": -146.349,
+      "z": -69.424,
+      "heading": 249.58,
+      "mph": 30,
+      "kind": "start",
+      "linkId": "l_54616066_0"
+    },
+    {
+      "id": "sp_018",
+      "x": -132.853,
+      "z": -77.918,
+      "heading": 174.79,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_37330644_1"
+    },
+    {
+      "id": "sp_019",
+      "x": -144.797,
+      "z": -66.957,
+      "heading": 354.79,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_37330644_2"
+    },
+    {
+      "id": "sp_020",
+      "x": -133.942,
+      "z": -65.968,
+      "heading": 354.79,
+      "mph": 50,
+      "kind": "start",
+      "linkId": "l_37330644_2"
+    }
+  ]
+}

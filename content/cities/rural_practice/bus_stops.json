@@ -1,0 +1,102 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "busStops": [
+    {
+      "id": "bs_001",
+      "x": 1216.565,
+      "z": 1935.509,
+      "heading": 257.99,
+      "name": "Birmingham Rd / Showell Lane",
+      "linkId": "l_735718914_0",
+      "osmId": 369541530
+    },
+    {
+      "id": "bs_002",
+      "x": 341.188,
+      "z": 1946.564,
+      "heading": 77.55,
+      "name": "Birmingham Rd / Church Lane",
+      "linkId": "l_735718914_0",
+      "osmId": 369541534
+    },
+    {
+      "id": "bs_003",
+      "x": -115.875,
+      "z": 533.444,
+      "heading": 187.74,
+      "name": "Berkswell Rd / Four Oaks",
+      "linkId": "l_283244181_3",
+      "osmId": 369541545
+    },
+    {
+      "id": "bs_004",
+      "x": -127.012,
+      "z": 534.724,
+      "heading": 187.74,
+      "name": "Berkswell Rd / Four Oaks",
+      "linkId": "l_283244181_3",
+      "osmId": 369541547
+    },
+    {
+      "id": "bs_005",
+      "x": -132.088,
+      "z": -32.39,
+      "heading": 354.79,
+      "name": "Meriden Rd / Home Farm",
+      "linkId": "l_37330644_2",
+      "osmId": 369541549
+    },
+    {
+      "id": "bs_006",
+      "x": -151.67,
+      "z": -33.414,
+      "heading": 354.79,
+      "name": "Meriden Rd / Home Farm",
+      "linkId": "l_37330644_2",
+      "osmId": 369541550
+    },
+    {
+      "id": "bs_007",
+      "x": 7.22,
+      "z": -837.279,
+      "heading": 339.32,
+      "name": "Meriden Rd / Coventry Rd",
+      "linkId": "l_4016067_1",
+      "osmId": 369541552
+    },
+    {
+      "id": "bs_008",
+      "x": -12.584,
+      "z": -768.693,
+      "heading": 339.81,
+      "name": "Meriden Rd / Coventry Rd",
+      "linkId": "l_4016067_2",
+      "osmId": 369541553
+    },
+    {
+      "id": "bs_009",
+      "x": 1303.635,
+      "z": -1462.072,
+      "heading": 48.68,
+      "name": "Benton Green Lane / Victoria Farm",
+      "linkId": "l_201433280_0",
+      "osmId": 369541554
+    }
+  ]
+}
