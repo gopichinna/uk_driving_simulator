@@ -58,5 +58,155 @@
     "explain": "Highway Code Rule 103 stresses signalling early enough for others to read and react.",
     "hc_rule": "103",
     "difficulty": 2
+  },
+  {
+    "id": "qb_sig_5",
+    "rule": "GB.SIG.TIMELY",
+    "question": "Who needs to see your signal before you turn?",
+    "options": [
+      "Other drivers, cyclists, and pedestrians nearby",
+      "Only police cars",
+      "Only cars behind you",
+      "Only buses"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 says signals warn all road users of your plans.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sig_6",
+    "rule": "GB.SIG.TIMELY",
+    "question": "When should you avoid giving a signal?",
+    "options": [
+      "When it could confuse or mislead other road users",
+      "Whenever you turn left",
+      "On any 30 mph road",
+      "During daytime"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 warns not to give misleading signals.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sig_7",
+    "rule": "GB.SIG.TIMELY",
+    "question": "What should you do before signalling to pull over and stop?",
+    "options": [
+      "Check your mirrors to see who is behind you",
+      "Open your door slightly",
+      "Flash your headlights",
+      "Turn off your engine"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 works with mirror checks so others understand your signal.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sig_8",
+    "rule": "GB.SIG.TIMELY",
+    "question": "If you want to turn into a side road just past a parked car, when do you signal left?",
+    "options": [
+      "After passing the parked car so nobody thinks you are stopping",
+      "Before the parked car",
+      "Never signal for side roads",
+      "Only while turning the wheel"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 warns that early signals near parked cars can mislead others.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sig_9",
+    "rule": "GB.SIG.TIMELY",
+    "question": "If your indicator bulb fails before a drive, what should you do?",
+    "options": [
+      "Drive without any signals",
+      "Fix it before driving, or use clear arm signals if safe",
+      "Use hazard lights for every turn",
+      "Sound your horn instead"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 103 includes arm signals when indicators are not working.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sig_10",
+    "rule": "GB.SIG.TIMELY",
+    "question": "When pulling away from the side of the road, when should you signal?",
+    "options": [
+      "Before you pull away, if other road users could benefit",
+      "Only after you reach 30 mph",
+      "Never when pulling away",
+      "Only at night"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 advises signalling in good time when pulling away.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sig_11",
+    "rule": "GB.SIG.TIMELY",
+    "question": "Why should you check that your indicator has cancelled after a gentle bend?",
+    "options": [
+      "Self-cancelling switches may not turn off after a small steer",
+      "It saves battery power only",
+      "It is required only on motorways",
+      "Indicators turn off after two flashes"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 reminds you to cancel signals manually if they stay on.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sig_12",
+    "rule": "GB.SIG.TIMELY",
+    "question": "Two side roads are close together on your left and you want the second one. When should you signal?",
+    "options": [
+      "As you pass the first side road",
+      "100 metres before the first side road",
+      "After turning into the second road",
+      "Do not signal at all"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 warns not to signal before an earlier turning you are not taking.",
+    "hc_rule": "103",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_sig_13",
+    "rule": "GB.SIG.TIMELY",
+    "question": "A driver behind flashes their lights after you signal left. What does your signal give you?",
+    "options": [
+      "No right of way; wait until the move is safe",
+      "Automatic priority to turn",
+      "Permission to speed up",
+      "Right to ignore pedestrians"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 states signals never give you priority over anyone else.",
+    "hc_rule": "103",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_sig_14",
+    "rule": "GB.SIG.TIMELY",
+    "question": "What should you check before cancelling a signal early if you change your mind?",
+    "options": [
+      "That nobody has already reacted to your first signal",
+      "Only your fuel level",
+      "Only the kerb height",
+      "Nothing"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 stresses clear, unambiguous signals at all times.",
+    "hc_rule": "103",
+    "difficulty": 3
   }
 ]

@@ -58,5 +58,140 @@
     "explain": "Highway Code Rule 129 and Rule 163 allow crossing a solid line to pass a cyclist at 10 mph or less when clear.",
     "hc_rule": "163",
     "difficulty": 3
+  },
+  {
+    "id": "qb_cyc_5",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "How much room should you give a cyclist when overtaking at 25 mph?",
+    "options": [
+      "At least 1.5 metres",
+      "0.5 metres",
+      "0.3 metres",
+      "10 metres"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 states at least 1.5 metres at speeds up to 30 mph.",
+    "hc_rule": "163",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_cyc_6",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "Why might a cyclist wobble or swerve slightly to the right?",
+    "options": [
+      "To avoid potholes, drains, or gusts of wind",
+      "Only to race cars",
+      "Because bikes have no brakes",
+      "To block traffic on purpose"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 warns that cyclists need space to avoid drains and road hazards.",
+    "hc_rule": "163",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_cyc_7",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "When passing a cyclist riding past parked cars, why leave extra room?",
+    "options": [
+      "A parked car door could suddenly open into the cyclist's path",
+      "The cyclist must ride on the kerb",
+      "To test your steering",
+      "Speed limits double"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 notes cyclists ride away from parked cars to avoid opening doors.",
+    "hc_rule": "163",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_cyc_8",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "What should you do if a cyclist is riding in the middle of the lane in slow town traffic?",
+    "options": [
+      "Stay patiently behind them and do not force past",
+      "Sound your horn until they move over",
+      "Squeeze past inches from their handlebar",
+      "Flash your main beam"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 and H1/H2 respect cyclists' safe road position.",
+    "hc_rule": "163",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_cyc_9",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "In wet or windy weather, how should you adjust your overtaking gap past a cyclist?",
+    "options": [
+      "Leave even more space than usual",
+      "Pass closer to shelter them",
+      "Pass faster",
+      "Turn off your headlights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 advises extra clearance in poor weather or strong side winds.",
+    "hc_rule": "163",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_cyc_10",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "Before turning left soon after passing a cyclist, what must you check?",
+    "options": [
+      "Do not overtake and immediately cut across the cyclist's path",
+      "Always turn sharply in front of them",
+      "Sound your horn",
+      "Assume they will brake"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 and Rule 182 warn against 'left hooks' across cyclists.",
+    "hc_rule": "163",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_cyc_11",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "Who else needs similar wide clearance and slow passing speeds under Rule 163 / 215?",
+    "options": [
+      "Horse riders and pedestrians walking in the road",
+      "Only parked lorries",
+      "Only traffic cones",
+      "Only buses"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 gives wide, slow clearance to cyclists, horse riders, and walkers.",
+    "hc_rule": "163",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_cyc_12",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "Approaching a blind hill crest behind a slow cyclist, what should you do?",
+    "options": [
+      "Wait behind until you can see the oncoming road is clear",
+      "Overtake on the blind crest anyway",
+      "Sound your horn",
+      "Pass on the left kerb"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 and Rule 166 forbid overtaking where you cannot see far enough ahead.",
+    "hc_rule": "163",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_cyc_13",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "On a 50 mph rural road, why is 1.5 metres often not enough when passing a cyclist?",
+    "options": [
+      "High speed creates strong air turbulence, so give even more room",
+      "Because 50 mph is too slow",
+      "Cyclists travel at 50 mph",
+      "Solid lines disappear"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 explicitly requires even more space at speeds over 30 mph.",
+    "hc_rule": "163",
+    "difficulty": 3
   }
 ]

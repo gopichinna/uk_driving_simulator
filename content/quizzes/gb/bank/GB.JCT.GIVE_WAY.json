@@ -58,5 +58,140 @@
     "explain": "Highway Code Rule 172 means you stay responsible for pulling out only when it is genuinely safe.",
     "hc_rule": "172",
     "difficulty": 3
+  },
+  {
+    "id": "qb_jct_gw_5",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "What shape is a red-and-white Give Way sign?",
+    "options": [
+      "An upside-down triangle",
+      "A circle",
+      "A square",
+      "An octagon"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 uses the inverted red-and-white triangle for Give Way.",
+    "hc_rule": "172",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_gw_6",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "When turning right out of a side road onto a main road, who must you give way to?",
+    "options": [
+      "Traffic coming from both right and left",
+      "Only traffic from the left",
+      "Only traffic from the right",
+      "Nobody if you signal"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 requires checking and giving way to both directions when turning right.",
+    "hc_rule": "172",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_gw_7",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "As you approach a Give Way line, what should you do?",
+    "options": [
+      "Slow down early so you can stop if traffic is coming",
+      "Keep your speed until the last metre",
+      "Sound your horn",
+      "Look only straight ahead"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 tells drivers to approach under control ready to give way.",
+    "hc_rule": "172",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_gw_8",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "What if a pedestrian is waiting to cross the side road you are turning into?",
+    "options": [
+      "Give way and let them cross safely",
+      "Wave them back and turn fast",
+      "Sound your horn",
+      "Drive around them closely"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 170 and Rule 172 require giving way to pedestrians crossing side roads.",
+    "hc_rule": "172",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_gw_9",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "Why should you check carefully for cyclists and motorcycles at a T-junction?",
+    "options": [
+      "They are narrower and easier to miss against background traffic",
+      "They never use headlights",
+      "They must always stop for cars",
+      "They travel only on pavements"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 advises looking carefully for smaller, faster two-wheelers.",
+    "hc_rule": "172",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_gw_10",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "If parked cars block your view at a Give Way line, what should you do?",
+    "options": [
+      "Edge forward slowly until you can see clearly",
+      "Pull straight out quickly",
+      "Wait 30 seconds then guess",
+      "Reverse back down the road"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 advises creeping forward safely when parked vehicles block sightlines.",
+    "hc_rule": "172",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_gw_11",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "When turning left from a side road onto a main road, which direction is the main danger first?",
+    "options": [
+      "Traffic approaching from your right",
+      "Traffic behind you only",
+      "Aircraft",
+      "Traffic two streets away"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 checks right first for nearside flow, and left for overtaking traffic.",
+    "hc_rule": "172",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_gw_12",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "You see a car approaching from the right with its left indicator on. What should you do?",
+    "options": [
+      "Wait until you are sure it is actually turning before pulling out",
+      "Pull out immediately",
+      "Flash your lights",
+      "Turn left beside it"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 warns never to assume a flashing indicator means the driver will turn.",
+    "hc_rule": "172",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_jct_gw_13",
+    "rule": "GB.JCT.GIVE_WAY",
+    "question": "If a main road has two lanes in one direction and you turn left onto it, which lane should you join?",
+    "options": [
+      "The left-hand lane unless road signs say otherwise",
+      "The right-hand lane",
+      "Straddle both lanes",
+      "The bus lane always"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 172 and lane rules keep turning traffic in the left lane when clear.",
+    "hc_rule": "172",
+    "difficulty": 3
   }
 ]

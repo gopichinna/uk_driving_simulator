@@ -173,3 +173,4 @@ flowchart LR
 - 2026-11-26 (Hydrogen): completed Round 23 (wrote Google Play compliance pack under `docs/store/`: `data-safety.md`, `content-rating.md`, `privacy-policy.md`, and `release-checklist.md`).
 - 2026-11-26 (Hydrogen): completed Round 24 (added `python -m ltl_pipeline.health`, committed `docs/CONTENT_HEALTH.md`, added warning-only CI step in `pipeline.yml`, and added `test_health.py`).
 - 2026-11-26 (Hydrogen): completed Round 25 (built `content/cities/suburb_practice/` RoadPack v0.7 from OSM Tettenhall/Claregate with `SOURCE.md`, `start`/`join` anchors, POIs, and furniture, plus scenarios `s2_suburb_30`, `s3_suburb_minirbt`, `s4_suburb_school` and `test_suburb_practice.py`).
+- 2026-11-26 (Hydrogen): completed Round 26 (grew quiz bank to 13 questions per implemented rule = 182 questions, generated `content/quizzes/gb/tests/set-01.json`–`set-10.json` + `README.md`, and verified balance/uniqueness/difficulty mix in `test_quiz_bank.py`).

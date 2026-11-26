@@ -58,5 +58,110 @@
     "explain": "Highway Code Rule 186 avoids early left signals so waiting traffic is not misled.",
     "hc_rule": "186",
     "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_sa_5",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "How do you signal on approach when taking the first exit to the left?",
+    "options": [
+      "Signal left",
+      "Signal right",
+      "Do not signal",
+      "Use hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 requires a left signal on approach for the first exit.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_sa_6",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "Which signal do you give on approach when going straight ahead (second exit)?",
+    "options": [
+      "No signal on approach",
+      "Signal left before entering",
+      "Signal right before entering",
+      "Hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 states not to signal on approach when going straight ahead.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_sa_7",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "If you signal right on approach, which exit are you telling others you want?",
+    "options": [
+      "An exit to the right (past straight ahead)",
+      "The first exit on the left",
+      "Going straight ahead",
+      "Stopping on the island"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 uses a right approach signal for exits past straight ahead.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_sa_8",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "When should you start your approach signal for a roundabout?",
+    "options": [
+      "In good time before reaching the give-way line",
+      "After you are already on the roundabout",
+      "Only once you exit",
+      "Never"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 and Rule 103 require early, clear approach signals.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_sa_9",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "What if the first exit is straight ahead and there is no left turn?",
+    "options": [
+      "Treat it as straight ahead and do not signal on approach unless signs show left",
+      "Signal right",
+      "Use hazard lights",
+      "Sound your horn"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 matches your signal to the road layout and signs.",
+    "hc_rule": "186",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_sa_10",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "At a tiny mini-roundabout with little space, should you still signal your turn?",
+    "options": [
+      "Yes, signal clearly in good time before entering",
+      "No, never signal at mini-roundabouts",
+      "Only signal after leaving",
+      "Only flash headlights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 and 188 still require clear approach signals at mini-roundabouts.",
+    "hc_rule": "186",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_rbt_sa_11",
+    "rule": "GB.RBT.SIGNAL_APPROACH",
+    "question": "Why is a right signal on approach helpful to drivers waiting at the left-hand entrance?",
+    "options": [
+      "It warns them you are staying on the roundabout past their exit",
+      "It tells them to pull out in front of you",
+      "It turns off traffic lights",
+      "It means you are parking"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 helps waiting drivers judge whether you will cross their path.",
+    "hc_rule": "186",
+    "difficulty": 3
   }
 ]
