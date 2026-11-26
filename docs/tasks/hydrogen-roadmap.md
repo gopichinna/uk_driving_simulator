@@ -1,3 +1,6 @@
+> ## ⏸ PAUSED by the owner (2026-11-26). Do not start any new round or open new PRs until this banner is removed.
+> Finish and push anything you have half-done (don't merge it), then stop and wait. Claude and the owner are reviewing what has already been merged and building a new test version. Rounds 28–30 stay queued here.
+
 # Hydrogen roadmap: rounds 9, 10 and 11 (do them in order without waiting)
 
 **Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§3 ownership), then this file. Ownership is unchanged:
