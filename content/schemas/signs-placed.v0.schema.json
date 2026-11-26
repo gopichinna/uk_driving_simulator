@@ -58,6 +58,10 @@
     "warningSigns": {
       "type": "array",
       "items": { "$ref": "#/$defs/warningSign" }
+    },
+    "motorwaySigns": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/motorwaySign" }
     }
   },
   "oneOf": [
@@ -65,7 +69,8 @@
     { "required": ["plates"] },
     { "required": ["speedSigns"] },
     { "required": ["busStops"] },
-    { "required": ["warningSigns"] }
+    { "required": ["warningSigns"] },
+    { "required": ["motorwaySigns"] }
   ],
   "additionalProperties": false,
   "$defs": {
@@ -163,6 +168,36 @@
         "heading": { "type": "number", "minimum": 0, "maximum": 360 },
         "linkId": { "type": "string", "minLength": 1 },
         "diagramRef": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "motorwaySign": {
+      "type": "object",
+      "required": ["id", "kind", "x", "z", "heading", "style"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": {
+          "type": "string",
+          "enum": [
+            "advance_1m",
+            "advance_half_m",
+            "final_exit",
+            "countdown_3",
+            "countdown_2",
+            "countdown_1",
+            "junction_number",
+            "emergency_area"
+          ]
+        },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+        "style": { "type": "string", "enum": ["motorway", "emergency_area"] },
+        "junctionNumber": { "type": "string", "minLength": 1 },
+        "bars": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "text": { "type": "string", "minLength": 1 },
+        "routeNumber": { "type": "string", "minLength": 1 },
+        "linkId": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false
     }

@@ -151,22 +151,9 @@ R10–R14 are merged into `main` (via the stacked R14 merge, `bf71f12`). Thank y
 R15 is merged. Thank you: plain English reads well, the signs are useful, the motorway section is 11 km, and the sounds are real CC0 recordings.
 
 ## Round 16: motorway furniture and scripted motorway situations (for Claude's motorway course)
-- [ ] **R16.1 Motorway signs** for `m54-j2`, in `motorway_signs.json` (new, pre-agreed; same family as `signs-placed.v0`):
-  - advance direction signs (blue panel, white text, junction number tile) at about 1 mile and ½ mile;
-  - the final sign at the slip road;
-  - countdown markers (3, 2 and 1 bars at 300, 200 and 100 yards before each exit);
-  - junction-number signs;
-  - emergency-area signs (blue, with orange SOS) where `emergencyAreas` exist.
-
-  Verify the styles and positions on GOV.UK ("Know your traffic signs" and Highway Code rule 273 for countdown markers), and cite them.
-- [ ] **R16.2 Gantry message plan**, in `gantry_messages.json`: for each gantry, which lanes can show a red X or variable limits, so scenarios can switch them.
-- [ ] **R16.3 New scenario events** (additive and pre-agreed; Claude will implement exactly these):
-  - `red_x { lane: 0..n (0 = left), whenPlayerWithinM }`: the next gantry shows a red X over that lane;
-  - `variable_limit { mph, whenPlayerWithinM }`: the next gantry shows that limit in a red ring;
-  - `slow_vehicle_ahead { lane, speedMph, offsetM }`: e.g. a lorry the player must overtake correctly;
-  - `breakdown { atM }`: the player's car loses power at that distance; the scenario expects them to reach the hard shoulder or an emergency area, and stop.
-
-  Update the 8 motorway scenarios to use them where they fit, and extend the scenario tests to cover them.
+- [x] **R16.1 Motorway signs** for `m54-j2`, in `motorway_signs.json` (generated `content/cities/m54-j2/motorway_signs.json` via `pipeline/ltl_pipeline/motorway_furniture.py` with advance direction signs at 1 mile & ½ mile, final slip sign, 3/2/1 countdown markers at 300/200/100 yd per Highway Code rule 273, junction-number signs, and blue/orange SOS emergency-area signs, citing GOV.UK Know Your Traffic Signs & Highway Code 253–273).
+- [x] **R16.2 Gantry message plan**, in `gantry_messages.json` (generated `content/cities/m54-j2/gantry_messages.json` validated by `content/schemas/gantry-messages.v0.schema.json`, listing per-gantry lane capability for `red_x` and `variable_limit`).
+- [x] **R16.3 New scenario events** (added `red_x`, `variable_limit`, `slow_vehicle_ahead`, `breakdown` to `content/schemas/scenario.v0.schema.json`, updated motorway scenarios `s6_24_*`–`s6_27_*`, and extended `test_scenarios.py`).
 
 ## Round 17: more practice drives (variety for lessons and review drives)
 - [ ] **R17.1** Give every **implemented** rule (those with an `implementation` in `rules.yaml`) at least **2 practice scenarios** on playable courses (`town`, `roundabout`, `two_lane_roundabout`, `dual_carriageway`, `wolverhampton`, `wolverhampton-test-area`; the motorway once R16 is in). Add scenarios to existing lessons, using different anchors and event mixes so repeats feel different. Regenerate `rule_index.json` and report any gaps in `content/lessons/gb/IMPLEMENTATION.md`.

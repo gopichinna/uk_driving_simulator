@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.example/schemas/gantry-messages.v0.schema.json",
+  "title": "Motorway Gantry Messages v0",
+  "type": "object",
+  "required": ["gantryMessagesFormatVersion", "packId", "origin", "source", "gantries"],
+  "additionalProperties": false,
+  "properties": {
+    "gantryMessagesFormatVersion": { "const": "0.1" },
+    "packId": { "type": "string", "minLength": 1 },
+    "origin": {
+      "type": "object",
+      "required": ["lat", "lon"],
+      "additionalProperties": false,
+      "properties": {
+        "lat": { "type": "number" },
+        "lon": { "type": "number" }
+      }
+    },
+    "source": {
+      "type": "object",
+      "required": ["kind", "licence", "attribution"],
+      "properties": {
+        "kind": { "type": "string" },
+        "licence": { "type": "string" },
+        "attribution": { "type": "string" },
+        "generator": { "type": "string" },
+        "styleSources": {
+          "type": "array",
+          "items": { "type": "string", "format": "uri" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "gantries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "linkId", "x", "z", "heading", "lanes", "laneIndices", "supportsRedX", "supportsVariableLimit", "defaultLimitMph"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "linkId": { "type": "string", "minLength": 1 },
+          "x": { "type": "number" },
+          "z": { "type": "number" },
+          "heading": { "type": "number", "minimum": 0, "maximum": 360 },
+          "lanes": { "type": "integer", "minimum": 1 },
+          "laneIndices": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "integer", "minimum": 0 }
+          },
+          "supportsRedX": { "type": "boolean" },
+          "supportsVariableLimit": { "type": "boolean" },
+          "defaultLimitMph": { "type": "integer", "minimum": 20, "maximum": 70 }
+        }
+      }
+    }
+  }
+}
