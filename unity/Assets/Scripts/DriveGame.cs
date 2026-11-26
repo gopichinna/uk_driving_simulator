@@ -111,8 +111,8 @@ namespace LToLocal.Game
             {
                 _prev = _curr;
                 _course.CapturePrevious();
-                // Steering help: the game aims the wheel along your lane, turn or exit; throttle and brake stay yours.
-                var driven = SteeringAssist.Apply(_curr, input, _course.SteeringGuide, _indicator, _params, AssistSetting, _clock.StepSeconds);
+                // Aim assist: when your turn is roughly right for a line ahead (your lane, a turn, an exit), the game nudges the wheel onto it.
+                var driven = SteeringAssist.Apply(_curr, input, _course.SteeringGuide, _params, AssistSetting);
                 _controls.AssistedSteer = (float)driven.Steer;
                 _curr = CarModel.Step(_curr, driven, _params, _clock.StepSeconds);
 

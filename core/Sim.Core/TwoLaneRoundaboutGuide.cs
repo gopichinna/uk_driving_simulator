@@ -1,70 +1,67 @@
 using System;
+using System.Collections.Generic;
 
 namespace LToLocal.Sim
 {
     /// <summary>
-    /// Steering guide for the hand-built two-lane roundabout: it follows your entry lane round the ring and takes
-    /// the next exit when you signal left. A firm push on the wheel moves you between the two ring lanes.
+    /// Guide for the hand-built two-lane roundabout. On the ring it offers: stay in your ring lane, the other ring lane,
+    /// and the next exit ahead. Which one gets help is decided by how you turn the wheel.
     /// </summary>
     public sealed class TwoLaneRoundaboutGuide : ISteeringGuide
     {
-        private const double LaneChangeSteer = 0.4, LaneChangeHoldS = 0.3, CooldownS = 1.5;
-
         private readonly TwoLaneRoundaboutGeometry _g;
-        private int _ringLane, _exitArm = -1;
-        private double _hold, _cooldown;
 
         public TwoLaneRoundaboutGuide(TwoLaneRoundaboutGeometry geometry) => _g = geometry;
+        public void Reset() { }
 
-        public int CommittedExit => _exitArm;
-        public void Reset() { _exitArm = -1; _hold = _cooldown = 0; }
-
-        public bool TryTarget(in CarState car, int indicator, double steerIntent, double dt, double lookahead, out Vec2 target)
+        public void GetTargets(in CarState car, double lookahead, List<Vec2> targets)
         {
-            target = default;
             var pos = new Vec2(car.X, car.Z);
 
-            // 1. Still on the way in?
+            // 1. Still on the way in.
             if (FindPath(pos, car.Heading, entry: true, out int arm, out int lane, out double s))
             {
-                _ringLane = lane;
                 var path = _g.Entry[arm, lane];
                 double remain = path.Length - s;
-                if (lookahead <= remain) { target = path.Sample(s + lookahead).pos; return true; }
-                double theta0 = _g.MergeBearing[arm, lane];
-                ChooseExit(theta0, indicator);
-                target = RingTarget(theta0, lookahead - remain);
-                return true;
+                if (lookahead <= remain) { targets.Add(path.Sample(s + lookahead).pos); return; }
+                RingLines(_g.MergeBearing[arm, lane], lane, lookahead - remain, targets, otherLane: false);
+                return;
             }
 
-            // 2. On the way out of a committed exit?
-            if (_exitArm >= 0)
-            {
-                var path = _g.Exit[_exitArm, _ringLane];
-                var (es, _, ed) = path.Project(pos);
-                if (ed < 2.5 && es > 2) { target = ExitTarget(_exitArm, _ringLane, es, lookahead); return true; }
-            }
-
-            // 3. On the ring.
+            // 2. On the ring.
             if (_g.OnRing(pos))
             {
-                if (_hold == 0 && _exitArm < 0) _ringLane = TwoLaneRoundaboutGeometry.RingLaneAt(_g.RadiusOf(pos));
-                double theta = _g.BearingOf(pos);
-                UpdateLaneChange(steerIntent, dt);
-                ChooseExit(theta, indicator);
-                target = RingTarget(theta, lookahead);
-                return true;
+                int ringLane = TwoLaneRoundaboutGeometry.RingLaneAt(_g.RadiusOf(pos));
+                RingLines(_g.BearingOf(pos), ringLane, lookahead, targets, otherLane: true);
+                return;
             }
 
-            // 4. Leaving along any exit arm.
+            // 3. Leaving along an exit arm.
             if (FindPath(pos, car.Heading, entry: false, out arm, out lane, out s))
+                targets.Add(ExitTarget(arm, lane, s, lookahead));
+        }
+
+        private void RingLines(double theta, int ringLane, double distance, List<Vec2> targets, bool otherLane)
+        {
+            double radius = TwoLaneRoundaboutGeometry.LaneRadius(ringLane);
+            targets.Add(_g.RingPoint(theta + distance / radius, radius));                       // stay in this lane, round the ring
+            if (otherLane)
             {
-                target = ExitTarget(arm, lane, s, lookahead);
-                return true;
+                int other = 1 - ringLane;
+                double r2 = TwoLaneRoundaboutGeometry.LaneRadius(other);
+                targets.Add(_g.RingPoint(theta + distance / r2, r2));                           // move to the other ring lane
             }
 
-            _exitArm = -1;
-            return false;
+            int exitArm = -1;                                                                    // the next exit ahead
+            double best = double.MaxValue;
+            for (int a = 0; a < _g.ArmCount; a++)
+            {
+                double d = Cw(theta, _g.DivergeBearing[a, ringLane]);
+                if (d > 0.02 && d < best) { best = d; exitArm = a; }
+            }
+            if (exitArm < 0) return;
+            double arc = best * radius;
+            targets.Add(distance >= arc ? ExitTarget(exitArm, ringLane, 0, distance - arc) : _g.RingPoint(theta + distance / radius, radius));
         }
 
         private bool FindPath(Vec2 pos, double heading, bool entry, out int arm, out int lane, out double s)
@@ -84,37 +81,6 @@ namespace LToLocal.Sim
             return arm >= 0;
         }
 
-        /// <summary>Signal left and the next exit ahead is yours. Cancel the signal and you stay on the ring.</summary>
-        private void ChooseExit(double theta, int indicator)
-        {
-            if (_exitArm >= 0)
-            {
-                double togo = Cw(theta, _g.DivergeBearing[_exitArm, _ringLane]);
-                if (togo < 0.5 || togo > 2 * Math.PI - 0.3) return;   // too close to change your mind
-            }
-            _exitArm = -1;
-            if (indicator >= 0) return;
-            double best = double.MaxValue;
-            for (int a = 0; a < _g.ArmCount; a++)
-            {
-                double d = Cw(theta, _g.DivergeBearing[a, _ringLane]);
-                if (d > 0.02 && d < best) { best = d; _exitArm = a; }
-            }
-        }
-
-        private Vec2 RingTarget(double theta, double distance)
-        {
-            double radius = TwoLaneRoundaboutGeometry.LaneRadius(_ringLane);
-            if (_exitArm >= 0)
-            {
-                double toDiverge = Cw(theta, _g.DivergeBearing[_exitArm, _ringLane]);
-                if (toDiverge > 2 * Math.PI - 0.3) toDiverge = 0;
-                double arc = toDiverge * radius;
-                if (distance >= arc) return ExitTarget(_exitArm, _ringLane, 0, distance - arc);
-            }
-            return _g.RingPoint(theta + distance / radius, radius);
-        }
-
         private Vec2 ExitTarget(int arm, int lane, double s, double ahead)
         {
             var path = _g.Exit[arm, lane];
@@ -122,17 +88,6 @@ namespace LToLocal.Sim
             if (t <= path.Length) return path.Sample(t).pos;
             var (end, h) = path.Sample(path.Length);
             return end + Vec2.FromHeading(h) * (t - path.Length);
-        }
-
-        private void UpdateLaneChange(double steer, double dt)
-        {
-            _cooldown = Math.Max(0, _cooldown - dt);
-            if (_cooldown > 0 || _exitArm >= 0 || Math.Abs(steer) < LaneChangeSteer) { _hold = 0; return; }
-            _hold += Math.Sign(steer) * dt;
-            if (Math.Abs(_hold) < LaneChangeHoldS) return;
-            _ringLane = steer > 0 ? 1 : 0;          // right is towards the middle (inner lane), left is the outer lane
-            _cooldown = CooldownS;
-            _hold = 0;
         }
 
         private static double Cw(double a, double b) => TwoLaneRoundaboutGeometry.Cw(a, b);
