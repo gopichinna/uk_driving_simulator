@@ -36,6 +36,9 @@ namespace LToLocal.Game
         private bool _go, _brake;
         private int _look; // -1 over left shoulder, +1 over right shoulder, 0 ahead
 
+        /// <summary>What the car is really steering at (with steering help), so the wheel picture matches the car.</summary>
+        public float? AssistedSteer;
+
         public CarControls Read() => new CarControls(_steer, _go ? 1 : 0, _brake ? 1 : 0);
 
         /// <summary>Shoulder check being held: -1 left, +1 right, 0 none.</summary>
@@ -139,7 +142,7 @@ namespace LToLocal.Game
             float r = WheelRadius;
             GUI.color = _steerFingerId >= 0 ? new Color(1f, 1f, 1f, 0.95f) : new Color(1f, 1f, 1f, 0.8f);
             Matrix4x4 old = GUI.matrix;
-            GUIUtility.RotateAroundPivot(_steer / SensitivityFactor * fullLockDegrees, c);
+            GUIUtility.RotateAroundPivot(_steerFingerId >= 0 && AssistedSteer == null ? _steer / SensitivityFactor * fullLockDegrees : (AssistedSteer ?? _steer) * fullLockDegrees, c);
             GUI.DrawTexture(new Rect(c.x - r, c.y - r, r * 2, r * 2), s_wheel);
             GUI.matrix = old;
             GUI.color = Color.white;

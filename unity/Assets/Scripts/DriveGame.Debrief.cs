@@ -269,6 +269,14 @@ namespace LToLocal.Game
                 SetMode(Mode.Debrief);
         }
 
+        public const string AssistKey = "settings_assist";
+        /// <summary>Steering help: Full (default, the car follows your lane, turn or exit), Light (half), or Off (you steer alone).</summary>
+        public static AssistLevel AssistSetting
+        {
+            get => (AssistLevel)PlayerPrefs.GetInt(AssistKey, (int)AssistLevel.Full);
+            set { PlayerPrefs.SetInt(AssistKey, (int)value); PlayerPrefs.Save(); }
+        }
+
         private void DrawSettings(float W, float H)
         {
             Fill(new Rect(0, 0, W, H), new Color(0.05f, 0.06f, 0.08f, 0.92f));
@@ -299,6 +307,9 @@ namespace LToLocal.Game
             float tw = W * 0.2f, th = H * 0.08f;
             if (GUI.Button(new Rect(x, y, tw, th), SoundOn ? "Sounds: on" : "Sounds: off", _buttonStyle)) { SoundOn = !SoundOn; ApplySoundSetting(); }
             if (GUI.Button(new Rect(x + tw + W * 0.02f, y, tw, th), VoiceOn ? "Coach voice: on" : "Coach voice: off", _buttonStyle)) VoiceOn = !VoiceOn;
+            string help = AssistSetting == AssistLevel.Full ? "full" : AssistSetting == AssistLevel.Light ? "light" : "off";
+            if (GUI.Button(new Rect(x + 2 * (tw + W * 0.02f), y, tw, th), $"Steering help: {help}", _buttonStyle))
+                AssistSetting = AssistSetting == AssistLevel.Full ? AssistLevel.Light : AssistSetting == AssistLevel.Light ? AssistLevel.Off : AssistLevel.Full;
             y += th + H * 0.04f;
 
             float bw = W * 0.26f, bh = H * 0.09f;
@@ -318,7 +329,9 @@ namespace LToLocal.Game
         {
             float sens = TouchControls.SteeringSensitivity;
             bool sound = SoundOn, voice = VoiceOn;
+            var assist = AssistSetting;
             PlayerPrefs.DeleteAll();
+            AssistSetting = assist;
             TouchControls.SteeringSensitivity = sens;
             SoundOn = sound;
             VoiceOn = voice;

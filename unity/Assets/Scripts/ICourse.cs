@@ -27,5 +27,7 @@ namespace LToLocal.Game
         void Record(List<ActorPose> actors, List<LightState> lights);
         /// <summary>Shows a recorded moment instead of the live simulation (debrief replays).</summary>
         void ShowRecorded(RecordedFrame frame, bool blink);
+        /// <summary>Knows where the road goes, so steering help can keep the car in lane and on the turn or exit you signal. Null = no help here.</summary>
+        ISteeringGuide? SteeringGuide => null;
     }
 }

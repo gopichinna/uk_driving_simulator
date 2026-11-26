@@ -87,8 +87,12 @@ namespace LToLocal.Game
             return lamp != null ? lamp.gameObject : null;
         }
 
+        private LaneGraphGuide? _guide;
+        public ISteeringGuide? SteeringGuide => _guide ??= new LaneGraphGuide(Geometry.Graph);
+
         public void ResetCourse()
         {
+            _guide?.Reset();
             if (trafficView != null) trafficView.Clear();
             foreach (var kv in _pedViews) { kv.Value.gameObject.SetActive(false); _freePeds.Add(kv.Value); }
             _pedViews.Clear();

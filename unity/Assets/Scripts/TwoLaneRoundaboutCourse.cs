@@ -29,6 +29,9 @@ namespace LToLocal.Game
             }
         }
 
+        private TwoLaneRoundaboutGuide? _guide;
+        public ISteeringGuide? SteeringGuide => _guide ??= new TwoLaneRoundaboutGuide(Geometry);
+
         public double SpeedLimitMph(in CarState player) => 30;
         public bool OutOfBounds(in CarState p) => (new Vec2(p.X, p.Z) - Centre).Length > Geometry.ArmLength + 25;
 
@@ -40,6 +43,7 @@ namespace LToLocal.Game
 
         public void ResetCourse()
         {
+            _guide?.Reset();
             if (trafficView != null) trafficView.Clear();
             _traffic.Reset();
             _rule.Reset();
