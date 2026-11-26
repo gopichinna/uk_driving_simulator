@@ -197,6 +197,11 @@
         "bars": { "type": "integer", "minimum": 1, "maximum": 3 },
         "text": { "type": "string", "minLength": 1 },
         "routeNumber": { "type": "string", "minLength": 1 },
+        "destinations": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "confidence": { "type": "string", "enum": ["high", "medium", "low"] },
         "linkId": { "type": "string", "minLength": 1 }
       },
       "additionalProperties": false

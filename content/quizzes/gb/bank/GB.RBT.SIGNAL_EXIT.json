@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_rbt_se_1",
+    "rule": "GB.RBT.SIGNAL_EXIT",
+    "question": "When going straight ahead at a roundabout, when should you signal left?",
+    "options": [
+      "Just after you pass the exit before the one you want",
+      "Before you enter the roundabout",
+      "After you have left the roundabout",
+      "Never"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 says to signal left after passing the exit before yours.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_se_2",
+    "rule": "GB.RBT.SIGNAL_EXIT",
+    "question": "When turning right at a roundabout, what should you do with your signal before leaving?",
+    "options": [
+      "Keep signalling right until you are on the new road",
+      "Switch from right signal to left signal just after the exit before yours",
+      "Turn all signals off completely",
+      "Use hazard lights to exit"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 186 states to signal left after passing the exit before your right-turn exit.",
+    "hc_rule": "186",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_se_3",
+    "rule": "GB.RBT.SIGNAL_EXIT",
+    "question": "Who benefits most from a clear left exit signal on a roundabout?",
+    "options": [
+      "Drivers waiting at the next entrance to join the roundabout",
+      "Only aircraft overhead",
+      "Parked cars 200 metres away",
+      "Nobody"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 186 uses exit signals to show waiting drivers you are leaving.",
+    "hc_rule": "186",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_se_4",
+    "rule": "GB.RBT.SIGNAL_EXIT",
+    "question": "What should you check in your mirrors just before signalling left to leave an inner roundabout lane?",
+    "options": [
+      "Nothing, just steer out",
+      "Check your left mirror and blind spot for cars or cyclists beside you",
+      "Only look at the central island",
+      "Check your fuel gauge"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 186 tells you to watch for traffic on your left before moving out to exit.",
+    "hc_rule": "186",
+    "difficulty": 2
+  }
+]

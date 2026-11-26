@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_obs_lc_1",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "What must you check before changing lanes?",
+    "options": [
+      "Your mirrors and blind spot",
+      "Only your rear-view mirror",
+      "Only the speed limit sign",
+      "Your horn and hazard lights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 133 says you must check mirrors and blind spots before changing lanes.",
+    "hc_rule": "133",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_obs_lc_2",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "When changing lanes, how should your move affect vehicles in the next lane?",
+    "options": [
+      "They should slow down slightly for you",
+      "You must not force them to slow down or swerve",
+      "You only need to clear cars behind you",
+      "You have priority if you signal first"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 states you must not cut in or force others to slow down.",
+    "hc_rule": "133",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_obs_lc_3",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "Why should you look over your shoulder before moving into another lane?",
+    "options": [
+      "To check your rear tyres",
+      "Because mirrors do not show every blind spot",
+      "To wave thank you to cars behind",
+      "To see if your brake lights work"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 warns that mirrors cannot cover every blind spot beside your car.",
+    "hc_rule": "133",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_obs_lc_4",
+    "rule": "GB.OBS.LANE_CHANGE",
+    "question": "In slow queuing traffic, when should you change lanes?",
+    "options": [
+      "Whenever a tiny gap opens for a moment",
+      "Only when it is safe and you will not block others",
+      "As fast as possible before the queue stops",
+      "Without signalling so others do not speed up"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 133 advises not weaving between lanes or cutting across other drivers.",
+    "hc_rule": "133",
+    "difficulty": 3
+  }
+]

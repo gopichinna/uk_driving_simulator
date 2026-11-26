@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_rbt_gw_1",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "At a UK roundabout, which traffic must you give way to?",
+    "options": [
+      "Traffic coming from your left",
+      "Traffic approaching from your immediate right",
+      "Only buses and lorries",
+      "Cars waiting behind you"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 185 says to give way to traffic approaching from your right.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_gw_2",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "When is it safe to enter a roundabout?",
+    "options": [
+      "When there is a safe gap so circulating traffic does not have to slow down",
+      "Whenever you reach the line first",
+      "Whenever the car in front enters, without looking",
+      "Only after stopping for three seconds"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 advises entering only when there is a safe gap to the right.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_gw_3",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "If a car on the roundabout is signalling left to take the exit before yours, what should you do?",
+    "options": [
+      "Pull out immediately without checking",
+      "Wait until you see it actually start turning off",
+      "Flash your lights to hurry it up",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 185 warns not to rely on another driver's signal alone before pulling out.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_gw_4",
+    "rule": "GB.RBT.GIVE_WAY_RIGHT",
+    "question": "What should you also watch for before entering a roundabout besides cars?",
+    "options": [
+      "Only roadworks signs",
+      "Cyclists, motorcyclists, and pedestrians crossing the exit",
+      "Only tall lorries",
+      "Shop windows"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 185 reminds drivers to watch out for cyclists, riders, and pedestrians.",
+    "hc_rule": "185",
+    "difficulty": 2
+  }
+]
