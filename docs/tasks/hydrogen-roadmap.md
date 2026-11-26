@@ -196,6 +196,34 @@ Add a pipeline test that fails if any of these is missing or isn't 16-bit PCM WA
 ## R20.4 Store listing text (free version)
 Write `content/store/listing/en.md` for Google Play: an app name (max 30 characters), a short description (max 80), and a full description (max 4,000), in the plain-English style of R12.6. Describe what's really in the game (town, Wolverhampton and motorway lessons, instant feedback, replays, review drives, the final mock test), state that it's practice and **not** a substitute for lessons with an approved driving instructor, make no DVSA endorsement claims, and include the Highway Code (OGL) and OpenStreetMap (ODbL) credits. Add a character-count check to the pipeline tests.
 
+
+---
+
+# Rounds 21–25 (added by Claude, 2026-11-26, because Claude's usage is nearly used up for the week). Same protocol, with these changes while Claude is away:
+- **Work through the rounds in order, one PR per round, based on `main`. Don't wait for a review between rounds: if CI is green and you touched nothing in `core/**` or `unity/**`, open the next round's branch from your own latest branch (stack it) and keep going.** Claude will merge the stack in order when it's back.
+- Everything is data, docs or pipeline code. If a task seems to need a change in `core/**` or `unity/**`, don't do it: write the need under "Requests from Hydrogen" and move to the next task.
+- Free and CC0 assets only. Plain English everywhere (R12.6 style). Every PR: `ruff`, `pytest`, `validate_all_content()` and the readability check must pass.
+
+## Round 21: theory-style quiz bank (data)
+The game already has a quiz per stage. Build a bigger bank for the later theory-test mode.
+- `content/quizzes/gb/bank/<rule-id>.json`: for every implemented rule, **4 multiple-choice questions** (3 wrong answers that are plausible, 1 right), each with a one-line plain-English explanation that quotes the Highway Code rule number it comes from. Use only rules in `docs/02-rules-catalogue.md` and gov.uk/highway-code (OGL); never invent a rule, and mark anything you can't source as `confidence: low`.
+- Schema: `{"id","rule","question","options":[4 strings],"answer":0-3,"explain","hc_rule":"257","difficulty":1-3}`. Validate in the pipeline (4 options, answer in range, question ≤ 25 words, no jargon from the R12.6 banned list).
+- Add `content/quizzes/gb/bank/INDEX.md` with counts per rule and a test that every implemented rule has ≥ 4 questions.
+
+## Round 22: narrate the lessons (audio)
+- Piper `en_GB-cori-medium` (same voice as the fault lines) reads each lesson's **learn card** text and each scenario's **briefing** line: `content/audio/voice/en/lesson.<lessonId>.learn.wav` and `scenario.<scenarioId>.brief.wav`, 16-bit PCM mono 44.1 kHz. Keep each under 25 seconds (split long cards into parts `.learn.1.wav`, `.learn.2.wav`).
+- Add them to `manifest.json`, keyed the same way as the existing voice keys, with the text and `durationS`. Add the pipeline test from R20.3 for them (every manifest file exists, is PCM WAV, and matches its text).
+- Record the Piper version, voice licence and the line count in `LICENCES.md`.
+
+## Round 23: Google Play compliance pack (docs)
+Write under `docs/store/`: (a) `data-safety.md`: answers for the Play Console "Data safety" form, based on what the app really does (local progress only, no account, no ads, no analytics yet; check `docs/04-architecture.md` and the code in `unity/` by reading it, but don't change it); (b) `content-rating.md`: IARC questionnaire answers (driving simulator, no violence beyond crash feedback, no gambling, no user-generated content); (c) `privacy-policy.md` in plain English (UK GDPR, what's stored on the phone, how to delete it, contact placeholder `<owner email>`); (d) `release-checklist.md`: signing key, versionCode, target API level, 64-bit, app bundle, testing track, store listing items (link `content/store/listing/en.md`, icons from R18). Flag every item that needs the owner's decision under `## Needs the owner`.
+
+## Round 24: content health report (pipeline)
+Add `python -m ltl_pipeline.health` that writes `docs/CONTENT_HEALTH.md`: per stage, the number of lessons, scenarios, quiz questions, voice lines and badges; rules with fewer than 2 practice drives; text over the readability limit; sounds or images not referenced anywhere; strings that exist in `en` but not `en-XA`; any file over 5 MB. Run it in CI as a warning (not a failure) and commit the first report. List the top 10 gaps at the end of the report in priority order.
+
+## Round 25: a second area for practice (pipeline data)
+Using the same OSM pipeline and licence record as the Wolverhampton packs, build one more `roadpack`: a **suburban area with a 30 mph residential grid, a 40 mph distributor road, a mini-roundabout and a primary school with zig-zags**, somewhere in the West Midlands (pick it from OSM, state the bounding box and the OSM date in the pack's `SOURCE.md`). Contract: same pack schema as `wolverhampton_test_area` (v0.7), id `suburb_practice`, with `start`/`join` anchors, signal plans, pedestrian routes and POIs (school, bus stops). Add 3 scenarios in `content/scenarios/gb/` that use it (`s2_suburb_30`, `s3_suburb_minirbt`, `s4_suburb_school`) in the same format as the existing ones, **not yet listed in `progression.json`** (Claude will wire the scene and progression after checking it in Unity). Keep `confidence` honest and list any road segments you had to hand-fix.
+
 ---
 
 ## Requests from Claude
