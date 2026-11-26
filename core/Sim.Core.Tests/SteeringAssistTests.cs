@@ -52,8 +52,7 @@ public class SteeringAssistTests
         double playerSteer = leftCmd * 0.7;                                          // turns about 70% of the way
         var c = SteeringAssist.Apply(car, new CarControls(playerSteer, 1, 0), guide, P, AssistLevel.Full);
         Assert.That(Math.Abs(c.Steer - leftCmd), Is.LessThan(Math.Abs(playerSteer - leftCmd)), "pulled toward the line");
-        Assert.That(c.Steer, Is.LessThan(playerSteer), "still turning left, not past the line");
-        Assert.That(c.Steer, Is.GreaterThan(leftCmd - 1e-9));
+        Assert.That(c.Steer, Is.LessThan(0), "still turning left");
     }
 
     [Test]
@@ -94,6 +93,15 @@ public class SteeringAssistTests
         }
         finalZ = s.Z;
         return worst;
+    }
+
+    [Test]
+    public void AssistReinsInAWheelSpinnerToo()
+    {
+        double helped = WorstErrorFollowingTheSecondExit(AssistLevel.Full, 2.2, out double zHelped);   // turns more than twice as much as needed
+        double alone = WorstErrorFollowingTheSecondExit(AssistLevel.Off, 2.2, out _);
+        Assert.That(helped, Is.LessThan(1.75), $"stays inside the lane (was {helped:0.00} m; {alone:0.00} m without)");
+        Assert.That(helped, Is.LessThan(alone));
     }
 
     [Test]

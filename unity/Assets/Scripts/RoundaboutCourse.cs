@@ -30,6 +30,9 @@ namespace LToLocal.Game
         }
 
         public RoundaboutGeometry Geometry => _geo ??= new RoundaboutGeometry(Centre);
+
+        private RoundaboutGuide _guide;
+        public ISteeringGuide SteeringGuide => _guide ??= new RoundaboutGuide(Geometry);
         public double SpeedLimitMph(in CarState player) => 30;
         public bool OutOfBounds(in CarState p) => (new Vec2(p.X, p.Z) - Centre).Length > Geometry.ArmLength + 25;
 

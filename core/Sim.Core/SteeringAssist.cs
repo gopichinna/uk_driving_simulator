@@ -14,16 +14,23 @@ namespace LToLocal.Sim
     }
 
     /// <summary>
-    /// Aim assist for the wheel. YOU steer. When your turn is roughly right for one of the lines ahead, the game pulls the wheel
-    /// part of the way onto that line so you stay in lane. If you are not turning, or your turn matches no line, you steer alone.
+    /// Aim assist for the wheel. YOU steer and choose the line. The game keeps your wheel within a small band of the wheel position
+    /// that would hold that line, so you stay in lane even if you turn too little or too much. If you are not turning, or you
+    /// swerve decisively away from every line, you steer alone.
     /// </summary>
     public static class SteeringAssist
     {
-        /// <summary>How much of the gap between your wheel and the line the game closes.</summary>
-        public static double Strength(AssistLevel level) => level switch { AssistLevel.Off => 0, AssistLevel.Light => 0.35, _ => 0.65 };
+        /// <summary>
+        /// How far your wheel may stray from the line's wheel position before the game pulls it back (the "free play" band).
+        /// Smaller = more help. Beyond the band the pull gets stronger smoothly, so spinning the wheel too hard is still reined in.
+        /// </summary>
+        public static double Band(AssistLevel level) => level switch { AssistLevel.Off => double.MaxValue, AssistLevel.Light => 0.30, _ => 0.12 };
 
         /// <summary>Below this you count as not turning (no help at all).</summary>
-        public const double EngagedSteer = 0.12;
+        public const double EngagedSteer = 0.10;
+
+        /// <summary>A turn this far from every line is a deliberate swerve: the game stays out of it.</summary>
+        public const double OverrideDeviation = 0.75;
 
         private static readonly List<Vec2> s_targets = new List<Vec2>();
 
@@ -43,23 +50,25 @@ namespace LToLocal.Sim
         /// <summary>The controls to feed the car this step. Throttle and brake are never touched.</summary>
         public static CarControls Apply(in CarState car, in CarControls player, ISteeringGuide? guide, CarParams p, AssistLevel level)
         {
-            double k = Strength(level);
-            if (guide == null || k <= 0 || Math.Abs(player.Steer) < EngagedSteer || car.SpeedMps < 0.5) return player;
+            double band = Band(level);
+            if (guide == null || level == AssistLevel.Off || Math.Abs(player.Steer) < EngagedSteer || car.SpeedMps < 0.5) return player;
 
             s_targets.Clear();
             guide.GetTargets(car, Math.Max(5.0, car.SpeedMps * 1.0), s_targets);
 
-            // Which line is the player's turn closest to? Only help if it's roughly right (within about half a turn of it).
-            double bestCmd = 0, bestDiff = double.MaxValue;
+            // Which line is the player turning for? The one whose wheel position is closest to theirs.
+            double bestCmd = 0, bestDev = double.MaxValue;
             foreach (var t in s_targets)
             {
                 double cmd = CommandToward(car, t, p);
-                double diff = Math.Abs(cmd - player.Steer);
-                if (diff < bestDiff) { bestDiff = diff; bestCmd = cmd; }
+                double dev = player.Steer - cmd;
+                if (Math.Abs(dev) < Math.Abs(bestDev)) { bestDev = dev; bestCmd = cmd; }
             }
-            if (bestDiff == double.MaxValue || bestDiff > 0.18 + 0.5 * Math.Abs(bestCmd)) return player;
+            if (bestDev == double.MaxValue || Math.Abs(bestDev) > OverrideDeviation) return player;
 
-            return new CarControls(player.Steer + k * (bestCmd - player.Steer), player.Throttle, player.Brake);
+            // Free play inside the band, then a soft wall: an over-the-top turn is pulled back to just outside the band.
+            double steer = bestCmd + band * Math.Tanh(bestDev / band);
+            return new CarControls(steer, player.Throttle, player.Brake);
         }
 
         internal static double Wrap(double a)

@@ -114,6 +114,7 @@ namespace LToLocal.Game
                 // Aim assist: when your turn is roughly right for a line ahead (your lane, a turn, an exit), the game nudges the wheel onto it.
                 var driven = SteeringAssist.Apply(_curr, input, _course.SteeringGuide, _params, AssistSetting);
                 _controls.AssistedSteer = (float)driven.Steer;
+                _controls.AssistAmount = Mathf.Lerp(_controls.AssistAmount, Mathf.Abs((float)(driven.Steer - input.Steer)), 0.15f);
                 _curr = CarModel.Step(_curr, driven, _params, _clock.StepSeconds);
 
                 _events.Clear();

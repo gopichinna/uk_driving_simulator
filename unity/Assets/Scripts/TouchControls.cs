@@ -38,6 +38,8 @@ namespace LToLocal.Game
 
         /// <summary>What the car is really steering at (with steering help), so the wheel picture matches the car.</summary>
         public float? AssistedSteer;
+        /// <summary>How much the steering help is adding right now (smoothed), for the on-screen "Assist" marker.</summary>
+        public float AssistAmount;
 
         public CarControls Read() => new CarControls(_steer, _go ? 1 : 0, _brake ? 1 : 0);
 
@@ -145,6 +147,15 @@ namespace LToLocal.Game
             GUIUtility.RotateAroundPivot(_steerFingerId >= 0 && AssistedSteer == null ? _steer / SensitivityFactor * fullLockDegrees : (AssistedSteer ?? _steer) * fullLockDegrees, c);
             GUI.DrawTexture(new Rect(c.x - r, c.y - r, r * 2, r * 2), s_wheel);
             GUI.matrix = old;
+
+            // "Assist" marker beside the wheel: lights up while the game is helping hold your line.
+            float glow = Mathf.Clamp01(AssistAmount * 6f);
+            if (glow > 0.05f)
+            {
+                var tag = new GUIStyle(style) { fontSize = Mathf.RoundToInt(Screen.height * 0.034f) };
+                GUI.color = new Color(0.4f, 1f, 0.5f, 0.35f + 0.65f * glow);
+                GUI.Box(new Rect(c.x - r - Screen.width * 0.115f, c.y - Screen.height * 0.03f, Screen.width * 0.1f, Screen.height * 0.06f), "ASSIST", tag);
+            }
             GUI.color = Color.white;
         }
 

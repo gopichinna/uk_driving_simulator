@@ -36,6 +36,9 @@ namespace LToLocal.Game
             _laneChange = new LaneChangeRule(_traffic, drivingSide: DrivingSide.Left);
         }
 
+        private StraightRoadGuide _guide;
+        public ISteeringGuide SteeringGuide => _guide ??= new StraightRoadGuide(-1.825, +1.825);   // our two lanes
+
         public void ResetCourse()
         {
             if (trafficView != null) trafficView.Clear();
