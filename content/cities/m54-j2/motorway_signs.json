@@ -19,6 +19,23 @@
   "motorwaySigns": [
     {
       "id": "ms_001",
+      "kind": "advance_1m",
+      "x": 1787.712,
+      "z": -2829.246,
+      "heading": 180.27,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_405164896_0",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
+      "text": "J1 1 mile"
+    },
+    {
+      "id": "ms_002",
       "kind": "advance_half_m",
       "x": 1830.05,
       "z": -3370.528,
@@ -27,10 +44,15 @@
       "junctionNumber": "1",
       "routeNumber": "M6",
       "linkId": "l_405164896_0",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
       "text": "J1 1/2 mile"
     },
     {
-      "id": "ms_002",
+      "id": "ms_003",
       "kind": "countdown_3",
       "x": 1982.809,
       "z": -3872.683,
@@ -42,7 +64,7 @@
       "bars": 3
     },
     {
-      "id": "ms_003",
+      "id": "ms_004",
       "kind": "countdown_2",
       "x": 2033.554,
       "z": -3947.332,
@@ -54,7 +76,7 @@
       "bars": 2
     },
     {
-      "id": "ms_004",
+      "id": "ms_005",
       "kind": "countdown_1",
       "x": 2094.423,
       "z": -4013.532,
@@ -66,7 +88,7 @@
       "bars": 1
     },
     {
-      "id": "ms_005",
+      "id": "ms_006",
       "kind": "final_exit",
       "x": 2152.735,
       "z": -4060.847,
@@ -75,10 +97,15 @@
       "junctionNumber": "1",
       "routeNumber": "M6",
       "linkId": "l_405164896_0",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
       "text": "Exit J1"
     },
     {
-      "id": "ms_006",
+      "id": "ms_007",
       "kind": "junction_number",
       "x": 2160.732,
       "z": -4066.849,
@@ -90,7 +117,24 @@
       "text": "J1"
     },
     {
-      "id": "ms_007",
+      "id": "ms_008",
+      "kind": "advance_1m",
+      "x": 2131.829,
+      "z": -4086.201,
+      "heading": 308.19,
+      "style": "motorway",
+      "junctionNumber": "1",
+      "routeNumber": "M6",
+      "linkId": "l_45258042_2",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
+      "text": "J1 1 mile"
+    },
+    {
+      "id": "ms_009",
       "kind": "advance_half_m",
       "x": 1852.488,
       "z": -3607.786,
@@ -99,10 +143,15 @@
       "junctionNumber": "1",
       "routeNumber": "M6",
       "linkId": "l_45258042_2",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
       "text": "J1 1/2 mile"
     },
     {
-      "id": "ms_008",
+      "id": "ms_010",
       "kind": "countdown_3",
       "x": 1765.45,
       "z": -3084.364,
@@ -114,7 +163,7 @@
       "bars": 3
     },
     {
-      "id": "ms_009",
+      "id": "ms_011",
       "kind": "countdown_2",
       "x": 1760.769,
       "z": -2993.407,
@@ -126,7 +175,7 @@
       "bars": 2
     },
     {
-      "id": "ms_010",
+      "id": "ms_012",
       "kind": "countdown_1",
       "x": 1756.219,
       "z": -2901.52,
@@ -138,7 +187,7 @@
       "bars": 1
     },
     {
-      "id": "ms_011",
+      "id": "ms_013",
       "kind": "final_exit",
       "x": 1752.46,
       "z": -2825.613,
@@ -147,10 +196,15 @@
       "junctionNumber": "1",
       "routeNumber": "M6",
       "linkId": "l_45258042_2",
+      "destinations": [
+        "Wolverhampton",
+        "M54"
+      ],
+      "confidence": "low",
       "text": "Exit J1"
     },
     {
-      "id": "ms_012",
+      "id": "ms_014",
       "kind": "junction_number",
       "x": 1751.965,
       "z": -2815.625,
@@ -162,7 +216,7 @@
       "text": "J1"
     },
     {
-      "id": "ms_013",
+      "id": "ms_015",
       "kind": "emergency_area",
       "x": -6070.944,
       "z": 3665.819,
@@ -172,7 +226,7 @@
       "linkId": "l_144044873_0"
     },
     {
-      "id": "ms_014",
+      "id": "ms_016",
       "kind": "emergency_area",
       "x": -6206.937,
       "z": 3684.415,
@@ -182,7 +236,7 @@
       "linkId": "l_144045364_0"
     },
     {
-      "id": "ms_015",
+      "id": "ms_017",
       "kind": "emergency_area",
       "x": 1038.324,
       "z": 673.733,
@@ -192,7 +246,7 @@
       "linkId": "l_3092141_0"
     },
     {
-      "id": "ms_016",
+      "id": "ms_018",
       "kind": "emergency_area",
       "x": 1057.95,
       "z": 701.341,

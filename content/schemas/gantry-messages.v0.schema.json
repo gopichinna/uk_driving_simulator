@@ -52,7 +52,8 @@
           },
           "supportsRedX": { "type": "boolean" },
           "supportsVariableLimit": { "type": "boolean" },
-          "defaultLimitMph": { "type": "integer", "minimum": 20, "maximum": 70 }
+          "defaultLimitMph": { "type": "integer", "minimum": 20, "maximum": 70 },
+          "junctionNumber": { "type": "string", "minLength": 1 }
         }
       }
     }

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_rbt_ww_1",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "In Great Britain, which way must you drive around a roundabout?",
+    "options": [
+      "Clockwise around the central island",
+      "Anti-clockwise around the central island",
+      "Either way if no cars are there",
+      "Straight over the central island"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 and Rule 186 require going clockwise around UK roundabouts.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_ww_2",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "At a painted mini-roundabout, how should you pass the white circle when turning right?",
+    "options": [
+      "Drive clockwise around the painted circle if possible",
+      "Cut straight across the wrong side of the circle",
+      "Reverse around it",
+      "Stop on top of it"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 188 and Rule 185 state all vehicles must pass around the central marking clockwise.",
+    "hc_rule": "185",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_rbt_ww_3",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "Which blue sign warns you to keep left of a roundabout island?",
+    "options": [
+      "A blue circle with white arrows pointing clockwise",
+      "A red triangle with a cross",
+      "A green motorway sign",
+      "A yellow box sign"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 185 explains the blue mini-roundabout and roundabout arrows showing clockwise flow.",
+    "hc_rule": "185",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_rbt_ww_4",
+    "rule": "GB.RBT.WRONG_WAY",
+    "question": "If you want to make a U-turn at a roundabout, how must you do it?",
+    "options": [
+      "Turn right immediately before the island",
+      "Drive all the way around the island clockwise and exit back",
+      "Reverse onto the exit road",
+      "Cross the central grass"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 186 shows you must travel clockwise around the roundabout to return.",
+    "hc_rule": "186",
+    "difficulty": 2
+  }
+]

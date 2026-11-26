@@ -1,0 +1,62 @@
+[
+  {
+    "id": "qb_cyc_1",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "At speeds up to 30 mph, how much side space should you leave when overtaking a cyclist?",
+    "options": [
+      "At least 0.5 metres",
+      "At least 1.5 metres",
+      "At least 0.2 metres",
+      "Just enough not to touch"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 163 says to leave at least 1.5 metres when overtaking cyclists up to 30 mph.",
+    "hc_rule": "163",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_cyc_2",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "When driving faster than 30 mph, what should you do when overtaking a cyclist?",
+    "options": [
+      "Leave even more space than 1.5 metres",
+      "Pass closer so it takes less time",
+      "Sound your horn just before passing",
+      "Stay within half a metre"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 163 advises giving cyclists even more room at speeds over 30 mph.",
+    "hc_rule": "163",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_cyc_3",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "What should you do if there is not enough room to pass a cyclist with 1.5 metres to spare?",
+    "options": [
+      "Squeeze past slowly",
+      "Wait behind the cyclist until it is safe to pass wide",
+      "Flash your headlights until they mount the pavement",
+      "Drive onto the pavement"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 163 says to wait behind if you cannot leave enough room to overtake safely.",
+    "hc_rule": "163",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_cyc_4",
+    "rule": "GB.VRU.PASS_CYCLIST",
+    "question": "May you cross a solid white centre line to pass a cyclist?",
+    "options": [
+      "Never under any circumstances",
+      "Only if the cyclist is travelling at 10 mph or less and the way ahead is clear",
+      "Yes, at any speed on blind bends",
+      "Only at night"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 129 and Rule 163 allow crossing a solid line to pass a cyclist at 10 mph or less when clear.",
+    "hc_rule": "163",
+    "difficulty": 3
+  }
+]

@@ -3,23 +3,30 @@
   "licence": "CC0-1.0",
   "entries": [
     {
+      "key": "engine_high",
+      "file": "engine_high.wav",
+      "durationS": 2.6,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
       "key": "engine_idle",
       "file": "engine_idle.wav",
-      "durationS": 2.592,
+      "durationS": 2.6,
       "targetLufs": -16,
       "loop": true
     },
     {
       "key": "engine_low",
       "file": "engine_low.wav",
-      "durationS": 2.73,
+      "durationS": 2.6,
       "targetLufs": -16,
       "loop": true
     },
     {
       "key": "engine_mid",
       "file": "engine_mid.wav",
-      "durationS": 2.523,
+      "durationS": 2.6,
       "targetLufs": -16,
       "loop": true
     },

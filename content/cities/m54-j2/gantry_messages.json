@@ -29,7 +29,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_002",
@@ -44,7 +45,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_003",
@@ -59,7 +61,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_004",
@@ -74,7 +77,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_005",
@@ -89,7 +93,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_006",
@@ -104,7 +109,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_007",
@@ -119,7 +125,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_008",
@@ -134,7 +141,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_009",
@@ -150,7 +158,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_010",
@@ -166,7 +175,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_011",
@@ -182,7 +192,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_012",
@@ -198,7 +209,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_013",
@@ -214,7 +226,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_014",
@@ -230,7 +243,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_015",
@@ -246,7 +260,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_016",
@@ -262,7 +277,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_017",
@@ -278,7 +294,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_018",
@@ -294,7 +311,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_019",
@@ -310,7 +328,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_020",
@@ -326,7 +345,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_021",
@@ -342,7 +362,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_022",
@@ -358,7 +379,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_023",
@@ -374,7 +396,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_024",
@@ -390,7 +413,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_025",
@@ -406,7 +430,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_026",
@@ -422,7 +447,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_027",
@@ -439,7 +465,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_028",
@@ -456,7 +483,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_029",
@@ -473,7 +501,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_030",
@@ -489,7 +518,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_031",
@@ -505,7 +535,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_032",
@@ -521,7 +552,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_033",
@@ -538,7 +570,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_034",
@@ -555,7 +588,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_035",
@@ -572,7 +606,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_036",
@@ -588,7 +623,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_037",
@@ -604,7 +640,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_038",
@@ -620,7 +657,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_039",
@@ -636,7 +674,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_040",
@@ -652,7 +691,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_041",
@@ -668,7 +708,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_042",
@@ -684,7 +725,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     },
     {
       "id": "gantry_043",
@@ -699,7 +741,8 @@
       ],
       "supportsRedX": true,
       "supportsVariableLimit": true,
-      "defaultLimitMph": 70
+      "defaultLimitMph": 70,
+      "junctionNumber": "2"
     }
   ]
 }
