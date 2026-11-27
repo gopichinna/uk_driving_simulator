@@ -101,6 +101,12 @@
       "durationS": 8.839
     },
     {
+      "key": "lesson.gb-s4-28-school-zones.learn",
+      "file": "lesson.gb-s4-28-school-zones.learn.wav",
+      "text": "Slow down when you pass a triangular school warning sign and watch for children. Hold 20 mph or less past the school. This cap is pending ADI review. Be ready to stop if children step out from between parked cars.",
+      "durationS": 14.368
+    },
+    {
       "key": "lesson.gb-s5-17-dual-carriageway-lanes.learn",
       "file": "lesson.gb-s5-17-dual-carriageway-lanes.learn.wav",
       "text": "Drive in the left lane on a two-lane dual carriageway. Use the right lane only to overtake slower traffic or turn right. Signal early and check your blind spot before changing lanes.",
@@ -375,6 +381,24 @@
       "file": "scenario.s4_16_town_traffic.brief.wav",
       "text": "Maintain a safe following gap in steady town traffic.",
       "durationS": 2.808
+    },
+    {
+      "key": "scenario.s4_28_school_minor_30.brief",
+      "file": "scenario.s4_28_school_minor_30.brief.wav",
+      "text": "Notice how doing 30 mph past an empty school sign gives a minor fault.",
+      "durationS": 4.963
+    },
+    {
+      "key": "scenario.s4_28_school_pass.brief",
+      "file": "scenario.s4_28_school_pass.brief.wav",
+      "text": "Hold 20 mph or less past school signs. (Game assumption pending ADI review.)",
+      "durationS": 6.04
+    },
+    {
+      "key": "scenario.s4_28_school_serious_ped.brief",
+      "file": "scenario.s4_28_school_serious_ped.brief.wav",
+      "text": "Hold 20 mph or less when people are near the school gate.",
+      "durationS": 5.402
     },
     {
       "key": "scenario.s5_17_busy_dual.brief",
@@ -723,6 +747,42 @@
       "file": "voice.GB.JCT.STOP_SIGN.good.v3.wav",
       "text": "Safe full stop at the stop line.",
       "durationS": 1.801
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.wav",
+      "text": "Keep close to the left and signal before turning left.",
+      "durationS": 3.081
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault.v2",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.v2.wav",
+      "text": "Signal left early and hug the left kerb before turning.",
+      "durationS": 2.939
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault.v3",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.v3.wav",
+      "text": "Do not swing wide right before making a left turn.",
+      "durationS": 2.887
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good",
+      "file": "voice.GB.JCT.TURN_NEAR.good.wav",
+      "text": "Clean left turn position and early signal.",
+      "durationS": 2.541
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good.v2",
+      "file": "voice.GB.JCT.TURN_NEAR.good.v2.wav",
+      "text": "Nice early left indicator and neat kerb position.",
+      "durationS": 2.975
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good.v3",
+      "file": "voice.GB.JCT.TURN_NEAR.good.v3.wav",
+      "text": "Smooth left turn from the nearside lane.",
+      "durationS": 2.229
     },
     {
       "key": "voice.GB.OBS.LANE_CHANGE.fault",

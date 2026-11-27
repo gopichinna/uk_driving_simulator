@@ -418,8 +418,11 @@ def _infer_junction_priority_and_signals(
         inc = incident.get(nid, [])
         if len(inc) < 2:
             continue
-        is_junction = node["kind"] in ("junction", "roundabout", "mini_roundabout") or node.get(
-            "trafficSignals"
+        is_junction = (
+            node["kind"] in ("junction", "roundabout", "mini_roundabout")
+            or node.get("trafficSignals")
+            or node.get("stop")
+            or node.get("giveWay")
         )
         if not is_junction:
             continue

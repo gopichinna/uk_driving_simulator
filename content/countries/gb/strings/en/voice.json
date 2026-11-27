@@ -180,6 +180,12 @@
     "voice.GB.SCH.SLOW.fault.v3": "Drive slower near the school and watch for children.",
     "voice.GB.SCH.SLOW.good": "Safe slow speed past the school.",
     "voice.GB.SCH.SLOW.good.v2": "Good careful pace outside the school.",
-    "voice.GB.SCH.SLOW.good.v3": "Nice gentle speed past the school gate."
+    "voice.GB.SCH.SLOW.good.v3": "Nice gentle speed past the school gate.",
+    "voice.GB.JCT.TURN_NEAR.fault": "Keep close to the left and signal before turning left.",
+    "voice.GB.JCT.TURN_NEAR.fault.v2": "Signal left early and hug the left kerb before turning.",
+    "voice.GB.JCT.TURN_NEAR.fault.v3": "Do not swing wide right before making a left turn.",
+    "voice.GB.JCT.TURN_NEAR.good": "Clean left turn position and early signal.",
+    "voice.GB.JCT.TURN_NEAR.good.v2": "Nice early left indicator and neat kerb position.",
+    "voice.GB.JCT.TURN_NEAR.good.v3": "Smooth left turn from the nearside lane."
   }
 }

@@ -528,6 +528,10 @@ rules:
   phase: M
   verifiedOn: '2026-11-25'
   detection: Wide swing (offset > 1 m into another lane); conflict with a cycle or bus lane user
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.LeftTurnSignalRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.EMERGE_LOOK
   group: D. Junctions and priority (JCT)
   plainEnglish: Look all around before emerging; slow down or stop where sightlines are limited
