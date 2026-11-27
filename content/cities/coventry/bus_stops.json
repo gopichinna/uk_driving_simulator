@@ -1,0 +1,1245 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "coventry",
+  "origin": {
+    "lat": 52.408,
+    "lon": -1.5105
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ]
+  },
+  "busStops": [
+    {
+      "id": "bs_001",
+      "x": 291.52,
+      "z": 246.661,
+      "heading": 12.01,
+      "name": "B",
+      "linkId": "l_25426952_0",
+      "osmId": 276555381
+    },
+    {
+      "id": "bs_002",
+      "x": 556.575,
+      "z": 795.215,
+      "heading": 90.17,
+      "name": "Harnall Lane East / Bretts Close",
+      "linkId": "l_4310551_2",
+      "osmId": 370817433
+    },
+    {
+      "id": "bs_003",
+      "x": 634.047,
+      "z": 785.31,
+      "heading": 80.23,
+      "name": "Harnall Lane East / Bretts Close",
+      "linkId": "l_4310551_3",
+      "osmId": 370817434
+    },
+    {
+      "id": "bs_004",
+      "x": 746.679,
+      "z": 855.367,
+      "heading": 64.31,
+      "name": "Harnall Lane East / Clifton St",
+      "linkId": "l_4310551_6",
+      "osmId": 370817435
+    },
+    {
+      "id": "bs_005",
+      "x": 904.495,
+      "z": 868.719,
+      "heading": 81.43,
+      "name": "Harnall Lane East / Wright St",
+      "linkId": "l_4310551_10",
+      "osmId": 370817436
+    },
+    {
+      "id": "bs_007",
+      "x": 586.993,
+      "z": 593.421,
+      "heading": 78.67,
+      "name": "Victoria St / Vine St",
+      "linkId": "l_16224200_1",
+      "osmId": 370817453
+    },
+    {
+      "id": "bs_008",
+      "x": 636.903,
+      "z": 587.418,
+      "heading": 84.5,
+      "name": "Victoria St / Vine St",
+      "linkId": "l_16224200_1",
+      "osmId": 370817454
+    },
+    {
+      "id": "bs_009",
+      "x": 908.287,
+      "z": 598.477,
+      "heading": 99.71,
+      "name": "King William St / St Benedicts School",
+      "linkId": "l_373913038_0",
+      "osmId": 370817455
+    },
+    {
+      "id": "bs_010",
+      "x": 882.577,
+      "z": 615.408,
+      "heading": 99.71,
+      "name": "King William St / St Benedicts School",
+      "linkId": "l_373913038_0",
+      "osmId": 370817456
+    },
+    {
+      "id": "bs_011",
+      "x": 98.821,
+      "z": 210.344,
+      "heading": 215.89,
+      "name": "TS1",
+      "linkId": "l_143891197_1",
+      "osmId": 370817658
+    },
+    {
+      "id": "bs_012",
+      "x": 86.082,
+      "z": 192.028,
+      "heading": 214.5,
+      "name": "TS2",
+      "linkId": "l_143891197_1",
+      "osmId": 370817660
+    },
+    {
+      "id": "bs_013",
+      "x": 76.576,
+      "z": 172.243,
+      "heading": 197.38,
+      "name": "TS3",
+      "linkId": "l_143891197_1",
+      "osmId": 370817661
+    },
+    {
+      "id": "bs_014",
+      "x": 70.479,
+      "z": 151.891,
+      "heading": 189.93,
+      "name": "TS4",
+      "linkId": "l_143891197_1",
+      "osmId": 370817662
+    },
+    {
+      "id": "bs_015",
+      "x": -11.473,
+      "z": 180.967,
+      "heading": 348.1,
+      "name": "BS6",
+      "linkId": "l_25373569_0",
+      "osmId": 370817664
+    },
+    {
+      "id": "bs_016",
+      "x": -17.612,
+      "z": 206.012,
+      "heading": 347.84,
+      "name": "BS5",
+      "linkId": "l_840917529_0",
+      "osmId": 370817666
+    },
+    {
+      "id": "bs_017",
+      "x": -83.947,
+      "z": -287.59,
+      "heading": 119.96,
+      "name": "BY4",
+      "linkId": "l_156503294_0",
+      "osmId": 370817678
+    },
+    {
+      "id": "bs_018",
+      "x": -105.262,
+      "z": -276.796,
+      "heading": 105.28,
+      "name": "BY5",
+      "linkId": "l_156503294_0",
+      "osmId": 370817679
+    },
+    {
+      "id": "bs_019",
+      "x": -30.407,
+      "z": -294.567,
+      "heading": 107.97,
+      "name": "BY3",
+      "linkId": "l_156503295_0",
+      "osmId": 370817681
+    },
+    {
+      "id": "bs_020",
+      "x": -83.13,
+      "z": -267.66,
+      "heading": 119.96,
+      "name": "BY1",
+      "linkId": "l_156503294_0",
+      "osmId": 370817684
+    },
+    {
+      "id": "bs_021",
+      "x": -55.568,
+      "z": -281.492,
+      "heading": 119.96,
+      "name": "BY2",
+      "linkId": "l_156503294_0",
+      "osmId": 370817685
+    },
+    {
+      "id": "bs_022",
+      "x": -77.629,
+      "z": 271.734,
+      "heading": 74.84,
+      "name": "BS3",
+      "linkId": "l_389069885_0",
+      "osmId": 370817695
+    },
+    {
+      "id": "bs_023",
+      "x": -258.604,
+      "z": 120.941,
+      "heading": 223.05,
+      "name": "CS1",
+      "linkId": "l_148461716_4",
+      "osmId": 370817698
+    },
+    {
+      "id": "bs_024",
+      "x": -268.18,
+      "z": 110.303,
+      "heading": 221.94,
+      "name": "CS2",
+      "linkId": "l_148461716_4",
+      "osmId": 370817700
+    },
+    {
+      "id": "bs_025",
+      "x": -278.415,
+      "z": 98.731,
+      "heading": 221.94,
+      "name": "CS3",
+      "linkId": "l_148461716_4",
+      "osmId": 370817701
+    },
+    {
+      "id": "bs_026",
+      "x": -270.942,
+      "z": 125.815,
+      "heading": 223.05,
+      "name": "CS4",
+      "linkId": "l_148461716_4",
+      "osmId": 370817702
+    },
+    {
+      "id": "bs_027",
+      "x": -341.894,
+      "z": -110.707,
+      "heading": 184.57,
+      "name": "VR2",
+      "linkId": "l_25373102_0",
+      "osmId": 370817717
+    },
+    {
+      "id": "bs_028",
+      "x": -361.471,
+      "z": -71.814,
+      "heading": 5.03,
+      "name": "VR3",
+      "linkId": "l_41988518_2",
+      "osmId": 370817718
+    },
+    {
+      "id": "bs_029",
+      "x": -233.105,
+      "z": 288.62,
+      "heading": 328.97,
+      "name": "UL4",
+      "linkId": "l_167697256_1",
+      "osmId": 370817719
+    },
+    {
+      "id": "bs_030",
+      "x": -271.973,
+      "z": 310.932,
+      "heading": 325.54,
+      "name": "UL3",
+      "linkId": "l_389069890_0",
+      "osmId": 370817723
+    },
+    {
+      "id": "bs_031",
+      "x": -252.621,
+      "z": 280.186,
+      "heading": 328.97,
+      "name": "UL1",
+      "linkId": "l_167697256_1",
+      "osmId": 370817726
+    },
+    {
+      "id": "bs_032",
+      "x": -28.383,
+      "z": 313.495,
+      "heading": 164.05,
+      "name": "BS2",
+      "linkId": "l_25464444_0",
+      "osmId": 370817727
+    },
+    {
+      "id": "bs_033",
+      "x": -47.867,
+      "z": 367.04,
+      "heading": 162.3,
+      "name": "BS1",
+      "linkId": "l_25464444_0",
+      "osmId": 370817728
+    },
+    {
+      "id": "bs_034",
+      "x": 299.391,
+      "z": 284.339,
+      "heading": 11.0,
+      "name": "D",
+      "linkId": "l_1300241925_0",
+      "osmId": 370817735
+    },
+    {
+      "id": "bs_035",
+      "x": 290.259,
+      "z": 271.587,
+      "heading": 191.62,
+      "name": "E",
+      "linkId": "l_1577552846_0",
+      "osmId": 370817737
+    },
+    {
+      "id": "bs_036",
+      "x": 286.606,
+      "z": 252.647,
+      "heading": 191.65,
+      "name": "F",
+      "linkId": "l_1577552846_0",
+      "osmId": 370817739
+    },
+    {
+      "id": "bs_037",
+      "x": 282.783,
+      "z": 233.897,
+      "heading": 189.32,
+      "name": "G",
+      "linkId": "l_1577552844_1",
+      "osmId": 370817740
+    },
+    {
+      "id": "bs_038",
+      "x": 255.585,
+      "z": 219.697,
+      "heading": 283.65,
+      "name": "H",
+      "linkId": "l_1577552844_1",
+      "osmId": 370817741
+    },
+    {
+      "id": "bs_039",
+      "x": 246.512,
+      "z": 254.637,
+      "heading": 1.8,
+      "name": "J",
+      "linkId": "l_1577552844_1",
+      "osmId": 370817742
+    },
+    {
+      "id": "bs_040",
+      "x": 253.506,
+      "z": 288.487,
+      "heading": 11.05,
+      "name": "L",
+      "linkId": "l_1577552844_1",
+      "osmId": 370817744
+    },
+    {
+      "id": "bs_041",
+      "x": 232.697,
+      "z": 282.611,
+      "heading": 193.9,
+      "name": "M",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817745
+    },
+    {
+      "id": "bs_042",
+      "x": 225.649,
+      "z": 246.958,
+      "heading": 193.89,
+      "name": "N",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817746
+    },
+    {
+      "id": "bs_043",
+      "x": 197.906,
+      "z": 231.857,
+      "heading": 289.19,
+      "name": "P",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817747
+    },
+    {
+      "id": "bs_044",
+      "x": 187.432,
+      "z": 261.4,
+      "heading": 8.93,
+      "name": "Q",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817749
+    },
+    {
+      "id": "bs_045",
+      "x": 195.373,
+      "z": 282.02,
+      "heading": 22.64,
+      "name": "R",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817750
+    },
+    {
+      "id": "bs_046",
+      "x": 202.442,
+      "z": 301.771,
+      "heading": 22.6,
+      "name": "S",
+      "linkId": "l_1577267472_0",
+      "osmId": 370817751
+    },
+    {
+      "id": "bs_047",
+      "x": 251.245,
+      "z": 310.92,
+      "heading": 100.82,
+      "name": "T",
+      "linkId": "l_25373163_0",
+      "osmId": 370817752
+    },
+    {
+      "id": "bs_048",
+      "x": 269.326,
+      "z": 307.438,
+      "heading": 103.01,
+      "name": "U",
+      "linkId": "l_40461785_0",
+      "osmId": 370817754
+    },
+    {
+      "id": "bs_049",
+      "x": 293.748,
+      "z": 302.366,
+      "heading": 102.38,
+      "name": "V",
+      "linkId": "l_204874239_0",
+      "osmId": 370817755
+    },
+    {
+      "id": "bs_050",
+      "x": 412.588,
+      "z": 693.896,
+      "heading": 166.45,
+      "name": "Swanswell St / City College",
+      "linkId": "l_156529876_1",
+      "osmId": 370817756
+    },
+    {
+      "id": "bs_051",
+      "x": 333.74,
+      "z": 463.231,
+      "heading": 66.64,
+      "name": "White St / Bus Garage",
+      "linkId": "l_24237682_0",
+      "osmId": 370817757
+    },
+    {
+      "id": "bs_052",
+      "x": 405.598,
+      "z": 470.41,
+      "heading": 247.0,
+      "name": "White St / Bus Garage",
+      "linkId": "l_8003314_0",
+      "osmId": 370817758
+    },
+    {
+      "id": "bs_053",
+      "x": 155.517,
+      "z": -584.826,
+      "heading": 335.4,
+      "name": "Quinton Rd / Park Rd",
+      "linkId": "l_86021031_1",
+      "osmId": 370817761
+    },
+    {
+      "id": "bs_054",
+      "x": 175.622,
+      "z": -584.836,
+      "heading": 338.77,
+      "name": "Quinton Rd / Park Rd",
+      "linkId": "l_86021031_1",
+      "osmId": 370817762
+    },
+    {
+      "id": "bs_055",
+      "x": 565.815,
+      "z": -149.083,
+      "heading": 92.13,
+      "name": "CU1",
+      "linkId": "l_18199965_5",
+      "osmId": 370817766
+    },
+    {
+      "id": "bs_056",
+      "x": 454.894,
+      "z": -85.104,
+      "heading": 11.19,
+      "name": "CU3",
+      "linkId": "l_138705426_0",
+      "osmId": 370817767
+    },
+    {
+      "id": "bs_057",
+      "x": 401.034,
+      "z": 154.332,
+      "heading": 281.33,
+      "name": "FX1",
+      "linkId": "l_148452834_1",
+      "osmId": 370817768
+    },
+    {
+      "id": "bs_058",
+      "x": 250.056,
+      "z": -117.6,
+      "heading": 91.79,
+      "name": "ES1",
+      "linkId": "l_151665810_0",
+      "osmId": 370817774
+    },
+    {
+      "id": "bs_059",
+      "x": 131.957,
+      "z": -161.236,
+      "heading": 2.84,
+      "name": "LP1",
+      "linkId": "l_25312600_1",
+      "osmId": 370817776
+    },
+    {
+      "id": "bs_060",
+      "x": 342.473,
+      "z": 663.946,
+      "heading": 38.77,
+      "name": "Stoney Stanton Rd / Swanswell St",
+      "linkId": "l_4757425_2",
+      "osmId": 370817781
+    },
+    {
+      "id": "bs_061",
+      "x": 331.478,
+      "z": 651.104,
+      "heading": 38.77,
+      "name": "Stoney Stanton Rd / Swanswell St",
+      "linkId": "l_4757425_2",
+      "osmId": 370817782
+    },
+    {
+      "id": "bs_062",
+      "x": -356.051,
+      "z": -797.117,
+      "heading": 212.98,
+      "name": "WR6",
+      "linkId": "l_275580839_2",
+      "osmId": 370817791
+    },
+    {
+      "id": "bs_063",
+      "x": -387.369,
+      "z": -824.399,
+      "heading": 16.12,
+      "name": "WR5",
+      "linkId": "l_150391832_0",
+      "osmId": 370817793
+    },
+    {
+      "id": "bs_064",
+      "x": -313.4,
+      "z": -320.962,
+      "heading": 311.61,
+      "name": "GR1",
+      "linkId": "l_18163240_0",
+      "osmId": 370817794
+    },
+    {
+      "id": "bs_065",
+      "x": -284.088,
+      "z": -320.709,
+      "heading": 132.04,
+      "name": "GR2",
+      "linkId": "l_25384744_1",
+      "osmId": 370817796
+    },
+    {
+      "id": "bs_066",
+      "x": 899.652,
+      "z": -104.872,
+      "heading": 334.32,
+      "name": "Vecqueray St / Far Gosford St",
+      "linkId": "l_4837117_1",
+      "osmId": 370817798
+    },
+    {
+      "id": "bs_067",
+      "x": -423.187,
+      "z": -150.237,
+      "heading": 86.09,
+      "name": "CR1",
+      "linkId": "l_1246308277_1",
+      "osmId": 370817809
+    },
+    {
+      "id": "bs_068",
+      "x": -408.474,
+      "z": -149.604,
+      "heading": 91.12,
+      "name": "CR2",
+      "linkId": "l_1246308277_1",
+      "osmId": 370817811
+    },
+    {
+      "id": "bs_069",
+      "x": -419.95,
+      "z": -175.185,
+      "heading": 266.73,
+      "name": "CR3",
+      "linkId": "l_167697249_0",
+      "osmId": 370817812
+    },
+    {
+      "id": "bs_070",
+      "x": -434.2,
+      "z": -178.6,
+      "heading": 251.75,
+      "name": "CR4",
+      "linkId": "l_167697249_0",
+      "osmId": 370817813
+    },
+    {
+      "id": "bs_071",
+      "x": -870.241,
+      "z": -229.773,
+      "heading": 311.39,
+      "name": "Butts Radial Link / Albany Rd",
+      "linkId": "l_41970039_1",
+      "osmId": 370817814
+    },
+    {
+      "id": "bs_072",
+      "x": -755.129,
+      "z": -252.792,
+      "heading": 100.63,
+      "name": "Butts Radial Link / Albany Rd",
+      "linkId": "l_150771846_1",
+      "osmId": 370817816
+    },
+    {
+      "id": "bs_073",
+      "x": -865.925,
+      "z": -298.664,
+      "heading": 227.0,
+      "name": "Albany Rd / City College",
+      "linkId": "l_150772386_1",
+      "osmId": 370817817
+    },
+    {
+      "id": "bs_074",
+      "x": -870.317,
+      "z": -317.602,
+      "heading": 227.0,
+      "name": "Albany Rd / City College",
+      "linkId": "l_150772386_1",
+      "osmId": 370817818
+    },
+    {
+      "id": "bs_075",
+      "x": -325.25,
+      "z": 569.061,
+      "heading": 2.08,
+      "name": "Radford Rd / Nauls Mill House",
+      "linkId": "l_4921335_2",
+      "osmId": 370817828
+    },
+    {
+      "id": "bs_076",
+      "x": -325.768,
+      "z": 560.582,
+      "heading": 2.08,
+      "name": "Radford Rd / Nauls Mill House",
+      "linkId": "l_4921335_2",
+      "osmId": 370817829
+    },
+    {
+      "id": "bs_077",
+      "x": -290.939,
+      "z": 629.904,
+      "heading": 188.34,
+      "name": "Radford Rd / Nauls Mill House",
+      "linkId": "l_43858445_0",
+      "osmId": 370817830
+    },
+    {
+      "id": "bs_078",
+      "x": -209.238,
+      "z": 974.375,
+      "heading": 9.0,
+      "name": "Sandy Lane / Ellys Rd",
+      "linkId": "l_4931076_1",
+      "osmId": 370817834
+    },
+    {
+      "id": "bs_079",
+      "x": -331.655,
+      "z": 849.842,
+      "heading": 249.71,
+      "name": "Radford Rd / Barrs Hill School",
+      "linkId": "l_782102983_0",
+      "osmId": 370817843
+    },
+    {
+      "id": "bs_080",
+      "x": -390.048,
+      "z": 927.906,
+      "heading": 249.71,
+      "name": "Radford Rd / Barrs Hill School",
+      "linkId": "l_782102983_0",
+      "osmId": 370817845
+    },
+    {
+      "id": "bs_081",
+      "x": -730.741,
+      "z": 550.666,
+      "heading": 128.09,
+      "name": "Coundon Rd / Bablake Boys School",
+      "linkId": "l_153455510_2",
+      "osmId": 370817944
+    },
+    {
+      "id": "bs_082",
+      "x": 126.276,
+      "z": -725.2,
+      "heading": 19.21,
+      "name": "Quinton Rd / Stoney Rd",
+      "linkId": "l_776508787_2",
+      "osmId": 370818291
+    },
+    {
+      "id": "bs_083",
+      "x": 128.727,
+      "z": -762.533,
+      "heading": 277.58,
+      "name": "Quinton Rd / Stoney Rd",
+      "linkId": "l_34572420_1",
+      "osmId": 370818294
+    },
+    {
+      "id": "bs_084",
+      "x": 529.866,
+      "z": 248.918,
+      "heading": 102.78,
+      "name": "Lower Ford St / Alma St",
+      "linkId": "l_8003296_0",
+      "osmId": 370818298
+    },
+    {
+      "id": "bs_085",
+      "x": 787.043,
+      "z": 71.924,
+      "heading": 306.96,
+      "name": "Lower Ford St / Hood St",
+      "linkId": "l_8003317_3",
+      "osmId": 370818300
+    },
+    {
+      "id": "bs_086",
+      "x": 346.095,
+      "z": -791.363,
+      "heading": 161.52,
+      "name": "Mile Lane / Furlong Rd",
+      "linkId": "l_4013054_6",
+      "osmId": 370818500
+    },
+    {
+      "id": "bs_087",
+      "x": 373.452,
+      "z": -855.646,
+      "heading": 158.8,
+      "name": "Mile Lane / Furlong Rd",
+      "linkId": "l_4013054_7",
+      "osmId": 370818502
+    },
+    {
+      "id": "bs_088",
+      "x": 652.765,
+      "z": -515.032,
+      "heading": 321.09,
+      "name": "London Rd / Gulson Rd",
+      "linkId": "l_355482035_0",
+      "osmId": 370818526
+    },
+    {
+      "id": "bs_089",
+      "x": 678.152,
+      "z": -501.314,
+      "heading": 163.54,
+      "name": "London Rd / Gulson Rd",
+      "linkId": "l_25464313_0",
+      "osmId": 370818527
+    },
+    {
+      "id": "bs_090",
+      "x": 753.625,
+      "z": -695.278,
+      "heading": 325.74,
+      "name": "London Rd / Acacia Avenue",
+      "linkId": "l_4019144_0",
+      "osmId": 370818528
+    },
+    {
+      "id": "bs_091",
+      "x": 740.837,
+      "z": -705.161,
+      "heading": 325.74,
+      "name": "London Rd / Acacia Avenue",
+      "linkId": "l_4019144_0",
+      "osmId": 370818530
+    },
+    {
+      "id": "bs_092",
+      "x": 193.636,
+      "z": -559.721,
+      "heading": 142.98,
+      "name": "Mile Lane / Ibis Hotel",
+      "linkId": "l_1441571841_0",
+      "osmId": 370818531
+    },
+    {
+      "id": "bs_093",
+      "x": 199.863,
+      "z": -537.744,
+      "heading": 175.48,
+      "name": "Mile Lane / Ibis Hotel",
+      "linkId": "l_4087863_0",
+      "osmId": 370818532
+    },
+    {
+      "id": "bs_094",
+      "x": -415.011,
+      "z": -904.509,
+      "heading": 316.76,
+      "name": "Spencer Rd / King Henry Viii School",
+      "linkId": "l_1437077935_0",
+      "osmId": 370818565
+    },
+    {
+      "id": "bs_095",
+      "x": 45.511,
+      "z": 779.928,
+      "heading": 183.68,
+      "name": "Foleshill Rd / Leicester Row",
+      "linkId": "l_25290772_0",
+      "osmId": 370818758
+    },
+    {
+      "id": "bs_096",
+      "x": 72.035,
+      "z": 775.533,
+      "heading": 182.76,
+      "name": "Foleshill Rd / Leicester Row",
+      "linkId": "l_4873394_2",
+      "osmId": 370818761
+    },
+    {
+      "id": "bs_097",
+      "x": 100.412,
+      "z": 928.169,
+      "heading": 21.05,
+      "name": "Foleshill Rd / City Engineers",
+      "linkId": "l_4873395_0",
+      "osmId": 370818762
+    },
+    {
+      "id": "bs_098",
+      "x": 93.295,
+      "z": 950.202,
+      "heading": 21.05,
+      "name": "Foleshill Rd / City Engineers",
+      "linkId": "l_4873395_0",
+      "osmId": 370818764
+    },
+    {
+      "id": "bs_099",
+      "x": -257.925,
+      "z": 858.919,
+      "heading": 173.96,
+      "name": "St Nicholas St / Sandy Lane",
+      "linkId": "l_39097895_0",
+      "osmId": 370818786
+    },
+    {
+      "id": "bs_100",
+      "x": -250.192,
+      "z": 825.966,
+      "heading": 163.67,
+      "name": "St Nicholas St / Sandy Lane",
+      "linkId": "l_39097895_1",
+      "osmId": 370818790
+    },
+    {
+      "id": "bs_101",
+      "x": 509.774,
+      "z": 881.915,
+      "heading": 38.14,
+      "name": "Stoney Stanton Rd / Harnall Lane East",
+      "linkId": "l_43246589_1",
+      "osmId": 370818796
+    },
+    {
+      "id": "bs_102",
+      "x": 582.106,
+      "z": 943.036,
+      "heading": 39.53,
+      "name": "Stoney Stanton Rd / Eagle St East",
+      "linkId": "l_43246589_1",
+      "osmId": 370818798
+    },
+    {
+      "id": "bs_103",
+      "x": -110.442,
+      "z": -927.509,
+      "heading": 92.21,
+      "name": "Stoney Rd / Asthill Grove",
+      "linkId": "l_138563442_2",
+      "osmId": 370819097
+    },
+    {
+      "id": "bs_105",
+      "x": -662.624,
+      "z": -933.163,
+      "heading": 283.66,
+      "name": "Spencer Rd / Spencer Park",
+      "linkId": "l_275580854_0",
+      "osmId": 370819109
+    },
+    {
+      "id": "bs_106",
+      "x": -639.605,
+      "z": 216.572,
+      "heading": 112.82,
+      "name": "Holyhead Rd / Ringway",
+      "linkId": "l_147409033_0",
+      "osmId": 370819355
+    },
+    {
+      "id": "bs_107",
+      "x": -642.74,
+      "z": 232.729,
+      "heading": 112.82,
+      "name": "Holyhead Rd / Ringway",
+      "linkId": "l_147409033_0",
+      "osmId": 370819357
+    },
+    {
+      "id": "bs_109",
+      "x": -804.058,
+      "z": 308.242,
+      "heading": 118.4,
+      "name": "Holyhead Rd / Meriden St",
+      "linkId": "l_148467243_0",
+      "osmId": 370819360
+    },
+    {
+      "id": "bs_110",
+      "x": -642.448,
+      "z": 408.65,
+      "heading": 144.81,
+      "name": "Coundon Rd / Middleborough Rd",
+      "linkId": "l_1540085045_2",
+      "osmId": 370819372
+    },
+    {
+      "id": "bs_111",
+      "x": -646.666,
+      "z": 391.019,
+      "heading": 144.81,
+      "name": "Coundon Rd / Middleborough Rd",
+      "linkId": "l_1540085045_2",
+      "osmId": 370819375
+    },
+    {
+      "id": "bs_112",
+      "x": -900.662,
+      "z": 735.366,
+      "heading": 156.75,
+      "name": "Barkers Butts Lane / Tomson Avenue",
+      "linkId": "l_156519504_3",
+      "osmId": 370819376
+    },
+    {
+      "id": "bs_114",
+      "x": 96.764,
+      "z": 270.322,
+      "heading": 115.74,
+      "name": "HS1",
+      "linkId": "l_24022012_1",
+      "osmId": 370819604
+    },
+    {
+      "id": "bs_115",
+      "x": 459.16,
+      "z": 12.616,
+      "heading": 10.68,
+      "name": "CU5",
+      "linkId": "l_138705426_2",
+      "osmId": 370819676
+    },
+    {
+      "id": "bs_116",
+      "x": 479.733,
+      "z": 60.468,
+      "heading": 11.42,
+      "name": "CU4",
+      "linkId": "l_1001900702_0",
+      "osmId": 370819679
+    },
+    {
+      "id": "bs_118",
+      "x": -697.504,
+      "z": -956.96,
+      "heading": 282.39,
+      "name": "Dalton Rd / Spencer Rd",
+      "linkId": "l_275580854_1",
+      "osmId": 370819753
+    },
+    {
+      "id": "bs_119",
+      "x": 53.785,
+      "z": 290.406,
+      "heading": 115.23,
+      "name": "HS2",
+      "linkId": "l_24022012_1",
+      "osmId": 717585774
+    },
+    {
+      "id": "bs_120",
+      "x": 10.677,
+      "z": 112.11,
+      "heading": 274.07,
+      "name": "TS5",
+      "linkId": "l_266185582_0",
+      "osmId": 1769864769
+    },
+    {
+      "id": "bs_121",
+      "x": 455.508,
+      "z": -619.002,
+      "heading": 47.36,
+      "name": "Bus Stop",
+      "linkId": "l_4013665_3",
+      "osmId": 2283621884
+    },
+    {
+      "id": "bs_122",
+      "x": 161.6,
+      "z": 292.0,
+      "heading": 35.92,
+      "name": "HS3",
+      "linkId": "l_1246416788_0",
+      "osmId": 4458326372
+    },
+    {
+      "id": "bs_123",
+      "x": 155.297,
+      "z": -296.423,
+      "heading": 271.2,
+      "name": "SJ1",
+      "linkId": "l_24237686_4",
+      "osmId": 4815869810
+    },
+    {
+      "id": "bs_124",
+      "x": 317.018,
+      "z": -178.341,
+      "heading": 166.06,
+      "name": "MP1",
+      "linkId": "l_18199964_1",
+      "osmId": 4815869811
+    },
+    {
+      "id": "bs_125",
+      "x": 979.659,
+      "z": 11.548,
+      "heading": 334.32,
+      "name": "Sky Blue Way / Walkway To Gosford St",
+      "linkId": "l_4837117_1",
+      "osmId": 4815874919
+    },
+    {
+      "id": "bs_126",
+      "x": 920.417,
+      "z": -42.376,
+      "heading": 334.32,
+      "name": "Far Gosford St / Bramble St",
+      "linkId": "l_4837117_1",
+      "osmId": 4815880407
+    },
+    {
+      "id": "bs_127",
+      "x": 249.968,
+      "z": 271.863,
+      "heading": 11.05,
+      "name": "K",
+      "linkId": "l_1577552844_1",
+      "osmId": 4815881224
+    },
+    {
+      "id": "bs_128",
+      "x": 295.533,
+      "z": 265.968,
+      "heading": 12.04,
+      "name": "C",
+      "linkId": "l_25426952_0",
+      "osmId": 4815881225
+    },
+    {
+      "id": "bs_129",
+      "x": 287.853,
+      "z": 226.52,
+      "heading": 1.7,
+      "name": "A",
+      "linkId": "l_25426952_0",
+      "osmId": 4815881226
+    },
+    {
+      "id": "bs_130",
+      "x": -340.733,
+      "z": -60.589,
+      "heading": 183.82,
+      "name": "VR1",
+      "linkId": "l_25373102_0",
+      "osmId": 4815881228
+    },
+    {
+      "id": "bs_131",
+      "x": -23.49,
+      "z": 232.176,
+      "heading": 347.84,
+      "name": "BS4",
+      "linkId": "l_840917529_0",
+      "osmId": 4815881232
+    },
+    {
+      "id": "bs_132",
+      "x": -62.217,
+      "z": 257.736,
+      "heading": 74.84,
+      "name": "BS7",
+      "linkId": "l_389069885_0",
+      "osmId": 7620250858
+    },
+    {
+      "id": "bs_133",
+      "x": -412.656,
+      "z": -688.686,
+      "heading": 281.72,
+      "name": "RR2",
+      "linkId": "l_25327916_0",
+      "osmId": 9416517348
+    },
+    {
+      "id": "bs_134",
+      "x": -400.869,
+      "z": -693.85,
+      "heading": 119.93,
+      "name": "RR1",
+      "linkId": "l_1011339459_2",
+      "osmId": 9416517349
+    },
+    {
+      "id": "bs_135",
+      "x": -440.81,
+      "z": -722.189,
+      "heading": 310.73,
+      "name": "WR2",
+      "linkId": "l_1011339459_2",
+      "osmId": 9416517350
+    },
+    {
+      "id": "bs_136",
+      "x": -424.264,
+      "z": -728.31,
+      "heading": 281.97,
+      "name": "WR3",
+      "linkId": "l_1011339459_2",
+      "osmId": 9416517351
+    },
+    {
+      "id": "bs_137",
+      "x": -406.691,
+      "z": -732.195,
+      "heading": 274.38,
+      "name": "WR4",
+      "linkId": "l_1011339459_2",
+      "osmId": 9416517352
+    },
+    {
+      "id": "bs_138",
+      "x": -453.698,
+      "z": -699.109,
+      "heading": 344.87,
+      "name": "WR1",
+      "linkId": "l_1011339459_3",
+      "osmId": 9590566165
+    },
+    {
+      "id": "bs_139",
+      "x": -34.446,
+      "z": -652.761,
+      "heading": 63.16,
+      "name": "Manor Rd",
+      "linkId": "l_25291481_0",
+      "osmId": 9590600537
+    },
+    {
+      "id": "bs_140",
+      "x": -222.272,
+      "z": -437.092,
+      "heading": 191.54,
+      "name": "Bus Stop",
+      "linkId": "l_349653221_0",
+      "osmId": 14134661186
+    },
+    {
+      "id": "bs_141",
+      "x": -205.525,
+      "z": -349.69,
+      "heading": 23.23,
+      "name": "Warwick Road / Copper Towers",
+      "linkId": "l_41967615_2",
+      "osmId": 14134661187
+    }
+  ]
+}

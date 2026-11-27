@@ -1,0 +1,470 @@
+{
+  "routeFormatVersion": "0.1",
+  "packId": "coventry",
+  "routes": [
+    {
+      "id": "coventry-mock-test",
+      "name": "Coventry Ring & City Mock Test",
+      "description": "10-minute mock driving test around Coventry city centre and the A4053 Ring Road.",
+      "estimatedMinutes": 7.5,
+      "start": {
+        "linkId": "l_1001900702_0",
+        "offsetM": 5
+      },
+      "links": [
+        {
+          "linkId": "l_1001900702_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_371878387_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_167697247_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_167697247_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_148452833_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_8003296_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003296_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003334_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_18165161_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_18165161_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003319_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003319_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003319_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_373913041_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_373913041_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_373913041_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1246416808_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_18165168_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_18165168_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_18165167_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_18165167_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_18165166_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_373913041_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_373913041_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_373913034_5",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_373913034_4",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_373913034_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_373913034_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217682_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217683_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217681_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217691_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_188494539_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217685_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23221734_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23221734_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_373913038_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217652_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23222211_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23222211_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23222211_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181123159_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217656_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217658_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181122325_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1181122326_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1181122326_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301283_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301283_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301283_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301282_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301282_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301282_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_4310551_11",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_49226863_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_49226863_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181276745_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1181276746_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1181276746_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_49226863_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_4310551_11",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301282_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301285_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_152508747_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1181123163_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181123163_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181123161_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181123161_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1181122324_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217657_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_23217656_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217656_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217656_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_23217656_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16301281_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301281_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16301281_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_1219888299_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1219888299_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16224200_3",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16224200_2",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16224200_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_16224200_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_8003316_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_8003316_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_16224203_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_448170613_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_448170614_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_148452833_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_167697247_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_167697247_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_371878387_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_1001900702_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "signals",
+        "roundabout"
+      ],
+      "instructions": [
+        {
+          "atLinkIndex": 0,
+          "distanceBeforeM": 15,
+          "text": "Leave the test centre area on Spring Road and keep left.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 8,
+          "distanceBeforeM": 30,
+          "text": "Continue onto the road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 16,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Napier Street and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 24,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Canterbury Street and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 32,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Yardley Street and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 40,
+          "distanceBeforeM": 30,
+          "text": "Continue onto the road and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 48,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Cawthorne Close and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 49,
+          "distanceBeforeM": 40,
+          "text": "Follow the signs towards City Centre via Aylesford Street.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 97,
+          "distanceBeforeM": 20,
+          "text": "Return to Spring Road and stop safely on the left.",
+          "maneuver": "straight_on"
+        }
+      ]
+    }
+  ]
+}

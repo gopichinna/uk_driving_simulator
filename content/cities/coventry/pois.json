@@ -1,0 +1,1660 @@
+{
+  "poisFormatVersion": "0.1",
+  "packId": "coventry",
+  "origin": {
+    "lat": 52.408,
+    "lon": -1.5105
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-26T21:21:01Z",
+    "bbox": [
+      -1.525,
+      52.399,
+      -1.496,
+      52.417
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "pois": [
+    {
+      "id": "poi_bus_station_1011339458",
+      "name": "Coventry station bus interchange",
+      "kind": "bus_station",
+      "x": -417.956,
+      "z": -716.811,
+      "accessLinkId": "l_1011339459_2",
+      "osmId": 1011339458
+    },
+    {
+      "id": "poi_bus_station_23222498",
+      "name": "Coventry Pool Meadow Bus Station",
+      "kind": "bus_station",
+      "x": 209.603,
+      "z": 255.348,
+      "accessLinkId": "l_1577267472_0",
+      "osmId": 23222498
+    },
+    {
+      "id": "poi_car_park_1011339462",
+      "name": "Coventry Railway Station Car Park 3",
+      "kind": "car_park",
+      "x": -477.987,
+      "z": -703.886,
+      "accessLinkId": "l_95745296_2",
+      "osmId": 1011339462
+    },
+    {
+      "id": "poi_car_park_1037715885",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 695.01,
+      "z": 262.276,
+      "accessLinkId": "l_8003319_1",
+      "osmId": 1037715885
+    },
+    {
+      "id": "poi_car_park_1038856808",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 785.357,
+      "z": 181.557,
+      "accessLinkId": "l_18165163_1",
+      "osmId": 1038856808
+    },
+    {
+      "id": "poi_car_park_1038859562",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 793.485,
+      "z": 214.837,
+      "accessLinkId": "l_373913041_0",
+      "osmId": 1038859562
+    },
+    {
+      "id": "poi_car_park_1041529354",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 742.696,
+      "z": 882.724,
+      "accessLinkId": "l_49226857_1",
+      "osmId": 1041529354
+    },
+    {
+      "id": "poi_car_park_1060042315",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 972.759,
+      "z": -418.629,
+      "accessLinkId": "l_4821212_1",
+      "osmId": 1060042315
+    },
+    {
+      "id": "poi_car_park_1061308586",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -914.569,
+      "z": -122.883,
+      "accessLinkId": "l_4741412_0",
+      "osmId": 1061308586
+    },
+    {
+      "id": "poi_car_park_1134464906",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -581.518,
+      "z": -68.433,
+      "accessLinkId": "l_135808241_0",
+      "osmId": 1134464906
+    },
+    {
+      "id": "poi_car_park_1348741389",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 117.742,
+      "z": 873.447,
+      "accessLinkId": "l_1246416804_1",
+      "osmId": 1348741389
+    },
+    {
+      "id": "poi_car_park_1350466282",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -736.723,
+      "z": -333.405,
+      "accessLinkId": "l_275659550_0",
+      "osmId": 1350466282
+    },
+    {
+      "id": "poi_car_park_1350466284",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -804.422,
+      "z": -445.282,
+      "accessLinkId": "l_309983785_1",
+      "osmId": 1350466284
+    },
+    {
+      "id": "poi_car_park_1350466285",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -710.977,
+      "z": -442.154,
+      "accessLinkId": "l_468688677_0",
+      "osmId": 1350466285
+    },
+    {
+      "id": "poi_car_park_1350466286",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -485.582,
+      "z": -529.005,
+      "accessLinkId": "l_150554154_1",
+      "osmId": 1350466286
+    },
+    {
+      "id": "poi_car_park_1350466287",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -475.366,
+      "z": -504.894,
+      "accessLinkId": "l_150554154_1",
+      "osmId": 1350466287
+    },
+    {
+      "id": "poi_car_park_1350466288",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -503.625,
+      "z": -505.508,
+      "accessLinkId": "l_150554154_0",
+      "osmId": 1350466288
+    },
+    {
+      "id": "poi_car_park_1350466289",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -472.017,
+      "z": -456.44,
+      "accessLinkId": "l_349653235_0",
+      "osmId": 1350466289
+    },
+    {
+      "id": "poi_car_park_1350466290",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -424.117,
+      "z": -458.793,
+      "accessLinkId": "l_349653235_0",
+      "osmId": 1350466290
+    },
+    {
+      "id": "poi_car_park_1350466291",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -448.023,
+      "z": -485.317,
+      "accessLinkId": "l_848594975_0",
+      "osmId": 1350466291
+    },
+    {
+      "id": "poi_car_park_1350613682",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -259.243,
+      "z": -114.403,
+      "accessLinkId": "l_25373102_0",
+      "osmId": 1350613682
+    },
+    {
+      "id": "poi_car_park_1378868175",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 1.699,
+      "z": -272.348,
+      "accessLinkId": "l_1040704121_1",
+      "osmId": 1378868175
+    },
+    {
+      "id": "poi_car_park_14336823001",
+      "name": "Times Parking",
+      "kind": "car_park",
+      "x": -26.33,
+      "z": -197.558,
+      "accessLinkId": "l_4837187_2",
+      "osmId": 14336823001
+    },
+    {
+      "id": "poi_car_park_152508692",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 582.269,
+      "z": 752.96,
+      "accessLinkId": "l_4310551_2",
+      "osmId": 152508692
+    },
+    {
+      "id": "poi_car_park_1541318086",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -679.168,
+      "z": -3.864,
+      "accessLinkId": "l_15543965_0",
+      "osmId": 1541318086
+    },
+    {
+      "id": "poi_car_park_156522776",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -504.958,
+      "z": 292.627,
+      "accessLinkId": "l_1050291102_0",
+      "osmId": 156522776
+    },
+    {
+      "id": "poi_car_park_1569117150",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 923.499,
+      "z": -801.648,
+      "accessLinkId": "l_1058462622_0",
+      "osmId": 1569117150
+    },
+    {
+      "id": "poi_car_park_157563403",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 191.091,
+      "z": -617.731,
+      "accessLinkId": "l_157563398_2",
+      "osmId": 157563403
+    },
+    {
+      "id": "poi_car_park_157563405",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 177.07,
+      "z": -623.284,
+      "accessLinkId": "l_86021031_1",
+      "osmId": 157563405
+    },
+    {
+      "id": "poi_car_park_159238471",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 37.113,
+      "z": -332.561,
+      "accessLinkId": "l_1040704122_1",
+      "osmId": 159238471
+    },
+    {
+      "id": "poi_car_park_167697284",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -8.6,
+      "z": -532.008,
+      "accessLinkId": "l_1246308285_0",
+      "osmId": 167697284
+    },
+    {
+      "id": "poi_car_park_167697285",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 61.05,
+      "z": -513.278,
+      "accessLinkId": "l_1246308285_0",
+      "osmId": 167697285
+    },
+    {
+      "id": "poi_car_park_177698900",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 260.306,
+      "z": -512.722,
+      "accessLinkId": "l_116132195_1",
+      "osmId": 177698900
+    },
+    {
+      "id": "poi_car_park_177698904",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 291.778,
+      "z": -579.923,
+      "accessLinkId": "l_35077493_0",
+      "osmId": 177698904
+    },
+    {
+      "id": "poi_car_park_187104007",
+      "name": "Coventry University Multistorey Car Park",
+      "kind": "car_park",
+      "x": 736.64,
+      "z": -203.285,
+      "accessLinkId": "l_961116002_1",
+      "osmId": 187104007
+    },
+    {
+      "id": "poi_car_park_187727024",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 743.909,
+      "z": -157.224,
+      "accessLinkId": "l_152508895_1",
+      "osmId": 187727024
+    },
+    {
+      "id": "poi_car_park_190279111",
+      "name": "Watch Close Car Park",
+      "kind": "car_park",
+      "x": -532.302,
+      "z": 66.068,
+      "accessLinkId": "l_143569816_0",
+      "osmId": 190279111
+    },
+    {
+      "id": "poi_car_park_2031624402",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -367.259,
+      "z": -402.524,
+      "accessLinkId": "l_25083640_0",
+      "osmId": 2031624402
+    },
+    {
+      "id": "poi_car_park_2031624457",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -344.859,
+      "z": -382.229,
+      "accessLinkId": "l_25083640_0",
+      "osmId": 2031624457
+    },
+    {
+      "id": "poi_car_park_2031624470",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -305.175,
+      "z": -375.911,
+      "accessLinkId": "l_1435838625_1",
+      "osmId": 2031624470
+    },
+    {
+      "id": "poi_car_park_2031631166",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 14.85,
+      "z": -474.31,
+      "accessLinkId": "l_1280111603_1",
+      "osmId": 2031631166
+    },
+    {
+      "id": "poi_car_park_2066660043",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -246.727,
+      "z": -100.475,
+      "accessLinkId": "l_25373102_0",
+      "osmId": 2066660043
+    },
+    {
+      "id": "poi_car_park_209359405",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 977.944,
+      "z": 144.107,
+      "accessLinkId": "l_18165167_1",
+      "osmId": 209359405
+    },
+    {
+      "id": "poi_car_park_227933141",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 615.094,
+      "z": 59.395,
+      "accessLinkId": "l_25290718_0",
+      "osmId": 227933141
+    },
+    {
+      "id": "poi_car_park_2283612656",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 813.156,
+      "z": 223.196,
+      "accessLinkId": "l_373913041_0",
+      "osmId": 2283612656
+    },
+    {
+      "id": "poi_car_park_23221736",
+      "name": "Wellington Street",
+      "kind": "car_park",
+      "x": 756.126,
+      "z": 531.564,
+      "accessLinkId": "l_23217689_1",
+      "osmId": 23221736
+    },
+    {
+      "id": "poi_car_park_23222214",
+      "name": "Lower Ford Street Car Park",
+      "kind": "car_park",
+      "x": 537.535,
+      "z": 145.739,
+      "accessLinkId": "l_25290718_0",
+      "osmId": 23222214
+    },
+    {
+      "id": "poi_car_park_25083605",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -179.446,
+      "z": -757.279,
+      "accessLinkId": "l_25083607_0",
+      "osmId": 25083605
+    },
+    {
+      "id": "poi_car_park_25083608",
+      "name": "Coventry Station Car Park 1",
+      "kind": "car_park",
+      "x": -122.761,
+      "z": -784.262,
+      "accessLinkId": "l_25083614_2",
+      "osmId": 25083608
+    },
+    {
+      "id": "poi_car_park_25083637",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -273.922,
+      "z": -648.323,
+      "accessLinkId": "l_345797273_1",
+      "osmId": 25083637
+    },
+    {
+      "id": "poi_car_park_25083680",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -350.336,
+      "z": 989.957,
+      "accessLinkId": "l_4931076_1",
+      "osmId": 25083680
+    },
+    {
+      "id": "poi_car_park_25086897",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -77.342,
+      "z": 642.474,
+      "accessLinkId": "l_373875938_1",
+      "osmId": 25086897
+    },
+    {
+      "id": "poi_car_park_25086940",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -139.995,
+      "z": 638.258,
+      "accessLinkId": "l_39097894_4",
+      "osmId": 25086940
+    },
+    {
+      "id": "poi_car_park_25290670",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -72.798,
+      "z": 330.712,
+      "accessLinkId": "l_25464444_0",
+      "osmId": 25290670
+    },
+    {
+      "id": "poi_car_park_25290679",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -27.941,
+      "z": 394.542,
+      "accessLinkId": "l_25427063_0",
+      "osmId": 25290679
+    },
+    {
+      "id": "poi_car_park_25290768",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 15.972,
+      "z": 601.984,
+      "accessLinkId": "l_25373119_0",
+      "osmId": 25290768
+    },
+    {
+      "id": "poi_car_park_25290770",
+      "name": "Leicester Row Long Stay",
+      "kind": "car_park",
+      "x": 35.233,
+      "z": 782.38,
+      "accessLinkId": "l_25290772_3",
+      "osmId": 25290770
+    },
+    {
+      "id": "poi_car_park_25290782",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 7.511,
+      "z": 667.846,
+      "accessLinkId": "l_25372989_0",
+      "osmId": 25290782
+    },
+    {
+      "id": "poi_car_park_25290854",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 86.901,
+      "z": 486.462,
+      "accessLinkId": "l_25271580_2",
+      "osmId": 25290854
+    },
+    {
+      "id": "poi_car_park_25290856",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 116.369,
+      "z": 491.312,
+      "accessLinkId": "l_25372979_0",
+      "osmId": 25290856
+    },
+    {
+      "id": "poi_car_park_25312579",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -113.87,
+      "z": 441.671,
+      "accessLinkId": "l_8217412_0",
+      "osmId": 25312579
+    },
+    {
+      "id": "poi_car_park_25312593",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 70.442,
+      "z": -127.312,
+      "accessLinkId": "l_18163244_1",
+      "osmId": 25312593
+    },
+    {
+      "id": "poi_car_park_25312609",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -232.863,
+      "z": 369.715,
+      "accessLinkId": "l_24355609_1",
+      "osmId": 25312609
+    },
+    {
+      "id": "poi_car_park_25312614",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -221.66,
+      "z": 349.487,
+      "accessLinkId": "l_24355609_1",
+      "osmId": 25312614
+    },
+    {
+      "id": "poi_car_park_25325737",
+      "name": "Belgrade Plaza Car Park",
+      "kind": "car_park",
+      "x": -395.29,
+      "z": 263.198,
+      "accessLinkId": "l_25373136_0",
+      "osmId": 25325737
+    },
+    {
+      "id": "poi_car_park_25327918",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -631.828,
+      "z": -665.728,
+      "accessLinkId": "l_95745300_0",
+      "osmId": 25327918
+    },
+    {
+      "id": "poi_car_park_25327922",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -448.457,
+      "z": -641.198,
+      "accessLinkId": "l_95745292_0",
+      "osmId": 25327922
+    },
+    {
+      "id": "poi_car_park_25372734",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 162.826,
+      "z": 182.574,
+      "accessLinkId": "l_24022015_3",
+      "osmId": 25372734
+    },
+    {
+      "id": "poi_car_park_25372778",
+      "name": "Whitefriars Car Park",
+      "kind": "car_park",
+      "x": 460.632,
+      "z": -333.989,
+      "accessLinkId": "l_25372790_0",
+      "osmId": 25372778
+    },
+    {
+      "id": "poi_car_park_25372843",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 338.049,
+      "z": 694.831,
+      "accessLinkId": "l_25373016_0",
+      "osmId": 25372843
+    },
+    {
+      "id": "poi_car_park_25372846",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -373.278,
+      "z": 111.57,
+      "accessLinkId": "l_25372838_1",
+      "osmId": 25372846
+    },
+    {
+      "id": "poi_car_park_25372851",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 92.273,
+      "z": -26.231,
+      "accessLinkId": "l_25290682_1",
+      "osmId": 25372851
+    },
+    {
+      "id": "poi_car_park_25372854",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 93.404,
+      "z": -4.374,
+      "accessLinkId": "l_25290682_1",
+      "osmId": 25372854
+    },
+    {
+      "id": "poi_car_park_25372872",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -131.285,
+      "z": 304.769,
+      "accessLinkId": "l_24355559_1",
+      "osmId": 25372872
+    },
+    {
+      "id": "poi_car_park_25372882",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -165.13,
+      "z": 303.674,
+      "accessLinkId": "l_24355559_1",
+      "osmId": 25372882
+    },
+    {
+      "id": "poi_car_park_25372884",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -307.266,
+      "z": 175.802,
+      "accessLinkId": "l_25372833_0",
+      "osmId": 25372884
+    },
+    {
+      "id": "poi_car_park_25372935",
+      "name": "Cheylesmore Manor Car Park",
+      "kind": "car_park",
+      "x": -97.556,
+      "z": -333.441,
+      "accessLinkId": "l_25373059_0",
+      "osmId": 25372935
+    },
+    {
+      "id": "poi_car_park_25372950",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -9.848,
+      "z": -365.314,
+      "accessLinkId": "l_1427294099_1",
+      "osmId": 25372950
+    },
+    {
+      "id": "poi_car_park_25372985",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 126.184,
+      "z": 714.036,
+      "accessLinkId": "l_25290777_0",
+      "osmId": 25372985
+    },
+    {
+      "id": "poi_car_park_25373030",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 297.049,
+      "z": 785.554,
+      "accessLinkId": "l_848770802_0",
+      "osmId": 25373030
+    },
+    {
+      "id": "poi_car_park_25373057",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -114.722,
+      "z": -454.118,
+      "accessLinkId": "l_776717382_0",
+      "osmId": 25373057
+    },
+    {
+      "id": "poi_car_park_25373061",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -292.866,
+      "z": -691.207,
+      "accessLinkId": "l_1020963503_0",
+      "osmId": 25373061
+    },
+    {
+      "id": "poi_car_park_25373101",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -436.725,
+      "z": 164.845,
+      "accessLinkId": "l_377218072_3",
+      "osmId": 25373101
+    },
+    {
+      "id": "poi_car_park_25373112",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -321.593,
+      "z": -75.53,
+      "accessLinkId": "l_25373102_0",
+      "osmId": 25373112
+    },
+    {
+      "id": "poi_car_park_25373115",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -268.521,
+      "z": 493.174,
+      "accessLinkId": "l_25373123_3",
+      "osmId": 25373115
+    },
+    {
+      "id": "poi_car_park_25373116",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -151.899,
+      "z": 495.697,
+      "accessLinkId": "l_25271579_0",
+      "osmId": 25373116
+    },
+    {
+      "id": "poi_car_park_25373127",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -367.084,
+      "z": 447.865,
+      "accessLinkId": "l_148463191_0",
+      "osmId": 25373127
+    },
+    {
+      "id": "poi_car_park_25373185",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -467.385,
+      "z": 214.852,
+      "accessLinkId": "l_25373009_1",
+      "osmId": 25373185
+    },
+    {
+      "id": "poi_car_park_25373194",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -384.765,
+      "z": 489.231,
+      "accessLinkId": "l_25373129_0",
+      "osmId": 25373194
+    },
+    {
+      "id": "poi_car_park_25374140",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -493.784,
+      "z": 14.888,
+      "accessLinkId": "l_143569816_1",
+      "osmId": 25374140
+    },
+    {
+      "id": "poi_car_park_25384106",
+      "name": "New Union Street Car Park",
+      "kind": "car_park",
+      "x": 85.402,
+      "z": -409.236,
+      "accessLinkId": "l_25384107_1",
+      "osmId": 25384106
+    },
+    {
+      "id": "poi_car_park_25426820",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 323.53,
+      "z": 144.824,
+      "accessLinkId": "l_153643232_0",
+      "osmId": 25426820
+    },
+    {
+      "id": "poi_car_park_25426865",
+      "name": "BBC Car Parking",
+      "kind": "car_park",
+      "x": 494.019,
+      "z": 158.783,
+      "accessLinkId": "l_275996287_0",
+      "osmId": 25426865
+    },
+    {
+      "id": "poi_car_park_25426866",
+      "name": "Bus Company Car Parking",
+      "kind": "car_park",
+      "x": 360.199,
+      "z": 279.983,
+      "accessLinkId": "l_25290719_0",
+      "osmId": 25426866
+    },
+    {
+      "id": "poi_car_park_25426887",
+      "name": "Royal Mail Car Park",
+      "kind": "car_park",
+      "x": 543.17,
+      "z": 217.781,
+      "accessLinkId": "l_25426878_0",
+      "osmId": 25426887
+    },
+    {
+      "id": "poi_car_park_25426888",
+      "name": "Coventry University",
+      "kind": "car_park",
+      "x": 507.364,
+      "z": 218.694,
+      "accessLinkId": "l_25426878_1",
+      "osmId": 25426888
+    },
+    {
+      "id": "poi_car_park_25426894",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 414.798,
+      "z": 390.64,
+      "accessLinkId": "l_688178187_0",
+      "osmId": 25426894
+    },
+    {
+      "id": "poi_car_park_25426932",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 375.271,
+      "z": 208.248,
+      "accessLinkId": "l_687685030_1",
+      "osmId": 25426932
+    },
+    {
+      "id": "poi_car_park_25426944",
+      "name": "White Street coach park",
+      "kind": "car_park",
+      "x": 314.184,
+      "z": 382.686,
+      "accessLinkId": "l_25426945_0",
+      "osmId": 25426944
+    },
+    {
+      "id": "poi_car_park_25426955",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 243.222,
+      "z": 295.445,
+      "accessLinkId": "l_25373163_0",
+      "osmId": 25426955
+    },
+    {
+      "id": "poi_car_park_25426971",
+      "name": "Grove Street Car Park",
+      "kind": "car_park",
+      "x": 569.946,
+      "z": -49.875,
+      "accessLinkId": "l_25426964_2",
+      "osmId": 25426971
+    },
+    {
+      "id": "poi_car_park_25426974",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 462.298,
+      "z": 84.473,
+      "accessLinkId": "l_1001900702_0",
+      "osmId": 25426974
+    },
+    {
+      "id": "poi_car_park_25426976",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 495.827,
+      "z": 72.248,
+      "accessLinkId": "l_1001900702_0",
+      "osmId": 25426976
+    },
+    {
+      "id": "poi_car_park_25426984",
+      "name": "University Staff Car Park, Coventry University",
+      "kind": "car_park",
+      "x": 650.649,
+      "z": 229.243,
+      "accessLinkId": "l_18165163_1",
+      "osmId": 25426984
+    },
+    {
+      "id": "poi_car_park_25426989",
+      "name": "Gosford Street (Long Stay) Car Park",
+      "kind": "car_park",
+      "x": 554.385,
+      "z": -197.213,
+      "accessLinkId": "l_25329320_0",
+      "osmId": 25426989
+    },
+    {
+      "id": "poi_car_park_25427027",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 656.496,
+      "z": 109.501,
+      "accessLinkId": "l_8003317_4",
+      "osmId": 25427027
+    },
+    {
+      "id": "poi_car_park_25427032",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 584.983,
+      "z": 192.908,
+      "accessLinkId": "l_25426879_2",
+      "osmId": 25427032
+    },
+    {
+      "id": "poi_car_park_25427033",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 612.798,
+      "z": 149.053,
+      "accessLinkId": "l_8003317_5",
+      "osmId": 25427033
+    },
+    {
+      "id": "poi_car_park_25427034",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 629.653,
+      "z": 116.459,
+      "accessLinkId": "l_8003317_4",
+      "osmId": 25427034
+    },
+    {
+      "id": "poi_car_park_25427043",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -150.79,
+      "z": 413.035,
+      "accessLinkId": "l_25427036_0",
+      "osmId": 25427043
+    },
+    {
+      "id": "poi_car_park_25427058",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -233.059,
+      "z": 88.144,
+      "accessLinkId": "l_148461716_4",
+      "osmId": 25427058
+    },
+    {
+      "id": "poi_car_park_25427067",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -545.816,
+      "z": 140.369,
+      "accessLinkId": "l_25086943_0",
+      "osmId": 25427067
+    },
+    {
+      "id": "poi_car_park_25464311",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -84.877,
+      "z": -418.381,
+      "accessLinkId": "l_776717382_0",
+      "osmId": 25464311
+    },
+    {
+      "id": "poi_car_park_25464320",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 596.615,
+      "z": -89.068,
+      "accessLinkId": "l_40458764_0",
+      "osmId": 25464320
+    },
+    {
+      "id": "poi_car_park_25464378",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 280.225,
+      "z": -285.103,
+      "accessLinkId": "l_24237686_2",
+      "osmId": 25464378
+    },
+    {
+      "id": "poi_car_park_25464387",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 22.577,
+      "z": -302.101,
+      "accessLinkId": "l_1040704122_1",
+      "osmId": 25464387
+    },
+    {
+      "id": "poi_car_park_25464406",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 8.726,
+      "z": 341.861,
+      "accessLinkId": "l_1069485800_1",
+      "osmId": 25464406
+    },
+    {
+      "id": "poi_car_park_275463355",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -76.484,
+      "z": 435.821,
+      "accessLinkId": "l_150677030_1",
+      "osmId": 275463355
+    },
+    {
+      "id": "poi_car_park_275659551",
+      "name": "Queens Road Public Car Park",
+      "kind": "car_park",
+      "x": -721.755,
+      "z": -306.663,
+      "accessLinkId": "l_1117440277_0",
+      "osmId": 275659551
+    },
+    {
+      "id": "poi_car_park_277107711",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 227.889,
+      "z": -75.94,
+      "accessLinkId": "l_25372857_0",
+      "osmId": 277107711
+    },
+    {
+      "id": "poi_car_park_299828695",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -422.356,
+      "z": -4.511,
+      "accessLinkId": "l_25373079_3",
+      "osmId": 299828695
+    },
+    {
+      "id": "poi_car_park_299828696",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -479.267,
+      "z": -15.564,
+      "accessLinkId": "l_25373079_3",
+      "osmId": 299828696
+    },
+    {
+      "id": "poi_car_park_300377904",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -194.069,
+      "z": 386.343,
+      "accessLinkId": "l_24355609_1",
+      "osmId": 300377904
+    },
+    {
+      "id": "poi_car_park_303079605",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 493.883,
+      "z": -638.583,
+      "accessLinkId": "l_4013665_3",
+      "osmId": 303079605
+    },
+    {
+      "id": "poi_car_park_303079606",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 410.578,
+      "z": -594.162,
+      "accessLinkId": "l_35077739_2",
+      "osmId": 303079606
+    },
+    {
+      "id": "poi_car_park_303079607",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 400.176,
+      "z": -508.507,
+      "accessLinkId": "l_116132157_4",
+      "osmId": 303079607
+    },
+    {
+      "id": "poi_car_park_3058013009",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 431.271,
+      "z": 716.486,
+      "accessLinkId": "l_156529876_0",
+      "osmId": 3058013009
+    },
+    {
+      "id": "poi_car_park_341054447",
+      "name": "Westminster Road Long Stay",
+      "kind": "car_park",
+      "x": -352.28,
+      "z": -585.303,
+      "accessLinkId": "l_848594987_1",
+      "osmId": 341054447
+    },
+    {
+      "id": "poi_car_park_35075634",
+      "name": "Grosvenor Road Long Stay",
+      "kind": "car_park",
+      "x": -434.547,
+      "z": -560.365,
+      "accessLinkId": "l_848594975_1",
+      "osmId": 35075634
+    },
+    {
+      "id": "poi_car_park_389069881",
+      "name": "Spon Street",
+      "kind": "car_park",
+      "x": -388.332,
+      "z": 26.952,
+      "accessLinkId": "l_25373079_3",
+      "osmId": 389069881
+    },
+    {
+      "id": "poi_car_park_3923543164",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 649.044,
+      "z": -298.553,
+      "accessLinkId": "l_4415183_0",
+      "osmId": 3923543164
+    },
+    {
+      "id": "poi_car_park_3923543183",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 663.388,
+      "z": -185.106,
+      "accessLinkId": "l_167697250_2",
+      "osmId": 3923543183
+    },
+    {
+      "id": "poi_car_park_4837114",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 875.113,
+      "z": -44.851,
+      "accessLinkId": "l_150784973_1",
+      "osmId": 4837114
+    },
+    {
+      "id": "poi_car_park_495911495",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 822.292,
+      "z": 539.827,
+      "accessLinkId": "l_857175052_0",
+      "osmId": 495911495
+    },
+    {
+      "id": "poi_car_park_687676589",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 491.407,
+      "z": -268.456,
+      "accessLinkId": "l_4837334_2",
+      "osmId": 687676589
+    },
+    {
+      "id": "poi_car_park_687676591",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 542.117,
+      "z": -284.341,
+      "accessLinkId": "l_4398418_0",
+      "osmId": 687676591
+    },
+    {
+      "id": "poi_car_park_687685027",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 314.001,
+      "z": 108.185,
+      "accessLinkId": "l_153571257_0",
+      "osmId": 687685027
+    },
+    {
+      "id": "poi_car_park_827706241",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 252.48,
+      "z": -223.981,
+      "accessLinkId": "l_18199964_1",
+      "osmId": 827706241
+    },
+    {
+      "id": "poi_car_park_827706245",
+      "name": "Salt Lane car park",
+      "kind": "car_park",
+      "x": 68.583,
+      "z": -190.132,
+      "accessLinkId": "l_827706246_0",
+      "osmId": 827706245
+    },
+    {
+      "id": "poi_car_park_831403937",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 816.033,
+      "z": -228.718,
+      "accessLinkId": "l_961116000_1",
+      "osmId": 831403937
+    },
+    {
+      "id": "poi_car_park_840883241",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -719.467,
+      "z": 77.317,
+      "accessLinkId": "l_156596771_1",
+      "osmId": 840883241
+    },
+    {
+      "id": "poi_car_park_848594991",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -354.506,
+      "z": -618.185,
+      "accessLinkId": "l_848594988_0",
+      "osmId": 848594991
+    },
+    {
+      "id": "poi_car_park_922975110",
+      "name": "Railway Station Car Park",
+      "kind": "car_park",
+      "x": -303.096,
+      "z": -738.273,
+      "accessLinkId": "l_1020963503_0",
+      "osmId": 922975110
+    },
+    {
+      "id": "poi_city_centre_queen_square",
+      "name": "City Centre (Queen Square)",
+      "kind": "city_centre",
+      "x": -41865.755,
+      "z": 20019.9,
+      "accessLinkId": "l_1329341861_0",
+      "osmId": 0,
+      "reason": "Queen Square is Wolverhampton's civic centre used on local direction signs"
+    },
+    {
+      "id": "poi_hospital_216213943",
+      "name": "Coventry and Warwick Hospital",
+      "kind": "hospital",
+      "x": 270.286,
+      "z": 771.468,
+      "accessLinkId": "l_16300172_0",
+      "osmId": 216213943
+    },
+    {
+      "id": "poi_hospital_25427066",
+      "name": "Atrium Health",
+      "kind": "hospital",
+      "x": -557.511,
+      "z": 88.748,
+      "accessLinkId": "l_25086943_0",
+      "osmId": 25427066
+    },
+    {
+      "id": "poi_hospital_2683585083",
+      "name": "George Elliot Medical Centre",
+      "kind": "hospital",
+      "x": 241.074,
+      "z": 1242.783,
+      "accessLinkId": "l_8404335_0",
+      "osmId": 2683585083,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_police_144729149",
+      "name": "Coventry Central Police Station",
+      "kind": "police",
+      "x": 185.582,
+      "z": -355.843,
+      "accessLinkId": "l_136217381_0",
+      "osmId": 144729149
+    },
+    {
+      "id": "poi_police_275550038",
+      "name": "British Transport Police",
+      "kind": "police",
+      "x": -167.209,
+      "z": -759.565,
+      "accessLinkId": "l_25083607_0",
+      "osmId": 275550038
+    },
+    {
+      "id": "poi_railway_station_6673779824",
+      "name": "Coventry",
+      "kind": "railway_station",
+      "x": -207.415,
+      "z": -807.964,
+      "accessLinkId": "l_237947365_0",
+      "osmId": 6673779824
+    },
+    {
+      "id": "poi_school_116132223",
+      "name": "All Saints Church of England Primary School",
+      "kind": "school",
+      "x": 913.753,
+      "z": -732.295,
+      "accessLinkId": "l_1058462622_0",
+      "osmId": 116132223
+    },
+    {
+      "id": "poi_school_1349881665",
+      "name": "Barr's Hill School",
+      "kind": "school",
+      "x": -442.478,
+      "z": 785.551,
+      "accessLinkId": "l_782102983_0",
+      "osmId": 1349881665
+    },
+    {
+      "id": "poi_school_138563437",
+      "name": "Davenport Lodge School",
+      "kind": "school",
+      "x": -600.147,
+      "z": -1113.466,
+      "accessLinkId": "l_1437077935_0",
+      "osmId": 138563437,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_1432011621",
+      "name": "Sidney Stringer Primary Academy",
+      "kind": "school",
+      "x": 537.633,
+      "z": 645.415,
+      "accessLinkId": "l_8003316_0",
+      "osmId": 1432011621
+    },
+    {
+      "id": "poi_school_152343633",
+      "name": "Frederick Bird Academy",
+      "kind": "school",
+      "x": 1459.307,
+      "z": 1068.098,
+      "accessLinkId": "l_49226863_1",
+      "osmId": 152343633,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_153447179",
+      "name": "Spon Gate Primary School",
+      "kind": "school",
+      "x": -942.317,
+      "z": 106.866,
+      "accessLinkId": "l_152209897_2",
+      "osmId": 153447179
+    },
+    {
+      "id": "poi_school_153455517",
+      "name": "Bablake School",
+      "kind": "school",
+      "x": -699.053,
+      "z": 655.984,
+      "accessLinkId": "l_153455481_0",
+      "osmId": 153455517
+    },
+    {
+      "id": "poi_school_153668267",
+      "name": "Hearsall Community Academy",
+      "kind": "school",
+      "x": -1435.177,
+      "z": -418.813,
+      "accessLinkId": "l_150772386_5",
+      "osmId": 153668267,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_154004262",
+      "name": "Blue Coat Church of England School and Music College",
+      "kind": "school",
+      "x": 1236.887,
+      "z": -952.688,
+      "accessLinkId": "l_321546513_0",
+      "osmId": 154004262,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_161564870",
+      "name": "Radford Primary Academy",
+      "kind": "school",
+      "x": -684.941,
+      "z": 1327.308,
+      "accessLinkId": "l_1236656106_1",
+      "osmId": 161564870,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_161594377",
+      "name": "Gosford Park Primary School",
+      "kind": "school",
+      "x": 1421.064,
+      "z": -324.0,
+      "accessLinkId": "l_888140265_1",
+      "osmId": 161594377,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_163118624",
+      "name": "John Gulson Primary School",
+      "kind": "school",
+      "x": 544.991,
+      "z": 1164.528,
+      "accessLinkId": "l_8404335_0",
+      "osmId": 163118624,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_163124264",
+      "name": "St Osburg's Catholic Primary School",
+      "kind": "school",
+      "x": -612.786,
+      "z": 272.95,
+      "accessLinkId": "l_147409033_0",
+      "osmId": 163124264
+    },
+    {
+      "id": "poi_school_189506215",
+      "name": "Earlsdon Primary School",
+      "kind": "school",
+      "x": -1315.405,
+      "z": -815.029,
+      "accessLinkId": "l_150554111_0",
+      "osmId": 189506215,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_205249090",
+      "name": "Moseley Primary School",
+      "kind": "school",
+      "x": -1100.658,
+      "z": 821.089,
+      "accessLinkId": "l_1329341861_0",
+      "osmId": 205249090,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_23220064",
+      "name": "Sidney Stringer Academy",
+      "kind": "school",
+      "x": 534.395,
+      "z": 437.438,
+      "accessLinkId": "l_25426923_1",
+      "osmId": 23220064
+    },
+    {
+      "id": "poi_school_23221751",
+      "name": "St Mary and St Benedict Catholic Primary School",
+      "kind": "school",
+      "x": 958.653,
+      "z": 666.492,
+      "accessLinkId": "l_23217652_0",
+      "osmId": 23221751
+    },
+    {
+      "id": "poi_school_2688707672",
+      "name": "Al-Madrasa-Tul-Munawwarah",
+      "kind": "school",
+      "x": 243.924,
+      "z": 1250.005,
+      "accessLinkId": "l_8404335_0",
+      "osmId": 2688707672,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_2698072567",
+      "name": "The Quaran School",
+      "kind": "school",
+      "x": 523.03,
+      "z": 860.641,
+      "accessLinkId": "l_43246589_1",
+      "osmId": 2698072567
+    },
+    {
+      "id": "poi_school_363048955",
+      "name": "Southfields Primary School",
+      "kind": "school",
+      "x": 1106.904,
+      "z": 182.052,
+      "accessLinkId": "l_18165168_1",
+      "osmId": 363048955,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_390611901",
+      "name": "Davenport Lodge",
+      "kind": "school",
+      "x": -609.696,
+      "z": -1117.648,
+      "accessLinkId": "l_1437077935_0",
+      "osmId": 390611901,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_468844627",
+      "name": "Eden Girls' School, Coventry",
+      "kind": "school",
+      "x": 203.988,
+      "z": 622.326,
+      "accessLinkId": "l_25372842_0",
+      "osmId": 468844627
+    },
+    {
+      "id": "poi_school_489403417",
+      "name": "King Henry VIII Preparatory School",
+      "kind": "school",
+      "x": -791.165,
+      "z": -1367.221,
+      "accessLinkId": "l_1437077935_0",
+      "osmId": 489403417,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_848594982",
+      "name": "King Henry VIII School",
+      "kind": "school",
+      "x": -502.419,
+      "z": -934.489,
+      "accessLinkId": "l_1437077935_0",
+      "osmId": 848594982
+    },
+    {
+      "id": "poi_shopping_25290681",
+      "name": "Cathedral Lanes Shopping Centre",
+      "kind": "shopping",
+      "x": 46.71,
+      "z": 5.128,
+      "accessLinkId": "l_18163245_0",
+      "osmId": 25290681
+    },
+    {
+      "id": "poi_shopping_300827736",
+      "name": "West Orchards",
+      "kind": "shopping",
+      "x": -129.626,
+      "z": 113.452,
+      "accessLinkId": "l_25372902_0",
+      "osmId": 300827736
+    },
+    {
+      "id": "poi_shopping_3049178155",
+      "name": "Hertford Street Shopping Mall",
+      "kind": "shopping",
+      "x": -30.985,
+      "z": -109.139,
+      "accessLinkId": "l_18163245_0",
+      "osmId": 3049178155
+    },
+    {
+      "id": "poi_university_187726996",
+      "name": "University",
+      "kind": "university",
+      "x": 683.136,
+      "z": -247.185,
+      "accessLinkId": "l_25464366_0",
+      "osmId": 187726996
+    },
+    {
+      "id": "poi_university_204924591",
+      "name": "Coventry University",
+      "kind": "university",
+      "x": 386.445,
+      "z": -73.27,
+      "accessLinkId": "l_138705426_0",
+      "osmId": 204924591
+    },
+    {
+      "id": "poi_university_216213918",
+      "name": "Coventry University - Foleshill Studios",
+      "kind": "university",
+      "x": 226.234,
+      "z": 1425.777,
+      "accessLinkId": "l_8404335_0",
+      "osmId": 216213918,
+      "outsideArea": true
+    }
+  ]
+}

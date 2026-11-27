@@ -1,0 +1,146 @@
+{
+  "routeFormatVersion": "0.1",
+  "packId": "suburb_practice",
+  "routes": [
+    {
+      "id": "suburb-mock-test",
+      "name": "Tettenhall & Suburb Mock Test",
+      "description": "10-minute mock driving test through Tettenhall residential streets, mini-roundabouts, and junctions.",
+      "estimatedMinutes": 6.6,
+      "start": {
+        "linkId": "l_101008255_0",
+        "offsetM": 5
+      },
+      "links": [
+        {
+          "linkId": "l_101008255_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_101008255_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_4",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_5",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_6",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_7",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_8",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_31959651_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_31959651_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_31953757_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_43144586_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43144586_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43144586_2",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_43144586_3",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87055361_0",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_87055361_1",
+          "direction": "forward"
+        },
+        {
+          "linkId": "l_643936649_0",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_101008255_1",
+          "direction": "backward"
+        },
+        {
+          "linkId": "l_101008255_0",
+          "direction": "backward"
+        }
+      ],
+      "features": [
+        "signals",
+        "roundabout"
+      ],
+      "instructions": [
+        {
+          "atLinkIndex": 0,
+          "distanceBeforeM": 15,
+          "text": "Leave the test centre area on Spring Road and keep left.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 8,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Yew Tree Lane and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 11,
+          "distanceBeforeM": 40,
+          "text": "Follow the signs towards City Centre via Westcroft Road.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 16,
+          "distanceBeforeM": 30,
+          "text": "Continue onto Woodthorne Road South and watch speed limits.",
+          "maneuver": "straight_on"
+        },
+        {
+          "atLinkIndex": 22,
+          "distanceBeforeM": 20,
+          "text": "Return to Spring Road and stop safely on the left.",
+          "maneuver": "straight_on"
+        }
+      ]
+    }
+  ]
+}

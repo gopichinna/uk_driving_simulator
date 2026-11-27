@@ -1,0 +1,28 @@
+pack_id: coventry
+display_name: "Coventry Ring Road & City Centre"
+country: GB
+region: GB-ENG
+driving_side: left
+
+origin:
+  lat: 52.4080
+  lon: -1.5105
+
+# 2 km x 2 km bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-1.5250, 52.3990, -1.4960, 52.4170]
+
+bbox_reason: >
+  Coventry Ring Road (A4053) grade-separated slip-road gyratory and radial
+  A-roads/urban streets — chosen as the second V1 city pack for its distinct
+  ring-road weaving layout and rich OSM coverage (47 traffic signals, 187
+  crossings, 589 speed-tagged ways, 503 lane-tagged ways).
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "Standard exclusion"

@@ -59,6 +59,16 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_mix",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.GAP.WET_ICY": [
@@ -143,6 +153,11 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_mix",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
       }
     ],
     "GB.JCT.TURN_FAR_GAP": [
@@ -436,6 +451,26 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.POS.LANE_FOR_ROUTE": [
@@ -458,6 +493,11 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.RBT.APPROACH_LANE": [
@@ -691,6 +731,16 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.SPD.APPROPRIATE": [
@@ -790,6 +840,21 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.TL.AMBER": [
@@ -850,6 +915,16 @@
         "lessonId": "gb-s4-16-following-distance-town",
         "scenarioId": "s4_16_signals_queue",
         "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.TL.RED_AMBER": [
