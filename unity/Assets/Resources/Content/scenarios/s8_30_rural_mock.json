@@ -1,0 +1,20 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_30_rural_mock",
+  "course": "rural_practice",
+  "anchor": "start",
+  "durationS": 540,
+  "events": [
+    {
+      "type": "independent_driving",
+      "minutes": 8,
+      "mode": "signs",
+      "instruction": "Follow the direction signs through Meriden and Berkswell."
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.35
+    }
+  ],
+  "difficulty": 1
+}

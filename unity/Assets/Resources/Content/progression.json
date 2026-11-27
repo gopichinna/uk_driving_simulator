@@ -18,7 +18,8 @@
       "lessonIds": [
         "gb-s1-04-give-way-tjunctions",
         "gb-s1-05-pedestrians-h2",
-        "gb-s1-06-position-after-turning"
+        "gb-s1-06-position-after-turning",
+        "gb-s1-29-turning-left-right"
       ],
       "unlockAfter": { "stage": 0, "minStars": 3 }
     },
@@ -50,7 +51,8 @@
       "lessonIds": [
         "gb-s4-15-overtaking-cyclists",
         "gb-s4-16-following-distance-town",
-        "gb-s4-28-school-zones"
+        "gb-s4-28-school-zones",
+        "gb-s4-32-coventry-ring-road"
       ],
       "unlockAfter": { "stage": 3, "minStars": 5 }
     },
@@ -89,7 +91,9 @@
       "title": "Mock driving test",
       "lessonIds": [
         "gb-s8-19-mock-driving-test",
-        "gb-s8-20-roads-near-test-centre"
+        "gb-s8-20-roads-near-test-centre",
+        "gb-s8-30-mock-test-suburb-rural",
+        "gb-s8-31-mock-test-coventry"
       ],
       "unlockAfter": { "stage": 7, "minStars": 4 }
     }

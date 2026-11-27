@@ -1,0 +1,20 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_31_coventry_mock_signs",
+  "course": "coventry",
+  "anchor": "start",
+  "durationS": 540,
+  "events": [
+    {
+      "type": "independent_driving",
+      "minutes": 8,
+      "mode": "signs",
+      "instruction": "Follow direction signs onto the A4053 ring road."
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    }
+  ],
+  "difficulty": 1
+}

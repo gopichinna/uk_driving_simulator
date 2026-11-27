@@ -10,8 +10,9 @@
       "value": 0.2
     },
     {
-      "type": "finish_after_s",
-      "seconds": 90
+      "type": "finish_at",
+      "anchor": "join",
+      "offsetM": 0
     }
   ]
 }

@@ -16,5 +16,6 @@
       "poiId": "poi_city_centre_queen_square",
       "instruction": "Follow the signs to City Centre (Queen Square)."
     }
-  ]
+  ],
+  "difficulty": 1
 }

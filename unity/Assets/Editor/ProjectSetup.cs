@@ -30,7 +30,7 @@ namespace LToLocal.EditorTools
         public const string ApkPath = "Builds/Android/LToLocal.apk";
 
         /// <summary>Build order = order of the "Course" button. The first one opens when the app starts.</summary>
-        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TestAreaScene, MotorwayScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene };
+        private static readonly string[] Scenes = { TownScene, WolverhamptonScene, TestAreaScene, MotorwayScene, TwoLaneRoundaboutScene, RoundaboutScene, DualCarriagewayScene, SuburbScene, RuralScene, RingRoadScene, CoventryScene, QueslettScene };
 
         [MenuItem("L to Local/Setup Project (player settings, URP, all scenes)")]
         public static void SetupAll()
@@ -45,6 +45,11 @@ namespace LToLocal.EditorTools
             BuildWolverhamptonScene();
             BuildTestAreaScene();
             BuildMotorwayScene();
+            BuildSuburbScene();
+            BuildRuralScene();
+            BuildRingRoadScene();
+            BuildCoventryScene();
+            BuildQueslettScene();
             if (File.Exists("Assets/Scenes/HelloCar.unity")) AssetDatabase.DeleteAsset("Assets/Scenes/HelloCar.unity");
             var list = new List<EditorBuildSettingsScene>();
             foreach (var s in Scenes) list.Add(new EditorBuildSettingsScene(s, true));
@@ -96,6 +101,26 @@ namespace LToLocal.EditorTools
                 ("../content/cities/wolverhampton-test-area/warning_signs.json", "wolverhampton_test_area_warning_signs.json"),
                 ("../content/cities/m54-j2/roadpack.json", "m54_j2_roadpack.json"),
                 ("../content/cities/m54-j2/pois.json", "m54_j2_pois.json"),
+                ("../content/cities/suburb_practice/roadpack.json", "suburb_practice_roadpack.json"),
+                ("../content/cities/suburb_practice/pois.json", "suburb_practice_pois.json"),
+                ("../content/cities/suburb_practice/warning_signs.json", "suburb_practice_warning_signs.json"),
+                ("../content/cities/suburb_practice/pedestrian_routes.json", "suburb_practice_pedestrians.json"),
+                ("../content/cities/rural_practice/roadpack.json", "rural_practice_roadpack.json"),
+                ("../content/cities/rural_practice/pois.json", "rural_practice_pois.json"),
+                ("../content/cities/rural_practice/warning_signs.json", "rural_practice_warning_signs.json"),
+                ("../content/cities/rural_practice/pedestrian_routes.json", "rural_practice_pedestrians.json"),
+                ("../content/cities/ring_road_practice/roadpack.json", "ring_road_practice_roadpack.json"),
+                ("../content/cities/ring_road_practice/pois.json", "ring_road_practice_pois.json"),
+                ("../content/cities/ring_road_practice/warning_signs.json", "ring_road_practice_warning_signs.json"),
+                ("../content/cities/ring_road_practice/pedestrian_routes.json", "ring_road_practice_pedestrians.json"),
+                ("../content/cities/coventry/roadpack.json", "coventry_roadpack.json"),
+                ("../content/cities/coventry/pois.json", "coventry_pois.json"),
+                ("../content/cities/coventry/warning_signs.json", "coventry_warning_signs.json"),
+                ("../content/cities/coventry/pedestrian_routes.json", "coventry_pedestrians.json"),
+                ("../content/cities/queslett_roundabout/roadpack.json", "queslett_roundabout_roadpack.json"),
+                ("../content/cities/queslett_roundabout/pois.json", "queslett_roundabout_pois.json"),
+                ("../content/cities/queslett_roundabout/warning_signs.json", "queslett_roundabout_warning_signs.json"),
+                ("../content/cities/queslett_roundabout/pedestrian_routes.json", "queslett_roundabout_pedestrians.json"),
                 ("../content/lessons/gb/progression.json", "progression.json"),
                 ("../content/lessons/gb/rule_index.json", "rule_index.json"),
             };

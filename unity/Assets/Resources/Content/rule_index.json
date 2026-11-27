@@ -26,6 +26,11 @@
         "title": "Following distance in town"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_speed_change",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s5-18-two-second-rule-speed",
         "scenarioId": "s5_18_two_sec_cruise",
         "title": "The two-second rule at speed"
@@ -59,6 +64,16 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_mix",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.GAP.WET_ICY": [
@@ -83,6 +98,11 @@
         "lessonId": "gb-s2-10-box-junctions",
         "scenarioId": "s2_10_box_right_turn",
         "title": "Box junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.EMERGE_LOOK": [
@@ -107,6 +127,16 @@
         "lessonId": "gb-s1-05-pedestrians-h2",
         "scenarioId": "s1_05_h2_south",
         "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_oncoming_cut",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.H2_PEDESTRIANS": [
@@ -119,6 +149,11 @@
         "lessonId": "gb-s1-05-pedestrians-h2",
         "scenarioId": "s1_05_h2_south",
         "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.H3_CYCLISTS": [
@@ -138,6 +173,11 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_mix",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
       }
     ],
     "GB.JCT.TURN_FAR_GAP": [
@@ -152,6 +192,16 @@
         "title": "Road position after turning"
       },
       {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_clear_gap",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_oncoming_cut",
+        "title": "Turning left and right at junctions"
+      },
+      {
         "lessonId": "gb-s2-10-box-junctions",
         "scenarioId": "s2_10_box_right_turn",
         "title": "Box junctions"
@@ -162,6 +212,11 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_clear_gap",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.JCT.TURN_NEAR": [
@@ -174,6 +229,21 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_early_signal",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_no_signal",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       }
     ],
     "GB.MWY.AMBER_FLASH": [
@@ -273,6 +343,11 @@
         "title": "Overtaking cyclists"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
         "scenarioId": "s5_17_overtake_and_return",
         "title": "Dual carriageway lane discipline"
@@ -327,6 +402,11 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_early_signal",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.POS.DUAL_KEEP_LEFT": [
@@ -383,6 +463,11 @@
         "title": "Overtaking cyclists"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -401,6 +486,26 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.POS.LANE_FOR_ROUTE": [
@@ -423,6 +528,11 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.RBT.APPROACH_LANE": [
@@ -440,6 +550,11 @@
         "lessonId": "gb-s3-12-roundabout-lanes-signals",
         "scenarioId": "s3_12_third_exit_dusk",
         "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.CYCLISTS": [
@@ -479,6 +594,11 @@
         "lessonId": "gb-s3-14-roundabout-cyclists",
         "scenarioId": "s3_14_single_rbt_cyclist",
         "title": "Cyclists on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.SIGNAL_APPROACH": [
@@ -540,6 +660,11 @@
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_busy_spiral_exit",
         "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.WRONG_WAY": [
@@ -603,6 +728,11 @@
         "title": "Pedestrians at junctions (H2)"
       },
       {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_no_signal",
+        "title": "Turning left and right at junctions"
+      },
+      {
         "lessonId": "gb-s2-07-traffic-lights-amber",
         "scenarioId": "s2_07_signals_left",
         "title": "Traffic lights and amber"
@@ -611,6 +741,16 @@
         "lessonId": "gb-s4-15-overtaking-cyclists",
         "scenarioId": "s4_15_dual_cyclist",
         "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
@@ -651,6 +791,16 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.SPD.APPROPRIATE": [
@@ -695,6 +845,11 @@
         "lessonId": "gb-s4-28-school-zones",
         "scenarioId": "s4_28_school_minor_30",
         "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_speed_change",
+        "title": "The ring road"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
@@ -750,6 +905,21 @@
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_signs",
         "title": "Roads near the test centre"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_suburb_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-30-mock-test-suburb-rural",
+        "scenarioId": "s8_30_rural_mock",
+        "title": "Mock test: suburbs and rural lanes"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.TL.AMBER": [
@@ -762,6 +932,11 @@
         "lessonId": "gb-s2-08-advanced-stop-lines",
         "scenarioId": "s2_08_asl_stop",
         "title": "Advanced stop lines"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
       }
     ],
     "GB.TL.ASL": [
@@ -810,6 +985,21 @@
         "lessonId": "gb-s4-16-following-distance-town",
         "scenarioId": "s4_16_signals_queue",
         "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_satnav",
+        "title": "Mock test: Coventry ring road"
+      },
+      {
+        "lessonId": "gb-s8-31-mock-test-coventry",
+        "scenarioId": "s8_31_coventry_mock_signs",
+        "title": "Mock test: Coventry ring road"
       }
     ],
     "GB.TL.RED_AMBER": [
@@ -928,6 +1118,11 @@
         "lessonId": "gb-s2-09-zebra-zigzags",
         "scenarioId": "s2_09_zebra_zigzags",
         "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ],
     "GB.XNG.ZIGZAG_OVERTAKE": [
@@ -940,6 +1135,11 @@
         "lessonId": "gb-s2-09-zebra-zigzags",
         "scenarioId": "s2_09_zebra_zigzags",
         "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ]
   }

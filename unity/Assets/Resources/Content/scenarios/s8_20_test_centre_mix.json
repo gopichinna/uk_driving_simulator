@@ -15,5 +15,6 @@
       "mode": "mixed",
       "instruction": "Follow the practice route using sat nav and road signs."
     }
-  ]
+  ],
+  "difficulty": 1
 }

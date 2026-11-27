@@ -70,5 +70,53 @@
   "recap": [
     "Wait for a safe gap before pulling away from the side of the road.",
     "Signal early so following drivers have plenty of time to react."
+  ],
+  "variants": [
+    {
+      "id": "s0_02_move_off_town_b",
+      "course": "town",
+      "anchor": "school_street",
+      "goal": "Replay variant: Pull away from the side of the road only when it is safe. The cars behind you should not have to slow down.",
+      "rulesJudged": [
+        "GB.OBS.MOVE_OFF_CHECKS",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.35,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s0_02_move_off_town_c",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Replay variant: Pull away from the side of the road only when it is safe. The cars behind you should not have to slow down.",
+      "rulesJudged": [
+        "GB.OBS.MOVE_OFF_CHECKS",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
   ]
 }

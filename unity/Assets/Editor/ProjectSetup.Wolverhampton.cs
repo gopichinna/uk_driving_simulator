@@ -19,6 +19,11 @@ namespace LToLocal.EditorTools
         public const string WolverhamptonScene = "Assets/Scenes/Wolverhampton.unity";
         public const string TestAreaScene = "Assets/Scenes/WolverhamptonTestArea.unity";
         public const string MotorwayScene = "Assets/Scenes/Motorway.unity";
+        public const string SuburbScene = "Assets/Scenes/SuburbPractice.unity";
+        public const string RuralScene = "Assets/Scenes/RuralPractice.unity";
+        public const string RingRoadScene = "Assets/Scenes/RingRoadPractice.unity";
+        public const string CoventryScene = "Assets/Scenes/Coventry.unity";
+        public const string QueslettScene = "Assets/Scenes/Queslett.unity";
         /// <summary>The content/cities folder being built (a city builder is shared by every real-streets course).</summary>
         private static string s_city = "wolverhampton";
         private static string CityFile(string name) => $"../content/cities/{s_city}/{name}";
@@ -405,6 +410,29 @@ namespace LToLocal.EditorTools
         private static void BuildWolverhamptonScene() => BuildCityScene("wolverhampton", WolverhamptonScene);
         private static void BuildTestAreaScene() => BuildCityScene("wolverhampton-test-area", TestAreaScene);
         private static void BuildMotorwayScene() => BuildCityScene("m54-j2", MotorwayScene);
+        private static void BuildSuburbScene() => BuildCityScene("suburb_practice", SuburbScene);
+        private static void BuildRuralScene() => BuildCityScene("rural_practice", RuralScene);
+        private static void BuildRingRoadScene() => BuildCityScene("ring_road_practice", RingRoadScene);
+        private static void BuildCoventryScene() => BuildCityScene("coventry", CoventryScene);
+        private static void BuildQueslettScene() => BuildCityScene("queslett_roundabout", QueslettScene);
+
+        /// <summary>
+        /// Builds only the practice-area scenes added after the first prototype (suburb, rural, ring road, Coventry, Queslett),
+        /// so the older scenes are not regenerated:
+        ///   Unity -batchmode -projectPath unity -executeMethod LToLocal.EditorTools.ProjectSetup.BuildPackScenes -quit
+        /// </summary>
+        [MenuItem("L to Local/Build practice-area scenes only")]
+        public static void BuildPackScenes()
+        {
+            CopyContent();
+            BuildSuburbScene();
+            BuildRuralScene();
+            BuildRingRoadScene();
+            BuildCoventryScene();
+            BuildQueslettScene();
+            AssetDatabase.SaveAssets();
+            Debug.Log("[LToLocal] Practice-area scenes built.");
+        }
 
         private static void BuildCityScene(string city, string scenePath)
         {

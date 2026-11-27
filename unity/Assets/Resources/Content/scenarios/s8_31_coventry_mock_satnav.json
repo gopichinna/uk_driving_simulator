@@ -1,0 +1,20 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_31_coventry_mock_satnav",
+  "course": "coventry",
+  "anchor": "start",
+  "durationS": 540,
+  "events": [
+    {
+      "type": "independent_driving",
+      "minutes": 8,
+      "mode": "satnav",
+      "instruction": "Follow satnav directions around Coventry city centre."
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    }
+  ],
+  "difficulty": 1
+}

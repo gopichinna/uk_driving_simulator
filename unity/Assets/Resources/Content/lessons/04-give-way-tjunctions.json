@@ -70,5 +70,101 @@
   "recap": [
     "Never force a driver on the main road to slow down.",
     "Slow down and creep forward when your sightline is restricted."
+  ],
+  "variants": [
+    {
+      "id": "s1_04_tjunction_north_b",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Replay variant: Give way to main-road traffic and pull out into a safe gap.",
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.STOP_SIGN",
+        "GB.JCT.EMERGE_LOOK"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_04_tjunction_north_c",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Replay variant: Give way to main-road traffic and pull out into a safe gap.",
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.STOP_SIGN",
+        "GB.JCT.EMERGE_LOOK"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.55,
+          0.85
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_04_tjunction_south_b",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Replay variant: Judge approaching speeds from both sides before turning out.",
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.TURN_FAR_GAP"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_04_tjunction_south_c",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Replay variant: Judge approaching speeds from both sides before turning out.",
+      "rulesJudged": [
+        "GB.JCT.GIVE_WAY",
+        "GB.JCT.TURN_FAR_GAP"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.55,
+          0.85
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
   ]
 }

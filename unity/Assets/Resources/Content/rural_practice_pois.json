@@ -1,0 +1,143 @@
+{
+  "poisFormatVersion": "0.1",
+  "packId": "rural_practice",
+  "origin": {
+    "lat": 52.4175,
+    "lon": -1.64
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-25T21:22:46Z",
+    "bbox": [
+      -1.66,
+      52.4,
+      -1.62,
+      52.435
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "pois": [
+    {
+      "id": "poi_car_park_1554735302",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -1217.479,
+      "z": -1822.311,
+      "accessLinkId": "l_8132365_0",
+      "osmId": 1554735302
+    },
+    {
+      "id": "poi_car_park_1809759257",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 596.232,
+      "z": 1617.424,
+      "accessLinkId": "l_735718914_0",
+      "osmId": 1809759257
+    },
+    {
+      "id": "poi_car_park_201126439",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -112.361,
+      "z": 1726.506,
+      "accessLinkId": "l_4020606_3",
+      "osmId": 201126439
+    },
+    {
+      "id": "poi_car_park_201425514",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -90.239,
+      "z": 1858.431,
+      "accessLinkId": "l_4020606_1",
+      "osmId": 201425514
+    },
+    {
+      "id": "poi_car_park_223635793",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -393.618,
+      "z": 1942.837,
+      "accessLinkId": "l_722440535_0",
+      "osmId": 223635793
+    },
+    {
+      "id": "poi_car_park_228186300",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -38.711,
+      "z": -855.531,
+      "accessLinkId": "l_4017321_3",
+      "osmId": 228186300
+    },
+    {
+      "id": "poi_car_park_257997740",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 109.954,
+      "z": -880.557,
+      "accessLinkId": "l_691930702_1",
+      "osmId": 257997740
+    },
+    {
+      "id": "poi_car_park_427649957",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -8.328,
+      "z": -792.357,
+      "accessLinkId": "l_4016067_2",
+      "osmId": 427649957
+    },
+    {
+      "id": "poi_car_park_996636197",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -1025.643,
+      "z": -1506.048,
+      "accessLinkId": "l_8132365_0",
+      "osmId": 996636197
+    },
+    {
+      "id": "poi_car_park_996636200",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -928.769,
+      "z": -1629.025,
+      "accessLinkId": "l_8132365_0",
+      "osmId": 996636200
+    },
+    {
+      "id": "poi_city_centre_queen_square",
+      "name": "City Centre (Queen Square)",
+      "kind": "city_centre",
+      "x": -33088.717,
+      "z": 18895.504,
+      "accessLinkId": "l_722440535_0",
+      "osmId": 0,
+      "reason": "Queen Square is Wolverhampton's civic centre used on local direction signs"
+    },
+    {
+      "id": "poi_railway_station_7170567334",
+      "name": "Berkswell",
+      "kind": "railway_station",
+      "x": -121.873,
+      "z": -2383.088,
+      "accessLinkId": "l_4017321_1",
+      "osmId": 7170567334,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_169817253",
+      "name": "Berkswell Church of England Voluntary Aided Primary School",
+      "kind": "school",
+      "x": -115.363,
+      "z": -837.688,
+      "accessLinkId": "l_8132365_0",
+      "osmId": 169817253
+    }
+  ]
+}

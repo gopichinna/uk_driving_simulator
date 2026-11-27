@@ -92,5 +92,53 @@
   "recap": [
     "Slow down early when you spot a school warning sign.",
     "Expect children near parked cars and school crossings at any time of day."
+  ],
+  "variants": [
+    {
+      "id": "s4_28_school_pass_b",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Replay variant: Hold 20 mph or less past school signs. (Game assumption pending ADI review.)",
+      "rulesJudged": [
+        "GB.SCH.SLOW",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.55
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_28_school_pass_c",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Replay variant: Hold 20 mph or less past school signs. (Game assumption pending ADI review.)",
+      "rulesJudged": [
+        "GB.SCH.SLOW",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.5,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

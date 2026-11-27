@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s8-30-mock-test-suburb-rural",
+  "questions": [
+    {
+      "id": "q_30_stop",
+      "question": "At a solid white stop line on a quiet rural lane, what must you do?",
+      "options": [
+        "Stop completely behind the line even if clear",
+        "Roll slowly through below 5 mph",
+        "Only stop if traffic is coming"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 171 says you must stop completely behind every solid white stop line.",
+      "ruleId": "GB.JCT.STOP_SIGN"
+    },
+    {
+      "id": "q_30_bends",
+      "question": "What should you do when approaching a sharp rural bend?",
+      "options": [
+        "Slow down before the bend and keep left",
+        "Brake hard mid-bend",
+        "Cross the centre line to straighten the corner"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 125 says slow down for bends so you can stop in view.",
+      "ruleId": "GB.SPD.APPROPRIATE"
+    },
+    {
+      "id": "q_30_faults",
+      "question": "How many driving faults can you have and still pass a UK practical test?",
+      "options": [
+        "Up to 15 driving faults with no serious or dangerous faults",
+        "Up to 25 driving faults",
+        "Only 1 driving fault"
+      ],
+      "answerIndex": 0,
+      "explanation": "The practical driving test allows at most 15 driving faults and 0 fails.",
+      "ruleId": "GB.POS.KEEP_LEFT"
+    }
+  ]
+}

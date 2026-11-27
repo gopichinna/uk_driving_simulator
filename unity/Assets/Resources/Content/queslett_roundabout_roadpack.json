@@ -1,0 +1,6538 @@
+{
+  "packFormatVersion": "0.6",
+  "packId": "queslett_roundabout",
+  "displayName": "Queslett / Aldridge Road Roundabout (Great Barr)",
+  "country": "GB",
+  "region": "GB-ENG",
+  "drivingSide": "left",
+  "origin": {
+    "lat": 52.565552,
+    "lon": -1.885967
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-26T21:21:01Z",
+    "bbox": [
+      -1.8905,
+      52.5625,
+      -1.8815,
+      52.5685
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "nodes": [
+    {
+      "id": "n_130524",
+      "x": 389.037,
+      "z": -195.979,
+      "kind": "end",
+      "osmId": 130524,
+      "trafficSignals": true
+    },
+    {
+      "id": "n_130526",
+      "x": -11.412,
+      "z": -38.157,
+      "kind": "roundabout",
+      "osmId": 130526
+    },
+    {
+      "id": "n_130527",
+      "x": -32.589,
+      "z": -23.402,
+      "kind": "roundabout",
+      "osmId": 130527
+    },
+    {
+      "id": "n_130528",
+      "x": -24.791,
+      "z": 6.432,
+      "kind": "roundabout",
+      "osmId": 130528
+    },
+    {
+      "id": "n_130529",
+      "x": 12.443,
+      "z": -23.435,
+      "kind": "roundabout",
+      "osmId": 130529
+    },
+    {
+      "id": "n_130530",
+      "x": 13.86,
+      "z": -10.149,
+      "kind": "roundabout",
+      "osmId": 130530
+    },
+    {
+      "id": "n_130531",
+      "x": -8.381,
+      "z": 10.438,
+      "kind": "roundabout",
+      "osmId": 130531
+    },
+    {
+      "id": "n_130534",
+      "x": 263.506,
+      "z": 259.163,
+      "kind": "end",
+      "osmId": 130534,
+      "trafficSignals": true
+    },
+    {
+      "id": "n_130536",
+      "x": 407.369,
+      "z": 340.216,
+      "kind": "end",
+      "osmId": 130536
+    },
+    {
+      "id": "n_207686",
+      "x": -827.681,
+      "z": -1014.974,
+      "kind": "end",
+      "osmId": 207686
+    },
+    {
+      "id": "n_218111",
+      "x": -670.927,
+      "z": 868.995,
+      "kind": "end",
+      "osmId": 218111
+    },
+    {
+      "id": "n_229180",
+      "x": -470.216,
+      "z": -493.507,
+      "kind": "end",
+      "osmId": 229180
+    },
+    {
+      "id": "n_300497",
+      "x": -36.495,
+      "z": 10.572,
+      "kind": "junction",
+      "osmId": 300497
+    },
+    {
+      "id": "n_305877",
+      "x": 367.764,
+      "z": -286.549,
+      "kind": "end",
+      "osmId": 305877
+    },
+    {
+      "id": "n_16483149",
+      "x": 193.511,
+      "z": 67.906,
+      "kind": "junction",
+      "osmId": 16483149
+    },
+    {
+      "id": "n_16483151",
+      "x": 152.699,
+      "z": 27.199,
+      "kind": "end",
+      "osmId": 16483151
+    },
+    {
+      "id": "n_16483152",
+      "x": 285.756,
+      "z": -30.059,
+      "kind": "junction",
+      "osmId": 16483152
+    },
+    {
+      "id": "n_16483159",
+      "x": 286.188,
+      "z": 125.808,
+      "kind": "junction",
+      "osmId": 16483159
+    },
+    {
+      "id": "n_16483160",
+      "x": 324.077,
+      "z": 148.055,
+      "kind": "junction",
+      "osmId": 16483160
+    },
+    {
+      "id": "n_16483164",
+      "x": 221.477,
+      "z": 190.647,
+      "kind": "junction",
+      "osmId": 16483164
+    },
+    {
+      "id": "n_16483166",
+      "x": 155.408,
+      "z": 129.385,
+      "kind": "junction",
+      "osmId": 16483166
+    },
+    {
+      "id": "n_16483168",
+      "x": 145.419,
+      "z": 137.909,
+      "kind": "junction",
+      "osmId": 16483168
+    },
+    {
+      "id": "n_16483169",
+      "x": 149.835,
+      "z": 101.021,
+      "kind": "junction",
+      "osmId": 16483169
+    },
+    {
+      "id": "n_16483179",
+      "x": 19.597,
+      "z": -34.196,
+      "kind": "junction",
+      "osmId": 16483179
+    },
+    {
+      "id": "n_16483180",
+      "x": 242.607,
+      "z": -131.591,
+      "kind": "junction",
+      "osmId": 16483180
+    },
+    {
+      "id": "n_16483261",
+      "x": 355.351,
+      "z": 327.137,
+      "kind": "end",
+      "osmId": 16483261
+    },
+    {
+      "id": "n_16483312",
+      "x": -31.511,
+      "z": -1.135,
+      "kind": "roundabout",
+      "osmId": 16483312
+    },
+    {
+      "id": "n_16483313",
+      "x": -79.006,
+      "z": -100.65,
+      "kind": "junction",
+      "osmId": 16483313
+    },
+    {
+      "id": "n_16483314",
+      "x": -71.378,
+      "z": -106.927,
+      "kind": "junction",
+      "osmId": 16483314
+    },
+    {
+      "id": "n_16483316",
+      "x": 117.898,
+      "z": -197.539,
+      "kind": "roundabout",
+      "osmId": 16483316
+    },
+    {
+      "id": "n_16483323",
+      "x": 154.991,
+      "z": -213.407,
+      "kind": "roundabout",
+      "osmId": 16483323
+    },
+    {
+      "id": "n_16483324",
+      "x": 144.501,
+      "z": -223.8,
+      "kind": "roundabout",
+      "osmId": 16483324
+    },
+    {
+      "id": "n_16483699",
+      "x": 164.237,
+      "z": 122.175,
+      "kind": "junction",
+      "osmId": 16483699
+    },
+    {
+      "id": "n_16483700",
+      "x": 260.904,
+      "z": 229.262,
+      "kind": "end",
+      "osmId": 16483700
+    },
+    {
+      "id": "n_54751583",
+      "x": 276.694,
+      "z": 269.479,
+      "kind": "junction",
+      "osmId": 54751583
+    },
+    {
+      "id": "n_54751586",
+      "x": 315.199,
+      "z": 298.258,
+      "kind": "junction",
+      "osmId": 54751586
+    },
+    {
+      "id": "n_54751588",
+      "x": 176.901,
+      "z": 174.599,
+      "kind": "junction",
+      "osmId": 54751588
+    },
+    {
+      "id": "n_54751590",
+      "x": 166.161,
+      "z": 162.669,
+      "kind": "junction",
+      "osmId": 54751590
+    },
+    {
+      "id": "n_54751594",
+      "x": 50.456,
+      "z": 45.124,
+      "kind": "junction",
+      "osmId": 54751594
+    },
+    {
+      "id": "n_54751596",
+      "x": -48.673,
+      "z": 23.502,
+      "kind": "junction",
+      "osmId": 54751596
+    },
+    {
+      "id": "n_54751598",
+      "x": -122.501,
+      "z": 131.477,
+      "kind": "junction",
+      "osmId": 54751598
+    },
+    {
+      "id": "n_54751601",
+      "x": -231.67,
+      "z": 280.983,
+      "kind": "junction",
+      "osmId": 54751601
+    },
+    {
+      "id": "n_54751618",
+      "x": -164.358,
+      "z": 337.376,
+      "kind": "junction",
+      "osmId": 54751618
+    },
+    {
+      "id": "n_54751623",
+      "x": 43.987,
+      "z": 55.706,
+      "kind": "junction",
+      "osmId": 54751623
+    },
+    {
+      "id": "n_54751624",
+      "x": 163.048,
+      "z": 173.318,
+      "kind": "junction",
+      "osmId": 54751624
+    },
+    {
+      "id": "n_54751627",
+      "x": 269.35,
+      "z": 279.916,
+      "kind": "junction",
+      "osmId": 54751627
+    },
+    {
+      "id": "n_54751886",
+      "x": -134.3,
+      "z": 364.282,
+      "kind": "junction",
+      "osmId": 54751886
+    },
+    {
+      "id": "n_54751889",
+      "x": 33.65,
+      "z": 505.336,
+      "kind": "end",
+      "osmId": 54751889
+    },
+    {
+      "id": "n_54752202",
+      "x": -25.543,
+      "z": 187.203,
+      "kind": "junction",
+      "osmId": 54752202
+    },
+    {
+      "id": "n_54752205",
+      "x": -39.334,
+      "z": 203.684,
+      "kind": "end",
+      "osmId": 54752205
+    },
+    {
+      "id": "n_54752206",
+      "x": -19.861,
+      "z": 179.503,
+      "kind": "end",
+      "osmId": 54752206
+    },
+    {
+      "id": "n_54752208",
+      "x": 18.81,
+      "z": 134.235,
+      "kind": "junction",
+      "osmId": 54752208
+    },
+    {
+      "id": "n_54752210",
+      "x": 6.76,
+      "z": 146.943,
+      "kind": "end",
+      "osmId": 54752210
+    },
+    {
+      "id": "n_54752212",
+      "x": 9.012,
+      "z": 123.752,
+      "kind": "junction",
+      "osmId": 54752212
+    },
+    {
+      "id": "n_54752217",
+      "x": 76.005,
+      "z": 174.396,
+      "kind": "junction",
+      "osmId": 54752217
+    },
+    {
+      "id": "n_54752243",
+      "x": 114.398,
+      "z": 128.272,
+      "kind": "junction",
+      "osmId": 54752243
+    },
+    {
+      "id": "n_54752244",
+      "x": 124.487,
+      "z": 136.039,
+      "kind": "junction",
+      "osmId": 54752244
+    },
+    {
+      "id": "n_54752265",
+      "x": 38.725,
+      "z": 52.223,
+      "kind": "junction",
+      "osmId": 54752265
+    },
+    {
+      "id": "n_54752266",
+      "x": 247.443,
+      "z": 261.12,
+      "kind": "end",
+      "osmId": 54752266
+    },
+    {
+      "id": "n_54752276",
+      "x": 255.892,
+      "z": 379.532,
+      "kind": "end",
+      "osmId": 54752276
+    },
+    {
+      "id": "n_60851782",
+      "x": -212.742,
+      "z": -242.047,
+      "kind": "junction",
+      "osmId": 60851782
+    },
+    {
+      "id": "n_60851980",
+      "x": -175.386,
+      "z": -300.392,
+      "kind": "junction",
+      "osmId": 60851980
+    },
+    {
+      "id": "n_60851982",
+      "x": -231.539,
+      "z": -381.689,
+      "kind": "end",
+      "osmId": 60851982
+    },
+    {
+      "id": "n_60851985",
+      "x": -165.092,
+      "z": -314.48,
+      "kind": "junction",
+      "osmId": 60851985
+    },
+    {
+      "id": "n_60851990",
+      "x": -54.305,
+      "z": -274.0,
+      "kind": "junction",
+      "osmId": 60851990
+    },
+    {
+      "id": "n_60851991",
+      "x": -49.239,
+      "z": -267.212,
+      "kind": "end",
+      "osmId": 60851991
+    },
+    {
+      "id": "n_60851992",
+      "x": -59.052,
+      "z": -281.778,
+      "kind": "end",
+      "osmId": 60851992
+    },
+    {
+      "id": "n_60851993",
+      "x": -109.656,
+      "z": -363.488,
+      "kind": "junction",
+      "osmId": 60851993
+    },
+    {
+      "id": "n_60852068",
+      "x": -527.896,
+      "z": -516.813,
+      "kind": "crossing",
+      "osmId": 60852068
+    },
+    {
+      "id": "n_60859786",
+      "x": -88.689,
+      "z": -93.272,
+      "kind": "junction",
+      "osmId": 60859786
+    },
+    {
+      "id": "n_60859787",
+      "x": -218.234,
+      "z": -233.278,
+      "kind": "junction",
+      "osmId": 60859787
+    },
+    {
+      "id": "n_60859788",
+      "x": -224.35,
+      "z": -222.306,
+      "kind": "junction",
+      "osmId": 60859788
+    },
+    {
+      "id": "n_748500723",
+      "x": 219.007,
+      "z": -241.324,
+      "kind": "junction",
+      "osmId": 748500723
+    },
+    {
+      "id": "n_847659897",
+      "x": 6.544,
+      "z": -32.093,
+      "kind": "roundabout",
+      "osmId": 847659897
+    },
+    {
+      "id": "n_1491782164",
+      "x": 196.896,
+      "z": -293.97,
+      "kind": "end",
+      "osmId": 1491782164
+    },
+    {
+      "id": "n_1574858396",
+      "x": 84.163,
+      "z": 97.291,
+      "kind": "end",
+      "osmId": 1574858396
+    },
+    {
+      "id": "n_1574858586",
+      "x": 66.098,
+      "z": 166.083,
+      "kind": "junction",
+      "osmId": 1574858586
+    },
+    {
+      "id": "n_1574858666",
+      "x": 45.83,
+      "z": 198.821,
+      "kind": "end",
+      "osmId": 1574858666
+    },
+    {
+      "id": "n_1580304431",
+      "x": 170.781,
+      "z": -100.325,
+      "kind": "junction",
+      "osmId": 1580304431
+    },
+    {
+      "id": "n_1580304752",
+      "x": 154.68,
+      "z": -24.601,
+      "kind": "end",
+      "osmId": 1580304752
+    },
+    {
+      "id": "n_2400959731",
+      "x": 158.259,
+      "z": 18.564,
+      "kind": "end",
+      "osmId": 2400959731
+    },
+    {
+      "id": "n_2400959732",
+      "x": 160.415,
+      "z": 23.883,
+      "kind": "junction",
+      "osmId": 2400959732
+    },
+    {
+      "id": "n_3955855887",
+      "x": -111.54,
+      "z": 283.226,
+      "kind": "end",
+      "osmId": 3955855887
+    },
+    {
+      "id": "n_3955855892",
+      "x": -149.123,
+      "z": 319.738,
+      "kind": "junction",
+      "osmId": 3955855892
+    },
+    {
+      "id": "n_3955855897",
+      "x": -136.552,
+      "z": 330.019,
+      "kind": "end",
+      "osmId": 3955855897
+    },
+    {
+      "id": "n_5805646762",
+      "x": 214.601,
+      "z": 197.334,
+      "kind": "junction",
+      "osmId": 5805646762
+    },
+    {
+      "id": "n_6521815472",
+      "x": -146.395,
+      "z": 164.193,
+      "kind": "junction",
+      "osmId": 6521815472
+    },
+    {
+      "id": "n_6521815478",
+      "x": -71.922,
+      "z": 227.397,
+      "kind": "end",
+      "osmId": 6521815478
+    },
+    {
+      "id": "n_6972178609",
+      "x": -499.984,
+      "z": -464.994,
+      "kind": "end",
+      "osmId": 6972178609
+    },
+    {
+      "id": "n_7984838824",
+      "x": -17.094,
+      "z": 104.846,
+      "kind": "end",
+      "osmId": 7984838824
+    },
+    {
+      "id": "n_8364864917",
+      "x": 25.096,
+      "z": -36.644,
+      "kind": "junction",
+      "osmId": 8364864917
+    },
+    {
+      "id": "n_9159451113",
+      "x": 311.475,
+      "z": -210.862,
+      "kind": "end",
+      "osmId": 9159451113
+    },
+    {
+      "id": "n_9159451115",
+      "x": 311.519,
+      "z": -161.577,
+      "kind": "junction",
+      "osmId": 9159451115
+    },
+    {
+      "id": "n_11866289112",
+      "x": 205.243,
+      "z": 206.292,
+      "kind": "junction",
+      "osmId": 11866289112
+    },
+    {
+      "id": "n_13827552028",
+      "x": -3.146,
+      "z": 119.646,
+      "kind": "end",
+      "osmId": 13827552028
+    },
+    {
+      "id": "n_13827552033",
+      "x": 131.241,
+      "z": 143.461,
+      "kind": "end",
+      "osmId": 13827552033
+    },
+    {
+      "id": "n_13827552056",
+      "x": 378.349,
+      "z": -191.239,
+      "kind": "crossing",
+      "osmId": 13827552056
+    }
+  ],
+  "links": [
+    {
+      "id": "l_1107171330_0",
+      "from": "n_60859786",
+      "to": "n_130527",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -88.689,
+          -93.272
+        ],
+        [
+          -40.109,
+          -41.306
+        ],
+        [
+          -35.661,
+          -33.161
+        ],
+        [
+          -32.589,
+          -23.402
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 1107171330,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_1278176679_0",
+      "from": "n_11866289112",
+      "to": "n_5805646762",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          205.243,
+          206.292
+        ],
+        [
+          214.601,
+          197.334
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 1278176679,
+      "name": "Elmwood Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_142383683_0",
+      "from": "n_229180",
+      "to": "n_60851782",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -470.216,
+          -493.507
+        ],
+        [
+          -464.824,
+          -488.233
+        ],
+        [
+          -463.569,
+          -480.187
+        ],
+        [
+          -464.076,
+          -465.554
+        ],
+        [
+          -463.851,
+          -458.354
+        ],
+        [
+          -459.456,
+          -452.324
+        ],
+        [
+          -449.812,
+          -440.674
+        ],
+        [
+          -430.476,
+          -417.34
+        ],
+        [
+          -400.031,
+          -381.111
+        ],
+        [
+          -380.003,
+          -359.636
+        ],
+        [
+          -357.379,
+          -339.786
+        ],
+        [
+          -339.435,
+          -325.399
+        ],
+        [
+          -309.399,
+          -305.549
+        ],
+        [
+          -281.703,
+          -287.657
+        ],
+        [
+          -230.99,
+          -253.809
+        ],
+        [
+          -212.742,
+          -242.047
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "right",
+      "sidewalkSource": "tagged",
+      "osmWayId": 142383683,
+      "name": "Queslett Road East",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_142383683_1",
+      "from": "n_60851782",
+      "to": "n_16483314",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -212.742,
+          -242.047
+        ],
+        [
+          -178.332,
+          -216.455
+        ],
+        [
+          -152.584,
+          -194.667
+        ],
+        [
+          -129.567,
+          -168.985
+        ],
+        [
+          -71.378,
+          -106.927
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "right",
+      "sidewalkSource": "tagged",
+      "osmWayId": 142383683,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_142383683_2",
+      "from": "n_16483314",
+      "to": "n_8364864917",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -71.378,
+          -106.927
+        ],
+        [
+          -48.674,
+          -79.319
+        ],
+        [
+          -26.771,
+          -60.09
+        ],
+        [
+          -19.699,
+          -53.425
+        ],
+        [
+          -13.576,
+          -50.22
+        ],
+        [
+          12.802,
+          -46.982
+        ],
+        [
+          18.661,
+          -45.457
+        ],
+        [
+          21.001,
+          -43.454
+        ],
+        [
+          25.096,
+          -36.644
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "right",
+      "sidewalkSource": "tagged",
+      "osmWayId": 142383683,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_143926957_0",
+      "from": "n_1574858586",
+      "to": "n_1574858666",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          66.098,
+          166.083
+        ],
+        [
+          45.83,
+          198.821
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 143926957,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_144478913_0",
+      "from": "n_1580304431",
+      "to": "n_1580304752",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          170.781,
+          -100.325
+        ],
+        [
+          191.353,
+          -52.553
+        ],
+        [
+          190.715,
+          -48.08
+        ],
+        [
+          188.315,
+          -44.085
+        ],
+        [
+          185.426,
+          -41.848
+        ],
+        [
+          163.808,
+          -33.381
+        ],
+        [
+          159.007,
+          -29.709
+        ],
+        [
+          154.68,
+          -24.601
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 144478913,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_1513484342_0",
+      "from": "n_54752212",
+      "to": "n_13827552028",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          9.012,
+          123.752
+        ],
+        [
+          5.045,
+          124.22
+        ],
+        [
+          -3.146,
+          119.646
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 1513484342,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_1513484344_0",
+      "from": "n_54752244",
+      "to": "n_13827552033",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          124.487,
+          136.039
+        ],
+        [
+          131.241,
+          143.461
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 1513484344,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_231762688_0",
+      "from": "n_2400959732",
+      "to": "n_2400959731",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          160.415,
+          23.883
+        ],
+        [
+          158.259,
+          18.564
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 231762688,
+      "name": "Mayland Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350605_0",
+      "from": "n_16483159",
+      "to": "n_16483160",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          286.188,
+          125.808
+        ],
+        [
+          324.077,
+          148.055
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 3350605,
+      "name": "Allmyn Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350605_1",
+      "from": "n_16483160",
+      "to": "n_16483160",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          324.077,
+          148.055
+        ],
+        [
+          323.521,
+          151.371
+        ],
+        [
+          325.874,
+          155.544
+        ],
+        [
+          328.66,
+          158.326
+        ],
+        [
+          332.2,
+          158.427
+        ],
+        [
+          335.089,
+          157.47
+        ],
+        [
+          337.449,
+          154.9
+        ],
+        [
+          338.303,
+          151.483
+        ],
+        [
+          338.412,
+          148.701
+        ],
+        [
+          337.022,
+          145.708
+        ],
+        [
+          334.344,
+          144.217
+        ],
+        [
+          330.804,
+          144.005
+        ],
+        [
+          327.59,
+          144.316
+        ],
+        [
+          326.2,
+          145.607
+        ],
+        [
+          324.077,
+          148.055
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 3350605,
+      "name": "Allmyn Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350607_0",
+      "from": "n_16483180",
+      "to": "n_16483152",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          242.607,
+          -131.591
+        ],
+        [
+          285.756,
+          -30.059
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350607,
+      "name": "Elmwood Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350607_1",
+      "from": "n_16483152",
+      "to": "n_16483159",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          285.756,
+          -30.059
+        ],
+        [
+          305.35,
+          17.914
+        ],
+        [
+          308.977,
+          44.577
+        ],
+        [
+          308.548,
+          64.607
+        ],
+        [
+          304.051,
+          82.923
+        ],
+        [
+          295.499,
+          108.494
+        ],
+        [
+          286.188,
+          125.808
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350607,
+      "name": "Elmwood Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350607_2",
+      "from": "n_16483159",
+      "to": "n_16483164",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          286.188,
+          125.808
+        ],
+        [
+          259.599,
+          152.903
+        ],
+        [
+          238.768,
+          173.444
+        ],
+        [
+          221.477,
+          190.647
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350607,
+      "name": "Elmwood Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350607_3",
+      "from": "n_16483164",
+      "to": "n_5805646762",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          221.477,
+          190.647
+        ],
+        [
+          214.601,
+          197.334
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350607,
+      "name": "Elmwood Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350610_0",
+      "from": "n_16483152",
+      "to": "n_2400959732",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          285.756,
+          -30.059
+        ],
+        [
+          160.415,
+          23.883
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350610,
+      "name": "Mayland Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350610_1",
+      "from": "n_2400959732",
+      "to": "n_16483151",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          160.415,
+          23.883
+        ],
+        [
+          152.699,
+          27.199
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350610,
+      "name": "Mayland Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350615_0",
+      "from": "n_16483169",
+      "to": "n_16483149",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          149.835,
+          101.021
+        ],
+        [
+          174.369,
+          77.052
+        ],
+        [
+          193.511,
+          67.906
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350615,
+      "name": "Finch Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350615_1",
+      "from": "n_16483149",
+      "to": "n_16483149",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          193.511,
+          67.906
+        ],
+        [
+          195.539,
+          70.009
+        ],
+        [
+          200.143,
+          71.612
+        ],
+        [
+          204.537,
+          71.189
+        ],
+        [
+          207.751,
+          67.873
+        ],
+        [
+          208.714,
+          64.134
+        ],
+        [
+          208.395,
+          61.04
+        ],
+        [
+          206.571,
+          58.681
+        ],
+        [
+          203.893,
+          57.19
+        ],
+        [
+          200.36,
+          56.756
+        ],
+        [
+          196.502,
+          58.147
+        ],
+        [
+          194.678,
+          60.283
+        ],
+        [
+          192.962,
+          62.854
+        ],
+        [
+          192.643,
+          65.101
+        ],
+        [
+          193.511,
+          67.906
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350615,
+      "name": "Finch Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350849_0",
+      "from": "n_16483313",
+      "to": "n_16483314",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -79.006,
+          -100.65
+        ],
+        [
+          -71.378,
+          -106.927
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350849,
+      "name": "Donegal Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350849_1",
+      "from": "n_16483314",
+      "to": "n_16483316",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -71.378,
+          -106.927
+        ],
+        [
+          -45.82,
+          -124.976
+        ],
+        [
+          -3.804,
+          -143.716
+        ],
+        [
+          42.436,
+          -164.157
+        ],
+        [
+          117.898,
+          -197.539
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350849,
+      "name": "Donegal Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350852_0",
+      "from": "n_16483324",
+      "to": "n_16483316",
+      "roadClass": "residential",
+      "oneway": true,
+      "geometry": [
+        [
+          144.501,
+          -223.8
+        ],
+        [
+          139.402,
+          -225.236
+        ],
+        [
+          132.451,
+          -225.025
+        ],
+        [
+          125.5,
+          -222.176
+        ],
+        [
+          121.011,
+          -218.193
+        ],
+        [
+          117.491,
+          -212.028
+        ],
+        [
+          116.365,
+          -206.497
+        ],
+        [
+          116.915,
+          -200.511
+        ],
+        [
+          117.898,
+          -197.539
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350852,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350852_1",
+      "from": "n_16483316",
+      "to": "n_16483323",
+      "roadClass": "residential",
+      "oneway": true,
+      "geometry": [
+        [
+          117.898,
+          -197.539
+        ],
+        [
+          118.745,
+          -195.759
+        ],
+        [
+          123.424,
+          -189.983
+        ],
+        [
+          131.636,
+          -185.777
+        ],
+        [
+          138.343,
+          -185.265
+        ],
+        [
+          145.009,
+          -187.045
+        ],
+        [
+          148.935,
+          -189.437
+        ],
+        [
+          153.153,
+          -193.911
+        ],
+        [
+          155.554,
+          -198.64
+        ],
+        [
+          156.673,
+          -206.274
+        ],
+        [
+          155.724,
+          -211.481
+        ],
+        [
+          154.991,
+          -213.407
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350852,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350852_2",
+      "from": "n_16483323",
+      "to": "n_16483324",
+      "roadClass": "residential",
+      "oneway": true,
+      "geometry": [
+        [
+          154.991,
+          -213.407
+        ],
+        [
+          150.001,
+          -220.284
+        ],
+        [
+          144.501,
+          -223.8
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350852,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350854_0",
+      "from": "n_16483323",
+      "to": "n_748500723",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          154.991,
+          -213.407
+        ],
+        [
+          219.007,
+          -241.324
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 3350854,
+      "name": "Donegal Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350854_1",
+      "from": "n_748500723",
+      "to": "n_305877",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          219.007,
+          -241.324
+        ],
+        [
+          268.844,
+          -262.943
+        ],
+        [
+          331.721,
+          -279.375
+        ],
+        [
+          367.764,
+          -286.549
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 3350854,
+      "name": "Donegal Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350859_0",
+      "from": "n_130526",
+      "to": "n_16483313",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -11.412,
+          -38.157
+        ],
+        [
+          -22.14,
+          -41.874
+        ],
+        [
+          -79.006,
+          -100.65
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350859,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350859_1",
+      "from": "n_16483313",
+      "to": "n_60859787",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -79.006,
+          -100.65
+        ],
+        [
+          -136.24,
+          -163.555
+        ],
+        [
+          -184.679,
+          -209.021
+        ],
+        [
+          -218.234,
+          -233.278
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350859,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_3350859_2",
+      "from": "n_60859787",
+      "to": "n_60852068",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -218.234,
+          -233.278
+        ],
+        [
+          -249.849,
+          -253.964
+        ],
+        [
+          -287.154,
+          -278.643
+        ],
+        [
+          -345.564,
+          -317.62
+        ],
+        [
+          -389.491,
+          -359.068
+        ],
+        [
+          -440.858,
+          -415.57
+        ],
+        [
+          -511.191,
+          -496.585
+        ],
+        [
+          -527.896,
+          -516.813
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350859,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_3350859_3",
+      "from": "n_60852068",
+      "to": "n_207686",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -527.896,
+          -516.813
+        ],
+        [
+          -613.303,
+          -615.129
+        ],
+        [
+          -686.348,
+          -701.983
+        ],
+        [
+          -719.348,
+          -744.208
+        ],
+        [
+          -729.557,
+          -762.2
+        ],
+        [
+          -739.896,
+          -780.548
+        ],
+        [
+          -759.367,
+          -825.88
+        ],
+        [
+          -781.603,
+          -891.808
+        ],
+        [
+          -792.168,
+          -927.037
+        ],
+        [
+          -805.264,
+          -965.905
+        ],
+        [
+          -825.177,
+          -1009.5
+        ],
+        [
+          -827.681,
+          -1014.974
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 3350859,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_392355196_0",
+      "from": "n_3955855892",
+      "to": "n_3955855897",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -149.123,
+          319.738
+        ],
+        [
+          -136.552,
+          330.019
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 392355196,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_4763510_0",
+      "from": "n_218111",
+      "to": "n_54751601",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          -670.927,
+          868.995
+        ],
+        [
+          -643.115,
+          831.379
+        ],
+        [
+          -614.258,
+          793.029
+        ],
+        [
+          -586.337,
+          757.083
+        ],
+        [
+          -576.718,
+          743.561
+        ],
+        [
+          -559.757,
+          719.712
+        ],
+        [
+          -542.756,
+          696.386
+        ],
+        [
+          -502.861,
+          641.5
+        ],
+        [
+          -476.809,
+          606.144
+        ],
+        [
+          -449.841,
+          569.542
+        ],
+        [
+          -342.739,
+          424.182
+        ],
+        [
+          -250.526,
+          306.477
+        ],
+        [
+          -231.67,
+          280.983
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 4763510,
+      "name": "Aldridge Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_60236239_0",
+      "from": "n_748500723",
+      "to": "n_1491782164",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          219.007,
+          -241.324
+        ],
+        [
+          211.162,
+          -259.774
+        ],
+        [
+          198.082,
+          -290.532
+        ],
+        [
+          196.896,
+          -293.97
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 60236239,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_6132924_0",
+      "from": "n_16483166",
+      "to": "n_16483168",
+      "roadClass": "trunk",
+      "oneway": false,
+      "geometry": [
+        [
+          155.408,
+          129.385
+        ],
+        [
+          145.419,
+          137.909
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 6132924,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_6132933_0",
+      "from": "n_16483700",
+      "to": "n_16483164",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          260.904,
+          229.262
+        ],
+        [
+          221.477,
+          190.647
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 6132933,
+      "name": "Queslett Road East",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_6132933_1",
+      "from": "n_16483164",
+      "to": "n_16483699",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          221.477,
+          190.647
+        ],
+        [
+          164.237,
+          122.175
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 6132933,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_6132933_2",
+      "from": "n_16483699",
+      "to": "n_16483169",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          164.237,
+          122.175
+        ],
+        [
+          149.835,
+          101.021
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 6132933,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_6132933_3",
+      "from": "n_16483169",
+      "to": "n_8364864917",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          149.835,
+          101.021
+        ],
+        [
+          139.108,
+          92.864
+        ],
+        [
+          124.15,
+          81.479
+        ],
+        [
+          42.381,
+          7.723
+        ],
+        [
+          40.258,
+          5.809
+        ],
+        [
+          33.166,
+          -5.92
+        ],
+        [
+          33.057,
+          -16.725
+        ],
+        [
+          31.66,
+          -29.822
+        ],
+        [
+          25.096,
+          -36.644
+        ]
+      ],
+      "speedLimitMph": 20,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 6132933,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_6132934_0",
+      "from": "n_16483699",
+      "to": "n_16483166",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          164.237,
+          122.175
+        ],
+        [
+          155.408,
+          129.385
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 6132934,
+      "name": "Queslett Road East",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_629267085_0",
+      "from": "n_130527",
+      "to": "n_16483312",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -32.589,
+          -23.402
+        ],
+        [
+          -33.681,
+          -15.134
+        ],
+        [
+          -33.844,
+          -8.813
+        ],
+        [
+          -31.511,
+          -1.135
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 629267085,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_629267086_0",
+      "from": "n_130526",
+      "to": "n_130527",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -11.412,
+          -38.157
+        ],
+        [
+          -16.308,
+          -37.423
+        ],
+        [
+          -19.672,
+          -36.299
+        ],
+        [
+          -24.283,
+          -33.762
+        ],
+        [
+          -27.287,
+          -31.28
+        ],
+        [
+          -30.263,
+          -27.786
+        ],
+        [
+          -32.589,
+          -23.402
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 629267086,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_629267100_0",
+      "from": "n_6972178609",
+      "to": "n_60859788",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -499.984,
+          -464.994
+        ],
+        [
+          -447.266,
+          -403.34
+        ],
+        [
+          -399.961,
+          -351.734
+        ],
+        [
+          -354.326,
+          -311.532
+        ],
+        [
+          -292.959,
+          -269.674
+        ],
+        [
+          -239.819,
+          -233.066
+        ],
+        [
+          -224.35,
+          -222.306
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 629267100,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_629267100_1",
+      "from": "n_60859788",
+      "to": "n_60859786",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -224.35,
+          -222.306
+        ],
+        [
+          -192.342,
+          -200.063
+        ],
+        [
+          -147.286,
+          -157.278
+        ],
+        [
+          -88.689,
+          -93.272
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 629267100,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_633069078_0",
+      "from": "n_847659897",
+      "to": "n_130526",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          6.544,
+          -32.093
+        ],
+        [
+          4.367,
+          -33.317
+        ],
+        [
+          0.475,
+          -35.698
+        ],
+        [
+          -3.011,
+          -37.078
+        ],
+        [
+          -6.449,
+          -37.879
+        ],
+        [
+          -11.412,
+          -38.157
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 633069078,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_633069094_0",
+      "from": "n_130529",
+      "to": "n_847659897",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          12.443,
+          -23.435
+        ],
+        [
+          9.765,
+          -27.92
+        ],
+        [
+          6.544,
+          -32.093
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 633069094,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_694556600_0",
+      "from": "n_6521815472",
+      "to": "n_6521815478",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -146.395,
+          164.193
+        ],
+        [
+          -136.014,
+          171.259
+        ],
+        [
+          -124.425,
+          182.809
+        ],
+        [
+          -109.996,
+          200.747
+        ],
+        [
+          -100.536,
+          208.291
+        ],
+        [
+          -86.114,
+          217.961
+        ],
+        [
+          -71.922,
+          227.397
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 694556600,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_71204701_0",
+      "from": "n_300497",
+      "to": "n_130528",
+      "roadClass": "tertiary",
+      "oneway": true,
+      "geometry": [
+        [
+          -36.495,
+          10.572
+        ],
+        [
+          -24.791,
+          6.432
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 71204701,
+      "name": "Aldridge Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_71204710_0",
+      "from": "n_16483312",
+      "to": "n_130528",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -31.511,
+          -1.135
+        ],
+        [
+          -28.161,
+          3.95
+        ],
+        [
+          -24.791,
+          6.432
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 71204710,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_71204791_0",
+      "from": "n_54751601",
+      "to": "n_6521815472",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          -231.67,
+          280.983
+        ],
+        [
+          -146.395,
+          164.193
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 71204791,
+      "name": "Aldridge Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_71204791_1",
+      "from": "n_6521815472",
+      "to": "n_54751598",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          -146.395,
+          164.193
+        ],
+        [
+          -122.501,
+          131.477
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 71204791,
+      "name": "Aldridge Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_71204791_2",
+      "from": "n_54751598",
+      "to": "n_54751596",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          -122.501,
+          131.477
+        ],
+        [
+          -82.373,
+          72.131
+        ],
+        [
+          -68.839,
+          50.487
+        ],
+        [
+          -48.673,
+          23.502
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 71204791,
+      "name": "Aldridge Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_71204791_3",
+      "from": "n_54751596",
+      "to": "n_300497",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          -48.673,
+          23.502
+        ],
+        [
+          -36.495,
+          10.572
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 71204791,
+      "name": "Aldridge Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369455_0",
+      "from": "n_54751886",
+      "to": "n_54751889",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -134.3,
+          364.282
+        ],
+        [
+          -93.91,
+          319.436
+        ],
+        [
+          -87.116,
+          316.954
+        ],
+        [
+          -80.803,
+          317.021
+        ],
+        [
+          -74.985,
+          319.569
+        ],
+        [
+          70.115,
+          441.307
+        ],
+        [
+          75.587,
+          448.518
+        ],
+        [
+          77.336,
+          454.839
+        ],
+        [
+          75.173,
+          459.613
+        ],
+        [
+          33.65,
+          505.336
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369455,
+      "name": "Brabham Crescent",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369458_0",
+      "from": "n_54751598",
+      "to": "n_54752202",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -122.501,
+          131.477
+        ],
+        [
+          -97.276,
+          151.851
+        ],
+        [
+          -68.275,
+          160.975
+        ],
+        [
+          -57.67,
+          162.11
+        ],
+        [
+          -36.839,
+          175.408
+        ],
+        [
+          -25.543,
+          187.203
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369458,
+      "name": "Rangeview Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369460_0",
+      "from": "n_54752205",
+      "to": "n_54752202",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -39.334,
+          203.684
+        ],
+        [
+          -25.543,
+          187.203
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369460,
+      "name": "Rangeview Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369460_1",
+      "from": "n_54752202",
+      "to": "n_54752206",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -25.543,
+          187.203
+        ],
+        [
+          -19.861,
+          179.503
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369460,
+      "name": "Rangeview Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369463_0",
+      "from": "n_1574858396",
+      "to": "n_54752243",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          84.163,
+          97.291
+        ],
+        [
+          91.235,
+          101.787
+        ],
+        [
+          94.232,
+          109.376
+        ],
+        [
+          100.131,
+          115.04
+        ],
+        [
+          114.398,
+          128.272
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369463,
+      "name": "Pembury Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369463_1",
+      "from": "n_54752243",
+      "to": "n_54752244",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          114.398,
+          128.272
+        ],
+        [
+          119.999,
+          132.578
+        ],
+        [
+          124.487,
+          136.039
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369463,
+      "name": "Pembury Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369466_0",
+      "from": "n_54752212",
+      "to": "n_54752208",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          9.012,
+          123.752
+        ],
+        [
+          18.81,
+          134.235
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369466,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369466_1",
+      "from": "n_54752208",
+      "to": "n_1574858586",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          18.81,
+          134.235
+        ],
+        [
+          38.569,
+          152.874
+        ],
+        [
+          60.308,
+          161.22
+        ],
+        [
+          66.098,
+          166.083
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369466,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369466_2",
+      "from": "n_1574858586",
+      "to": "n_54752217",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          66.098,
+          166.083
+        ],
+        [
+          76.005,
+          174.396
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369466,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369466_3",
+      "from": "n_54752217",
+      "to": "n_54751624",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          76.005,
+          174.396
+        ],
+        [
+          88.006,
+          184.912
+        ],
+        [
+          106.816,
+          193.636
+        ],
+        [
+          129.191,
+          209.639
+        ],
+        [
+          137.07,
+          212.41
+        ],
+        [
+          142.074,
+          211.197
+        ],
+        [
+          145.763,
+          206.234
+        ],
+        [
+          149.323,
+          195.74
+        ],
+        [
+          154.816,
+          184.691
+        ],
+        [
+          163.048,
+          173.318
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369466,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369466_4",
+      "from": "n_54751624",
+      "to": "n_54751588",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          163.048,
+          173.318
+        ],
+        [
+          176.901,
+          174.599
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369466,
+      "name": "Hollyoak Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369469_0",
+      "from": "n_54752217",
+      "to": "n_54752243",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          76.005,
+          174.396
+        ],
+        [
+          114.398,
+          128.272
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369469,
+      "name": "Pembury Close",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369472_0",
+      "from": "n_54751590",
+      "to": "n_54751624",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          166.161,
+          162.669
+        ],
+        [
+          163.048,
+          173.318
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369472,
+      "name": "Hollyoak Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369473_0",
+      "from": "n_54752210",
+      "to": "n_54752208",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          6.76,
+          146.943
+        ],
+        [
+          18.81,
+          134.235
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369473,
+      "name": "Hollyoak Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369475_0",
+      "from": "n_54751596",
+      "to": "n_54752265",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -48.673,
+          23.502
+        ],
+        [
+          -33.986,
+          34.841
+        ],
+        [
+          -21.916,
+          23.891
+        ],
+        [
+          4.048,
+          25.872
+        ],
+        [
+          38.725,
+          52.223
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369475,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369475_1",
+      "from": "n_54752265",
+      "to": "n_54751623",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          38.725,
+          52.223
+        ],
+        [
+          43.987,
+          55.706
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369475,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369475_2",
+      "from": "n_54751623",
+      "to": "n_54751594",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          43.987,
+          55.706
+        ],
+        [
+          50.456,
+          45.124
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369475,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369477_0",
+      "from": "n_16483312",
+      "to": "n_300497",
+      "roadClass": "tertiary",
+      "oneway": true,
+      "geometry": [
+        [
+          -31.511,
+          -1.135
+        ],
+        [
+          -36.495,
+          10.572
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 7369477,
+      "name": "Aldridge Road",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369479_0",
+      "from": "n_54752265",
+      "to": "n_54751623",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          38.725,
+          52.223
+        ],
+        [
+          18.762,
+          79.241
+        ],
+        [
+          29.069,
+          86.741
+        ],
+        [
+          49.676,
+          60.803
+        ],
+        [
+          43.987,
+          55.706
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369479,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_7369482_0",
+      "from": "n_54752266",
+      "to": "n_54751627",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          247.443,
+          261.12
+        ],
+        [
+          269.35,
+          279.916
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369482,
+      "name": "Queslett Road East",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369482_1",
+      "from": "n_54751627",
+      "to": "n_54751586",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          269.35,
+          279.916
+        ],
+        [
+          308.987,
+          306.67
+        ],
+        [
+          315.199,
+          298.258
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 7369482,
+      "name": "Queslett Road East",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369484_0",
+      "from": "n_54751583",
+      "to": "n_54751627",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          276.694,
+          269.479
+        ],
+        [
+          269.35,
+          279.916
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369484,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369484_1",
+      "from": "n_54751627",
+      "to": "n_54752276",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          269.35,
+          279.916
+        ],
+        [
+          247.101,
+          317.127
+        ],
+        [
+          239.662,
+          332.983
+        ],
+        [
+          239.661,
+          344.111
+        ],
+        [
+          243.716,
+          357.598
+        ],
+        [
+          255.892,
+          379.532
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369484,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369510_0",
+      "from": "n_54751618",
+      "to": "n_3955855892",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -164.358,
+          337.376
+        ],
+        [
+          -149.123,
+          319.738
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369510,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_7369510_1",
+      "from": "n_3955855892",
+      "to": "n_3955855887",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -149.123,
+          319.738
+        ],
+        [
+          -146.75,
+          316.989
+        ],
+        [
+          -140.492,
+          315.13
+        ],
+        [
+          -111.54,
+          283.226
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 7369510,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_790_0",
+      "from": "n_130536",
+      "to": "n_5805646762",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          407.369,
+          340.216
+        ],
+        [
+          397.368,
+          339.982
+        ],
+        [
+          389.476,
+          337.722
+        ],
+        [
+          361.454,
+          317.378
+        ],
+        [
+          314.942,
+          282.701
+        ],
+        [
+          267.806,
+          248.157
+        ],
+        [
+          216.811,
+          199.871
+        ],
+        [
+          214.601,
+          197.334
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 790,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_790_1",
+      "from": "n_5805646762",
+      "to": "n_16483166",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          214.601,
+          197.334
+        ],
+        [
+          155.408,
+          129.385
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 790,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_790_2",
+      "from": "n_16483166",
+      "to": "n_130530",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          155.408,
+          129.385
+        ],
+        [
+          130.177,
+          102.544
+        ],
+        [
+          117.172,
+          88.701
+        ],
+        [
+          87.954,
+          62.784
+        ],
+        [
+          50.368,
+          29.422
+        ],
+        [
+          36.915,
+          17.482
+        ],
+        [
+          35.356,
+          16.08
+        ],
+        [
+          21.726,
+          3.806
+        ],
+        [
+          13.86,
+          -10.149
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 790,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_0",
+      "from": "n_130531",
+      "to": "n_54751594",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -8.381,
+          10.438
+        ],
+        [
+          10.036,
+          13.62
+        ],
+        [
+          24.689,
+          22.078
+        ],
+        [
+          27.564,
+          24.648
+        ],
+        [
+          50.456,
+          45.124
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_1",
+      "from": "n_54751594",
+      "to": "n_16483168",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          50.456,
+          45.124
+        ],
+        [
+          81.729,
+          71.886
+        ],
+        [
+          113.944,
+          102.177
+        ],
+        [
+          131.75,
+          122.397
+        ],
+        [
+          145.419,
+          137.909
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_2",
+      "from": "n_16483168",
+      "to": "n_54751590",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          145.419,
+          137.909
+        ],
+        [
+          166.161,
+          162.669
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_3",
+      "from": "n_54751590",
+      "to": "n_54751588",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          166.161,
+          162.669
+        ],
+        [
+          176.901,
+          174.599
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_4",
+      "from": "n_54751588",
+      "to": "n_11866289112",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          176.901,
+          174.599
+        ],
+        [
+          205.243,
+          206.292
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_791_5",
+      "from": "n_11866289112",
+      "to": "n_130534",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          205.243,
+          206.292
+        ],
+        [
+          207.731,
+          209.074
+        ],
+        [
+          237.49,
+          237.406
+        ],
+        [
+          263.506,
+          259.163
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_791_6",
+      "from": "n_130534",
+      "to": "n_54751583",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          263.506,
+          259.163
+        ],
+        [
+          276.694,
+          269.479
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_791_7",
+      "from": "n_54751583",
+      "to": "n_54751586",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          276.694,
+          269.479
+        ],
+        [
+          304.601,
+          290.0
+        ],
+        [
+          315.199,
+          298.258
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_791_8",
+      "from": "n_54751586",
+      "to": "n_16483261",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          315.199,
+          298.258
+        ],
+        [
+          355.351,
+          327.137
+        ]
+      ],
+      "speedLimitMph": 40,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 791,
+      "name": "Queslett Road East",
+      "ref": "A4041",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_792_0",
+      "from": "n_130528",
+      "to": "n_130531",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -24.791,
+          6.432
+        ],
+        [
+          -20.614,
+          8.212
+        ],
+        [
+          -16.295,
+          9.748
+        ],
+        [
+          -13.44,
+          10.293
+        ],
+        [
+          -8.381,
+          10.438
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 792,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_792_1",
+      "from": "n_130531",
+      "to": "n_130530",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -8.381,
+          10.438
+        ],
+        [
+          -4.353,
+          9.781
+        ],
+        [
+          -0.17,
+          8.324
+        ],
+        [
+          4.326,
+          5.675
+        ],
+        [
+          7.364,
+          2.993
+        ],
+        [
+          10.076,
+          -0.389
+        ],
+        [
+          12.077,
+          -4.039
+        ],
+        [
+          13.86,
+          -10.149
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 792,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_792_2",
+      "from": "n_130530",
+      "to": "n_130529",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          13.86,
+          -10.149
+        ],
+        [
+          14.138,
+          -14.232
+        ],
+        [
+          13.44,
+          -19.618
+        ],
+        [
+          12.443,
+          -23.435
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 2,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 792,
+      "junctionRoundabout": true,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_793_0",
+      "from": "n_130529",
+      "to": "n_16483179",
+      "roadClass": "tertiary",
+      "oneway": true,
+      "geometry": [
+        [
+          12.443,
+          -23.435
+        ],
+        [
+          19.597,
+          -34.196
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 793,
+      "name": "Bakers Lane",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113685_0",
+      "from": "n_60851982",
+      "to": "n_60851980",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -231.539,
+          -381.689
+        ],
+        [
+          -182.323,
+          -308.036
+        ],
+        [
+          -175.386,
+          -300.392
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113685,
+      "name": "Beacon View Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_8113686_0",
+      "from": "n_60859787",
+      "to": "n_60851782",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -218.234,
+          -233.278
+        ],
+        [
+          -212.742,
+          -242.047
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113686,
+      "name": "Lindens Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113686_1",
+      "from": "n_60851782",
+      "to": "n_60851980",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -212.742,
+          -242.047
+        ],
+        [
+          -175.386,
+          -300.392
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113686,
+      "name": "Lindens Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113686_2",
+      "from": "n_60851980",
+      "to": "n_60851985",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -175.386,
+          -300.392
+        ],
+        [
+          -165.092,
+          -314.48
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113686,
+      "name": "Lindens Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113686_3",
+      "from": "n_60851985",
+      "to": "n_60851993",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -165.092,
+          -314.48
+        ],
+        [
+          -139.242,
+          -340.275
+        ],
+        [
+          -109.656,
+          -363.488
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113686,
+      "name": "Lindens Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113686_4",
+      "from": "n_60851993",
+      "to": "n_60851993",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -109.656,
+          -363.488
+        ],
+        [
+          -106.19,
+          -360.94
+        ],
+        [
+          -101.47,
+          -359.683
+        ],
+        [
+          -94.872,
+          -362.02
+        ],
+        [
+          -92.255,
+          -368.418
+        ],
+        [
+          -94.75,
+          -375.295
+        ],
+        [
+          -99.477,
+          -377.955
+        ],
+        [
+          -105.729,
+          -378.311
+        ],
+        [
+          -109.344,
+          -374.483
+        ],
+        [
+          -111.229,
+          -369.653
+        ],
+        [
+          -109.656,
+          -363.488
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113686,
+      "name": "Lindens Drive",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8113689_0",
+      "from": "n_60851985",
+      "to": "n_60851990",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -165.092,
+          -314.48
+        ],
+        [
+          -100.221,
+          -271.028
+        ],
+        [
+          -88.014,
+          -264.107
+        ],
+        [
+          -77.246,
+          -263.873
+        ],
+        [
+          -54.305,
+          -274.0
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113689,
+      "name": "Rowton Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_8113690_0",
+      "from": "n_60851992",
+      "to": "n_60851990",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -59.052,
+          -281.778
+        ],
+        [
+          -54.305,
+          -274.0
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113690,
+      "name": "Rowton Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_8113690_1",
+      "from": "n_60851990",
+      "to": "n_60851991",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -54.305,
+          -274.0
+        ],
+        [
+          -49.239,
+          -267.212
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 8113690,
+      "name": "Rowton Drive",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_8114447_0",
+      "from": "n_60859786",
+      "to": "n_16483313",
+      "roadClass": "trunk",
+      "oneway": false,
+      "geometry": [
+        [
+          -88.689,
+          -93.272
+        ],
+        [
+          -79.006,
+          -100.65
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 8114447,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_8114448_0",
+      "from": "n_60859787",
+      "to": "n_60859788",
+      "roadClass": "trunk",
+      "oneway": true,
+      "geometry": [
+        [
+          -218.234,
+          -233.278
+        ],
+        [
+          -224.35,
+          -222.306
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 8114448,
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_84525898_0",
+      "from": "n_54751886",
+      "to": "n_54751618",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -134.3,
+          364.282
+        ],
+        [
+          -157.062,
+          344.442
+        ],
+        [
+          -164.358,
+          337.376
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 84525898,
+      "name": "Hundred Acre Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_84525898_1",
+      "from": "n_54751618",
+      "to": "n_54751601",
+      "roadClass": "residential",
+      "oneway": false,
+      "geometry": [
+        [
+          -164.358,
+          337.376
+        ],
+        [
+          -231.67,
+          280.983
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 84525898,
+      "name": "Hundred Acre Road",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_856359509_0",
+      "from": "n_7984838824",
+      "to": "n_54752212",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          -17.094,
+          104.846
+        ],
+        [
+          7.106,
+          119.424
+        ],
+        [
+          9.012,
+          123.752
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.45,
+      "confidenceNotes": "lanes inferred from roadClass; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 856359509,
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_98900032_0",
+      "from": "n_16483179",
+      "to": "n_8364864917",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          19.597,
+          -34.196
+        ],
+        [
+          25.096,
+          -36.644
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_98900032_1",
+      "from": "n_8364864917",
+      "to": "n_1580304431",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          25.096,
+          -36.644
+        ],
+        [
+          170.781,
+          -100.325
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_98900032_2",
+      "from": "n_1580304431",
+      "to": "n_16483180",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          170.781,
+          -100.325
+        ],
+        [
+          242.607,
+          -131.591
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_98900032_3",
+      "from": "n_16483180",
+      "to": "n_9159451115",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          242.607,
+          -131.591
+        ],
+        [
+          311.519,
+          -161.577
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_98900032_4",
+      "from": "n_9159451115",
+      "to": "n_13827552056",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          311.519,
+          -161.577
+        ],
+        [
+          316.157,
+          -164.025
+        ],
+        [
+          341.764,
+          -175.006
+        ],
+        [
+          377.915,
+          -191.05
+        ],
+        [
+          378.349,
+          -191.239
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_98900032_5",
+      "from": "n_13827552056",
+      "to": "n_130524",
+      "roadClass": "tertiary",
+      "oneway": false,
+      "geometry": [
+        [
+          378.349,
+          -191.239
+        ],
+        [
+          389.037,
+          -195.979
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.85,
+      "confidenceNotes": "explicit lanes; tagged maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "both",
+      "sidewalkSource": "default",
+      "osmWayId": 98900032,
+      "name": "Bakers Lane",
+      "inMainNetwork": false
+    },
+    {
+      "id": "l_98900071_0",
+      "from": "n_16483179",
+      "to": "n_847659897",
+      "roadClass": "tertiary",
+      "oneway": true,
+      "geometry": [
+        [
+          19.597,
+          -34.196
+        ],
+        [
+          6.544,
+          -32.093
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "tagged",
+      "lanesForward": 1,
+      "lanesBackward": 0,
+      "confidence": 0.6,
+      "confidenceNotes": "lanes inferred from roadClass; tagged maxspeed; estimated width (3.25 m)",
+      "widthM": 3.25,
+      "widthSource": "estimated",
+      "sidewalk": "left",
+      "sidewalkSource": "tagged",
+      "osmWayId": 98900071,
+      "name": "Bakers Lane",
+      "inMainNetwork": true
+    },
+    {
+      "id": "l_991347461_0",
+      "from": "n_9159451115",
+      "to": "n_9159451113",
+      "roadClass": "service",
+      "oneway": false,
+      "geometry": [
+        [
+          311.519,
+          -161.577
+        ],
+        [
+          309.112,
+          -167.419
+        ],
+        [
+          294.372,
+          -203.241
+        ],
+        [
+          311.475,
+          -210.862
+        ]
+      ],
+      "speedLimitMph": 30,
+      "speedLimitSource": "default",
+      "lanesForward": 1,
+      "lanesBackward": 1,
+      "confidence": 0.7,
+      "confidenceNotes": "explicit lanes; default maxspeed; estimated width (6.5 m)",
+      "widthM": 6.5,
+      "widthSource": "estimated",
+      "sidewalk": "none",
+      "sidewalkSource": "default",
+      "osmWayId": 991347461,
+      "inMainNetwork": false
+    }
+  ],
+  "crossings": [
+    {
+      "id": "x_13827552056",
+      "x": 378.349,
+      "z": -191.239,
+      "type": "uncontrolled",
+      "linkId": "l_98900032_4",
+      "confidence": 0.4,
+      "osmId": 13827552056
+    },
+    {
+      "id": "x_60852068",
+      "x": -527.896,
+      "z": -516.813,
+      "type": "pelican",
+      "linkId": "l_3350859_2",
+      "confidence": 0.95,
+      "osmId": 60852068
+    }
+  ],
+  "zones": [],
+  "restrictions": [
+    {
+      "id": "r_14735332",
+      "type": "no_right_turn",
+      "fromLink": "l_629267100_1",
+      "viaNode": "n_60859786",
+      "toLink": "l_8114447_0",
+      "confidence": 0.9,
+      "osmRelationId": 14735332
+    }
+  ],
+  "junctionPriority": [
+    {
+      "nodeId": "n_11866289112",
+      "majorLinks": [
+        "l_791_4",
+        "l_791_5"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_130526",
+      "majorLinks": [
+        "l_629267086_0",
+        "l_633069078_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130527",
+      "majorLinks": [
+        "l_629267085_0",
+        "l_629267086_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130528",
+      "majorLinks": [
+        "l_71204710_0",
+        "l_792_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130529",
+      "majorLinks": [
+        "l_633069094_0",
+        "l_792_2"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130530",
+      "majorLinks": [
+        "l_792_1",
+        "l_792_2"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130531",
+      "majorLinks": [
+        "l_792_0",
+        "l_792_1"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_130534",
+      "majorLinks": [
+        "l_791_5",
+        "l_791_6"
+      ],
+      "controlledBy": "signals",
+      "confidence": 0.75,
+      "confidenceNotes": "traffic_signals node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1574858586",
+      "majorLinks": [
+        "l_143926957_0",
+        "l_7369466_1",
+        "l_7369466_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_1580304431",
+      "majorLinks": [
+        "l_98900032_1",
+        "l_98900032_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_16483149",
+      "majorLinks": [
+        "l_3350615_0",
+        "l_3350615_1",
+        "l_3350615_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_16483152",
+      "majorLinks": [
+        "l_3350607_0",
+        "l_3350607_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483159",
+      "majorLinks": [
+        "l_3350607_1",
+        "l_3350607_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483160",
+      "majorLinks": [
+        "l_3350605_0",
+        "l_3350605_1",
+        "l_3350605_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_16483164",
+      "majorLinks": [
+        "l_3350607_2",
+        "l_3350607_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483166",
+      "majorLinks": [
+        "l_6132924_0",
+        "l_790_1",
+        "l_790_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_16483168",
+      "majorLinks": [
+        "l_791_1",
+        "l_791_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483169",
+      "majorLinks": [
+        "l_6132933_2",
+        "l_6132933_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483179",
+      "majorLinks": [
+        "l_793_0",
+        "l_98900032_0",
+        "l_98900071_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_16483180",
+      "majorLinks": [
+        "l_98900032_2",
+        "l_98900032_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_16483312",
+      "majorLinks": [
+        "l_629267085_0",
+        "l_71204710_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_16483313",
+      "majorLinks": [
+        "l_3350859_0",
+        "l_3350859_1",
+        "l_8114447_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_16483314",
+      "majorLinks": [
+        "l_142383683_1",
+        "l_142383683_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_16483316",
+      "majorLinks": [
+        "l_3350852_0",
+        "l_3350852_1"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_16483323",
+      "majorLinks": [
+        "l_3350852_1",
+        "l_3350852_2"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_16483324",
+      "majorLinks": [
+        "l_3350852_0",
+        "l_3350852_2"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_16483699",
+      "majorLinks": [
+        "l_6132933_1",
+        "l_6132933_2",
+        "l_6132934_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_2400959732",
+      "majorLinks": [
+        "l_231762688_0",
+        "l_3350610_0",
+        "l_3350610_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_300497",
+      "majorLinks": [
+        "l_71204701_0",
+        "l_71204791_3",
+        "l_7369477_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_3955855892",
+      "majorLinks": [
+        "l_392355196_0",
+        "l_7369510_0",
+        "l_7369510_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54751583",
+      "majorLinks": [
+        "l_791_6",
+        "l_791_7"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751586",
+      "majorLinks": [
+        "l_791_7",
+        "l_791_8"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751588",
+      "majorLinks": [
+        "l_791_3",
+        "l_791_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751590",
+      "majorLinks": [
+        "l_791_2",
+        "l_791_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751594",
+      "majorLinks": [
+        "l_791_0",
+        "l_791_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751596",
+      "majorLinks": [
+        "l_71204791_2",
+        "l_71204791_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751598",
+      "majorLinks": [
+        "l_71204791_1",
+        "l_71204791_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751601",
+      "majorLinks": [
+        "l_4763510_0",
+        "l_71204791_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751618",
+      "majorLinks": [
+        "l_84525898_0",
+        "l_84525898_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751623",
+      "majorLinks": [
+        "l_7369475_1",
+        "l_7369475_2",
+        "l_7369479_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54751624",
+      "majorLinks": [
+        "l_7369466_3",
+        "l_7369466_4",
+        "l_7369472_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54751627",
+      "majorLinks": [
+        "l_7369482_0",
+        "l_7369482_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54751886",
+      "majorLinks": [
+        "l_7369455_0",
+        "l_84525898_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54752202",
+      "majorLinks": [
+        "l_7369458_0",
+        "l_7369460_0",
+        "l_7369460_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54752208",
+      "majorLinks": [
+        "l_7369466_0",
+        "l_7369466_1",
+        "l_7369473_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54752212",
+      "majorLinks": [
+        "l_7369466_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54752217",
+      "majorLinks": [
+        "l_7369466_2",
+        "l_7369466_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_54752243",
+      "majorLinks": [
+        "l_7369463_0",
+        "l_7369463_1",
+        "l_7369469_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_54752244",
+      "majorLinks": [
+        "l_7369463_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_54752265",
+      "majorLinks": [
+        "l_7369475_0",
+        "l_7369475_1",
+        "l_7369479_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_5805646762",
+      "majorLinks": [
+        "l_790_0",
+        "l_790_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_60851782",
+      "majorLinks": [
+        "l_142383683_0",
+        "l_142383683_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_60851980",
+      "majorLinks": [
+        "l_8113686_1",
+        "l_8113686_2"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_60851985",
+      "majorLinks": [
+        "l_8113686_2",
+        "l_8113686_3"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_60851990",
+      "majorLinks": [
+        "l_8113689_0",
+        "l_8113690_0",
+        "l_8113690_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_60851993",
+      "majorLinks": [
+        "l_8113686_3",
+        "l_8113686_4",
+        "l_8113686_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.4,
+      "confidenceNotes": "equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_60859786",
+      "majorLinks": [
+        "l_1107171330_0",
+        "l_629267100_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_60859787",
+      "majorLinks": [
+        "l_3350859_1",
+        "l_3350859_2",
+        "l_8114448_0"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_60859788",
+      "majorLinks": [
+        "l_629267100_0",
+        "l_629267100_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.7,
+      "confidenceNotes": "inferred from name/ref continuity"
+    },
+    {
+      "nodeId": "n_6521815472",
+      "majorLinks": [
+        "l_71204791_0",
+        "l_71204791_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_748500723",
+      "majorLinks": [
+        "l_3350854_0",
+        "l_3350854_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_8364864917",
+      "majorLinks": [
+        "l_98900032_0",
+        "l_98900032_1"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_847659897",
+      "majorLinks": [
+        "l_633069078_0",
+        "l_633069094_0"
+      ],
+      "controlledBy": "roundabout",
+      "confidence": 0.9,
+      "confidenceNotes": "roundabout circulating priority"
+    },
+    {
+      "nodeId": "n_9159451115",
+      "majorLinks": [
+        "l_98900032_3",
+        "l_98900032_4"
+      ],
+      "controlledBy": "uncontrolled",
+      "confidence": 0.65,
+      "confidenceNotes": "inferred from roadClass hierarchy"
+    }
+  ],
+  "signalPlans": [
+    {
+      "nodeId": "n_130534",
+      "stages": [
+        [
+          "l_791_5",
+          "l_791_6"
+        ]
+      ],
+      "greenS": [
+        18
+      ],
+      "amberS": 3,
+      "allRedS": 2,
+      "redAmberS": 2,
+      "confidence": 0.45,
+      "confidenceNotes": "inferred opposing-approach stages and default timings"
+    }
+  ],
+  "mainNetwork": {
+    "linkCount": 61,
+    "nodeCount": 43
+  },
+  "spawnPoints": [
+    {
+      "id": "sp_01",
+      "linkId": "l_8113686_4",
+      "offsetM": 29.5,
+      "heading": 199.9
+    },
+    {
+      "id": "sp_02",
+      "linkId": "l_3350607_1",
+      "offsetM": 82.1,
+      "heading": 358.8
+    },
+    {
+      "id": "sp_03",
+      "linkId": "l_8113686_1",
+      "offsetM": 34.6,
+      "heading": 147.4
+    },
+    {
+      "id": "sp_04",
+      "linkId": "l_3350607_0",
+      "offsetM": 55.2,
+      "heading": 23.0
+    },
+    {
+      "id": "sp_05",
+      "linkId": "l_98900032_2",
+      "offsetM": 39.2,
+      "heading": 113.5
+    },
+    {
+      "id": "sp_06",
+      "linkId": "l_3350607_2",
+      "offsetM": 45.8,
+      "heading": 314.6
+    },
+    {
+      "id": "sp_07",
+      "linkId": "l_3350859_1",
+      "offsetM": 96.4,
+      "heading": 226.8
+    },
+    {
+      "id": "sp_08",
+      "linkId": "l_3350615_0",
+      "offsetM": 27.8,
+      "heading": 134.3
+    },
+    {
+      "id": "sp_09",
+      "linkId": "l_98900032_1",
+      "offsetM": 79.5,
+      "heading": 113.6
+    },
+    {
+      "id": "sp_10",
+      "linkId": "l_629267100_1",
+      "offsetM": 93.9,
+      "heading": 46.5
+    },
+    {
+      "id": "sp_11",
+      "linkId": "l_3350849_1",
+      "offsetM": 105.2,
+      "heading": 113.8
+    },
+    {
+      "id": "sp_12",
+      "linkId": "l_791_1",
+      "offsetM": 66.5,
+      "heading": 46.8
+    }
+  ],
+  "laneConnections": [
+    {
+      "nodeId": "n_11866289112",
+      "fromLink": "l_791_4",
+      "fromLane": 0,
+      "toLink": "l_791_5",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_11866289112",
+      "fromLink": "l_791_4",
+      "fromLane": 1,
+      "toLink": "l_1278176679_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_11866289112",
+      "fromLink": "l_791_4",
+      "fromLane": 1,
+      "toLink": "l_791_5",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130526",
+      "fromLink": "l_633069078_0",
+      "fromLane": 0,
+      "toLink": "l_3350859_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130526",
+      "fromLink": "l_633069078_0",
+      "fromLane": 0,
+      "toLink": "l_629267086_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130526",
+      "fromLink": "l_633069078_0",
+      "fromLane": 1,
+      "toLink": "l_3350859_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130526",
+      "fromLink": "l_633069078_0",
+      "fromLane": 1,
+      "toLink": "l_629267086_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130527",
+      "fromLink": "l_1107171330_0",
+      "fromLane": 0,
+      "toLink": "l_629267085_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130527",
+      "fromLink": "l_1107171330_0",
+      "fromLane": 1,
+      "toLink": "l_629267085_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130527",
+      "fromLink": "l_629267086_0",
+      "fromLane": 0,
+      "toLink": "l_629267085_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130527",
+      "fromLink": "l_629267086_0",
+      "fromLane": 1,
+      "toLink": "l_629267085_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130528",
+      "fromLink": "l_71204710_0",
+      "fromLane": 0,
+      "toLink": "l_792_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130528",
+      "fromLink": "l_71204710_0",
+      "fromLane": 1,
+      "toLink": "l_792_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130529",
+      "fromLink": "l_792_2",
+      "fromLane": 0,
+      "toLink": "l_633069094_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130529",
+      "fromLink": "l_792_2",
+      "fromLane": 0,
+      "toLink": "l_793_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130529",
+      "fromLink": "l_792_2",
+      "fromLane": 1,
+      "toLink": "l_633069094_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130530",
+      "fromLink": "l_790_2",
+      "fromLane": 0,
+      "toLink": "l_792_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130530",
+      "fromLink": "l_792_1",
+      "fromLane": 0,
+      "toLink": "l_792_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130530",
+      "fromLink": "l_792_1",
+      "fromLane": 1,
+      "toLink": "l_792_2",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130531",
+      "fromLink": "l_792_0",
+      "fromLane": 0,
+      "toLink": "l_791_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130531",
+      "fromLink": "l_792_0",
+      "fromLane": 0,
+      "toLink": "l_792_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130531",
+      "fromLink": "l_792_0",
+      "fromLane": 1,
+      "toLink": "l_791_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130531",
+      "fromLink": "l_792_0",
+      "fromLane": 1,
+      "toLink": "l_792_1",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130534",
+      "fromLink": "l_791_5",
+      "fromLane": 0,
+      "toLink": "l_791_6",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_130534",
+      "fromLink": "l_791_5",
+      "fromLane": 1,
+      "toLink": "l_791_6",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483166",
+      "fromLink": "l_790_1",
+      "fromLane": 0,
+      "toLink": "l_6132934_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483166",
+      "fromLink": "l_790_1",
+      "fromLane": 0,
+      "toLink": "l_790_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483166",
+      "fromLink": "l_790_1",
+      "fromLane": 1,
+      "toLink": "l_6132924_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483166",
+      "fromLink": "l_790_1",
+      "fromLane": 1,
+      "toLink": "l_790_2",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483168",
+      "fromLink": "l_791_1",
+      "fromLane": 0,
+      "toLink": "l_791_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483168",
+      "fromLink": "l_791_1",
+      "fromLane": 1,
+      "toLink": "l_6132924_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483168",
+      "fromLink": "l_791_1",
+      "fromLane": 1,
+      "toLink": "l_791_2",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483312",
+      "fromLink": "l_629267085_0",
+      "fromLane": 0,
+      "toLink": "l_71204710_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483312",
+      "fromLink": "l_629267085_0",
+      "fromLane": 0,
+      "toLink": "l_7369477_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483312",
+      "fromLink": "l_629267085_0",
+      "fromLane": 1,
+      "toLink": "l_71204710_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483313",
+      "fromLink": "l_3350859_0",
+      "fromLane": 0,
+      "toLink": "l_3350849_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483313",
+      "fromLink": "l_3350859_0",
+      "fromLane": 0,
+      "toLink": "l_3350859_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483313",
+      "fromLink": "l_3350859_0",
+      "fromLane": 1,
+      "toLink": "l_3350859_1",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_16483313",
+      "fromLink": "l_3350859_0",
+      "fromLane": 1,
+      "toLink": "l_8114447_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751583",
+      "fromLink": "l_791_6",
+      "fromLane": 0,
+      "toLink": "l_7369484_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751583",
+      "fromLink": "l_791_6",
+      "fromLane": 0,
+      "toLink": "l_791_7",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751583",
+      "fromLink": "l_791_6",
+      "fromLane": 1,
+      "toLink": "l_791_7",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751586",
+      "fromLink": "l_791_7",
+      "fromLane": 0,
+      "toLink": "l_7369482_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751586",
+      "fromLink": "l_791_7",
+      "fromLane": 0,
+      "toLink": "l_791_8",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751586",
+      "fromLink": "l_791_7",
+      "fromLane": 1,
+      "toLink": "l_791_8",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751588",
+      "fromLink": "l_791_3",
+      "fromLane": 0,
+      "toLink": "l_7369466_4",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751588",
+      "fromLink": "l_791_3",
+      "fromLane": 0,
+      "toLink": "l_791_4",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751588",
+      "fromLink": "l_791_3",
+      "fromLane": 1,
+      "toLink": "l_791_4",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751590",
+      "fromLink": "l_791_2",
+      "fromLane": 0,
+      "toLink": "l_7369472_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751590",
+      "fromLink": "l_791_2",
+      "fromLane": 0,
+      "toLink": "l_791_3",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751590",
+      "fromLink": "l_791_2",
+      "fromLane": 1,
+      "toLink": "l_791_3",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751594",
+      "fromLink": "l_791_0",
+      "fromLane": 0,
+      "toLink": "l_7369475_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751594",
+      "fromLink": "l_791_0",
+      "fromLane": 0,
+      "toLink": "l_791_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_54751594",
+      "fromLink": "l_791_0",
+      "fromLane": 1,
+      "toLink": "l_791_1",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_5805646762",
+      "fromLink": "l_790_0",
+      "fromLane": 0,
+      "toLink": "l_3350607_3",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_5805646762",
+      "fromLink": "l_790_0",
+      "fromLane": 0,
+      "toLink": "l_790_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_5805646762",
+      "fromLink": "l_790_0",
+      "fromLane": 1,
+      "toLink": "l_1278176679_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_5805646762",
+      "fromLink": "l_790_0",
+      "fromLane": 1,
+      "toLink": "l_790_1",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60852068",
+      "fromLink": "l_3350859_2",
+      "fromLane": 0,
+      "toLink": "l_3350859_3",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60852068",
+      "fromLink": "l_3350859_2",
+      "fromLane": 1,
+      "toLink": "l_3350859_3",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859786",
+      "fromLink": "l_629267100_1",
+      "fromLane": 0,
+      "toLink": "l_1107171330_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859786",
+      "fromLink": "l_629267100_1",
+      "fromLane": 1,
+      "toLink": "l_1107171330_0",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859787",
+      "fromLink": "l_3350859_1",
+      "fromLane": 0,
+      "toLink": "l_3350859_2",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859787",
+      "fromLink": "l_3350859_1",
+      "fromLane": 0,
+      "toLink": "l_8113686_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859787",
+      "fromLink": "l_3350859_1",
+      "fromLane": 1,
+      "toLink": "l_3350859_2",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859787",
+      "fromLink": "l_3350859_1",
+      "fromLane": 1,
+      "toLink": "l_8114448_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859788",
+      "fromLink": "l_629267100_0",
+      "fromLane": 0,
+      "toLink": "l_629267100_1",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_60859788",
+      "fromLink": "l_629267100_0",
+      "fromLane": 1,
+      "toLink": "l_629267100_1",
+      "toLane": 1,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_847659897",
+      "fromLink": "l_633069094_0",
+      "fromLane": 0,
+      "toLink": "l_633069078_0",
+      "toLane": 0,
+      "confidence": 0.55
+    },
+    {
+      "nodeId": "n_847659897",
+      "fromLink": "l_633069094_0",
+      "fromLane": 1,
+      "toLink": "l_633069078_0",
+      "toLane": 1,
+      "confidence": 0.55
+    }
+  ],
+  "excluded": []
+}

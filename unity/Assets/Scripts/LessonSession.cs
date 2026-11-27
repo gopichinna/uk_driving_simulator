@@ -275,6 +275,11 @@ namespace LToLocal.Game
             "wolverhampton" => "Wolverhampton",
             "wolverhampton-test-area" => "WolverhamptonTestArea",
             "motorway" => "Motorway",
+            "suburb_practice" => "SuburbPractice",
+            "rural_practice" => "RuralPractice",
+            "ring_road_practice" => "RingRoadPractice",
+            "coventry" => "Coventry",
+            "queslett_roundabout" => "Queslett",
             _ => "Town",
         };
     }

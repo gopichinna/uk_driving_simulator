@@ -1,0 +1,227 @@
+{
+  "poisFormatVersion": "0.1",
+  "packId": "suburb_practice",
+  "origin": {
+    "lat": 52.5965,
+    "lon": -2.187
+  },
+  "source": {
+    "kind": "osm",
+    "extract": "geofabrik west-midlands-latest.osm.pbf",
+    "extractTimestamp": "2026-11-26T21:21:01Z",
+    "bbox": [
+      -2.202,
+      52.588,
+      -2.172,
+      52.605
+    ],
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0"
+  },
+  "pois": [
+    {
+      "id": "poi_car_park_208625951",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 833.592,
+      "z": 788.467,
+      "accessLinkId": "l_208625961_0",
+      "osmId": 208625951
+    },
+    {
+      "id": "poi_car_park_297421580",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 104.544,
+      "z": -920.045,
+      "accessLinkId": "l_671791754_0",
+      "osmId": 297421580
+    },
+    {
+      "id": "poi_car_park_436706569",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 565.0,
+      "z": 121.607,
+      "accessLinkId": "l_1283005147_0",
+      "osmId": 436706569
+    },
+    {
+      "id": "poi_car_park_463641241",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 263.545,
+      "z": -316.768,
+      "accessLinkId": "l_43144604_1",
+      "osmId": 463641241
+    },
+    {
+      "id": "poi_car_park_463641242",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 279.355,
+      "z": -310.077,
+      "accessLinkId": "l_43144604_1",
+      "osmId": 463641242
+    },
+    {
+      "id": "poi_car_park_463641243",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 267.108,
+      "z": -301.05,
+      "accessLinkId": "l_43144604_1",
+      "osmId": 463641243
+    },
+    {
+      "id": "poi_car_park_546702640",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": -350.118,
+      "z": -126.012,
+      "accessLinkId": "l_101008255_1",
+      "osmId": 546702640
+    },
+    {
+      "id": "poi_car_park_550433427",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 981.642,
+      "z": 366.548,
+      "accessLinkId": "l_852018217_2",
+      "osmId": 550433427
+    },
+    {
+      "id": "poi_car_park_550433429",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 1014.891,
+      "z": 353.892,
+      "accessLinkId": "l_550433433_0",
+      "osmId": 550433429
+    },
+    {
+      "id": "poi_car_park_675381879",
+      "name": "Car Park",
+      "kind": "car_park",
+      "x": 771.36,
+      "z": -938.969,
+      "accessLinkId": "l_23389064_0",
+      "osmId": 675381879
+    },
+    {
+      "id": "poi_city_centre_queen_square",
+      "name": "City Centre (Queen Square)",
+      "kind": "city_centre",
+      "x": 3985.298,
+      "z": -1133.417,
+      "accessLinkId": "l_31953693_12",
+      "osmId": 0,
+      "reason": "Queen Square is Wolverhampton's civic centre used on local direction signs"
+    },
+    {
+      "id": "poi_hospital_13594671170",
+      "name": "krishna pemmaraju",
+      "kind": "hospital",
+      "x": 1055.305,
+      "z": -323.64,
+      "accessLinkId": "l_31953693_12",
+      "osmId": 13594671170,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_hospital_14170476704",
+      "name": "Mr Gopala Krishna Pemmaraju",
+      "kind": "hospital",
+      "x": 953.904,
+      "z": -272.072,
+      "accessLinkId": "l_31953693_11",
+      "osmId": 14170476704
+    },
+    {
+      "id": "poi_hospital_296134111",
+      "name": "Compton Hospice",
+      "kind": "hospital",
+      "x": 1022.346,
+      "z": -1154.027,
+      "accessLinkId": "l_23389064_0",
+      "osmId": 296134111,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_12264938952",
+      "name": "Tettenhall Wood School",
+      "kind": "school",
+      "x": 283.822,
+      "z": 179.178,
+      "accessLinkId": "l_685152156_0",
+      "osmId": 12264938952
+    },
+    {
+      "id": "poi_school_258769265",
+      "name": "Perton Middle School",
+      "kind": "school",
+      "x": -256.675,
+      "z": 153.419,
+      "accessLinkId": "l_643936649_1",
+      "osmId": 258769265
+    },
+    {
+      "id": "poi_school_258769279",
+      "name": "School",
+      "kind": "school",
+      "x": 126.615,
+      "z": 86.592,
+      "accessLinkId": "l_685152158_0",
+      "osmId": 258769279
+    },
+    {
+      "id": "poi_school_267064364",
+      "name": "Wightwick Hall School",
+      "kind": "school",
+      "x": -1029.625,
+      "z": -1348.86,
+      "accessLinkId": "l_23486317_11",
+      "osmId": 267064364,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_405140286",
+      "name": "Christ Church (Church of England) Junior School",
+      "kind": "school",
+      "x": 673.849,
+      "z": -250.105,
+      "accessLinkId": "l_43144597_0",
+      "osmId": 405140286
+    },
+    {
+      "id": "poi_school_47636019",
+      "name": "Tettenhall College",
+      "kind": "school",
+      "x": 1278.374,
+      "z": -112.966,
+      "accessLinkId": "l_31953693_12",
+      "osmId": 47636019,
+      "outsideArea": true
+    },
+    {
+      "id": "poi_school_47701781",
+      "name": "Christ Church (Church of England) Infant and Nursery School",
+      "kind": "school",
+      "x": 225.834,
+      "z": -709.483,
+      "accessLinkId": "l_23486317_1",
+      "osmId": 47701781
+    },
+    {
+      "id": "poi_school_540480527",
+      "name": "Woodthorne Primary School",
+      "kind": "school",
+      "x": 61.966,
+      "z": 148.557,
+      "accessLinkId": "l_685152158_0",
+      "osmId": 540480527
+    }
+  ]
+}

@@ -1,0 +1,767 @@
+{
+  "signsFormatVersion": "0.1",
+  "packId": "coventry",
+  "origin": {
+    "lat": 52.408,
+    "lon": -1.5105
+  },
+  "headingConvention": "Degrees clockwise from +z (North): 0=+z, 90=+x, 180=-z, 270=-x",
+  "source": {
+    "kind": "osm",
+    "licence": "ODbL-1.0",
+    "attribution": "\u00a9 OpenStreetMap contributors",
+    "generator": "ltl_pipeline/0.1.0",
+    "styleSources": [
+      "https://www.gov.uk/guidance/the-highway-code/traffic-signs",
+      "https://www.gov.uk/government/publications/know-your-traffic-signs"
+    ],
+    "diagramRefs": {
+      "school": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)",
+      "road_humps": "Diagram 557.1 (Road humps)",
+      "road_narrows": "Diagram 516 / 517 (Road narrows)",
+      "pedestrians_in_road": "Diagram 544 (Pedestrians in road ahead)",
+      "queues_likely": "Diagram 584 (Traffic queues likely ahead)",
+      "bend_ahead": "Diagram 512 (Bend ahead)"
+    }
+  },
+  "warningSigns": [
+    {
+      "id": "ws_001",
+      "kind": "school",
+      "x": 816.474,
+      "z": -627.561,
+      "heading": 68.91,
+      "linkId": "l_1058462621_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_002",
+      "kind": "school",
+      "x": 862.547,
+      "z": -643.821,
+      "heading": 249.96,
+      "linkId": "l_1058462623_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_003",
+      "kind": "school",
+      "x": 997.152,
+      "z": -602.497,
+      "heading": 352.89,
+      "linkId": "l_321546513_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_004",
+      "kind": "school",
+      "x": 856.177,
+      "z": -597.593,
+      "heading": 337.6,
+      "linkId": "l_4821210_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_005",
+      "kind": "school",
+      "x": -302.497,
+      "z": 791.495,
+      "heading": 154.4,
+      "linkId": "l_4921334_5",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_006",
+      "kind": "school",
+      "x": 413.064,
+      "z": 690.265,
+      "heading": 166.45,
+      "linkId": "l_156529876_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_007",
+      "kind": "school",
+      "x": 429.091,
+      "z": 613.51,
+      "heading": 169.04,
+      "linkId": "l_156529876_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_008",
+      "kind": "school",
+      "x": 444.174,
+      "z": 522.789,
+      "heading": 171.48,
+      "linkId": "l_156529876_4",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_009",
+      "kind": "school",
+      "x": 618.974,
+      "z": 596.248,
+      "heading": 84.5,
+      "linkId": "l_16224200_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_010",
+      "kind": "school",
+      "x": 666.599,
+      "z": 600.826,
+      "heading": 84.51,
+      "linkId": "l_16224200_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_011",
+      "kind": "school",
+      "x": 598.232,
+      "z": 539.065,
+      "heading": 175.83,
+      "linkId": "l_23217636_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_012",
+      "kind": "school",
+      "x": 569.569,
+      "z": 571.521,
+      "heading": 238.45,
+      "linkId": "l_8003316_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_013",
+      "kind": "school",
+      "x": -831.479,
+      "z": 57.817,
+      "heading": 98.4,
+      "linkId": "l_143877393_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_014",
+      "kind": "school",
+      "x": -897.558,
+      "z": 43.317,
+      "heading": 8.23,
+      "linkId": "l_143896944_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_015",
+      "kind": "school",
+      "x": -963.972,
+      "z": 195.36,
+      "heading": 118.33,
+      "linkId": "l_152209897_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_016",
+      "kind": "school",
+      "x": -893.846,
+      "z": 168.122,
+      "heading": 95.0,
+      "linkId": "l_152209897_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_017",
+      "kind": "school",
+      "x": -801.903,
+      "z": 153.628,
+      "heading": 117.73,
+      "linkId": "l_152209897_3",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_018",
+      "kind": "school",
+      "x": -838.574,
+      "z": 228.174,
+      "heading": 28.76,
+      "linkId": "l_4741415_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_019",
+      "kind": "school",
+      "x": -607.876,
+      "z": 729.904,
+      "heading": 123.95,
+      "linkId": "l_1384309922_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_020",
+      "kind": "school",
+      "x": -626.461,
+      "z": 693.934,
+      "heading": 310.05,
+      "linkId": "l_1384309924_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_021",
+      "kind": "school",
+      "x": -718.869,
+      "z": 508.08,
+      "heading": 312.43,
+      "linkId": "l_1384309926_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_022",
+      "kind": "school",
+      "x": -694.579,
+      "z": 655.809,
+      "heading": 40.39,
+      "linkId": "l_153455481_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_023",
+      "kind": "school",
+      "x": -766.317,
+      "z": 541.044,
+      "heading": 47.61,
+      "linkId": "l_153455499_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_024",
+      "kind": "school",
+      "x": -793.912,
+      "z": 735.401,
+      "heading": 45.34,
+      "linkId": "l_156527818_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_025",
+      "kind": "school",
+      "x": -829.051,
+      "z": 597.775,
+      "heading": 136.18,
+      "linkId": "l_329481799_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_026",
+      "kind": "school",
+      "x": -476.949,
+      "z": 304.28,
+      "heading": 56.7,
+      "linkId": "l_1050291102_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_027",
+      "kind": "school",
+      "x": -724.676,
+      "z": 247.376,
+      "heading": 205.85,
+      "linkId": "l_1082079851_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_028",
+      "kind": "school",
+      "x": -624.803,
+      "z": 225.569,
+      "heading": 112.82,
+      "linkId": "l_147409033_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_029",
+      "kind": "school",
+      "x": -633.316,
+      "z": 395.698,
+      "heading": 144.81,
+      "linkId": "l_1540085045_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_030",
+      "kind": "school",
+      "x": -692.228,
+      "z": 298.817,
+      "heading": 218.96,
+      "linkId": "l_156519508_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_031",
+      "kind": "school",
+      "x": -688.86,
+      "z": 175.53,
+      "heading": 113.02,
+      "linkId": "l_156596756_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_032",
+      "kind": "school",
+      "x": -514.577,
+      "z": 195.691,
+      "heading": 205.56,
+      "linkId": "l_159083797_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_033",
+      "kind": "school",
+      "x": -475.373,
+      "z": 247.715,
+      "heading": 229.49,
+      "linkId": "l_25373009_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_034",
+      "kind": "school",
+      "x": 470.714,
+      "z": 450.127,
+      "heading": 155.23,
+      "linkId": "l_16224203_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_035",
+      "kind": "school",
+      "x": 616.165,
+      "z": 363.208,
+      "heading": 174.74,
+      "linkId": "l_23217636_4",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_036",
+      "kind": "school",
+      "x": 449.017,
+      "z": 341.237,
+      "heading": 162.19,
+      "linkId": "l_25426900_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_037",
+      "kind": "school",
+      "x": 513.961,
+      "z": 395.307,
+      "heading": 348.52,
+      "linkId": "l_25426923_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_038",
+      "kind": "school",
+      "x": 417.568,
+      "z": 457.519,
+      "heading": 251.55,
+      "linkId": "l_25426927_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_039",
+      "kind": "school",
+      "x": 500.073,
+      "z": 287.876,
+      "heading": 185.14,
+      "linkId": "l_448170614_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_040",
+      "kind": "school",
+      "x": 389.627,
+      "z": 427.906,
+      "heading": 342.25,
+      "linkId": "l_688178187_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_041",
+      "kind": "school",
+      "x": 838.316,
+      "z": 751.792,
+      "heading": 340.69,
+      "linkId": "l_1181122324_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_042",
+      "kind": "school",
+      "x": 833.374,
+      "z": 705.108,
+      "heading": 173.98,
+      "linkId": "l_1181123160_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_043",
+      "kind": "school",
+      "x": 897.699,
+      "z": 721.554,
+      "heading": 159.72,
+      "linkId": "l_1181123161_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_044",
+      "kind": "school",
+      "x": 879.16,
+      "z": 766.668,
+      "heading": 160.31,
+      "linkId": "l_1181123162_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_045",
+      "kind": "school",
+      "x": 941.014,
+      "z": 768.903,
+      "heading": 251.43,
+      "linkId": "l_1181126999_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_046",
+      "kind": "school",
+      "x": 837.707,
+      "z": 622.122,
+      "heading": 108.85,
+      "linkId": "l_16301280_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_047",
+      "kind": "school",
+      "x": 899.801,
+      "z": 672.319,
+      "heading": 5.85,
+      "linkId": "l_23217652_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_048",
+      "kind": "school",
+      "x": 880.779,
+      "z": 613.497,
+      "heading": 99.71,
+      "linkId": "l_373913038_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_049",
+      "kind": "school",
+      "x": 457.597,
+      "z": 804.176,
+      "heading": 38.48,
+      "linkId": "l_150770645_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_050",
+      "kind": "school",
+      "x": 387.743,
+      "z": 833.708,
+      "heading": 39.07,
+      "linkId": "l_18169215_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_051",
+      "kind": "school",
+      "x": 423.636,
+      "z": 876.349,
+      "heading": 60.69,
+      "linkId": "l_18169215_4",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_052",
+      "kind": "school",
+      "x": 461.244,
+      "z": 855.287,
+      "heading": 284.68,
+      "linkId": "l_18169215_5",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_053",
+      "kind": "school",
+      "x": 502.204,
+      "z": 804.99,
+      "heading": 112.66,
+      "linkId": "l_4310551_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_054",
+      "kind": "school",
+      "x": 606.25,
+      "z": 795.763,
+      "heading": 87.58,
+      "linkId": "l_4310551_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_055",
+      "kind": "school",
+      "x": 648.442,
+      "z": 803.293,
+      "heading": 75.0,
+      "linkId": "l_4310551_3",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_056",
+      "kind": "school",
+      "x": 575.44,
+      "z": 952.849,
+      "heading": 39.53,
+      "linkId": "l_43246589_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_057",
+      "kind": "school",
+      "x": 121.203,
+      "z": 511.533,
+      "heading": 310.33,
+      "linkId": "l_134834979_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_058",
+      "kind": "school",
+      "x": 202.675,
+      "z": 503.38,
+      "heading": 87.44,
+      "linkId": "l_25290742_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_059",
+      "kind": "school",
+      "x": 84.148,
+      "z": 668.684,
+      "heading": 194.02,
+      "linkId": "l_25290776_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_060",
+      "kind": "school",
+      "x": 134.876,
+      "z": 720.33,
+      "heading": 172.8,
+      "linkId": "l_25290777_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_061",
+      "kind": "school",
+      "x": 60.519,
+      "z": 603.738,
+      "heading": 12.82,
+      "linkId": "l_25290853_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_062",
+      "kind": "school",
+      "x": 258.739,
+      "z": 639.668,
+      "heading": 308.65,
+      "linkId": "l_25372842_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_063",
+      "kind": "school",
+      "x": 312.677,
+      "z": 642.882,
+      "heading": 188.19,
+      "linkId": "l_25373016_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_064",
+      "kind": "school",
+      "x": 234.487,
+      "z": 688.931,
+      "heading": 90.36,
+      "linkId": "l_293125583_4",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_065",
+      "kind": "school",
+      "x": 282.582,
+      "z": 720.479,
+      "heading": 128.68,
+      "linkId": "l_293125584_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_066",
+      "kind": "school",
+      "x": 245.453,
+      "z": 736.216,
+      "heading": 308.62,
+      "linkId": "l_293125589_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_067",
+      "kind": "school",
+      "x": 119.574,
+      "z": 585.646,
+      "heading": 143.33,
+      "linkId": "l_4398414_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_068",
+      "kind": "school",
+      "x": 247.367,
+      "z": 549.611,
+      "heading": 38.92,
+      "linkId": "l_4757425_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_069",
+      "kind": "school",
+      "x": 287.884,
+      "z": 599.194,
+      "heading": 39.7,
+      "linkId": "l_4757425_1",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_070",
+      "kind": "school",
+      "x": 349.903,
+      "z": 674.239,
+      "heading": 38.38,
+      "linkId": "l_4757425_2",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_071",
+      "kind": "school",
+      "x": -416.108,
+      "z": -902.5,
+      "heading": 337.74,
+      "linkId": "l_1437077935_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_072",
+      "kind": "school",
+      "x": -387.965,
+      "z": -850.504,
+      "heading": 10.29,
+      "linkId": "l_150542854_0",
+      "diagramRef": "Diagram 545 (Children going to or from school) + Diagram 546 (School plate)"
+    },
+    {
+      "id": "ws_073",
+      "kind": "road_humps",
+      "x": 7.475,
+      "z": -245.501,
+      "heading": 0.73,
+      "linkId": "l_1040704121_2",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_074",
+      "kind": "road_humps",
+      "x": -308.323,
+      "z": 68.646,
+      "heading": 225.71,
+      "linkId": "l_1243062648_0",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_075",
+      "kind": "road_humps",
+      "x": -911.872,
+      "z": 169.72,
+      "heading": 106.09,
+      "linkId": "l_152209897_2",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_076",
+      "kind": "road_humps",
+      "x": -208.173,
+      "z": -583.075,
+      "heading": 272.78,
+      "linkId": "l_977435312_2",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_077",
+      "kind": "road_humps",
+      "x": -237.995,
+      "z": -490.2,
+      "heading": 214.17,
+      "linkId": "l_1246308283_0",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_078",
+      "kind": "road_humps",
+      "x": -794.138,
+      "z": 149.546,
+      "heading": 117.73,
+      "linkId": "l_152209897_3",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_079",
+      "kind": "road_humps",
+      "x": -991.292,
+      "z": 254.176,
+      "heading": 28.85,
+      "linkId": "l_4744082_3",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_080",
+      "kind": "road_humps",
+      "x": -948.289,
+      "z": 332.098,
+      "heading": 28.89,
+      "linkId": "l_4744082_3",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_081",
+      "kind": "road_humps",
+      "x": -983.295,
+      "z": 205.952,
+      "heading": 118.25,
+      "linkId": "l_152209897_1",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    },
+    {
+      "id": "ws_082",
+      "kind": "road_humps",
+      "x": -260.213,
+      "z": 343.524,
+      "heading": 62.88,
+      "linkId": "l_1074493369_0",
+      "diagramRef": "Diagram 557.1 (Road humps)"
+    }
+  ]
+}
