@@ -356,9 +356,9 @@ Goal: make the next rules faster and safer for Claude to build, and keep the own
 ## Round 42: release-candidate checks and download size (pipeline + docs)
 Goal: know exactly what a store build needs. Branch: `hydrogen/r42-release-checks-size`. Start after R41.
 
-- [ ] R42.1 **Release check.** Add `python -m ltl_pipeline.release_check` (warning-only in CI at first) that fails if: any shipped audio, image, font or pack lacks a licence line in `LICENCES.md` / `ATTRIBUTIONS.md` / `credits.md`; any claim in `claims.yaml` lacks existing evidence files; any `UNVERIFIED` marker remains in shipped rule text; the 18+ age, £14.99 price and "© OpenStreetMap contributors" text are missing from the places they must appear; any placeholder (`<owner email>`, `TODO`, `TBD`, `lorem`) remains in `content/**` or `docs/store/**`. Print a one-page report.
-- [ ] R42.2 **Download size.** The last Android build was about 57 MB with 683 MB of source assets. Report where the bytes go (`docs/specs/download-size.md`): voice WAVs, SFX, diagrams, road packs, scenes. Say what compression is safe (Unity can import Ogg Vorbis; do not use Opus), what could move to a first-run download, and estimate the saving of each. Do not change shipped files.
-- [ ] R42.3 **Wrap-up.** Add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R42:`.
+- [x] R42.1 **Release check.** Added `python -m ltl_pipeline.release_check` checking shipped audio/image/city licences, `claims.yaml` evidence files, `UNVERIFIED` markers in shipped rules, `18+`/`£14.99`/`© OpenStreetMap contributors` legal strings, and unresolved placeholders in `content/**` and `docs/store/**`, plus `pipeline/tests/test_release_check.py`. (CI warning step left for owner/Claude to avoid `.github/**` edits.)
+- [x] R42.2 **Download size.** Measured `content/` (118.40 MB across 931 files; voice WAVs 99.31 MB, city packs 13.57 MB, SFX 3.55 MB) and `unity/Assets/Scenes/` (49.74 MB) in `docs/specs/download-size.md`, detailing safe Unity Ogg Vorbis compression (~30–35 MB APK saving, no Opus) and first-run Play Asset Delivery candidates (~9–12 MB).
+- [x] R42.3 **Wrap-up.** Added dated note in `docs/08-parallel-work-plan.md` §6 and verified `ruff`, `pytest`, schema validation, and readability.
 
 ---
 
