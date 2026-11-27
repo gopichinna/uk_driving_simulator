@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_tl_asl_1",
+    "rule": "GB.TL.ASL",
+    "question": "What is the painted box with a bicycle symbol ahead of cars at traffic lights?",
+    "options": [
+      "A bus bay",
+      "An advanced stop line (ASL) box for cyclists",
+      "A taxi rank",
+      "A loading zone"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 178 explains that advanced stop lines give cyclists space at the front of the queue.",
+    "hc_rule": "178",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_asl_2",
+    "rule": "GB.TL.ASL",
+    "question": "Where must a car driver stop on red when there is an advanced stop line?",
+    "options": [
+      "Inside the cycle box",
+      "Behind the first white line before the cycle box",
+      "At the second white line",
+      "Over the zebra stripes"
+    ],
+    "answer": 1,
+    "explain": "Rule 178: you MUST stop at the first white line so the cycle box stays clear for cyclists.",
+    "hc_rule": "178",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_asl_3",
+    "rule": "GB.TL.ASL",
+    "question": "You have already crossed the first white line when the light turns amber and you cannot stop safely there. What must you do?",
+    "options": [
+      "Keep driving through red",
+      "Stop at the second white line",
+      "Reverse over the cyclists",
+      "Mount the kerb"
+    ],
+    "answer": 1,
+    "explain": "Rule 178 says if you cannot stop safely at the first line, stop at the second white line.",
+    "hc_rule": "178",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_asl_4",
+    "rule": "GB.TL.ASL",
+    "question": "When the lights turn green and cyclists are inside the ASL box, what should you do?",
+    "options": [
+      "Overtake them inside the junction",
+      "Give them time and space to move off safely",
+      "Sound your horn",
+      "Edge into the box behind them"
+    ],
+    "answer": 1,
+    "explain": "Rule 178: let cyclists pull away safely and leave plenty of room when passing.",
+    "hc_rule": "178",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_asl_5",
+    "rule": "GB.TL.ASL",
+    "question": "Why should you not stop inside the cycle box even if no cyclist is there yet?",
+    "options": [
+      "The paint is slippery",
+      "Cyclists may ride up the left side to use it",
+      "It blocks buses",
+      "It turns the lights red"
+    ],
+    "answer": 1,
+    "explain": "Rule 178: cyclists filter forward to reach the box safely before the lights change.",
+    "hc_rule": "178",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_asl_6",
+    "rule": "GB.TL.ASL",
+    "question": "Before moving off on green at an ASL, where should you check for cyclists?",
+    "options": [
+      "Your nearside mirror and blind spot, and ahead",
+      "Only behind you",
+      "Only to the right",
+      "Nowhere"
+    ],
+    "answer": 0,
+    "explain": "Rule 178: check both ahead and to your left in case a cyclist is moving alongside you.",
+    "hc_rule": "178",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_asl_7",
+    "rule": "GB.TL.ASL",
+    "question": "May a motorcycle stop inside a cyclist advanced stop box on red?",
+    "options": [
+      "Yes, always",
+      "No, motor vehicles must stop behind the first white line",
+      "Yes, if turning left",
+      "Yes, at night"
+    ],
+    "answer": 1,
+    "explain": "Rule 178: the ASL box is for pedal cyclists only.",
+    "hc_rule": "178",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_asl_8",
+    "rule": "GB.TL.ASL",
+    "question": "How is an ASL box marked on the road?",
+    "options": [
+      "Two white stop lines with a cycle symbol between them",
+      "Yellow cross-hatching",
+      "Blue squares",
+      "Red zig-zags"
+    ],
+    "answer": 0,
+    "explain": "Rule 178: an ASL has a first stop line for motor vehicles and a second line ahead for cyclists.",
+    "hc_rule": "178",
+    "difficulty": 1
+  }
+]

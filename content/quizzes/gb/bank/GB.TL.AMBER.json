@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_tl_amber_1",
+    "rule": "GB.TL.AMBER",
+    "question": "What does a single steady amber light mean?",
+    "options": [
+      "Speed up to beat the red",
+      "Stop behind the stop line unless unsafe to do so",
+      "Go if turning left",
+      "Wait for red"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 175 says AMBER means stop at the stop line, unless you are so close that stopping might cause a collision.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_amber_2",
+    "rule": "GB.TL.AMBER",
+    "question": "When may you pass a steady amber traffic light?",
+    "options": [
+      "Whenever you are in a hurry",
+      "Only if you have crossed the line or cannot stop safely",
+      "Whenever no camera is fitted",
+      "At night only"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: you may only go on amber if stopping suddenly could cause a crash.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_amber_3",
+    "rule": "GB.TL.AMBER",
+    "question": "As you approach a green light that has been green for a long time, what should you expect?",
+    "options": [
+      "It will stay green forever",
+      "It may change to amber soon, so be ready to brake",
+      "It will turn blue",
+      "It will turn off"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: expect stale green lights to change so you can stop smoothly on amber.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_amber_4",
+    "rule": "GB.TL.AMBER",
+    "question": "Before braking for an amber light, what should you check?",
+    "options": [
+      "Your rear-view mirror",
+      "Your glovebox",
+      "Your fog lights",
+      "Your boot"
+    ],
+    "answer": 0,
+    "explain": "Rule 175: check your mirror to judge whether a vehicle close behind makes hard braking unsafe.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_amber_5",
+    "rule": "GB.TL.AMBER",
+    "question": "What colour comes immediately after a single steady amber light?",
+    "options": [
+      "Green",
+      "Red",
+      "Red and amber",
+      "Flashing green"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: in the UK sequence, green goes to amber, then to red.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_amber_6",
+    "rule": "GB.TL.AMBER",
+    "question": "You are 40 metres away at 30 mph when the light turns amber. What should you do?",
+    "options": [
+      "Accelerate to beat red",
+      "Brake smoothly and stop behind the line",
+      "Swerve left",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: at 30 mph, 40 metres is plenty of room to stop safely behind the line.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_amber_7",
+    "rule": "GB.TL.AMBER",
+    "question": "You are two metres from the stop line at 30 mph with a car close behind when the light turns amber. What should you do?",
+    "options": [
+      "Slam the brakes hard",
+      "Continue safely across the junction",
+      "Reverse",
+      "Stop in the middle of the junction"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: you are too close to stop safely, so continuing through is the safer choice.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_amber_8",
+    "rule": "GB.TL.AMBER",
+    "question": "Does a flashing amber light at a pelican crossing mean the same as a steady amber light?",
+    "options": [
+      "Yes, always stop",
+      "No, flashing amber means give way to pedestrians on the crossing",
+      "Yes, wait for red",
+      "No, speed up"
+    ],
+    "answer": 1,
+    "explain": "Rule 196: at a pelican crossing, flashing amber means let any pedestrians finish crossing, then go if clear.",
+    "hc_rule": "196",
+    "difficulty": 2
+  }
+]

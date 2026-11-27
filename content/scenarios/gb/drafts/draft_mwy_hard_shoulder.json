@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_mwy_hard_shoulder",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.55
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 120
+    }
+  ]
+}

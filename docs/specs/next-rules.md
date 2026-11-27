@@ -1,169 +1,192 @@
-# Next 20 Rules Specification Pack (Stages 0–6)
+# Next 20 Rules Specification Pack (Batch 1 — Stages 0–6)
 
 **Checked against GOV.UK:** 2026-11-27 (`https://www.gov.uk/guidance/the-highway-code`, OGL v3.0).  
-**Severity mapping:** Matches `content/countries/gb/test_marking.yaml` (`Driving` = minor fault, max 15; `Serious` = fail; `Dangerous` = fail).
+**Severity mapping:** Matches `content/countries/gb/test_marking.yaml`:
+- Base severity is one of: `Driving` (minor fault, max 15), `Serious` (fail), or `Dangerous` (fail).
+- Escalation conditions (when conflict, near-miss, or active hazard occurs) are listed separately under **Escalates to**.
+- Numeric judgement-call thresholds not fixed by statute are marked **`PROPOSED`**.
 
 ## Ranking Rationale
-These 20 planned rules were chosen from the 117 unimplemented rules in `content/countries/gb/rules.yaml` because every one of them is **already taught in Stages 0–6** (`content/lessons/gb/01–18, 24–27`) and can be judged using geometry and traffic state already present in `Sim.Core` and `RoadPack` v0.7 (lane centreline, speed limit, indicators, stop/give-way lines, traffic-light state, crossings, and nearby agents). Implementing them unlocks full live judging for Stages 0–2 (basics, junctions, traffic lights, crossings) and motorway lane discipline without inventing new content contracts.
+All 20 rules below are **genuinely unimplemented** in `core/Rules.Core/*.cs` (verified against the 23 implemented `GB.*` constants on 2026-11-27; the 9 rules previously listed in R32 that are already implemented in `core/Rules.Core` — `GB.POS.KEEP_LEFT`, `GB.SCH.SLOW`, `GB.JCT.STOP_SIGN`, `GB.JCT.H2_PEDESTRIANS`, `GB.TL.RED`, `GB.TL.AMBER`, `GB.TL.RED_AMBER`, `GB.TL.ASL`, `GB.XNG.ZEBRA` — have been replaced with the next highest-value planned rules). Every rule in this batch is either taught in Stages 0–4/6 or pairs directly with existing town/dual-carriageway/motorway geometry in `RoadPack` v0.7 and `Sim.Core`.
 
 ---
 
-## 1. `GB.POS.KEEP_LEFT` — Keep to the left lane
-- **Highway Code:** Rule 160 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Keep to the left on two-way roads unless overtaking or turning right.
-- **Game detection:** Player lateral offset relative to the nearside (`left`) lane centreline on two-way links (`twoWay == true`). No new inputs needed.
-- **Fault & severity:** Driving (`Serious` / `Dangerous` if oncoming traffic is present).
-- **Pass cases:** (1) Drive centred in the left lane along a straight town road. (2) Move right briefly to pass a parked car when clear, then return left.
-- **Fail cases:** (1) Cruise in the oncoming right-hand lane with no obstruction. (2) Straddle the centre line as an oncoming car approaches.
-
-## 2. `GB.POS.DUAL_KEEP_LEFT` — Keep left on dual carriageways
+## 1. `GB.POS.DUAL_KEEP_LEFT` — Keep left on dual carriageways
 - **Highway Code:** Rule 137 (`https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-27)
 - **Rule:** Use the left-hand lane on a dual carriageway unless overtaking or turning right.
-- **Game detection:** Player lane index (`laneIndex > 0`) on `lanes >= 2` dual-carriageway links when no slower vehicle is ahead within 40 m and no right turn is within 100 m. No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if repeated).
-- **Pass cases:** (1) Stay in lane 0 (left) at 40 mph with clear road. (2) Move to lane 1 to overtake a slow lorry, then return to lane 0.
-- **Fail cases:** (1) Cruise in lane 1 for > 10 s with lane 0 empty. (2) Stay in lane 1 after passing a vehicle with a clear gap on the left.
+- **Game detection & thresholds:** On `links[].lanes >= 2` and `links[].twoWay == false` (dual carriageway): flag if `PlayerState.laneIndex > 0` for `> 10.0 s` (`PROPOSED`) when no slower vehicle is ahead in lane 0 within `40.0 m` (`PROPOSED`) and no right-turn route junction is within `100.0 m` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if repeated 3+ times (`PROPOSED`) or forces faster traffic to undertake.
+- **Pass cases:** (1) Stay in lane 0 at 40 mph with lane 0 clear. (2) Move to lane 1 to overtake a slower vehicle at 25 mph, then return to lane 0 within 10.0 s after passing.
+- **Fail cases:** (1) Cruise in lane 1 for 15.0 s at 40 mph while lane 0 is empty for > 60 m. (2) Remain in lane 1 for 12.0 s after completing an overtake with a 50 m clear gap in lane 0.
 
-## 3. `GB.POS.AFTER_TURN` — Position left after turning
+## 2. `GB.POS.AFTER_TURN` — Join the left lane after turning
 - **Highway Code:** Rule 160 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Join the left-hand lane after turning into a new road.
-- **Game detection:** Player lane index / lateral offset within 30 m after exiting a junction node onto a two-way or multi-lane link. No new inputs needed.
-- **Fault & severity:** `Serious` (`Dangerous` if oncoming traffic is present).
-- **Pass cases:** (1) Turn left at a T-junction cleanly into the left lane. (2) Turn right into a two-way side road and settle in the left lane.
-- **Fail cases:** (1) Swing wide on a left turn into the oncoming lane. (2) Turn right and continue driving on the right-hand side.
+- **Rule:** Keep to the left after turning into a two-way or multi-lane road.
+- **Game detection & thresholds:** Within `30.0 m` (`PROPOSED`) downstream of exiting a junction `nodes[]` onto `links[]`: flag if `PlayerState.lateralOffsetM` places the vehicle across the centreline (`twoWay == true`) or in `laneIndex > 0` (`lanes >= 2` without immediate right turn within `40.0 m`).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if an oncoming `TrafficAgent` is within `50.0 m` (`PROPOSED`) on the destination link.
+- **Pass cases:** (1) Turn left at a T-junction and settle within `0.5 m` of lane 0 centreline within `15.0 m`. (2) Turn right into a two-way side road and enter the left lane cleanly.
+- **Fail cases:** (1) Swing wide on a left turn and cross the centreline by `1.0 m` for `> 10.0 m`. (2) Turn right into a side road and drive on the right-hand side for `20.0 m`.
 
-## 4. `GB.OBS.MOVE_OFF_CHECKS` — Pull away safely
+## 3. `GB.OBS.MOVE_OFF_CHECKS` — Pull away safely from the kerb
 - **Highway Code:** Rule 159 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Pull away from the kerb only when passing traffic will not have to slow down.
-- **Game detection:** Following/approaching vehicle `other_decel_req` (`> 1.5 m/s²` minor, `> 3.0 m/s²` serious) within 3 s after player speed transitions from `< 0.5 m/s` to moving from the kerb. No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if a following vehicle must brake hard, `other_decel_req > 3 m/s²`).
-- **Pass cases:** (1) Wait at the kerb until a passing car clears, then pull away smoothly. (2) Pull away on an empty street with a timely right signal.
-- **Fail cases:** (1) Pull out directly in front of a car 15 m behind, forcing it to brake. (2) Pull away into a cyclist passing alongside.
+- **Rule:** Move off from the kerb only when passing traffic will not have to slow down or swerve.
+- **Game detection & thresholds:** When `PlayerState.speedMps` transitions from `< 0.5 m/s` (1.1 mph) to `>= 1.5 m/s` (3.4 mph) leaving a kerbside stop, monitor approaching/following `TrafficAgent` on the same or adjacent lane for `3.0 s` (`PROPOSED`): flag if `other_decel_req > 1.5 m/s²` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if `other_decel_req > 3.0 m/s²` (`PROPOSED`) or `Dangerous` if `ttc < 1.5 s` (`PROPOSED`) with a passing cyclist or car.
+- **Pass cases:** (1) Wait at the kerb while a car passes, then pull away with `other_decel_req == 0.0 m/s²`. (2) Pull away on an empty street with a right signal `>= 2.0 s` before moving.
+- **Fail cases:** (1) Pull out `15.0 m` ahead of a 30 mph car, causing `other_decel_req = 3.6 m/s²`. (2) Move off into the path of a cyclist `8.0 m` behind at 15 mph.
 
-## 5. `GB.OBS.MSM` — Mirror–Signal–Manoeuvre
+## 4. `GB.OBS.MSM` — Mirror–Signal–Manoeuvre before slowing or turning
 - **Highway Code:** Rule 161 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Signal and check for traffic behind before braking sharply or turning.
-- **Game detection:** Outcome-based (per `AGENTS.md` §4.7, no mirror-tap busywork): flag if player turns or slows sharply (`decel > 3.5 m/s²` without hazard ahead) without signalling >= 1.5 s prior or forcing behind traffic to brake. No new inputs needed.
-- **Fault & severity:** Driving (`Serious` on conflict).
-- **Pass cases:** (1) Signal left 3 s before slowing smoothly for a side road. (2) Slow gradually for a red light with brake lights visible early.
-- **Fail cases:** (1) Brake suddenly and turn left with no prior signal. (2) Swerve into a side road, forcing the car behind to brake.
+- **Rule:** Give clear signals and brake smoothly in good time before turning or stopping.
+- **Game detection & thresholds:** Outcome-based (per `AGENTS.md` §4.7): flag if player turns onto a different `links[]` arm at `nodes[]` without `indicator` active `>= 1.5 s` (`PROPOSED`) prior, or brakes sharply (`decel > 3.5 m/s²`, `PROPOSED`, with no red light or hazard within `25.0 m`) forcing a following `TrafficAgent` to brake (`other_decel_req > 2.0 m/s²`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if `other_decel_req > 3.5 m/s²` (`PROPOSED`) or causes a turn conflict.
+- **Pass cases:** (1) Signal left `3.0 s` before turning and decelerate smoothly at `<= 2.0 m/s²`. (2) Slow gradually for a side road with `other_decel_req <= 1.0 m/s²` behind.
+- **Fail cases:** (1) Brake at `4.5 m/s²` and turn left with `0.0 s` prior indicator. (2) Swerve into a side road with `0.5 s` signal, forcing a following car to brake at `3.8 m/s²`.
 
-## 6. `GB.SPD.APPROPRIATE` — Safe speed for hazards
+## 5. `GB.SPD.APPROPRIATE` — Safe speed for road and hazards
 - **Highway Code:** Rule 125 (`https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-27)
-- **Rule:** Drive slower than the speed limit when parked cars, bends, or crossings reduce your view.
-- **Game detection:** Player speed vs hazard-adjusted target speed within 25 m of parked cars, tight bends, or pedestrian crossings (`speed > 0.85 * limit` when clearance `< 1.5 m` or visibility `< 40 m`). Needs hazard-zone flag or parked-car proximity (already in `Sim.Core`).
-- **Fault & severity:** Driving (`Serious` if near-miss occurs).
-- **Pass cases:** (1) Ease from 30 mph to 20 mph passing a row of parked cars. (2) Slow below 25 mph approaching a blind bend.
-- **Fail cases:** (1) Hold 30 mph squeezing past parked cars with pedestrians nearby. (2) Enter a tight rural bend at 60 mph.
+- **Rule:** Drive below the speed limit when parked cars, narrow streets, bends, or pedestrians reduce clearance or view.
+- **Game detection & thresholds:** Within `25.0 m` (`PROPOSED`) of parked `TrafficAgent` (`speedMps < 0.2`), narrow link (`laneWidthM < 3.0 m`), or pedestrian within `2.0 m` of kerb: flag if `PlayerState.speedMps > 0.85 * links[].speedLimitMph * 0.44704` (`> 25.5 mph` in a 30 mph zone, `PROPOSED`) when lateral clearance `< 1.5 m` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if `PlayerState.speedMps` exceeds `links[].speedLimitMph` or lateral clearance `< 0.8 m` (`PROPOSED`) past a pedestrian/cyclist.
+- **Pass cases:** (1) Ease from 30 mph to 20 mph when passing parked cars with `1.2 m` clearance. (2) Slow to 22 mph approaching a blind town bend.
+- **Fail cases:** (1) Hold 30 mph squeezing past parked cars with `1.0 m` clearance and pedestrians on the kerb. (2) Hold 30 mph past a narrow pinch point with oncoming traffic.
 
-## 7. `GB.SCH.SLOW` — Slow down near schools
-- **Highway Code:** Rule 208 (`https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225`, checked 2026-11-27)
-- **Rule:** Slow down and watch for children outside schools.
-- **Game detection:** Player speed inside `school_zone` / `warning_signs` (`kind == "school"`) radius (`> 20 mph` when school zone active). Needs `warning_signs` / `school` zone loaded into `Sim.Core`.
-- **Fault & severity:** Driving (`Serious` if children/pedestrians are present).
-- **Pass cases:** (1) Drop to 20 mph past the school warning sign. (2) Hold <= 18 mph while pedestrians wait on the school pavement.
-- **Fail cases:** (1) Drive at 30 mph past a signed school zone. (2) Fail to slow when pedestrians stand near the school gate.
+## 6. `GB.SPD.BUILT_UP` — 30 mph built-up speed limit
+- **Highway Code:** Rule 124 (`https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-27)
+- **Rule:** A 30 mph (20 mph in Wales / signed 20 mph zones) limit applies where street lighting is present unless signs show otherwise.
+- **Game detection & thresholds:** On links with `links[].speedLimitMph == 30` (or `20` where signed) and `links[].roadClass` urban: flag if `PlayerState.speedMph > links[].speedLimitMph + 2.0` (`PROPOSED` tolerance for dial/control jitter) for `> 1.5 s` (`PROPOSED`).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if `speedMph >= links[].speedLimitMph + 10.0` (`PROPOSED`, e.g., >= 40 mph in a 30 mph street).
+- **Pass cases:** (1) Hold 28–30 mph along a lit urban street with no repeater signs. (2) Drop to 20 mph on entering a signed 20 mph residential zone.
+- **Fail cases:** (1) Drive at 35 mph along a street-lit 30 mph town road for 3.0 s. (2) Drive at 30 mph through a signed 20 mph zone.
 
-## 8. `GB.JCT.STOP_SIGN` — Stop at a STOP line
-- **Highway Code:** Rule 171 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Come to a complete stop behind the solid white line at every STOP sign.
-- **Game detection:** Minimum player speed (`minSpeed < 0.2 m/s`) within 4 m before a `stop` line node (`RoadPack` node/sign tag). Needs `stop` line flag on `RoadPack` junction arm.
-- **Fault & severity:** `Serious`.
-- **Pass cases:** (1) Stop completely behind the solid line for 1 s even when the cross road is empty. (2) Stop, check both ways, then pull out cleanly.
-- **Fail cases:** (1) Roll through the STOP line at 5 mph because the road looks clear. (2) Stop with front wheels past the solid line.
+## 7. `GB.SPD.NATIONAL_LIMIT` — National speed limit by road type
+- **Highway Code:** Rule 124 (`https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-27)
+- **Rule:** On national-speed-limit roads, cars are limited to 60 mph on single carriageways and 70 mph on dual carriageways and motorways.
+- **Game detection & thresholds:** On links where `links[].speedLimitMph` is `60` (`twoWay == true`, single carriageway) or `70` (`twoWay == false`, dual carriageway / motorway): flag if `PlayerState.speedMph > links[].speedLimitMph + 2.0` (`PROPOSED`) for `> 1.5 s`.
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if `speedMph >= links[].speedLimitMph + 15.0` (`PROPOSED`).
+- **Pass cases:** (1) Cruise at 58 mph on a 60 mph single-carriageway rural road. (2) Cruise at 68 mph on a 70 mph dual carriageway.
+- **Fail cases:** (1) Drive at 67 mph on a 60 mph single-carriageway rural road for 3.0 s. (2) Drive at 78 mph on a 70 mph dual carriageway.
 
-## 9. `GB.JCT.H2_PEDESTRIANS` — Give way to pedestrians at junctions (H2)
-- **Highway Code:** Rule H2 & Rule 170 (`https://www.gov.uk/guidance/the-highway-code/introduction`, checked 2026-11-27)
-- **Rule:** Give way to pedestrians crossing or waiting to cross a side road you are turning into.
-- **Game detection:** Active pedestrian agent at junction mouth (`pedestrianRoutes` `mouthCrossings`) + player turning into that arm (`playerSpeed > 0.5 m/s` within 3 m of crossing pedestrian). No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if pedestrian must stop/step back; `Dangerous` if clearance `< 1 m` at `> 10 mph`).
-- **Pass cases:** (1) Stop before turning left to let a waiting pedestrian cross the mouth. (2) Wait until the pedestrian clears the road before completing a right turn.
-- **Fail cases:** (1) Turn across in front of a pedestrian waiting at the mouth. (2) Force a crossing pedestrian to step back.
+## 8. `GB.GAP.CUT_IN` — Do not cut in after overtaking
+- **Highway Code:** Rule 168 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** After overtaking, move back only when well clear so the overtaken vehicle does not have to brake.
+- **Game detection & thresholds:** When player changes lane back in front of a `TrafficAgent` (`laneIndex` transitions onto agent's lane ahead of it): flag if longitudinal gap at merge is `< 1.5 s` (`PROPOSED` time headway, i.e., `gapM < PlayerState.speedMps * 1.5`) or `other_decel_req > 2.0 m/s²` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if `gapM < 0.8 s` (`PROPOSED`) or `other_decel_req > 3.5 m/s²` (`PROPOSED`).
+- **Pass cases:** (1) Wait until `2.2 s` (`~39 m` at 40 mph) ahead of an overtaken car before returning left. (2) Return left smoothly with `other_decel_req == 0.0 m/s²`.
+- **Fail cases:** (1) Pull back in `6.0 m` (`0.33 s`) ahead of an overtaken car at 40 mph. (2) Cut across a cyclist's front wheel within `3.0 m` after passing.
 
-## 10. `GB.JCT.H3_CYCLISTS` — Do not cut across cyclists at junctions (H3)
+## 9. `GB.JCT.H3_CYCLISTS` — Do not cut across cyclists at junctions (H3)
 - **Highway Code:** Rule H3 (`https://www.gov.uk/guidance/the-highway-code/introduction`, checked 2026-11-27)
-- **Rule:** Give way to cyclists going straight ahead before you turn across their path.
-- **Game detection:** Cyclist agent travelling straight on nearside/cycle lane within 25 m of junction + player turning left/right across cyclist's trajectory (`cyclist_decel_req > 2.0 m/s²` or lateral clearance `< 1.5 m`). No new inputs needed.
-- **Fault & severity:** `Serious` (`Dangerous` if the cyclist brakes or swerves).
-- **Pass cases:** (1) Hold back behind a cyclist going straight before turning left. (2) Wait for an oncoming cyclist to clear before turning right.
-- **Fail cases:** (1) Overtake a cyclist and immediately turn left across them ("left hook"). (2) Turn right across an oncoming cyclist's path.
+- **Rule:** Do not turn across the path of a cyclist going straight ahead at a junction.
+- **Game detection & thresholds:** When a `TrafficAgent` (`kind == "cyclist"`) is travelling straight on the nearside/cycle lane within `25.0 m` (`PROPOSED`) of a junction `nodes[]` and player turns across its path: flag if `cyclist_decel_req > 2.0 m/s²` (`PROPOSED`) or lateral/longitudinal clearance `< 1.5 m` (`PROPOSED`).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if `cyclist_decel_req > 4.0 m/s²` (`PROPOSED`) or collision occurs.
+- **Pass cases:** (1) Hold back behind a cyclist for `2.0 s` until they pass the side road, then turn left. (2) Wait for an oncoming cyclist to clear the junction before turning right.
+- **Fail cases:** (1) Overtake a cyclist and turn left immediately `4.0 m` ahead of them ("left hook"). (2) Turn right across an oncoming cyclist `10.0 m` away, forcing `cyclist_decel_req = 3.5 m/s²`.
 
-## 11. `GB.JCT.TURN_NEAR` — Left turn from the left
-- **Highway Code:** Rule 182–183 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Keep close to the left kerb and signal left in good time before turning left.
-- **Game detection:** Player lateral offset from left kerb (`> 1.5 m` clear of kerb) and left indicator state within 30 m of a left turn. No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if cutting across a nearside cyclist/lane).
-- **Pass cases:** (1) Signal left 30 m early and hug the left lane into the turn. (2) Slow smoothly in the left lane before a tight left corner.
-- **Fail cases:** (1) Swing wide to the right before turning left. (2) Turn left from the right-hand approach lane.
+## 10. `GB.JCT.TURN_NEAR` — Left turn positioning and signal
+- **Highway Code:** Rules 182–183 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** Keep well to the left and signal left in good time before turning left.
+- **Game detection & thresholds:** Within `30.0 m` (`PROPOSED`) before a left turn at `nodes[]`: flag if `PlayerState.lateralOffsetM` from left kerb exceeds `1.5 m` (`PROPOSED`, swinging wide right) or left indicator was not active `>= 2.0 s` (`PROPOSED`) before turn entry.
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if swinging wide crosses the centreline or cuts across a nearside lane.
+- **Pass cases:** (1) Signal left `3.0 s` early and keep within `0.8 m` of the left lane edge into the turn. (2) Slow smoothly to 12 mph in the left lane before turning.
+- **Fail cases:** (1) Swing `1.8 m` right toward the centreline before turning left. (2) Turn left with no signal until steering starts.
 
-## 12. `GB.JCT.TURN_FAR_POSITION` — Right turn position
-- **Highway Code:** Rule 179–180 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Move close to the centre line (without crossing it) before turning right.
-- **Game detection:** Player lateral offset from road centreline (`< 1.0 m` left of centreline) within 25 m before a right turn at a junction. No new inputs needed.
-- **Fault & severity:** Driving.
-- **Pass cases:** (1) Position just left of the centre line so cars behind can pass on the left if room allows. (2) Use a marked right-turn pocket lane.
-- **Fail cases:** (1) Hug the far-left kerb while signalling right. (2) Cross over the centre line into oncoming traffic before turning.
+## 11. `GB.JCT.TURN_FAR_POSITION` — Right turn approach position
+- **Highway Code:** Rules 179–180 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** Position as close as is safe to the centre line (without crossing it) before turning right.
+- **Game detection & thresholds:** Within `25.0 m` (`PROPOSED`) before a right turn at `nodes[]` on a two-way link (`twoWay == true`): flag if `PlayerState.lateralOffsetM` leaves `> 1.2 m` (`PROPOSED`) gap to the centreline (hugging the left kerb) or crosses the centreline (`> 0.3 m` into oncoming side, `PROPOSED`) before turning.
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if crossing the centreline forces an oncoming `TrafficAgent` to brake or swerve.
+- **Pass cases:** (1) Position `0.4 m` left of the centreline `20.0 m` before the right turn. (2) Enter a marked right-turn pocket lane cleanly.
+- **Fail cases:** (1) Hug the far-left kerb (`2.0 m` from centreline) while signalling right. (2) Cross `0.8 m` over the centreline `15.0 m` before the junction.
 
-## 13. `GB.JCT.TURN_FAR_GAP` — Right turn gap across oncoming traffic
+## 12. `GB.JCT.TURN_FAR_GAP` — Right turn gap across oncoming traffic
 - **Highway Code:** Rule 180 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Wait until oncoming traffic is clear before turning right across its lane.
-- **Game detection:** Oncoming vehicle `ttc` (`< 3.5 s`) or `other_decel_req > 2.0 m/s²` when player crosses the centreline turning right. No new inputs needed.
-- **Fault & severity:** `Serious` (`Dangerous` on near-miss or collision).
-- **Pass cases:** (1) Wait at the centre line until two oncoming cars pass, then turn smoothly. (2) Turn promptly when the oncoming lane is clear for > 5 s.
-- **Fail cases:** (1) Turn right across an oncoming car, forcing it to brake hard. (2) Misjudge the speed of an approaching motorcycle.
+- **Rule:** Wait until oncoming traffic is clear before turning right across its path.
+- **Game detection & thresholds:** When player crosses the centreline turning right at `nodes[]`: flag if any oncoming `TrafficAgent` has `ttc < 3.5 s` (`PROPOSED`) or experiences `other_decel_req > 2.0 m/s²` (`PROPOSED`).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if `ttc < 1.5 s` (`PROPOSED`) or `other_decel_req > 4.0 m/s²` (`PROPOSED`).
+- **Pass cases:** (1) Wait at the centreline until two oncoming cars pass, then turn with `ttc > 5.0 s`. (2) Turn promptly when the oncoming road is clear for `6.0 s`.
+- **Fail cases:** (1) Turn right across an oncoming car with `ttc = 2.2 s`, forcing `other_decel_req = 3.8 m/s²`. (2) Turn across an approaching cyclist with `ttc = 2.5 s`.
 
-## 14. `GB.TL.RED` — Stop at a red traffic light
-- **Highway Code:** Rule 175–176 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** You must stop behind the white stop line when the traffic light shows red.
-- **Game detection:** Signal phase (`RED`) + player front bumper crossing the link's `stopLine` position. No new inputs needed.
-- **Fault & severity:** `Serious` (`Dangerous` if a crossing vehicle or pedestrian is present).
-- **Pass cases:** (1) Stop cleanly behind the white line on red and wait for green. (2) Creep only after the light turns green and junction is clear.
-- **Fail cases:** (1) Drive straight through a red light. (2) Stop past the white stop line inside the pedestrian crossing.
+## 13. `GB.JCT.EMERGE_LOOK` — Creep and look when sightline is blocked
+- **Highway Code:** Rule 170 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** Approach junctions slowly and edge forward carefully if parked cars or buildings block your view.
+- **Game detection & thresholds:** At `junctionPriority[]` (`give_way` / `stop`) when sightline along the major road is occluded within `30.0 m` (`PROPOSED`) by geometry/parked cars: flag if player crosses the give-way line at `> 8.0 mph` (`3.6 m/s`, `PROPOSED`) without slowing below `5.0 mph` (`2.2 m/s`, `PROPOSED`) in the `6.0 m` approach zone.
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if emerging fast forces a major-road `TrafficAgent` to brake (`other_decel_req > 2.5 m/s²`).
+- **Pass cases:** (1) Slow to `3.0 mph` at the line, edge out `1.5 m` to check, then join cleanly. (2) Pause behind the line for `1.5 s` before emerging past parked cars.
+- **Fail cases:** (1) Emerge past a parked van blocking the left view at `14.0 mph` without slowing. (2) Shoot out of a blind side road at `12.0 mph` into a main road.
 
-## 15. `GB.TL.AMBER` — Stop at an amber traffic light if safe
+## 14. `GB.JCT.OPPOSITE_RIGHT` — Passing an opposite right-turner safely
+- **Highway Code:** Rule 181 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** When both you and an oncoming driver are turning right, normally pass nearside to nearside (in front of each other) unless road markings show otherwise.
+- **Game detection & thresholds:** At a 4-arm `nodes[]` junction when an oncoming `TrafficAgent` has right indicator active and is positioned in the junction turning right: flag if player cuts behind/offside (`ttc < 2.5 s`, `PROPOSED`, or lateral path conflict `< 1.5 m`, `PROPOSED`) instead of turning nearside-to-nearside.
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if crossing paths creates `ttc < 1.5 s` (`PROPOSED`) or forces oncoming vehicle to stop inside the junction.
+- **Pass cases:** (1) Pass nearside-to-nearside in front of an oncoming right-turning car. (2) Wait if the layout requires offside-to-offside and oncoming traffic is still moving.
+- **Fail cases:** (1) Drive around behind an oncoming right-turner, blocking their exit and forcing a stop. (2) Cut across the front of an oncoming right-turner already turning offside-to-offside.
+
+## 15. `GB.TL.NO_TURN_ON_RED` — No turning left on red
 - **Highway Code:** Rule 175 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Stop behind the line on amber unless you are so close that stopping could cause a crash.
-- **Game detection:** Signal phase (`AMBER`) + player stopping distance (`v² / (2 * 4.5)`) <= distance to stop line when amber begins, yet player crosses stop line. No new inputs needed.
-- **Fault & severity:** Driving.
-- **Pass cases:** (1) Brake smoothly to a stop behind the line when amber lights up 35 m ahead. (2) Continue cleanly when amber appears 4 m from the line at 30 mph.
-- **Fail cases:** (1) Accelerate through an amber light from 40 m away. (2) Cross the stop line after amber has been lit for > 2.5 s.
+- **Rule:** You MUST wait behind the stop line on red even when turning left, unless a green filter arrow is lit.
+- **Game detection & thresholds:** At `signalPlans[]` (`phase == "RED"`) with no active green left filter arrow: flag if player crosses `stopLine` while turning left (`indicator == "left"` or exit arm is left turn).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if a pedestrian or cross-traffic `TrafficAgent` is active on the junction (`ttc < 2.0 s`, `PROPOSED`).
+- **Pass cases:** (1) Stop behind the white line on red with left indicator on and wait for green. (2) Wait for green, then check for H2 pedestrians before turning left.
+- **Fail cases:** (1) Treat a red light like a US right-on-red and turn left while red is lit. (2) Roll across the stop line on red-and-amber to start a left turn early.
 
-## 16. `GB.TL.RED_AMBER` — Wait until green (no jumping red-amber)
-- **Highway Code:** Light signals (`https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic`, checked 2026-11-27)
-- **Rule:** Do not cross the stop line while red and amber are lit together; wait for green.
-- **Game detection:** Signal phase (`RED_AMBER`) + player crossing the stop line before `GREEN`. No new inputs needed.
-- **Fault & severity:** `Serious`.
-- **Pass cases:** (1) Hold behind the line during red-and-amber and move off on green. (2) Wait an extra moment on green if a pedestrian is still crossing.
-- **Fail cases:** (1) Move off and cross the white line during red-and-amber. (2) Jump the lights 0.5 s before green.
+## 16. `GB.TL.FILTER_ARROW` — Obey green filter arrow lanes
+- **Highway Code:** Rule 177 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** Only enter a filter-arrow lane if you are going in the arrow's direction; go on the arrow only without blocking other legal traffic.
+- **Game detection & thresholds:** On `links[]` with `laneConnections[]` marked as a filter lane: flag if player uses the filter lane to go straight/wrong direction, or proceeds on a filter arrow while obstructing legal cross-traffic (`other_decel_req > 2.0 m/s²`, `PROPOSED`).
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if exiting a filter lane across moving straight-ahead traffic (`ttc < 1.5 s`, `PROPOSED`).
+- **Pass cases:** (1) Wait in the left filter lane and turn left cleanly when the green left arrow lights up. (2) Stay out of the filter lane when going straight ahead.
+- **Fail cases:** (1) Sit in a green-arrow-only left lane while going straight ahead, blocking turning cars. (2) Turn straight ahead when only the left green filter arrow is lit.
 
-## 17. `GB.TL.ASL` — Advanced stop line (cycle box)
-- **Highway Code:** Rule 178 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Stop behind the first white line on red so cyclists have the marked box ahead.
-- **Game detection:** `asl == true` on signalised link + player front bumper inside the ASL box (`stopLine` to `aslLine`) during `RED` or `RED_AMBER`. Needs `aslLine` offset in `RoadPack` (or 4 m standard offset).
-- **Fault & severity:** `Serious`.
-- **Pass cases:** (1) Stop behind the first white line on red, leaving the green cycle box empty. (2) Wait behind the box until green, then let cyclists clear.
-- **Fail cases:** (1) Pull forward into the cycle box on a red light. (2) Block a cyclist waiting inside the ASL.
-
-## 18. `GB.TL.CLEAR_JUNCTION` — Do not block a green-light junction
+## 17. `GB.TL.CLEAR_JUNCTION` — Do not block a green-light junction
 - **Highway Code:** Rule 176 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Even when the light is green, wait behind the line if queued traffic leaves no room beyond the junction.
-- **Game detection:** Signal phase `GREEN` + exit link blocked by stopped vehicle within 12 m of junction exit + player stops inside junction polygon for `> 2 s`. No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if blocking cross traffic when lights change).
-- **Pass cases:** (1) Hold behind the stop line on green until space opens beyond the junction. (2) Cross smoothly once the exit lane clears.
-- **Fail cases:** (1) Drive onto the junction behind a stopped queue and sit across the crossing when lights turn red.
+- **Rule:** Only go forward on green if there is room to clear the junction safely (or you are waiting to turn right).
+- **Game detection & thresholds:** At `signalPlans[]` (`phase == "GREEN"`), when not turning right and the exit `links[]` has a stopped `TrafficAgent` within `12.0 m` (`PROPOSED`) of the junction exit: flag if player enters the junction polygon and remains stopped (`speedMps < 0.5 m/s`) inside it for `> 2.0 s` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if player is still inside the junction when the cross-traffic phase turns `GREEN`.
+- **Pass cases:** (1) Wait behind the stop line on green while traffic queues beyond the junction, then cross once `15.0 m` opens. (2) Wait inside the junction only when turning right and exit arm is clear.
+- **Fail cases:** (1) Enter on green behind a stopped queue and sit across the junction for `4.0 s`. (2) Block cross traffic after lights change to red.
 
-## 19. `GB.XNG.ZEBRA` — Give way at zebra crossings
-- **Highway Code:** Rule 195 & Rule H2 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Slow down and give way when someone is waiting or crossing at a zebra crossing.
-- **Game detection:** Zebra crossing node (`crossings[]`) + pedestrian waiting/stepping onto stripes + player fails to stop before the crossing (`speed > 0.5 m/s` across stripes while pedestrian active). No new inputs needed.
-- **Fault & severity:** Driving (if pedestrian waiting) / `Serious` → `Dangerous` (if pedestrian on crossing).
-- **Pass cases:** (1) Stop smoothly before the stripes when a pedestrian steps out. (2) Wait until the pedestrian reaches the far pavement before moving off.
-- **Fail cases:** (1) Drive over the stripes while a pedestrian is crossing. (2) Fail to slow down for a pedestrian waiting at the beacons.
+## 18. `GB.XNG.KEEP_CLEAR` — Do not stop on a pedestrian crossing in a queue
+- **Highway Code:** Rule 192 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** In traffic queues, leave pedestrian crossings clear even when lights are green.
+- **Game detection & thresholds:** At any `crossings[]` polygon (`zebra` / `pelican` / `puffin`): flag if player stops (`speedMps < 0.5 m/s`) with any part of the vehicle footprint overlapping the crossing stripes for `> 2.0 s` (`PROPOSED`) due to queued traffic ahead.
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if a pedestrian steps onto the crossing and is forced to walk around the player's car.
+- **Pass cases:** (1) Hold `2.0 m` behind the crossing when traffic is queued ahead, then cross once a car-length (`6.0 m`) clears beyond it. (2) Keep zebra stripes completely clear in slow town traffic.
+- **Fail cases:** (1) Roll forward onto zebra stripes behind a stopped bus and sit there for `5.0 s`. (2) Block a signalised crossing during a green phase queue.
+
+## 19. `GB.XNG.PELICAN_AMBER` — Give way on flashing amber at pelican crossings
+- **Highway Code:** Rule 196 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** At a pelican crossing, flashing amber means you MUST give way to any pedestrians still on the crossing, and may proceed only when it is clear.
+- **Game detection & thresholds:** At `crossings[]` (`kind == "pelican"`) during `FLASHING_AMBER` phase: flag if player moves across the crossing (`speedMps > 0.5 m/s`) while any pedestrian agent is inside the crossing polygon or within `1.5 m` (`PROPOSED`) of the player's lane.
+- **Base severity:** `Serious`
+- **Escalates to:** `Dangerous` if pedestrian clearance `< 1.0 m` (`PROPOSED`) at `> 5.0 mph`.
+- **Pass cases:** (1) Wait behind the stop line during flashing amber until the last pedestrian reaches the kerb, then move off. (2) Proceed smoothly on flashing amber when the crossing is completely empty.
+- **Fail cases:** (1) Drive across on flashing amber while a slow pedestrian is still crossing the far half. (2) Rev and edge onto the crossing behind a pedestrian.
 
 ## 20. `GB.MWY.KEEP_LEFT` — Keep left on motorways
 - **Highway Code:** Rule 264 (`https://www.gov.uk/guidance/the-highway-code/motorways-253-to-273`, checked 2026-11-27)
-- **Rule:** Always drive in the left-hand motorway lane unless overtaking.
-- **Game detection:** Player lane index (`laneIndex > 0`) on `roadClass == "motorway"` with `hardShoulder == true` when no slower vehicle is ahead within 60 m (`duration > 10 s`). No new inputs needed.
-- **Fault & severity:** Driving (`Serious` if repeated).
-- **Pass cases:** (1) Cruise in lane 0 (left) at 70 mph. (2) Move to lane 1 to pass a 56 mph lorry, then return to lane 0.
-- **Fail cases:** (1)Hog lane 1 (middle lane) with lane 0 empty for 20 s. (2) Stay in lane 2 after overtaking a single car.
+- **Rule:** Keep in the left-hand lane on a motorway unless overtaking.
+- **Game detection & thresholds:** On `links[].roadClass == "motorway"` (`lanes >= 3`): flag if `PlayerState.laneIndex > 0` for `> 10.0 s` (`PROPOSED`) when no slower `TrafficAgent` is ahead in `laneIndex - 1` within `60.0 m` (`PROPOSED`) and no lane-drop/exit fork is within `150.0 m` (`PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if repeated 3+ times (`PROPOSED`) or lane-hogging causes an overtake/undertake conflict.
+- **Pass cases:** (1) Cruise in lane 0 at 70 mph with clear road. (2) Move to lane 1 to pass a 56 mph lorry, then return to lane 0 within `10.0 s` after passing.
+- **Fail cases:** (1) Cruise in lane 1 (middle lane) for `20.0 s` with lane 0 empty for `> 100 m`. (2) Stay in lane 2 for `15.0 s` after overtaking a single car.

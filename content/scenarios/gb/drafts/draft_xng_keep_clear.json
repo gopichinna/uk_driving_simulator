@@ -1,22 +1,18 @@
 {
   "scenarioFormatVersion": "0.1",
-  "scenarioId": "draft_xng_zebra",
+  "scenarioId": "draft_xng_keep_clear",
   "course": "town",
   "anchor": "zebra",
   "durationS": 90,
   "events": [
     {
       "type": "traffic_density",
-      "value": 0.3
+      "value": 0.6
     },
     {
-      "type": "pedestrian_steps_out",
+      "type": "pedestrian_waits",
       "crossing": "zebra",
-      "whenPlayerWithinM": 28
-    },
-    {
-      "type": "finish_after_s",
-      "seconds": 90
+      "whenPlayerWithinM": 30
     }
   ]
 }

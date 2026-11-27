@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_mwy_amber_flash",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "variable_limit",
+      "mph": 50,
+      "whenPlayerWithinM": 150
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    }
+  ]
+}

@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_tl_ra_1",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "What do red and amber lights showing together mean?",
+    "options": [
+      "Go right now",
+      "Also means stop; do not pass until green shows",
+      "Turn left only",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 175 says RED AND AMBER also means stop; you must wait for green.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_ra_2",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "May you creep forward over the white line while red and amber are showing?",
+    "options": [
+      "Yes, slowly",
+      "No, stay behind the stop line until green",
+      "Yes, if turning left",
+      "Yes, at night"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: crossing the white line on red and amber is still jumping the red light.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_ra_3",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "What is the red and amber phase useful for while you wait behind the line?",
+    "options": [
+      "Starting your engine only",
+      "Getting ready to move off safely once green appears",
+      "Accelerating across the line",
+      "Overtaking cyclists"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: use red and amber to prepare to move off and check around you, not to cross the line early.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_ra_4",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "What light appears immediately after red and amber?",
+    "options": [
+      "Red",
+      "Green",
+      "Flashing amber",
+      "Off"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: the UK traffic-light cycle is red, then red and amber, then green.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_ra_5",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "A driver behind beeps as soon as red and amber show. What should you do?",
+    "options": [
+      "Move across on red and amber",
+      "Wait behind the line until green and check it is safe",
+      "Jump out of the car",
+      "Flash your lights"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: never let another driver pressure you into crossing before green.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_ra_6",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "When the light changes from red and amber to green, what should you check before moving?",
+    "options": [
+      "That the junction is clear of late crossers and pedestrians",
+      "Only the radio",
+      "Only the rear window",
+      "Nothing"
+    ],
+    "answer": 0,
+    "explain": "Rule 175: green means you may go on if the way is clear; watch for late crossers.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_ra_7",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "Does a pedestrian pelican crossing show red and amber to drivers?",
+    "options": [
+      "Yes, always",
+      "No, it goes from red to flashing amber, then green",
+      "Yes, at night",
+      "Yes, in towns"
+    ],
+    "answer": 1,
+    "explain": "Rule 196: pelican crossings use flashing amber instead of red and amber.",
+    "hc_rule": "196",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_ra_8",
+    "rule": "GB.TL.RED_AMBER",
+    "question": "Which lights mean you must wait behind the stop line?",
+    "options": [
+      "Red only",
+      "Red, steady amber (if safe to stop), and red with amber",
+      "Green only",
+      "Flashing green"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: all three phases require you to wait behind the stop line.",
+    "hc_rule": "175",
+    "difficulty": 1
+  }
+]

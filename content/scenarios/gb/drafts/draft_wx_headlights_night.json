@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_wx_headlights_night",
+  "course": "dual_carriageway",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "conditions",
+      "timeOfDay": "night",
+      "weather": "clear",
+      "visibilityM": 400
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.35
+    }
+  ]
+}

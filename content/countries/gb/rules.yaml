@@ -55,7 +55,7 @@ rules:
   teachingMoment: Shows the car hidden in the blind spot
   implementation:
     status: implemented
-    class: LToLocal.Rules.LaneChangeParams
+    class: LToLocal.Rules.LaneChangeRule
     file: core/Rules.Core/LaneChangeRule.cs
 - id: GB.SIG.TIMELY
   group: A. Observation, signalling, road position (OBS / SIG / POS)
@@ -74,7 +74,7 @@ rules:
   teachingMoment: '"Signal early enough for others to react."'
   implementation:
     status: implemented
-    class: LToLocal.Rules.LaneChangeParams
+    class: LToLocal.Rules.LaneChangeRule
     file: core/Rules.Core/LaneChangeRule.cs
 - id: GB.SIG.MISLEADING
   group: A. Observation, signalling, road position (OBS / SIG / POS)
@@ -138,6 +138,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Ego in an opposing lane outside an overtake or obstruction context
   teachingMoment: Core rule for persona P2
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.KeepLeftRule
+    file: core/Rules.Core/KeepLeftRule.cs
 - id: GB.POS.AFTER_TURN
   group: A. Observation, signalling, road position (OBS / SIG / POS)
   plainEnglish: After turning, end up on the left side of the new road
@@ -402,7 +406,7 @@ rules:
   teachingMoment: Replay from the other driver's point of view
   implementation:
     status: implemented
-    class: LToLocal.Rules.LaneLine
+    class: LToLocal.Rules.GiveWayRule
     file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.STOP_SIGN
   group: D. Junctions and priority (JCT)
@@ -419,6 +423,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Minimum speed in the last 10 m before the line > 0.5 mph
   teachingMoment: '"Stop means wheels stopped, even if it''s clear."'
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.StopSignRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.H2_PEDESTRIANS
   group: D. Junctions and priority (JCT)
   plainEnglish: Give way to pedestrians crossing, or waiting to cross, a road you turn into or out of
@@ -435,6 +443,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Pedestrian agent with `intent=cross` at the junction mouth while the ego passes
   teachingMoment: 2022 change; big gap for personas P1, P2 and P4
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.PedestrianCrossingRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.H3_CYCLISTS
   group: D. Junctions and priority (JCT)
   plainEnglish: Don't cut across cyclists, horse riders or horse-drawn vehicles going ahead when you turn or change lane
@@ -469,7 +481,7 @@ rules:
   teachingMoment: Bird's-eye view shows the queue that trapped you
   implementation:
     status: implemented
-    class: LToLocal.Rules.LaneLine
+    class: LToLocal.Rules.BoxJunctionRule
     file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.TURN_FAR_POSITION
   group: D. Junctions and priority (JCT)
@@ -588,6 +600,10 @@ rules:
   phase: P
   verifiedOn: '2026-11-25'
   detection: Front bumper crosses the line during red
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.TrafficLightRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.TL.AMBER
   group: E. Traffic lights (TL)
   plainEnglish: Amber means stop, unless you've crossed the line or are too close to stop safely
@@ -603,6 +619,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: At amber onset, the car could stop at 3 m/s² and didn't; *or* braked > 6 m/s² with a close follower
   teachingMoment: '"Point of no return" visual'
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.TrafficLightRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.TL.RED_AMBER
   group: E. Traffic lights (TL)
   plainEnglish: Red and amber together still mean stop; wait for green
@@ -615,6 +635,10 @@ rules:
   phase: M
   verifiedOn: '2026-11-25'
   detection: Crossing the line before green
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.TrafficLightRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.TL.NO_TURN_ON_RED
   group: E. Traffic lights (TL)
   plainEnglish: There is no turning on red in the UK
@@ -674,6 +698,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Ego entered the ASL box after red onset
   teachingMoment: Explains why cyclists get the box
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.TrafficLightRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.RBT.GIVE_WAY_RIGHT
   group: F. Roundabouts (RBT)
   plainEnglish: Give priority to traffic coming from your right (offside), unless signs, markings or lights say otherwise
@@ -864,6 +892,10 @@ rules:
   verifiedOn: '2026-11-25'
   detection: Pedestrian on the crossing polygon when the ego enters → MUST breach. Pedestrian waiting and ego doesn't slow
     → should breach
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.PedestrianCrossingRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.XNG.PARALLEL
   group: G. Pedestrian crossings (XNG)
   plainEnglish: 'A parallel crossing (zebra plus cycle track): also give way to cyclists'
@@ -937,7 +969,7 @@ rules:
   detection: Overtake event inside the zig-zag polygon
   implementation:
     status: implemented
-    class: LToLocal.Rules.LaneLine
+    class: LToLocal.Rules.ZigZagOvertakeRule
     file: core/Rules.Core/TownRules.cs
 - id: GB.XNG.KEEP_CLEAR
   group: G. Pedestrian crossings (XNG)
@@ -1150,6 +1182,10 @@ rules:
   phase: M
   verifiedOn: '2026-11-25'
   detection: Active school zone with lights flashing and speed > 20 mph (`ASSUMPTION` threshold)
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.SchoolSlowRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.SCH.KEEP_CLEAR
   group: J. School areas (SCH)
   plainEnglish: Don't stop or park on "school keep clear" markings when an upright sign prohibits it

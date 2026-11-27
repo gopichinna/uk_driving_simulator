@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_wx_fog_stopping",
+  "course": "rural_practice",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "fog",
+      "visibilityM": 50
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.25
+    }
+  ]
+}
