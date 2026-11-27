@@ -201,11 +201,10 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
     # (src_file, pitch_ratio) -> seamless crossfaded loop of a 1.6L petrol hatchback
     mini_idle = cache_dir / "mini_cooper_idle_269771.mp3"
     recorded_engines = {
-        "engine_idle.wav": (mini_idle, 1.00),
         "engine_low.wav": (mini_idle, 1.35),
-        "engine_mid.wav": (mini_idle, 1.85),
         "engine_high.wav": (mini_idle, 2.45),
     }
+    owner_mp3_engines = ("engine_idle.mp3", "engine_mid.mp3")
     # (src_file, ss_offset, duration_s, target_lufs, is_loop)
     recorded_clips = {
         "engine_start.wav": (cache_dir / "engine_start.mp3", 0.0, 2.5, -16, False),
@@ -225,6 +224,19 @@ def generate_sfx_audio(out_dir: Path = SFX_OUT_DIR) -> Path:
 
     with tempfile.TemporaryDirectory() as tmp:
         tmp_dir = Path(tmp)
+        for fname in owner_mp3_engines:
+            mp3_path = out_dir / fname
+            if mp3_path.is_file():
+                dur, _, _, _ = _probe_audio(mp3_path)
+                manifest_items.append(
+                    {
+                        "key": Path(fname).stem,
+                        "file": fname,
+                        "durationS": round(dur, 2),
+                        "targetLufs": -16,
+                        "loop": True,
+                    }
+                )
         for fname, (src_audio, pitch_ratio) in sorted(recorded_engines.items()):
             out_wav = out_dir / fname
             pitched_wav = tmp_dir / f"{fname}.pitched.wav"

@@ -6,7 +6,7 @@ This checklist is written for a non-developer testing the Android build on a **O
 - **Controls:** Steering sensitivity defaults to **60%**. Check you can steer smoothly, accelerate, brake, and toggle left/right indicators from both **seat view** (right-hand drive) and **chase view**.
 - **Mirrors:** Verify the live rear-view mirror and both door mirrors update smoothly, and check the optional look-over-the-shoulder view.
 - **Sound check:**
-  - Engine loop (`engine_idle.wav` -> `engine_low.wav` -> `engine_mid.wav` -> `engine_high.wav`): should sound like a steady small petrol hatchback with no clicks at the loop join.
+  - Engine loop (`engine_idle.mp3` -> `engine_low.wav` -> `engine_mid.mp3` -> `engine_high.wav`): should sound like a steady small petrol hatchback with no clicks at the loop join.
   - Indicator relay (`indicator_on.wav` / `indicator_off.wav`): clear click on/off.
   - Coach voice (`en_GB-cori-medium`): clear, plain English; listen for variety (`.v2` / `.v3`) when repeating faults or good drives.
   - Weather & street SFX (`rain_loop.wav`, `wipers.wav`, `ambience_town.wav`, `chime_success.wav`, `chime_fault.wav`).

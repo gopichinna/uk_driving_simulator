@@ -20,7 +20,7 @@
 ## Audio & Coach Voice (`content/audio/`)
 - **Piper TTS Engine:** MIT Licence — https://github.com/rhasspy/piper
 - **Coach Voice (`en_GB-cori-medium`):** **CC BY 4.0** (`rhasspy/piper-voices`, Hi-Fi TTS dataset OpenSLR 109, Cori Samuel public-domain LibriVox recordings).
-- **Recorded Engine Loops:** `car idle` (2002 Mini Cooper 1.6L) by `seth-m` (Freesound `269771`, **CC0 1.0 Universal**).
+- **Recorded Engine Loops:** `car idle` (2002 Mini Cooper 1.6L) by `seth-m` (Freesound `269771`, **CC0 1.0 Universal**) for `engine_low.wav` and `engine_high.wav`; `engine_idle.mp3` and `engine_mid.mp3` are owner-supplied.
 - **Recorded Car & Street SFX:** Freesound CC0 recordings by `GiocoSound`, `j1987`, `boedie`, `audible-edge`, `roisin.gleeson`, and `szegvari` (**CC0 1.0 Universal**).
 - **UI Tones:** Procedurally synthesised for L to Local (**CC0 1.0 Universal**).
 

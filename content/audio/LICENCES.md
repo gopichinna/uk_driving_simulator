@@ -22,9 +22,9 @@ All driving effects and loops are sourced from **CC0** recordings and normalised
 
 | File | Description | Author | Source URL | Licence | Realism (1–5) | Target Loudness |
 |---|---|---|---|---|---|---|
-| `engine_idle.wav` | 2002 Mini Cooper 1.6L inline-4 idle loop (seamless crossfade) | seth-m | https://freesound.org/people/seth-m/sounds/269771/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 (small 1.6L hatchback idle) | −16 LUFS |
+| `engine_idle.mp3` | Owner-supplied engine idle loop (MP3) | Owner | n/a | owner-supplied, no licence required (owner decision 2026-11-27) | n/a | n/a |
 | `engine_low.wav` | 2002 Mini Cooper 1.6L inline-4 low-rev loop (~1500 rpm, crossfaded) | seth-m | https://freesound.org/people/seth-m/sounds/269771/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 (small 1.6L hatchback low revs) | −16 LUFS |
-| `engine_mid.wav` | 2002 Mini Cooper 1.6L inline-4 mid-rev loop (~2500 rpm, crossfaded) | seth-m | https://freesound.org/people/seth-m/sounds/269771/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 (small 1.6L hatchback mid revs) | −16 LUFS |
+| `engine_mid.mp3` | Owner-supplied engine mid-rev loop (MP3) | Owner | n/a | owner-supplied, no licence required (owner decision 2026-11-27) | n/a | n/a |
 | `engine_high.wav` | 2002 Mini Cooper 1.6L inline-4 high-rev loop (~3500 rpm, crossfaded) | seth-m | https://freesound.org/people/seth-m/sounds/269771/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 (small 1.6L hatchback high revs) | −16 LUFS |
 | `engine_start.wav` | Recorded car engine start-up | GiocoSound | https://freesound.org/people/GiocoSound/sounds/401558/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
 | `indicator_on.wav` | Real car indicator relay tick (on) | j1987 | https://freesound.org/people/j1987/sounds/94999/ | CC0 1.0 Universal (`http://creativecommons.org/publicdomain/zero/1.0/`) | 4/5 | −16 LUFS |
