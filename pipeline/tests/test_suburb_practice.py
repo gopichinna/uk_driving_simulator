@@ -50,3 +50,15 @@ def test_suburb_practice_scenarios_validate_and_not_in_progression() -> None:
         assert data["course"] == "suburb_practice"
         assert data["anchor"] in ("start", "join")
         assert sc_id not in prog_text
+
+
+def test_every_stop_priority_has_minor_approach_link() -> None:
+    """Every controlledBy=='stop' junctionPriority must leave at least one incident link minor."""
+    pack = validate_roadpack_file(CITY_DIR / "roadpack.json")
+    stop_jps = [jp for jp in pack["junctionPriority"] if jp["controlledBy"] == "stop"]
+    assert len(stop_jps) >= 1, "suburb_practice must have at least one STOP junctionPriority"
+    for jp in stop_jps:
+        nid = jp["nodeId"]
+        incident_ids = {lk["id"] for lk in pack["links"] if lk["from"] == nid or lk["to"] == nid}
+        minor_ids = incident_ids - set(jp["majorLinks"])
+        assert len(minor_ids) >= 1, f"STOP junction {nid} has no minor approach link"

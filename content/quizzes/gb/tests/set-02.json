@@ -129,7 +129,7 @@
     {
       "id": "qb_jct_h2_4",
       "rule": "GB.JCT.H2_PEDESTRIANS",
-      "question": "If a pedestrian has already stepped into the road you are turning into, what MUST you do?",
+      "question": "If a pedestrian has already stepped into the road you are turning into, what must you do?",
       "options": [
         "Drive around them",
         "Give way to them",
@@ -137,7 +137,7 @@
         "Brake only if they run"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 170 says you MUST give way to pedestrians already crossing the road you are turning into.",
+      "explain": "Highway Code Rule 170 says you must give way to pedestrians already crossing the road you are turning into.",
       "hc_rule": "170",
       "difficulty": 1
     },
@@ -257,7 +257,7 @@
         "Over the zebra stripes"
       ],
       "answer": 1,
-      "explain": "Rule 178: you MUST stop at the first white line so the cycle box stays clear for cyclists.",
+      "explain": "Rule 178: you must stop at the first white line so the cycle box stays clear for cyclists.",
       "hc_rule": "178",
       "difficulty": 1
     },
@@ -294,7 +294,7 @@
     {
       "id": "qb_jct_stop_2",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "If the main road looks completely empty at a STOP sign, may you roll slowly through?",
+      "question": "If the main road looks completely empty at a stop sign, may you roll slowly through?",
       "options": [
         "Yes, below 5 mph",
         "No, your wheels must stop completely first",
@@ -302,7 +302,7 @@
         "Yes, if turning left"
       ],
       "answer": 1,
-      "explain": "Rule 171: a STOP sign is a legal MUST rule: you must come to a full standstill before moving out.",
+      "explain": "Rule 171: a stop sign is a legal must rule: you must come to a full standstill before moving out.",
       "hc_rule": "171",
       "difficulty": 1
     },

@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_vru_cycle_lane_solid",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "cyclist_ahead",
+      "anchor": "start",
+      "offsetM": 25,
+      "speedMph": 12
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    }
+  ]
+}

@@ -24,7 +24,7 @@
     {
       "id": "qb_sch_slow_3",
       "rule": "GB.SCH.SLOW",
-      "question": "What MUST you do when a school crossing patrol holds up a red and yellow Stop sign?",
+      "question": "What must you do when a school crossing patrol holds up a red and yellow Stop sign?",
       "options": [
         "Slow down and weave past",
         "Stop and wait until they lower the sign",
@@ -32,7 +32,7 @@
         "Only stop if children are in your lane"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 210 says you MUST stop when signalled by a school crossing patrol.",
+      "explain": "Highway Code Rule 210 says you must stop when signalled by a school crossing patrol.",
       "hc_rule": "210",
       "difficulty": 1
     },
@@ -54,7 +54,7 @@
     {
       "id": "qb_xng_zebra_2",
       "rule": "GB.XNG.ZEBRA",
-      "question": "What MUST you do once a pedestrian has moved onto a zebra crossing?",
+      "question": "What must you do once a pedestrian has moved onto a zebra crossing?",
       "options": [
         "Drive around behind them",
         "Give way to them",
@@ -62,7 +62,7 @@
         "Sound your horn"
       ],
       "answer": 1,
-      "explain": "Rule 195 states you MUST give way when a pedestrian has moved onto a crossing.",
+      "explain": "Rule 195 states you must give way when a pedestrian has moved onto a crossing.",
       "hc_rule": "195",
       "difficulty": 1
     },
@@ -302,7 +302,7 @@
         "Sound your horn"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 175 says RED AND AMBER also means stop; you must wait for green.",
+      "explain": "Highway Code Rule 175 says red and amber also means stop; you must wait for green.",
       "hc_rule": "175",
       "difficulty": 1
     },
@@ -414,7 +414,7 @@
     {
       "id": "qb_jct_gw_3",
       "rule": "GB.JCT.GIVE_WAY",
-      "question": "When must you stop completely behind a solid white line with a red octagonal STOP sign?",
+      "question": "When must you stop completely behind a solid white line with a red octagonal stop sign?",
       "options": [
         "Only when cars are coming",
         "Every time, even if the road looks clear",
@@ -422,7 +422,7 @@
         "Only when turning right"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a STOP sign and line.",
+      "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a stop sign and line.",
       "hc_rule": "172",
       "difficulty": 2
     },
@@ -549,7 +549,7 @@
     {
       "id": "qb_jct_stop_4",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "Why are STOP signs placed at certain junctions instead of Give Way signs?",
+      "question": "Why are stop signs placed at certain junctions instead of Give Way signs?",
       "options": [
         "To save paint",
         "Because the view of the main road is poor",

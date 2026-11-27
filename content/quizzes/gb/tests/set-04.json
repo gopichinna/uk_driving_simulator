@@ -294,7 +294,7 @@
     {
       "id": "qb_jct_stop_6",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "What shape is a UK STOP sign?",
+      "question": "What shape is a UK stop sign?",
       "options": [
         "Triangle",
         "Circle",
@@ -302,7 +302,7 @@
         "Square"
       ],
       "answer": 2,
-      "explain": "Rule 171: the STOP sign is uniquely eight-sided so you can recognise it even in snow or from behind.",
+      "explain": "Rule 171: the stop sign is uniquely eight-sided so you can recognise it even in snow or from behind.",
       "hc_rule": "171",
       "difficulty": 1
     },
@@ -564,7 +564,7 @@
     {
       "id": "qb_jct_stop_4",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "Why are STOP signs placed at certain junctions instead of Give Way signs?",
+      "question": "Why are stop signs placed at certain junctions instead of Give Way signs?",
       "options": [
         "To save paint",
         "Because the view of the main road is poor",

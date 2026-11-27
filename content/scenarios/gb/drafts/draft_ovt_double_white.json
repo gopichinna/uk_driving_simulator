@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_ovt_double_white",
+  "course": "rural_practice",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "slow_vehicle_ahead",
+      "lane": 0,
+      "speedMph": 25,
+      "offsetM": 80
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 120
+    }
+  ]
+}

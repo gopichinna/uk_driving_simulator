@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_xng_light_crossings",
+  "course": "town",
+  "anchor": "crossroads_signals",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "lights_turn_amber",
+      "whenPlayerWithinM": 35
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    }
+  ]
+}

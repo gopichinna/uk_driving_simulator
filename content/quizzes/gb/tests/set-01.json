@@ -107,7 +107,7 @@
         "Sound your horn"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 175 says RED AND AMBER also means stop; you must wait for green.",
+      "explain": "Highway Code Rule 175 says red and amber also means stop; you must wait for green.",
       "hc_rule": "175",
       "difficulty": 1
     },
@@ -272,7 +272,7 @@
         "Proceed with care"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 175 says RED means stop and wait behind the stop line.",
+      "explain": "Highway Code Rule 175 says red means stop and wait behind the stop line.",
       "hc_rule": "175",
       "difficulty": 1
     },
@@ -294,7 +294,7 @@
     {
       "id": "qb_jct_stop_1",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "What must you do at an octagonal red STOP sign with a solid white line?",
+      "question": "What must you do at an octagonal red stop sign with a solid white line?",
       "options": [
         "Slow down and roll through",
         "Stop completely behind the white line",
@@ -302,7 +302,7 @@
         "Sound your horn and go"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 171 says you MUST stop behind the solid white line even if the road looks clear.",
+      "explain": "Highway Code Rule 171 says you must stop behind the solid white line even if the road looks clear.",
       "hc_rule": "171",
       "difficulty": 1
     },
@@ -534,7 +534,7 @@
     {
       "id": "qb_jct_gw_3",
       "rule": "GB.JCT.GIVE_WAY",
-      "question": "When must you stop completely behind a solid white line with a red octagonal STOP sign?",
+      "question": "When must you stop completely behind a solid white line with a red octagonal stop sign?",
       "options": [
         "Only when cars are coming",
         "Every time, even if the road looks clear",
@@ -542,7 +542,7 @@
         "Only when turning right"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a STOP sign and line.",
+      "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a stop sign and line.",
       "hc_rule": "172",
       "difficulty": 2
     },

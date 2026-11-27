@@ -17,7 +17,7 @@
   {
     "id": "qb_xng_zebra_2",
     "rule": "GB.XNG.ZEBRA",
-    "question": "What MUST you do once a pedestrian has moved onto a zebra crossing?",
+    "question": "What must you do once a pedestrian has moved onto a zebra crossing?",
     "options": [
       "Drive around behind them",
       "Give way to them",
@@ -25,7 +25,7 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Rule 195 states you MUST give way when a pedestrian has moved onto a crossing.",
+    "explain": "Rule 195 states you must give way when a pedestrian has moved onto a crossing.",
     "hc_rule": "195",
     "difficulty": 1
   },

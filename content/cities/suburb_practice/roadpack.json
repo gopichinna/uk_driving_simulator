@@ -26186,16 +26186,6 @@
       "confidenceNotes": "give_way node; equal roadClass; no clear major street"
     },
     {
-      "nodeId": "n_13737587850",
-      "majorLinks": [
-        "l_23486317_10",
-        "l_23486317_11"
-      ],
-      "controlledBy": "give_way",
-      "confidence": 0.85,
-      "confidenceNotes": "give_way node; equal roadClass; no clear major street"
-    },
-    {
       "nodeId": "n_13737594022",
       "majorLinks": [
         "l_643936657_1",
@@ -26281,9 +26271,9 @@
         "l_195588955_11",
         "l_195588955_12"
       ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.65,
-      "confidenceNotes": "inferred from roadClass hierarchy"
+      "controlledBy": "stop",
+      "confidence": 0.85,
+      "confidenceNotes": "stop node; inferred from roadClass hierarchy"
     },
     {
       "nodeId": "n_2189004644",
@@ -26645,12 +26635,11 @@
     {
       "nodeId": "n_277929567",
       "majorLinks": [
-        "l_23486317_11",
         "l_86128112_0"
       ],
-      "controlledBy": "uncontrolled",
-      "confidence": 0.4,
-      "confidenceNotes": "equal roadClass; no clear major street"
+      "controlledBy": "give_way",
+      "confidence": 0.85,
+      "confidenceNotes": "give_way node; equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_3011901901",
@@ -26774,16 +26763,6 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
-    },
-    {
-      "nodeId": "n_4506177992",
-      "majorLinks": [
-        "l_23389071_0",
-        "l_23389071_1"
-      ],
-      "controlledBy": "stop",
-      "confidence": 0.85,
-      "confidenceNotes": "stop node; equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_4568993913",
