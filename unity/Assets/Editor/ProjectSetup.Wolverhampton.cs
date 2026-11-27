@@ -597,20 +597,39 @@ namespace LToLocal.EditorTools
                     Glow("LampRed", new Color(1f, 0.12f, 0.10f)), Glow("LampAmber", new Color(1f, 0.62f, 0.05f)), Glow("LampGreen", new Color(0.15f, 1f, 0.45f)));
             }
 
-            // Free drive starts on a long two-way public road near the middle of the map, so it is never at the edge
-            // (the mock-test route begins in a car park, so service roads are skipped).
+            // Free drive: on a motorway pack, start on the motorway; otherwise on a main road near the middle of the map,
+            // preferring dual carriageways and ring roads (one-way carriageways count), and never at the edge or in a car park.
             string startLink = "";
             double bestScore = double.MaxValue, startOffset = 10;
             Vec2 mapCentre = new Vec2((gx0 + gx1) / 2, (gz0 + gz1) / 2);
-            foreach (var l in pack.Links)
+            bool hasMotorway = pack.Links.Exists(l => l.RoadClass == "motorway");
+            var anchorStart = hasMotorway ? built.Anchor("start") : null;
+            if (anchorStart.HasValue && !string.IsNullOrEmpty(g.Segments[anchorStart.Value.lane].SourceId))
             {
-                if (!l.InMainNetwork || l.OneWay || l.RoadClass == "service" || !built.LinkLanes.ContainsKey(l.Id)) continue;
-                double len = new PathPolyline(l.Geometry).Length;
-                if (len < 60) continue;
-                var mid = l.Geometry[l.Geometry.Count / 2];
-                double score = (mid - mapCentre).Length - len * 0.5; // near the middle, and longer is better
-                if (score < bestScore) { bestScore = score; startLink = l.Id; }
+                startLink = g.Segments[anchorStart.Value.lane].SourceId;
+                startOffset = anchorStart.Value.s;
             }
+            else
+                foreach (var l in pack.Links)
+                {
+                    if (!l.InMainNetwork || l.RoadClass == "service" || !built.LinkLanes.ContainsKey(l.Id)) continue;
+                    bool major = l.RoadClass == "trunk" || l.RoadClass == "primary" || l.RoadClass == "secondary" || l.RoadClass == "tertiary";
+                    if (!major) continue;
+                    double len = new PathPolyline(l.Geometry).Length;
+                    if (len < 60) continue;
+                    var mid = l.Geometry[l.Geometry.Count / 2];
+                    double score = (mid - mapCentre).Length - len * 0.5 - (l.LanesForward >= 2 ? 150 : 0); // near the middle, long, and multi-lane
+                    if (score < bestScore) { bestScore = score; startLink = l.Id; }
+                }
+            if (startLink.Length == 0)
+                foreach (var l in pack.Links)
+                {
+                    if (!l.InMainNetwork || l.OneWay || l.RoadClass == "service" || !built.LinkLanes.ContainsKey(l.Id)) continue;
+                    double len = new PathPolyline(l.Geometry).Length;
+                    var mid = l.Geometry[l.Geometry.Count / 2];
+                    double score = (mid - mapCentre).Length - len * 0.5;
+                    if (len >= 60 && score < bestScore) { bestScore = score; startLink = l.Id; }
+                }
             int startLane = startLink.Length > 0 ? built.LinkLanes[startLink].forward[0] : built.Spawns[0].lane;
             var (startPos, startHeading) = g.Segments[startLane].Path.Sample(System.Math.Min(startOffset, g.Segments[startLane].Length - 1));
 
