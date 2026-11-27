@@ -15,7 +15,7 @@ SPECS_DIR = REPO_ROOT / "docs" / "specs"
 
 def _spec_rule_ids() -> set[str]:
     ids: set[str] = set()
-    for spec_name in ("next-rules.md", "next-rules-2.md", "next-rules-3.md"):
+    for spec_name in ("next-rules.md", "next-rules-2.md", "next-rules-3.md", "next-rules-4.md"):
         text = (SPECS_DIR / spec_name).read_text(encoding="utf-8")
         for m in re.finditer(r"^##\s+\d+\.\s+`(GB\.[A-Z]+\.[A-Z0-9_]+)`", text, re.MULTILINE):
             ids.add(m.group(1))
@@ -28,7 +28,7 @@ def _rule_id_to_draft_id(rule_id: str) -> str:
 
 def test_fifty_draft_scenarios_validate_and_match_specs() -> None:
     draft_files = sorted(DRAFTS_DIR.glob("draft_*.json"))
-    assert len(draft_files) == 50, f"Expected 50 draft scenarios, found {len(draft_files)}"
+    assert len(draft_files) == 60, f"Expected 60 draft scenarios, found {len(draft_files)}"
 
     wired_ids: set[str] = set()
     for lesson_path in LESSONS_DIR.glob("[0-9][0-9]-*.json"):
@@ -47,8 +47,8 @@ def test_fifty_draft_scenarios_validate_and_match_specs() -> None:
         assert sid not in progression_text, f"Draft {sid} must not be in progression.json yet"
 
     spec_ids = _spec_rule_ids()
-    assert len(spec_ids) == 50, (
-        f"Expected 50 spec rule IDs across batch 1-3, found {len(spec_ids)}"
+    assert len(spec_ids) == 60, (
+        f"Expected 60 spec rule IDs across batch 1-4, found {len(spec_ids)}"
     )
     expected_draft_ids = {_rule_id_to_draft_id(rid) for rid in spec_ids}
     assert draft_ids == expected_draft_ids, (

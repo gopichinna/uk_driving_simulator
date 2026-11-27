@@ -1,29 +1,41 @@
 claimsFormatVersion: "0.1"
 claims:
-  - id: courses_four
+  - id: lessons_32
     status: shipped
-    text: "4 playable 3D courses: a town-centre course, a two-lane roundabout, a single-lane roundabout, and a 40 mph dual carriageway."
+    text: "32 structured lessons across Stages 0 to 8, with the first 3 lessons free and £14.99 one-off unlock for adults 18+."
+    evidence:
+      - content/lessons/gb/progression.json
+      - content/lessons/gb/32-coventry-ring-road.json
+  - id: theory_mock_tests
+    status: shipped
+    text: "10 mock theory tests with 50 questions each, a 43/50 pass mark, and a 57-minute timer."
+    evidence:
+      - content/quizzes/gb/tests/set-01.json
+      - content/quizzes/gb/tests/set-10.json
   - id: live_rules
     status: shipped
-    text: "Live feedback on speed limits, lane changes, roundabouts, overtaking cyclists (1.5 m), following distance (2 s), and town-centre junction rules."
+    text: "Live Highway Code feedback on speed limits, school zones, STOP signs, turning signals, roundabouts, overtaking cyclists (1.5 m), following gaps (2 s), crossings, and box junctions."
+    evidence:
+      - content/countries/gb/rules.yaml
+      - content/lessons/gb/28-school-zones.json
+      - content/lessons/gb/29-turning-left-right.json
   - id: cameras_mirrors
     status: shipped
     text: "Right-hand-drive seat view, chase view, live rear-view and door mirrors, and an optional look over your shoulder."
+    evidence:
+      - content/countries/gb/strings/en/ui.json
   - id: debrief_replays
     status: shipped
     text: "End-of-drive debrief with replays and a practice pass or fail verdict."
-  - id: settings_screen
-    status: shipped
-    text: "Settings screen with adjustable steering sensitivity."
+    evidence:
+      - content/countries/gb/strings/en/ui.json
   - id: offline_device
     status: shipped
     text: "Offline by design: no account required, and settings stay on your device."
-  - id: lessons_18
-    status: planned
-    text: "18 structured lessons across Stages 0–5 (first 3 lessons free)."
-  - id: wolverhampton_beta
-    status: planned
-    text: "Wolverhampton city-centre free-drive (beta) built from OpenStreetMap data."
+    evidence:
+      - content/store/en/privacy-draft.md
   - id: practise_this_lesson
     status: planned
     text: "Debrief links straight into the lesson that trains each rule."
+    evidence:
+      - docs/01-product-spec.md

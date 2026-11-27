@@ -135,33 +135,49 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 31 | Mock test: Coventry ring road | `GB.GAP.TWO_SECOND` | ✅ |
 | 31 | Mock test: Coventry ring road | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
 | 31 | Mock test: Coventry ring road | `GB.SIG.TIMELY` | ✅ |
+| 32 | The ring road | `GB.POS.KEEP_LEFT` | ✅ |
+| 32 | The ring road | `GB.SIG.TIMELY` | ✅ |
+| 32 | The ring road | `GB.OBS.LANE_CHANGE` | ✅ |
+| 32 | The ring road | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
+| 32 | The ring road | `GB.RBT.APPROACH_LANE` | ✅ |
+| 32 | The ring road | `GB.RBT.STAY_IN_LANE` | ✅ |
+| 32 | The ring road | `GB.TL.RED` | ✅ |
+| 32 | The ring road | `GB.TL.AMBER` | ✅ |
+| 32 | The ring road | `GB.JCT.BOX` | ✅ |
+| 32 | The ring road | `GB.XNG.ZEBRA` | ✅ |
+| 32 | The ring road | `GB.JCT.H2_PEDESTRIANS` | ✅ |
+| 32 | The ring road | `GB.XNG.ZIGZAG_OVERTAKE` | ✅ |
+| 32 | The ring road | `GB.SPD.OVER_LIMIT` | ✅ |
+| 32 | The ring road | `GB.GAP.TWO_SECOND` | ✅ |
+| 32 | The ring road | `GB.JCT.GIVE_WAY` | ✅ |
+| 32 | The ring road | `GB.JCT.TURN_NEAR` | ✅ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
 | Rule ID | Practice Scenarios | Status |
 |---|---|---|
-| `GB.GAP.TWO_SECOND` | 11 | ✅ >= 2 |
-| `GB.JCT.BOX` | 2 | ✅ >= 2 |
-| `GB.JCT.GIVE_WAY` | 4 | ✅ >= 2 |
-| `GB.JCT.H2_PEDESTRIANS` | 2 | ✅ >= 2 |
+| `GB.GAP.TWO_SECOND` | 12 | ✅ >= 2 |
+| `GB.JCT.BOX` | 3 | ✅ >= 2 |
+| `GB.JCT.GIVE_WAY` | 5 | ✅ >= 2 |
+| `GB.JCT.H2_PEDESTRIANS` | 3 | ✅ >= 2 |
 | `GB.JCT.STOP_SIGN` | 3 | ✅ >= 2 |
 | `GB.JCT.TURN_FAR_GAP` | 5 | ✅ >= 2 |
-| `GB.JCT.TURN_NEAR` | 4 | ✅ >= 2 |
-| `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
-| `GB.POS.KEEP_LEFT` | 10 | ✅ >= 2 |
-| `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
-| `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
+| `GB.JCT.TURN_NEAR` | 5 | ✅ >= 2 |
+| `GB.OBS.LANE_CHANGE` | 10 | ✅ >= 2 |
+| `GB.POS.KEEP_LEFT` | 11 | ✅ >= 2 |
+| `GB.RBT.APPROACH_LANE` | 4 | ✅ >= 2 |
+| `GB.RBT.GIVE_WAY_RIGHT` | 6 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_EXIT` | 5 | ✅ >= 2 |
-| `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
+| `GB.RBT.STAY_IN_LANE` | 4 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
 | `GB.SCH.SLOW` | 5 | ✅ >= 2 |
-| `GB.SIG.TIMELY` | 14 | ✅ >= 2 |
-| `GB.SPD.OVER_LIMIT` | 18 | ✅ >= 2 |
-| `GB.TL.AMBER` | 2 | ✅ >= 2 |
+| `GB.SIG.TIMELY` | 16 | ✅ >= 2 |
+| `GB.SPD.OVER_LIMIT` | 19 | ✅ >= 2 |
+| `GB.TL.AMBER` | 3 | ✅ >= 2 |
 | `GB.TL.ASL` | 2 | ✅ >= 2 |
-| `GB.TL.RED` | 6 | ✅ >= 2 |
+| `GB.TL.RED` | 7 | ✅ >= 2 |
 | `GB.TL.RED_AMBER` | 2 | ✅ >= 2 |
 | `GB.VRU.PASS_CYCLIST` | 5 | ✅ >= 2 |
-| `GB.XNG.ZEBRA` | 2 | ✅ >= 2 |
-| `GB.XNG.ZIGZAG_OVERTAKE` | 2 | ✅ >= 2 |
+| `GB.XNG.ZEBRA` | 3 | ✅ >= 2 |
+| `GB.XNG.ZIGZAG_OVERTAKE` | 3 | ✅ >= 2 |

@@ -26,6 +26,11 @@
         "title": "Following distance in town"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_speed_change",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s5-18-two-second-rule-speed",
         "scenarioId": "s5_18_two_sec_cruise",
         "title": "The two-second rule at speed"
@@ -93,6 +98,11 @@
         "lessonId": "gb-s2-10-box-junctions",
         "scenarioId": "s2_10_box_right_turn",
         "title": "Box junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.EMERGE_LOOK": [
@@ -122,6 +132,11 @@
         "lessonId": "gb-s1-29-turning-left-right",
         "scenarioId": "s1_29_right_oncoming_cut",
         "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.H2_PEDESTRIANS": [
@@ -134,6 +149,11 @@
         "lessonId": "gb-s1-05-pedestrians-h2",
         "scenarioId": "s1_05_h2_south",
         "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ],
     "GB.JCT.H3_CYCLISTS": [
@@ -219,6 +239,11 @@
         "lessonId": "gb-s1-29-turning-left-right",
         "scenarioId": "s1_29_left_no_signal",
         "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       }
     ],
     "GB.MWY.AMBER_FLASH": [
@@ -316,6 +341,11 @@
         "lessonId": "gb-s4-15-overtaking-cyclists",
         "scenarioId": "s4_15_dual_cyclist",
         "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
@@ -433,6 +463,11 @@
         "title": "Overtaking cyclists"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -515,6 +550,11 @@
         "lessonId": "gb-s3-12-roundabout-lanes-signals",
         "scenarioId": "s3_12_third_exit_dusk",
         "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.CYCLISTS": [
@@ -554,6 +594,11 @@
         "lessonId": "gb-s3-14-roundabout-cyclists",
         "scenarioId": "s3_14_single_rbt_cyclist",
         "title": "Cyclists on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.SIGNAL_APPROACH": [
@@ -615,6 +660,11 @@
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_busy_spiral_exit",
         "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_multi_roundabout",
+        "title": "The ring road"
       }
     ],
     "GB.RBT.WRONG_WAY": [
@@ -691,6 +741,16 @@
         "lessonId": "gb-s4-15-overtaking-cyclists",
         "scenarioId": "s4_15_dual_cyclist",
         "title": "Overtaking cyclists"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_ring_lanes",
+        "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
@@ -787,6 +847,11 @@
         "title": "School zones"
       },
       {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_speed_change",
+        "title": "The ring road"
+      },
+      {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
         "scenarioId": "s5_17_busy_dual",
         "title": "Dual carriageway lane discipline"
@@ -867,6 +932,11 @@
         "lessonId": "gb-s2-08-advanced-stop-lines",
         "scenarioId": "s2_08_asl_stop",
         "title": "Advanced stop lines"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
       }
     ],
     "GB.TL.ASL": [
@@ -915,6 +985,11 @@
         "lessonId": "gb-s4-16-following-distance-town",
         "scenarioId": "s4_16_signals_queue",
         "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_signals",
+        "title": "The ring road"
       },
       {
         "lessonId": "gb-s8-31-mock-test-coventry",
@@ -1043,6 +1118,11 @@
         "lessonId": "gb-s2-09-zebra-zigzags",
         "scenarioId": "s2_09_zebra_zigzags",
         "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ],
     "GB.XNG.ZIGZAG_OVERTAKE": [
@@ -1055,6 +1135,11 @@
         "lessonId": "gb-s2-09-zebra-zigzags",
         "scenarioId": "s2_09_zebra_zigzags",
         "title": "Zebra crossings and zig-zags"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_pedestrians",
+        "title": "The ring road"
       }
     ]
   }

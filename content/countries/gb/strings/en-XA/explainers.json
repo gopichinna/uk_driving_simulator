@@ -1,0 +1,183 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en-XA",
+  "kind": "explainers",
+  "explainers": {
+    "GB.SPD.OVER_LIMIT": {
+      "rule": "[Névér drívé fástér thán thé sígnéd spééd límít fór yóúr róád. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Lówér spééds gívé yóú tímé tó spót házárds ánd stóp sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Wáítíng úntíl áftér á lówér spééd sígn béfóré slówíng dówn. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 124",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.VRU.PASS_CYCLIST": {
+      "rule": "[Léávé át léást 1.5 métrés whén pássíng á cyclíst úp tó 30 mph. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cyclísts máy swérvé áróúnd póthólés ór dráíns wíthóút wárníng. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Sqúéézíng pást á cyclíst ín thé sámé láné néár óncómíng tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 163",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.OBS.LANE_CHANGE": {
+      "rule": "[Chéck mírrórs ánd blínd spóts, thén sígnál béfóré móvíng íntó ánóthér láné. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ánóthér véhíclé ór rídér cán sít híddén bésídé yóúr réár qúártér. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Dríftíng ácróss láné línés wíthóút chéckíng yóúr blínd spót fírst. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 133",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.SIG.TIMELY": {
+      "rule": "[Sígnál cléárly ín góód tímé béfóré túrníng ór chángíng lánés, thén cáncél ít. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Éárly sígnáls lét óthér drívérs ánd pédéstríáns plán sáfély áróúnd yóú. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Sígnállíng ás yóú túrn, ór léávíng án índícátór ón áftérwárds. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 103",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.POS.KEEP_LEFT": {
+      "rule": "[Kéép tó thé léft láné únléss yóú áré óvértákíng ór túrníng ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stáyíng léft kééps fástér tráffíc flówíng smóóthly ón yóúr ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Crúísíng ín thé míddlé ór ríght láné whén thé léft láné ís cléár. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 160",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.GIVE_WAY_RIGHT": {
+      "rule": "[Gívé wáy tó tráffíc álréády ón thé róúndábóút fróm yóúr ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Róúndábóút tráffíc hás príóríty só thé júnctíón stáys móvíng sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Púllíng óút ín frónt óf á fást véhíclé áppróáchíng fróm thé ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 185",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.APPROACH_LANE": {
+      "rule": "[Chóósé thé léft láné fór léft ór áhéád, ánd ríght fór ríght túrns. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé ríght áppróách láné ávóíds cúttíng ácróss óthér drívérs ón thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Áppróáchíng ín thé léft láné whén túrníng ríght pást 12 ó'clóck. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.STAY_IN_LANE": {
+      "rule": "[Fóllów thé láné márkíngs ánd stáy ín yóúr láné ón múltí-láné róúndábóúts. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Dríftíng sídéwáys púts yóú íntó thé páth óf cárs álóngsídé yóú. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Cúttíng ácróss thé ínsídé láné whén tákíng á spírál éxít. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.SIGNAL_APPROACH": {
+      "rule": "[Sígnál léft fór léft éxíts, ríght fór ríght éxíts, nóné fór áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cléár áppróách sígnáls téll wáítíng drívérs whéthér yóú wíll cróss thém. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Sígnállíng léft béfóré éntéríng whén yóú áré góíng stráíght áhéád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.SIGNAL_EXIT": {
+      "rule": "[Sígnál léft ríght áftér pássíng thé éxít béfóré thé óné yóú wánt. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Wáítíng tráffíc knóws yóú áré léávíng ánd cán éntér sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Fórgéttíng tó sígnál léft béfóré léávíng thé róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.WRONG_WAY": {
+      "rule": "[Álwáys trávél clóckwísé áróúnd thé céntrál íslánd óf á ÚK róúndábóút. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Góíng ántí-clóckwísé sénds yóú héád-ón íntó óncómíng róúndábóút tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Túrníng ríght díréctly ín frónt óf á míní-róúndábóút íslánd. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 185",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.GAP.TWO_SECOND": {
+      "rule": "[Léávé át léást á twó-sécónd gáp béhínd thé véhíclé áhéád ón dry róáds. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Twó sécónds gívés yóú énóúgh tímé tó réáct ánd bráké smóóthly. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Táílgátíng ín móvíng tráffíc whéré á súddén stóp cáúsés á crásh. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 126",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.TL.RED": {
+      "rule": "[Stóp béhínd thé whíté stóp líné whénévér thé tráffíc líght ís réd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cróssíng tráffíc ánd pédéstríáns hávé á gréén sígnál whén yóúrs ís réd. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Róllíng pást thé whíté líné whílé wáítíng fór thé líghts tó chángé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 175",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.TL.AMBER": {
+      "rule": "[Stóp át án ámbér líght únléss yóú áré tóó clósé tó stóp sáfély. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Ámbér wárns thát réd ís néxt ánd cróss tráffíc wíll sóón móvé. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Spéédíng úp tó béát án ámbér líght fróm fár báck. ~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 175",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.TL.RED_AMBER": {
+      "rule": "[Wáít béhínd thé stóp líné ón réd ánd ámbér úntíl gréén shóws. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Cróss tráffíc ór pédéstríáns máy stíll bé cléáríng thé júnctíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Móvíng óff éárly ás sóón ás thé ámbér líght jóíns thé réd. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Light signals",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic"
+    },
+    "GB.TL.ASL": {
+      "rule": "[Stóp béhínd thé fírst whíté líné óf á cyclé bóx ón réd. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Thé páíntéd bóx kééps cyclísts vísíblé ánd sáfé áhéád óf tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Stóppíng ínsídé thé cyclé bóx ínstéád óf béhínd thé fírst líné. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 178",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.GIVE_WAY": {
+      "rule": "[Slów dówn ánd gívé wáy tó májór-róád tráffíc át brókén whíté línés. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Véhíclés ón thé máín róád hávé príóríty ánd máy trávél fást. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Émérgíng óntó thé máín róád ánd fórcíng ánóthér drívér tó bráké. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 172",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.STOP_SIGN": {
+      "rule": "[Bríng yóúr véhíclé tó á cómplété stóp át á Stóp sígn líné. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stóp sígns márk júnctíóns whéré yóúr víéw óf cróss tráffíc ís póór. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Róllíng slówly óvér thé sólíd whíté líné wíthóút stóppíng cómplétély. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 171",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.SCH.SLOW": {
+      "rule": "[Slów dówn pást schóól wárníng sígns ánd wátch clósély fór chíldrén. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Chíldrén cán stép óút súddénly fróm béhínd párkéd cárs néár schóóls. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Kéépíng fúll stréét spééd pást á schóól sígn ór fláshíng ámbér líghts. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 208",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225"
+    },
+    "GB.JCT.TURN_NEAR": {
+      "rule": "[Kéép léft whén túrníng léft ánd gívé wáy tó cyclé lánés yóú cróss. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Swíngíng óút wídé ór cúttíng ácróss cyclísts rísks á sídé cóllísíón. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Túrníng léft ácróss á cyclíst rídíng stráíght áhéád ón yóúr ínsídé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 182",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.TURN_FAR_GAP": {
+      "rule": "[Wáít fór á sáfé gáp ín óncómíng tráffíc béfóré túrníng ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Óncómíng véhíclés trávél fástér thán théy lóók ánd hávé príóríty. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Cúttíng ácróss án óncómíng cár ánd mákíng ít bráké shárply. ~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 180",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.XNG.ZEBRA": {
+      "rule": "[Stóp ánd gívé wáy tó ányóné wáítíng át ór ón á zébrá cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Pédéstríáns hávé príóríty ón zébrá cróssíngs ánd éxpéct tráffíc tó stóp. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Drívíng óvér thé strípés whílé sóméóné ís wáítíng ón thé kérb. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 195",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/introduction"
+    },
+    "GB.JCT.H2_PEDESTRIANS": {
+      "rule": "[Gívé wáy tó pédéstríáns cróssíng ór wáítíng tó cróss á sídé róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Rúlé H2 púts pédéstríáns fírst whén yóú túrn ín ór óút. ~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Túrníng qúíckly íntó á sídé róád ín frónt óf á wáítíng pédéstríán. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule H2",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/introduction"
+    },
+    "GB.XNG.ZIGZAG_OVERTAKE": {
+      "rule": "[Névér óvértáké ór párk ón thé whíté zíg-zág línés bésídé á cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Pássíng á stóppéd cár hídés pédéstríáns álréády wálkíng ácróss thé róád. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Óvértákíng á slów cár ínsídé thé zíg-zág zóné béfóré á zébrá cróssíng. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 191",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.BOX": {
+      "rule": "[Dó nót éntér á yéllów bóx júnctíón únléss yóúr éxít róád ís cléár. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Stóppíng ínsídé thé bóx blócks cróss tráffíc whén thé líghts chángé. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Fóllówíng slów tráffíc íntó thé bóx ánd géttíng stúck ón réd. ~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 174",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    }
+  }
+}

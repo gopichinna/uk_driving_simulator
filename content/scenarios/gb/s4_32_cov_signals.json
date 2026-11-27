@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s4_32_cov_signals",
+  "course": "coventry",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 120
+    }
+  ]
+}

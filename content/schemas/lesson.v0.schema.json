@@ -35,7 +35,7 @@
     "scenarios": {
       "type": "array",
       "minItems": 2,
-      "maxItems": 4,
+      "maxItems": 8,
       "items": { "$ref": "#/$defs/scenario" }
     },
     "recap": {

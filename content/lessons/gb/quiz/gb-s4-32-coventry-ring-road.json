@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s4-32-coventry-ring-road",
+  "questions": [
+    {
+      "id": "q_32_ring_lanes",
+      "question": "What should you check before changing lanes on a busy ring road?",
+      "options": [
+        "Check mirrors and blind spots, then signal in good time",
+        "Sound your horn and move straight across",
+        "Change lanes without signalling if traffic is slow"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 133 says check mirrors and blind spots and signal clearly first.",
+      "ruleId": "GB.OBS.LANE_CHANGE"
+    },
+    {
+      "id": "q_32_box_junction",
+      "question": "When may you enter a yellow box junction while going straight ahead?",
+      "options": [
+        "Only when your exit road is clear",
+        "Whenever the traffic light ahead turns green",
+        "Only if you plan to stop for five seconds"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 174 says do not enter a box junction unless your exit is clear.",
+      "ruleId": "GB.JCT.BOX"
+    },
+    {
+      "id": "q_32_pedestrian_turn",
+      "question": "A pedestrian is waiting to cross the side road you are turning into. What do you do?",
+      "options": [
+        "Give way and let the pedestrian cross first",
+        "Turn quickly before they step off the kerb",
+        "Flash your headlights to warn them to wait"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule H2 says you should give way to pedestrians waiting to cross.",
+      "ruleId": "GB.JCT.H2_PEDESTRIANS"
+    }
+  ]
+}

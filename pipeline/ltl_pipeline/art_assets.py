@@ -61,6 +61,7 @@ LESSON_SIGN_MAP: dict[str, tuple[str, str]] = {
     "gb-s1-29-turning-left-right": ("ahead_only", "arrow_up"),
     "gb-s8-30-mock-test-suburb-rural": ("national_speed_limit", "nsl"),
     "gb-s8-31-mock-test-coventry": ("roundabout_ahead", "roundabout"),
+    "gb-s4-32-coventry-ring-road": ("roundabout_ahead", "roundabout"),
 }
 
 RULE_GROUP_SPECS: list[dict[str, str]] = [

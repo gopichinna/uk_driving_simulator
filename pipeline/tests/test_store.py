@@ -88,3 +88,18 @@ def test_google_play_listing_en_md() -> None:
     assert "not endorsed by or affiliated with dvsa" in text.lower()
     assert "Open Government Licence" in text
     assert "OpenStreetMap" in text
+    assert "10 mock theory tests" in text
+    assert "50 practice questions" in text
+    assert "43 to pass" in text
+    assert "57-minute" in text
+    assert "does not guarantee" in text.lower()
+
+
+def test_every_claim_has_valid_evidence_files() -> None:
+    claims_data = yaml.safe_load(CLAIMS_PATH.read_text(encoding="utf-8"))
+    for claim in claims_data["claims"]:
+        evidence = claim.get("evidence")
+        assert evidence, f"Claim {claim['id']} is missing evidence paths"
+        for rel_path in evidence:
+            target = REPO_ROOT / rel_path
+            assert target.is_file(), f"Claim {claim['id']} points to missing file: {rel_path}"

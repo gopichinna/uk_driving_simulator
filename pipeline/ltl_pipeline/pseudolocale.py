@@ -64,6 +64,14 @@ def transform_strings_doc(data: dict[str, Any]) -> dict[str, Any]:
         result["terms"] = new_terms
     elif kind in ("ui", "voice"):
         result["entries"] = {k: pseudolocalise(v) for k, v in data["entries"].items()}
+    elif kind == "explainers":
+        new_explainers: dict[str, dict[str, str]] = {}
+        for rid, card in data["explainers"].items():
+            new_card = dict(card)
+            for field in ("rule", "why", "mistake"):
+                new_card[field] = pseudolocalise(card[field])
+            new_explainers[rid] = new_card
+        result["explainers"] = new_explainers
 
     return result
 
