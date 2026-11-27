@@ -325,6 +325,24 @@ Goal: prove the city-pack pipeline works beyond Wolverhampton and give learners 
 - [x] R38.3 **Route checker:** added `pipeline/tests/test_routes_integrity.py` verifying every `content/cities/*/routes.json` is legal (no one-way breaches or banned turns), connected, and timed within 25% of `estimatedMinutes` (aligned `queslett_roundabout` and `wolverhampton-test-area` `estimatedMinutes` accordingly).
 - [x] R38.4 **Wrap-up:** regenerated `CONTENT_HEALTH.md`, `IMPLEMENTATION.md`, `rule_index.json`, and audio manifests, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, schema validation, and readability.
 
+## Round 39: land R37, Coventry practice, honest store claims, and rule explainers (pipeline data + docs)
+Goal: finish what is open and use the second city. Branch: `hydrogen/r39-coventry-claims-explainers`, from `main`. R36 and R38 are merged and reviewed (CI green; thanks, the route checker is a good safety net).
+
+- [ ] R39.0 **Land R37 first.** PR #39 (R37) is still open and branched before R38, so it will conflict in `docs/08` and this roadmap. Merge `main` into the R37 branch, fix conflicts, re-run `ruff`, `pytest` and the readability linter, push, and say in the PR that it is ready. Note from review: `docs/adi-review/thresholds.md` lists 24 numbers; make sure it also covers **every** `public double`/`const` tolerance in `core/Rules.Core/*.cs` that is marked `ASSUMPTION` or `PROPOSED` (grep for it and compare) and the new `GB.JCT.TURN_NEAR` 0.7 rad turn angle, `GB.JCT.TURN_FAR_GAP` 70 m look-ahead and 1.5 s / 2.0 / 4.0 m/s² escalations.
+- [ ] R39.1 **Coventry practice.** R38 gave Coventry a pack and a mock test only. Add 6 short practice scenarios on it (ring-road lane choice, a multi-lane roundabout if present, signalised junctions, a pedestrian crossing, a bus lane if mapped, a speed-limit change) as an optional Stage 4 lesson 31 "The ring road", with an original quiz, voice lines, `en-XA`, `progression.json` and `rule_index.json`. Use only rules that are implemented (check the scanner).
+- [ ] R39.2 **Store claims match the build.** The game now ships 10 mock theory tests (50 questions, 43 to pass, 57 minutes), school-zone and STOP-sign rules, and turning-signal rules. Update `content/store/en/claims.yaml`, `listing.md` and the Google Play listing so every claim is true of the shipped build and each has a test pointing at the files that prove it. Do not claim anything about the DVSA test, "official" material or pass guarantees. Keep the age (18+), price (£14.99) and free-lessons wording unchanged.
+- [ ] R39.3 **Rule explainer cards.** For every implemented rule write a short plain-English card (at most 60 words) with: the rule in one sentence, why it matters, the most common mistake, and the Highway Code rule number and GOV.UK link. Put them in `content/countries/gb/strings/en/explainers.json` (new `strings.v0` kind if needed, pre-agreed) with `en-XA` and a test that every implemented rule has one. Claude will show them from the debrief and a Rules screen later.
+- [ ] R39.4 **Batch 4 specs.** After checking which batch-3 rules Claude has implemented (the scanner tells you; Claude is starting `docs/specs/next-rules-3.md` in order), write `docs/specs/next-rules-4.md` for the next 10 most useful planned rules, exact thresholds, same format, with drafts. Skip anything already in batches 1 to 3.
+- [ ] R39.5 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R39:`.
+
+## Round 40: scenario difficulty and replay value (pipeline data)
+Goal: make each lesson worth replaying. Branch: `hydrogen/r40-difficulty-replay`. Start after R39.
+
+- [ ] R40.1 **Difficulty ladder.** For each of the 31 lessons add a documented difficulty rating (1 to 3) per scenario, based on traffic, speed, junction type and number of rules judged. Write the method in `docs/specs/difficulty.md` and put the rating in each scenario file as an optional `difficulty` field (additive, pre-agreed for `scenario.v0`). Add a test that each lesson starts easy (first scenario rated 1) and never jumps by more than 1 between neighbours.
+- [ ] R40.2 **Variants.** For 10 of the most-failed or most-central scenarios (choose by rule importance: signals, give way, roundabouts, school, turning, STOP, lights), add 2 variants each (different start point, traffic mix or weather where the schema allows) as `...-b` and `...-c`, listed under `variants` in the lesson but not required for stars.
+- [ ] R40.3 **Coach tips by difficulty.** Add 1 extra plain-English tip per rule for learners who fail the same rule twice (`.tip` voice key, with WAV, manifest and `en-XA`), ≤ 12 words.
+- [ ] R40.4 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R40:`.
+
 ---
 
 ## Requests from Claude
