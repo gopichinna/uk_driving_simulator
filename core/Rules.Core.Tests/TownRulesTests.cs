@@ -235,6 +235,74 @@ namespace LToLocal.Rules.Tests
         }
     }
 
+    public class RightTurnGapRuleTests
+    {
+        // Junction at the origin. The player drives east and turns right (south, heading +90 -> 180 degrees).
+        // An oncoming car drives west along z = 0 towards the junction, starting `startX` metres east of it.
+        private static List<RuleEvent> Run(double? oncomingStartX, double oncomingMps = 10, bool braking = false, double decel = 0)
+        {
+            var rule = new RightTurnGapRule(new List<Vec2> { new Vec2(0, 0) });
+            var events = new List<RuleEvent>();
+            var s = new CarState { X = -30, Z = 0, Heading = Math.PI / 2, SpeedMps = 5 };
+            double ox = oncomingStartX ?? 1e6;
+            for (double t = 0; t < 14; t += Drive.Dt)
+            {
+                if (s.X > -8 && s.Heading < Math.PI) s.Heading = Math.Min(Math.PI, s.Heading + 1.2 * Drive.Dt);
+                ox -= oncomingMps * Drive.Dt;
+                var users = new List<RoadUser>();
+                if (oncomingStartX.HasValue && ox > -60)
+                    users.Add(new RoadUser(1, new Vec2(ox, 0), -Math.PI / 2, oncomingMps, false, 0, decel, braking));
+                rule.OnFrame(new DriverFrame(t, s, 1), users, events);
+                s.X += Math.Sin(s.Heading) * 5 * Drive.Dt;
+                s.Z += Math.Cos(s.Heading) * 5 * Drive.Dt;
+            }
+            return events;
+        }
+
+        [Test]
+        public void Pass_NoOncomingTrafficGivesNothing() => Assert.That(Run(null), Is.Empty);
+
+        [Test]
+        public void Pass_OncomingCarFarAwayIsAGoodGap()
+        {
+            var e = Run(oncomingStartX: 400);
+            Assert.That(Drive.Violations(e), Is.Empty);
+        }
+
+        [Test]
+        public void Serious_TurningAcrossACarAboutThreeSecondsAway()
+        {
+            // The turn is judged at its start (about 4.6 s in); a car 3 s from the car at that time is too close.
+            var e = Run(oncomingStartX: 46 + 10 * 4.6 - 15 + 5);
+            Assert.That(e.First().RuleId, Is.EqualTo(RightTurnGapRule.RuleId));
+            Assert.That(e.First().Severity, Is.AtLeast(Severity.Serious));
+        }
+
+        [Test]
+        public void Dangerous_OncomingCarHadToBrakeHard()
+        {
+            var e = Run(oncomingStartX: 30, oncomingMps: 0, braking: true, decel: -5);
+            Assert.That(e.Max(x => x.Severity), Is.EqualTo(Severity.Dangerous));
+        }
+
+        [Test]
+        public void ALeftTurnIsNotJudged()
+        {
+            var rule = new RightTurnGapRule(new List<Vec2> { new Vec2(0, 0) });
+            var events = new List<RuleEvent>();
+            var s = new CarState { X = -30, Z = 0, Heading = Math.PI / 2, SpeedMps = 5 };
+            for (double t = 0; t < 14; t += Drive.Dt)
+            {
+                if (s.X > -8 && s.Heading > 0) s.Heading = Math.Max(0, s.Heading - 1.2 * Drive.Dt);
+                var users = new List<RoadUser> { new RoadUser(1, new Vec2(30, 0), -Math.PI / 2, 10, false) };
+                rule.OnFrame(new DriverFrame(t, s, -1), users, events);
+                s.X += Math.Sin(s.Heading) * 5 * Drive.Dt;
+                s.Z += Math.Cos(s.Heading) * 5 * Drive.Dt;
+            }
+            Assert.That(events, Is.Empty);
+        }
+    }
+
     public class StopSignRuleTests
     {
         // Car drives north along x = 0 towards a STOP line at z = 0; the front is 2.15 m ahead of the centre.

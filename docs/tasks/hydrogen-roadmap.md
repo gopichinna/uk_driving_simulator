@@ -296,6 +296,18 @@ Goal: finish what R34 started and prepare the next game build. Branch: `hydrogen
 - [x] R35.5 **Theory test content check:** audited all 150 questions across `set-01.json`, `set-02.json`, and `set-03.json` against GOV.UK, recorded findings in `docs/specs/theory-audit.md`, normalised all-caps `MUST`/`STOP`/`RED`/`AMBER`/`GREEN` in the quiz bank, and rebuilt `set-01`–`set-10`.
 - [x] R35.6 **Wrap-up:** regenerated `CONTENT_HEALTH.md`, `rule_index.json`, and `IMPLEMENTATION.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, schema validation, and readability.
 
+## Round 36: turning lesson, the Queslett roundabout pack, and the rest of the theory audit (data + docs)
+Goal: content for the new turning rules and the first complex roundabout. Branch: `hydrogen/r36-turning-queslett-theory`, from `main`. **Run `git checkout main && git pull` first**: main now includes the steering/pedal redesign and the theory-test mode. R35 is merged and reviewed (the STOP junction now works in the game: the test for it passes).
+
+Claude has added: `GB.JCT.TURN_NEAR` (signal left at least 2 s before a left turn at a junction) and `GB.JCT.TURN_FAR_GAP` (turning right: no oncoming car within 3.5 s of the car, none braking for you). Both run in every town course.
+
+- [ ] R36.1 **Turning lesson.** Add an optional Stage 1 or 2 lesson "Turning left and right at junctions" with scenarios that exercise both rules on existing town packs (left turn with early signal, left turn with no signal, right turn with a clear road, right turn across an oncoming car). Use only existing scenario events; if you need oncoming traffic timed to arrive as the player turns, say so under "Requests from Hydrogen" and propose the event. Original 4-question quiz, voice lines, `en-XA`, `progression.json`, `rule_index.json`. State in the lesson text that the 2 s and 3.5 s thresholds are game assumptions pending ADI review.
+- [ ] R36.2 **Queslett pack.** Build the road pack from `docs/specs/roundabout-4-exit-build.md` (`content/cities/queslett_roundabout/`): `roadpack.json` with the lane connections and markings from the spec, `QA.md`, buildings and furniture if cheap, and the 3 routes. It will not be playable until Claude extends `TwoLaneRoundabout` for 4 exits; say so in `QA.md`. Keep the pack under 5 MB.
+- [ ] R36.3 **Finish the theory audit.** Do `set-04` to `set-10` the same way as R35.5 (all 350 questions: answer, single best answer, Highway Code number, plain wording). Record in `docs/specs/theory-audit.md` and fix the bank.
+- [ ] R36.4 **Shorten long theory wording.** R35.5 found ~153 question explanations of 16-23 words. Split or shorten them to B1 level (at most 15 words per sentence) and keep meaning exact. Re-run the linter and rebuild the 10 sets.
+- [ ] R36.5 **Implemented-rule tracking.** Confirm `GB.JCT.TURN_NEAR`, `GB.JCT.TURN_FAR_GAP`, `GB.JCT.STOP_SIGN` and `GB.SCH.SLOW` show as implemented and the planned count drops to match.
+- [ ] R36.6 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R36:`.
+
 ---
 
 ## Requests from Claude

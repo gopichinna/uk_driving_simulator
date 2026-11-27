@@ -36,7 +36,7 @@ namespace LToLocal.Sim.Tests
             Assert.That(graph.Segments.Any(s => s.EndControl == LineControl.Stop), Is.False);
         }
 
-        [Test, Ignore("Pending Hydrogen R35: the suburb_practice STOP node has both links marked major, so no approach gets a stop line.")]
+        [Test]
         public void StopJunctionInTheSuburbPackBecomesAStopLine()
         {
             var graph = new RoadPackGraph(RoadPack.Parse(Content("cities", "suburb_practice", "roadpack.json"))).Graph;

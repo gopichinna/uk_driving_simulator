@@ -458,6 +458,92 @@ namespace LToLocal.Rules
     }
 
     /// <summary>
+    /// GB.JCT.TURN_FAR_GAP (rule 180): when you turn right across the road, wait for a safe gap in oncoming traffic.
+    /// Judged from the moment the car has turned <see cref="TurnStartRad"/> to the offside inside a junction until it
+    /// leaves: an oncoming vehicle that would reach the car within <see cref="SeriousTtcS"/> seconds, or that had to brake
+    /// for it, is a serious fault, and dangerous at <see cref="DangerousTtcS"/> seconds or a hard stop.
+    /// Thresholds are ASSUMPTIONs pending ADI review.
+    /// </summary>
+    public sealed class RightTurnGapRule
+    {
+        public const string RuleId = "GB.JCT.TURN_FAR_GAP";
+        private const string Source = "Highway Code rule 180";
+
+        private readonly List<Vec2> _junctions;
+        private readonly int _rightSign;
+        private bool _inside, _turning, _sawOncoming;
+        private double _entryHeading;
+        private Severity _reported;
+
+        public RightTurnGapRule(List<Vec2> junctionCentres, DrivingSide side = DrivingSide.Left)
+        {
+            _junctions = junctionCentres;
+            _rightSign = side == DrivingSide.Left ? 1 : -1; // the offside turn: right in the UK
+        }
+
+        public double RadiusM = 14, TurnStartRad = 0.35, LookAheadM = 70, SeriousTtcS = 3.5, DangerousTtcS = 1.5,
+            SeriousDecelMps2 = 2.0, DangerousDecelMps2 = 4.0;
+
+        public void Reset()
+        {
+            _inside = _turning = _sawOncoming = false;
+            _reported = Severity.None;
+        }
+
+        public void OnFrame(in DriverFrame f, IReadOnlyList<RoadUser> users, List<RuleEvent> output)
+        {
+            Vec2 c = CarBody.Centre(f.Ego);
+            bool inside = false;
+            foreach (var j in _junctions) if ((j - c).Length <= RadiusM) { inside = true; break; }
+
+            if (inside && !_inside) { _entryHeading = f.Ego.Heading; _turning = _sawOncoming = false; _reported = Severity.None; }
+            bool leaving = _inside && !inside;
+            _inside = inside;
+
+            if (inside)
+            {
+                double turned = LaneGraph.Angle(f.Ego.Heading - _entryHeading) * _rightSign;
+                if (!_turning && turned > TurnStartRad) _turning = true;
+                if (_turning) Judge(f, c, users, output);
+            }
+            else if (leaving && _turning)
+            {
+                if (_reported == Severity.None && _sawOncoming)
+                    output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                        "You waited for a safe gap in the oncoming traffic before you turned right.", Source));
+                _turning = false;
+            }
+        }
+
+        private void Judge(in DriverFrame f, Vec2 car, IReadOnlyList<RoadUser> users, List<RuleEvent> output)
+        {
+            Vec2 approach = Vec2.FromHeading(_entryHeading);
+            double worstTtc = double.MaxValue, worstDecel = 0;
+            foreach (var u in users)
+            {
+                Vec2 d = u.Position - car;
+                double ahead = d.Dot(approach), side = Math.Abs(d.Dot(approach.LeftNormal));
+                bool oncoming = Math.Cos(u.Heading - (_entryHeading + Math.PI)) > 0.7;
+                if (!oncoming || ahead <= 0 || ahead > LookAheadM || side > 6) continue;
+                _sawOncoming = true;
+                double ttc = Math.Max(0, ahead - u.LengthM / 2 - CarBody.HalfLength) / Math.Max(u.SpeedMps, 0.5);
+                if (ttc < worstTtc) worstTtc = ttc;
+                if (u.BrakingForPlayer && -u.LastAccelMps2 > worstDecel) worstDecel = -u.LastAccelMps2;
+            }
+
+            Severity sev = worstTtc < DangerousTtcS || worstDecel >= DangerousDecelMps2 ? Severity.Dangerous
+                         : worstTtc < SeriousTtcS || worstDecel >= SeriousDecelMps2 ? Severity.Serious
+                         : Severity.None;
+            if (sev <= _reported) return;
+            _reported = sev;
+            output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, sev, f.Time,
+                sev == Severity.Dangerous
+                    ? "You turned right across oncoming traffic and almost caused a crash. Wait until the road is clear."
+                    : "You turned right too close to oncoming traffic. Wait for a bigger gap.", Source));
+        }
+    }
+
+    /// <summary>
     /// GB.XNG.ZEBRA (rule 195) and GB.JCT.H2_PEDESTRIANS (rules H2, 170): give way to people waiting at a zebra or
     /// waiting to cross a side road you turn into or out of; you must stop once someone is on a zebra.
     /// </summary>
@@ -676,6 +762,7 @@ namespace LToLocal.Rules
             GiveWay = new GiveWayRule(giveWays);
             StopSign = new StopSignRule(stops);
             LeftTurn = new LeftTurnSignalRule(junctions, side);
+            RightTurnGap = new RightTurnGapRule(junctions, side);
             Crossings = new PedestrianCrossingRule(g.CrossingAreas);
             ZigZags = new ZigZagOvertakeRule(g.ZigZags);
             Box = new BoxJunctionRule(boxes, side);
@@ -685,6 +772,7 @@ namespace LToLocal.Rules
         public GiveWayRule GiveWay { get; }
         public StopSignRule StopSign { get; }
         public LeftTurnSignalRule LeftTurn { get; }
+        public RightTurnGapRule RightTurnGap { get; }
         public PedestrianCrossingRule Crossings { get; }
         public ZigZagOvertakeRule ZigZags { get; }
         public BoxJunctionRule Box { get; }
@@ -695,6 +783,7 @@ namespace LToLocal.Rules
             GiveWay.Reset();
             StopSign.Reset();
             LeftTurn.Reset();
+            RightTurnGap.Reset();
             Crossings.Reset();
             ZigZags.Reset();
             Box.Reset();
@@ -707,6 +796,7 @@ namespace LToLocal.Rules
             GiveWay.OnFrame(f, users, output);
             StopSign.OnFrame(f, output);
             LeftTurn.OnFrame(f, output);
+            RightTurnGap.OnFrame(f, users, output);
             Crossings.OnFrame(f, people, output);
             ZigZags.OnFrame(f, users, output);
             Box.OnFrame(f, output);
