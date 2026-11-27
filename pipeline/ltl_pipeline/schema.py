@@ -31,6 +31,9 @@ ROUNDABOUT_FURNITURE_SCHEMA_PATH = (
 GANTRY_MESSAGES_SCHEMA_PATH = (
     REPO_ROOT / "content" / "schemas" / "gantry-messages.v0.schema.json"
 )
+RULEFIXTURE_SCHEMA_PATH = (
+    REPO_ROOT / "content" / "schemas" / "rulefixture.v0.schema.json"
+)
 
 
 def load_schema(schema_path: Path) -> dict[str, Any]:
@@ -69,6 +72,17 @@ def validate_rulepack_file(path: Path, schema_path: Path = RULEPACK_SCHEMA_PATH)
 
 def validate_strings_file(path: Path, schema_path: Path = STRINGS_SCHEMA_PATH) -> dict[str, Any]:
     """Load a strings/glossary JSON file and validate it against strings.v0.schema.json."""
+    with path.open("r", encoding="utf-8") as f:
+        data = json.load(f)
+    schema = load_schema(schema_path)
+    jsonschema.validate(instance=data, schema=schema, format_checker=jsonschema.FormatChecker())
+    return data
+
+
+def validate_rulefixture_file(
+    path: Path, schema_path: Path = RULEFIXTURE_SCHEMA_PATH
+) -> dict[str, Any]:
+    """Load a rule fixture JSON file and validate it against rulefixture.v0.schema.json."""
     with path.open("r", encoding="utf-8") as f:
         data = json.load(f)
     schema = load_schema(schema_path)

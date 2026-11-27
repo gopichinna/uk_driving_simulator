@@ -1,0 +1,94 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ltolocal.app/schemas/rulefixture.v0.schema.json",
+  "title": "L to Local Rule Fixture v0",
+  "description": "Machine-readable scripted drive keyframes and expected rule outcomes for C# rule replay tests.",
+  "type": "object",
+  "required": ["fixtureFormatVersion", "ruleId", "hcRule", "drives"],
+  "additionalProperties": false,
+  "properties": {
+    "fixtureFormatVersion": { "const": "0.1" },
+    "ruleId": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" },
+    "hcRule": { "type": "string", "minLength": 1 },
+    "drives": {
+      "type": "array",
+      "minItems": 4,
+      "items": { "$ref": "#/$defs/drive" }
+    }
+  },
+  "$defs": {
+    "keyframe": {
+      "type": "object",
+      "required": ["t", "x", "z", "headingDeg", "speedMps", "indicator"],
+      "additionalProperties": false,
+      "properties": {
+        "t": { "type": "number", "minimum": 0 },
+        "x": { "type": "number" },
+        "z": { "type": "number" },
+        "headingDeg": { "type": "number", "minimum": 0, "maximum": 360 },
+        "speedMps": { "type": "number", "minimum": 0 },
+        "indicator": { "enum": ["off", "left", "right", "hazard"] },
+        "hornActive": { "type": "boolean" }
+      }
+    },
+    "otherUser": {
+      "type": "object",
+      "required": ["id", "kind", "keyframes"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "kind": { "enum": ["car", "bus", "van", "tractor", "cyclist", "pedestrian", "horse", "patrol"] },
+        "keyframes": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/keyframe" }
+        }
+      }
+    },
+    "expectedEvent": {
+      "type": "object",
+      "required": ["ruleId", "outcome", "severity", "timeS"],
+      "additionalProperties": false,
+      "properties": {
+        "ruleId": { "type": "string", "pattern": "^GB\\.[A-Z]+\\.[A-Z0-9_]+$" },
+        "outcome": { "enum": ["pass", "fault"] },
+        "severity": { "enum": ["none", "Driving", "Serious", "Dangerous"] },
+        "timeS": { "type": "number", "minimum": 0 }
+      }
+    },
+    "drive": {
+      "type": "object",
+      "required": ["id", "kind", "description", "environment", "playerKeyframes", "otherUsers", "expectedEvents"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "kind": { "enum": ["pass", "minor", "serious", "dangerous"] },
+        "description": { "type": "string", "minLength": 1 },
+        "environment": {
+          "type": "object",
+          "required": ["speedLimitMph"],
+          "additionalProperties": true,
+          "properties": {
+            "pack": { "type": "string", "minLength": 1 },
+            "junctionKind": { "type": "string", "minLength": 1 },
+            "speedLimitMph": { "type": "integer", "minimum": 10, "maximum": 70 }
+          }
+        },
+        "playerKeyframes": {
+          "type": "array",
+          "minItems": 2,
+          "items": { "$ref": "#/$defs/keyframe" }
+        },
+        "otherUsers": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/otherUser" }
+        },
+        "expectedEvents": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/expectedEvent" }
+        }
+      }
+    }
+  }
+}

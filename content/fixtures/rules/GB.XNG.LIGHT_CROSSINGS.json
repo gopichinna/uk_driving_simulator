@@ -1,0 +1,252 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.XNG.LIGHT_CROSSINGS",
+  "hcRule": "Rule 196",
+  "drives": [
+    {
+      "id": "pass_stop_behind_puffin",
+      "kind": "pass",
+      "description": "Stop behind white line at puffin crossing on red.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "puffin",
+        "speedLimitMph": 30,
+        "signalPhase": "RED"
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 20,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 20,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "p1",
+          "kind": "pedestrian",
+          "keyframes": [
+            {
+              "t": 2,
+              "x": -3,
+              "z": 24,
+              "headingDeg": 90,
+              "speedMps": 1.2,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": 2,
+              "z": 24,
+              "headingDeg": 90,
+              "speedMps": 1.2,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.LIGHT_CROSSINGS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pass_keep_crossing_clear",
+      "kind": "pass",
+      "description": "Hold behind puffin crossing when exit beyond is queued.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "puffin",
+        "speedLimitMph": 30,
+        "signalPhase": "GREEN"
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 18,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "q1",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 28,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": 0,
+              "z": 28,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.LIGHT_CROSSINGS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 3.0
+        }
+      ]
+    },
+    {
+      "id": "minor_creep_on_studs",
+      "kind": "minor",
+      "description": "Creep slightly past stop line onto studs just before green.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "pelican",
+        "speedLimitMph": 30,
+        "signalPhase": "RED"
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 19,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 20.4,
+          "headingDeg": 0,
+          "speedMps": 0.8,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 20.4,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.LIGHT_CROSSINGS",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.0
+        }
+      ]
+    },
+    {
+      "id": "dangerous_run_red_ped_on_crossing",
+      "kind": "dangerous",
+      "description": "Drive across puffin crossing on red while pedestrian is crossing (< 2.0 m).",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "puffin",
+        "speedLimitMph": 30,
+        "signalPhase": "RED"
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 36,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "p2",
+          "kind": "pedestrian",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -2,
+              "z": 24,
+              "headingDeg": 90,
+              "speedMps": 1.2,
+              "indicator": "off"
+            },
+            {
+              "t": 2,
+              "x": 0.5,
+              "z": 24,
+              "headingDeg": 90,
+              "speedMps": 1.2,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.LIGHT_CROSSINGS",
+          "outcome": "fault",
+          "severity": "Dangerous",
+          "timeS": 2.0
+        }
+      ]
+    }
+  ]
+}

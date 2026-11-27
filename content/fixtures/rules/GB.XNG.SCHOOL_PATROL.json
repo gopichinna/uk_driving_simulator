@@ -1,0 +1,271 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.XNG.SCHOOL_PATROL",
+  "hcRule": "Rule 210",
+  "drives": [
+    {
+      "id": "pass_stop_3m_before_patrol",
+      "kind": "pass",
+      "description": "Stop 3.0 m before patrol while sign raised, move off after lowered.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_patrol",
+        "speedLimitMph": 20
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 17,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 17,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 9,
+          "x": 0,
+          "z": 30,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "pat",
+          "kind": "patrol",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": -3,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.SCHOOL_PATROL",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 9.0
+        }
+      ]
+    },
+    {
+      "id": "pass_wait_until_children_clear",
+      "kind": "pass",
+      "description": "Hold stationary until children and patrol reach pavement.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "school_patrol",
+        "speedLimitMph": 20
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 10,
+          "headingDeg": 0,
+          "speedMps": 5.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 17,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 7,
+          "x": 0,
+          "z": 17,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "pat",
+          "kind": "patrol",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 7,
+              "x": -3,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.SCHOOL_PATROL",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 7.0
+        }
+      ]
+    },
+    {
+      "id": "minor_edge_before_patrol_clears",
+      "kind": "minor",
+      "description": "Edge forward slowly before patrol finishes returning to pavement.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "school_patrol",
+        "speedLimitMph": 20
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 17,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 19.5,
+          "headingDeg": 0,
+          "speedMps": 1.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "pat",
+          "kind": "patrol",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": -1.5,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.5,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.SCHOOL_PATROL",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.5
+        }
+      ]
+    },
+    {
+      "id": "serious_pass_raised_sign",
+      "kind": "serious",
+      "description": "Drive past school crossing patrol while Stop sign is raised.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_patrol",
+        "speedLimitMph": 20
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 9.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 27,
+          "headingDeg": 0,
+          "speedMps": 9.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "pat",
+          "kind": "patrol",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": 0,
+              "z": 20,
+              "headingDeg": 90,
+              "speedMps": 0.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.XNG.SCHOOL_PATROL",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 2.2
+        }
+      ]
+    }
+  ]
+}

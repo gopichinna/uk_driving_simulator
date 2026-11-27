@@ -1,0 +1,291 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.JCT.DUAL_CROSS",
+  "hcRule": "Rule 173",
+  "drives": [
+    {
+      "id": "pass_wait_both_clear",
+      "kind": "pass",
+      "description": "Wait at give-way until both carriageways have > 5.0 s clear gaps, then cross in one move.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "central_reserve",
+        "speedLimitMph": 50,
+        "centralReserveWidthM": 2.5
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -8,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": -8,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 7,
+          "x": 10,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c1",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 4,
+              "z": -40,
+              "headingDeg": 0,
+              "speedMps": 20.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": 4,
+              "z": 20,
+              "headingDeg": 0,
+              "speedMps": 20.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.DUAL_CROSS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 7.0
+        }
+      ]
+    },
+    {
+      "id": "pass_pause_wide_reserve",
+      "kind": "pass",
+      "description": "Pause in wide >= 6.0 m central reserve without overhanging lanes.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "central_reserve",
+        "speedLimitMph": 50,
+        "centralReserveWidthM": 6.5
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -8,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 5.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 8,
+          "x": 12,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c2",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 6,
+              "z": -60,
+              "headingDeg": 0,
+              "speedMps": 22.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 6,
+              "z": 50,
+              "headingDeg": 0,
+              "speedMps": 22.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.DUAL_CROSS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 8.0
+        }
+      ]
+    },
+    {
+      "id": "minor_protrude_slow_lane",
+      "kind": "serious",
+      "description": "Stop in narrow 2.5 m gap with rear protruding > 0.5 m into lane 1.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "central_reserve",
+        "speedLimitMph": 50,
+        "centralReserveWidthM": 2.5
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -8,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 5.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0.5,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": 0.5,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c3",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 5,
+              "z": -90,
+              "headingDeg": 0,
+              "speedMps": 22.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 5,
+              "z": 20,
+              "headingDeg": 0,
+              "speedMps": 22.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.DUAL_CROSS",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 2.5
+        }
+      ]
+    },
+    {
+      "id": "serious_minor_edge",
+      "kind": "minor",
+      "description": "Hesitate slightly into narrow reserve then clear before second carriageway traffic arrives.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "central_reserve",
+        "speedLimitMph": 40,
+        "centralReserveWidthM": 3.5
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -8,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 4.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": -1.0,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 0.5,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 10,
+          "z": 0,
+          "headingDeg": 90,
+          "speedMps": 5.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c4",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 5,
+              "z": -80,
+              "headingDeg": 0,
+              "speedMps": 18.0,
+              "indicator": "off"
+            },
+            {
+              "t": 4,
+              "x": 5,
+              "z": -8,
+              "headingDeg": 0,
+              "speedMps": 18.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.DUAL_CROSS",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.5
+        }
+      ]
+    }
+  ]
+}
