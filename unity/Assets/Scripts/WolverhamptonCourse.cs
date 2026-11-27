@@ -25,6 +25,7 @@ namespace LToLocal.Game
         private RoadPackGraph _built;
         private TownTraffic _traffic;
         private TownRules _rules;
+        private SchoolSlowRule _school;
         private KeepLeftRule _keepLeft;
         private double _time;
         private string _attribution = "© OpenStreetMap contributors";
@@ -101,6 +102,7 @@ namespace LToLocal.Game
             }
             if (pedestrianRoot != null) foreach (Transform p in pedestrianRoot) { p.gameObject.SetActive(false); _freePeds.Add(p); }
             _rules = new TownRules(b.Graph, DrivingSide.Left);
+            _school = new SchoolSlowRule(LoadSchoolZones());
             _keepLeft = new KeepLeftRule(b.Graph, DrivingSide.Left);
             for (int i = 0; i < b.Signals.GroupCount; i++) _lights.Add(LightState.Red);
 
@@ -108,6 +110,21 @@ namespace LToLocal.Game
                 foreach (var t in signalsRoot.GetComponentsInChildren<Transform>(true))
                     if (t.name.StartsWith("SignalHead_g") && int.TryParse(t.name.Substring("SignalHead_g".Length), out int group))
                         _heads.Add((group, Lamp(t, "Red"), Lamp(t, "Amber"), Lamp(t, "Green")));
+        }
+
+        /// <summary>School warning signs from the pack's warning_signs.json (none if the pack has no such file).</summary>
+        private List<Vec2> LoadSchoolZones()
+        {
+            var zones = new List<Vec2>();
+            var asset = Resources.Load<TextAsset>($"Content/{resourcePrefix}_warning_signs");
+            if (asset != null && MiniJson.Parse(asset.text) is Dictionary<string, object> root && root.TryGetValue("warningSigns", out var list))
+                foreach (var o in MiniJson.Arr(list))
+                {
+                    var s = MiniJson.Obj(o);
+                    if (s.TryGetValue("kind", out var k) && (string)k == "school")
+                        zones.Add(new Vec2(MiniJson.Num(s["x"]), MiniJson.Num(s["z"])));
+                }
+            return zones;
         }
 
         private static GameObject Lamp(Transform head, string colour)
@@ -124,6 +141,7 @@ namespace LToLocal.Game
             foreach (var kv in _pedViews) { kv.Value.gameObject.SetActive(false); _freePeds.Add(kv.Value); }
             _pedViews.Clear();
             _rules.Reset();
+            _school?.Reset();
             _keepLeft.Reset();
             _redXGantry = _redXLane = _limitGantry = _watchGantry = -1;
             _activeLimitMph = 0;
@@ -153,6 +171,7 @@ namespace LToLocal.Game
             var frame = new DriverFrame(simTime, player, indicator);
             _rules.OnFrame(frame, _lights, _peds != null ? _peds.People : _noPeople, _users, events);
             _keepLeft.OnFrame(frame, _users, events);
+            _school.OnFrame(frame, _peds != null ? _peds.People : _noPeople, events);
             WatchGantry(player, simTime, events);
         }
 
