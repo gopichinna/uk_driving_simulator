@@ -17,5 +17,6 @@ def test_health_report_contains_required_sections_and_matches_disk() -> None:
         "## Top 10 Gaps (Priority Order)",
     ):
         assert heading in report
+    assert "| Stage | Lessons | Scenarios | Lesson Quiz | Bank | Voice Lines | Badges |" in report
     assert OUT_PATH.is_file()
     assert OUT_PATH.read_text(encoding="utf-8") == report
