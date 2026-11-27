@@ -108,6 +108,7 @@ namespace LToLocal.EditorTools
             CopyDir("../content/lessons/gb", $"{dest}/lessons", "*.json", f => char.IsDigit(Path.GetFileName(f)[0]));
             CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
             CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
+            CopyDir("../content/quizzes/gb/tests", $"{dest}/theory", "set-*.json", _ => true); // mock theory test sets
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
             // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
             // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.

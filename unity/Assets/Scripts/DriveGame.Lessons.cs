@@ -281,6 +281,7 @@ namespace LToLocal.Game
             GUI.EndScrollView();
 
             float bw = W * 0.22f, bh = H * 0.09f;
+            if (GUI.Button(new Rect(W * 0.1f, H - bh - H * 0.03f, bw, bh), "Theory test", _buttonStyle)) OpenTheoryMenu();
             if (GUI.Button(new Rect(W * 0.5f - bw / 2, H - bh - H * 0.03f, bw, bh), "Free drive", _buttonStyle))
             {
                 LessonSession.End();
