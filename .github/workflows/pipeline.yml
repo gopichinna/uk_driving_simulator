@@ -43,3 +43,6 @@ jobs:
       - name: Generate content health report (warning only)
         continue-on-error: true
         run: uv run python -m ltl_pipeline.health
+      - name: Localisation readiness check (warning only)
+        continue-on-error: true
+        run: uv run python -m ltl_pipeline.l10n
