@@ -343,6 +343,23 @@ Goal: make each lesson worth replaying. Branch: `hydrogen/r40-difficulty-replay`
 - [x] R40.3 **Coach tips by difficulty.** Added 31 plain-English `.tip` voice keys (`<= 12` words each) to `content/countries/gb/strings/en/voice.json`, generated Piper WAVs, `manifest.json`, and `en-XA`, and added `.tip` parity + length checks in `test_audio.py`.
 - [x] R40.4 **Wrap-up.** Regenerated `en-XA`, audio manifests, `rule_index.json`, `IMPLEMENTATION.md`, and `CONTENT_HEALTH.md`; updated `docs/08-parallel-work-plan.md` §6; verified `ruff`, `pytest`, schema validation, and readability.
 
+## Round 41: machine-readable rule fixtures, tester guide v2, thinner quiz stages (data + docs)
+Goal: make the next rules faster and safer for Claude to build, and keep the owner's phone testing current. Branch: `hydrogen/r41-fixtures-tester-guide`, from `main`. R39 and R40 are merged and reviewed (CI green, 86 pipeline tests, claims tests tied to files; good work).
+
+- [ ] R41.0 **PR #39 (R37) is still open.** Its branch merges cleanly with `main` today (Claude trial-merged it: `ruff`, 87 `pytest` and the readability linter pass), but the owner has to merge it. Do not open another R37 PR. After it merges, run the new `python -m ltl_pipeline.l10n` once and note the result in your PR.
+- [ ] R41.1 **Rule fixtures as data.** For the 10 rules in `docs/specs/next-rules-3.md` (Claude implements them in that order), write `content/fixtures/rules/<RULE_ID>.json` with a new `rulefixture.v0.schema.json`: a short scripted drive as keyframes (`t`, `x`, `z`, `headingDeg`, `speedMps`, `indicator`) for the player, the same for other road users and pedestrians, the pack or a tiny inline junction it uses, and the **expected events** (`ruleId`, `outcome`, `severity`, approximate `time`). Provide **2 pass, 1 minor, 1 serious or dangerous** drive per rule, taken from the spec's exact thresholds. Add a test that every fixture validates, every referenced rule exists in `rules.yaml`, and each rule has all four kinds. Claude will write a C# harness that replays them against the rules; do not edit `core/**`.
+- [ ] R41.2 **Tester guide v2.** Rewrite `docs/TESTING.md` for the current build: sections for the redesigned steering and pedals (wheel, indicators above the wheel and brake, aim assist), the theory test mode, turning and signalling, school zones, STOP junctions, the Coventry pack and lesson 32, difficulty and variants, `.tip` coach lines, and the Wolverhampton mock tests; for each: what to do, what should happen, what is a bug, and a one-line way to report it. Keep it one checklist the owner can use on a phone.
+- [ ] R41.3 **Thin quiz stages.** The per-stage bank is thin for Stages 5, 6 and 7 (check `docs/CONTENT_HEALTH.md`). Bring every implemented rule taught in those stages to at least 13 original, GOV.UK-verified questions, rebuild the 10 theory sets only if their balance changes, and keep `test_quiz_bank.py` green.
+- [ ] R41.4 **Hard-coded English plan.** `l10n` found 245 hard-coded English fields in lessons, quizzes and scenarios. Do not move them. Write `docs/specs/l10n-extraction-plan.md`: group them by file type, say which must move before a second language ships and which can stay, estimate the work, and recommend an order and a key scheme.
+- [ ] R41.5 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R41:`.
+
+## Round 42: release-candidate checks and download size (pipeline + docs)
+Goal: know exactly what a store build needs. Branch: `hydrogen/r42-release-checks-size`. Start after R41.
+
+- [ ] R42.1 **Release check.** Add `python -m ltl_pipeline.release_check` (warning-only in CI at first) that fails if: any shipped audio, image, font or pack lacks a licence line in `LICENCES.md` / `ATTRIBUTIONS.md` / `credits.md`; any claim in `claims.yaml` lacks existing evidence files; any `UNVERIFIED` marker remains in shipped rule text; the 18+ age, £14.99 price and "© OpenStreetMap contributors" text are missing from the places they must appear; any placeholder (`<owner email>`, `TODO`, `TBD`, `lorem`) remains in `content/**` or `docs/store/**`. Print a one-page report.
+- [ ] R42.2 **Download size.** The last Android build was about 57 MB with 683 MB of source assets. Report where the bytes go (`docs/specs/download-size.md`): voice WAVs, SFX, diagrams, road packs, scenes. Say what compression is safe (Unity can import Ogg Vorbis; do not use Opus), what could move to a first-run download, and estimate the saving of each. Do not change shipped files.
+- [ ] R42.3 **Wrap-up.** Add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R42:`.
+
 ---
 
 ## Requests from Claude
