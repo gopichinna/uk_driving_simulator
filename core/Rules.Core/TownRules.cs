@@ -269,6 +269,57 @@ namespace LToLocal.Rules
     }
 
     /// <summary>
+    /// GB.JCT.STOP_SIGN (rule 171): at a STOP line you must stop completely behind the line, even if the road looks clear.
+    /// Judged when the front of the car crosses the line: did it come to a halt (below <see cref="StoppedMps"/>) in the
+    /// last <see cref="ApproachM"/> metres before it, with the front still behind the line?
+    /// </summary>
+    public sealed class StopSignRule
+    {
+        public const string RuleId = "GB.JCT.STOP_SIGN";
+        private const string Source = "Highway Code rule 171";
+
+        private readonly List<LaneLine> _lines;
+        private Vec2 _prevFront;
+        private bool _hasPrev;
+        private readonly Dictionary<LaneLine, bool> _stopped = new Dictionary<LaneLine, bool>();
+
+        public StopSignRule(List<LaneLine> lines) => _lines = lines;
+
+        public double StoppedMps = 0.2, ApproachM = 6;
+
+        public void Reset()
+        {
+            _hasPrev = false;
+            _stopped.Clear();
+        }
+
+        public void OnFrame(in DriverFrame f, List<RuleEvent> output)
+        {
+            Vec2 front = CarBody.Front(f.Ego);
+            foreach (var l in _lines)
+            {
+                var (along, lateral) = l.Measure(front);
+                bool aligned = Math.Cos(f.Ego.Heading - l.Heading) > 0.7;
+                if (aligned && lateral < 2.5 && along > 0 && along <= ApproachM && f.Ego.SpeedMps < StoppedMps)
+                    _stopped[l] = true;
+                if (_hasPrev && l.CrossedBy(_prevFront, front))
+                {
+                    bool stopped = _stopped.TryGetValue(l, out var b) && b;
+                    _stopped[l] = false;
+                    if (stopped)
+                        output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                            "You stopped completely at the STOP line before you moved on.", Source));
+                    else
+                        output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, Severity.Serious, f.Time,
+                            "You did not stop at the STOP line. At a STOP sign, stop completely behind the line, even if the road looks clear.", Source));
+                }
+            }
+            _prevFront = front;
+            _hasPrev = true;
+        }
+    }
+
+    /// <summary>
     /// GB.XNG.ZEBRA (rule 195) and GB.JCT.H2_PEDESTRIANS (rules H2, 170): give way to people waiting at a zebra or
     /// waiting to cross a side road you turn into or out of; you must stop once someone is on a zebra.
     /// </summary>

@@ -134,6 +134,58 @@ namespace LToLocal.Rules.Tests
         }
     }
 
+    public class StopSignRuleTests
+    {
+        // Car drives north along x = 0 towards a STOP line at z = 0; the front is 2.15 m ahead of the centre.
+        private static List<RuleEvent> Run(Func<double, double> speedAt, double endZ = 8)
+        {
+            var rule = new StopSignRule(new List<LaneLine> { LaneLine.Across(new Vec2(0, 0), 0) });
+            var events = new List<RuleEvent>();
+            var s = Drive.At(-30, 6);
+            for (double t = 0; t < 40 && s.Z < endZ; t += Drive.Dt)
+            {
+                s.SpeedMps = speedAt(CarBody.Front(s).Z);
+                rule.OnFrame(new DriverFrame(t, s, 0), events);
+                s = Drive.Advance(s);
+            }
+            return events;
+        }
+
+        [Test]
+        public void Pass_StopsBehindTheLineThenGoes()
+        {
+            int ticks = 0;
+            var e = Run(z => z < -1.5 ? 4 : (ticks++ < 100 ? 0 : 3));
+            Assert.That(Drive.Violations(e), Is.Empty);
+            Assert.That(e.Single().Outcome, Is.EqualTo(RuleOutcome.GoodPractice));
+        }
+
+        [Test]
+        public void Serious_RollsThroughAtFiveMph()
+        {
+            var e = Run(z => 2.2);
+            Assert.That(e.Single().RuleId, Is.EqualTo(StopSignRule.RuleId));
+            Assert.That(e.Single().Severity, Is.EqualTo(Severity.Serious));
+        }
+
+        [Test]
+        public void Serious_StopsOnlyAfterTheFrontIsPastTheLine()
+        {
+            var e = Run(z => z < 1 ? 3 : 0, endZ: 3);
+            Assert.That(e.Single().Severity, Is.EqualTo(Severity.Serious));
+        }
+
+        [Test]
+        public void Pass_OtherLanesLineIsIgnored()
+        {
+            var rule = new StopSignRule(new List<LaneLine> { LaneLine.Across(new Vec2(20, 0), 0) });
+            var events = new List<RuleEvent>();
+            var s = Drive.At(-30, 8);
+            for (double t = 0; t < 8; t += Drive.Dt) { rule.OnFrame(new DriverFrame(t, s, 0), events); s = Drive.Advance(s); }
+            Assert.That(events, Is.Empty);
+        }
+    }
+
     public class GiveWayRuleTests
     {
         private static List<RuleEvent> Run(double otherAccel, bool brakingForPlayer = true)
