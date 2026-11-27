@@ -386,6 +386,78 @@ namespace LToLocal.Rules
     }
 
     /// <summary>
+    /// GB.JCT.TURN_NEAR (rules 103 and 182): signal left in good time before you turn left at a junction. Judged when
+    /// the car has turned left by more than <see cref="TurnRad"/> inside a junction: the left indicator must have been
+    /// on for at least <see cref="SignalLeadS"/> seconds before the turn started. Position before the turn is covered by
+    /// GB.POS.KEEP_LEFT. Thresholds are ASSUMPTIONs pending ADI review.
+    /// </summary>
+    public sealed class LeftTurnSignalRule
+    {
+        public const string RuleId = "GB.JCT.TURN_NEAR";
+        private const string Source = "Highway Code rule 103";
+
+        private readonly List<Vec2> _junctions;
+        private readonly int _leftSign;
+        private double _leftSince = double.NaN;
+        private bool _inside;
+        private double _entryHeading, _turnStartTime = double.NaN, _leftOnFor;
+        private bool _judged;
+
+        public LeftTurnSignalRule(List<Vec2> junctionCentres, DrivingSide side = DrivingSide.Left)
+        {
+            _junctions = junctionCentres;
+            _leftSign = side == DrivingSide.Left ? -1 : 1; // world direction of a turn "to the nearside"
+        }
+
+        public double RadiusM = 14, TurnRad = 0.7, TurnStartRad = 0.17, SignalLeadS = 2.0;
+
+        public void Reset()
+        {
+            _leftSince = double.NaN;
+            _inside = false;
+            _judged = false;
+            _turnStartTime = double.NaN;
+        }
+
+        public void OnFrame(in DriverFrame f, List<RuleEvent> output)
+        {
+            if (f.Indicator == _leftSign) { if (double.IsNaN(_leftSince)) _leftSince = f.Time; }
+            else _leftSince = double.NaN;
+
+            Vec2 c = CarBody.Centre(f.Ego);
+            bool inside = false;
+            foreach (var j in _junctions) if ((j - c).Length <= RadiusM) { inside = true; break; }
+
+            if (inside && !_inside)
+            {
+                _entryHeading = f.Ego.Heading;
+                _judged = false;
+                _turnStartTime = double.NaN;
+            }
+            _inside = inside;
+            if (!inside || _judged) return;
+
+            double turned = LaneGraph.Angle(f.Ego.Heading - _entryHeading) * _leftSign; // > 0 = turned toward the nearside
+            if (double.IsNaN(_turnStartTime) && turned > TurnStartRad)
+            {
+                _turnStartTime = f.Time;
+                _leftOnFor = double.IsNaN(_leftSince) ? 0 : f.Time - _leftSince;
+            }
+            if (turned < TurnRad) return;
+
+            _judged = true;
+            if (_leftOnFor >= SignalLeadS)
+                output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                    "You signalled left in good time before you turned.", Source));
+            else
+                output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, Severity.Driving, f.Time,
+                    _leftOnFor <= 0
+                        ? "You turned left without signalling. Signal early so others know what you plan to do."
+                        : "You signalled left too late. Signal at least two seconds before you turn.", Source));
+        }
+    }
+
+    /// <summary>
     /// GB.XNG.ZEBRA (rule 195) and GB.JCT.H2_PEDESTRIANS (rules H2, 170): give way to people waiting at a zebra or
     /// waiting to cross a side road you turn into or out of; you must stop once someone is on a zebra.
     /// </summary>
@@ -577,6 +649,10 @@ namespace LToLocal.Rules
             var approaches = new List<TrafficLightRule.Approach>();
             var giveWays = new List<GiveWayRule.Line>();
             var stops = new List<LaneLine>();
+            var junctions = new List<Vec2>();
+            var conn = new int[g.Nodes.Count];
+            foreach (var s in g.Segments) if (s.Kind == SegmentKind.Connector && s.Node >= 0) conn[s.Node]++;
+            for (int i = 0; i < g.Nodes.Count; i++) if (g.Nodes[i].Signalised || conn[i] > 2) junctions.Add(g.Nodes[i].Centre);
             foreach (var s in g.Segments)
             {
                 if (s.Kind != SegmentKind.Lane || s.EndNode < 0) continue;
@@ -599,6 +675,7 @@ namespace LToLocal.Rules
             Lights = new TrafficLightRule(approaches);
             GiveWay = new GiveWayRule(giveWays);
             StopSign = new StopSignRule(stops);
+            LeftTurn = new LeftTurnSignalRule(junctions, side);
             Crossings = new PedestrianCrossingRule(g.CrossingAreas);
             ZigZags = new ZigZagOvertakeRule(g.ZigZags);
             Box = new BoxJunctionRule(boxes, side);
@@ -607,6 +684,7 @@ namespace LToLocal.Rules
         public TrafficLightRule Lights { get; }
         public GiveWayRule GiveWay { get; }
         public StopSignRule StopSign { get; }
+        public LeftTurnSignalRule LeftTurn { get; }
         public PedestrianCrossingRule Crossings { get; }
         public ZigZagOvertakeRule ZigZags { get; }
         public BoxJunctionRule Box { get; }
@@ -616,6 +694,7 @@ namespace LToLocal.Rules
             Lights.Reset();
             GiveWay.Reset();
             StopSign.Reset();
+            LeftTurn.Reset();
             Crossings.Reset();
             ZigZags.Reset();
             Box.Reset();
@@ -627,6 +706,7 @@ namespace LToLocal.Rules
             Lights.OnFrame(f, lights, users, output);
             GiveWay.OnFrame(f, users, output);
             StopSign.OnFrame(f, output);
+            LeftTurn.OnFrame(f, output);
             Crossings.OnFrame(f, people, output);
             ZigZags.OnFrame(f, users, output);
             Box.OnFrame(f, output);
