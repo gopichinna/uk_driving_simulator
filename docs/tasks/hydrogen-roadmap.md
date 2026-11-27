@@ -370,6 +370,18 @@ How the harness reads a drive: it interpolates `playerKeyframes` and other users
 - [x] R43.3 **Fixture lint.** Added keyframe lint checks in `pipeline/tests/test_rule_fixtures.py` (`expectedEvents.timeS` within keyframe range, speed/distance consistency within 15%, heading delta `<= 120°`, and `kind` matching `severity`) and aligned all 16 fixtures (67 drives).
 - [x] R43.4 **Wrap-up.** Regenerated `CONTENT_HEALTH.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, schema validation, and readability.
 
+## Round 44: tidy the fixtures, lessons for the new scenes (data)
+Goal: the replay harness now runs 6 more rules' drives (54 of 60 drives replay; the other 6 are listed below as known mismatches). Branch: `hydrogen/r44-fixture-fixes-lessons`, from `main`. R43 is merged and reviewed: 54 of your drives now pass against the real code, which is very good first-time accuracy.
+
+- [ ] R44.1 **Fix four fixtures** (see `KnownMismatches` in `core/Rules.Core.Tests/RuleFixtureTests.cs`; remove each entry once the fixture passes):
+  - `GB.JCT.TURN_FAR_GAP:minor_tight_gap_38s`: the spec has no minor tier (above 3.5 s is fine). Make it a `pass` drive named `pass_gap_38s`, or add a documented minor tier to `next-rules.md` and tell Claude.
+  - `GB.SIG.MISLEADING:serious_mislead_waiting_car`: add `environment.junctionCentres` for the side road so the rule knows where it is.
+  - `GB.JCT.TURN_NEAR:serious_no_signal_near_cyclist`: the player's keyframes slide sideways from x = 0 to x = -13 while the cyclist is at x = -1.5, so the car drives through the cyclist. Move the cyclist to the inside of a turn that follows the player's real path (offset 2 to 3 m).
+  - `GB.JCT.STOP_SIGN:minor_slow_roll_04mps`: add it to `docs/adi-review/questions.md` ("is rolling over a STOP line at 0.4 m/s, about 1 mph, a minor or a serious fault?") and keep this drive as an ADI-pending example. Do not change it.
+- [ ] R44.2 **Playable now.** Claude has added scenes for `suburb_practice`, `rural_practice`, `ring_road_practice`, `coventry` and `queslett_roundabout`, so your lessons that name those courses (for example 31, 32 and the STOP lessons) really play on their own maps now (before, they fell back to the town map). Check every scenario that uses those courses: its `start`/`join` anchors exist in the pack's `anchors` (or in `roadpack.json`), and its route is legal. Fix what is wrong and add a test.
+- [ ] R44.3 **Queslett lesson.** Add an optional Stage 4 lesson 33 "A big four-way roundabout" using `queslett_roundabout` (3 scenarios from `docs/specs/roundabout-4-exit-build.md`, original quiz, voice, `en-XA`, `progression.json`, `rule_index.json`). The generic road engine already carries traffic on this pack, but the roundabout rules (`GB.RBT.*`) are written for the older two-lane roundabout; say in the lesson text and PR that Claude still has to extend lane-choice judging to this pack.
+- [ ] R44.4 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R44:`.
+
 ---
 
 ## Requests from Claude

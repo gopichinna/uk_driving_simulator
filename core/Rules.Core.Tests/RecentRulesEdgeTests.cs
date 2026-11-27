@@ -155,7 +155,7 @@ namespace LToLocal.Rules.Tests
             for (double t = 0; t < 14; t += Drive.Dt)
             {
                 if (s.X > -8 && Math.Abs(s.Heading - Math.PI / 2) < Math.PI / 2) s.Heading += dirSign * 1.2 * Drive.Dt;
-                rule.OnFrame(new DriverFrame(t, s, indicator(t)), events);
+                rule.OnFrame(new DriverFrame(t, s, indicator(t)), new List<RoadUser>(), events);
                 s.X += Math.Sin(s.Heading) * 5 * Drive.Dt;
                 s.Z += Math.Cos(s.Heading) * 5 * Drive.Dt;
             }
@@ -190,6 +190,46 @@ namespace LToLocal.Rules.Tests
         {
             var e = Turn(DrivingSide.Left, -1, t => t > 1 && t < 3 ? -1 : 0);
             Assert.That(e.Single().Severity, Is.EqualTo(Severity.Driving));
+        }
+    }
+
+    public class TurnRuleRefinementTests
+    {
+        [Test]
+        public void LeftTurnWithoutSignalNextToACyclistIsSerious()
+        {
+            var rule = new LeftTurnSignalRule(new List<Vec2> { new Vec2(0, 0) });
+            var events = new List<RuleEvent>();
+            var s = new CarState { X = -30, Z = 0, Heading = Math.PI / 2, SpeedMps = 5 };
+            for (double t = 0; t < 14; t += Drive.Dt)
+            {
+                if (s.X > -8 && s.Heading > 0) s.Heading = Math.Max(0, s.Heading - 1.2 * Drive.Dt);
+                var users = new List<RoadUser> { new RoadUser(1, new Vec2(s.X + 6, 2.5), Math.PI / 2, 4, true) }; // cyclist ahead, on the nearside (north)
+                rule.OnFrame(new DriverFrame(t, s, 0), users, events);
+                s.X += Math.Sin(s.Heading) * 5 * Drive.Dt;
+                s.Z += Math.Cos(s.Heading) * 5 * Drive.Dt;
+            }
+            Assert.That(events.Single().Severity, Is.EqualTo(Severity.Serious));
+        }
+
+        [Test]
+        public void RightTurnGapIsJudgedWhenTheTurnIsCommittedNotWhileYouFinishIt()
+        {
+            // A car 3.8 s away when the turn starts closes to under 2 s while the player is still crossing: no fault, nobody braked.
+            var rule = new RightTurnGapRule(new List<Vec2> { new Vec2(0, 0) });
+            var events = new List<RuleEvent>();
+            var s = new CarState { X = -30, Z = 0, Heading = Math.PI / 2, SpeedMps = 5 };
+            double ox = 120;
+            for (double t = 0; t < 14; t += Drive.Dt)
+            {
+                if (s.X > -8 && s.Heading < Math.PI) s.Heading = Math.Min(Math.PI, s.Heading + 0.6 * Drive.Dt);
+                ox -= 10 * Drive.Dt;
+                var users = new List<RoadUser> { new RoadUser(1, new Vec2(ox, 0), -Math.PI / 2, 10, false) };
+                rule.OnFrame(new DriverFrame(t, s, 1), users, events);
+                s.X += Math.Sin(s.Heading) * 5 * Drive.Dt;
+                s.Z += Math.Cos(s.Heading) * 5 * Drive.Dt;
+            }
+            Assert.That(Drive.Violations(events), Is.Empty);
         }
     }
 

@@ -15,21 +15,74 @@ namespace LToLocal.Rules.Tests
     /// </summary>
     public class RuleFixtureTests
     {
-        private delegate void Runner(in DriverFrame frame, IReadOnlyList<RoadUser> users, List<RuleEvent> output);
+        private delegate void Runner(in DriverFrame frame, IReadOnlyList<RoadUser> users, IReadOnlyList<Pedestrian> people, List<RuleEvent> output);
+
+        /// <summary>What a drive's "environment" gives the rules: the speed limit and any positions they need.</summary>
+        private sealed class Env
+        {
+            public double LimitMph = 30;
+            public List<Vec2> Junctions = new List<Vec2>(), SchoolSigns = new List<Vec2>();
+            public List<LaneLine> StopLines = new List<LaneLine>();
+        }
+
+        private static Env ReadEnv(Dictionary<string, object?> e)
+        {
+            var env = new Env { LimitMph = e.Get("speedLimitMph") is double d ? d : 30 };
+            Vec2 P(object? o) { var q = MiniJson.Obj(o); return new Vec2(MiniJson.Num(q["x"]), MiniJson.Num(q["z"])); }
+            if (e.Get("junctionCentres") != null) env.Junctions = MiniJson.Arr(e["junctionCentres"]).Select(P).ToList();
+            if (e.Get("schoolSigns") != null) env.SchoolSigns = MiniJson.Arr(e["schoolSigns"]).Select(P).ToList();
+            if (e.Get("stopLines") != null)
+                env.StopLines = MiniJson.Arr(e["stopLines"]).Select(o => LaneLine.Across(P(o), MiniJson.Num(MiniJson.Obj(o)["headingDeg"]) * Math.PI / 180)).ToList();
+            return env;
+        }
 
         /// <summary>Rules that can be replayed so far: ruleId → a factory for a fresh runner per drive.</summary>
-        private static readonly Dictionary<string, Func<Runner>> Runners = new Dictionary<string, Func<Runner>>
+        private static readonly Dictionary<string, Func<Env, Runner>> Runners = new Dictionary<string, Func<Env, Runner>>
         {
-            [SignalCancelRule.RuleId] = () =>
+            [SignalCancelRule.RuleId] = env =>
             {
                 var rule = new SignalCancelRule();
-                return (in DriverFrame f, IReadOnlyList<RoadUser> u, List<RuleEvent> o) => rule.OnFrame(f, o);
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, o);
+            },
+            [SchoolSlowRule.RuleId] = env =>
+            {
+                var rule = new SchoolSlowRule(env.SchoolSigns);
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, p, o);
+            },
+            [StopSignRule.RuleId] = env =>
+            {
+                var rule = new StopSignRule(env.StopLines);
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, o);
+            },
+            [LeftTurnSignalRule.RuleId] = env =>
+            {
+                var rule = new LeftTurnSignalRule(env.Junctions);
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, u, o);
+            },
+            [RightTurnGapRule.RuleId] = env =>
+            {
+                var rule = new RightTurnGapRule(env.Junctions);
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, u, o);
+            },
+            [SpeedRule.RuleId] = env =>
+            {
+                var rule = new SpeedRule();
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, env.LimitMph, o);
+            },
+            [FollowingDistanceRule.RuleId] = env =>
+            {
+                var rule = new FollowingDistanceRule();
+                return (in DriverFrame f, IReadOnlyList<RoadUser> u, IReadOnlyList<Pedestrian> p, List<RuleEvent> o) => rule.OnFrame(f, u, o);
             },
         };
 
         /// <summary>Fixture drives whose scripted data does not match the rule's wording yet; each names what to fix.</summary>
         private static readonly Dictionary<string, string> KnownMismatches = new Dictionary<string, string>
         {
+            ["GB.JCT.STOP_SIGN:minor_slow_roll_04mps"] =
+                "judgement call for the ADI: is rolling over the STOP line at 0.4 m/s (about 1 mph) a minor fault or a serious one? The game says serious (it must stop).",
+            ["GB.JCT.TURN_FAR_GAP:minor_tight_gap_38s"] =
+                "the fixture expects a minor fault at 3.8 s, but the spec has no minor tier: above 3.5 s is fine. Ask Hydrogen to make this a pass drive or change the spec.",
             ["GB.SIG.MISLEADING:serious_mislead_waiting_car"] =
                 "needs the side road's position: the fixture's environment has no junction positions. Ask Hydrogen to add environment.junctionCentres.",
         };
@@ -107,7 +160,7 @@ namespace LToLocal.Rules.Tests
                 return (id: (string)u["id"]!, kind: (string)u["kind"]!, keys: Keys(u["keyframes"]));
             }).ToList();
 
-            var runner = make();
+            var runner = make(ReadEnv(MiniJson.Obj(drive["environment"])));
             var events = new List<RuleEvent>();
             double end = player[^1].T;
             for (double t = player[0].T; t <= end + 1e-9; t += Drive.Dt)
@@ -115,13 +168,17 @@ namespace LToLocal.Rules.Tests
                 var p = At(player, t);
                 var ego = new CarState { X = p.X, Z = p.Z, Heading = p.Heading, SpeedMps = p.Speed };
                 var users = new List<RoadUser>();
+                var people = new List<Pedestrian>();
                 int n = 0;
                 foreach (var (uid, kind, keys) in others)
                 {
                     var k = At(keys, t);
-                    users.Add(new RoadUser(++n, new Vec2(k.X, k.Z), k.Heading, k.Speed, kind == "cyclist"));
+                    if (kind == "pedestrian") { people.Add(new Pedestrian { Id = ++n, Position = new Vec2(k.X, k.Z), Heading = k.Heading }); continue; }
+                    // Braking is read from the script: speed falling over the last 0.5 s, and counted as braking for the player.
+                    double accel = (k.Speed - At(keys, t - 0.5).Speed) / 0.5;
+                    users.Add(new RoadUser(++n, new Vec2(k.X, k.Z), k.Heading, k.Speed, kind == "cyclist", 0, accel, accel < -0.5));
                 }
-                runner(new DriverFrame(t, ego, p.Indicator), users, events);
+                runner(new DriverFrame(t, ego, p.Indicator), users, people, events);
             }
 
             var mine = events.Where(e => e.RuleId == rule && e.Outcome == RuleOutcome.Violation).ToList();

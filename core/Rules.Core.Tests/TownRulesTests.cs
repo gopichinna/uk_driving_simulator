@@ -194,7 +194,7 @@ namespace LToLocal.Rules.Tests
             for (double t = 0; t < 14; t += Drive.Dt)
             {
                 if (s.X > -8) s.Heading = Math.Max(0, s.Heading - 1.2 * Drive.Dt); // turning left once in the junction
-                rule.OnFrame(new DriverFrame(t, s, indicator(t)), events);
+                rule.OnFrame(new DriverFrame(t, s, indicator(t)), new List<RoadUser>(), events);
                 s.X += Math.Sin(s.Heading) * s.SpeedMps * Drive.Dt;
                 s.Z += Math.Cos(s.Heading) * s.SpeedMps * Drive.Dt;
             }
@@ -230,7 +230,7 @@ namespace LToLocal.Rules.Tests
             var rule = new LeftTurnSignalRule(new List<Vec2> { new Vec2(0, 0) });
             var events = new List<RuleEvent>();
             var s = new CarState { X = -30, Z = 0, Heading = Math.PI / 2, SpeedMps = 5 };
-            for (double t = 0; t < 12; t += Drive.Dt) { rule.OnFrame(new DriverFrame(t, s, 0), events); s.X += 5 * Drive.Dt; }
+            for (double t = 0; t < 12; t += Drive.Dt) { rule.OnFrame(new DriverFrame(t, s, 0), new List<RoadUser>(), events); s.X += 5 * Drive.Dt; }
             Assert.That(events, Is.Empty);
         }
     }
@@ -273,7 +273,7 @@ namespace LToLocal.Rules.Tests
         public void Serious_TurningAcrossACarAboutThreeSecondsAway()
         {
             // The turn is judged at its start (about 4.6 s in); a car 3 s from the car at that time is too close.
-            var e = Run(oncomingStartX: 46 + 10 * 4.6 - 15 + 5);
+            var e = Run(oncomingStartX: 72);
             Assert.That(e.First().RuleId, Is.EqualTo(RightTurnGapRule.RuleId));
             Assert.That(e.First().Severity, Is.AtLeast(Severity.Serious));
         }

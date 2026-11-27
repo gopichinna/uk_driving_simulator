@@ -388,8 +388,9 @@ namespace LToLocal.Rules
     /// <summary>
     /// GB.JCT.TURN_NEAR (rules 103 and 182): signal left in good time before you turn left at a junction. Judged when
     /// the car has turned left by more than <see cref="TurnRad"/> inside a junction: the left indicator must have been
-    /// on for at least <see cref="SignalLeadS"/> seconds before the turn started. Position before the turn is covered by
-    /// GB.POS.KEEP_LEFT. Thresholds are ASSUMPTIONs pending ADI review.
+    /// on for at least <see cref="SignalLeadS"/> seconds before the turn started. A fault is serious if a cyclist (or other
+    /// road user) was on the nearside within <see cref="NearsideAheadM"/> ahead when the turn began, because the signal is
+    /// for them. Position before the turn is covered by GB.POS.KEEP_LEFT. Thresholds are ASSUMPTIONs pending ADI review.
     /// </summary>
     public sealed class LeftTurnSignalRule
     {
@@ -401,7 +402,7 @@ namespace LToLocal.Rules
         private double _leftSince = double.NaN;
         private bool _inside;
         private double _entryHeading, _turnStartTime = double.NaN, _leftOnFor;
-        private bool _judged;
+        private bool _judged, _roadUserOnInside;
 
         public LeftTurnSignalRule(List<Vec2> junctionCentres, DrivingSide side = DrivingSide.Left)
         {
@@ -409,7 +410,7 @@ namespace LToLocal.Rules
             _leftSign = side == DrivingSide.Left ? -1 : 1; // world direction of a turn "to the nearside"
         }
 
-        public double RadiusM = 14, TurnRad = 0.7, TurnStartRad = 0.17, SignalLeadS = 2.0;
+        public double RadiusM = 14, TurnRad = 0.7, TurnStartRad = 0.17, SignalLeadS = 2.0, NearsideAheadM = 25, NearsideWidthM = 4.5;
 
         public void Reset()
         {
@@ -419,7 +420,7 @@ namespace LToLocal.Rules
             _turnStartTime = double.NaN;
         }
 
-        public void OnFrame(in DriverFrame f, List<RuleEvent> output)
+        public void OnFrame(in DriverFrame f, IReadOnlyList<RoadUser> users, List<RuleEvent> output)
         {
             if (f.Indicator == _leftSign) { if (double.IsNaN(_leftSince)) _leftSince = f.Time; }
             else _leftSince = double.NaN;
@@ -442,6 +443,14 @@ namespace LToLocal.Rules
             {
                 _turnStartTime = f.Time;
                 _leftOnFor = double.IsNaN(_leftSince) ? 0 : f.Time - _leftSince;
+                _roadUserOnInside = false;
+                Vec2 fwd = Vec2.FromHeading(_entryHeading);
+                foreach (var u in users)
+                {
+                    Vec2 d = u.Position - c;
+                    double ahead = d.Dot(fwd), side = d.Dot(fwd.LeftNormal) * (_leftSign == -1 ? 1 : -1); // + = on the nearside
+                    if (ahead > -3 && ahead < NearsideAheadM && side > -0.5 && side < NearsideWidthM) { _roadUserOnInside = true; break; }
+                }
             }
             if (turned < TurnRad) return;
 
@@ -450,10 +459,12 @@ namespace LToLocal.Rules
                 output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
                     "You signalled left in good time before you turned.", Source));
             else
-                output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, Severity.Driving, f.Time,
-                    _leftOnFor <= 0
-                        ? "You turned left without signalling. Signal early so others know what you plan to do."
-                        : "You signalled left too late. Signal at least two seconds before you turn.", Source));
+                output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, _roadUserOnInside ? Severity.Serious : Severity.Driving, f.Time,
+                    _roadUserOnInside
+                        ? "You turned left without a clear signal while someone was on your inside. Signal early so they know."
+                        : _leftOnFor <= 0
+                            ? "You turned left without signalling. Signal early so others know what you plan to do."
+                            : "You signalled left too late. Signal at least two seconds before you turn.", Source));
         }
     }
 
@@ -471,7 +482,7 @@ namespace LToLocal.Rules
 
         private readonly List<Vec2> _junctions;
         private readonly int _rightSign;
-        private bool _inside, _turning, _sawOncoming;
+        private bool _inside, _turning, _sawOncoming, _committedJudged;
         private double _entryHeading;
         private Severity _reported;
 
@@ -496,7 +507,7 @@ namespace LToLocal.Rules
             bool inside = false;
             foreach (var j in _junctions) if ((j - c).Length <= RadiusM) { inside = true; break; }
 
-            if (inside && !_inside) { _entryHeading = f.Ego.Heading; _turning = _sawOncoming = false; _reported = Severity.None; }
+            if (inside && !_inside) { _entryHeading = f.Ego.Heading; _turning = _sawOncoming = _committedJudged = false; _reported = Severity.None; }
             bool leaving = _inside && !inside;
             _inside = inside;
 
@@ -519,6 +530,8 @@ namespace LToLocal.Rules
         {
             Vec2 approach = Vec2.FromHeading(_entryHeading);
             double worstTtc = double.MaxValue, worstDecel = 0;
+            bool atCommitment = !_committedJudged; // the gap is judged once, when the turn is committed; after that only real braking counts
+            _committedJudged = true;
             foreach (var u in users)
             {
                 Vec2 d = u.Position - car;
@@ -527,7 +540,7 @@ namespace LToLocal.Rules
                 if (!oncoming || ahead <= 0 || ahead > LookAheadM || side > 6) continue;
                 _sawOncoming = true;
                 double ttc = Math.Max(0, ahead - u.LengthM / 2 - CarBody.HalfLength) / Math.Max(u.SpeedMps, 0.5);
-                if (ttc < worstTtc) worstTtc = ttc;
+                if (atCommitment && ttc < worstTtc) worstTtc = ttc;
                 if (u.BrakingForPlayer && -u.LastAccelMps2 > worstDecel) worstDecel = -u.LastAccelMps2;
             }
 
@@ -795,7 +808,7 @@ namespace LToLocal.Rules
             Lights.OnFrame(f, lights, users, output);
             GiveWay.OnFrame(f, users, output);
             StopSign.OnFrame(f, output);
-            LeftTurn.OnFrame(f, output);
+            LeftTurn.OnFrame(f, users, output);
             RightTurnGap.OnFrame(f, users, output);
             Crossings.OnFrame(f, people, output);
             ZigZags.OnFrame(f, users, output);
