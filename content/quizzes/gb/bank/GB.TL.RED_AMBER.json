@@ -10,7 +10,7 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 175 says red and amber also means stop; you must wait for green.",
+    "explain": "Rule 175: Red and amber also means stop; you must wait for green.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "Yes, at night"
     ],
     "answer": 1,
-    "explain": "Rule 175: crossing the white line on red and amber is still jumping the red light.",
+    "explain": "Rule 175: Crossing the white line on red. Amber is still jumping the red light.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "Overtaking cyclists"
     ],
     "answer": 1,
-    "explain": "Rule 175: use red and amber to prepare to move off and check around you, not to cross the line early.",
+    "explain": "Rule 175: Use red and amber to prepare to move off and check around you. Not to cross the line early.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -55,7 +55,7 @@
       "Off"
     ],
     "answer": 1,
-    "explain": "Rule 175: the UK traffic-light cycle is red, then red and amber, then green.",
+    "explain": "Rule 175: The UK traffic-light cycle is red, then red and amber, then green.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -70,14 +70,14 @@
       "Flash your lights"
     ],
     "answer": 1,
-    "explain": "Rule 175: never let another driver pressure you into crossing before green.",
+    "explain": "Rule 175: Never let another driver pressure you into crossing before green.",
     "hc_rule": "175",
     "difficulty": 2
   },
   {
     "id": "qb_tl_ra_6",
     "rule": "GB.TL.RED_AMBER",
-    "question": "When the light changes from red and amber to green, what should you check before moving?",
+    "question": "When the light changes from red and amber to green. What should you check before moving?",
     "options": [
       "That the junction is clear of late crossers and pedestrians",
       "Only the radio",
@@ -85,7 +85,7 @@
       "Nothing"
     ],
     "answer": 0,
-    "explain": "Rule 175: green means you may go on if the way is clear; watch for late crossers.",
+    "explain": "Rule 175: Green means you may go on if the way is clear. Watch for late crossers.",
     "hc_rule": "175",
     "difficulty": 2
   },
@@ -100,7 +100,7 @@
       "Yes, in towns"
     ],
     "answer": 1,
-    "explain": "Rule 196: pelican crossings use flashing amber instead of red and amber.",
+    "explain": "Rule 196: Pelican crossings use flashing amber instead of red and amber.",
     "hc_rule": "196",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "Flashing green"
     ],
     "answer": 1,
-    "explain": "Rule 175: all three phases require you to wait behind the stop line.",
+    "explain": "Rule 175: All three phases require you to wait behind the stop line.",
     "hc_rule": "175",
     "difficulty": 1
   }

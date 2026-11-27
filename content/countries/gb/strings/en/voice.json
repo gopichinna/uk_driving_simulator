@@ -186,6 +186,12 @@
     "voice.GB.JCT.TURN_NEAR.fault.v3": "Do not swing wide right before making a left turn.",
     "voice.GB.JCT.TURN_NEAR.good": "Clean left turn position and early signal.",
     "voice.GB.JCT.TURN_NEAR.good.v2": "Nice early left indicator and neat kerb position.",
-    "voice.GB.JCT.TURN_NEAR.good.v3": "Smooth left turn from the nearside lane."
+    "voice.GB.JCT.TURN_NEAR.good.v3": "Smooth left turn from the nearside lane.",
+    "voice.GB.JCT.TURN_FAR_GAP.fault": "Wait for a safe gap before turning right across traffic.",
+    "voice.GB.JCT.TURN_FAR_GAP.fault.v2": "Hold back so oncoming cars do not have to brake.",
+    "voice.GB.JCT.TURN_FAR_GAP.fault.v3": "Let oncoming traffic pass before you turn right.",
+    "voice.GB.JCT.TURN_FAR_GAP.good": "Good patience waiting for a safe right-turn gap.",
+    "voice.GB.JCT.TURN_FAR_GAP.good.v2": "Clean right turn with plenty of oncoming space.",
+    "voice.GB.JCT.TURN_FAR_GAP.good.v3": "Safe timing turning right across the main road."
   }
 }

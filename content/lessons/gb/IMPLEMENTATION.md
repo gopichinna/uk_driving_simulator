@@ -19,7 +19,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 4 | Give way at T-junctions | `GB.JCT.GIVE_WAY` | ✅ |
 | 4 | Give way at T-junctions | `GB.JCT.STOP_SIGN` | ✅ |
 | 4 | Give way at T-junctions | `GB.JCT.EMERGE_LOOK` | ⏳ |
-| 4 | Give way at T-junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
+| 4 | Give way at T-junctions | `GB.JCT.TURN_FAR_GAP` | ✅ |
 | 5 | Pedestrians at junctions (H2) | `GB.JCT.H2_PEDESTRIANS` | ✅ |
 | 5 | Pedestrians at junctions (H2) | `GB.SIG.TIMELY` | ✅ |
 | 5 | Pedestrians at junctions (H2) | `GB.JCT.GIVE_WAY` | ✅ |
@@ -27,7 +27,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 6 | Road position after turning | `GB.POS.KEEP_LEFT` | ✅ |
 | 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ✅ |
 | 6 | Road position after turning | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
-| 6 | Road position after turning | `GB.JCT.TURN_FAR_GAP` | ⏳ |
+| 6 | Road position after turning | `GB.JCT.TURN_FAR_GAP` | ✅ |
 | 7 | Traffic lights and amber | `GB.TL.RED` | ✅ |
 | 7 | Traffic lights and amber | `GB.TL.AMBER` | ✅ |
 | 7 | Traffic lights and amber | `GB.TL.RED_AMBER` | ✅ |
@@ -44,7 +44,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 9 | Zebra crossings and zig-zags | `GB.XNG.ZIGZAG_OVERTAKE` | ✅ |
 | 10 | Box junctions | `GB.JCT.BOX` | ✅ |
 | 10 | Box junctions | `GB.TL.CLEAR_JUNCTION` | ⏳ |
-| 10 | Box junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
+| 10 | Box junctions | `GB.JCT.TURN_FAR_GAP` | ✅ |
 | 11 | Roundabout priority | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
 | 11 | Roundabout priority | `GB.RBT.WRONG_WAY` | ✅ |
 | 12 | Roundabout lanes and signals | `GB.RBT.APPROACH_LANE` | ✅ |
@@ -118,6 +118,12 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 28 | School zones | `GB.SCH.SLOW` | ✅ |
 | 28 | School zones | `GB.SPD.OVER_LIMIT` | ✅ |
 | 28 | School zones | `GB.SPD.APPROPRIATE` | ⏳ |
+| 29 | Turning left and right at junctions | `GB.JCT.TURN_NEAR` | ✅ |
+| 29 | Turning left and right at junctions | `GB.POS.AFTER_TURN` | ⏳ |
+| 29 | Turning left and right at junctions | `GB.SIG.TIMELY` | ✅ |
+| 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_GAP` | ✅ |
+| 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
+| 29 | Turning left and right at junctions | `GB.JCT.GIVE_WAY` | ✅ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
@@ -125,10 +131,11 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 |---|---|---|
 | `GB.GAP.TWO_SECOND` | 9 | ✅ >= 2 |
 | `GB.JCT.BOX` | 2 | ✅ >= 2 |
-| `GB.JCT.GIVE_WAY` | 3 | ✅ >= 2 |
+| `GB.JCT.GIVE_WAY` | 4 | ✅ >= 2 |
 | `GB.JCT.H2_PEDESTRIANS` | 2 | ✅ >= 2 |
 | `GB.JCT.STOP_SIGN` | 2 | ✅ >= 2 |
-| `GB.JCT.TURN_NEAR` | 2 | ✅ >= 2 |
+| `GB.JCT.TURN_FAR_GAP` | 5 | ✅ >= 2 |
+| `GB.JCT.TURN_NEAR` | 4 | ✅ >= 2 |
 | `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
 | `GB.POS.KEEP_LEFT` | 6 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
@@ -138,7 +145,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
 | `GB.SCH.SLOW` | 5 | ✅ >= 2 |
-| `GB.SIG.TIMELY` | 11 | ✅ >= 2 |
+| `GB.SIG.TIMELY` | 12 | ✅ >= 2 |
 | `GB.SPD.OVER_LIMIT` | 15 | ✅ >= 2 |
 | `GB.TL.AMBER` | 2 | ✅ >= 2 |
 | `GB.TL.ASL` | 2 | ✅ >= 2 |

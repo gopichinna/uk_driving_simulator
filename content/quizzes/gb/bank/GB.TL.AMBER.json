@@ -10,7 +10,7 @@
       "Wait for red"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 175 says amber means stop at the stop line, unless you are so close that stopping might cause a collision.",
+    "explain": "Rule 175: Amber means stop at the stop line. You are so close that stopping might cause a collision.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "At night only"
     ],
     "answer": 1,
-    "explain": "Rule 175: you may only go on amber if stopping suddenly could cause a crash.",
+    "explain": "Rule 175: You may only go on amber if stopping suddenly could cause a crash.",
     "hc_rule": "175",
     "difficulty": 1
   },
   {
     "id": "qb_tl_amber_3",
     "rule": "GB.TL.AMBER",
-    "question": "As you approach a green light that has been green for a long time, what should you expect?",
+    "question": "As you approach a green light that has been green for a long time. What should you expect?",
     "options": [
       "It will stay green forever",
       "It may change to amber soon, so be ready to brake",
@@ -40,7 +40,7 @@
       "It will turn off"
     ],
     "answer": 1,
-    "explain": "Rule 175: expect stale green lights to change so you can stop smoothly on amber.",
+    "explain": "Rule 175: Expect stale green lights to change so you can stop smoothly on amber.",
     "hc_rule": "175",
     "difficulty": 2
   },
@@ -55,7 +55,7 @@
       "Your boot"
     ],
     "answer": 0,
-    "explain": "Rule 175: check your mirror to judge whether a vehicle close behind makes hard braking unsafe.",
+    "explain": "Rule 175: Check your mirror to judge whether. A vehicle close behind makes hard braking unsafe.",
     "hc_rule": "175",
     "difficulty": 2
   },
@@ -70,7 +70,7 @@
       "Flashing green"
     ],
     "answer": 1,
-    "explain": "Rule 175: in the UK sequence, green goes to amber, then to red.",
+    "explain": "Rule 175: In the UK sequence, green goes to amber, then to red.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -85,14 +85,14 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Rule 175: at 30 mph, 40 metres is plenty of room to stop safely behind the line.",
+    "explain": "Rule 175: At 30 mph. 40 metres is plenty of room to stop safely behind the line.",
     "hc_rule": "175",
     "difficulty": 2
   },
   {
     "id": "qb_tl_amber_7",
     "rule": "GB.TL.AMBER",
-    "question": "You are two metres from the stop line at 30 mph with a car close behind when the light turns amber. What should you do?",
+    "question": "You are two metres from the stop line at 30 mph. A car is close behind when the light turns amber. What should you do?",
     "options": [
       "Slam the brakes hard",
       "Continue safely across the junction",
@@ -100,14 +100,14 @@
       "Stop in the middle of the junction"
     ],
     "answer": 1,
-    "explain": "Rule 175: you are too close to stop safely, so continuing through is the safer choice.",
+    "explain": "Rule 175: You are too close to stop safely. Continuing through is the safer choice.",
     "hc_rule": "175",
     "difficulty": 2
   },
   {
     "id": "qb_tl_amber_8",
     "rule": "GB.TL.AMBER",
-    "question": "Does a flashing amber light at a pelican crossing mean the same as a steady amber light?",
+    "question": "Does a flashing amber light at a pelican. Crossing mean the same as a steady amber light?",
     "options": [
       "Yes, always stop",
       "No, flashing amber means give way to pedestrians on the crossing",
@@ -115,7 +115,7 @@
       "No, speed up"
     ],
     "answer": 1,
-    "explain": "Rule 196: at a pelican crossing, flashing amber means let any pedestrians finish crossing, then go if clear.",
+    "explain": "Rule 196: At a pelican crossing. Flashing amber means let any pedestrians finish crossing, then go if clear.",
     "hc_rule": "196",
     "difficulty": 2
   }

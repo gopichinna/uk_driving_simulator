@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s1-29-turning-left-right",
+  "questions": [
+    {
+      "id": "q_29_left_signal",
+      "question": "When should you signal left before turning into a side road?",
+      "options": [
+        "In good time, at least two seconds before turning",
+        "Only after your front wheels cross the line",
+        "Only when a car is right behind you"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 182 says to give a clear left signal in good time.",
+      "ruleId": "GB.JCT.TURN_NEAR"
+    },
+    {
+      "id": "q_29_right_gap",
+      "question": "When turning right across oncoming traffic, what must you wait for?",
+      "options": [
+        "A safe gap so oncoming cars do not slow down",
+        "Just one car length ahead",
+        "The driver behind to sound their horn"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 180 says wait until oncoming traffic is clear before turning right.",
+      "ruleId": "GB.JCT.TURN_FAR_GAP"
+    },
+    {
+      "id": "q_29_kerb_pos",
+      "question": "Where should you position your car before turning left?",
+      "options": [
+        "Close to the left kerb without swinging wide",
+        "Next to the centre line",
+        "In the right lane"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 182 says keep well to the left before a left turn.",
+      "ruleId": "GB.JCT.TURN_NEAR"
+    }
+  ]
+}

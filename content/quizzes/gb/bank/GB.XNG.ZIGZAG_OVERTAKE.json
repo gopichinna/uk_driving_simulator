@@ -25,7 +25,7 @@
       "Only on a two-lane road"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 191 states you must never overtake the moving or stopped lead vehicle at a crossing.",
+    "explain": "Rule 191: You must never overtake the moving or stopped lead vehicle at a crossing.",
     "hc_rule": "191",
     "difficulty": 1
   },
@@ -92,7 +92,7 @@
   {
     "id": "qb_zz_7",
     "rule": "GB.XNG.ZIGZAG_OVERTAKE",
-    "question": "What must you NOT do to a moving vehicle ahead of you inside crossing zig-zags?",
+    "question": "What must you not do to a moving vehicle ahead of you inside crossing zig-zags?",
     "options": [
       "Overtake it",
       "Leave a two-second gap behind it",
@@ -152,7 +152,7 @@
   {
     "id": "qb_zz_11",
     "rule": "GB.XNG.ZIGZAG_OVERTAKE",
-    "question": "When you are stopped in a queue, where should you wait if space ends at a zebra crossing?",
+    "question": "When you are stopped in a queue. Where should you wait if space ends at a zebra crossing?",
     "options": [
       "Before the stripes so the crossing stays clear",
       "On top of the black and white stripes",
@@ -175,14 +175,14 @@
       "Drive on the pavement"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 191 forbids overtaking moving or stopped-for-crossing lead vehicles; pass broken-down obstructions only with extreme care.",
+    "explain": "Highway Code Rule 191 forbids overtaking moving or stopped-for-crossing lead vehicles. Pass broken-down obstructions only with extreme care.",
     "hc_rule": "191",
     "difficulty": 3
   },
   {
     "id": "qb_zz_13",
     "rule": "GB.XNG.ZIGZAG_OVERTAKE",
-    "question": "Why are zig-zag lines painted on BOTH the approach and exit sides of a crossing?",
+    "question": "Why are zig-zag lines painted on both the approach and exit sides of a crossing?",
     "options": [
       "To keep views clear in both directions and stop overtaking or parking near the stripes",
       "To mark cycle parking",

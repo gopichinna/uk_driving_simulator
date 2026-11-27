@@ -1,0 +1,119 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s1-29-turning-left-right",
+  "stage": 1,
+  "order": 29,
+  "title": "Turning left and right at junctions",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Signal left at least 2 seconds before turning left at a junction.",
+      "When turning right, wait for a 3.5 second clear gap in oncoming traffic.",
+      "The 2 s and 3.5 s thresholds are game assumptions pending ADI review."
+    ],
+    "ruleIds": [
+      "GB.JCT.TURN_NEAR",
+      "GB.JCT.TURN_FAR_GAP"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s1-29-turning-left-right.png"
+  },
+  "scenarios": [
+    {
+      "id": "s1_29_left_early_signal",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Signal left at least 2 seconds early and keep close to the kerb.",
+      "rulesJudged": [
+        "GB.JCT.TURN_NEAR",
+        "GB.POS.AFTER_TURN"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.25,
+          0.45
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_29_left_no_signal",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "See how turning left without an early signal gives a minor fault.",
+      "rulesJudged": [
+        "GB.JCT.TURN_NEAR",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.25,
+          0.4
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_29_right_clear_gap",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Wait for a 3.5 second clear gap before turning right.",
+      "rulesJudged": [
+        "GB.JCT.TURN_FAR_GAP",
+        "GB.JCT.TURN_FAR_POSITION"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.2,
+          0.35
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_29_right_oncoming_cut",
+      "course": "town",
+      "anchor": "tjunction_south",
+      "goal": "Hold back for oncoming cars so none have to brake for you.",
+      "rulesJudged": [
+        "GB.JCT.TURN_FAR_GAP",
+        "GB.JCT.GIVE_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.6,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Signal early so following drivers and cyclists see your turn in time.",
+    "Never force an oncoming car to slow down when you turn right."
+  ]
+}

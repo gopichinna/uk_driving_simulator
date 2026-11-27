@@ -1,0 +1,22 @@
+pack_id: queslett_roundabout
+display_name: "Queslett / Aldridge Road Roundabout (Great Barr)"
+country: GB
+region: GB-ENG
+driving_side: left
+
+origin:
+  lat: 52.565552
+  lon: -1.885967
+
+# ~600 m x 650 m bounding box [min_lon, min_lat, max_lon, max_lat]
+bbox: [-1.8905, 52.5625, -1.8815, 52.5685]
+
+extract:
+  name: "geofabrik west-midlands-latest.osm.pbf"
+  pbf_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf"
+  md5_url: "https://download.geofabrik.de/europe/united-kingdom/england/west-midlands-latest.osm.pbf.md5"
+
+exclude:
+  railway_types:
+    - tram
+  reason: "Standard exclusion"

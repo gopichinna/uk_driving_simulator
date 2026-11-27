@@ -13,6 +13,7 @@ Generated from `content/countries/gb/rules.yaml` (implemented rules only).
 | `GB.JCT.STOP_SIGN` | 8 | Rule 171 |
 | `GB.JCT.H2_PEDESTRIANS` | 8 | Rule 170, H1, H2 |
 | `GB.JCT.BOX` | 14 | Rule 174 |
+| `GB.JCT.TURN_FAR_GAP` | 8 | Rule 180 |
 | `GB.JCT.TURN_NEAR` | 8 | Rule 182 |
 | `GB.TL.RED` | 8 | Rule 175, 176, 177, 219 |
 | `GB.TL.AMBER` | 8 | Rule 175, 196 |
@@ -29,4 +30,4 @@ Generated from `content/countries/gb/rules.yaml` (implemented rules only).
 | `GB.VRU.PASS_CYCLIST` | 13 | Rule 163 |
 | `GB.SCH.SLOW` | 8 | Rule 208, 210, 238 |
 
-**Total:** 24 implemented rules, 263 questions.
+**Total:** 25 implemented rules, 271 questions.

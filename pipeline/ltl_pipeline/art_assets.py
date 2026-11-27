@@ -58,6 +58,7 @@ LESSON_SIGN_MAP: dict[str, tuple[str, str]] = {
     "gb-s6-26-motorway-red-x-limits": ("no_entry", "red_x"),
     "gb-s6-27-motorway-breakdowns": ("stop", "sos"),
     "gb-s4-28-school-zones": ("school_children", "pedestrian"),
+    "gb-s1-29-turning-left-right": ("ahead_only", "arrow_up"),
 }
 
 RULE_GROUP_SPECS: list[dict[str, str]] = [

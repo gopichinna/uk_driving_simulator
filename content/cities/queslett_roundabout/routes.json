@@ -1,0 +1,63 @@
+{
+  "routeFormatVersion": "0.1",
+  "packId": "queslett_roundabout",
+  "routes": [
+    {
+      "id": "route-queslett-exit1-bakers",
+      "name": "Exit 1: Bakers Lane left turn",
+      "description": "Enter from A4041 Queslett Road East (SE) and take the first exit onto Bakers Lane.",
+      "estimatedMinutes": 2,
+      "start": { "linkId": "l_790_2", "offsetM": 5 },
+      "links": [
+        { "linkId": "l_790_2", "direction": "forward" },
+        { "linkId": "l_792_2", "direction": "forward" },
+        { "linkId": "l_793_0", "direction": "forward" }
+      ],
+      "features": ["roundabout"],
+      "instructions": [
+        { "atLinkIndex": 0, "distanceBeforeM": 40, "text": "Stay in the left lane and signal left for Bakers Lane.", "maneuver": "roundabout_exit_1" },
+        { "atLinkIndex": 2, "distanceBeforeM": 15, "text": "Leave onto Bakers Lane.", "maneuver": "arrive" }
+      ]
+    },
+    {
+      "id": "route-queslett-exit2-a4041",
+      "name": "Exit 2: A4041 Queslett Road East ahead",
+      "description": "Enter from A4041 Queslett Road East (SE) and take the second exit ahead onto A4041 (NW).",
+      "estimatedMinutes": 2,
+      "start": { "linkId": "l_790_2", "offsetM": 5 },
+      "links": [
+        { "linkId": "l_790_2", "direction": "forward" },
+        { "linkId": "l_792_2", "direction": "forward" },
+        { "linkId": "l_633069094_0", "direction": "forward" },
+        { "linkId": "l_633069078_0", "direction": "forward" },
+        { "linkId": "l_3350859_0", "direction": "forward" }
+      ],
+      "features": ["roundabout"],
+      "instructions": [
+        { "atLinkIndex": 0, "distanceBeforeM": 40, "text": "Follow A4041 Queslett Road East ahead.", "maneuver": "roundabout_exit_2" },
+        { "atLinkIndex": 4, "distanceBeforeM": 15, "text": "Leave onto A4041 Queslett Road East.", "maneuver": "arrive" }
+      ]
+    },
+    {
+      "id": "route-queslett-exit3-aldridge",
+      "name": "Exit 3: Aldridge Road right turn",
+      "description": "Enter from A4041 Queslett Road East (SE) and take the third exit onto Aldridge Road.",
+      "estimatedMinutes": 3,
+      "start": { "linkId": "l_790_2", "offsetM": 5 },
+      "links": [
+        { "linkId": "l_790_2", "direction": "forward" },
+        { "linkId": "l_792_2", "direction": "forward" },
+        { "linkId": "l_633069094_0", "direction": "forward" },
+        { "linkId": "l_633069078_0", "direction": "forward" },
+        { "linkId": "l_629267086_0", "direction": "forward" },
+        { "linkId": "l_629267085_0", "direction": "forward" },
+        { "linkId": "l_7369477_0", "direction": "forward" }
+      ],
+      "features": ["roundabout"],
+      "instructions": [
+        { "atLinkIndex": 0, "distanceBeforeM": 40, "text": "Use the right lane and signal right for Aldridge Road.", "maneuver": "roundabout_exit_3" },
+        { "atLinkIndex": 6, "distanceBeforeM": 15, "text": "Leave onto Aldridge Road.", "maneuver": "arrive" }
+      ]
+    }
+  ]
+}

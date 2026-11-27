@@ -27,7 +27,7 @@ def test_every_lesson_has_valid_original_quiz() -> None:
     banned = load_banned_phrases()
 
     lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
-    assert len(lesson_files) == 28
+    assert len(lesson_files) == 29
 
     for lf in lesson_files:
         lesson = json.loads(lf.read_text(encoding="utf-8"))

@@ -10,7 +10,7 @@
       "Cars waiting behind you"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 185 says to give way to traffic approaching from your right.",
+    "explain": "Rule 185: To give way to traffic approaching from your right.",
     "hc_rule": "185",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "Only after stopping for three seconds"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 advises entering only when there is a safe gap to the right.",
+    "explain": "Rule 185: Entering only when there is a safe gap to the right.",
     "hc_rule": "185",
     "difficulty": 1
   },
   {
     "id": "qb_rbt_gw_3",
     "rule": "GB.RBT.GIVE_WAY_RIGHT",
-    "question": "If a car on the roundabout is signalling left to take the exit before yours, what should you do?",
+    "question": "If a car on the roundabout is signalling left to take the exit before yours. What should you do?",
     "options": [
       "Pull out immediately without checking",
       "Wait until you see it actually start turning off",
@@ -40,7 +40,7 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 185 warns not to rely on another driver's signal alone before pulling out.",
+    "explain": "Rule 185: Not to rely on another driver's signal alone before pulling out.",
     "hc_rule": "185",
     "difficulty": 2
   },
@@ -85,7 +85,7 @@
       "Straight up"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 tells you to give way to traffic coming from your right.",
+    "explain": "Rule 185: To give way to traffic coming from your right.",
     "hc_rule": "185",
     "difficulty": 1
   },
@@ -107,7 +107,7 @@
   {
     "id": "qb_rbt_gw_8",
     "rule": "GB.RBT.GIVE_WAY_RIGHT",
-    "question": "What should you do if a car is already on the roundabout to your right and close?",
+    "question": "What should you do if a car is. Already on the roundabout to your right and close?",
     "options": [
       "Stop behind the give-way line and wait for a safe gap",
       "Accelerate hard in front of it",
@@ -115,7 +115,7 @@
       "Wave it to stop"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 requires waiting until there is a safe gap.",
+    "explain": "Rule 185: Waiting until there is a safe gap.",
     "hc_rule": "185",
     "difficulty": 2
   },
@@ -160,7 +160,7 @@
       "Only in daylight"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 requires giving way, not stopping unnecessarily when the way is clear.",
+    "explain": "Rule 185: Giving way, not stopping unnecessarily when the way is clear.",
     "hc_rule": "185",
     "difficulty": 2
   },
@@ -182,7 +182,7 @@
   {
     "id": "qb_rbt_gw_13",
     "rule": "GB.RBT.GIVE_WAY_RIGHT",
-    "question": "A lorry on the roundabout is taking the next exit, blocking your view of the lane behind it. What should you do?",
+    "question": "A lorry on the roundabout is taking the next exit. Blocking your view of the lane behind it. What should you do?",
     "options": [
       "Wait until the lorry clears so you can see any hidden vehicles behind it",
       "Pull out beside the lorry",
@@ -190,7 +190,7 @@
       "Flash your lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 warns not to enter when a large vehicle hides traffic to your right.",
+    "explain": "Rule 185: Not to enter when a large vehicle hides traffic to your right.",
     "hc_rule": "185",
     "difficulty": 3
   },
@@ -205,7 +205,7 @@
       "Traffic travels anti-clockwise there"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 advises watching all circulating lanes and cyclists before entering.",
+    "explain": "Rule 185: Watching all circulating lanes and cyclists before entering.",
     "hc_rule": "185",
     "difficulty": 3
   }

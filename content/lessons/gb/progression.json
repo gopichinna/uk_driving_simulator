@@ -18,7 +18,8 @@
       "lessonIds": [
         "gb-s1-04-give-way-tjunctions",
         "gb-s1-05-pedestrians-h2",
-        "gb-s1-06-position-after-turning"
+        "gb-s1-06-position-after-turning",
+        "gb-s1-29-turning-left-right"
       ],
       "unlockAfter": { "stage": 0, "minStars": 3 }
     },

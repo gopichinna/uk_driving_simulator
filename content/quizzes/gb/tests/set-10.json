@@ -9,7 +9,7 @@
     {
       "id": "qb_zz_7",
       "rule": "GB.XNG.ZIGZAG_OVERTAKE",
-      "question": "What must you NOT do to a moving vehicle ahead of you inside crossing zig-zags?",
+      "question": "What must you not do to a moving vehicle ahead of you inside crossing zig-zags?",
       "options": [
         "Overtake it",
         "Leave a two-second gap behind it",
@@ -37,84 +37,84 @@
       "difficulty": 1
     },
     {
-      "id": "qb_cyc_7",
+      "id": "qb_cyc_6",
       "rule": "GB.VRU.PASS_CYCLIST",
-      "question": "When passing a cyclist riding past parked cars, why leave extra room?",
+      "question": "Why might a cyclist wobble or swerve slightly to the right?",
       "options": [
-        "A parked car door could suddenly open into the cyclist's path",
-        "The cyclist must ride on the kerb",
-        "To test your steering",
-        "Speed limits double"
+        "To avoid potholes, drains, or gusts of wind",
+        "Only to race cars",
+        "Because bikes have no brakes",
+        "To block traffic on purpose"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 163 notes cyclists ride away from parked cars to avoid opening doors.",
+      "explain": "Rule 163: Cyclists need space to avoid drains and road hazards.",
       "hc_rule": "163",
       "difficulty": 1
     },
     {
-      "id": "qb_gap_7",
+      "id": "qb_gap_6",
       "rule": "GB.GAP.TWO_SECOND",
-      "question": "What is the main danger of driving too close to the car in front?",
+      "question": "At 30 mph on a dry road. How big should your gap to the car ahead be?",
       "options": [
-        "You may not have time to stop if they brake suddenly",
-        "Your headlights shine too high",
-        "Your tyres cool down",
-        "You use less fuel"
+        "At least two seconds",
+        "Half a second",
+        "One car length",
+        "Ten seconds"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 126 warns that tailgating leaves no room to stop safely.",
+      "explain": "Rule 126: At least a two-second gap in dry weather.",
       "hc_rule": "126",
       "difficulty": 1
     },
     {
-      "id": "qb_sig_7",
+      "id": "qb_sig_6",
       "rule": "GB.SIG.TIMELY",
-      "question": "What should you do before signalling to pull over and stop?",
+      "question": "When should you avoid giving a signal?",
       "options": [
-        "Check your mirrors to see who is behind you",
-        "Open your door slightly",
-        "Flash your headlights",
-        "Turn off your engine"
+        "When it could confuse or mislead other road users",
+        "Whenever you turn left",
+        "On any 30 mph road",
+        "During daytime"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 103 works with mirror checks so others understand your signal.",
+      "explain": "Rule 103: Not to give misleading signals.",
       "hc_rule": "103",
       "difficulty": 1
     },
     {
-      "id": "qb_spd_7",
+      "id": "qb_spd_6",
       "rule": "GB.SPD.OVER_LIMIT",
-      "question": "What is the national speed limit for a car on a dual carriageway with a central barrier?",
+      "question": "Where do street lights usually show a 30 mph limit for cars. Unless signs say otherwise?",
       "options": [
-        "50 mph",
-        "60 mph",
-        "70 mph",
-        "40 mph"
+        "In built-up towns and villages",
+        "Only on motorways",
+        "Only in car parks",
+        "Only on rural tracks"
       ],
-      "answer": 2,
-      "explain": "Highway Code Rule 124 sets 70 mph for cars on dual carriageways unless signed lower.",
+      "answer": 0,
+      "explain": "Rule 124: Street-lit roads default to 30 mph unless signed.",
       "hc_rule": "124",
       "difficulty": 1
     },
     {
-      "id": "qb_tl_ra_8",
+      "id": "qb_tl_ra_4",
       "rule": "GB.TL.RED_AMBER",
-      "question": "Which lights mean you must wait behind the stop line?",
+      "question": "What light appears immediately after red and amber?",
       "options": [
-        "Red only",
-        "Red, steady amber (if safe to stop), and red with amber",
-        "Green only",
-        "Flashing green"
+        "Red",
+        "Green",
+        "Flashing amber",
+        "Off"
       ],
       "answer": 1,
-      "explain": "Rule 175: all three phases require you to wait behind the stop line.",
+      "explain": "Rule 175: The UK traffic-light cycle is red, then red and amber, then green.",
       "hc_rule": "175",
       "difficulty": 1
     },
     {
       "id": "qb_jct_gw_6",
       "rule": "GB.JCT.GIVE_WAY",
-      "question": "When turning right out of a side road onto a main road, who must you give way to?",
+      "question": "When turning right out of a side road onto a main road. Who must you give way to?",
       "options": [
         "Traffic coming from both right and left",
         "Only traffic from the left",
@@ -122,7 +122,7 @@
         "Nobody if you signal"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 172 requires checking and giving way to both directions when turning right.",
+      "explain": "Rule 172: Checking and giving way to both directions when turning right.",
       "hc_rule": "172",
       "difficulty": 1
     },
@@ -137,7 +137,7 @@
         "Motorcycles"
       ],
       "answer": 2,
-      "explain": "Rule H1: pedestrians are at greatest risk and sit at the top of the road-user hierarchy.",
+      "explain": "Rule H1: Pedestrians are at greatest risk. Sit at the top of the road-user hierarchy.",
       "hc_rule": "H1",
       "difficulty": 1
     },
@@ -152,7 +152,7 @@
         "Stop in the middle of the lane"
       ],
       "answer": 1,
-      "explain": "Rule 182: never make a late swerve; carry on safely and turn later.",
+      "explain": "Rule 182: Never make a late swerve; carry on safely and turn later.",
       "hc_rule": "182",
       "difficulty": 1
     },
@@ -167,7 +167,7 @@
         "Your left indicator is off"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 133 warns not to cut in front of the vehicle you overtook.",
+      "explain": "Rule 133: Not to cut in front of the vehicle you overtook.",
       "hc_rule": "133",
       "difficulty": 1
     },
@@ -182,7 +182,7 @@
         "On the kerb"
       ],
       "answer": 1,
-      "explain": "Rule 160: always finish your turn on the left side of the new road.",
+      "explain": "Rule 160: Always finish your turn on the left side of the new road.",
       "hc_rule": "160",
       "difficulty": 1
     },
@@ -197,7 +197,7 @@
         "Straight up"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 185 tells you to give way to traffic coming from your right.",
+      "explain": "Rule 185: To give way to traffic coming from your right.",
       "hc_rule": "185",
       "difficulty": 1
     },
@@ -212,14 +212,14 @@
         "Use hazard lights"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 186 requires a left signal on approach for the first exit.",
+      "explain": "Rule 186: A left signal on approach for the first exit.",
       "hc_rule": "186",
       "difficulty": 1
     },
     {
       "id": "qb_rbt_se_6",
       "rule": "GB.RBT.SIGNAL_EXIT",
-      "question": "If you are taking the third exit, when do you switch to a left exit signal?",
+      "question": "If you are taking the third exit. When do you switch to a left exit signal?",
       "options": [
         "Just after passing the second exit",
         "Before entering the roundabout",
@@ -257,7 +257,7 @@
         "Red zig-zags"
       ],
       "answer": 0,
-      "explain": "Rule 178: an ASL has a first stop line for motor vehicles and a second line ahead for cyclists.",
+      "explain": "Rule 178: An ASL has a first stop line for motor vehicles. A second line ahead for cyclists.",
       "hc_rule": "178",
       "difficulty": 1
     },
@@ -272,8 +272,23 @@
         "To avoid speed cameras"
       ],
       "answer": 1,
-      "explain": "Rule 175: stopping behind the line keeps pedestrians safe and out of traffic.",
+      "explain": "Rule 175: Stopping behind the line keeps pedestrians safe and out of traffic.",
       "hc_rule": "175",
+      "difficulty": 1
+    },
+    {
+      "id": "qb_jct_tfg_7",
+      "rule": "GB.JCT.TURN_FAR_GAP",
+      "question": "What is wrong with forcing an oncoming driver to brake when you turn right?",
+      "options": [
+        "It is safe if you signal",
+        "It is a serious fault and risks a head-on crash",
+        "It only matters on motorways",
+        "It saves fuel"
+      ],
+      "answer": 1,
+      "explain": "Rule 180: Never cut across oncoming traffic and force it to brake.",
+      "hc_rule": "180",
       "difficulty": 1
     },
     {
@@ -287,23 +302,8 @@
         "Signalling to exit"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 186 warns against drifting into another lane on roundabouts.",
+      "explain": "Rule 186: Against drifting into another lane on roundabouts.",
       "hc_rule": "186",
-      "difficulty": 1
-    },
-    {
-      "id": "qb_jct_stop_6",
-      "rule": "GB.JCT.STOP_SIGN",
-      "question": "What shape is a UK stop sign?",
-      "options": [
-        "Triangle",
-        "Circle",
-        "Eight-sided octagon",
-        "Square"
-      ],
-      "answer": 2,
-      "explain": "Rule 171: the stop sign is uniquely eight-sided so you can recognise it even in snow or from behind.",
-      "hc_rule": "171",
       "difficulty": 1
     },
     {
@@ -332,23 +332,8 @@
         "Only at night"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 174 makes a specific exception when turning right and waiting for oncoming traffic.",
+      "explain": "Rule 174: makes a specific exception when turning right and waiting for oncoming traffic.",
       "hc_rule": "174",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_gap_9",
-      "rule": "GB.GAP.TWO_SECOND",
-      "question": "If a large lorry is in front of you, why should you stay well back?",
-      "options": [
-        "So you can see past it and its driver can see you in their mirrors",
-        "Because lorries cannot brake",
-        "To stay in its blind spot",
-        "To save screenwash"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 126 helps you stay visible and see further ahead.",
-      "hc_rule": "126",
       "difficulty": 2
     },
     {
@@ -369,7 +354,7 @@
     {
       "id": "qb_spd_9",
       "rule": "GB.SPD.OVER_LIMIT",
-      "question": "When you see temporary orange or red 50 mph roadworks signs, what is the legal limit?",
+      "question": "When you see temporary orange or red 50 mph roadworks signs. What is the legal limit?",
       "options": [
         "50 mph",
         "70 mph",
@@ -379,201 +364,6 @@
       "answer": 0,
       "explain": "Highway Code Rule 124 applies to temporary mandatory speed limits at roadworks.",
       "hc_rule": "124",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_cyc_10",
-      "rule": "GB.VRU.PASS_CYCLIST",
-      "question": "Before turning left soon after passing a cyclist, what must you check?",
-      "options": [
-        "Do not overtake and immediately cut across the cyclist's path",
-        "Always turn sharply in front of them",
-        "Sound your horn",
-        "Assume they will brake"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 163 and Rule 182 warn against 'left hooks' across cyclists.",
-      "hc_rule": "163",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_rbt_gw_9",
-      "rule": "GB.RBT.GIVE_WAY_RIGHT",
-      "question": "Why should you also glance left and ahead as you pull onto a roundabout?",
-      "options": [
-        "Traffic ahead may stop suddenly or a pedestrian may cross",
-        "Cars circulate anti-clockwise",
-        "To check shop signs",
-        "Nothing can be ahead of you"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 185 checks both circulating traffic from the right and hazards ahead.",
-      "hc_rule": "185",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_rbt_sa_8",
-      "rule": "GB.RBT.SIGNAL_APPROACH",
-      "question": "When should you start your approach signal for a roundabout?",
-      "options": [
-        "In good time before reaching the give-way line",
-        "After you are already on the roundabout",
-        "Only once you exit",
-        "Never"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 186 and Rule 103 require early, clear approach signals.",
-      "hc_rule": "186",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_rbt_se_8",
-      "rule": "GB.RBT.SIGNAL_EXIT",
-      "question": "When taking the first exit to the left, what happens to your left signal?",
-      "options": [
-        "Keep signalling left all the way around into the exit",
-        "Cancel it at the give-way line",
-        "Switch to a right signal",
-        "Turn on hazards"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 186 keeps the left signal on from approach through the first exit.",
-      "hc_rule": "186",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_rbt_ww_8",
-      "rule": "GB.RBT.WRONG_WAY",
-      "question": "At a double mini-roundabout, how do you pass each painted white circle?",
-      "options": [
-        "Go clockwise around each mini-roundabout in turn",
-        "Cut straight across the second one anti-clockwise",
-        "Stop between them and reverse",
-        "Drive over the centre of both"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 185 and Rule 188 require treating each mini-roundabout separately and passing clockwise.",
-      "hc_rule": "185",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_tl_asl_7",
-      "rule": "GB.TL.ASL",
-      "question": "May a motorcycle stop inside a cyclist advanced stop box on red?",
-      "options": [
-        "Yes, always",
-        "No, motor vehicles must stop behind the first white line",
-        "Yes, if turning left",
-        "Yes, at night"
-      ],
-      "answer": 1,
-      "explain": "Rule 178: the ASL box is for pedal cyclists only.",
-      "hc_rule": "178",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_tl_red_7",
-      "rule": "GB.TL.RED",
-      "question": "An emergency vehicle with flashing blue lights comes behind you while you wait at a red light. Should you cross the red line?",
-      "options": [
-        "Yes, always run the red light",
-        "No, do not break the law by crossing the red line",
-        "Drive onto the pavement",
-        "Reverse into the car behind"
-      ],
-      "answer": 1,
-      "explain": "Rule 219: make room safely if you can without crossing the stop line on red or mounting the kerb.",
-      "hc_rule": "219",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_jct_gw_11",
-      "rule": "GB.JCT.GIVE_WAY",
-      "question": "When turning left from a side road onto a main road, which direction is the main danger first?",
-      "options": [
-        "Traffic approaching from your right",
-        "Traffic behind you only",
-        "Aircraft",
-        "Traffic two streets away"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 172 checks right first for nearside flow, and left for overtaking traffic.",
-      "hc_rule": "172",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_obs_lc_11",
-      "rule": "GB.OBS.LANE_CHANGE",
-      "question": "When two lanes merge into one, how should you treat a driver alongside you?",
-      "options": [
-        "Race ahead to beat them",
-        "Leave space and merge in turn safely",
-        "Block them with your car",
-        "Sound your horn continuously"
-      ],
-      "answer": 1,
-      "explain": "Highway Code Rule 133 and merging advice promote safe, courteous lane changes.",
-      "hc_rule": "133",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_rbt_sil_8",
-      "rule": "GB.RBT.STAY_IN_LANE",
-      "question": "When exiting a two-lane roundabout from the inner lane, which lane on a two-lane exit road should you join?",
-      "options": [
-        "The right-hand lane of the exit road, then move left when safe",
-        "Cut straight across into the left exit lane in front of outer traffic",
-        "The central reservation",
-        "The oncoming lane"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 186 keeps inner-lane traffic in the matching right exit lane unless clear.",
-      "hc_rule": "186",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_jct_stop_5",
-      "rule": "GB.JCT.STOP_SIGN",
-      "question": "After stopping at the white line, you still cannot see clearly. What should you do?",
-      "options": [
-        "Accelerate quickly",
-        "Creep forward slowly until you can see",
-        "Reverse back",
-        "Close your eyes"
-      ],
-      "answer": 1,
-      "explain": "Rule 171: stop at the line first, then edge forward slowly to get a clear view before pulling out.",
-      "hc_rule": "171",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_zz_10",
-      "rule": "GB.XNG.ZIGZAG_OVERTAKE",
-      "question": "You are approaching a crossing and see a cyclist ahead inside the zig-zag lines. What should you do?",
-      "options": [
-        "Hold back behind the cyclist until past the crossing",
-        "Overtake them inside the zig-zags",
-        "Flash your lights",
-        "Mount the kerb"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 191 forbids overtaking any vehicle inside the zig-zag zone.",
-      "hc_rule": "191",
-      "difficulty": 2
-    },
-    {
-      "id": "qb_box_10",
-      "rule": "GB.JCT.BOX",
-      "question": "You are turning right at a box junction, and the road you want to turn into is jammed full. May you enter the box?",
-      "options": [
-        "No, because your exit road is blocked",
-        "Yes, always when turning right",
-        "Yes, for 10 seconds",
-        "Yes, if you signal right"
-      ],
-      "answer": 0,
-      "explain": "Highway Code Rule 174 only allows waiting in the box if your exit road itself is clear.",
-      "hc_rule": "174",
       "difficulty": 2
     },
     {
@@ -607,9 +397,219 @@
       "difficulty": 2
     },
     {
+      "id": "qb_obs_lc_9",
+      "rule": "GB.OBS.LANE_CHANGE",
+      "question": "If the lane you want to enter has faster traffic, what should you do?",
+      "options": [
+        "Pull out and let them brake",
+        "Wait for a safe gap so they do not have to slow down",
+        "Signal for one second then steer",
+        "Straddle the white line"
+      ],
+      "answer": 1,
+      "explain": "Rule 133: Waiting so faster vehicles do not have to slow down.",
+      "hc_rule": "133",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_pos_kl_8",
+      "rule": "GB.POS.KEEP_LEFT",
+      "question": "What does keeping left help prevent on narrow residential streets?",
+      "options": [
+        "Fuel use",
+        "Head-on conflicts with oncoming traffic",
+        "Traffic lights changing",
+        "Speed bumps"
+      ],
+      "answer": 1,
+      "explain": "Rule 160: Staying on your side leaves a clear path for oncoming drivers and cyclists.",
+      "hc_rule": "160",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_rbt_gw_8",
+      "rule": "GB.RBT.GIVE_WAY_RIGHT",
+      "question": "What should you do if a car is. Already on the roundabout to your right and close?",
+      "options": [
+        "Stop behind the give-way line and wait for a safe gap",
+        "Accelerate hard in front of it",
+        "Sound your horn and enter",
+        "Wave it to stop"
+      ],
+      "answer": 0,
+      "explain": "Rule 185: Waiting until there is a safe gap.",
+      "hc_rule": "185",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_rbt_sa_8",
+      "rule": "GB.RBT.SIGNAL_APPROACH",
+      "question": "When should you start your approach signal for a roundabout?",
+      "options": [
+        "In good time before reaching the give-way line",
+        "After you are already on the roundabout",
+        "Only once you exit",
+        "Never"
+      ],
+      "answer": 0,
+      "explain": "Highway Code Rule 186 and Rule 103 require early, clear approach signals.",
+      "hc_rule": "186",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_rbt_se_7",
+      "rule": "GB.RBT.SIGNAL_EXIT",
+      "question": "Why should you not signal left before passing the exit before yours?",
+      "options": [
+        "Drivers waiting at that earlier exit may think you are turning off and pull out",
+        "Your indicator will break",
+        "It uses extra fuel",
+        "It slows the car down"
+      ],
+      "answer": 0,
+      "explain": "Highway Code Rule 186 prevents early exit signals from misleading waiting drivers.",
+      "hc_rule": "186",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_rbt_ww_4",
+      "rule": "GB.RBT.WRONG_WAY",
+      "question": "If you want to make a U-turn at a roundabout, how must you do it?",
+      "options": [
+        "Turn right immediately before the island",
+        "Drive all the way around the island clockwise and exit back",
+        "Reverse onto the exit road",
+        "Cross the central grass"
+      ],
+      "answer": 1,
+      "explain": "Highway Code Rule 186 shows you must travel clockwise around the roundabout to return.",
+      "hc_rule": "186",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_tl_asl_6",
+      "rule": "GB.TL.ASL",
+      "question": "Before moving off on green at an ASL, where should you check for cyclists?",
+      "options": [
+        "Your nearside mirror and blind spot, and ahead",
+        "Only behind you",
+        "Only to the right",
+        "Nowhere"
+      ],
+      "answer": 0,
+      "explain": "Rule 178: Check both ahead. To your left in case a cyclist is moving alongside you.",
+      "hc_rule": "178",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_tl_red_5",
+      "rule": "GB.TL.RED",
+      "question": "What if you accidentally stop with your front bumper over the white line on red?",
+      "options": [
+        "Drive across the junction anyway",
+        "Stop and wait there without entering the crossing or junction",
+        "Reverse fast without looking",
+        "Sound your horn"
+      ],
+      "answer": 1,
+      "explain": "Rule 175: Never cross the junction on red; wait safely for green.",
+      "hc_rule": "175",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_jct_gw_11",
+      "rule": "GB.JCT.GIVE_WAY",
+      "question": "When turning left from a side road onto a main road. Which direction is the main danger first?",
+      "options": [
+        "Traffic approaching from your right",
+        "Traffic behind you only",
+        "Aircraft",
+        "Traffic two streets away"
+      ],
+      "answer": 0,
+      "explain": "Highway Code Rule 172 checks right first for nearside flow, and left for overtaking traffic.",
+      "hc_rule": "172",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_jct_tfg_5",
+      "rule": "GB.JCT.TURN_FAR_GAP",
+      "question": "While waiting to turn right, where should your front wheels point?",
+      "options": [
+        "Turned sharply right into the oncoming lane",
+        "Straight ahead until it is safe to turn",
+        "Turned left toward the kerb",
+        "Over the white centre line"
+      ],
+      "answer": 1,
+      "explain": "Rule 180: Keep wheels straight so a rear shunt does not push you right.",
+      "hc_rule": "180",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_rbt_sil_3",
+      "rule": "GB.RBT.STAY_IN_LANE",
+      "question": "What should you do if you realise you. Are in the wrong lane on a busy roundabout?",
+      "options": [
+        "Stop dead and reverse",
+        "Swerve across two lanes immediately",
+        "Follow your lane safely, take that exit, and turn around later",
+        "Drive clockwise twice without signalling"
+      ],
+      "answer": 2,
+      "explain": "Highway Code Rule 186 recommends staying safe in your lane rather than cutting across traffic.",
+      "hc_rule": "186",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_zz_10",
+      "rule": "GB.XNG.ZIGZAG_OVERTAKE",
+      "question": "You are approaching a crossing and see a cyclist ahead inside the zig-zag lines. What should you do?",
+      "options": [
+        "Hold back behind the cyclist until past the crossing",
+        "Overtake them inside the zig-zags",
+        "Flash your lights",
+        "Mount the kerb"
+      ],
+      "answer": 0,
+      "explain": "Highway Code Rule 191 forbids overtaking any vehicle inside the zig-zag zone.",
+      "hc_rule": "191",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_box_10",
+      "rule": "GB.JCT.BOX",
+      "question": "You are turning right at a box junction. And the road you want to turn into is jammed full. May you enter the box?",
+      "options": [
+        "No, because your exit road is blocked",
+        "Yes, always when turning right",
+        "Yes, for 10 seconds",
+        "Yes, if you signal right"
+      ],
+      "answer": 0,
+      "explain": "Rule 174: only allows waiting in the box if your exit road itself is clear.",
+      "hc_rule": "174",
+      "difficulty": 2
+    },
+    {
+      "id": "qb_gap_11",
+      "rule": "GB.GAP.TWO_SECOND",
+      "question": "What phrase helps drivers count two seconds cleanly?",
+      "options": [
+        "Say 'Only a fool breaks the two-second rule'",
+        "Count to ten fast",
+        "Blink twice",
+        "Hold your breath"
+      ],
+      "answer": 0,
+      "explain": "Highway Code Rule 126 suggests a steady two-second count past a fixed landmark.",
+      "hc_rule": "126",
+      "difficulty": 2
+    },
+    {
       "id": "qb_rbt_lane_12",
       "rule": "GB.RBT.APPROACH_LANE",
-      "question": "On a dual-lane exit roundabout where both lanes lead straight ahead, how should you pick your approach lane?",
+      "question": "On a dual-lane exit roundabout where both lanes lead straight ahead. How should you pick your approach lane?",
       "options": [
         "Use the left lane unless you are overtaking or signs direct otherwise",
         "Always use the right lane",
@@ -624,7 +624,7 @@
     {
       "id": "qb_rbt_lane_13",
       "rule": "GB.RBT.APPROACH_LANE",
-      "question": "What if a cyclist ahead is in the left lane and intends to turn right at the roundabout?",
+      "question": "What if a cyclist ahead is in the left lane. Intends to turn right at the roundabout?",
       "options": [
         "Give them room and do not overtake closely on the approach",
         "Squeeze past them on the left",
@@ -632,7 +632,7 @@
         "Cut across them"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 186 warns that cyclists may stay in the left lane even when turning right.",
+      "explain": "Rule 186: Cyclists may stay in the left lane even when turning right.",
       "hc_rule": "186",
       "difficulty": 3
     },
@@ -652,6 +652,21 @@
       "difficulty": 3
     },
     {
+      "id": "qb_cyc_12",
+      "rule": "GB.VRU.PASS_CYCLIST",
+      "question": "Approaching a blind hill crest behind a slow cyclist, what should you do?",
+      "options": [
+        "Wait behind until you can see the oncoming road is clear",
+        "Overtake on the blind crest anyway",
+        "Sound your horn",
+        "Pass on the left kerb"
+      ],
+      "answer": 0,
+      "explain": "Rule 163: and Rule 166 forbid overtaking where you cannot see far enough ahead.",
+      "hc_rule": "163",
+      "difficulty": 3
+    },
+    {
       "id": "qb_sig_12",
       "rule": "GB.SIG.TIMELY",
       "question": "Two side roads are close together on your left and you want the second one. When should you signal?",
@@ -662,14 +677,14 @@
         "Do not signal at all"
       ],
       "answer": 0,
-      "explain": "Highway Code Rule 103 warns not to signal before an earlier turning you are not taking.",
+      "explain": "Rule 103: Not to signal before an earlier turning you are not taking.",
       "hc_rule": "103",
       "difficulty": 3
     },
     {
       "id": "qb_spd_12",
       "rule": "GB.SPD.OVER_LIMIT",
-      "question": "If you drive down a steep hill, what must you watch to stay within the limit?",
+      "question": "If you drive down a steep hill. What must you watch to stay within the limit?",
       "options": [
         "Your speed can creep up without pressing the accelerator",
         "Your wipers slow down",
@@ -684,7 +699,7 @@
     {
       "id": "qb_jct_gw_4",
       "rule": "GB.JCT.GIVE_WAY",
-      "question": "If a vehicle on the main road is flashing its headlights at you, what should you assume?",
+      "question": "If a vehicle on the main road is flashing its headlights at you. What should you assume?",
       "options": [
         "It is always safe to pull out",
         "Wait until you are sure the way is clear and safe",
@@ -692,7 +707,7 @@
         "You have legal priority"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 172 means you stay responsible for pulling out only when it is genuinely safe.",
+      "explain": "Rule 172: means you stay responsible for pulling out only when it is genuinely safe.",
       "hc_rule": "172",
       "difficulty": 3
     },
@@ -707,7 +722,7 @@
         "Without signalling so others do not speed up"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 133 advises not weaving between lanes or cutting across other drivers.",
+      "explain": "Rule 133: Not weaving between lanes or cutting across other drivers.",
       "hc_rule": "133",
       "difficulty": 3
     },
@@ -739,21 +754,6 @@
       "answer": 0,
       "explain": "Highway Code Rule 186 and Rule 103 require cancelling your signal once clear.",
       "hc_rule": "186",
-      "difficulty": 3
-    },
-    {
-      "id": "qb_tl_red_6",
-      "rule": "GB.TL.RED",
-      "question": "What should you do if temporary roadworks traffic lights are stuck on red for a long time?",
-      "options": [
-        "Drive through anyway",
-        "Wait and check if they are faulty before moving only with extreme care",
-        "Drive on the pavement",
-        "Overtake the queue"
-      ],
-      "answer": 1,
-      "explain": "Rule 176: never assume a red light is broken quickly; only proceed with extreme caution if clearly failed.",
-      "hc_rule": "176",
       "difficulty": 3
     }
   ]

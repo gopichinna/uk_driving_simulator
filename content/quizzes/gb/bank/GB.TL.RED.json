@@ -10,14 +10,14 @@
       "Proceed with care"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 175 says red means stop and wait behind the stop line.",
+    "explain": "Rule 175: Red means stop and wait behind the stop line.",
     "hc_rule": "175",
     "difficulty": 1
   },
   {
     "id": "qb_tl_red_2",
     "rule": "GB.TL.RED",
-    "question": "In Great Britain, may you turn left at a red traffic light if the road is clear?",
+    "question": "In Great Britain, may you turn left at. A red traffic light if the road is clear?",
     "options": [
       "Yes, always",
       "No, you must wait for green",
@@ -25,7 +25,7 @@
       "Yes, if no pedestrians are waiting"
     ],
     "answer": 1,
-    "explain": "Rule 175: unlike some countries, there is no turn on red in Great Britain unless a green arrow shows.",
+    "explain": "Rule 175: Unlike some countries. There is no turn on red in Great Britain unless a green arrow shows.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "Beside the light pole"
     ],
     "answer": 1,
-    "explain": "Rule 175: you must keep all of your vehicle behind the white stop line.",
+    "explain": "Rule 175: You must keep all of your vehicle behind the white stop line.",
     "hc_rule": "175",
     "difficulty": 1
   },
@@ -55,7 +55,7 @@
       "Make a U-turn"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 177 allows you to move only in the direction of the green filter arrow.",
+    "explain": "Rule 177: allows you to move only in the direction of the green filter arrow.",
     "hc_rule": "177",
     "difficulty": 2
   },
@@ -70,14 +70,14 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Rule 175: never cross the junction on red; wait safely for green.",
+    "explain": "Rule 175: Never cross the junction on red; wait safely for green.",
     "hc_rule": "175",
     "difficulty": 2
   },
   {
     "id": "qb_tl_red_6",
     "rule": "GB.TL.RED",
-    "question": "What should you do if temporary roadworks traffic lights are stuck on red for a long time?",
+    "question": "What should you do if temporary roadworks traffic. Lights are stuck on red for a long time?",
     "options": [
       "Drive through anyway",
       "Wait and check if they are faulty before moving only with extreme care",
@@ -85,14 +85,14 @@
       "Overtake the queue"
     ],
     "answer": 1,
-    "explain": "Rule 176: never assume a red light is broken quickly; only proceed with extreme caution if clearly failed.",
+    "explain": "Rule 176: Never assume a red light is broken quickly. Only proceed with extreme caution if clearly failed.",
     "hc_rule": "176",
     "difficulty": 3
   },
   {
     "id": "qb_tl_red_7",
     "rule": "GB.TL.RED",
-    "question": "An emergency vehicle with flashing blue lights comes behind you while you wait at a red light. Should you cross the red line?",
+    "question": "An emergency vehicle with flashing blue lights comes behind you. While you wait at a red light. Should you cross the red line?",
     "options": [
       "Yes, always run the red light",
       "No, do not break the law by crossing the red line",
@@ -100,7 +100,7 @@
       "Reverse into the car behind"
     ],
     "answer": 1,
-    "explain": "Rule 219: make room safely if you can without crossing the stop line on red or mounting the kerb.",
+    "explain": "Rule 219: Make room safely if you can without. Crossing the stop line on red or mounting the kerb.",
     "hc_rule": "219",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "To avoid speed cameras"
     ],
     "answer": 1,
-    "explain": "Rule 175: stopping behind the line keeps pedestrians safe and out of traffic.",
+    "explain": "Rule 175: Stopping behind the line keeps pedestrians safe and out of traffic.",
     "hc_rule": "175",
     "difficulty": 1
   }

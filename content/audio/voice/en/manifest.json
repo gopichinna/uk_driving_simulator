@@ -41,6 +41,12 @@
       "durationS": 9.131
     },
     {
+      "key": "lesson.gb-s1-29-turning-left-right.learn",
+      "file": "lesson.gb-s1-29-turning-left-right.learn.wav",
+      "text": "Signal left at least 2 seconds before turning left at a junction. When turning right, wait for a 3.5 second clear gap in oncoming traffic. The 2 s and 3.5 s thresholds are game assumptions pending ADI review.",
+      "durationS": 13.853
+    },
+    {
       "key": "lesson.gb-s2-07-traffic-lights-amber.learn",
       "file": "lesson.gb-s2-07-traffic-lights-amber.learn.wav",
       "text": "You must stop behind the white line on red. Amber means stop unless you are too close to stop safely. Wait for green on red and amber; never turn on red.",
@@ -243,6 +249,30 @@
       "file": "scenario.s1_06_turn_south.brief.wav",
       "text": "Position neatly near the centre line and turn into the left lane.",
       "durationS": 3.733
+    },
+    {
+      "key": "scenario.s1_29_left_early_signal.brief",
+      "file": "scenario.s1_29_left_early_signal.brief.wav",
+      "text": "Signal left at least 2 seconds early and keep close to the kerb.",
+      "durationS": 3.665
+    },
+    {
+      "key": "scenario.s1_29_left_no_signal.brief",
+      "file": "scenario.s1_29_left_no_signal.brief.wav",
+      "text": "See how turning left without an early signal gives a minor fault.",
+      "durationS": 3.423
+    },
+    {
+      "key": "scenario.s1_29_right_clear_gap.brief",
+      "file": "scenario.s1_29_right_clear_gap.brief.wav",
+      "text": "Wait for a 3.5 second clear gap before turning right.",
+      "durationS": 3.492
+    },
+    {
+      "key": "scenario.s1_29_right_oncoming_cut.brief",
+      "file": "scenario.s1_29_right_oncoming_cut.brief.wav",
+      "text": "Hold back for oncoming cars so none have to brake for you.",
+      "durationS": 2.894
     },
     {
       "key": "scenario.s2_07_signals_left.brief",
@@ -747,6 +777,42 @@
       "file": "voice.GB.JCT.STOP_SIGN.good.v3.wav",
       "text": "Safe full stop at the stop line.",
       "durationS": 1.801
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.fault",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.fault.wav",
+      "text": "Wait for a safe gap before turning right across traffic.",
+      "durationS": 2.841
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.fault.v2",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.fault.v2.wav",
+      "text": "Hold back so oncoming cars do not have to brake.",
+      "durationS": 2.581
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.fault.v3",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.fault.v3.wav",
+      "text": "Let oncoming traffic pass before you turn right.",
+      "durationS": 2.347
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.good",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.good.wav",
+      "text": "Good patience waiting for a safe right-turn gap.",
+      "durationS": 2.516
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.good.v2",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.good.v2.wav",
+      "text": "Clean right turn with plenty of oncoming space.",
+      "durationS": 2.571
+    },
+    {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.good.v3",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.good.v3.wav",
+      "text": "Safe timing turning right across the main road.",
+      "durationS": 2.291
     },
     {
       "key": "voice.GB.JCT.TURN_NEAR.fault",

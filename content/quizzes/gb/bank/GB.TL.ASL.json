@@ -10,7 +10,7 @@
       "A loading zone"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 178 explains that advanced stop lines give cyclists space at the front of the queue.",
+    "explain": "Rule 178: Advanced stop lines give cyclists space at the front of the queue.",
     "hc_rule": "178",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "Over the zebra stripes"
     ],
     "answer": 1,
-    "explain": "Rule 178: you must stop at the first white line so the cycle box stays clear for cyclists.",
+    "explain": "Rule 178: You must stop at the first white line. So the cycle box stays clear for cyclists.",
     "hc_rule": "178",
     "difficulty": 1
   },
   {
     "id": "qb_tl_asl_3",
     "rule": "GB.TL.ASL",
-    "question": "You have already crossed the first white line when the light turns amber and you cannot stop safely there. What must you do?",
+    "question": "You have already crossed the first white line. When the light turns amber and you cannot stop safely there. What must you do?",
     "options": [
       "Keep driving through red",
       "Stop at the second white line",
@@ -40,14 +40,14 @@
       "Mount the kerb"
     ],
     "answer": 1,
-    "explain": "Rule 178 says if you cannot stop safely at the first line, stop at the second white line.",
+    "explain": "Rule 178 says if you cannot stop safely at the first line. Stop at the second white line.",
     "hc_rule": "178",
     "difficulty": 2
   },
   {
     "id": "qb_tl_asl_4",
     "rule": "GB.TL.ASL",
-    "question": "When the lights turn green and cyclists are inside the ASL box, what should you do?",
+    "question": "When the lights turn green and cyclists are inside the ASL box. What should you do?",
     "options": [
       "Overtake them inside the junction",
       "Give them time and space to move off safely",
@@ -55,14 +55,14 @@
       "Edge into the box behind them"
     ],
     "answer": 1,
-    "explain": "Rule 178: let cyclists pull away safely and leave plenty of room when passing.",
+    "explain": "Rule 178: Let cyclists pull away safely and leave plenty of room when passing.",
     "hc_rule": "178",
     "difficulty": 1
   },
   {
     "id": "qb_tl_asl_5",
     "rule": "GB.TL.ASL",
-    "question": "Why should you not stop inside the cycle box even if no cyclist is there yet?",
+    "question": "Why should you not stop inside the cycle box. Even if no cyclist is there yet?",
     "options": [
       "The paint is slippery",
       "Cyclists may ride up the left side to use it",
@@ -70,7 +70,7 @@
       "It turns the lights red"
     ],
     "answer": 1,
-    "explain": "Rule 178: cyclists filter forward to reach the box safely before the lights change.",
+    "explain": "Rule 178: Cyclists filter forward to reach the box safely before the lights change.",
     "hc_rule": "178",
     "difficulty": 2
   },
@@ -85,7 +85,7 @@
       "Nowhere"
     ],
     "answer": 0,
-    "explain": "Rule 178: check both ahead and to your left in case a cyclist is moving alongside you.",
+    "explain": "Rule 178: Check both ahead. To your left in case a cyclist is moving alongside you.",
     "hc_rule": "178",
     "difficulty": 2
   },
@@ -100,7 +100,7 @@
       "Yes, at night"
     ],
     "answer": 1,
-    "explain": "Rule 178: the ASL box is for pedal cyclists only.",
+    "explain": "Rule 178: The ASL box is for pedal cyclists only.",
     "hc_rule": "178",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "Red zig-zags"
     ],
     "answer": 0,
-    "explain": "Rule 178: an ASL has a first stop line for motor vehicles and a second line ahead for cyclists.",
+    "explain": "Rule 178: An ASL has a first stop line for motor vehicles. A second line ahead for cyclists.",
     "hc_rule": "178",
     "difficulty": 1
   }

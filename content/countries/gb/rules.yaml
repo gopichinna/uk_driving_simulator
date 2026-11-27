@@ -513,6 +513,10 @@ rules:
   phase: P
   verifiedOn: '2026-11-25'
   detection: Same conflict logic as GIVE_WAY
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.RightTurnGapRule
+    file: core/Rules.Core/TownRules.cs
 - id: GB.JCT.TURN_NEAR
   group: D. Junctions and priority (JCT)
   plainEnglish: 'Left turn: keep to the left; give way to cycle, bus and tram lanes you cross'

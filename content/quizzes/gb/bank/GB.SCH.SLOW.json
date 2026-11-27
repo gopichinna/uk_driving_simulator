@@ -10,7 +10,7 @@
       "Use full beam"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 208 warns you to drive slowly near schools and watch for children.",
+    "explain": "Rule 208: You to drive slowly near schools and watch for children.",
     "hc_rule": "208",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "They use headlights"
     ],
     "answer": 1,
-    "explain": "Rule 208: children are smaller than parked cars and can step into the road without warning.",
+    "explain": "Rule 208: Children are smaller than parked cars. Can step into the road without warning.",
     "hc_rule": "208",
     "difficulty": 1
   },
   {
     "id": "qb_sch_slow_3",
     "rule": "GB.SCH.SLOW",
-    "question": "What must you do when a school crossing patrol holds up a red and yellow Stop sign?",
+    "question": "What must you do. When a school crossing patrol holds up a red and yellow Stop sign?",
     "options": [
       "Slow down and weave past",
       "Stop and wait until they lower the sign",
@@ -40,7 +40,7 @@
       "Only stop if children are in your lane"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 210 says you must stop when signalled by a school crossing patrol.",
+    "explain": "Rule 210: You must stop when signalled by a school crossing patrol.",
     "hc_rule": "210",
     "difficulty": 1
   },
@@ -55,14 +55,14 @@
       "No left turn"
     ],
     "answer": 1,
-    "explain": "Rule 208: flashing amber lights show that a school crossing or children are active ahead.",
+    "explain": "Rule 208: Flashing amber lights show that a school crossing or children are active ahead.",
     "hc_rule": "208",
     "difficulty": 1
   },
   {
     "id": "qb_sch_slow_5",
     "rule": "GB.SCH.SLOW",
-    "question": "What do yellow 'SCHOOL KEEP CLEAR' zig-zag lines outside a school mean?",
+    "question": "What do yellow 'School Keep Clear' zig-zag lines outside a school mean?",
     "options": [
       "Short-stay parking only",
       "Do not wait, stop, or park there",
@@ -70,7 +70,7 @@
       "Bus lane"
     ],
     "answer": 1,
-    "explain": "Rule 238: keep school entrance zig-zags clear so children and drivers can see each other.",
+    "explain": "Rule 238: Keep school entrance zig-zags clear so children and drivers can see each other.",
     "hc_rule": "238",
     "difficulty": 1
   },
@@ -85,7 +85,7 @@
       "Overtake slower cars"
     ],
     "answer": 1,
-    "explain": "Rule 208: lower speed gives you much shorter stopping distance if a child steps out.",
+    "explain": "Rule 208: Lower speed gives you much shorter stopping distance if a child steps out.",
     "hc_rule": "208",
     "difficulty": 2
   },
@@ -100,7 +100,7 @@
       "Only in rain"
     ],
     "answer": 1,
-    "explain": "Rule 208: schools and playgrounds are used outside normal bell times too.",
+    "explain": "Rule 208: Schools and playgrounds are used outside normal bell times too.",
     "hc_rule": "208",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "Speed up"
     ],
     "answer": 1,
-    "explain": "Rule 208: a child may follow a ball into the road without looking.",
+    "explain": "Rule 208: A child may follow a ball into the road without looking.",
     "hc_rule": "208",
     "difficulty": 1
   }

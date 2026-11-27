@@ -10,7 +10,7 @@
       "Whichever is quieter"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 160 says you should keep to the left unless overtaking or turning right.",
+    "explain": "Rule 160: You should keep to the left unless overtaking or turning right.",
     "hc_rule": "160",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "At night only"
     ],
     "answer": 1,
-    "explain": "Rule 160: you only move right when overtaking, passing an obstruction, or turning right, and when it is safe.",
+    "explain": "Rule 160: You only move right when overtaking. Passing an obstruction, or turning right, and when it is safe.",
     "hc_rule": "160",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "Flash your headlights"
     ],
     "answer": 1,
-    "explain": "Rule 160: return to the left side smoothly once you are safely past.",
+    "explain": "Rule 160: Return to the left side smoothly once you are safely past.",
     "hc_rule": "160",
     "difficulty": 1
   },
@@ -55,7 +55,7 @@
       "Any lane"
     ],
     "answer": 2,
-    "explain": "Rule 160: highway Code Rule 264 says keep in the left lane unless overtaking.",
+    "explain": "Rule 160: Highway Code Rule 264 says keep in the left lane unless overtaking.",
     "hc_rule": "160",
     "difficulty": 2
   },
@@ -70,7 +70,7 @@
       "On the kerb"
     ],
     "answer": 1,
-    "explain": "Rule 160: always finish your turn on the left side of the new road.",
+    "explain": "Rule 160: Always finish your turn on the left side of the new road.",
     "hc_rule": "160",
     "difficulty": 1
   },
@@ -85,14 +85,14 @@
       "You will miss signs"
     ],
     "answer": 1,
-    "explain": "Rule 160: keeping left gives oncoming traffic room, especially where you cannot see round a bend.",
+    "explain": "Rule 160: Keeping left gives oncoming traffic room. Especially where you cannot see round a bend.",
     "hc_rule": "160",
     "difficulty": 2
   },
   {
     "id": "qb_pos_kl_7",
     "rule": "GB.POS.KEEP_LEFT",
-    "question": "If you pass a row of parked cars on your left, what should you do afterwards?",
+    "question": "If you pass a row of parked cars on your left. What should you do afterwards?",
     "options": [
       "Stay near the centre line",
       "Return to the left when there is room",
@@ -100,7 +100,7 @@
       "Sound your horn"
     ],
     "answer": 1,
-    "explain": "Rule 160: move back to the left once past the parked cars so oncoming traffic has space.",
+    "explain": "Rule 160: Move back to the left once past the parked cars. So oncoming traffic has space.",
     "hc_rule": "160",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "Speed bumps"
     ],
     "answer": 1,
-    "explain": "Rule 160: staying on your side leaves a clear path for oncoming drivers and cyclists.",
+    "explain": "Rule 160: Staying on your side leaves a clear path for oncoming drivers and cyclists.",
     "hc_rule": "160",
     "difficulty": 2
   }

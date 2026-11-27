@@ -10,7 +10,7 @@
       "Your horn and hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 133 says you must check mirrors and blind spots before changing lanes.",
+    "explain": "Rule 133: You must check mirrors and blind spots before changing lanes.",
     "hc_rule": "133",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "You have priority if you signal first"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 states you must not cut in or force others to slow down.",
+    "explain": "Rule 133: You must not cut in or force others to slow down.",
     "hc_rule": "133",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "To see if your brake lights work"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 warns that mirrors cannot cover every blind spot beside your car.",
+    "explain": "Rule 133: Mirrors cannot cover every blind spot beside your car.",
     "hc_rule": "133",
     "difficulty": 2
   },
@@ -55,7 +55,7 @@
       "Without signalling so others do not speed up"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 advises not weaving between lanes or cutting across other drivers.",
+    "explain": "Rule 133: Not weaving between lanes or cutting across other drivers.",
     "hc_rule": "133",
     "difficulty": 3
   },
@@ -70,7 +70,7 @@
       "Turn on hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 133 says to check mirrors and blind spots before changing lanes.",
+    "explain": "Rule 133: To check mirrors and blind spots before changing lanes.",
     "hc_rule": "133",
     "difficulty": 1
   },
@@ -85,7 +85,7 @@
       "Your left indicator is off"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 133 warns not to cut in front of the vehicle you overtook.",
+    "explain": "Rule 133: Not to cut in front of the vehicle you overtook.",
     "hc_rule": "133",
     "difficulty": 1
   },
@@ -100,7 +100,7 @@
       "Without using any signal"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 133 advises changing lanes smoothly in good time.",
+    "explain": "Rule 133: Changing lanes smoothly in good time.",
     "hc_rule": "133",
     "difficulty": 1
   },
@@ -130,7 +130,7 @@
       "Straddle the white line"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 requires waiting so faster vehicles do not have to slow down.",
+    "explain": "Rule 133: Waiting so faster vehicles do not have to slow down.",
     "hc_rule": "133",
     "difficulty": 2
   },
@@ -145,7 +145,7 @@
       "Road paint becomes slippery"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 says to make each lane change carefully with fresh checks.",
+    "explain": "Rule 133: To make each lane change carefully with fresh checks.",
     "hc_rule": "133",
     "difficulty": 2
   },
@@ -190,7 +190,7 @@
       "Brake hard in your lane"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 133 requires watching for motorcyclists before changing lanes.",
+    "explain": "Rule 133: Watching for motorcyclists before changing lanes.",
     "hc_rule": "133",
     "difficulty": 3
   }
