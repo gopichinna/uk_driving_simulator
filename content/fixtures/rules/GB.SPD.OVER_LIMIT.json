@@ -1,0 +1,171 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.SPD.OVER_LIMIT",
+  "hcRule": "Rule 124",
+  "drives": [
+    {
+      "id": "pass_cruise_30_in_30",
+      "kind": "pass",
+      "description": "Cruise steadily at 30 mph (13.4 m/s) in a 30 mph zone.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 80.4,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.OVER_LIMIT",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pass_brief_dip_under_1s",
+      "kind": "pass",
+      "description": "Touch 32 mph (14.3 m/s) for 1.0 s (< 1.5 s sustain) then ease back to 29 mph.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        },
+        {
+          "t": 1,
+          "x": 0,
+          "z": 13.6,
+          "headingDeg": 0,
+          "speedMps": 14.3,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 27.2,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": 0,
+          "z": 66.2,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.OVER_LIMIT",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "minor_33_in_30_sustained",
+      "kind": "minor",
+      "description": "Drive at 33 mph (14.8 m/s, +3 mph) for 4.0 s in a 30 mph zone.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 14.8,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 59.2,
+          "headingDeg": 0,
+          "speedMps": 14.8,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.OVER_LIMIT",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.0
+        }
+      ]
+    },
+    {
+      "id": "serious_37_in_30_sustained",
+      "kind": "serious",
+      "description": "Drive at 37 mph (16.5 m/s, +7 mph) for 4.0 s in a 30 mph zone.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 16.5,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 66.0,
+          "headingDeg": 0,
+          "speedMps": 16.5,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.OVER_LIMIT",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 2.0
+        }
+      ]
+    }
+  ]
+}

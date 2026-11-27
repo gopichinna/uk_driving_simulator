@@ -1,0 +1,210 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.SCH.SLOW",
+  "hcRule": "Rule 208",
+  "drives": [
+    {
+      "id": "pass_19mph_past_school",
+      "kind": "pass",
+      "description": "Hold 19 mph (8.5 m/s) within 100 m of school sign.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_zone",
+        "speedLimitMph": 30,
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 50
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.5,
+          "indicator": "off"
+        },
+        {
+          "t": 12,
+          "x": 0,
+          "z": 102.0,
+          "headingDeg": 0,
+          "speedMps": 8.5,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SCH.SLOW",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 12.0
+        }
+      ]
+    },
+    {
+      "id": "pass_slow_before_zone",
+      "kind": "pass",
+      "description": "Slow from 29 mph to 18 mph (8.0 m/s) before entering school zone.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_zone",
+        "speedLimitMph": 30,
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 130
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 21.0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 10,
+          "x": 0,
+          "z": 85.0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SCH.SLOW",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 10.0
+        }
+      ]
+    },
+    {
+      "id": "minor_28mph_empty_school",
+      "kind": "minor",
+      "description": "Drive at 28 mph (12.5 m/s) for 4 s past school sign with no pedestrians.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_zone",
+        "speedLimitMph": 30,
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 50
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 50.0,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SCH.SLOW",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.0
+        }
+      ]
+    },
+    {
+      "id": "serious_28mph_people_near",
+      "kind": "serious",
+      "description": "Drive at 28 mph (12.5 m/s) past school sign with pedestrian within 15 m.",
+      "environment": {
+        "pack": "wolverhampton-test-area",
+        "junctionKind": "school_zone",
+        "speedLimitMph": 30,
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 50
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 50.0,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "ped",
+          "kind": "pedestrian",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 4,
+              "z": 25,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "off"
+            },
+            {
+              "t": 4,
+              "x": 4,
+              "z": 25,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SCH.SLOW",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 2.0
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,242 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.JCT.TURN_NEAR",
+  "hcRule": "Rules 103 & 182",
+  "drives": [
+    {
+      "id": "pass_signal_25s_before_turn",
+      "kind": "pass",
+      "description": "Signal left 2.5 s before turning left into junction.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5,
+          "x": -13.0,
+          "z": 24.0,
+          "headingDeg": 270,
+          "speedMps": 5.0,
+          "indicator": "left"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_NEAR",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "pass_signal_3s_before_turn",
+      "kind": "pass",
+      "description": "Signal left 3.0 s early and turn smoothly left.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 30
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "left"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 30,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5,
+          "x": -16.0,
+          "z": 30.0,
+          "headingDeg": 270,
+          "speedMps": 6.0,
+          "indicator": "left"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_NEAR",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "minor_late_signal_05s",
+      "kind": "minor",
+      "description": "Signal left only 0.5 s before starting left turn.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2.5,
+          "x": 0,
+          "z": 20,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5,
+          "x": -13.0,
+          "z": 24.0,
+          "headingDeg": 270,
+          "speedMps": 5.0,
+          "indicator": "left"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_NEAR",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 4.5
+        }
+      ]
+    },
+    {
+      "id": "serious_no_signal_near_cyclist",
+      "kind": "serious",
+      "description": "Turn left without signalling while cyclist rides ahead on inside.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": -13.0,
+          "z": 24.0,
+          "headingDeg": 270,
+          "speedMps": 5.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c1",
+          "kind": "cyclist",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -1.5,
+              "z": 10,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": -1.5,
+              "z": 35,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_NEAR",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 4.5
+        }
+      ]
+    }
+  ]
+}

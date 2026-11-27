@@ -120,6 +120,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 28 | School zones | `GB.SPD.APPROPRIATE` | ⏳ |
 | 29 | Turning left and right at junctions | `GB.JCT.TURN_NEAR` | ✅ |
 | 29 | Turning left and right at junctions | `GB.POS.AFTER_TURN` | ⏳ |
+| 29 | Turning left and right at junctions | `GB.SIG.MISLEADING` | ✅ |
 | 29 | Turning left and right at junctions | `GB.SIG.TIMELY` | ✅ |
 | 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_GAP` | ✅ |
 | 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
@@ -151,6 +152,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 32 | The ring road | `GB.GAP.TWO_SECOND` | ✅ |
 | 32 | The ring road | `GB.JCT.GIVE_WAY` | ✅ |
 | 32 | The ring road | `GB.JCT.TURN_NEAR` | ✅ |
+| 32 | The ring road | `GB.SIG.MISLEADING` | ✅ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
@@ -172,6 +174,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.RBT.STAY_IN_LANE` | 4 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
 | `GB.SCH.SLOW` | 5 | ✅ >= 2 |
+| `GB.SIG.MISLEADING` | 2 | ✅ >= 2 |
 | `GB.SIG.TIMELY` | 16 | ✅ >= 2 |
 | `GB.SPD.OVER_LIMIT` | 19 | ✅ >= 2 |
 | `GB.TL.AMBER` | 3 | ✅ >= 2 |

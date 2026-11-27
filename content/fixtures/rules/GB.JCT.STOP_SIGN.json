@@ -1,0 +1,231 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.JCT.STOP_SIGN",
+  "hcRule": "Rule 171",
+  "drives": [
+    {
+      "id": "pass_full_stop",
+      "kind": "pass",
+      "description": "Come to complete stop (0.0 m/s) behind STOP line then cross.",
+      "environment": {
+        "pack": "suburb_practice",
+        "junctionKind": "stop_sign",
+        "speedLimitMph": 30,
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 16.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 16.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 8,
+          "x": 0,
+          "z": 24.0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.STOP_SIGN",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 8.0
+        }
+      ]
+    },
+    {
+      "id": "pass_stop_at_1m_before_line",
+      "kind": "pass",
+      "description": "Stop 1.0 m before STOP line for 1.5 s then emerge.",
+      "environment": {
+        "pack": "suburb_practice",
+        "junctionKind": "stop_sign",
+        "speedLimitMph": 30,
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 4,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 16.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5.5,
+          "x": 0,
+          "z": 16.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 8,
+          "x": 0,
+          "z": 25.0,
+          "headingDeg": 0,
+          "speedMps": 7.2,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.STOP_SIGN",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 8.0
+        }
+      ]
+    },
+    {
+      "id": "minor_slow_roll_04mps",
+      "kind": "minor",
+      "description": "Roll slowly across STOP line at 0.4 m/s without stopping completely.",
+      "environment": {
+        "pack": "suburb_practice",
+        "junctionKind": "stop_sign",
+        "speedLimitMph": 30,
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 12,
+          "headingDeg": 0,
+          "speedMps": 4.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 18.6,
+          "headingDeg": 0,
+          "speedMps": 0.4,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 19.8,
+          "headingDeg": 0,
+          "speedMps": 0.4,
+          "indicator": "off"
+        },
+        {
+          "t": 9,
+          "x": 0,
+          "z": 27.0,
+          "headingDeg": 0,
+          "speedMps": 4.4,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.STOP_SIGN",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "serious_drive_straight_through",
+      "kind": "serious",
+      "description": "Drive straight across STOP line at 10 m/s without slowing.",
+      "environment": {
+        "pack": "suburb_practice",
+        "junctionKind": "stop_sign",
+        "speedLimitMph": 30,
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 30.0,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.STOP_SIGN",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 1.8
+        }
+      ]
+    }
+  ]
+}

@@ -92,6 +92,10 @@ rules:
   detection: Indicator direction ≠ executed connector; indicator left on near a junction and an AI vehicle emerges because
     of it
   teachingMoment: Shows the side-road driver's view of your signal
+  implementation:
+    status: implemented
+    class: LToLocal.Rules.SignalCancelRule
+    file: core/Rules.Core/SignalCancelRule.cs
 - id: GB.SIG.HEADLIGHT_FLASH
   group: A. Observation, signalling, road position (OBS / SIG / POS)
   plainEnglish: Flash headlights only to show you are there. Never assume someone's flash means "go"

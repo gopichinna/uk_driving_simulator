@@ -32,6 +32,13 @@
       "hcRule": "Rule 103",
       "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
     },
+    "GB.SIG.MISLEADING": {
+      "rule": "[Cáncél yóúr índícátór prómptly áftér túrníng ánd ávóíd mísléádíng sígnáls. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "why": "[Á língéríng sígnál mákés wáítíng drívérs púll óút ín frónt óf yóú. ~~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "mistake": "[Léávíng yóúr índícátór fláshíng fór sévérál sécónds áftér á túrn. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
+      "hcRule": "Rule 103",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
     "GB.POS.KEEP_LEFT": {
       "rule": "[Kéép tó thé léft láné únléss yóú áré óvértákíng ór túrníng ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",
       "why": "[Stáyíng léft kééps fástér tráffíc flówíng smóóthly ón yóúr ríght. ~~~~~~~~~~~~~~~~~~~~~~~~~~]",

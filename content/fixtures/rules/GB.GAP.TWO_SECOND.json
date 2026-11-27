@@ -1,0 +1,247 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.GAP.TWO_SECOND",
+  "hcRule": "Rule 126",
+  "drives": [
+    {
+      "id": "pass_26s_gap",
+      "kind": "pass",
+      "description": "Follow leader at 30 mph (13.4 m/s) with 39 m centre distance (2.6 s gap).",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 80.4,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "lead",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 39,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": 0,
+              "z": 119.4,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.GAP.TWO_SECOND",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pass_slow_queue_under_20mph",
+      "kind": "pass",
+      "description": "Follow leader in slow 13 mph (6.0 m/s) queue below 20 mph threshold.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": 0,
+          "z": 30.0,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "lead",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 10,
+              "headingDeg": 0,
+              "speedMps": 6.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 0,
+              "z": 40.0,
+              "headingDeg": 0,
+              "speedMps": 6.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.GAP.TWO_SECOND",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "minor_15s_gap_for_4s",
+      "kind": "minor",
+      "description": "Tailgate at 30 mph (13.4 m/s) with 1.5 s gap for 4.5 s.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        },
+        {
+          "t": 4.5,
+          "x": 0,
+          "z": 60.3,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "lead",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 24.4,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            },
+            {
+              "t": 4.5,
+              "x": 0,
+              "z": 84.7,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.GAP.TWO_SECOND",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 3.2
+        }
+      ]
+    },
+    {
+      "id": "serious_06s_gap_for_3s",
+      "kind": "serious",
+      "description": "Tailgate at 30 mph (13.4 m/s) with 0.6 s gap (< 1.0 s) for 3.5 s.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        },
+        {
+          "t": 3.5,
+          "x": 0,
+          "z": 46.9,
+          "headingDeg": 0,
+          "speedMps": 13.4,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "lead",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 12.3,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            },
+            {
+              "t": 3.5,
+              "x": 0,
+              "z": 59.2,
+              "headingDeg": 0,
+              "speedMps": 13.4,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.GAP.TWO_SECOND",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 2.2
+        }
+      ]
+    }
+  ]
+}

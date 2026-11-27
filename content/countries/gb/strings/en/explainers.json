@@ -32,6 +32,13 @@
       "hcRule": "Rule 103",
       "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
     },
+    "GB.SIG.MISLEADING": {
+      "rule": "Cancel your indicator promptly after turning and avoid misleading signals.",
+      "why": "A lingering signal makes waiting drivers pull out in front of you.",
+      "mistake": "Leaving your indicator flashing for several seconds after a turn.",
+      "hcRule": "Rule 103",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
     "GB.POS.KEEP_LEFT": {
       "rule": "Keep to the left lane unless you are overtaking or turning right.",
       "why": "Staying left keeps faster traffic flowing smoothly on your right.",
