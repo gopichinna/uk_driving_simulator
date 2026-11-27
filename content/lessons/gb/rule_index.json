@@ -46,6 +46,11 @@
         "title": "Red X and variable limits"
       },
       {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_town",
+        "title": "Rain and stopping distances"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -123,6 +128,18 @@
         "title": "Advanced stop lines"
       }
     ],
+    "GB.JCT.STOP_SIGN": [
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_north",
+        "title": "Give way at T-junctions"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      }
+    ],
     "GB.JCT.TURN_FAR_GAP": [
       {
         "lessonId": "gb-s1-04-give-way-tjunctions",
@@ -151,6 +168,11 @@
       {
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_north",
+        "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
       }
     ],
@@ -274,6 +296,11 @@
         "lessonId": "gb-s6-26-motorway-red-x-limits",
         "scenarioId": "s6_26_mwy_red_x",
         "title": "Red X and variable limits"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_dual",
+        "title": "Night driving and headlights"
       }
     ],
     "GB.OBS.MOVE_OFF_CHECKS": [
@@ -537,6 +564,26 @@
         "lessonId": "gb-s0-03-speed-limits",
         "scenarioId": "s0_03_school_street",
         "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_pass",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_minor_30",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_serious_ped",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.SIG.TIMELY": [
@@ -611,6 +658,11 @@
         "lessonId": "gb-s0-03-speed-limits",
         "scenarioId": "s0_03_school_street",
         "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_serious_ped",
+        "title": "School zones"
       }
     ],
     "GB.SPD.OVER_LIMIT": [
@@ -633,6 +685,16 @@
         "lessonId": "gb-s4-16-following-distance-town",
         "scenarioId": "s4_16_town_traffic",
         "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_pass",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_minor_30",
+        "title": "School zones"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",
@@ -695,6 +757,11 @@
         "lessonId": "gb-s2-07-traffic-lights-amber",
         "scenarioId": "s2_07_signals_stop",
         "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
       }
     ],
     "GB.TL.ASL": [
@@ -750,6 +817,11 @@
         "lessonId": "gb-s2-07-traffic-lights-amber",
         "scenarioId": "s2_07_signals_stop",
         "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
       }
     ],
     "GB.VRU.PASS_CYCLIST": [

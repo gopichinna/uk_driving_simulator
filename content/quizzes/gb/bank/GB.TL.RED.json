@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_tl_red_1",
+    "rule": "GB.TL.RED",
+    "question": "What does a steady red traffic light mean?",
+    "options": [
+      "Slow down",
+      "Stop behind the white stop line",
+      "Turn left if clear",
+      "Proceed with care"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 175 says red means stop and wait behind the stop line.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_red_2",
+    "rule": "GB.TL.RED",
+    "question": "In Great Britain, may you turn left at a red traffic light if the road is clear?",
+    "options": [
+      "Yes, always",
+      "No, you must wait for green",
+      "Yes, after midnight",
+      "Yes, if no pedestrians are waiting"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: unlike some countries, there is no turn on red in Great Britain unless a green arrow shows.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_red_3",
+    "rule": "GB.TL.RED",
+    "question": "Where must you stop when a traffic light is red?",
+    "options": [
+      "Past the pedestrian crossing",
+      "Behind the white stop line",
+      "In the middle of the crossroads",
+      "Beside the light pole"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: you must keep all of your vehicle behind the white stop line.",
+    "hc_rule": "175",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_tl_red_4",
+    "rule": "GB.TL.RED",
+    "question": "The light is red, and there is a green left filter arrow lit. What may you do?",
+    "options": [
+      "Go straight ahead",
+      "Turn left if safe, watching for pedestrians",
+      "Turn right",
+      "Make a U-turn"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 177 allows you to move only in the direction of the green filter arrow.",
+    "hc_rule": "177",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_red_5",
+    "rule": "GB.TL.RED",
+    "question": "What if you accidentally stop with your front bumper over the white line on red?",
+    "options": [
+      "Drive across the junction anyway",
+      "Stop and wait there without entering the crossing or junction",
+      "Reverse fast without looking",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: never cross the junction on red; wait safely for green.",
+    "hc_rule": "175",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_red_6",
+    "rule": "GB.TL.RED",
+    "question": "What should you do if temporary roadworks traffic lights are stuck on red for a long time?",
+    "options": [
+      "Drive through anyway",
+      "Wait and check if they are faulty before moving only with extreme care",
+      "Drive on the pavement",
+      "Overtake the queue"
+    ],
+    "answer": 1,
+    "explain": "Rule 176: never assume a red light is broken quickly; only proceed with extreme caution if clearly failed.",
+    "hc_rule": "176",
+    "difficulty": 3
+  },
+  {
+    "id": "qb_tl_red_7",
+    "rule": "GB.TL.RED",
+    "question": "An emergency vehicle with flashing blue lights comes behind you while you wait at a red light. Should you cross the red line?",
+    "options": [
+      "Yes, always run the red light",
+      "No, do not break the law by crossing the red line",
+      "Drive onto the pavement",
+      "Reverse into the car behind"
+    ],
+    "answer": 1,
+    "explain": "Rule 219: make room safely if you can without crossing the stop line on red or mounting the kerb.",
+    "hc_rule": "219",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_tl_red_8",
+    "rule": "GB.TL.RED",
+    "question": "Why must you stop behind the white line rather than on the pedestrian crossing?",
+    "options": [
+      "To save fuel",
+      "To keep the crossing clear and safe for people on foot",
+      "To see the sky",
+      "To avoid speed cameras"
+    ],
+    "answer": 1,
+    "explain": "Rule 175: stopping behind the line keeps pedestrians safe and out of traffic.",
+    "hc_rule": "175",
+    "difficulty": 1
+  }
+]

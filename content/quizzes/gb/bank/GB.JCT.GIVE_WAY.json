@@ -32,7 +32,7 @@
   {
     "id": "qb_jct_gw_3",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "When must you stop completely behind a solid white line with a red octagonal STOP sign?",
+    "question": "When must you stop completely behind a solid white line with a red octagonal stop sign?",
     "options": [
       "Only when cars are coming",
       "Every time, even if the road looks clear",
@@ -40,7 +40,7 @@
       "Only when turning right"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a STOP sign and line.",
+    "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a stop sign and line.",
     "hc_rule": "172",
     "difficulty": 2
   },

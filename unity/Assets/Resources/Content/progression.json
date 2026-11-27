@@ -49,7 +49,8 @@
       "title": "Busy town",
       "lessonIds": [
         "gb-s4-15-overtaking-cyclists",
-        "gb-s4-16-following-distance-town"
+        "gb-s4-16-following-distance-town",
+        "gb-s4-28-school-zones"
       ],
       "unlockAfter": { "stage": 3, "minStars": 5 }
     },
@@ -116,5 +117,21 @@
     "gb-s0-01-keep-left-controls",
     "gb-s0-02-moving-off-msm",
     "gb-s0-03-speed-limits"
+  ],
+  "optionalPractice": [
+    {
+      "id": "rural_practice",
+      "title": "Rural lanes (Meriden & Berkswell)",
+      "course": "rural_practice",
+      "scenarioIds": ["s5_rural_bends", "s5_rural_narrow", "s5_rural_village"],
+      "unlockAfter": { "stage": 3, "minStars": 5 }
+    },
+    {
+      "id": "ring_road_practice",
+      "title": "Ring road (Wolverhampton A4150)",
+      "course": "ring_road_practice",
+      "scenarioIds": ["s4_ring_lanes", "s4_ring_rbt_multilane", "s4_ring_lights"],
+      "unlockAfter": { "stage": 3, "minStars": 5 }
+    }
   ]
 }

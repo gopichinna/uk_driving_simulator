@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_sch_slow_1",
+    "rule": "GB.SCH.SLOW",
+    "question": "What should you do when you see a triangular school warning sign ahead?",
+    "options": [
+      "Drive at the full limit",
+      "Slow down and watch carefully for children",
+      "Sound your horn",
+      "Use full beam"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 208 warns you to drive slowly near schools and watch for children.",
+    "hc_rule": "208",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sch_slow_2",
+    "rule": "GB.SCH.SLOW",
+    "question": "Why are children especially hard to spot near parked cars outside a school?",
+    "options": [
+      "They wear bright coats",
+      "They are small and may step out suddenly",
+      "They walk slowly",
+      "They use headlights"
+    ],
+    "answer": 1,
+    "explain": "Rule 208: children are smaller than parked cars and can step into the road without warning.",
+    "hc_rule": "208",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sch_slow_3",
+    "rule": "GB.SCH.SLOW",
+    "question": "What must you do when a school crossing patrol holds up a red and yellow Stop sign?",
+    "options": [
+      "Slow down and weave past",
+      "Stop and wait until they lower the sign",
+      "Flash your headlights",
+      "Only stop if children are in your lane"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 210 says you must stop when signalled by a school crossing patrol.",
+    "hc_rule": "210",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sch_slow_4",
+    "rule": "GB.SCH.SLOW",
+    "question": "What do flashing amber lights on a school warning sign mean?",
+    "options": [
+      "The road is closed",
+      "Children are crossing or nearby, so slow down",
+      "Speed limit is 50 mph",
+      "No left turn"
+    ],
+    "answer": 1,
+    "explain": "Rule 208: flashing amber lights show that a school crossing or children are active ahead.",
+    "hc_rule": "208",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sch_slow_5",
+    "rule": "GB.SCH.SLOW",
+    "question": "What do yellow 'SCHOOL KEEP CLEAR' zig-zag lines outside a school mean?",
+    "options": [
+      "Short-stay parking only",
+      "Do not wait, stop, or park there",
+      "Drop-off zone for parents",
+      "Bus lane"
+    ],
+    "answer": 1,
+    "explain": "Rule 238: keep school entrance zig-zags clear so children and drivers can see each other.",
+    "hc_rule": "238",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_sch_slow_6",
+    "rule": "GB.SCH.SLOW",
+    "question": "When driving past a school in a 30 mph street, what is the safest approach?",
+    "options": [
+      "Stay at 30 mph",
+      "Drop your speed well below 30 mph, around 20 mph",
+      "Coast in neutral",
+      "Overtake slower cars"
+    ],
+    "answer": 1,
+    "explain": "Rule 208: lower speed gives you much shorter stopping distance if a child steps out.",
+    "hc_rule": "208",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sch_slow_7",
+    "rule": "GB.SCH.SLOW",
+    "question": "At what times of day should you still watch for children near a school?",
+    "options": [
+      "Only 8:30 am",
+      "Any time, including clubs, lunchtimes, and weekends",
+      "Never on Fridays",
+      "Only in rain"
+    ],
+    "answer": 1,
+    "explain": "Rule 208: schools and playgrounds are used outside normal bell times too.",
+    "hc_rule": "208",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_sch_slow_8",
+    "rule": "GB.SCH.SLOW",
+    "question": "You see a ball bounce into the road near a school. What should you do?",
+    "options": [
+      "Drive over it",
+      "Slow down and be ready to stop in case a child runs after it",
+      "Swerve into the oncoming lane",
+      "Speed up"
+    ],
+    "answer": 1,
+    "explain": "Rule 208: a child may follow a ball into the road without looking.",
+    "hc_rule": "208",
+    "difficulty": 1
+  }
+]

@@ -269,6 +269,195 @@ namespace LToLocal.Rules
     }
 
     /// <summary>
+    /// GB.JCT.STOP_SIGN (rule 171): at a STOP line you must stop completely behind the line, even if the road looks clear.
+    /// Judged when the front of the car crosses the line: did it come to a halt (below <see cref="StoppedMps"/>) in the
+    /// last <see cref="ApproachM"/> metres before it, with the front still behind the line?
+    /// </summary>
+    public sealed class StopSignRule
+    {
+        public const string RuleId = "GB.JCT.STOP_SIGN";
+        private const string Source = "Highway Code rule 171";
+
+        private readonly List<LaneLine> _lines;
+        private Vec2 _prevFront;
+        private bool _hasPrev;
+        private readonly Dictionary<LaneLine, bool> _stopped = new Dictionary<LaneLine, bool>();
+
+        public StopSignRule(List<LaneLine> lines) => _lines = lines;
+
+        public double StoppedMps = 0.2, ApproachM = 6;
+
+        public void Reset()
+        {
+            _hasPrev = false;
+            _stopped.Clear();
+        }
+
+        public void OnFrame(in DriverFrame f, List<RuleEvent> output)
+        {
+            Vec2 front = CarBody.Front(f.Ego);
+            foreach (var l in _lines)
+            {
+                var (along, lateral) = l.Measure(front);
+                bool aligned = Math.Cos(f.Ego.Heading - l.Heading) > 0.7;
+                if (aligned && lateral < 2.5 && along > 0 && along <= ApproachM && f.Ego.SpeedMps < StoppedMps)
+                    _stopped[l] = true;
+                if (_hasPrev && l.CrossedBy(_prevFront, front))
+                {
+                    bool stopped = _stopped.TryGetValue(l, out var b) && b;
+                    _stopped[l] = false;
+                    if (stopped)
+                        output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                            "You stopped completely at the STOP line before you moved on.", Source));
+                    else
+                        output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, Severity.Serious, f.Time,
+                            "You did not stop at the STOP line. At a STOP sign, stop completely behind the line, even if the road looks clear.", Source));
+                }
+            }
+            _prevFront = front;
+            _hasPrev = true;
+        }
+    }
+
+    /// <summary>
+    /// GB.SCH.SLOW (rule 208): slow down near schools. Within <see cref="RadiusM"/> of a school warning sign, doing more
+    /// than <see cref="LimitMph"/> (ASSUMPTION pending ADI review) for <see cref="SustainS"/> seconds is a driving fault,
+    /// or serious if anyone on foot is within <see cref="PeopleM"/> of the car. Passing through at or below the limit
+    /// earns good-practice feedback once per zone.
+    /// </summary>
+    public sealed class SchoolSlowRule
+    {
+        public const string RuleId = "GB.SCH.SLOW";
+        private const string Source = "Highway Code rule 208";
+
+        private readonly List<Vec2> _zones;
+        private int _active = -1;
+        private double _overSince = double.NaN;
+        private Severity _reported;
+        private bool _everOver;
+
+        public SchoolSlowRule(List<Vec2> zoneCentres) => _zones = zoneCentres;
+
+        public double RadiusM = 100, LimitMph = 20, SustainS = 1.5, PeopleM = 15;
+
+        public void Reset()
+        {
+            _active = -1;
+            _overSince = double.NaN;
+            _reported = Severity.None;
+            _everOver = false;
+        }
+
+        public void OnFrame(in DriverFrame f, IReadOnlyList<Pedestrian> people, List<RuleEvent> output)
+        {
+            Vec2 c = CarBody.Centre(f.Ego);
+            int inside = -1;
+            for (int i = 0; i < _zones.Count; i++)
+                if ((_zones[i] - c).Length <= RadiusM) { inside = i; break; }
+
+            if (inside != _active)
+            {
+                if (_active >= 0 && !_everOver)
+                    output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                        "You kept your speed down near the school. Children can step out without warning.", Source));
+                _active = inside;
+                _overSince = double.NaN;
+                _reported = Severity.None;
+                _everOver = false;
+            }
+            if (_active < 0) return;
+
+            if (f.Ego.SpeedMph <= LimitMph) { _overSince = double.NaN; return; }
+            _everOver = true;
+            if (double.IsNaN(_overSince)) _overSince = f.Time;
+            if (f.Time - _overSince < SustainS) return;
+
+            bool people15 = false;
+            foreach (var p in people) if ((p.Position - c).Length <= PeopleM) { people15 = true; break; }
+            Severity sev = people15 ? Severity.Serious : Severity.Driving;
+            if (sev <= _reported) return;
+            _reported = sev;
+            output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, sev, f.Time,
+                people15
+                    ? $"You were doing {Math.Round(f.Ego.SpeedMph):0} mph with people close by near a school. Slow right down."
+                    : $"You were doing {Math.Round(f.Ego.SpeedMph):0} mph near a school. Slow down. Children may step out.",
+                Source));
+        }
+    }
+
+    /// <summary>
+    /// GB.JCT.TURN_NEAR (rules 103 and 182): signal left in good time before you turn left at a junction. Judged when
+    /// the car has turned left by more than <see cref="TurnRad"/> inside a junction: the left indicator must have been
+    /// on for at least <see cref="SignalLeadS"/> seconds before the turn started. Position before the turn is covered by
+    /// GB.POS.KEEP_LEFT. Thresholds are ASSUMPTIONs pending ADI review.
+    /// </summary>
+    public sealed class LeftTurnSignalRule
+    {
+        public const string RuleId = "GB.JCT.TURN_NEAR";
+        private const string Source = "Highway Code rule 103";
+
+        private readonly List<Vec2> _junctions;
+        private readonly int _leftSign;
+        private double _leftSince = double.NaN;
+        private bool _inside;
+        private double _entryHeading, _turnStartTime = double.NaN, _leftOnFor;
+        private bool _judged;
+
+        public LeftTurnSignalRule(List<Vec2> junctionCentres, DrivingSide side = DrivingSide.Left)
+        {
+            _junctions = junctionCentres;
+            _leftSign = side == DrivingSide.Left ? -1 : 1; // world direction of a turn "to the nearside"
+        }
+
+        public double RadiusM = 14, TurnRad = 0.7, TurnStartRad = 0.17, SignalLeadS = 2.0;
+
+        public void Reset()
+        {
+            _leftSince = double.NaN;
+            _inside = false;
+            _judged = false;
+            _turnStartTime = double.NaN;
+        }
+
+        public void OnFrame(in DriverFrame f, List<RuleEvent> output)
+        {
+            if (f.Indicator == _leftSign) { if (double.IsNaN(_leftSince)) _leftSince = f.Time; }
+            else _leftSince = double.NaN;
+
+            Vec2 c = CarBody.Centre(f.Ego);
+            bool inside = false;
+            foreach (var j in _junctions) if ((j - c).Length <= RadiusM) { inside = true; break; }
+
+            if (inside && !_inside)
+            {
+                _entryHeading = f.Ego.Heading;
+                _judged = false;
+                _turnStartTime = double.NaN;
+            }
+            _inside = inside;
+            if (!inside || _judged) return;
+
+            double turned = LaneGraph.Angle(f.Ego.Heading - _entryHeading) * _leftSign; // > 0 = turned toward the nearside
+            if (double.IsNaN(_turnStartTime) && turned > TurnStartRad)
+            {
+                _turnStartTime = f.Time;
+                _leftOnFor = double.IsNaN(_leftSince) ? 0 : f.Time - _leftSince;
+            }
+            if (turned < TurnRad) return;
+
+            _judged = true;
+            if (_leftOnFor >= SignalLeadS)
+                output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                    "You signalled left in good time before you turned.", Source));
+            else
+                output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, Severity.Driving, f.Time,
+                    _leftOnFor <= 0
+                        ? "You turned left without signalling. Signal early so others know what you plan to do."
+                        : "You signalled left too late. Signal at least two seconds before you turn.", Source));
+        }
+    }
+
+    /// <summary>
     /// GB.XNG.ZEBRA (rule 195) and GB.JCT.H2_PEDESTRIANS (rules H2, 170): give way to people waiting at a zebra or
     /// waiting to cross a side road you turn into or out of; you must stop once someone is on a zebra.
     /// </summary>
@@ -459,6 +648,11 @@ namespace LToLocal.Rules
         {
             var approaches = new List<TrafficLightRule.Approach>();
             var giveWays = new List<GiveWayRule.Line>();
+            var stops = new List<LaneLine>();
+            var junctions = new List<Vec2>();
+            var conn = new int[g.Nodes.Count];
+            foreach (var s in g.Segments) if (s.Kind == SegmentKind.Connector && s.Node >= 0) conn[s.Node]++;
+            for (int i = 0; i < g.Nodes.Count; i++) if (g.Nodes[i].Signalised || conn[i] > 2) junctions.Add(g.Nodes[i].Centre);
             foreach (var s in g.Segments)
             {
                 if (s.Kind != SegmentKind.Lane || s.EndNode < 0) continue;
@@ -472,12 +666,16 @@ namespace LToLocal.Rules
                 }
                 else if (s.EndControl == LineControl.GiveWay && s.Confidence >= 0.7)
                     giveWays.Add(new GiveWayRule.Line(LaneLine.Across(pEnd, hEnd), centre));
+                else if (s.EndControl == LineControl.Stop && s.Confidence >= 0.7)
+                    stops.Add(LaneLine.Across(pEnd, hEnd));
             }
             var boxes = new List<Vec2[]>();
             foreach (var n in g.Nodes) if (n.Box != null) boxes.Add(n.Box);
 
             Lights = new TrafficLightRule(approaches);
             GiveWay = new GiveWayRule(giveWays);
+            StopSign = new StopSignRule(stops);
+            LeftTurn = new LeftTurnSignalRule(junctions, side);
             Crossings = new PedestrianCrossingRule(g.CrossingAreas);
             ZigZags = new ZigZagOvertakeRule(g.ZigZags);
             Box = new BoxJunctionRule(boxes, side);
@@ -485,6 +683,8 @@ namespace LToLocal.Rules
 
         public TrafficLightRule Lights { get; }
         public GiveWayRule GiveWay { get; }
+        public StopSignRule StopSign { get; }
+        public LeftTurnSignalRule LeftTurn { get; }
         public PedestrianCrossingRule Crossings { get; }
         public ZigZagOvertakeRule ZigZags { get; }
         public BoxJunctionRule Box { get; }
@@ -493,6 +693,8 @@ namespace LToLocal.Rules
         {
             Lights.Reset();
             GiveWay.Reset();
+            StopSign.Reset();
+            LeftTurn.Reset();
             Crossings.Reset();
             ZigZags.Reset();
             Box.Reset();
@@ -503,6 +705,8 @@ namespace LToLocal.Rules
         {
             Lights.OnFrame(f, lights, users, output);
             GiveWay.OnFrame(f, users, output);
+            StopSign.OnFrame(f, output);
+            LeftTurn.OnFrame(f, output);
             Crossings.OnFrame(f, people, output);
             ZigZags.OnFrame(f, users, output);
             Box.OnFrame(f, output);

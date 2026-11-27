@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s3_suburb_stop_pass",
+  "course": "suburb_practice",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.3
+    },
+    {
+      "type": "finish_at",
+      "anchor": "join",
+      "offsetM": 0
+    }
+  ]
+}

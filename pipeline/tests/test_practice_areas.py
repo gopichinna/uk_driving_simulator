@@ -28,10 +28,12 @@ def test_rural_and_ring_road_packs_validate() -> None:
         validate_pois_file(cdir / "pois.json")
 
 
-def test_rural_and_ring_road_scenarios_validate_and_not_in_progression() -> None:
-    prog_text = (REPO_ROOT / "content" / "lessons" / "gb" / "progression.json").read_text(
-        encoding="utf-8"
+def test_rural_and_ring_road_scenarios_validate_and_are_optional_practice() -> None:
+    prog = json.loads(
+        (REPO_ROOT / "content" / "lessons" / "gb" / "progression.json").read_text(encoding="utf-8")
     )
+    opt_by_id = {item["id"]: item for item in prog.get("optionalPractice", [])}
+    assert {"rural_practice", "ring_road_practice"} <= set(opt_by_id.keys())
     expected = {
         "s5_rural_bends": "rural_practice",
         "s5_rural_narrow": "rural_practice",
@@ -43,4 +45,4 @@ def test_rural_and_ring_road_scenarios_validate_and_not_in_progression() -> None
     for sc_id, course in expected.items():
         data = validate_scenario_file(SCENARIOS / f"{sc_id}.json")
         assert data["course"] == course
-        assert sc_id not in prog_text
+        assert sc_id in opt_by_id[course]["scenarioIds"]

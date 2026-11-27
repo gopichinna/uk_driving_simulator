@@ -39,21 +39,33 @@ def _flatten_keys(obj: Any, prefix: str = "") -> set[str]:
 def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
     """Build the Markdown content health report."""
     lessons_dir = repo_root / "content" / "lessons" / "gb"
-    quizzes_dir = repo_root / "content" / "quizzes" / "gb"
+    quizzes_dir = lessons_dir / "quiz"
+    bank_dir = repo_root / "content" / "quizzes" / "gb" / "bank"
     rules_yaml = repo_root / "content" / "countries" / "gb" / "rules.yaml"
     strings_en = repo_root / "content" / "countries" / "gb" / "strings" / "en"
     strings_xa = repo_root / "content" / "countries" / "gb" / "strings" / "en-XA"
     audio_dir = repo_root / "content" / "audio"
 
     stage_stats: dict[int, dict[str, int]] = defaultdict(
-        lambda: {"lessons": 0, "scenarios": 0, "quiz_questions": 0, "voice_lines": 0, "badges": 0}
+        lambda: {
+            "lessons": 0,
+            "scenarios": 0,
+            "lesson_quiz": 0,
+            "bank_questions": 0,
+            "voice_lines": 0,
+            "badges": 0,
+        }
     )
     rule_practice_counts: dict[str, int] = defaultdict(int)
     referenced_rel_paths: set[str] = set()
+    stage_rules: dict[int, set[str]] = defaultdict(set)
+    lesson_stage: dict[str, int] = {}
+    scenario_stage: dict[str, int] = {}
 
     for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
         lesson = json.loads(lf.read_text(encoding="utf-8"))
         st = int(lesson["stage"])
+        lesson_stage[lesson["id"]] = st
         stage_stats[st]["lessons"] += 1
         stage_stats[st]["scenarios"] += len(lesson["scenarios"])
         badge_png = lessons_dir / "badges" / f"{lesson['id']}.png"
@@ -65,15 +77,24 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
         if diag:
             referenced_rel_paths.add(diag)
             referenced_rel_paths.add(str(Path(diag).with_suffix(".svg")))
-        if lesson["id"] != "gb-s8-19-mock-driving-test":
-            for sc in lesson["scenarios"]:
-                for rid in sc["rulesJudged"]:
+        for sc in lesson["scenarios"]:
+            scenario_stage[sc["id"]] = st
+            for rid in sc["rulesJudged"]:
+                stage_rules[st].add(rid)
+                if lesson["id"] != "gb-s8-19-mock-driving-test":
                     rule_practice_counts[rid] += 1
 
-    for qf in sorted(quizzes_dir.glob("[0-9][0-9]-*.json")):
+    for qf in sorted(quizzes_dir.glob("gb-*.json")):
         quiz = json.loads(qf.read_text(encoding="utf-8"))
-        st = int(quiz["stage"])
-        stage_stats[st]["quiz_questions"] += len(quiz.get("questions", []))
+        lid = quiz.get("lessonId", "")
+        st = lesson_stage.get(lid, int(quiz.get("stage", 0)))
+        stage_stats[st]["lesson_quiz"] += len(quiz.get("questions", []))
+
+    bank_counts: dict[str, int] = {}
+    for bf in sorted(bank_dir.glob("GB.*.json")):
+        bank_counts[bf.stem] = len(json.loads(bf.read_text(encoding="utf-8")))
+    for st, rids in stage_rules.items():
+        stage_stats[st]["bank_questions"] = sum(bank_counts.get(r, 0) for r in rids)
 
     voice_manifest = json.loads(
         (audio_dir / "voice" / "en" / "manifest.json").read_text(encoding="utf-8")
@@ -85,23 +106,29 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
     for entry in sfx_manifest["entries"]:
         referenced_rel_paths.add(f"content/audio/sfx/{entry['file']}")
 
-    # Attribute voice lines per stage by rule or lesson prefix
     rules_data = yaml.safe_load(rules_yaml.read_text(encoding="utf-8"))["rules"]
     implemented_rules = [
         r["id"] for r in rules_data if r.get("implementation", {}).get("status") == "implemented"
     ]
-    rule_stage: dict[str, int] = {}
-    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
-        lesson = json.loads(lf.read_text(encoding="utf-8"))
-        for sc in lesson["scenarios"]:
-            for rid in sc["rulesJudged"]:
-                rule_stage.setdefault(rid, int(lesson["stage"]))
+    for key in voice_manifest["entries"]:
+        k = key["key"]
+        if k.startswith("lesson.") and k.endswith(".learn"):
+            lid = k[len("lesson.") : -len(".learn")]
+            if lid in lesson_stage:
+                stage_stats[lesson_stage[lid]]["voice_lines"] += 1
+        elif k.startswith("scenario.") and k.endswith(".brief"):
+            sid = k[len("scenario.") : -len(".brief")]
+            if sid in scenario_stage:
+                stage_stats[scenario_stage[sid]]["voice_lines"] += 1
     for key in voice_json["entries"]:
         parts = key.split(".")
+        if parts[-1] in ("v2", "v3"):
+            parts = parts[:-1]
         if len(parts) >= 4 and parts[0] == "voice":
             rid = ".".join(parts[1:-1])
-            st = rule_stage.get(rid, 0)
-            stage_stats[st]["voice_lines"] += 1
+            matched = [st for st, rids in stage_rules.items() if rid in rids]
+            for st in matched or [0]:
+                stage_stats[st]["voice_lines"] += 1
 
     # Rules with < 2 practice drives
     under_practised = [
@@ -152,10 +179,12 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
             if mb > 5.0:
                 large_files.append((p.relative_to(repo_root).as_posix(), round(mb, 2)))
 
-    # Planned rules count
-    planned_rules = [
-        r["id"] for r in rules_data if r.get("implementation", {}).get("status") != "implemented"
-    ]
+    # Per-stage implemented vs planned rules
+    implemented_set = set(implemented_rules)
+    stage_rule_summary = ", ".join(
+        f"S{st}: {len(rids & implemented_set)}/{len(rids)}"
+        for st, rids in sorted(stage_rules.items())
+    )
 
     lines = [
         "# Content Health Report",
@@ -164,14 +193,15 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
         "",
         "## Per-Stage Summary",
         "",
-        "| Stage | Lessons | Scenarios | Quiz Questions | Coach Voice Lines | Badges |",
-        "|---|---|---|---|---|---|",
+        "| Stage | Lessons | Scenarios | Lesson Quiz | Bank | Voice Lines | Badges |",
+        "|---|---|---|---|---|---|---|",
     ]
     for st in sorted(stage_stats):
         row = stage_stats[st]
         lines.append(
             f"| {st} | {row['lessons']} | {row['scenarios']} | "
-            f"{row['quiz_questions']} | {row['voice_lines']} | {row['badges']} |"
+            f"{row['lesson_quiz']} | {row['bank_questions']} | "
+            f"{row['voice_lines']} | {row['badges']} |"
         )
 
     lines.extend(
@@ -206,8 +236,9 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
             "## Top 10 Gaps (Priority Order)",
             "",
             (
-                f"1. **Unimplemented rules in `rules.yaml`:** {len(planned_rules)} planned"
-                " rules still need `Rules.Core` implementations."
+                "1. **Implemented vs planned rules by stage:**"
+                f" {len(implemented_rules)}/{len(rules_data)}"
+                f" implemented overall ({stage_rule_summary})."
             ),
             f"2. **Implemented rules < 2 practice drives:** {len(under_practised)} rule(s).",
             f"3. **Readability linter errors:** {len(readability_errors)} issue(s).",

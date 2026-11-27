@@ -101,6 +101,12 @@
       "durationS": 8.839
     },
     {
+      "key": "lesson.gb-s4-28-school-zones.learn",
+      "file": "lesson.gb-s4-28-school-zones.learn.wav",
+      "text": "Slow down when you pass a triangular school warning sign and watch for children. Hold 20 mph or less past the school. This cap is pending ADI review. Be ready to stop if children step out from between parked cars.",
+      "durationS": 14.368
+    },
+    {
       "key": "lesson.gb-s5-17-dual-carriageway-lanes.learn",
       "file": "lesson.gb-s5-17-dual-carriageway-lanes.learn.wav",
       "text": "Drive in the left lane on a two-lane dual carriageway. Use the right lane only to overtake slower traffic or turn right. Signal early and check your blind spot before changing lanes.",
@@ -375,6 +381,24 @@
       "file": "scenario.s4_16_town_traffic.brief.wav",
       "text": "Maintain a safe following gap in steady town traffic.",
       "durationS": 2.808
+    },
+    {
+      "key": "scenario.s4_28_school_minor_30.brief",
+      "file": "scenario.s4_28_school_minor_30.brief.wav",
+      "text": "Notice how doing 30 mph past an empty school sign gives a minor fault.",
+      "durationS": 4.963
+    },
+    {
+      "key": "scenario.s4_28_school_pass.brief",
+      "file": "scenario.s4_28_school_pass.brief.wav",
+      "text": "Hold 20 mph or less past school signs. (Game assumption pending ADI review.)",
+      "durationS": 6.04
+    },
+    {
+      "key": "scenario.s4_28_school_serious_ped.brief",
+      "file": "scenario.s4_28_school_serious_ped.brief.wav",
+      "text": "Hold 20 mph or less when people are near the school gate.",
+      "durationS": 5.402
     },
     {
       "key": "scenario.s5_17_busy_dual.brief",
@@ -653,6 +677,114 @@
       "durationS": 2.326
     },
     {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.fault",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.fault.wav",
+      "text": "Give way to people waiting to cross at the junction.",
+      "durationS": 2.117
+    },
+    {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.fault.v2",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.fault.v2.wav",
+      "text": "Let pedestrians cross the side road before you turn.",
+      "durationS": 2.679
+    },
+    {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.fault.v3",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.fault.v3.wav",
+      "text": "Wait for people waiting at the junction to cross.",
+      "durationS": 2.272
+    },
+    {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.good",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.good.wav",
+      "text": "Good give way to pedestrians at the junction.",
+      "durationS": 2.151
+    },
+    {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.good.v2",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.good.v2.wav",
+      "text": "Kind pause letting people cross the side road.",
+      "durationS": 2.306
+    },
+    {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.good.v3",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.good.v3.wav",
+      "text": "Safe give way before completing your turn.",
+      "durationS": 2.178
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.fault",
+      "file": "voice.GB.JCT.STOP_SIGN.fault.wav",
+      "text": "Stop completely behind the white stop line first.",
+      "durationS": 2.933
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.fault.v2",
+      "file": "voice.GB.JCT.STOP_SIGN.fault.v2.wav",
+      "text": "Bring the car to a full stop before the line.",
+      "durationS": 2.237
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.fault.v3",
+      "file": "voice.GB.JCT.STOP_SIGN.fault.v3.wav",
+      "text": "Stop all wheels behind the solid white line.",
+      "durationS": 2.504
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.good",
+      "file": "voice.GB.JCT.STOP_SIGN.good.wav",
+      "text": "Clean full stop behind the stop line.",
+      "durationS": 2.365
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.good.v2",
+      "file": "voice.GB.JCT.STOP_SIGN.good.v2.wav",
+      "text": "Good complete stop before checking both ways.",
+      "durationS": 2.528
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.good.v3",
+      "file": "voice.GB.JCT.STOP_SIGN.good.v3.wav",
+      "text": "Safe full stop at the stop line.",
+      "durationS": 1.801
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.wav",
+      "text": "Keep close to the left and signal before turning left.",
+      "durationS": 3.081
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault.v2",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.v2.wav",
+      "text": "Signal left early and hug the left kerb before turning.",
+      "durationS": 2.939
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.fault.v3",
+      "file": "voice.GB.JCT.TURN_NEAR.fault.v3.wav",
+      "text": "Do not swing wide right before making a left turn.",
+      "durationS": 2.887
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good",
+      "file": "voice.GB.JCT.TURN_NEAR.good.wav",
+      "text": "Clean left turn position and early signal.",
+      "durationS": 2.541
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good.v2",
+      "file": "voice.GB.JCT.TURN_NEAR.good.v2.wav",
+      "text": "Nice early left indicator and neat kerb position.",
+      "durationS": 2.975
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.good.v3",
+      "file": "voice.GB.JCT.TURN_NEAR.good.v3.wav",
+      "text": "Smooth left turn from the nearside lane.",
+      "durationS": 2.229
+    },
+    {
       "key": "voice.GB.OBS.LANE_CHANGE.fault",
       "file": "voice.GB.OBS.LANE_CHANGE.fault.wav",
       "text": "Check your blind spot and signal before changing lanes.",
@@ -687,6 +819,42 @@
       "file": "voice.GB.OBS.LANE_CHANGE.good.v3.wav",
       "text": "Smooth lane change with plenty of space.",
       "durationS": 2.189
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.fault",
+      "file": "voice.GB.POS.KEEP_LEFT.fault.wav",
+      "text": "Keep to the left side of the road unless overtaking.",
+      "durationS": 2.716
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.fault.v2",
+      "file": "voice.GB.POS.KEEP_LEFT.fault.v2.wav",
+      "text": "Stay on the left side unless passing an obstruction.",
+      "durationS": 2.951
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.fault.v3",
+      "file": "voice.GB.POS.KEEP_LEFT.fault.v3.wav",
+      "text": "Move back to the left side when the road is clear.",
+      "durationS": 2.541
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.good",
+      "file": "voice.GB.POS.KEEP_LEFT.good.wav",
+      "text": "Good left-hand lane position.",
+      "durationS": 1.6
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.good.v2",
+      "file": "voice.GB.POS.KEEP_LEFT.good.v2.wav",
+      "text": "Nice steady position on the left.",
+      "durationS": 1.761
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.good.v3",
+      "file": "voice.GB.POS.KEEP_LEFT.good.v3.wav",
+      "text": "Clean left-side road position.",
+      "durationS": 1.712
     },
     {
       "key": "voice.GB.RBT.APPROACH_LANE.fault",
@@ -905,6 +1073,42 @@
       "durationS": 2.13
     },
     {
+      "key": "voice.GB.SCH.SLOW.fault",
+      "file": "voice.GB.SCH.SLOW.fault.wav",
+      "text": "Slow down near the school warning sign.",
+      "durationS": 1.987
+    },
+    {
+      "key": "voice.GB.SCH.SLOW.fault.v2",
+      "file": "voice.GB.SCH.SLOW.fault.v2.wav",
+      "text": "Ease off your speed past the school.",
+      "durationS": 1.735
+    },
+    {
+      "key": "voice.GB.SCH.SLOW.fault.v3",
+      "file": "voice.GB.SCH.SLOW.fault.v3.wav",
+      "text": "Drive slower near the school and watch for children.",
+      "durationS": 2.745
+    },
+    {
+      "key": "voice.GB.SCH.SLOW.good",
+      "file": "voice.GB.SCH.SLOW.good.wav",
+      "text": "Safe slow speed past the school.",
+      "durationS": 1.69
+    },
+    {
+      "key": "voice.GB.SCH.SLOW.good.v2",
+      "file": "voice.GB.SCH.SLOW.good.v2.wav",
+      "text": "Good careful pace outside the school.",
+      "durationS": 1.847
+    },
+    {
+      "key": "voice.GB.SCH.SLOW.good.v3",
+      "file": "voice.GB.SCH.SLOW.good.v3.wav",
+      "text": "Nice gentle speed past the school gate.",
+      "durationS": 2.113
+    },
+    {
       "key": "voice.GB.SIG.TIMELY.fault",
       "file": "voice.GB.SIG.TIMELY.fault.wav",
       "text": "Signal earlier so other drivers have time to react.",
@@ -975,6 +1179,150 @@
       "file": "voice.GB.SPD.OVER_LIMIT.good.v3.wav",
       "text": "Good speed control along this stretch.",
       "durationS": 1.898
+    },
+    {
+      "key": "voice.GB.TL.AMBER.fault",
+      "file": "voice.GB.TL.AMBER.fault.wav",
+      "text": "Stop on amber unless you are too close to stop safely.",
+      "durationS": 2.673
+    },
+    {
+      "key": "voice.GB.TL.AMBER.fault.v2",
+      "file": "voice.GB.TL.AMBER.fault.v2.wav",
+      "text": "Slow down and stop behind the line on amber.",
+      "durationS": 2.748
+    },
+    {
+      "key": "voice.GB.TL.AMBER.fault.v3",
+      "file": "voice.GB.TL.AMBER.fault.v3.wav",
+      "text": "Brake smoothly for the amber light when safe.",
+      "durationS": 2.363
+    },
+    {
+      "key": "voice.GB.TL.AMBER.good",
+      "file": "voice.GB.TL.AMBER.good.wav",
+      "text": "Good smooth stop for the amber light.",
+      "durationS": 1.909
+    },
+    {
+      "key": "voice.GB.TL.AMBER.good.v2",
+      "file": "voice.GB.TL.AMBER.good.v2.wav",
+      "text": "Nice early braking as the light turned amber.",
+      "durationS": 2.456
+    },
+    {
+      "key": "voice.GB.TL.AMBER.good.v3",
+      "file": "voice.GB.TL.AMBER.good.v3.wav",
+      "text": "Clean stop in time for the amber signal.",
+      "durationS": 2.045
+    },
+    {
+      "key": "voice.GB.TL.ASL.fault",
+      "file": "voice.GB.TL.ASL.fault.wav",
+      "text": "Stop behind the first white line before the bike box.",
+      "durationS": 2.865
+    },
+    {
+      "key": "voice.GB.TL.ASL.fault.v2",
+      "file": "voice.GB.TL.ASL.fault.v2.wav",
+      "text": "Keep the cyclist box clear and stop at the first line.",
+      "durationS": 3.299
+    },
+    {
+      "key": "voice.GB.TL.ASL.fault.v3",
+      "file": "voice.GB.TL.ASL.fault.v3.wav",
+      "text": "Wait behind the first stop line before the cycle area.",
+      "durationS": 3.123
+    },
+    {
+      "key": "voice.GB.TL.ASL.good",
+      "file": "voice.GB.TL.ASL.good.wav",
+      "text": "Clean stop before the cycle box.",
+      "durationS": 1.796
+    },
+    {
+      "key": "voice.GB.TL.ASL.good.v2",
+      "file": "voice.GB.TL.ASL.good.v2.wav",
+      "text": "Good space left in the cycle box ahead.",
+      "durationS": 2.15
+    },
+    {
+      "key": "voice.GB.TL.ASL.good.v3",
+      "file": "voice.GB.TL.ASL.good.v3.wav",
+      "text": "Safe stop behind the first white line.",
+      "durationS": 2.179
+    },
+    {
+      "key": "voice.GB.TL.RED.fault",
+      "file": "voice.GB.TL.RED.fault.wav",
+      "text": "Stop behind the white line when the light is red.",
+      "durationS": 2.652
+    },
+    {
+      "key": "voice.GB.TL.RED.fault.v2",
+      "file": "voice.GB.TL.RED.fault.v2.wav",
+      "text": "Wait behind the stop line on a red light.",
+      "durationS": 2.451
+    },
+    {
+      "key": "voice.GB.TL.RED.fault.v3",
+      "file": "voice.GB.TL.RED.fault.v3.wav",
+      "text": "Do not cross the white line while red shows.",
+      "durationS": 2.621
+    },
+    {
+      "key": "voice.GB.TL.RED.good",
+      "file": "voice.GB.TL.RED.good.wav",
+      "text": "Clean stop behind the red light.",
+      "durationS": 1.785
+    },
+    {
+      "key": "voice.GB.TL.RED.good.v2",
+      "file": "voice.GB.TL.RED.good.v2.wav",
+      "text": "Good smooth stop before the white line.",
+      "durationS": 2.179
+    },
+    {
+      "key": "voice.GB.TL.RED.good.v3",
+      "file": "voice.GB.TL.RED.good.v3.wav",
+      "text": "Safe wait behind the red traffic light.",
+      "durationS": 2.031
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.fault",
+      "file": "voice.GB.TL.RED_AMBER.fault.wav",
+      "text": "Wait for the green light before moving off.",
+      "durationS": 2.176
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.fault.v2",
+      "file": "voice.GB.TL.RED_AMBER.fault.v2.wav",
+      "text": "Hold behind the line until green appears.",
+      "durationS": 2.288
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.fault.v3",
+      "file": "voice.GB.TL.RED_AMBER.fault.v3.wav",
+      "text": "Do not move on red and amber; wait for green.",
+      "durationS": 2.928
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.good",
+      "file": "voice.GB.TL.RED_AMBER.good.wav",
+      "text": "Good patience waiting for green.",
+      "durationS": 1.668
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.good.v2",
+      "file": "voice.GB.TL.RED_AMBER.good.v2.wav",
+      "text": "Nice hold behind the line until green.",
+      "durationS": 2.186
+    },
+    {
+      "key": "voice.GB.TL.RED_AMBER.good.v3",
+      "file": "voice.GB.TL.RED_AMBER.good.v3.wav",
+      "text": "Clean wait through red and amber.",
+      "durationS": 1.723
     },
     {
       "key": "voice.GB.VRU.PASS_CYCLIST.fault",
@@ -1191,6 +1539,42 @@
       "file": "voice.GB.WX.NO_DAZZLE.good.v3.wav",
       "text": "Clean headlight dip without dazzling anyone.",
       "durationS": 2.306
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.fault",
+      "file": "voice.GB.XNG.ZEBRA.fault.wav",
+      "text": "Stop for anyone waiting or crossing at the zebra crossing.",
+      "durationS": 2.651
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.fault.v2",
+      "file": "voice.GB.XNG.ZEBRA.fault.v2.wav",
+      "text": "Give way to pedestrians at the zebra crossing.",
+      "durationS": 2.156
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.fault.v3",
+      "file": "voice.GB.XNG.ZEBRA.fault.v3.wav",
+      "text": "Slow down and let people cross at the zebra.",
+      "durationS": 2.051
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.good",
+      "file": "voice.GB.XNG.ZEBRA.good.wav",
+      "text": "Good stop for the zebra crossing.",
+      "durationS": 1.468
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.good.v2",
+      "file": "voice.GB.XNG.ZEBRA.good.v2.wav",
+      "text": "Nice early yield for pedestrians at the crossing.",
+      "durationS": 2.374
+    },
+    {
+      "key": "voice.GB.XNG.ZEBRA.good.v3",
+      "file": "voice.GB.XNG.ZEBRA.good.v3.wav",
+      "text": "Safe pause at the zebra crossing.",
+      "durationS": 1.476
     },
     {
       "key": "voice.GB.XNG.ZIGZAG_OVERTAKE.fault",

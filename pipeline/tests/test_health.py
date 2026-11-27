@@ -17,5 +17,17 @@ def test_health_report_contains_required_sections_and_matches_disk() -> None:
         "## Top 10 Gaps (Priority Order)",
     ):
         assert heading in report
+    assert "| Stage | Lessons | Scenarios | Lesson Quiz | Bank | Voice Lines | Badges |" in report
+    quiz_files = list(
+        (OUT_PATH.parent.parent / "content" / "lessons" / "gb" / "quiz").glob("gb-*.json")
+    )
+    if quiz_files:
+        # Ensure Lesson Quiz column is non-zero when lesson quiz files exist
+        total_lq = sum(
+            int(line.split("|")[4].strip())
+            for line in report.splitlines()
+            if line.startswith("| ") and line.split("|")[1].strip().isdigit()
+        )
+        assert total_lq > 0, "Lesson Quiz column reported 0 despite quiz files existing"
     assert OUT_PATH.is_file()
     assert OUT_PATH.read_text(encoding="utf-8") == report

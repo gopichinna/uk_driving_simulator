@@ -92,6 +92,8 @@ namespace LToLocal.EditorTools
                 ("../content/cities/wolverhampton-test-area/pedestrians.json", "wolverhampton_test_area_pedestrians.json"),
                 ("../content/cities/wolverhampton-test-area/roadpack.json", "wolverhampton_test_area_roadpack.json"),
                 ("../content/cities/wolverhampton-test-area/pois.json", "wolverhampton_test_area_pois.json"),
+                ("../content/cities/wolverhampton/warning_signs.json", "wolverhampton_warning_signs.json"),
+                ("../content/cities/wolverhampton-test-area/warning_signs.json", "wolverhampton_test_area_warning_signs.json"),
                 ("../content/cities/m54-j2/roadpack.json", "m54_j2_roadpack.json"),
                 ("../content/cities/m54-j2/pois.json", "m54_j2_pois.json"),
                 ("../content/lessons/gb/progression.json", "progression.json"),
@@ -106,6 +108,7 @@ namespace LToLocal.EditorTools
             CopyDir("../content/lessons/gb", $"{dest}/lessons", "*.json", f => char.IsDigit(Path.GetFileName(f)[0]));
             CopyDir("../content/scenarios/gb", $"{dest}/scenarios", "*.json", _ => true);
             CopyDir("../content/lessons/gb/quiz", $"{dest}/quiz", "*.json", _ => true);
+            CopyDir("../content/quizzes/gb/tests", $"{dest}/theory", "set-*.json", _ => true); // mock theory test sets
             CopyDir("../content/lessons/gb/diagrams", $"{dest}/diagrams", "*.png", f => !Path.GetFileName(f).StartsWith("_"));
             // Audio arrives as Ogg Opus, which Unity can't import (it only reads Ogg Vorbis), so convert to WAV;
             // Unity then compresses it for each platform. The synthetic engine loop isn't shipped.
@@ -126,6 +129,7 @@ namespace LToLocal.EditorTools
                 if (!keep(f)) continue;
                 string outPath = Path.Combine(to, Path.GetFileNameWithoutExtension(f) + ".wav");
                 if (f.EndsWith(".wav")) { File.Copy(f, outPath, overwrite: true); ok++; continue; } // already Unity-friendly
+                if (f.EndsWith(".mp3")) { File.Copy(f, Path.ChangeExtension(outPath, ".mp3"), overwrite: true); ok++; continue; } // Unity imports MP3 directly
                 if (!f.EndsWith(".ogg")) continue;
                 var psi = new System.Diagnostics.ProcessStartInfo(ffmpeg, $"-y -loglevel error -i \"{Path.GetFullPath(f)}\" -ar 44100 -ac 1 -c:a pcm_s16le \"{Path.GetFullPath(outPath)}\"")
                 { UseShellExecute = false, RedirectStandardError = true, CreateNoWindow = true };

@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_xng_pelican_amber",
+  "course": "town",
+  "anchor": "crossroads_signals",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "pedestrian_steps_out",
+      "crossing": "zebra",
+      "whenPlayerWithinM": 30
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.35
+    }
+  ]
+}

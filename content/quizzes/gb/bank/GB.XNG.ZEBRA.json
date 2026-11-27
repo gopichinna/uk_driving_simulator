@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_xng_zebra_1",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "What should you do when you see a pedestrian waiting to cross at a zebra crossing?",
+    "options": [
+      "Speed up past them",
+      "Slow down and be ready to stop to give way",
+      "Sound your horn",
+      "Wave them across"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 195 says you should look out for pedestrians waiting to cross and be ready to slow down or stop.",
+    "hc_rule": "195",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_xng_zebra_2",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "What must you do once a pedestrian has moved onto a zebra crossing?",
+    "options": [
+      "Drive around behind them",
+      "Give way to them",
+      "Flash your headlights",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Rule 195 states you must give way when a pedestrian has moved onto a crossing.",
+    "hc_rule": "195",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_xng_zebra_3",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "What flashing lights mark a UK zebra crossing?",
+    "options": [
+      "Blue beacons",
+      "Amber Belisha beacons on black-and-white poles",
+      "Red triangles",
+      "Green arrows"
+    ],
+    "answer": 1,
+    "explain": "Rule 195: flashing amber Belisha beacons warn drivers of a zebra crossing ahead.",
+    "hc_rule": "195",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_xng_zebra_4",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "Where should you stop for someone on a zebra crossing?",
+    "options": [
+      "On the black-and-white stripes",
+      "Behind the dashed give-way line",
+      "Five metres past the crossing",
+      "In the oncoming lane"
+    ],
+    "answer": 1,
+    "explain": "Rule 195: stop behind the dashed line so pedestrians have the full width of the crossing.",
+    "hc_rule": "195",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_xng_zebra_5",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "A car in the lane beside you stops at a zebra crossing. What should you do?",
+    "options": [
+      "Overtake it quickly",
+      "Stop too, as a pedestrian may be crossing out of sight",
+      "Sound your horn",
+      "Keep the same speed"
+    ],
+    "answer": 1,
+    "explain": "Rule 191: never overtake a vehicle stopped at a crossing; someone may be hidden behind it.",
+    "hc_rule": "191",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_xng_zebra_6",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "Why should you not wave a pedestrian across at a zebra crossing?",
+    "options": [
+      "Another vehicle could be approaching from the other way",
+      "It is illegal to raise a hand",
+      "It slows the traffic lights",
+      "It wears the brakes"
+    ],
+    "answer": 0,
+    "explain": "Rule 195 warns against waving pedestrians across because other drivers may not stop.",
+    "hc_rule": "195",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_xng_zebra_7",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "When may you move off after stopping at a zebra crossing?",
+    "options": [
+      "As soon as they reach the middle",
+      "Once they have crossed safely clear of your path",
+      "Before they step off the stripes",
+      "While they are still in front of your lane"
+    ],
+    "answer": 1,
+    "explain": "Rule 195: wait until pedestrians have safely cleared the crossing before moving off.",
+    "hc_rule": "195",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_xng_zebra_8",
+    "rule": "GB.XNG.ZEBRA",
+    "question": "If there is a central refuge island on a zebra crossing, how is it treated?",
+    "options": [
+      "As two separate crossings",
+      "As one crossing always",
+      "As a roundabout",
+      "As a bus lane"
+    ],
+    "answer": 0,
+    "explain": "Rule 195: a central island splits it into two separate crossings, though you should still watch carefully.",
+    "hc_rule": "195",
+    "difficulty": 2
+  }
+]

@@ -1,0 +1,82 @@
+[
+  {
+    "id": "qb_jct_tn_1",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "Where should you position your car before turning left into a side road?",
+    "options": ["Well over to the left kerb", "Near the centre line", "In the right-hand lane", "Straddling two lanes"],
+    "answer": 0,
+    "explain": "Highway Code Rule 182 says to keep well to the left before turning left.",
+    "hc_rule": "182",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tn_2",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "When should you switch on your left indicator before turning left?",
+    "options": ["Only after you start steering", "In good time before slowing and turning", "Never in town", "Only if a car is behind"],
+    "answer": 1,
+    "explain": "Rule 182 and Rule 103 say to give a clear left signal in good time.",
+    "hc_rule": "182",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tn_3",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "Why should you not swing out to the right before turning left?",
+    "options": ["Rule 182 warns it misleads following drivers and risks a crash", "It uses more fuel", "It turns off the wipers", "It cancels your headlights"],
+    "answer": 0,
+    "explain": "Rule 182 says not to swing out to the right before a left turn.",
+    "hc_rule": "182",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tn_4",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "Before moving close to the left kerb for a left turn, what should you check?",
+    "options": ["Your nearside mirror and blind spot for cyclists", "Only the rear-view mirror", "Only oncoming cars", "The radio"],
+    "answer": 0,
+    "explain": "Rule 182 warns to watch out for cyclists coming up on your left.",
+    "hc_rule": "182",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_tn_5",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "If you pass a side road you did not want, what should you do?",
+    "options": ["Turn late and swerve across", "Drive on and find a safe place to turn", "Reverse back up the main road", "Stop in the middle of the lane"],
+    "answer": 1,
+    "explain": "Rule 182: never make a late swerve; carry on safely and turn later.",
+    "hc_rule": "182",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tn_6",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "What should you do if a cyclist is riding on your left just before your left turn?",
+    "options": ["Overtake and cut across them", "Hold back behind them until they pass the junction", "Sound your horn", "Speed up"],
+    "answer": 1,
+    "explain": "Rule 182 and Rule H3 require you to give way and never cut across a cyclist.",
+    "hc_rule": "182",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tn_7",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "Should you slow down before you start steering into a tight left turn?",
+    "options": ["Yes, brake in a straight line before turning", "No, brake hard mid-corner", "Coast in neutral", "Accelerate into the corner"],
+    "answer": 0,
+    "explain": "Rule 182 advises adjusting your speed smoothly before reaching the corner.",
+    "hc_rule": "182",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_tn_8",
+    "rule": "GB.JCT.TURN_NEAR",
+    "question": "When turning left into a side road, who has priority if someone is waiting to cross it?",
+    "options": ["The pedestrian waiting to cross", "The turning car always", "Whoever sounds the horn first", "Buses only"],
+    "answer": 0,
+    "explain": "Rule 182 and Rule H2 say to give way to pedestrians crossing or waiting to cross.",
+    "hc_rule": "182",
+    "difficulty": 1
+  }
+]

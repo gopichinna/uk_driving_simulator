@@ -410,16 +410,81 @@ def _infer_junction_priority_and_signals(
         incident[lk["from"]].append(lk)
         incident[lk["to"]].append(lk)
 
+    nodes_by_id = {n["id"]: n for n in nodes}
+
+    # Attach degree-2 stop/giveWay approach nodes to the nearest 3+-arm junction within 25 m
+    attached_control: dict[str, tuple[str, set[str]]] = {}
+    attached_approach_nodes: set[str] = set()
+    for node in nodes:
+        nid = node["id"]
+        if not (node.get("stop") or node.get("giveWay")):
+            continue
+        inc = incident.get(nid, [])
+        is_self_junction = (
+            node["kind"] in ("junction", "roundabout", "mini_roundabout") or len(inc) >= 3
+        )
+        if is_self_junction:
+            continue
+        ctrl_type = "stop" if node.get("stop") else "give_way"
+        direction = node.get("direction")
+        best: tuple[float, str, str] | None = None
+        for lk in inc:
+            other_id = lk["to"] if lk["from"] == nid else lk["from"]
+            if direction == "forward" and lk["from"] != nid:
+                continue
+            if direction == "backward" and lk["to"] != nid:
+                continue
+            other = nodes_by_id.get(other_id)
+            if not other:
+                continue
+            other_inc = incident.get(other_id, [])
+            is_junc = (
+                other["kind"] in ("junction", "roundabout", "mini_roundabout")
+                or len(other_inc) >= 3
+            )
+            if is_junc:
+                dist = math.hypot(other["x"] - node["x"], other["z"] - node["z"])
+                if dist <= 25.0 and (best is None or dist < best[0]):
+                    best = (dist, other_id, lk["id"])
+        if best is None and direction is not None:
+            # Fallback without direction constraint if tag was absent/reversed relative to OSM way
+            for lk in inc:
+                other_id = lk["to"] if lk["from"] == nid else lk["from"]
+                other = nodes_by_id.get(other_id)
+                if not other:
+                    continue
+                other_inc = incident.get(other_id, [])
+                is_junc = (
+                    other["kind"] in ("junction", "roundabout", "mini_roundabout")
+                    or len(other_inc) >= 3
+                )
+                if is_junc:
+                    dist = math.hypot(other["x"] - node["x"], other["z"] - node["z"])
+                    if dist <= 25.0 and (best is None or dist < best[0]):
+                        best = (dist, other_id, lk["id"])
+        if best is not None:
+            _, junc_id, approach_lid = best
+            prev_ctrl, prev_lids = attached_control.get(junc_id, (ctrl_type, set()))
+            merged_ctrl = "stop" if "stop" in (prev_ctrl, ctrl_type) else "give_way"
+            prev_lids.add(approach_lid)
+            attached_control[junc_id] = (merged_ctrl, prev_lids)
+            attached_approach_nodes.add(nid)
+
     priorities: list[dict[str, Any]] = []
     signal_plans: list[dict[str, Any]] = []
 
     for node in nodes:
         nid = node["id"]
+        if nid in attached_approach_nodes:
+            continue
         inc = incident.get(nid, [])
         if len(inc) < 2:
             continue
-        is_junction = node["kind"] in ("junction", "roundabout", "mini_roundabout") or node.get(
-            "trafficSignals"
+        is_junction = (
+            node["kind"] in ("junction", "roundabout", "mini_roundabout")
+            or node.get("trafficSignals")
+            or node.get("stop")
+            or node.get("giveWay")
         )
         if not is_junction:
             continue
@@ -456,11 +521,13 @@ def _infer_junction_priority_and_signals(
                 controlled_by = "signals"
                 conf = max(0.75, class_conf)
                 notes = f"traffic_signals node; {class_note}"
-            elif node.get("stop"):
+            elif node.get("stop") or (
+                nid in attached_control and attached_control[nid][0] == "stop"
+            ):
                 controlled_by = "stop"
                 conf = 0.85
                 notes = f"stop node; {class_note}"
-            elif node.get("giveWay"):
+            elif node.get("giveWay") or nid in attached_control:
                 controlled_by = "give_way"
                 conf = 0.85
                 notes = f"give_way node; {class_note}"
@@ -468,6 +535,14 @@ def _infer_junction_priority_and_signals(
                 controlled_by = "uncontrolled"
                 conf = class_conf
                 notes = class_note
+
+            if nid in attached_control:
+                minor_lids = attached_control[nid][1]
+                filtered = [lid for lid in major_links if lid not in minor_lids]
+                if filtered:
+                    major_links = filtered
+                else:
+                    major_links = sorted(lk["id"] for lk in inc if lk["id"] not in minor_lids)
 
         priorities.append(
             {

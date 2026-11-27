@@ -24,7 +24,7 @@ def _png_size(path: Path) -> tuple[int, int]:
 
 def test_all_27_lesson_badges_exist_as_svg_and_256px_png() -> None:
     lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
-    assert len(lesson_files) == 27
+    assert len(lesson_files) == 28
     for lf in lesson_files:
         lid = json.loads(lf.read_text(encoding="utf-8"))["id"]
         svg = BADGES_DIR / f"{lid}.svg"

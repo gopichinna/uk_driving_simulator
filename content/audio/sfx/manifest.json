@@ -3,6 +3,20 @@
   "licence": "CC0-1.0",
   "entries": [
     {
+      "key": "engine_idle",
+      "file": "engine_idle.mp3",
+      "durationS": 18.74,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
+      "key": "engine_mid",
+      "file": "engine_mid.mp3",
+      "durationS": 28.56,
+      "targetLufs": -16,
+      "loop": true
+    },
+    {
       "key": "engine_high",
       "file": "engine_high.wav",
       "durationS": 2.6,
@@ -10,22 +24,8 @@
       "loop": true
     },
     {
-      "key": "engine_idle",
-      "file": "engine_idle.wav",
-      "durationS": 2.6,
-      "targetLufs": -16,
-      "loop": true
-    },
-    {
       "key": "engine_low",
       "file": "engine_low.wav",
-      "durationS": 2.6,
-      "targetLufs": -16,
-      "loop": true
-    },
-    {
-      "key": "engine_mid",
-      "file": "engine_mid.wav",
       "durationS": 2.6,
       "targetLufs": -16,
       "loop": true

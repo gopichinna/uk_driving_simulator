@@ -1,6 +1,3 @@
-> ## ⏸ PAUSED by the owner (2026-11-26). Do not start any new round or open new PRs until this banner is removed.
-> Finish and push anything you have half-done (don't merge it), then stop and wait. Claude and the owner are reviewing what has already been merged and building a new test version. Rounds 28–30 stay queued here.
-
 # Hydrogen roadmap: rounds 9, 10 and 11 (do them in order without waiting)
 
 **Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§3 ownership), then this file. Ownership is unchanged:
@@ -247,6 +244,58 @@ Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when 
 - [x] Added `docs/CONTENT_GUIDE.md` (how to add lessons, scenarios, quiz bank questions, voice lines, and OSM road packs with exact validation commands).
 - [x] Regenerated `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` to reflect everything through Round 30.
 
+## Round 31: get the pipeline green again, then fill content gaps (pipeline data + audio)
+Goal: `main` is green with a clean working tree, and the gaps in `docs/CONTENT_HEALTH.md` shrink. Branch: `hydrogen/r31-green-and-gaps`.
+
+- [x] R31.0 **Clean the working tree first:** restored `audio.py`, `test_audio.py`, `gantry-messages.v0.schema.json`, and `LICENCES.md` non-engine rows; wired owner-supplied `engine_idle.mp3` and `engine_mid.mp3` (`owner-supplied, no licence required (owner decision 2026-11-27)`) in `manifest.json`, `LICENCES.md`, `ATTRIBUTIONS.md`, `credits.md`, `docs/TESTING.md`, and `test_audio.py`; added loop-join check request for Claude.
+- [x] R31.1 **Health report quiz & voice columns:** updated `health.py` to count `content/lessons/gb/quiz/` (`Lesson Quiz`) and `content/quizzes/gb/bank/` (`Bank`) separately, fixed stage voice-line attribution (counting `.v2`/`.v3` + learn/scenario narrations across all stages), and added column assertion in `test_health.py`.
+- [x] R31.2 **Coach voice for Stages 4, 5, 6 and 8:** verified all 14 implemented rules across Stages 0–8 already have plain-English voice lines + `.v2`/`.v3` variants in `voice.json` and `manifest.json` (`0` missing).
+- [x] R31.3 **Quiz bank for Stage 6 and 7 rules:** verified all 14 currently implemented rules have 13 bank questions (`0` missing); Stage 6 & 7 rules remain `planned` in `rules.yaml` pending `Rules.Core` implementation.
+- [x] R31.4 **Wire R29 practice areas into `progression.json`:** added `optionalPractice` (`rural_practice`, `ring_road_practice`, unlocked after Stage 3, not required for stage unlock) in `progression.v0.schema.json` and `progression.json`, updated `test_practice_areas.py`, and listed them for Claude.
+- [x] R31.5 **Small tidy-ups:** moved `content/lessons/gb/diagrams/_contact_sheet.png` -> `docs/images/diagrams-contact-sheet.png` (unreferenced images now 0); `road_noise_motorway.wav` and `brake_squeal_soft.wav` remain omitted (no suitable verified CC0 source).
+- [x] R31.6 **Wrap-up:** regenerated `rule_index.json`, `IMPLEMENTATION.md`, and `docs/CONTENT_HEALTH.md`, and added dated note in `docs/08-parallel-work-plan.md` §6.
+
+## Round 32: rule specs for the next game build, thin quiz stages, honest reports (pipeline data + docs)
+Goal: Claude can implement the next batch of rules straight from your specs, and the reports tell the truth. Branch: `hydrogen/r32-next-rules-specs`. R31 is merged; start from `main`.
+
+- [x] R32.1 **Next-rules spec pack:** wrote `docs/specs/next-rules.md` covering the 20 highest-value planned rules across Stages 0–6 (verified on GOV.UK 2026-11-27, detection inputs, `test_marking.yaml` severities, and 2 pass + 2 fail cases each).
+- [x] R32.2 **Scenarios for the 20 rules:** created 20 valid `scenario.v0` drafts in `content/scenarios/gb/drafts/` (not in lessons or `progression.json`) and `pipeline/tests/test_draft_scenarios.py`.
+- [x] R32.3 **Stage 7 quiz bank:** wired `GB.GAP.TWO_SECOND` (rain stopping gap) and `GB.OBS.LANE_CHANGE` (night dual carriageway) into Stage 7 lessons (`21`, `22`), raising Stage 7's implemented-rule Bank count from 14 to 40 questions (all 14 implemented rules have 11–14 bank questions).
+- [x] R32.4 **Lesson Quiz counter fix:** updated `health.py` to glob `gb-*.json` in `content/lessons/gb/quiz/` and added a non-zero assertion in `test_health.py`.
+- [x] R32.5 **Health report split gap 1:** replaced the single 117-rule gap line with per-stage implemented-vs-planned counts (`S0: ... S8: ...`).
+- [x] R32.6 **Wrap-up:** regenerated `rule_index.json`, `IMPLEMENTATION.md`, and `docs/CONTENT_HEALTH.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, and readability.
+
+## Round 33: audit the rule specs, then the next 20 (docs + draft scenarios)
+Goal: Claude is implementing the R32 rules now, so the specs must be exact. Branch: `hydrogen/r33-spec-audit-and-batch-2`, from `main`.
+
+- [x] R33.0 **Implemented-rule tracking fix:** fixed `scan_implemented_rules()` in `pipeline/ltl_pipeline/rulepack.py` to match all `public const string` `GB.*` constants (including comma-separated declarations and non-`Rule*` names), added `test_rules_core_cs_grep_matches_implemented_scan` in `pipeline/tests/test_rulepack.py`, regenerated `rules.yaml` (23 implemented, 108 planned), added voice lines + Piper WAVs + quiz banks + practice scenario wiring for the 9 newly-tracked rules, and replaced those 9 in Batch 1 with the next 9 planned rules.
+- [x] R33.1 **Audit `docs/specs/next-rules.md` against GOV.UK:** re-checked every cited Highway Code rule and URL on 2026-11-27 (including Rules 175–178 for traffic lights/ASL/clear junction), separated single `test_marking.yaml` base severity from `Escalates to`, and recorded per-rule check dates.
+- [x] R33.2 **Exact numeric thresholds:** added metres, mph, seconds, `PROPOSED` tags for judgement calls, and exact `RoadPack` v0.7 / `Sim.Core` field names for every rule in Batch 1.
+- [x] R33.3 **Draft scenario alignment:** replaced the 9 obsolete Batch 1 drafts with 9 matching drafts for the replacement rules and updated `pipeline/tests/test_draft_scenarios.py` to enforce 1:1 spec↔draft correspondence.
+- [x] R33.4 **Batch 2 specs and drafts:** wrote `docs/specs/next-rules-2.md` (20 planned rules across Stages 3–8: roundabouts, lane choice, weather, motorways, parking) and 20 matching `scenario.v0` drafts in `content/scenarios/gb/drafts/` (40 drafts total).
+- [x] R33.5 **Wrap-up:** regenerated `docs/CONTENT_HEALTH.md`, `rule_index.json`, `IMPLEMENTATION.md`, `quiz_bank` `INDEX.md`, `en-XA`, and audio manifests; added dated note in `docs/08-parallel-work-plan.md` §6; verified `ruff`, `pytest`, and readability.
+
+## Round 34: school practice, STOP junctions, and complex roundabouts (data + research)
+Goal: content for rules Claude has just built, and the groundwork for 4-, 5- and 6-exit roundabouts. Branch: `hydrogen/r34-school-stop-complex-roundabouts`, from `main`. R33 is merged.
+
+Claude has added and wired: `GB.SCH.SLOW` (school zones, from `warning_signs.json` entries with `kind: "school"`, 100 m radius around each sign, 20 mph) and `GB.JCT.STOP_SIGN` (a junction whose `junctionPriority.controlledBy` is `"stop"`). Neither has any practice content yet.
+
+- [x] R34.1 **School-zone practice:** added optional Stage 4 lesson `content/lessons/gb/28-school-zones.json` (Stage 4 "Busy town" alongside overtaking cyclists and town following distance), 3 `scenario.v0` files (`s4_28_school_pass`, `s4_28_school_minor_30`, `s4_28_school_serious_ped` on `wolverhampton-test-area` / `wolverhampton`), original 4-question quiz (`gb-s4-28-school-zones.json`), diagram, Piper narration WAVs, `progression.json`, and `rule_index.json`, stating that the 20 mph cap is a **game assumption pending ADI review**.
+- [x] R34.2 **STOP junctions:** found and fixed the `build.py` `is_junction` filter bug (degree-2 OSM `highway=stop` / `give_way` nodes were skipped unlike `trafficSignals`), rebuilt `suburb_practice` so `n_4506177992` emits `controlledBy: "stop"`, documented West Midlands `highway=stop` findings in `docs/specs/stop-junctions.md`, and added 2 STOP scenarios (`s3_suburb_stop_pass`, `s3_suburb_stop_roll`).
+- [x] R34.3 **Complex roundabouts research:** wrote `docs/specs/complex-roundabouts.md` with real OSM-verified UK 4-, 5-, and 6-exit roundabouts in the West Midlands, recommended simplest build-first candidates (`way=792`, `way=759`, `way=12338359`), and documented required simulator features.
+- [x] R34.4 **Tracking update:** verified `GB.SCH.SLOW` and `GB.JCT.STOP_SIGN` are marked `implemented` (23 implemented, 108 planned) across `rules.yaml`, `rule_index.json`, `IMPLEMENTATION.md`, and `docs/CONTENT_HEALTH.md`.
+- [x] R34.5 **Wrap-up:** regenerated reports and audio manifests, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, schema validation, and readability.
+
+## Round 35: make STOP junctions real, pick the first complex roundabout, more rule specs (data + docs)
+Goal: finish what R34 started and prepare the next game build. Branch: `hydrogen/r35-stop-roundabout-specs`, from `main`. R34 is merged and reviewed (good work on the school lesson, the `build.py` fix and the roundabout research).
+
+- [x] R35.1 **STOP junction attachment fix:** updated `build.py` to attach degree-2 `stop` / `giveWay` approach nodes to the nearest 3+-arm junction within 25 m (`direction`-aware with fallback), keeping the approach link minor (`l_23389071_0` on `n_19101408` in `suburb_practice`, `majorLinks = ['l_195588955_11', 'l_195588955_12']`), rebuilt `suburb_practice`, and added `test_every_stop_priority_has_minor_approach_link` in `pipeline/tests/test_suburb_practice.py`. (Of the 6 West Midlands STOP junctions in `docs/specs/stop-junctions.md`, `n_4506177992` -> `n_19101408` is inside `suburb_practice` and now has a minor approach; the other 5 are outside current pack bboxes.)
+- [x] R35.2 **Real STOP scenarios:** updated `s3_suburb_stop_pass.json` and `s3_suburb_stop_roll.json` on `suburb_practice` to finish at `join` (`Wergs Road`, after the STOP junction) and validated against `scenario.v0.schema.json`.
+- [x] R35.3 **First complex roundabout:** wrote `docs/specs/roundabout-4-exit-build.md` for Queslett / Aldridge Road Roundabout (`way=792`, `52.565552, -1.885967`) with OSM-verified arm bearings, entry/exit lane counts, lane markings, 30/40 mph speed limits, 3 `route.v0` practice routes, and gaps in `Sim.Core/TwoLaneRoundabout.cs` & `Roundabout.cs`.
+- [x] R35.4 **Rule specs, batch 3:** wrote `docs/specs/next-rules-3.md` for the 10 next highest-value planned rules (all verified unimplemented in `core/Rules.Core/*.cs`) and added 10 matching drafts in `content/scenarios/gb/drafts/` (50 drafts total, validated 1:1 in `test_draft_scenarios.py`).
+- [x] R35.5 **Theory test content check:** audited all 150 questions across `set-01.json`, `set-02.json`, and `set-03.json` against GOV.UK, recorded findings in `docs/specs/theory-audit.md`, normalised all-caps `MUST`/`STOP`/`RED`/`AMBER`/`GREEN` in the quiz bank, and rebuilt `set-01`–`set-10`.
+- [x] R35.6 **Wrap-up:** regenerated `CONTENT_HEALTH.md`, `rule_index.json`, and `IMPLEMENTATION.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, schema validation, and readability.
+
 ---
 
 ## Requests from Claude
@@ -257,4 +306,5 @@ Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when 
 - Pre-agreed for R12–R14: `roundabout_furniture.json`; the scenario `conditions` event; additive motorway road-pack fields; a `motorway` course with anchors `start`, `join`, `leave`; lessons 21–27.
 
 ## Requests from Hydrogen (to Claude)
-*(add questions here)*
+- **R31.0 engine MP3 loop join check:** `engine_idle.mp3` (18.74 s) and `engine_mid.mp3` (28.56 s) replaced the idle/mid WAVs per owner decision (2026-11-27). Please check that the loop join sounds smooth in-game alongside `engine_low.wav` and `engine_high.wav`.
+- **R34.1 school-zone pedestrian spawn (`s4_28_school_serious_ped`):** `pedestrian_waits.crossing` in `scenario.v0.schema.json` currently only allows `["zebra", "mill_lane_mouth", "church_st_mouth"]`. If `s4_28_school_serious_ped` needs a deterministic pedestrian near a `school` warning sign on `wolverhampton-test-area` (rather than `pedestrianIntent: "random"`), please agree an additive `"school_sign"` crossing/spawn target.

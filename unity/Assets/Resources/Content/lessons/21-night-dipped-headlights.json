@@ -51,6 +51,7 @@
       "rulesJudged": [
         "GB.WX.HEADLIGHTS_NIGHT",
         "GB.WX.NO_DAZZLE",
+        "GB.OBS.LANE_CHANGE",
         "GB.POS.DUAL_KEEP_LEFT"
       ],
       "variations": {

@@ -51,6 +51,30 @@ def test_implemented_code_rules_present() -> None:
         assert by_id[rid]["implementation"]["status"] == "implemented"
 
 
+def test_rules_core_cs_grep_matches_implemented_scan() -> None:
+    """Every GB.* rule ID literal in core/Rules.Core/*.cs matches scan and rules.yaml."""
+    import yaml
+
+    from ltl_pipeline.rulepack import RULES_CORE_DIR
+
+    cs_ids: set[str] = set()
+    for cs_path in sorted(RULES_CORE_DIR.glob("*.cs")):
+        text = cs_path.read_text(encoding="utf-8")
+        for m in re.finditer(r'"(GB\.[A-Z]+\.[A-Z0-9_]+)"', text):
+            cs_ids.add(m.group(1))
+
+    implemented = scan_implemented_rules()
+    assert cs_ids == set(implemented.keys())
+
+    yaml_data = yaml.safe_load(RULES_YAML_PATH.read_text(encoding="utf-8"))
+    yaml_impl = {
+        r["id"]
+        for r in yaml_data["rules"]
+        if r.get("implementation", {}).get("status") == "implemented"
+    }
+    assert yaml_impl == cs_ids
+
+
 def test_regenerable_deterministic() -> None:
     p1 = parse_catalogue()
     p2 = parse_catalogue()

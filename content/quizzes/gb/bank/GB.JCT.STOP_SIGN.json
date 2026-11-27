@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_jct_stop_1",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "What must you do at an octagonal red stop sign with a solid white line?",
+    "options": [
+      "Slow down and roll through",
+      "Stop completely behind the white line",
+      "Only stop if a car is coming",
+      "Sound your horn and go"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 171 says you must stop behind the solid white line even if the road looks clear.",
+    "hc_rule": "171",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_stop_2",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "If the main road looks completely empty at a stop sign, may you roll slowly through?",
+    "options": [
+      "Yes, below 5 mph",
+      "No, your wheels must stop completely first",
+      "Yes, at night",
+      "Yes, if turning left"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: a stop sign is a legal must rule: you must come to a full standstill before moving out.",
+    "hc_rule": "171",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_stop_3",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "Where should you stop at a stop sign?",
+    "options": [
+      "In the middle of the junction",
+      "Behind the solid white stop line",
+      "Five metres after the line",
+      "On the pedestrian crossing"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: stop behind the solid white line so your car does not stick out into the main road.",
+    "hc_rule": "171",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_stop_4",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "Why are stop signs placed at certain junctions instead of Give Way signs?",
+    "options": [
+      "To save paint",
+      "Because the view of the main road is poor",
+      "To allow faster turns",
+      "For buses only"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: sTOP signs are used where sightlines are restricted so drivers must stop and look carefully.",
+    "hc_rule": "171",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_stop_5",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "After stopping at the white line, you still cannot see clearly. What should you do?",
+    "options": [
+      "Accelerate quickly",
+      "Creep forward slowly until you can see",
+      "Reverse back",
+      "Close your eyes"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: stop at the line first, then edge forward slowly to get a clear view before pulling out.",
+    "hc_rule": "171",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_stop_6",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "What shape is a UK stop sign?",
+    "options": [
+      "Triangle",
+      "Circle",
+      "Eight-sided octagon",
+      "Square"
+    ],
+    "answer": 2,
+    "explain": "Rule 171: the stop sign is uniquely eight-sided so you can recognise it even in snow or from behind.",
+    "hc_rule": "171",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_stop_7",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "If the car ahead of you stops at a stop line and moves off, what must you do when you reach the line?",
+    "options": [
+      "Follow straight behind it",
+      "Stop again at the white line yourself",
+      "Sound your horn",
+      "Turn left without stopping"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: every vehicle must stop at the line in turn and check both ways.",
+    "hc_rule": "171",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_stop_8",
+    "rule": "GB.JCT.STOP_SIGN",
+    "question": "What kind of road marking goes with a stop sign?",
+    "options": [
+      "Broken double white lines",
+      "A solid white line and stop painted on the road",
+      "Yellow zig-zags",
+      "Red dashed lines"
+    ],
+    "answer": 1,
+    "explain": "Rule 171: a stop sign is paired with a solid white stop line across your lane.",
+    "hc_rule": "171",
+    "difficulty": 2
+  }
+]

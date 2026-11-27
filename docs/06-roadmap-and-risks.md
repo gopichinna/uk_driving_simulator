@@ -94,3 +94,6 @@ gantt
 | 7 | Mac / devices | ✅ MacBook Air (M5) + OnePlus 12 |
 | 8 | Working title | ✅ **L to Local**, tagline "Keep Left" (check UK IPO register + stores before registering) |
 | 9 | Market | ✅ **Great Britain only** at launch |
+
+## Backlog (ideas for later, not scheduled)
+- **Complex roundabouts with 4, 5 and 6 exits** (owner request, 2026-11-27). Today's roundabout code handles the 3-exit, one-lane and two-lane cases (`Sim.Core/Roundabout.cs`, `TwoLaneRoundabout.cs`). To do later: generalise the exit count and lane layout in the sim and rules (lane choice per exit, signalling for exits past 12 o'clock, exit numbering), add test fixtures, then ask Hydrogen for practice packs and lessons (real UK examples to be found on OSM and checked), and a Stage 4/5 lesson that uses them. Needs a short design note before any code.

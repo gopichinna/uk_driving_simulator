@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_jct_h2_1",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "You are turning into a side road and a pedestrian is waiting to cross it. What should you do?",
+    "options": [
+      "Sound your horn to warn them",
+      "Give way and let them cross",
+      "Speed up to clear the turn",
+      "Wave them to stay on the kerb"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule H2 says you should give way to pedestrians crossing or waiting to cross a road into which or from which you are turning.",
+    "hc_rule": "H2",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_h2_2",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "Does Rule H2 apply when you turn out of a side road as well as when you turn into one?",
+    "options": [
+      "No, only when turning in",
+      "Yes, both turning into and out of a road",
+      "Only on dual carriageways",
+      "Only at traffic lights"
+    ],
+    "answer": 1,
+    "explain": "Rule H2 covers pedestrians crossing or waiting to cross a road you are turning into or out of.",
+    "hc_rule": "H2",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_h2_3",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "Before stopping to let a pedestrian cross a side road you are turning into, what should you check?",
+    "options": [
+      "Your mirrors so you brake safely",
+      "Your radio",
+      "The rear fog light",
+      "Nothing"
+    ],
+    "answer": 0,
+    "explain": "Rule H2: check your mirrors early so you can slow down smoothly without surprising traffic behind.",
+    "hc_rule": "H2",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_h2_4",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "If a pedestrian has already stepped into the road you are turning into, what must you do?",
+    "options": [
+      "Drive around them",
+      "Give way to them",
+      "Flash your headlights",
+      "Brake only if they run"
+    ],
+    "answer": 1,
+    "explain": "Highway Code Rule 170 says you must give way to pedestrians already crossing the road you are turning into.",
+    "hc_rule": "170",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_h2_5",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "Why should you not wave a pedestrian across when stopping at a junction?",
+    "options": [
+      "It is rude",
+      "Another vehicle may not see them or may overtake",
+      "It wastes time",
+      "It breaks the indicator"
+    ],
+    "answer": 1,
+    "explain": "Rule H2: wait patiently without waving so the pedestrian checks for other traffic themselves.",
+    "hc_rule": "H2",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_h2_6",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "A person with a white cane is waiting at a side road you plan to turn into. What should you do?",
+    "options": [
+      "Turn before they step off",
+      "Stop in good time and give way",
+      "Sound a short horn beep",
+      "Rev the engine"
+    ],
+    "answer": 1,
+    "explain": "Rule H2: give extra care and patience to pedestrians who may need more time to cross.",
+    "hc_rule": "H2",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_h2_7",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "Who has priority at the top of the Highway Code hierarchy of road users?",
+    "options": [
+      "Cars",
+      "Buses",
+      "Pedestrians",
+      "Motorcycles"
+    ],
+    "answer": 2,
+    "explain": "Rule H1: pedestrians are at greatest risk and sit at the top of the road-user hierarchy.",
+    "hc_rule": "H1",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_h2_8",
+    "rule": "GB.JCT.H2_PEDESTRIANS",
+    "question": "When turning left into a side road, where should you look for waiting pedestrians?",
+    "options": [
+      "Only in your rear-view mirror",
+      "Along the pavement and crossing point of the side road",
+      "Only at the sky",
+      "Only at oncoming cars"
+    ],
+    "answer": 1,
+    "explain": "Rule H2: scan the side road pavement early before you start steering into the turn.",
+    "hc_rule": "H2",
+    "difficulty": 2
+  }
+]

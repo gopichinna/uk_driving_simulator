@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_mwy_overtake_right",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "slow_vehicle_ahead",
+      "lane": 0,
+      "speedMph": 50,
+      "offsetM": 120
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    }
+  ]
+}

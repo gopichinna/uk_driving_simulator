@@ -6,7 +6,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 
 | Order | Lesson | Rule ID | Status |
 |---|---|---|---|
-| 1 | Keeping left and the controls | `GB.POS.KEEP_LEFT` | ⏳ |
+| 1 | Keeping left and the controls | `GB.POS.KEEP_LEFT` | ✅ |
 | 1 | Keeping left and the controls | `GB.SPD.OVER_LIMIT` | ✅ |
 | 1 | Keeping left and the controls | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 2 | Pulling away and MSM | `GB.OBS.MOVE_OFF_CHECKS` | ⏳ |
@@ -14,29 +14,32 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 2 | Pulling away and MSM | `GB.OBS.MSM` | ⏳ |
 | 3 | Speed limits | `GB.SPD.OVER_LIMIT` | ✅ |
 | 3 | Speed limits | `GB.SPD.APPROPRIATE` | ⏳ |
-| 3 | Speed limits | `GB.SCH.SLOW` | ⏳ |
+| 3 | Speed limits | `GB.SCH.SLOW` | ✅ |
 | 3 | Speed limits | `GB.GAP.TWO_SECOND` | ✅ |
 | 4 | Give way at T-junctions | `GB.JCT.GIVE_WAY` | ✅ |
+| 4 | Give way at T-junctions | `GB.JCT.STOP_SIGN` | ✅ |
 | 4 | Give way at T-junctions | `GB.JCT.EMERGE_LOOK` | ⏳ |
 | 4 | Give way at T-junctions | `GB.JCT.TURN_FAR_GAP` | ⏳ |
-| 5 | Pedestrians at junctions (H2) | `GB.JCT.H2_PEDESTRIANS` | ⏳ |
+| 5 | Pedestrians at junctions (H2) | `GB.JCT.H2_PEDESTRIANS` | ✅ |
 | 5 | Pedestrians at junctions (H2) | `GB.SIG.TIMELY` | ✅ |
 | 5 | Pedestrians at junctions (H2) | `GB.JCT.GIVE_WAY` | ✅ |
 | 6 | Road position after turning | `GB.POS.AFTER_TURN` | ⏳ |
-| 6 | Road position after turning | `GB.POS.KEEP_LEFT` | ⏳ |
-| 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ⏳ |
+| 6 | Road position after turning | `GB.POS.KEEP_LEFT` | ✅ |
+| 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ✅ |
 | 6 | Road position after turning | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
 | 6 | Road position after turning | `GB.JCT.TURN_FAR_GAP` | ⏳ |
-| 7 | Traffic lights and amber | `GB.TL.RED` | ⏳ |
-| 7 | Traffic lights and amber | `GB.TL.AMBER` | ⏳ |
-| 7 | Traffic lights and amber | `GB.TL.RED_AMBER` | ⏳ |
+| 7 | Traffic lights and amber | `GB.TL.RED` | ✅ |
+| 7 | Traffic lights and amber | `GB.TL.AMBER` | ✅ |
+| 7 | Traffic lights and amber | `GB.TL.RED_AMBER` | ✅ |
 | 7 | Traffic lights and amber | `GB.TL.NO_TURN_ON_RED` | ⏳ |
 | 7 | Traffic lights and amber | `GB.SIG.TIMELY` | ✅ |
-| 8 | Advanced stop lines | `GB.TL.ASL` | ⏳ |
-| 8 | Advanced stop lines | `GB.TL.RED` | ⏳ |
+| 8 | Advanced stop lines | `GB.TL.ASL` | ✅ |
+| 8 | Advanced stop lines | `GB.TL.RED` | ✅ |
+| 8 | Advanced stop lines | `GB.TL.AMBER` | ✅ |
+| 8 | Advanced stop lines | `GB.TL.RED_AMBER` | ✅ |
 | 8 | Advanced stop lines | `GB.VRU.PASS_CYCLIST` | ✅ |
 | 8 | Advanced stop lines | `GB.JCT.H3_CYCLISTS` | ⏳ |
-| 9 | Zebra crossings and zig-zags | `GB.XNG.ZEBRA` | ⏳ |
+| 9 | Zebra crossings and zig-zags | `GB.XNG.ZEBRA` | ✅ |
 | 9 | Zebra crossings and zig-zags | `GB.XNG.KEEP_CLEAR` | ⏳ |
 | 9 | Zebra crossings and zig-zags | `GB.XNG.ZIGZAG_OVERTAKE` | ✅ |
 | 10 | Box junctions | `GB.JCT.BOX` | ✅ |
@@ -55,12 +58,12 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 14 | Cyclists on roundabouts | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
 | 14 | Cyclists on roundabouts | `GB.VRU.PASS_CYCLIST` | ✅ |
 | 15 | Overtaking cyclists | `GB.VRU.PASS_CYCLIST` | ✅ |
-| 15 | Overtaking cyclists | `GB.POS.KEEP_LEFT` | ⏳ |
+| 15 | Overtaking cyclists | `GB.POS.KEEP_LEFT` | ✅ |
 | 15 | Overtaking cyclists | `GB.OBS.LANE_CHANGE` | ✅ |
 | 15 | Overtaking cyclists | `GB.SIG.TIMELY` | ✅ |
 | 16 | Following distance in town | `GB.GAP.TWO_SECOND` | ✅ |
 | 16 | Following distance in town | `GB.SPD.OVER_LIMIT` | ✅ |
-| 16 | Following distance in town | `GB.TL.RED` | ⏳ |
+| 16 | Following distance in town | `GB.TL.RED` | ✅ |
 | 17 | Dual carriageway lane discipline | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 17 | Dual carriageway lane discipline | `GB.OBS.LANE_CHANGE` | ✅ |
 | 17 | Dual carriageway lane discipline | `GB.SIG.TIMELY` | ✅ |
@@ -68,21 +71,25 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 18 | The two-second rule at speed | `GB.GAP.TWO_SECOND` | ✅ |
 | 18 | The two-second rule at speed | `GB.SPD.OVER_LIMIT` | ✅ |
 | 18 | The two-second rule at speed | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
-| 19 | Mock driving test | `GB.POS.KEEP_LEFT` | ⏳ |
+| 19 | Mock driving test | `GB.POS.KEEP_LEFT` | ✅ |
 | 19 | Mock driving test | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
 | 19 | Mock driving test | `GB.SIG.TIMELY` | ✅ |
 | 19 | Mock driving test | `GB.SPD.OVER_LIMIT` | ✅ |
 | 19 | Mock driving test | `GB.GAP.TWO_SECOND` | ✅ |
-| 20 | Roads near the test centre | `GB.POS.KEEP_LEFT` | ⏳ |
+| 20 | Roads near the test centre | `GB.POS.KEEP_LEFT` | ✅ |
 | 20 | Roads near the test centre | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
 | 20 | Roads near the test centre | `GB.SIG.TIMELY` | ✅ |
 | 20 | Roads near the test centre | `GB.SPD.OVER_LIMIT` | ✅ |
 | 20 | Roads near the test centre | `GB.GAP.TWO_SECOND` | ✅ |
+| 20 | Roads near the test centre | `GB.SCH.SLOW` | ✅ |
+| 20 | Roads near the test centre | `GB.JCT.STOP_SIGN` | ✅ |
 | 21 | Night driving and headlights | `GB.WX.HEADLIGHTS_NIGHT` | ⏳ |
 | 21 | Night driving and headlights | `GB.WX.NO_DAZZLE` | ⏳ |
 | 21 | Night driving and headlights | `GB.SPD.OVER_LIMIT` | ✅ |
+| 21 | Night driving and headlights | `GB.OBS.LANE_CHANGE` | ✅ |
 | 21 | Night driving and headlights | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 22 | Rain and stopping distances | `GB.GAP.WET_ICY` | ⏳ |
+| 22 | Rain and stopping distances | `GB.GAP.TWO_SECOND` | ✅ |
 | 22 | Rain and stopping distances | `GB.SPD.OVER_LIMIT` | ✅ |
 | 22 | Rain and stopping distances | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 23 | Fog and low visibility | `GB.WX.LOW_VISIBILITY` | ⏳ |
@@ -108,22 +115,35 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 27 | Breakdowns and emergency areas | `GB.MWY.KEEP_LEFT` | ⏳ |
 | 27 | Breakdowns and emergency areas | `GB.MWY.EMERGENCY_AREA` | ⏳ |
 | 27 | Breakdowns and emergency areas | `GB.BRK.NO_TRIANGLE_MWY` | ⏳ |
+| 28 | School zones | `GB.SCH.SLOW` | ✅ |
+| 28 | School zones | `GB.SPD.OVER_LIMIT` | ✅ |
+| 28 | School zones | `GB.SPD.APPROPRIATE` | ⏳ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
 | Rule ID | Practice Scenarios | Status |
 |---|---|---|
-| `GB.GAP.TWO_SECOND` | 8 | ✅ >= 2 |
+| `GB.GAP.TWO_SECOND` | 9 | ✅ >= 2 |
 | `GB.JCT.BOX` | 2 | ✅ >= 2 |
 | `GB.JCT.GIVE_WAY` | 3 | ✅ >= 2 |
-| `GB.OBS.LANE_CHANGE` | 8 | ✅ >= 2 |
+| `GB.JCT.H2_PEDESTRIANS` | 2 | ✅ >= 2 |
+| `GB.JCT.STOP_SIGN` | 2 | ✅ >= 2 |
+| `GB.JCT.TURN_NEAR` | 2 | ✅ >= 2 |
+| `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
+| `GB.POS.KEEP_LEFT` | 6 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_EXIT` | 5 | ✅ >= 2 |
 | `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
+| `GB.SCH.SLOW` | 5 | ✅ >= 2 |
 | `GB.SIG.TIMELY` | 11 | ✅ >= 2 |
-| `GB.SPD.OVER_LIMIT` | 13 | ✅ >= 2 |
+| `GB.SPD.OVER_LIMIT` | 15 | ✅ >= 2 |
+| `GB.TL.AMBER` | 2 | ✅ >= 2 |
+| `GB.TL.ASL` | 2 | ✅ >= 2 |
+| `GB.TL.RED` | 4 | ✅ >= 2 |
+| `GB.TL.RED_AMBER` | 2 | ✅ >= 2 |
 | `GB.VRU.PASS_CYCLIST` | 5 | ✅ >= 2 |
+| `GB.XNG.ZEBRA` | 2 | ✅ >= 2 |
 | `GB.XNG.ZIGZAG_OVERTAKE` | 2 | ✅ >= 2 |

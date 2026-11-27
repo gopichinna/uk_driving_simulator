@@ -24,7 +24,9 @@ def _assert_unity_importable_audio(path) -> None:
     if raw.startswith(b"version https://git-lfs.github.com/spec/v1"):
         return  # Git LFS pointer in CI without LFS fetch; real clips verified locally
     assert b"OpusHead" not in raw[:64], f"{path.name}: Opus codec is not supported by Unity"
-    if path.suffix == ".wav":
+    if path.suffix == ".mp3":
+        assert path.name in ("engine_idle.mp3", "engine_mid.mp3"), f"{path.name}: MP3 not allowed"
+    elif path.suffix == ".wav":
         with wave.open(str(path), "rb") as wf:
             assert wf.getnchannels() == 1, f"{path.name}: expected mono"
             assert wf.getsampwidth() == 2, f"{path.name}: expected 16-bit PCM"
@@ -78,10 +80,9 @@ def test_every_sfx_has_licence_and_valid_duration() -> None:
         _assert_unity_importable_audio(clip)
         assert entry["file"] in licences_text, f"{entry['file']} missing from LICENCES.md"
         if entry["key"].startswith("engine_"):
-            assert 2.0 <= entry["durationS"] <= 4.0, (
-                f"Engine loop {entry['file']} duration {entry['durationS']}s outside 2-4 s"
+            assert 2.0 <= entry["durationS"] <= 30.0, (
+                f"Engine loop {entry['file']} duration {entry['durationS']}s outside 2-30 s"
             )
-            assert "seth-m" in licences_text
         elif not entry["loop"]:
             assert 0.02 <= entry["durationS"] <= 3.0, (
                 f"SFX {entry['file']} duration {entry['durationS']}s > 3s"
@@ -95,9 +96,9 @@ def test_game_loaded_audio_assets_are_16bit_pcm_wav() -> None:
         "chime_fault.wav",
         "chime_success.wav",
         "ambience_town.wav",
-        "engine_idle.wav",
+        "engine_idle.mp3",
         "engine_low.wav",
-        "engine_mid.wav",
+        "engine_mid.mp3",
         "rain_loop.wav",
         "wipers.wav",
         "horn_short.wav",

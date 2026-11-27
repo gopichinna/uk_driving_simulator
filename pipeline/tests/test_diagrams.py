@@ -5,12 +5,12 @@ from __future__ import annotations
 import json
 import math
 
-from ltl_pipeline.diagrams import DIAGRAMS_DIR, LESSONS_DIR, _render_lesson_diagram
+from ltl_pipeline.diagrams import LESSONS_DIR, _render_lesson_diagram
 
 
 def test_diagrams_avoid_islands_and_stay_left() -> None:
     lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
-    assert len(lesson_files) == 27
+    assert len(lesson_files) == 28
 
     for lf in lesson_files:
         lesson = json.loads(lf.read_text(encoding="utf-8"))
@@ -40,4 +40,6 @@ def test_diagrams_avoid_islands_and_stay_left() -> None:
 
 
 def test_contact_sheet_exists() -> None:
-    assert (DIAGRAMS_DIR / "_contact_sheet.png").is_file()
+    from ltl_pipeline.schema import REPO_ROOT
+
+    assert (REPO_ROOT / "docs" / "images" / "diagrams-contact-sheet.png").is_file()

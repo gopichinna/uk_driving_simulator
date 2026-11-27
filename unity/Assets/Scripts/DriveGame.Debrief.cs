@@ -11,7 +11,7 @@ namespace LToLocal.Game
     /// </summary>
     public sealed partial class DriveGame
     {
-        private enum Mode { Driving, Debrief, Replay, Settings, LessonMenu, LearnCard, ScenarioDone, Quiz, LessonDone }
+        private enum Mode { Driving, Debrief, Replay, Settings, LessonMenu, LearnCard, ScenarioDone, Quiz, LessonDone, TheoryMenu, Theory, TheoryReview, TheoryResult, TheoryWrong }
         private Mode _mode = Mode.Driving;
 
         private readonly DriveRecorder _recorder = new DriveRecorder();
@@ -92,6 +92,7 @@ namespace LToLocal.Game
 
         private void UpdatePaused()
         {
+            UpdateTheoryClock();
             if (_mode != Mode.Replay) return;
             _replayTime += Time.deltaTime;
             if (_replayTime > _replayTo + 0.8) _replayTime = _replayFrom; // loop, with a short pause at the end
@@ -144,6 +145,11 @@ namespace LToLocal.Game
                 case Mode.ScenarioDone: DrawScenarioDone(W, H); break;
                 case Mode.Quiz: DrawQuiz(W, H); break;
                 case Mode.LessonDone: DrawLessonDone(W, H); break;
+                case Mode.TheoryMenu: DrawTheoryMenu(W, H); break;
+                case Mode.Theory: DrawTheory(W, H); break;
+                case Mode.TheoryReview: DrawTheoryReview(W, H); break;
+                case Mode.TheoryResult: DrawTheoryResult(W, H); break;
+                case Mode.TheoryWrong: DrawTheoryWrong(W, H); break;
             }
         }
 
