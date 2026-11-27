@@ -1,0 +1,22 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_sch_slow",
+  "course": "town",
+  "anchor": "school_street",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.35
+    },
+    {
+      "type": "pedestrian_waits",
+      "crossing": "zebra",
+      "whenPlayerWithinM": 35
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 90
+    }
+  ]
+}

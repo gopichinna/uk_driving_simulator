@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_jct_turn_far_position",
+  "course": "town",
+  "anchor": "tjunction_north",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    },
+    {
+      "type": "finish_at",
+      "anchor": "box_junction",
+      "offsetM": 0
+    }
+  ]
+}

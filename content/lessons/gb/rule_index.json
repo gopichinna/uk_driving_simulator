@@ -46,6 +46,11 @@
         "title": "Red X and variable limits"
       },
       {
+        "lessonId": "gb-s7-22-rain-stopping-distances",
+        "scenarioId": "s7_22_rain_town",
+        "title": "Rain and stopping distances"
+      },
+      {
         "lessonId": "gb-s8-19-mock-driving-test",
         "scenarioId": "s8_19_mock_test",
         "title": "Mock driving test"
@@ -274,6 +279,11 @@
         "lessonId": "gb-s6-26-motorway-red-x-limits",
         "scenarioId": "s6_26_mwy_red_x",
         "title": "Red X and variable limits"
+      },
+      {
+        "lessonId": "gb-s7-21-night-dipped-headlights",
+        "scenarioId": "s7_21_night_dual",
+        "title": "Night driving and headlights"
       }
     ],
     "GB.OBS.MOVE_OFF_CHECKS": [

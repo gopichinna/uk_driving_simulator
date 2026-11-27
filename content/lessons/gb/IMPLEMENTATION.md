@@ -81,8 +81,10 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 21 | Night driving and headlights | `GB.WX.HEADLIGHTS_NIGHT` | ⏳ |
 | 21 | Night driving and headlights | `GB.WX.NO_DAZZLE` | ⏳ |
 | 21 | Night driving and headlights | `GB.SPD.OVER_LIMIT` | ✅ |
+| 21 | Night driving and headlights | `GB.OBS.LANE_CHANGE` | ✅ |
 | 21 | Night driving and headlights | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 22 | Rain and stopping distances | `GB.GAP.WET_ICY` | ⏳ |
+| 22 | Rain and stopping distances | `GB.GAP.TWO_SECOND` | ✅ |
 | 22 | Rain and stopping distances | `GB.SPD.OVER_LIMIT` | ✅ |
 | 22 | Rain and stopping distances | `GB.POS.DUAL_KEEP_LEFT` | ⏳ |
 | 23 | Fog and low visibility | `GB.WX.LOW_VISIBILITY` | ⏳ |
@@ -113,10 +115,10 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 
 | Rule ID | Practice Scenarios | Status |
 |---|---|---|
-| `GB.GAP.TWO_SECOND` | 8 | ✅ >= 2 |
+| `GB.GAP.TWO_SECOND` | 9 | ✅ >= 2 |
 | `GB.JCT.BOX` | 2 | ✅ >= 2 |
 | `GB.JCT.GIVE_WAY` | 3 | ✅ >= 2 |
-| `GB.OBS.LANE_CHANGE` | 8 | ✅ >= 2 |
+| `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
