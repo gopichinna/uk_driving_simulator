@@ -46,6 +46,7 @@ namespace LToLocal.Game
         private readonly FixedStepClock _clock = new FixedStepClock();
         private readonly CarParams _params = new CarParams();
         private readonly SpeedRule _speedRule = new SpeedRule();
+        private readonly SignalCancelRule _signalCancelRule = new SignalCancelRule();
         private readonly CyclistPassingRule _cyclistRule = new CyclistPassingRule();
         private readonly FollowingDistanceRule _gapRule = new FollowingDistanceRule();
         private readonly List<RoadUser> _roadUsers = new List<RoadUser>();
@@ -94,6 +95,7 @@ namespace LToLocal.Game
             _prev = _curr;
             _indicator = 0;
             _speedRule.Reset();
+            _signalCancelRule.Reset();
             _cyclistRule.Reset();
             _gapRule.Reset();
             _course.ResetCourse();
@@ -125,6 +127,7 @@ namespace LToLocal.Game
                 _course.Step(_clock.StepSeconds, _curr, _clock.SimTime, _indicator, _events);
                 var frame = new DriverFrame(_clock.SimTime, _curr, _indicator);
                 _speedRule.OnFrame(frame, _course.SpeedLimitMph(_curr), _events);
+                _signalCancelRule.OnFrame(frame, _events);
                 _course.GetRoadUsers(_roadUsers);
                 _cyclistRule.OnFrame(frame, _roadUsers, _events);
                 _gapRule.OnFrame(frame, _roadUsers, _events);
