@@ -124,20 +124,31 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_GAP` | ✅ |
 | 29 | Turning left and right at junctions | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
 | 29 | Turning left and right at junctions | `GB.JCT.GIVE_WAY` | ✅ |
+| 30 | Mock test: suburbs and rural lanes | `GB.JCT.STOP_SIGN` | ✅ |
+| 30 | Mock test: suburbs and rural lanes | `GB.POS.KEEP_LEFT` | ✅ |
+| 30 | Mock test: suburbs and rural lanes | `GB.SPD.OVER_LIMIT` | ✅ |
+| 30 | Mock test: suburbs and rural lanes | `GB.SIG.TIMELY` | ✅ |
+| 30 | Mock test: suburbs and rural lanes | `GB.GAP.TWO_SECOND` | ✅ |
+| 31 | Mock test: Coventry ring road | `GB.POS.KEEP_LEFT` | ✅ |
+| 31 | Mock test: Coventry ring road | `GB.TL.RED` | ✅ |
+| 31 | Mock test: Coventry ring road | `GB.SPD.OVER_LIMIT` | ✅ |
+| 31 | Mock test: Coventry ring road | `GB.GAP.TWO_SECOND` | ✅ |
+| 31 | Mock test: Coventry ring road | `GB.POS.LANE_FOR_ROUTE` | ⏳ |
+| 31 | Mock test: Coventry ring road | `GB.SIG.TIMELY` | ✅ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
 | Rule ID | Practice Scenarios | Status |
 |---|---|---|
-| `GB.GAP.TWO_SECOND` | 9 | ✅ >= 2 |
+| `GB.GAP.TWO_SECOND` | 11 | ✅ >= 2 |
 | `GB.JCT.BOX` | 2 | ✅ >= 2 |
 | `GB.JCT.GIVE_WAY` | 4 | ✅ >= 2 |
 | `GB.JCT.H2_PEDESTRIANS` | 2 | ✅ >= 2 |
-| `GB.JCT.STOP_SIGN` | 2 | ✅ >= 2 |
+| `GB.JCT.STOP_SIGN` | 3 | ✅ >= 2 |
 | `GB.JCT.TURN_FAR_GAP` | 5 | ✅ >= 2 |
 | `GB.JCT.TURN_NEAR` | 4 | ✅ >= 2 |
 | `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
-| `GB.POS.KEEP_LEFT` | 6 | ✅ >= 2 |
+| `GB.POS.KEEP_LEFT` | 10 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.GIVE_WAY_RIGHT` | 5 | ✅ >= 2 |
 | `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
@@ -145,11 +156,11 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
 | `GB.SCH.SLOW` | 5 | ✅ >= 2 |
-| `GB.SIG.TIMELY` | 12 | ✅ >= 2 |
-| `GB.SPD.OVER_LIMIT` | 15 | ✅ >= 2 |
+| `GB.SIG.TIMELY` | 14 | ✅ >= 2 |
+| `GB.SPD.OVER_LIMIT` | 18 | ✅ >= 2 |
 | `GB.TL.AMBER` | 2 | ✅ >= 2 |
 | `GB.TL.ASL` | 2 | ✅ >= 2 |
-| `GB.TL.RED` | 4 | ✅ >= 2 |
+| `GB.TL.RED` | 6 | ✅ >= 2 |
 | `GB.TL.RED_AMBER` | 2 | ✅ >= 2 |
 | `GB.VRU.PASS_CYCLIST` | 5 | ✅ >= 2 |
 | `GB.XNG.ZEBRA` | 2 | ✅ >= 2 |

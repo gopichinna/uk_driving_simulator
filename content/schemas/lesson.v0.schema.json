@@ -60,7 +60,11 @@
             "dual_carriageway",
             "wolverhampton",
             "wolverhampton-test-area",
-            "motorway"
+            "motorway",
+            "suburb_practice",
+            "rural_practice",
+            "ring_road_practice",
+            "coventry"
           ]
         },
         "anchor": {

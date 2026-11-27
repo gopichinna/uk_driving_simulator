@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s8-31-mock-test-coventry",
+  "questions": [
+    {
+      "id": "q_31_wrong_turn",
+      "question": "What should you do if you take a wrong turn during independent driving?",
+      "options": [
+        "Carry on safely; it is not a fault by itself",
+        "Stop and reverse at the junction",
+        "Swerve across two lanes to make the exit"
+      ],
+      "answerIndex": 0,
+      "explanation": "Going off-route safely is not a fault, but unsafe swerving is.",
+      "ruleId": "GB.POS.LANE_FOR_ROUTE"
+    },
+    {
+      "id": "q_31_ring_lights",
+      "question": "At a busy ring-road traffic light, when may you cross on green?",
+      "options": [
+        "Only when there is space beyond the junction",
+        "Always, even if traffic blocks the exit",
+        "Whenever the car behind beeps"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 176 says do not block the junction even on green.",
+      "ruleId": "GB.TL.CLEAR_JUNCTION"
+    },
+    {
+      "id": "q_31_speed",
+      "question": "When leaving a 40 mph road for a 30 mph street, when must you slow?",
+      "options": [
+        "Before you pass the 30 mph signs",
+        "Only after 100 metres",
+        "Only if a camera is visible"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 124 says speed limits apply as soon as you pass the sign.",
+      "ruleId": "GB.SPD.OVER_LIMIT"
+    }
+  ]
+}

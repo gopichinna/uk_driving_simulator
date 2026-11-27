@@ -1,0 +1,80 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s8-31-mock-test-coventry",
+  "stage": 8,
+  "order": 31,
+  "title": "Mock test: Coventry ring road",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Drive through Coventry city centre and the A4053 ring road.",
+      "Read lane arrows early and watch for pedestrian crossings and signals.",
+      "Follow satnav or signs calmly even if you miss a turn."
+    ],
+    "ruleIds": [
+      "GB.POS.KEEP_LEFT",
+      "GB.POS.LANE_FOR_ROUTE",
+      "GB.TL.RED",
+      "GB.SPD.OVER_LIMIT",
+      "GB.GAP.TWO_SECOND"
+    ],
+    "govUkUrl": "https://www.gov.uk/driving-test/what-happens-during-test",
+    "diagram": "content/lessons/gb/diagrams/gb-s8-31-mock-test-coventry.png"
+  },
+  "scenarios": [
+    {
+      "id": "s8_31_coventry_mock_satnav",
+      "course": "coventry",
+      "anchor": "start",
+      "goal": "Follow satnav directions safely around Coventry city centre and ring road.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.TL.RED",
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s8_31_coventry_mock_signs",
+      "course": "coventry",
+      "anchor": "start",
+      "goal": "Follow Coventry direction signs cleanly through busy city junctions.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.POS.LANE_FOR_ROUTE",
+        "GB.TL.RED",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Scan overhead and painted lane arrows early on multi-lane ring roads.",
+    "Never force a lane change at the last moment if you miss an exit."
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s8-30-mock-test-suburb-rural",
+  "stage": 8,
+  "order": 30,
+  "title": "Mock test: suburbs and rural lanes",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Drive 10 minutes through suburban streets, mini-roundabouts, and rural lanes.",
+      "Stop completely at any stop line and watch for blind bends.",
+      "Keep calm and follow independent driving signs safely."
+    ],
+    "ruleIds": [
+      "GB.JCT.STOP_SIGN",
+      "GB.POS.KEEP_LEFT",
+      "GB.SPD.OVER_LIMIT",
+      "GB.GAP.TWO_SECOND"
+    ],
+    "govUkUrl": "https://www.gov.uk/driving-test/what-happens-during-test",
+    "diagram": "content/lessons/gb/diagrams/gb-s8-30-mock-test-suburb-rural.png"
+  },
+  "scenarios": [
+    {
+      "id": "s8_30_suburb_mock",
+      "course": "suburb_practice",
+      "anchor": "start",
+      "goal": "Complete a full suburban mock drive across Tettenhall streets and junctions.",
+      "rulesJudged": [
+        "GB.JCT.STOP_SIGN",
+        "GB.POS.KEEP_LEFT",
+        "GB.SPD.OVER_LIMIT",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.35,
+          0.55
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s8_30_rural_mock",
+      "course": "rural_practice",
+      "anchor": "start",
+      "goal": "Drive safely along rural lanes, bends, and village speed limits.",
+      "rulesJudged": [
+        "GB.POS.KEEP_LEFT",
+        "GB.SPD.OVER_LIMIT",
+        "GB.GAP.TWO_SECOND"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.25,
+          0.45
+        ],
+        "cyclistShare": 0.15,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 15,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Adjust your speed early when leaving faster rural roads for villages.",
+    "Always stop completely behind a solid white stop line."
+  ]
+}

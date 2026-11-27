@@ -179,6 +179,18 @@
       "durationS": 20.911
     },
     {
+      "key": "lesson.gb-s8-30-mock-test-suburb-rural.learn",
+      "file": "lesson.gb-s8-30-mock-test-suburb-rural.learn.wav",
+      "text": "Drive 10 minutes through suburban streets, mini-roundabouts, and rural lanes. Stop completely at any stop line and watch for blind bends. Keep calm and follow independent driving signs safely.",
+      "durationS": 12.104
+    },
+    {
+      "key": "lesson.gb-s8-31-mock-test-coventry.learn",
+      "file": "lesson.gb-s8-31-mock-test-coventry.learn.wav",
+      "text": "Drive through Coventry city centre and the A4053 ring road. Read lane arrows early and watch for pedestrian crossings and signals. Follow satnav or signs calmly even if you miss a turn.",
+      "durationS": 11.907
+    },
+    {
       "key": "scenario.s0_01_dual_keep_left.brief",
       "file": "scenario.s0_01_dual_keep_left.brief.wav",
       "text": "Return to the left lane smoothly after passing slower traffic.",
@@ -561,6 +573,30 @@
       "file": "scenario.s8_20_test_centre_signs.brief.wav",
       "text": "Follow the direction signs from Spring Road towards the main road network.",
       "durationS": 3.709
+    },
+    {
+      "key": "scenario.s8_30_rural_mock.brief",
+      "file": "scenario.s8_30_rural_mock.brief.wav",
+      "text": "Drive safely along rural lanes, bends, and village speed limits.",
+      "durationS": 4.209
+    },
+    {
+      "key": "scenario.s8_30_suburb_mock.brief",
+      "file": "scenario.s8_30_suburb_mock.brief.wav",
+      "text": "Complete a full suburban mock drive across Tettenhall streets and junctions.",
+      "durationS": 4.438
+    },
+    {
+      "key": "scenario.s8_31_coventry_mock_satnav.brief",
+      "file": "scenario.s8_31_coventry_mock_satnav.brief.wav",
+      "text": "Follow satnav directions safely around Coventry city centre and ring road.",
+      "durationS": 4.336
+    },
+    {
+      "key": "scenario.s8_31_coventry_mock_signs.brief",
+      "file": "scenario.s8_31_coventry_mock_signs.brief.wav",
+      "text": "Follow Coventry direction signs cleanly through busy city junctions.",
+      "durationS": 3.589
     },
     {
       "key": "voice.GB.GAP.TWO_SECOND.fault",
