@@ -510,6 +510,7 @@ namespace LToLocal.Rules
         {
             var approaches = new List<TrafficLightRule.Approach>();
             var giveWays = new List<GiveWayRule.Line>();
+            var stops = new List<LaneLine>();
             foreach (var s in g.Segments)
             {
                 if (s.Kind != SegmentKind.Lane || s.EndNode < 0) continue;
@@ -523,12 +524,15 @@ namespace LToLocal.Rules
                 }
                 else if (s.EndControl == LineControl.GiveWay && s.Confidence >= 0.7)
                     giveWays.Add(new GiveWayRule.Line(LaneLine.Across(pEnd, hEnd), centre));
+                else if (s.EndControl == LineControl.Stop && s.Confidence >= 0.7)
+                    stops.Add(LaneLine.Across(pEnd, hEnd));
             }
             var boxes = new List<Vec2[]>();
             foreach (var n in g.Nodes) if (n.Box != null) boxes.Add(n.Box);
 
             Lights = new TrafficLightRule(approaches);
             GiveWay = new GiveWayRule(giveWays);
+            StopSign = new StopSignRule(stops);
             Crossings = new PedestrianCrossingRule(g.CrossingAreas);
             ZigZags = new ZigZagOvertakeRule(g.ZigZags);
             Box = new BoxJunctionRule(boxes, side);
@@ -536,6 +540,7 @@ namespace LToLocal.Rules
 
         public TrafficLightRule Lights { get; }
         public GiveWayRule GiveWay { get; }
+        public StopSignRule StopSign { get; }
         public PedestrianCrossingRule Crossings { get; }
         public ZigZagOvertakeRule ZigZags { get; }
         public BoxJunctionRule Box { get; }
@@ -544,6 +549,7 @@ namespace LToLocal.Rules
         {
             Lights.Reset();
             GiveWay.Reset();
+            StopSign.Reset();
             Crossings.Reset();
             ZigZags.Reset();
             Box.Reset();
@@ -554,6 +560,7 @@ namespace LToLocal.Rules
         {
             Lights.OnFrame(f, lights, users, output);
             GiveWay.OnFrame(f, users, output);
+            StopSign.OnFrame(f, output);
             Crossings.OnFrame(f, people, output);
             ZigZags.OnFrame(f, users, output);
             Box.OnFrame(f, output);

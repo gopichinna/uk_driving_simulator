@@ -9,7 +9,7 @@ namespace LToLocal.Sim
     public enum TurnKind { Ahead, Near, Far }
 
     /// <summary>What controls the end of a lane where it meets a junction.</summary>
-    public enum LineControl { None, GiveWay, Signals }
+    public enum LineControl { None, GiveWay, Signals, Stop }
 
     /// <summary>A point where a connector crosses or merges with another connector at the same junction.</summary>
     public readonly struct ConflictPoint
@@ -280,7 +280,7 @@ namespace LToLocal.Sim
                 if (la.SignalGroup != lb.SignalGroup) return false; // never green together
                 return a.Turn == TurnKind.Far && b.Turn != TurnKind.Far;
             }
-            bool aMinor = la.EndControl == LineControl.GiveWay, bMinor = lb.EndControl == LineControl.GiveWay;
+            bool aMinor = la.EndControl == LineControl.GiveWay || la.EndControl == LineControl.Stop, bMinor = lb.EndControl == LineControl.GiveWay || lb.EndControl == LineControl.Stop;
             if (aMinor != bMinor) return aMinor;
             if (a.Turn == TurnKind.Far && b.Turn != TurnKind.Far) return true;
             if (b.Turn == TurnKind.Far && a.Turn != TurnKind.Far) return false;

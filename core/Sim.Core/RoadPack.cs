@@ -417,7 +417,7 @@ namespace LToLocal.Sim
             else if (junction && pr!.ControlledBy == "roundabout") { control = l.Roundabout ? LineControl.None : LineControl.GiveWay; confidence = Math.Min(confidence, pr.Confidence); }
             else if (junction && pr!.ControlledBy != "signals" && pr.MajorLinks.Count > 0 && !pr.MajorLinks.Contains(l.Id))
             {
-                control = LineControl.GiveWay;
+                control = pr.ControlledBy == "stop" ? LineControl.Stop : LineControl.GiveWay;
                 confidence = Math.Min(confidence, pr.Confidence);
             }
 
