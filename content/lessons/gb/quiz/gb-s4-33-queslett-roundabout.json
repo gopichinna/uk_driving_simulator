@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s4-33-queslett-roundabout",
+  "questions": [
+    {
+      "id": "q_33_queslett_give_way",
+      "question": "Before joining a four-exit roundabout like Queslett, who has priority?",
+      "options": [
+        "Traffic already on the roundabout from your right",
+        "Traffic entering from the left arm",
+        "Whichever car arrives fastest"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 185 says give way to traffic approaching from your right.",
+      "ruleId": "GB.RBT.GIVE_WAY_RIGHT"
+    },
+    {
+      "id": "q_33_queslett_exit_signal",
+      "question": "When should you signal left to leave Queslett onto Aldridge Road?",
+      "options": [
+        "Just after passing the exit before Aldridge Road",
+        "Before entering the roundabout",
+        "Only after you have fully left the roundabout"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 186 says signal left after passing the exit before yours.",
+      "ruleId": "GB.RBT.SIGNAL_EXIT"
+    },
+    {
+      "id": "q_33_queslett_lane_discipline",
+      "question": "How should you handle two-lane circulatory markings on a large roundabout?",
+      "options": [
+        "Stay in your lane and follow the road markings",
+        "Cut across both lanes to shorten the curve",
+        "Stop on the roundabout to check signs"
+      ],
+      "answerIndex": 0,
+      "explanation": "Rule 186 says keep in your lane and follow the markings.",
+      "ruleId": "GB.RBT.STAY_IN_LANE"
+    }
+  ]
+}

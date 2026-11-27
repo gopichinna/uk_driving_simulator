@@ -599,6 +599,21 @@
         "lessonId": "gb-s4-32-coventry-ring-road",
         "scenarioId": "s4_32_cov_multi_roundabout",
         "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit1_left",
+        "title": "A big four-way roundabout"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit2_ahead",
+        "title": "A big four-way roundabout"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit3_right",
+        "title": "A big four-way roundabout"
       }
     ],
     "GB.RBT.SIGNAL_APPROACH": [
@@ -616,6 +631,11 @@
         "lessonId": "gb-s3-12-roundabout-lanes-signals",
         "scenarioId": "s3_12_third_exit_dusk",
         "title": "Roundabout lanes and signals"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit3_right",
+        "title": "A big four-way roundabout"
       }
     ],
     "GB.RBT.SIGNAL_EXIT": [
@@ -643,6 +663,21 @@
         "lessonId": "gb-s3-13-roundabout-stay-in-lane",
         "scenarioId": "s3_13_busy_spiral_exit",
         "title": "Staying in lane on roundabouts"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit1_left",
+        "title": "A big four-way roundabout"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit2_ahead",
+        "title": "A big four-way roundabout"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit3_right",
+        "title": "A big four-way roundabout"
       }
     ],
     "GB.RBT.STAY_IN_LANE": [
@@ -665,6 +700,16 @@
         "lessonId": "gb-s4-32-coventry-ring-road",
         "scenarioId": "s4_32_cov_multi_roundabout",
         "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit2_ahead",
+        "title": "A big four-way roundabout"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit3_right",
+        "title": "A big four-way roundabout"
       }
     ],
     "GB.RBT.WRONG_WAY": [
@@ -763,6 +808,11 @@
         "lessonId": "gb-s4-32-coventry-ring-road",
         "scenarioId": "s4_32_cov_give_way",
         "title": "The ring road"
+      },
+      {
+        "lessonId": "gb-s4-33-queslett-roundabout",
+        "scenarioId": "s4_33_queslett_exit1_left",
+        "title": "A big four-way roundabout"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",

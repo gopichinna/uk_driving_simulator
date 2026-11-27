@@ -2,7 +2,7 @@
   "scenarioFormatVersion": "0.1",
   "scenarioId": "s4_ring_rbt_multilane",
   "course": "ring_road_practice",
-  "anchor": "join",
+  "anchor": "start",
   "durationS": 120,
   "events": [
     {

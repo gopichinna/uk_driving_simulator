@@ -12,7 +12,7 @@ SCENARIOS_DIR = REPO_ROOT / "content" / "scenarios" / "gb"
 
 def test_every_lesson_has_valid_difficulty_ladder() -> None:
     lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
-    assert len(lesson_files) == 32
+    assert len(lesson_files) == 33
 
     for lf in lesson_files:
         lesson = json.loads(lf.read_text(encoding="utf-8"))
