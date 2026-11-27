@@ -15,5 +15,6 @@
       "type": "traffic_density",
       "value": 0.35
     }
-  ]
+  ],
+  "difficulty": 1
 }

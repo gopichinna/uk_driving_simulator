@@ -115,5 +115,53 @@
   "recap": [
     "Signal early so following drivers and cyclists see your turn in time.",
     "Never force an oncoming car to slow down when you turn right."
+  ],
+  "variants": [
+    {
+      "id": "s1_29_right_clear_gap_b",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Replay variant: Wait for a 3.5 second clear gap before turning right.",
+      "rulesJudged": [
+        "GB.JCT.TURN_FAR_GAP",
+        "GB.JCT.TURN_FAR_POSITION"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.35,
+          0.5
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s1_29_right_clear_gap_c",
+      "course": "town",
+      "anchor": "tjunction_north",
+      "goal": "Replay variant: Wait for a 3.5 second clear gap before turning right.",
+      "rulesJudged": [
+        "GB.JCT.TURN_FAR_GAP",
+        "GB.JCT.TURN_FAR_POSITION"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.6
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

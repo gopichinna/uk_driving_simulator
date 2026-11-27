@@ -92,5 +92,53 @@
   "recap": [
     "Always look right before crossing the broken give-way line.",
     "Always travel clockwise around every UK roundabout."
+  ],
+  "variants": [
+    {
+      "id": "s3_11_single_rbt_give_way_b",
+      "course": "roundabout",
+      "anchor": "start",
+      "goal": "Replay variant: Give way to circulating traffic from the right before entering.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.WRONG_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s3_11_single_rbt_give_way_c",
+      "course": "roundabout",
+      "anchor": "start",
+      "goal": "Replay variant: Give way to circulating traffic from the right before entering.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.WRONG_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.55,
+          0.85
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

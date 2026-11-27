@@ -1,0 +1,29 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s2_09_zebra_yield_b",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    },
+    {
+      "type": "pedestrian_waits",
+      "crossing": "zebra",
+      "whenPlayerWithinM": 45
+    },
+    {
+      "type": "pedestrian_steps_out",
+      "crossing": "zebra",
+      "whenPlayerWithinM": 30
+    },
+    {
+      "type": "finish_at",
+      "anchor": "zebra",
+      "offsetM": 55
+    }
+  ],
+  "difficulty": 1
+}

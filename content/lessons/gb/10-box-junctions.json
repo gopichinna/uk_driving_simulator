@@ -69,5 +69,53 @@
   "recap": [
     "Wait before the yellow box even if the traffic light is green.",
     "Enter only when your exit has space for your whole car."
+  ],
+  "variants": [
+    {
+      "id": "s2_10_box_straight_b",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Replay variant: Wait behind the yellow grid until your exit road clears.",
+      "rulesJudged": [
+        "GB.JCT.BOX",
+        "GB.TL.CLEAR_JUNCTION"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.65,
+          0.95
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s2_10_box_straight_c",
+      "course": "town",
+      "anchor": "box_junction",
+      "goal": "Replay variant: Wait behind the yellow grid until your exit road clears.",
+      "rulesJudged": [
+        "GB.JCT.BOX",
+        "GB.TL.CLEAR_JUNCTION"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.75,
+          0.95
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

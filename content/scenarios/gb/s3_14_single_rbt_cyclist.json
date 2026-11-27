@@ -19,5 +19,6 @@
       "type": "take_exit",
       "exitNumber": 2
     }
-  ]
+  ],
+  "difficulty": 1
 }

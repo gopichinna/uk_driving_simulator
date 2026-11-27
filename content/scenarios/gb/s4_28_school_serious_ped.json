@@ -13,5 +13,6 @@
       "type": "finish_after_s",
       "seconds": 90
     }
-  ]
+  ],
+  "difficulty": 2
 }

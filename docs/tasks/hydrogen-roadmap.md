@@ -338,10 +338,10 @@ Goal: finish what is open and use the second city. Branch: `hydrogen/r39-coventr
 ## Round 40: scenario difficulty and replay value (pipeline data)
 Goal: make each lesson worth replaying. Branch: `hydrogen/r40-difficulty-replay`. Start after R39.
 
-- [ ] R40.1 **Difficulty ladder.** For each of the 31 lessons add a documented difficulty rating (1 to 3) per scenario, based on traffic, speed, junction type and number of rules judged. Write the method in `docs/specs/difficulty.md` and put the rating in each scenario file as an optional `difficulty` field (additive, pre-agreed for `scenario.v0`). Add a test that each lesson starts easy (first scenario rated 1) and never jumps by more than 1 between neighbours.
-- [ ] R40.2 **Variants.** For 10 of the most-failed or most-central scenarios (choose by rule importance: signals, give way, roundabouts, school, turning, STOP, lights), add 2 variants each (different start point, traffic mix or weather where the schema allows) as `...-b` and `...-c`, listed under `variants` in the lesson but not required for stars.
-- [ ] R40.3 **Coach tips by difficulty.** Add 1 extra plain-English tip per rule for learners who fail the same rule twice (`.tip` voice key, with WAV, manifest and `en-XA`), ≤ 12 words.
-- [ ] R40.4 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R40:`.
+- [x] R40.1 **Difficulty ladder.** Documented 4-factor difficulty rating (`1..3`) in `docs/specs/difficulty.md`, added optional `difficulty` (`1..3`) to `scenario.v0.schema.json` and all 74 lesson scenarios (first scenario per lesson rated `1`, neighbour step `<= 1`), and added `pipeline/tests/test_difficulty.py`.
+- [x] R40.2 **Variants.** Added optional `variants` array to `lesson.v0.schema.json` and created 20 replay variants (`_b`, `_c`) across 10 central scenarios (moving off, T-junctions, STOP, right turn, signals, zebra, box junction, roundabouts, school zone) with validation in `test_difficulty.py`.
+- [x] R40.3 **Coach tips by difficulty.** Added 31 plain-English `.tip` voice keys (`<= 12` words each) to `content/countries/gb/strings/en/voice.json`, generated Piper WAVs, `manifest.json`, and `en-XA`, and added `.tip` parity + length checks in `test_audio.py`.
+- [x] R40.4 **Wrap-up.** Regenerated `en-XA`, audio manifests, `rule_index.json`, `IMPLEMENTATION.md`, and `CONTENT_HEALTH.md`; updated `docs/08-parallel-work-plan.md` §6; verified `ruff`, `pytest`, schema validation, and readability.
 
 ---
 

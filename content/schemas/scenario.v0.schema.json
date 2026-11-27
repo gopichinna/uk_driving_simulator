@@ -38,6 +38,7 @@
       ]
     },
     "durationS": { "type": "integer", "minimum": 60, "maximum": 3600 },
+    "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
     "events": {
       "type": "array",
       "minItems": 1,

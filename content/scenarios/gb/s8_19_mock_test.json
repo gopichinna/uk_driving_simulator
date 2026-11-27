@@ -15,5 +15,6 @@
       "mode": "mixed",
       "instruction": "Follow the sat nav and road signs across Wolverhampton."
     }
-  ]
+  ],
+  "difficulty": 1
 }

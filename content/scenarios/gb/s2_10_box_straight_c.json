@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s2_10_box_straight_c",
+  "course": "town",
+  "anchor": "box_junction",
+  "durationS": 100,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.9
+    },
+    {
+      "type": "finish_at",
+      "anchor": "box_junction",
+      "offsetM": 70
+    }
+  ],
+  "difficulty": 2
+}
