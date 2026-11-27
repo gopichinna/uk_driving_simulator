@@ -265,6 +265,15 @@ Goal: Claude can implement the next batch of rules straight from your specs, and
 - [x] R32.5 **Health report split gap 1:** replaced the single 117-rule gap line with per-stage implemented-vs-planned counts (`S0: ... S8: ...`).
 - [x] R32.6 **Wrap-up:** regenerated `rule_index.json`, `IMPLEMENTATION.md`, and `docs/CONTENT_HEALTH.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, and readability.
 
+## Round 33: audit the rule specs, then the next 20 (docs + draft scenarios)
+Goal: Claude is implementing the R32 rules now, so the specs must be exact. Branch: `hydrogen/r33-spec-audit-and-batch-2`, from `main`.
+
+- [ ] R33.1 **Audit `docs/specs/next-rules.md` against GOV.UK, line by line.** Re-open every cited Highway Code page and check the rule number and wording. Known doubts: `GB.TL.RED` cites "Rule 175–176" (check the real numbers for traffic lights and stop lines); `GB.POS.KEEP_LEFT` says "Driving (`Serious` / `Dangerous` if oncoming traffic is present)" which mixes a minor fault with a fail. Give every rule **one** base severity from `test_marking.yaml` plus a separate "escalates to" line. Mark anything you cannot confirm `UNVERIFIED` rather than guessing. Record the check date per rule.
+- [ ] R33.2 **Add exact thresholds Claude needs.** For each of the 20 rules state numbers, not adjectives: distances in metres, speeds in mph, time windows in seconds, and which field in `RoadPack` v0.7 or `Sim.Core` supplies each one. If a threshold is a judgement call (for example "safe gap"), propose a value and label it `PROPOSED`.
+- [ ] R33.3 **Check the 20 draft scenarios against the audited specs.** Each draft must produce the stated pass and fail cases; fix mismatches and add a test that every spec rule ID has a draft and every draft has a spec.
+- [ ] R33.4 **Batch 2: the next 20 rules.** `docs/specs/next-rules-2.md`, same format and the same level of detail as the audited batch 1, from the remaining planned rules taught in Stages 3–8 (roundabouts, lane choice, parking and stopping, motorways, conditions). Add 20 matching drafts in `content/scenarios/gb/drafts/`.
+- [ ] R33.5 **Wrap-up.** Regenerate `docs/CONTENT_HEALTH.md`, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R33:`.
+
 ---
 
 ## Requests from Claude
