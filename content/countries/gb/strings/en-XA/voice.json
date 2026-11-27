@@ -186,6 +186,12 @@
     "voice.GB.JCT.TURN_NEAR.fault.v3": "[Dó nót swíng wídé ríght béfóré mákíng á léft túrn. ~~~~~~~~~~~~~~~~~~~~]",
     "voice.GB.JCT.TURN_NEAR.good": "[Cléán léft túrn pósítíón ánd éárly sígnál. ~~~~~~~~~~~~~~~~~]",
     "voice.GB.JCT.TURN_NEAR.good.v2": "[Nícé éárly léft índícátór ánd néát kérb pósítíón. ~~~~~~~~~~~~~~~~~~~~]",
-    "voice.GB.JCT.TURN_NEAR.good.v3": "[Smóóth léft túrn fróm thé néársídé láné. ~~~~~~~~~~~~~~~~]"
+    "voice.GB.JCT.TURN_NEAR.good.v3": "[Smóóth léft túrn fróm thé néársídé láné. ~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.fault": "[Wáít fór á sáfé gáp béfóré túrníng ríght ácróss tráffíc. ~~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.fault.v2": "[Hóld báck só óncómíng cárs dó nót hávé tó bráké. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.fault.v3": "[Lét óncómíng tráffíc páss béfóré yóú túrn ríght. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.good": "[Góód pátíéncé wáítíng fór á sáfé ríght-túrn gáp. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.good.v2": "[Cléán ríght túrn wíth plénty óf óncómíng spácé. ~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_FAR_GAP.good.v3": "[Sáfé tímíng túrníng ríght ácróss thé máín róád. ~~~~~~~~~~~~~~~~~~~]"
   }
 }

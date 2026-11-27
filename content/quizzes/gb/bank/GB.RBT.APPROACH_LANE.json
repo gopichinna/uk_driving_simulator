@@ -10,7 +10,7 @@
       "The central island"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 says to approach in the left-hand lane for the first exit.",
+    "explain": "Rule 186: To approach in the left-hand lane for the first exit.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "Any lane without arrows"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 186 states to use the right-hand lane when taking an exit to the right.",
+    "explain": "Rule 186: To use the right-hand lane when taking an exit to the right.",
     "hc_rule": "186",
     "difficulty": 1
   },
   {
     "id": "qb_rbt_lane_3",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "If road arrows and signs show a different lane plan than normal, what should you follow?",
+    "question": "If road arrows and signs show a different lane plan than normal. What should you follow?",
     "options": [
       "Ignore the signs",
       "Follow the road markings and approach signs",
@@ -40,14 +40,14 @@
       "Stop and reverse"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 186 tells drivers to follow painted lane arrows and approach signs when marked.",
+    "explain": "Rule 186: tells drivers to follow painted lane arrows and approach signs when marked.",
     "hc_rule": "186",
     "difficulty": 2
   },
   {
     "id": "qb_rbt_lane_4",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "When going straight ahead at a normal two-lane roundabout with no special arrows, which lane is usual?",
+    "question": "When going straight ahead at a normal two-lane roundabout with no special arrows. Which lane is usual?",
     "options": [
       "The left-hand lane",
       "Always the right-hand lane",
@@ -62,7 +62,7 @@
   {
     "id": "qb_rbt_lane_5",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "When taking the first exit on the left at a roundabout, which lane do you choose?",
+    "question": "When taking the first exit on the left at a roundabout. Which lane do you choose?",
     "options": [
       "The left-hand lane",
       "The right-hand lane",
@@ -70,7 +70,7 @@
       "The bus lane"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 says to approach in the left-hand lane for the first exit.",
+    "explain": "Rule 186: To approach in the left-hand lane for the first exit.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -92,7 +92,7 @@
   {
     "id": "qb_rbt_lane_7",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "When taking the third exit to the right at a two-lane roundabout, which lane is usual?",
+    "question": "When taking the third exit to the right at a two-lane roundabout. Which lane is usual?",
     "options": [
       "The right-hand lane",
       "The left-hand lane",
@@ -100,7 +100,7 @@
       "Any lane"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 uses the right-hand lane for exits to the right unless signed otherwise.",
+    "explain": "Rule 186: uses the right-hand lane for exits to the right unless signed otherwise.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -130,14 +130,14 @@
       "Straddle two lanes"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 says to follow painted lane markings on multi-lane approaches.",
+    "explain": "Rule 186: To follow painted lane markings on multi-lane approaches.",
     "hc_rule": "186",
     "difficulty": 2
   },
   {
     "id": "qb_rbt_lane_10",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "If you approach a roundabout in the wrong lane and traffic is beside you, what is safest?",
+    "question": "If you approach a roundabout in the wrong lane. Traffic is beside you, what is safest?",
     "options": [
       "Follow your lane safely and turn around later",
       "Cut across the car beside you",
@@ -167,7 +167,7 @@
   {
     "id": "qb_rbt_lane_12",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "On a dual-lane exit roundabout where both lanes lead straight ahead, how should you pick your approach lane?",
+    "question": "On a dual-lane exit roundabout where both lanes lead straight ahead. How should you pick your approach lane?",
     "options": [
       "Use the left lane unless you are overtaking or signs direct otherwise",
       "Always use the right lane",
@@ -182,7 +182,7 @@
   {
     "id": "qb_rbt_lane_13",
     "rule": "GB.RBT.APPROACH_LANE",
-    "question": "What if a cyclist ahead is in the left lane and intends to turn right at the roundabout?",
+    "question": "What if a cyclist ahead is in the left lane. Intends to turn right at the roundabout?",
     "options": [
       "Give them room and do not overtake closely on the approach",
       "Squeeze past them on the left",
@@ -190,7 +190,7 @@
       "Cut across them"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 warns that cyclists may stay in the left lane even when turning right.",
+    "explain": "Rule 186: Cyclists may stay in the left lane even when turning right.",
     "hc_rule": "186",
     "difficulty": 3
   },

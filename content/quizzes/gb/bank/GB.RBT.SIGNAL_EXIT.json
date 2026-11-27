@@ -10,7 +10,7 @@
       "Never"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 says to signal left after passing the exit before yours.",
+    "explain": "Rule 186: To signal left after passing the exit before yours.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "Use hazard lights to exit"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 186 states to signal left after passing the exit before your right-turn exit.",
+    "explain": "Rule 186: To signal left after passing the exit before your right-turn exit.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -47,7 +47,7 @@
   {
     "id": "qb_rbt_se_4",
     "rule": "GB.RBT.SIGNAL_EXIT",
-    "question": "What should you check in your mirrors just before signalling left to leave an inner roundabout lane?",
+    "question": "What should you check in your mirrors just. Before signalling left to leave an inner roundabout lane?",
     "options": [
       "Nothing, just steer out",
       "Check your left mirror and blind spot for cars or cyclists beside you",
@@ -55,7 +55,7 @@
       "Check your fuel gauge"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 186 tells you to watch for traffic on your left before moving out to exit.",
+    "explain": "Rule 186: To watch for traffic on your left before moving out to exit.",
     "hc_rule": "186",
     "difficulty": 2
   },
@@ -70,14 +70,14 @@
       "Hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 requires a left signal as you prepare to leave a roundabout.",
+    "explain": "Rule 186: A left signal as you prepare to leave a roundabout.",
     "hc_rule": "186",
     "difficulty": 1
   },
   {
     "id": "qb_rbt_se_6",
     "rule": "GB.RBT.SIGNAL_EXIT",
-    "question": "If you are taking the third exit, when do you switch to a left exit signal?",
+    "question": "If you are taking the third exit. When do you switch to a left exit signal?",
     "options": [
       "Just after passing the second exit",
       "Before entering the roundabout",
@@ -92,7 +92,7 @@
   {
     "id": "qb_rbt_se_7",
     "rule": "GB.RBT.SIGNAL_EXIT",
-    "question": "Why should you NOT signal left before passing the exit before yours?",
+    "question": "Why should you not signal left before passing the exit before yours?",
     "options": [
       "Drivers waiting at that earlier exit may think you are turning off and pull out",
       "Your indicator will break",
@@ -145,7 +145,7 @@
       "Cars go anti-clockwise"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 and Rule 188 note there is less time to signal exit at very small mini-roundabouts.",
+    "explain": "Rule 186: and Rule 188 note there is. Less time to signal exit at very small mini-roundabouts.",
     "hc_rule": "186",
     "difficulty": 3
   },
@@ -160,7 +160,7 @@
       "Nothing"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 requires checking left before moving across to exit.",
+    "explain": "Rule 186: Checking left before moving across to exit.",
     "hc_rule": "186",
     "difficulty": 3
   }

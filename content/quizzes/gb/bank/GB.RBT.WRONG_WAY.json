@@ -25,7 +25,7 @@
       "Stop on top of it"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 188 and Rule 185 state all vehicles must pass around the central marking clockwise.",
+    "explain": "Rule 188: and Rule 185 state all vehicles must pass around the central marking clockwise.",
     "hc_rule": "185",
     "difficulty": 2
   },
@@ -40,7 +40,7 @@
       "A yellow box sign"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 explains the blue mini-roundabout and roundabout arrows showing clockwise flow.",
+    "explain": "Rule 185: The blue mini-roundabout and roundabout arrows showing clockwise flow.",
     "hc_rule": "185",
     "difficulty": 1
   },
@@ -100,7 +100,7 @@
       "Drive over the grass island"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 says never reverse or turn back; simply go around clockwise.",
+    "explain": "Rule 186: Never reverse or turn back; simply go around clockwise.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -122,7 +122,7 @@
   {
     "id": "qb_rbt_ww_9",
     "rule": "GB.RBT.WRONG_WAY",
-    "question": "Why must you NEVER drive anti-clockwise around a roundabout?",
+    "question": "Why must you never drive anti-clockwise around a roundabout?",
     "options": [
       "You would drive head-on into oncoming circulating traffic",
       "It wears out the left tyres",
@@ -145,7 +145,7 @@
       "Looking right"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 185 and Rule 188 warn drivers not to cut across the wrong side of the central marking.",
+    "explain": "Rule 185: and Rule 188 warn drivers not to. Cut across the wrong side of the central marking.",
     "hc_rule": "185",
     "difficulty": 2
   },

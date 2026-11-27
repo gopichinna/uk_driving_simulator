@@ -107,6 +107,11 @@
         "lessonId": "gb-s1-05-pedestrians-h2",
         "scenarioId": "s1_05_h2_south",
         "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_oncoming_cut",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.JCT.H2_PEDESTRIANS": [
@@ -152,6 +157,16 @@
         "title": "Road position after turning"
       },
       {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_clear_gap",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_oncoming_cut",
+        "title": "Turning left and right at junctions"
+      },
+      {
         "lessonId": "gb-s2-10-box-junctions",
         "scenarioId": "s2_10_box_right_turn",
         "title": "Box junctions"
@@ -162,6 +177,11 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_right_clear_gap",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.JCT.TURN_NEAR": [
@@ -174,6 +194,16 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_early_signal",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_no_signal",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.MWY.AMBER_FLASH": [
@@ -327,6 +357,11 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_south",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_early_signal",
+        "title": "Turning left and right at junctions"
       }
     ],
     "GB.POS.DUAL_KEEP_LEFT": [
@@ -601,6 +636,11 @@
         "lessonId": "gb-s1-05-pedestrians-h2",
         "scenarioId": "s1_05_h2_north",
         "title": "Pedestrians at junctions (H2)"
+      },
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_no_signal",
+        "title": "Turning left and right at junctions"
       },
       {
         "lessonId": "gb-s2-07-traffic-lights-amber",

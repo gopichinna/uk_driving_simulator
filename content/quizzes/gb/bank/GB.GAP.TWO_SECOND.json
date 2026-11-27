@@ -25,7 +25,7 @@
       "Use your full-beam headlights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 126 explains counting two seconds from a fixed point the car ahead passes.",
+    "explain": "Rule 126: Counting two seconds from a fixed point the car ahead passes.",
     "hc_rule": "126",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "It makes steering harder"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 126 uses time rather than car lengths because stopping distance rises with speed.",
+    "explain": "Rule 126: uses time rather than car lengths because stopping distance rises with speed.",
     "hc_rule": "126",
     "difficulty": 2
   },
@@ -55,7 +55,7 @@
       "Flash your headlights"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 126 advises dropping back smoothly whenever the gap shrinks.",
+    "explain": "Rule 126: Dropping back smoothly whenever the gap shrinks.",
     "hc_rule": "126",
     "difficulty": 2
   },
@@ -77,7 +77,7 @@
   {
     "id": "qb_gap_6",
     "rule": "GB.GAP.TWO_SECOND",
-    "question": "At 30 mph on a dry road, how big should your gap to the car ahead be?",
+    "question": "At 30 mph on a dry road. How big should your gap to the car ahead be?",
     "options": [
       "At least two seconds",
       "Half a second",
@@ -85,7 +85,7 @@
       "Ten seconds"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 126 requires at least a two-second gap in dry weather.",
+    "explain": "Rule 126: At least a two-second gap in dry weather.",
     "hc_rule": "126",
     "difficulty": 1
   },
@@ -100,7 +100,7 @@
       "You use less fuel"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 126 warns that tailgating leaves no room to stop safely.",
+    "explain": "Rule 126: Tailgating leaves no room to stop safely.",
     "hc_rule": "126",
     "difficulty": 1
   },
@@ -175,7 +175,7 @@
       "Swirve left and right"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 126 advises increasing your front gap so neither car has to brake sharply.",
+    "explain": "Rule 126: Increasing your front gap so neither car has to brake sharply.",
     "hc_rule": "126",
     "difficulty": 3
   },
@@ -190,7 +190,7 @@
       "Two seconds only applies to bikes"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 126 says to double the gap to four seconds in wet weather.",
+    "explain": "Rule 126: To double the gap to four seconds in wet weather.",
     "hc_rule": "126",
     "difficulty": 3
   },

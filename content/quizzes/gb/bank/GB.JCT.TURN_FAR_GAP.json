@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_jct_tfg_1",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "What must you wait for before turning right across oncoming traffic?",
+    "options": [
+      "A safe gap so oncoming cars do not slow",
+      "One car length ahead",
+      "The driver behind to beep",
+      "A red traffic light"
+    ],
+    "answer": 0,
+    "explain": "Rule 180: Wait until there is a safe gap before turning right.",
+    "hc_rule": "180",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tfg_2",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "You want to turn right. An oncoming car is close. What should you do?",
+    "options": [
+      "Speed up across its path",
+      "Wait behind the turn point until it passes",
+      "Flash your lights and go",
+      "Reverse back"
+    ],
+    "answer": 1,
+    "explain": "Rule 180: Give way to oncoming traffic before turning across it.",
+    "hc_rule": "180",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tfg_3",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "Why should you look again for motorcycles before turning right?",
+    "options": [
+      "They are small and can be hidden behind cars",
+      "They must stop for turning cars",
+      "They do not use headlights",
+      "They always ride on pavements"
+    ],
+    "answer": 0,
+    "explain": "Rule 180: Watch carefully for motorcycles and cyclists coming towards you.",
+    "hc_rule": "180",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tfg_4",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "An oncoming car flashes its headlights as you wait to turn right. What does it mean?",
+    "options": [
+      "It is definitely safe to turn",
+      "Only that the other driver is warning you they are there",
+      "You must turn at once",
+      "The road is closed"
+    ],
+    "answer": 1,
+    "explain": "Rule 180 and Rule 110: Never treat a flash as a safe invitation.",
+    "hc_rule": "180",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_tfg_5",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "While waiting to turn right, where should your front wheels point?",
+    "options": [
+      "Turned sharply right into the oncoming lane",
+      "Straight ahead until it is safe to turn",
+      "Turned left toward the kerb",
+      "Over the white centre line"
+    ],
+    "answer": 1,
+    "explain": "Rule 180: Keep wheels straight so a rear shunt does not push you right.",
+    "hc_rule": "180",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_tfg_6",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "An oncoming car signals left into your side road. When should you turn right?",
+    "options": [
+      "As soon as you see its indicator",
+      "Only after it actually slows and starts turning",
+      "Before it reaches the junction",
+      "With your eyes closed"
+    ],
+    "answer": 1,
+    "explain": "Rule 180: Wait to see it slow and turn in case its signal is wrong.",
+    "hc_rule": "180",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_jct_tfg_7",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "What is wrong with forcing an oncoming driver to brake when you turn right?",
+    "options": [
+      "It is safe if you signal",
+      "It is a serious fault and risks a head-on crash",
+      "It only matters on motorways",
+      "It saves fuel"
+    ],
+    "answer": 1,
+    "explain": "Rule 180: Never cut across oncoming traffic and force it to brake.",
+    "hc_rule": "180",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_jct_tfg_8",
+    "rule": "GB.JCT.TURN_FAR_GAP",
+    "question": "Before completing a right turn, what else must you check in the side road?",
+    "options": [
+      "Pedestrians crossing or waiting to cross",
+      "Only parked cars",
+      "Only street lamps",
+      "Nothing"
+    ],
+    "answer": 0,
+    "explain": "Rule 180 and Rule H2: Check for pedestrians crossing the side road.",
+    "hc_rule": "180",
+    "difficulty": 1
+  }
+]

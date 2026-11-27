@@ -2,7 +2,7 @@
   {
     "id": "qb_xng_zebra_1",
     "rule": "GB.XNG.ZEBRA",
-    "question": "What should you do when you see a pedestrian waiting to cross at a zebra crossing?",
+    "question": "What should you do. When you see a pedestrian waiting to cross at a zebra crossing?",
     "options": [
       "Speed up past them",
       "Slow down and be ready to stop to give way",
@@ -10,7 +10,7 @@
       "Wave them across"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 195 says you should look out for pedestrians waiting to cross and be ready to slow down or stop.",
+    "explain": "Rule 195: You should look out for pedestrians waiting to cross. Be ready to slow down or stop.",
     "hc_rule": "195",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "Green arrows"
     ],
     "answer": 1,
-    "explain": "Rule 195: flashing amber Belisha beacons warn drivers of a zebra crossing ahead.",
+    "explain": "Rule 195: Flashing amber Belisha beacons warn drivers of a zebra crossing ahead.",
     "hc_rule": "195",
     "difficulty": 1
   },
@@ -55,7 +55,7 @@
       "In the oncoming lane"
     ],
     "answer": 1,
-    "explain": "Rule 195: stop behind the dashed line so pedestrians have the full width of the crossing.",
+    "explain": "Rule 195: Stop behind the dashed line. So pedestrians have the full width of the crossing.",
     "hc_rule": "195",
     "difficulty": 1
   },
@@ -70,7 +70,7 @@
       "Keep the same speed"
     ],
     "answer": 1,
-    "explain": "Rule 191: never overtake a vehicle stopped at a crossing; someone may be hidden behind it.",
+    "explain": "Rule 191: Never overtake a vehicle stopped at a crossing. Someone may be hidden behind it.",
     "hc_rule": "191",
     "difficulty": 1
   },
@@ -100,7 +100,7 @@
       "While they are still in front of your lane"
     ],
     "answer": 1,
-    "explain": "Rule 195: wait until pedestrians have safely cleared the crossing before moving off.",
+    "explain": "Rule 195: Wait until pedestrians have safely cleared the crossing before moving off.",
     "hc_rule": "195",
     "difficulty": 2
   },
@@ -115,7 +115,7 @@
       "As a bus lane"
     ],
     "answer": 0,
-    "explain": "Rule 195: a central island splits it into two separate crossings, though you should still watch carefully.",
+    "explain": "Rule 195: A central island splits it into two separate crossings. Though you should still watch carefully.",
     "hc_rule": "195",
     "difficulty": 2
   }

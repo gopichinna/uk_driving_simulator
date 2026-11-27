@@ -10,7 +10,7 @@
       "Only at night or in rain"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 103 tells you to give clear signals in good time.",
+    "explain": "Rule 103: To give clear signals in good time.",
     "hc_rule": "103",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "Switch on hazard lights briefly"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 103 says to cancel your signal after finishing the turn so it does not mislead.",
+    "explain": "Rule 103: To cancel your signal after finishing the turn so it does not mislead.",
     "hc_rule": "103",
     "difficulty": 1
   },
@@ -70,7 +70,7 @@
       "Only buses"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 says signals warn all road users of your plans.",
+    "explain": "Rule 103: Signals warn all road users of your plans.",
     "hc_rule": "103",
     "difficulty": 1
   },
@@ -85,7 +85,7 @@
       "During daytime"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 warns not to give misleading signals.",
+    "explain": "Rule 103: Not to give misleading signals.",
     "hc_rule": "103",
     "difficulty": 1
   },
@@ -107,7 +107,7 @@
   {
     "id": "qb_sig_8",
     "rule": "GB.SIG.TIMELY",
-    "question": "If you want to turn into a side road just past a parked car, when do you signal left?",
+    "question": "If you want to turn into a side road just past a parked car. When do you signal left?",
     "options": [
       "After passing the parked car so nobody thinks you are stopping",
       "Before the parked car",
@@ -115,7 +115,7 @@
       "Only while turning the wheel"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 warns that early signals near parked cars can mislead others.",
+    "explain": "Rule 103: Early signals near parked cars can mislead others.",
     "hc_rule": "103",
     "difficulty": 2
   },
@@ -145,7 +145,7 @@
       "Only at night"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 advises signalling in good time when pulling away.",
+    "explain": "Rule 103: Signalling in good time when pulling away.",
     "hc_rule": "103",
     "difficulty": 2
   },
@@ -175,7 +175,7 @@
       "Do not signal at all"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 warns not to signal before an earlier turning you are not taking.",
+    "explain": "Rule 103: Not to signal before an earlier turning you are not taking.",
     "hc_rule": "103",
     "difficulty": 3
   },
@@ -190,7 +190,7 @@
       "Right to ignore pedestrians"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 103 states signals never give you priority over anyone else.",
+    "explain": "Rule 103: Signals never give you priority over anyone else.",
     "hc_rule": "103",
     "difficulty": 3
   },

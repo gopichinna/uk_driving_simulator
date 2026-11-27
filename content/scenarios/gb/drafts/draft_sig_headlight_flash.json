@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_sig_headlight_flash",
+  "course": "town",
+  "anchor": "tjunction_south",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 90
+    }
+  ]
+}

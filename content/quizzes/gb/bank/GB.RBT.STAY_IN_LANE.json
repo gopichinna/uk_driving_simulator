@@ -25,14 +25,14 @@
       "Nothing happens"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 warns against cutting across another driver's lane when circulating.",
+    "explain": "Rule 186: Against cutting across another driver's lane when circulating.",
     "hc_rule": "186",
     "difficulty": 1
   },
   {
     "id": "qb_rbt_sil_3",
     "rule": "GB.RBT.STAY_IN_LANE",
-    "question": "What should you do if you realise you are in the wrong lane on a busy roundabout?",
+    "question": "What should you do if you realise you. Are in the wrong lane on a busy roundabout?",
     "options": [
       "Stop dead and reverse",
       "Swerve across two lanes immediately",
@@ -55,7 +55,7 @@
       "They reverse direction at night"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 advises following lane markings that guide you cleanly out to your exit.",
+    "explain": "Rule 186: Following lane markings that guide you cleanly out to your exit.",
     "hc_rule": "186",
     "difficulty": 3
   },
@@ -85,7 +85,7 @@
       "Signalling to exit"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 warns against drifting into another lane on roundabouts.",
+    "explain": "Rule 186: Against drifting into another lane on roundabouts.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -107,7 +107,7 @@
   {
     "id": "qb_rbt_sil_8",
     "rule": "GB.RBT.STAY_IN_LANE",
-    "question": "When exiting a two-lane roundabout from the inner lane, which lane on a two-lane exit road should you join?",
+    "question": "When exiting a two-lane roundabout from the inner lane. Which lane on a two-lane exit road should you join?",
     "options": [
       "The right-hand lane of the exit road, then move left when safe",
       "Cut straight across into the left exit lane in front of outer traffic",
@@ -130,14 +130,14 @@
       "Holding the steering wheel with both hands"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 advises looking ahead along your lane path to hold a clean line.",
+    "explain": "Rule 186: Looking ahead along your lane path to hold a clean line.",
     "hc_rule": "186",
     "difficulty": 2
   },
   {
     "id": "qb_rbt_sil_10",
     "rule": "GB.RBT.STAY_IN_LANE",
-    "question": "If you want to change lanes while circulating on a roundabout, what must you do first?",
+    "question": "If you want to change lanes while circulating on a roundabout. What must you do first?",
     "options": [
       "Check mirrors and blind spot, signal, and wait for a clear gap",
       "Steer across quickly without signalling",
@@ -152,7 +152,7 @@
   {
     "id": "qb_rbt_sil_11",
     "rule": "GB.RBT.STAY_IN_LANE",
-    "question": "What should you do if a lorry beside you needs extra width to turn on a roundabout?",
+    "question": "What should you do if a lorry beside. You needs extra width to turn on a roundabout?",
     "options": [
       "Hold back and give the lorry plenty of room instead of sitting alongside it",
       "Pull right beside its rear wheels",
@@ -160,7 +160,7 @@
       "Flash your headlights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 and 221 warn that long vehicles swing wide across lanes on roundabouts.",
+    "explain": "Rule 186: and 221 warn that long vehicles swing wide across lanes on roundabouts.",
     "hc_rule": "186",
     "difficulty": 3
   },

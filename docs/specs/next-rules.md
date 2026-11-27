@@ -110,14 +110,14 @@ All 20 rules below are **genuinely unimplemented** in `core/Rules.Core/*.cs` (ve
 - **Pass cases:** (1) Position `0.4 m` left of the centreline `20.0 m` before the right turn. (2) Enter a marked right-turn pocket lane cleanly.
 - **Fail cases:** (1) Hug the far-left kerb (`2.0 m` from centreline) while signalling right. (2) Cross `0.8 m` over the centreline `15.0 m` before the junction.
 
-## 12. `GB.JCT.TURN_FAR_GAP` — Right turn gap across oncoming traffic
-- **Highway Code:** Rule 180 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Wait until oncoming traffic is clear before turning right across its path.
-- **Game detection & thresholds:** When player crosses the centreline turning right at `nodes[]`: flag if any oncoming `TrafficAgent` has `ttc < 3.5 s` (`PROPOSED`) or experiences `other_decel_req > 2.0 m/s²` (`PROPOSED`).
-- **Base severity:** `Serious`
-- **Escalates to:** `Dangerous` if `ttc < 1.5 s` (`PROPOSED`) or `other_decel_req > 4.0 m/s²` (`PROPOSED`).
-- **Pass cases:** (1) Wait at the centreline until two oncoming cars pass, then turn with `ttc > 5.0 s`. (2) Turn promptly when the oncoming road is clear for `6.0 s`.
-- **Fail cases:** (1) Turn right across an oncoming car with `ttc = 2.2 s`, forcing `other_decel_req = 3.8 m/s²`. (2) Turn across an approaching cyclist with `ttc = 2.5 s`.
+## 12. `GB.SIG.HEADLIGHT_FLASH` — Flash headlights only to warn of presence
+- **Highway Code:** Rule 110 (`https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158`, checked 2026-11-27)
+- **Rule:** Only flash your headlights to let other road users know that you are there; do not flash them to convey any other message or intimidate.
+- **Game detection & thresholds:** Monitor `PlayerState.headlightFlash`: flag if flashed while stopped (`speedMps < 0.5`) at a junction or within `15.0 m` (`PROPOSED`) behind a slower `TrafficAgent` with no hazard (`ttc > 3.0 s`, `PROPOSED`).
+- **Base severity:** `Driving`
+- **Escalates to:** `Serious` if flashing at a junction causes a waiting `TrafficAgent` to pull out into a conflict (`ttc < 2.0 s`, `PROPOSED`).
+- **Pass cases:** (1) Flash briefly (`0.3 s`) approaching a blind hump-back bridge or when an emerging driver has not seen you. (2) Wait without flashing behind a car at a junction.
+- **Fail cases:** (1) Flash headlights repeatedly to hurry a car in front on a dual carriageway. (2) Flash headlights to beckon a waiting driver out at a busy T-junction.
 
 ## 13. `GB.JCT.EMERGE_LOOK` — Creep and look when sightline is blocked
 - **Highway Code:** Rule 170 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)

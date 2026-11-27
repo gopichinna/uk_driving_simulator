@@ -10,7 +10,7 @@
       "Use hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 requires signalling left on approach when taking the first exit.",
+    "explain": "Rule 186: Signalling left on approach when taking the first exit.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -25,7 +25,7 @@
       "Flash your headlights"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 186 says not to signal on approach when going straight ahead.",
+    "explain": "Rule 186: Not to signal on approach when going straight ahead.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -40,7 +40,7 @@
       "Sound your horn"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 tells you to signal right on approach for exits past straight ahead.",
+    "explain": "Rule 186: To signal right on approach for exits past straight ahead.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -70,7 +70,7 @@
       "Use hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 requires a left signal on approach for the first exit.",
+    "explain": "Rule 186: A left signal on approach for the first exit.",
     "hc_rule": "186",
     "difficulty": 1
   },
@@ -85,7 +85,7 @@
       "Hazard lights"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 186 states not to signal on approach when going straight ahead.",
+    "explain": "Rule 186: Not to signal on approach when going straight ahead.",
     "hc_rule": "186",
     "difficulty": 2
   },

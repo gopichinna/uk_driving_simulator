@@ -10,7 +10,7 @@
       "Stop for five seconds even if clear"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 172 says double broken lines mean give way to traffic on the main road.",
+    "explain": "Rule 172: Double broken lines mean give way to traffic on the main road.",
     "hc_rule": "172",
     "difficulty": 1
   },
@@ -25,14 +25,14 @@
       "Straight ahead only"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 172 tells you to look both ways for all road users before pulling out.",
+    "explain": "Rule 172: To look both ways for all road users before pulling out.",
     "hc_rule": "172",
     "difficulty": 1
   },
   {
     "id": "qb_jct_gw_3",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "When must you stop completely behind a solid white line with a red octagonal stop sign?",
+    "question": "When must you stop completely behind a solid. White line with a red octagonal stop sign?",
     "options": [
       "Only when cars are coming",
       "Every time, even if the road looks clear",
@@ -40,14 +40,14 @@
       "Only when turning right"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 171 and Rule 172 require a full stop at a stop sign and line.",
+    "explain": "Rule 171: and Rule 172 require a full stop at a stop sign and line.",
     "hc_rule": "172",
     "difficulty": 2
   },
   {
     "id": "qb_jct_gw_4",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "If a vehicle on the main road is flashing its headlights at you, what should you assume?",
+    "question": "If a vehicle on the main road is flashing its headlights at you. What should you assume?",
     "options": [
       "It is always safe to pull out",
       "Wait until you are sure the way is clear and safe",
@@ -55,7 +55,7 @@
       "You have legal priority"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 172 means you stay responsible for pulling out only when it is genuinely safe.",
+    "explain": "Rule 172: means you stay responsible for pulling out only when it is genuinely safe.",
     "hc_rule": "172",
     "difficulty": 3
   },
@@ -77,7 +77,7 @@
   {
     "id": "qb_jct_gw_6",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "When turning right out of a side road onto a main road, who must you give way to?",
+    "question": "When turning right out of a side road onto a main road. Who must you give way to?",
     "options": [
       "Traffic coming from both right and left",
       "Only traffic from the left",
@@ -85,7 +85,7 @@
       "Nobody if you signal"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 172 requires checking and giving way to both directions when turning right.",
+    "explain": "Rule 172: Checking and giving way to both directions when turning right.",
     "hc_rule": "172",
     "difficulty": 1
   },
@@ -130,7 +130,7 @@
       "They travel only on pavements"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 172 advises looking carefully for smaller, faster two-wheelers.",
+    "explain": "Rule 172: Looking carefully for smaller, faster two-wheelers.",
     "hc_rule": "172",
     "difficulty": 2
   },
@@ -145,14 +145,14 @@
       "Reverse back down the road"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 172 advises creeping forward safely when parked vehicles block sightlines.",
+    "explain": "Rule 172: Creeping forward safely when parked vehicles block sightlines.",
     "hc_rule": "172",
     "difficulty": 2
   },
   {
     "id": "qb_jct_gw_11",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "When turning left from a side road onto a main road, which direction is the main danger first?",
+    "question": "When turning left from a side road onto a main road. Which direction is the main danger first?",
     "options": [
       "Traffic approaching from your right",
       "Traffic behind you only",
@@ -175,14 +175,14 @@
       "Turn left beside it"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 172 warns never to assume a flashing indicator means the driver will turn.",
+    "explain": "Rule 172: Never to assume a flashing indicator means the driver will turn.",
     "hc_rule": "172",
     "difficulty": 3
   },
   {
     "id": "qb_jct_gw_13",
     "rule": "GB.JCT.GIVE_WAY",
-    "question": "If a main road has two lanes in one direction and you turn left onto it, which lane should you join?",
+    "question": "If a main road has two lanes in one direction. You turn left onto it, which lane should you join?",
     "options": [
       "The left-hand lane unless road signs say otherwise",
       "The right-hand lane",
@@ -190,7 +190,7 @@
       "The bus lane always"
     ],
     "answer": 0,
-    "explain": "Highway Code Rule 172 and lane rules keep turning traffic in the left lane when clear.",
+    "explain": "Rule 172: and lane rules keep turning traffic in the left lane when clear.",
     "hc_rule": "172",
     "difficulty": 3
   }
