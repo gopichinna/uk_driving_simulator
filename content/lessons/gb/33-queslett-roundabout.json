@@ -1,0 +1,102 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s4-33-queslett-roundabout",
+  "stage": 4,
+  "order": 33,
+  "title": "A big four-way roundabout",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Queslett is a busy four-exit roundabout with two entry lanes on every arm.",
+      "Give way to traffic from your right and signal clearly before leaving.",
+      "Lane-choice judging on this four-exit pack will expand in a later update."
+    ],
+    "ruleIds": [
+      "GB.RBT.GIVE_WAY_RIGHT",
+      "GB.RBT.APPROACH_LANE",
+      "GB.RBT.SIGNAL_EXIT",
+      "GB.RBT.STAY_IN_LANE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203",
+    "diagram": "content/lessons/gb/diagrams/gb-s4-33-queslett-roundabout.png"
+  },
+  "scenarios": [
+    {
+      "id": "s4_33_queslett_exit1_left",
+      "course": "queslett_roundabout",
+      "anchor": "start",
+      "goal": "Keep in the left lane and take the first exit onto Bakers Lane.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.SIGNAL_EXIT",
+        "GB.SIG.TIMELY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.45
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_33_queslett_exit2_ahead",
+      "course": "queslett_roundabout",
+      "anchor": "start",
+      "goal": "Follow Queslett Road East straight ahead and signal left before leaving.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.STAY_IN_LANE",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.35,
+          0.55
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_33_queslett_exit3_right",
+      "course": "queslett_roundabout",
+      "anchor": "start",
+      "goal": "Signal right for Aldridge Road, stay in lane, then signal left to exit.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.STAY_IN_LANE",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.65
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Read the lane arrows on each approach before you join Queslett.",
+    "Give way to the right and signal left right after the exit before yours."
+  ]
+}

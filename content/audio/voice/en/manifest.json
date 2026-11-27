@@ -119,6 +119,12 @@
       "durationS": 12.661
     },
     {
+      "key": "lesson.gb-s4-33-queslett-roundabout.learn",
+      "file": "lesson.gb-s4-33-queslett-roundabout.learn.wav",
+      "text": "Queslett is a busy four-exit roundabout with two entry lanes on every arm. Give way to traffic from your right and signal clearly before leaving. Lane-choice judging on this four-exit pack will expand in a later update.",
+      "durationS": 11.622
+    },
+    {
       "key": "lesson.gb-s5-17-dual-carriageway-lanes.learn",
       "file": "lesson.gb-s5-17-dual-carriageway-lanes.learn.wav",
       "text": "Drive in the left lane on a two-lane dual carriageway. Use the right lane only to overtake slower traffic or turn right. Signal early and check your blind spot before changing lanes.",
@@ -483,6 +489,24 @@
       "file": "scenario.s4_32_cov_speed_change.brief.wav",
       "text": "Slow down before speed limit signs and hold a two-second gap.",
       "durationS": 3.378
+    },
+    {
+      "key": "scenario.s4_33_queslett_exit1_left.brief",
+      "file": "scenario.s4_33_queslett_exit1_left.brief.wav",
+      "text": "Keep in the left lane and take the first exit onto Bakers Lane.",
+      "durationS": 3.434
+    },
+    {
+      "key": "scenario.s4_33_queslett_exit2_ahead.brief",
+      "file": "scenario.s4_33_queslett_exit2_ahead.brief.wav",
+      "text": "Follow Queslett Road East straight ahead and signal left before leaving.",
+      "durationS": 3.816
+    },
+    {
+      "key": "scenario.s4_33_queslett_exit3_right.brief",
+      "file": "scenario.s4_33_queslett_exit3_right.brief.wav",
+      "text": "Signal right for Aldridge Road, stay in lane, then signal left to exit.",
+      "durationS": 4.385
     },
     {
       "key": "scenario.s5_17_busy_dual.brief",

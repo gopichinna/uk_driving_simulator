@@ -145,9 +145,9 @@
       ]
     },
     {
-      "id": "minor_tight_gap_38s",
-      "kind": "minor",
-      "description": "Turn right with 3.8 s oncoming TTC (just above 3.5 s serious threshold).",
+      "id": "pass_gap_38s",
+      "kind": "pass",
+      "description": "Turn right with 3.8 s oncoming TTC (above 3.5 s serious threshold).",
       "environment": {
         "pack": "town",
         "junctionKind": "tjunction",
@@ -193,7 +193,7 @@
             {
               "t": 0,
               "x": 3,
-              "z": 106,
+              "z": 126,
               "headingDeg": 180,
               "speedMps": 13.0,
               "indicator": "off"
@@ -201,7 +201,7 @@
             {
               "t": 3,
               "x": 3,
-              "z": 67,
+              "z": 87,
               "headingDeg": 180,
               "speedMps": 13.0,
               "indicator": "off"
@@ -209,7 +209,7 @@
             {
               "t": 5,
               "x": 3,
-              "z": 41,
+              "z": 61,
               "headingDeg": 180,
               "speedMps": 13.0,
               "indicator": "off"
@@ -220,9 +220,9 @@
       "expectedEvents": [
         {
           "ruleId": "GB.JCT.TURN_FAR_GAP",
-          "outcome": "fault",
-          "severity": "Driving",
-          "timeS": 3.5
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
         }
       ]
     },

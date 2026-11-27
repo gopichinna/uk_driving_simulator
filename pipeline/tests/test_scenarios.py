@@ -29,6 +29,7 @@ ALLOWED_COURSE_ANCHORS: dict[str, set[str]] = {
     "rural_practice": {"start", "join"},
     "ring_road_practice": {"start"},
     "coventry": {"start"},
+    "queslett_roundabout": {"start"},
 }
 
 
@@ -39,7 +40,7 @@ def test_every_lesson_scenario_has_valid_file() -> None:
         for sc in lesson["scenarios"]:
             expected[sc["id"]] = (sc["course"], sc["anchor"])
 
-    assert len(expected) == 74
+    assert len(expected) == 77
     for sc_id, (course, anchor) in expected.items():
         path = SCENARIOS_DIR / f"{sc_id}.json"
         assert path.is_file(), f"Missing scenario file: {path}"
@@ -97,3 +98,27 @@ def test_every_implemented_rule_has_two_practice_scenarios() -> None:
         assert len(practice) >= 2, (
             f"{rid} has only {len(practice)} non-mock-test practice scenario(s): {practice}"
         )
+
+
+def test_all_scenarios_on_new_city_packs_have_valid_anchors() -> None:
+    new_courses = {
+        "suburb_practice",
+        "rural_practice",
+        "ring_road_practice",
+        "coventry",
+        "queslett_roundabout",
+    }
+    for path in sorted(SCENARIOS_DIR.glob("*.json")):
+        data = validate_scenario_file(path)
+        course = data["course"]
+        if course in new_courses:
+            assert data["anchor"] in ALLOWED_COURSE_ANCHORS[course], (
+                f"{path.name}: invalid anchor {data['anchor']} for {course}"
+            )
+            pack_path = REPO_ROOT / "content" / "cities" / course / "roadpack.json"
+            assert pack_path.is_file(), f"Missing roadpack for {course}"
+            for ev in data["events"]:
+                if "anchor" in ev:
+                    assert ev["anchor"] in ALLOWED_COURSE_ANCHORS[course], (
+                        f"{path.name}: invalid event anchor {ev['anchor']} for {course}"
+                    )

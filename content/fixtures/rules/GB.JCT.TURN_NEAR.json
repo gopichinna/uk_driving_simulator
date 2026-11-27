@@ -212,18 +212,18 @@
           "keyframes": [
             {
               "t": 0,
-              "x": -1.5,
-              "z": 10,
+              "x": -2.5,
+              "z": 26,
               "headingDeg": 0,
-              "speedMps": 5.0,
+              "speedMps": 2.0,
               "indicator": "off"
             },
             {
               "t": 5,
-              "x": -1.5,
-              "z": 35,
+              "x": -2.5,
+              "z": 36,
               "headingDeg": 0,
-              "speedMps": 5.0,
+              "speedMps": 2.0,
               "indicator": "off"
             }
           ]

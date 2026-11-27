@@ -1,0 +1,12 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s4_33_queslett_exit3_right",
+  "course": "queslett_roundabout",
+  "anchor": "start",
+  "durationS": 120,
+  "difficulty": 3,
+  "events": [
+    { "type": "traffic_density", "value": 0.55 },
+    { "type": "finish_after_s", "seconds": 120 }
+  ]
+}
