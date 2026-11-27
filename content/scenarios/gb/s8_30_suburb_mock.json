@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s8_30_suburb_mock",
+  "course": "suburb_practice",
+  "anchor": "start",
+  "durationS": 480,
+  "events": [
+    {
+      "type": "independent_driving",
+      "minutes": 7,
+      "mode": "mixed",
+      "instruction": "Follow the signs and satnav around Tettenhall."
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    }
+  ]
+}
