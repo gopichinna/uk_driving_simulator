@@ -113,6 +113,12 @@
       "durationS": 14.368
     },
     {
+      "key": "lesson.gb-s4-32-coventry-ring-road.learn",
+      "file": "lesson.gb-s4-32-coventry-ring-road.learn.wav",
+      "text": "Coventry's ring road links fast multi-lane slip roads with busy town streets. Pick your lane early, watch for pedestrians, and slow before new speed signs. Keep junctions clear on green and follow signals at every crossing.",
+      "durationS": 12.661
+    },
+    {
       "key": "lesson.gb-s5-17-dual-carriageway-lanes.learn",
       "file": "lesson.gb-s5-17-dual-carriageway-lanes.learn.wav",
       "text": "Drive in the left lane on a two-lane dual carriageway. Use the right lane only to overtake slower traffic or turn right. Signal early and check your blind spot before changing lanes.",
@@ -441,6 +447,42 @@
       "file": "scenario.s4_28_school_serious_ped.brief.wav",
       "text": "Hold 20 mph or less when people are near the school gate.",
       "durationS": 5.402
+    },
+    {
+      "key": "scenario.s4_32_cov_give_way.brief",
+      "file": "scenario.s4_32_cov_give_way.brief.wav",
+      "text": "Give way cleanly at busy city junctions and signal every turn.",
+      "durationS": 3.561
+    },
+    {
+      "key": "scenario.s4_32_cov_multi_roundabout.brief",
+      "file": "scenario.s4_32_cov_multi_roundabout.brief.wav",
+      "text": "Pick the right lane and stay in lane through Coventry roundabouts.",
+      "durationS": 3.467
+    },
+    {
+      "key": "scenario.s4_32_cov_pedestrians.brief",
+      "file": "scenario.s4_32_cov_pedestrians.brief.wav",
+      "text": "Stop for pedestrians at zebra crossings and turning junctions.",
+      "durationS": 3.301
+    },
+    {
+      "key": "scenario.s4_32_cov_ring_lanes.brief",
+      "file": "scenario.s4_32_cov_ring_lanes.brief.wav",
+      "text": "Keep left on the ring road and signal before changing lanes.",
+      "durationS": 3.428
+    },
+    {
+      "key": "scenario.s4_32_cov_signals.brief",
+      "file": "scenario.s4_32_cov_signals.brief.wav",
+      "text": "Obey traffic lights and keep box junctions clear in Coventry.",
+      "durationS": 3.44
+    },
+    {
+      "key": "scenario.s4_32_cov_speed_change.brief",
+      "file": "scenario.s4_32_cov_speed_change.brief.wav",
+      "text": "Slow down before speed limit signs and hold a two-second gap.",
+      "durationS": 3.378
     },
     {
       "key": "scenario.s5_17_busy_dual.brief",

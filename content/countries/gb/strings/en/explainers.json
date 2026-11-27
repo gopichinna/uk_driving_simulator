@@ -1,0 +1,183 @@
+{
+  "stringsFormatVersion": "0.1",
+  "country": "GB",
+  "language": "en",
+  "kind": "explainers",
+  "explainers": {
+    "GB.SPD.OVER_LIMIT": {
+      "rule": "Never drive faster than the signed speed limit for your road.",
+      "why": "Lower speeds give you time to spot hazards and stop safely.",
+      "mistake": "Waiting until after a lower speed sign before slowing down.",
+      "hcRule": "Rule 124",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.VRU.PASS_CYCLIST": {
+      "rule": "Leave at least 1.5 metres when passing a cyclist up to 30 mph.",
+      "why": "Cyclists may swerve around potholes or drains without warning.",
+      "mistake": "Squeezing past a cyclist in the same lane near oncoming traffic.",
+      "hcRule": "Rule 163",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.OBS.LANE_CHANGE": {
+      "rule": "Check mirrors and blind spots, then signal before moving into another lane.",
+      "why": "Another vehicle or rider can sit hidden beside your rear quarter.",
+      "mistake": "Drifting across lane lines without checking your blind spot first.",
+      "hcRule": "Rule 133",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.SIG.TIMELY": {
+      "rule": "Signal clearly in good time before turning or changing lanes, then cancel it.",
+      "why": "Early signals let other drivers and pedestrians plan safely around you.",
+      "mistake": "Signalling as you turn, or leaving an indicator on afterwards.",
+      "hcRule": "Rule 103",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.POS.KEEP_LEFT": {
+      "rule": "Keep to the left lane unless you are overtaking or turning right.",
+      "why": "Staying left keeps faster traffic flowing smoothly on your right.",
+      "mistake": "Cruising in the middle or right lane when the left lane is clear.",
+      "hcRule": "Rule 160",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.GIVE_WAY_RIGHT": {
+      "rule": "Give way to traffic already on the roundabout from your right.",
+      "why": "Roundabout traffic has priority so the junction stays moving safely.",
+      "mistake": "Pulling out in front of a fast vehicle approaching from the right.",
+      "hcRule": "Rule 185",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.APPROACH_LANE": {
+      "rule": "Choose the left lane for left or ahead, and right for right turns.",
+      "why": "The right approach lane avoids cutting across other drivers on the roundabout.",
+      "mistake": "Approaching in the left lane when turning right past 12 o'clock.",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.STAY_IN_LANE": {
+      "rule": "Follow the lane markings and stay in your lane on multi-lane roundabouts.",
+      "why": "Drifting sideways puts you into the path of cars alongside you.",
+      "mistake": "Cutting across the inside lane when taking a spiral exit.",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.SIGNAL_APPROACH": {
+      "rule": "Signal left for left exits, right for right exits, none for ahead.",
+      "why": "Clear approach signals tell waiting drivers whether you will cross them.",
+      "mistake": "Signalling left before entering when you are going straight ahead.",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.SIGNAL_EXIT": {
+      "rule": "Signal left right after passing the exit before the one you want.",
+      "why": "Waiting traffic knows you are leaving and can enter safely.",
+      "mistake": "Forgetting to signal left before leaving the roundabout.",
+      "hcRule": "Rule 186",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.RBT.WRONG_WAY": {
+      "rule": "Always travel clockwise around the central island of a UK roundabout.",
+      "why": "Going anti-clockwise sends you head-on into oncoming roundabout traffic.",
+      "mistake": "Turning right directly in front of a mini-roundabout island.",
+      "hcRule": "Rule 185",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.GAP.TWO_SECOND": {
+      "rule": "Leave at least a two-second gap behind the vehicle ahead on dry roads.",
+      "why": "Two seconds gives you enough time to react and brake smoothly.",
+      "mistake": "Tailgating in moving traffic where a sudden stop causes a crash.",
+      "hcRule": "Rule 126",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/general-rules-techniques-and-advice-for-all-drivers-and-riders-103-to-158"
+    },
+    "GB.TL.RED": {
+      "rule": "Stop behind the white stop line whenever the traffic light is red.",
+      "why": "Crossing traffic and pedestrians have a green signal when yours is red.",
+      "mistake": "Rolling past the white line while waiting for the lights to change.",
+      "hcRule": "Rule 175",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.TL.AMBER": {
+      "rule": "Stop at an amber light unless you are too close to stop safely.",
+      "why": "Amber warns that red is next and cross traffic will soon move.",
+      "mistake": "Speeding up to beat an amber light from far back.",
+      "hcRule": "Rule 175",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.TL.RED_AMBER": {
+      "rule": "Wait behind the stop line on red and amber until green shows.",
+      "why": "Cross traffic or pedestrians may still be clearing the junction.",
+      "mistake": "Moving off early as soon as the amber light joins the red.",
+      "hcRule": "Light signals",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/light-signals-controlling-traffic"
+    },
+    "GB.TL.ASL": {
+      "rule": "Stop behind the first white line of a cycle box on red.",
+      "why": "The painted box keeps cyclists visible and safe ahead of traffic.",
+      "mistake": "Stopping inside the cycle box instead of behind the first line.",
+      "hcRule": "Rule 178",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.GIVE_WAY": {
+      "rule": "Slow down and give way to major-road traffic at broken white lines.",
+      "why": "Vehicles on the main road have priority and may travel fast.",
+      "mistake": "Emerging onto the main road and forcing another driver to brake.",
+      "hcRule": "Rule 172",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.STOP_SIGN": {
+      "rule": "Bring your vehicle to a complete stop at a Stop sign line.",
+      "why": "Stop signs mark junctions where your view of cross traffic is poor.",
+      "mistake": "Rolling slowly over the solid white line without stopping completely.",
+      "hcRule": "Rule 171",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.SCH.SLOW": {
+      "rule": "Slow down past school warning signs and watch closely for children.",
+      "why": "Children can step out suddenly from behind parked cars near schools.",
+      "mistake": "Keeping full street speed past a school sign or flashing amber lights.",
+      "hcRule": "Rule 208",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225"
+    },
+    "GB.JCT.TURN_NEAR": {
+      "rule": "Keep left when turning left and give way to cycle lanes you cross.",
+      "why": "Swinging out wide or cutting across cyclists risks a side collision.",
+      "mistake": "Turning left across a cyclist riding straight ahead on your inside.",
+      "hcRule": "Rule 182",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.TURN_FAR_GAP": {
+      "rule": "Wait for a safe gap in oncoming traffic before turning right.",
+      "why": "Oncoming vehicles travel faster than they look and have priority.",
+      "mistake": "Cutting across an oncoming car and making it brake sharply.",
+      "hcRule": "Rule 180",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.XNG.ZEBRA": {
+      "rule": "Stop and give way to anyone waiting at or on a zebra crossing.",
+      "why": "Pedestrians have priority on zebra crossings and expect traffic to stop.",
+      "mistake": "Driving over the stripes while someone is waiting on the kerb.",
+      "hcRule": "Rule 195",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/introduction"
+    },
+    "GB.JCT.H2_PEDESTRIANS": {
+      "rule": "Give way to pedestrians crossing or waiting to cross a side road.",
+      "why": "Rule H2 puts pedestrians first when you turn in or out.",
+      "mistake": "Turning quickly into a side road in front of a waiting pedestrian.",
+      "hcRule": "Rule H2",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/introduction"
+    },
+    "GB.XNG.ZIGZAG_OVERTAKE": {
+      "rule": "Never overtake or park on the white zig-zag lines beside a crossing.",
+      "why": "Passing a stopped car hides pedestrians already walking across the road.",
+      "mistake": "Overtaking a slow car inside the zig-zag zone before a zebra crossing.",
+      "hcRule": "Rule 191",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    },
+    "GB.JCT.BOX": {
+      "rule": "Do not enter a yellow box junction unless your exit road is clear.",
+      "why": "Stopping inside the box blocks cross traffic when the lights change.",
+      "mistake": "Following slow traffic into the box and getting stuck on red.",
+      "hcRule": "Rule 174",
+      "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203"
+    }
+  }
+}

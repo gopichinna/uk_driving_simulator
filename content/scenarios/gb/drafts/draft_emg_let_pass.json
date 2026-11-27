@@ -1,0 +1,11 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_emg_let_pass",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    { "type": "traffic_density", "value": 0.4 },
+    { "type": "finish_after_s", "seconds": 90 }
+  ]
+}

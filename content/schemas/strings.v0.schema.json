@@ -70,6 +70,23 @@
           }
         }
       }
+    },
+    {
+      "required": ["stringsFormatVersion", "country", "language", "kind", "explainers"],
+      "additionalProperties": false,
+      "properties": {
+        "stringsFormatVersion": { "const": "0.1" },
+        "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+        "language": { "type": "string", "pattern": "^[a-z]{2}(-[A-Z]{2})?$" },
+        "kind": { "const": "explainers" },
+        "explainers": {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^GB\\.[A-Z]+\\.[A-Z0-9_]+$": { "$ref": "#/$defs/explainerCard" }
+          }
+        }
+      }
     }
   ],
   "$defs": {
@@ -83,6 +100,18 @@
         "why": { "type": "string", "minLength": 1 },
         "tip": { "type": "string", "minLength": 1 },
         "good": { "type": "string", "minLength": 1 }
+      }
+    },
+    "explainerCard": {
+      "type": "object",
+      "required": ["rule", "why", "mistake", "hcRule", "govUkUrl"],
+      "additionalProperties": false,
+      "properties": {
+        "rule": { "type": "string", "minLength": 1 },
+        "why": { "type": "string", "minLength": 1 },
+        "mistake": { "type": "string", "minLength": 1 },
+        "hcRule": { "type": "string", "minLength": 1 },
+        "govUkUrl": { "type": "string", "pattern": "^https://www\\.gov\\.uk/" }
       }
     },
     "glossaryEntry": {
