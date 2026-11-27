@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_mis_1",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "What should you do with your indicator right after finishing a turn?",
+    "options": [
+      "Cancel it straight away",
+      "Leave it on for ten seconds",
+      "Switch on hazard lights",
+      "Flash your headlights"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 says to cancel signals after your manoeuvre.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_mis_2",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "Why is leaving an indicator on after a roundabout exit risky?",
+    "options": [
+      "Waiting drivers may think you are turning and pull out",
+      "It drains the car battery quickly",
+      "It makes your brakes stop working",
+      "It forces cyclists to speed up"
+    ],
+    "answer": 0,
+    "explain": "Rule 103 warns that lingering signals can mislead waiting drivers.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_mis_3",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "You want to turn left into the second side road. When should you signal?",
+    "options": [
+      "After passing the first side road",
+      "Before the first side road",
+      "Only after you have turned",
+      "Never signal for side roads"
+    ],
+    "answer": 0,
+    "explain": "Under Rule 103, signalling before an earlier road misleads waiting traffic.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_mis_4",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "What should you do if you see a car ahead signalling left past a side road?",
+    "options": [
+      "Wait until you are sure they are turning",
+      "Pull out straight away without checking",
+      "Sound your horn and accelerate",
+      "Flash your main beam"
+    ],
+    "answer": 0,
+    "explain": "Rule 103 reminds drivers not to rely solely on another indicator.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_mis_5",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "After changing lanes on a dual carriageway, when should you cancel your signal?",
+    "options": [
+      "As soon as you are in the new lane",
+      "Only at the next roundabout",
+      "After driving one mile",
+      "Only when traffic slows down"
+    ],
+    "answer": 0,
+    "explain": "Rule 103 says to cancel your indicator once you change lanes.",
+    "hc_rule": "103",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_mis_6",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "You are waiting at red lights to turn right. Should you keep your right indicator on?",
+    "options": [
+      "Yes, while waiting to turn at the junction",
+      "No, switch it off while stationary",
+      "Switch to hazard lights instead",
+      "Alternate left and right signals"
+    ],
+    "answer": 0,
+    "explain": "Under Rule 103, keeping your signal on while waiting helps others.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_mis_7",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "Your indicator does not self-cancel after a gentle bend. What must you do?",
+    "options": [
+      "Cancel it by hand straight away",
+      "Wait for the next sharp corner",
+      "Drive faster so it cancels",
+      "Leave it on until you park"
+    ],
+    "answer": 0,
+    "explain": "Rule 103 requires cancelling signals manually if they stay on.",
+    "hc_rule": "103",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_mis_8",
+    "rule": "GB.SIG.MISLEADING",
+    "question": "Does giving an indicator signal give you priority over other road users?",
+    "options": [
+      "No, a signal only shows your intention",
+      "Yes, other traffic must stop for you",
+      "Yes, on dual carriageways only",
+      "Yes, if you signal for five seconds"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 103 states signals do not give you priority.",
+    "hc_rule": "103",
+    "difficulty": 3
+  }
+]

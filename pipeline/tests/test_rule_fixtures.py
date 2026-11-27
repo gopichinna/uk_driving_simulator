@@ -43,11 +43,38 @@ def test_batch3_rule_fixtures_validate_and_cover_pass_minor_serious() -> None:
             f"{rid}: need at least 1 serious or dangerous drive"
         )
         for drive in doc["drives"]:
+            kfs = drive["playerKeyframes"]
+            t_min, t_max = kfs[0]["t"], kfs[-1]["t"]
+            for i in range(1, len(kfs)):
+                a, b = kfs[i - 1], kfs[i]
+                dt = b["t"] - a["t"]
+                assert dt > 0, f"{rid}/{drive['id']}: non-increasing keyframe time"
+                dist = ((b["x"] - a["x"]) ** 2 + (b["z"] - a["z"]) ** 2) ** 0.5
+                avg_v = (a["speedMps"] + b["speedMps"]) / 2.0
+                expected_dist = avg_v * dt
+                if max(dist, expected_dist) > 0.5:
+                    assert abs(dist - expected_dist) <= 0.15 * max(dist, expected_dist), (
+                        f"{rid}/{drive['id']}: speed/distance mismatch at t={b['t']} "
+                        f"(dist={dist:.2f}m vs avg_v*dt={expected_dist:.2f}m)"
+                    )
+                dh = abs((b["headingDeg"] - a["headingDeg"] + 180.0) % 360.0 - 180.0)
+                assert dh <= 120.0, f"{rid}/{drive['id']}: heading jump {dh:.1f}deg > 120"
+
+            kind_to_sev = {
+                "pass": "none",
+                "minor": "Driving",
+                "serious": "Serious",
+                "dangerous": "Dangerous",
+            }
             for ev in drive["expectedEvents"]:
                 assert ev["ruleId"] in valid_rule_ids
+                assert t_min <= ev["timeS"] <= t_max, (
+                    f"{rid}/{drive['id']}: timeS {ev['timeS']} outside [{t_min}, {t_max}]"
+                )
+                assert ev["severity"] == kind_to_sev[drive["kind"]], (
+                    f"{rid}/{drive['id']}: kind {drive['kind']} != severity {ev['severity']}"
+                )
                 if drive["kind"] == "pass":
                     assert ev["outcome"] == "pass"
-                    assert ev["severity"] == "none"
                 else:
                     assert ev["outcome"] == "fault"
-                    assert ev["severity"] in ("Driving", "Serious", "Dangerous")

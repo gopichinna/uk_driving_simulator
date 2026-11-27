@@ -1355,6 +1355,48 @@
       "durationS": 3.43
     },
     {
+      "key": "voice.GB.SIG.MISLEADING.fault",
+      "file": "voice.GB.SIG.MISLEADING.fault.wav",
+      "text": "Cancel your indicator after turning so others are not misled.",
+      "durationS": 2.829
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.fault.v2",
+      "file": "voice.GB.SIG.MISLEADING.fault.v2.wav",
+      "text": "Turn off your indicator once you have finished your turn.",
+      "durationS": 2.331
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.fault.v3",
+      "file": "voice.GB.SIG.MISLEADING.fault.v3.wav",
+      "text": "Do not leave your indicator on when driving straight ahead.",
+      "durationS": 2.734
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.good",
+      "file": "voice.GB.SIG.MISLEADING.good.wav",
+      "text": "Good indicator cancel right after your turn.",
+      "durationS": 1.948
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.good.v2",
+      "file": "voice.GB.SIG.MISLEADING.good.v2.wav",
+      "text": "Clean turn and your indicator cancelled promptly.",
+      "durationS": 2.374
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.good.v3",
+      "file": "voice.GB.SIG.MISLEADING.good.v3.wav",
+      "text": "Nice clear signalling with no misleading indicator.",
+      "durationS": 2.553
+    },
+    {
+      "key": "voice.GB.SIG.MISLEADING.tip",
+      "file": "voice.GB.SIG.MISLEADING.tip.wav",
+      "text": "Switch your indicator off right after completing your turn.",
+      "durationS": 2.59
+    },
+    {
       "key": "voice.GB.SIG.TIMELY.fault",
       "file": "voice.GB.SIG.TIMELY.fault.wav",
       "text": "Signal earlier so other drivers have time to react.",

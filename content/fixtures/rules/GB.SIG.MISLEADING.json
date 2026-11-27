@@ -10,7 +10,13 @@
       "environment": {
         "pack": "town",
         "junctionKind": "tjunction",
-        "speedLimitMph": 30
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -25,16 +31,24 @@
           "t": 3,
           "x": 0,
           "z": 24,
-          "headingDeg": 270,
-          "speedMps": 5.0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
           "indicator": "left"
         },
         {
-          "t": 5,
-          "x": -12,
+          "t": 4,
+          "x": -6,
           "z": 24,
           "headingDeg": 270,
-          "speedMps": 8.0,
+          "speedMps": 6.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5.5,
+          "x": -15,
+          "z": 24,
+          "headingDeg": 270,
+          "speedMps": 6.0,
           "indicator": "off"
         }
       ],
@@ -55,7 +69,17 @@
       "environment": {
         "pack": "town",
         "junctionKind": "side_road_pair",
-        "speedLimitMph": 30
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 25
+          },
+          {
+            "x": 0,
+            "z": 60
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -168,7 +192,13 @@
       "environment": {
         "pack": "town",
         "junctionKind": "side_road",
-        "speedLimitMph": 30
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 20
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -192,7 +222,7 @@
           "x": 0,
           "z": 44,
           "headingDeg": 0,
-          "speedMps": 5.0,
+          "speedMps": 11.0,
           "indicator": "left"
         }
       ],
@@ -234,6 +264,153 @@
           "outcome": "fault",
           "severity": "Serious",
           "timeS": 2.0
+        }
+      ]
+    },
+    {
+      "id": "pass_cancel_within_2s_after_turn",
+      "kind": "pass",
+      "description": "Turn left 90 deg at junction and cancel indicator 1.5 s after turning.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 4,
+          "x": -6,
+          "z": 24,
+          "headingDeg": 270,
+          "speedMps": 6.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5.5,
+          "x": -15,
+          "z": 24,
+          "headingDeg": 270,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SIG.MISLEADING",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.5
+        }
+      ]
+    },
+    {
+      "id": "pass_wait_at_lights_with_indicator",
+      "kind": "pass",
+      "description": "Wait stationary at traffic lights for 12 s with left indicator on.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "signals",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 5
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "left"
+        },
+        {
+          "t": 12,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "left"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SIG.MISLEADING",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 12.0
+        }
+      ]
+    },
+    {
+      "id": "minor_left_on_after_lane_change",
+      "kind": "minor",
+      "description": "Change lanes and leave right indicator on for 10 s of straight driving.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "straight",
+        "speedLimitMph": 40
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "right"
+        },
+        {
+          "t": 2,
+          "x": 3.5,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "right"
+        },
+        {
+          "t": 12,
+          "x": 3.5,
+          "z": 144,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "right"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SIG.MISLEADING",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 10.0
         }
       ]
     }

@@ -1,0 +1,312 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.JCT.TURN_FAR_GAP",
+  "hcRule": "Rule 180",
+  "drives": [
+    {
+      "id": "pass_clear_oncoming_road",
+      "kind": "pass",
+      "description": "Turn right cleanly with no oncoming traffic within 70 m.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "right"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "right"
+        },
+        {
+          "t": 5,
+          "x": 13.0,
+          "z": 24.0,
+          "headingDeg": 90,
+          "speedMps": 5.0,
+          "indicator": "right"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_FAR_GAP",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "pass_wait_then_turn_5s_gap",
+      "kind": "pass",
+      "description": "Wait at junction until oncoming car passes, then turn right with 5 s gap.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "right"
+        },
+        {
+          "t": 3,
+          "x": 0.0,
+          "z": 12.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "right"
+        },
+        {
+          "t": 5,
+          "x": 0.0,
+          "z": 12.0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "right"
+        },
+        {
+          "t": 7,
+          "x": 3.84,
+          "z": 16.61,
+          "headingDeg": 90,
+          "speedMps": 6.0,
+          "indicator": "right"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "onc",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 3,
+              "z": 60,
+              "headingDeg": 180,
+              "speedMps": 12.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 3,
+              "z": 0,
+              "headingDeg": 180,
+              "speedMps": 12.0,
+              "indicator": "off"
+            },
+            {
+              "t": 7,
+              "x": 3,
+              "z": -24,
+              "headingDeg": 180,
+              "speedMps": 12.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_FAR_GAP",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 7.0
+        }
+      ]
+    },
+    {
+      "id": "minor_tight_gap_38s",
+      "kind": "minor",
+      "description": "Turn right with 3.8 s oncoming TTC (just above 3.5 s serious threshold).",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "right"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "right"
+        },
+        {
+          "t": 5,
+          "x": 12.0,
+          "z": 24.0,
+          "headingDeg": 90,
+          "speedMps": 6.0,
+          "indicator": "right"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "onc",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 3,
+              "z": 106,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": 3,
+              "z": 67,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 3,
+              "z": 41,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_FAR_GAP",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 3.5
+        }
+      ]
+    },
+    {
+      "id": "serious_cut_across_25s_ttc",
+      "kind": "serious",
+      "description": "Turn right across oncoming car with 2.5 s TTC (< 3.5 s).",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "tjunction",
+        "speedLimitMph": 30,
+        "junctionCentres": [
+          {
+            "x": 0,
+            "z": 24
+          }
+        ]
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "right"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 24,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "right"
+        },
+        {
+          "t": 5,
+          "x": 12.0,
+          "z": 24.0,
+          "headingDeg": 90,
+          "speedMps": 6.0,
+          "indicator": "right"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "onc",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 3,
+              "z": 95,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            },
+            {
+              "t": 3,
+              "x": 3,
+              "z": 56,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": 3,
+              "z": 30,
+              "headingDeg": 180,
+              "speedMps": 13.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.JCT.TURN_FAR_GAP",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 3.5
+        }
+      ]
+    }
+  ]
+}
