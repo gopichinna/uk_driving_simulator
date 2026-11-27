@@ -417,14 +417,17 @@ namespace LToLocal.EditorTools
         private static void BuildQueslettScene() => BuildCityScene("queslett_roundabout", QueslettScene);
 
         /// <summary>
-        /// Builds only the practice-area scenes added after the first prototype (suburb, rural, ring road, Coventry, Queslett),
+        /// Builds only the city and practice-area scenes (Wolverhampton, test area, motorway, suburb, rural, ring road, Coventry, Queslett),
         /// so the older scenes are not regenerated:
         ///   Unity -batchmode -projectPath unity -executeMethod LToLocal.EditorTools.ProjectSetup.BuildPackScenes -quit
         /// </summary>
-        [MenuItem("L to Local/Build practice-area scenes only")]
+        [MenuItem("L to Local/Build city and practice-area scenes only")]
         public static void BuildPackScenes()
         {
             CopyContent();
+            BuildWolverhamptonScene();
+            BuildTestAreaScene();
+            BuildMotorwayScene();
             BuildSuburbScene();
             BuildRuralScene();
             BuildRingRoadScene();
@@ -448,7 +451,12 @@ namespace LToLocal.EditorTools
             var built = new RoadPackGraph(pack);
             var g = built.Graph;
             var world = new GameObject("World").transform;
-            Prim(PrimitiveType.Plane, "Ground", world, new Vector3(0, -0.01f, 30), new Vector3(220, 1, 220), m.Grass);
+            // The ground covers the whole pack (a long motorway corridor or an offset city would otherwise leave bare sky).
+            float gx0 = float.MaxValue, gx1 = float.MinValue, gz0 = float.MaxValue, gz1 = float.MinValue;
+            foreach (var kv in pack.Nodes) { gx0 = Mathf.Min(gx0, (float)kv.Value.Pos.X); gx1 = Mathf.Max(gx1, (float)kv.Value.Pos.X); gz0 = Mathf.Min(gz0, (float)kv.Value.Pos.Z); gz1 = Mathf.Max(gz1, (float)kv.Value.Pos.Z); }
+            if (gx0 > gx1) { gx0 = gz0 = -500; gx1 = gz1 = 500; }
+            float gSize = Mathf.Max(2200f, Mathf.Max(gx1 - gx0, gz1 - gz0) + 1500f);
+            Prim(PrimitiveType.Plane, "Ground", world, new Vector3((gx0 + gx1) / 2, -0.01f, (gz0 + gz1) / 2), new Vector3(gSize / 10f, 1, gSize / 10f), m.Grass);
 
             // The road surface is drawn from the same lanes the traffic and rules use, so markings, kerbs and
             // driving lines always agree. Streets outside the network are scenery (car-park aisles are skipped).
@@ -589,14 +597,19 @@ namespace LToLocal.EditorTools
                     Glow("LampRed", new Color(1f, 0.12f, 0.10f)), Glow("LampAmber", new Color(1f, 0.62f, 0.05f)), Glow("LampGreen", new Color(0.15f, 1f, 0.45f)));
             }
 
-            // Start on the longest two-way public road in the network (the mock-test route begins in a car park).
+            // Free drive starts on a long two-way public road near the middle of the map, so it is never at the edge
+            // (the mock-test route begins in a car park, so service roads are skipped).
             string startLink = "";
-            double bestLen = 0, startOffset = 10;
+            double bestScore = double.MaxValue, startOffset = 10;
+            Vec2 mapCentre = new Vec2((gx0 + gx1) / 2, (gz0 + gz1) / 2);
             foreach (var l in pack.Links)
             {
                 if (!l.InMainNetwork || l.OneWay || l.RoadClass == "service" || !built.LinkLanes.ContainsKey(l.Id)) continue;
                 double len = new PathPolyline(l.Geometry).Length;
-                if (len > bestLen) { bestLen = len; startLink = l.Id; }
+                if (len < 60) continue;
+                var mid = l.Geometry[l.Geometry.Count / 2];
+                double score = (mid - mapCentre).Length - len * 0.5; // near the middle, and longer is better
+                if (score < bestScore) { bestScore = score; startLink = l.Id; }
             }
             int startLane = startLink.Length > 0 ? built.LinkLanes[startLink].forward[0] : built.Spawns[0].lane;
             var (startPos, startHeading) = g.Segments[startLane].Path.Sample(System.Math.Min(startOffset, g.Segments[startLane].Length - 1));

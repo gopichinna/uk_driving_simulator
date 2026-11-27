@@ -250,6 +250,7 @@ namespace LToLocal.Game
             foreach (var l in lessons) if (l.Stage != last) { stages++; last = l.Stage; }
             float content = lessons.Count * (rowH + 6) + stages * headH + rowH * 2;
             var view = new Rect(x, y, w, H * 0.86f - y);
+            _touchScrollRect = view;
             _menuScroll = GUI.BeginScrollView(view, _menuScroll, new Rect(0, 0, w - 30, content));
             float cy = 0;
             last = -1;
@@ -271,7 +272,7 @@ namespace LToLocal.Game
                 int stars = LessonSession.Progress.StarsFor(l.Id);
                 string label = $"{l.Order}. {l.Title}{(l.FreeTier ? "  (free)" : "")}   {new string('★', stars)}{new string('☆', 3 - stars)}{(!playable ? "   Coming soon" : open ? "" : "   Locked")}";
                 GUI.enabled = open;
-                if (GUI.Button(new Rect(0, cy, w - 30, rowH), label, _rowStyle))
+                if (GUI.Button(new Rect(0, cy, w - 30, rowH), label, _rowStyle) && !_scrollBlock)
                 {
                     LessonSession.Begin(l);
                     SetMode(Mode.LearnCard);

@@ -93,6 +93,7 @@ namespace LToLocal.Game
         private void UpdatePaused()
         {
             UpdateTheoryClock();
+            UpdateTouchScroll();
             if (_mode != Mode.Replay) return;
             _replayTime += Time.deltaTime;
             if (_replayTime > _replayTo + 0.8) _replayTime = _replayFrom; // loop, with a short pause at the end

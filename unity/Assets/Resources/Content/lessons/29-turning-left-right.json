@@ -26,7 +26,8 @@
       "goal": "Signal left at least 2 seconds early and keep close to the kerb.",
       "rulesJudged": [
         "GB.JCT.TURN_NEAR",
-        "GB.POS.AFTER_TURN"
+        "GB.POS.AFTER_TURN",
+        "GB.SIG.MISLEADING"
       ],
       "variations": {
         "trafficDensity": [

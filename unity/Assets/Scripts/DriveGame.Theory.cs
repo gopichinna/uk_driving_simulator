@@ -14,7 +14,7 @@ namespace LToLocal.Game
         private const int TheorySetCount = 10;
         private TheoryTestSession _theory;
         private int _theorySetNumber, _theoryWrongIndex;
-        private bool _theoryConfirmFinish;
+        private bool _theoryConfirmFinish, _theoryConfirmExit;
         private Vector2 _theoryScroll;
 
         private static string BestKey(int set) => $"theory_best_{set}";
@@ -33,8 +33,28 @@ namespace LToLocal.Game
             if (asset == null) { Debug.LogWarning($"[LToLocal] Theory set {setNumber} not found."); return; }
             _theorySetNumber = setNumber;
             _theory = new TheoryTestSession(TheorySetDef.FromJson(asset.text));
-            _theoryConfirmFinish = false;
+            _theoryConfirmFinish = _theoryConfirmExit = false;
             SetMode(Mode.Theory);
+        }
+
+        /// <summary>The Exit button for the top right of the question and review screens.</summary>
+        private void DrawTheoryExitButton(float x, float w, float y, float H)
+        {
+            if (GUI.Button(new Rect(x + w * 0.80f, y, w * 0.20f, H * 0.07f), "Exit", _buttonStyle)) _theoryConfirmExit = true;
+        }
+
+        /// <summary>The "leave this test?" dialog, drawn last so it sits on top (the screen under it is disabled while it is open).</summary>
+        private void DrawTheoryExitDialog(float W, float H)
+        {
+            GUI.enabled = true;
+            if (!_theoryConfirmExit) return;
+            Fill(new Rect(0, 0, W, H), new Color(0, 0, 0, 0.72f));
+            float bw = W * 0.28f, bh = H * 0.12f, cx = W * 0.5f, cy = H * 0.5f;
+            GUI.Label(new Rect(W * 0.15f, cy - H * 0.22f, W * 0.7f, H * 0.16f), "Leave this test? Your answers will not be saved.", _textStyle);
+            if (GUI.Button(new Rect(cx - bw - W * 0.02f, cy, bw, bh), "Keep going", _buttonStyle)) _theoryConfirmExit = false;
+            GUI.color = new Color(1f, 0.6f, 0.55f);
+            if (GUI.Button(new Rect(cx + W * 0.02f, cy, bw, bh), "Leave test", _buttonStyle)) { _theoryConfirmExit = false; OpenTheoryMenu(); }
+            GUI.color = Color.white;
         }
 
         /// <summary>Called every frame outside driving: runs the test clock.</summary>
@@ -75,13 +95,14 @@ namespace LToLocal.Game
 
             float rowH = H * 0.08f;
             var view = new Rect(x, y, w, H * 0.86f - y);
+            _touchScrollRect = view;
             _theoryScroll = GUI.BeginScrollView(view, _theoryScroll, new Rect(0, 0, w - 30, TheorySetCount * (rowH + 6)));
             for (int n = 1; n <= TheorySetCount; n++)
             {
                 int best = TheoryBest(n);
                 string result = best < 0 ? "Not tried" : best >= 43 ? $"Best {best}/50  Passed" : $"Best {best}/50";
                 if (best >= 43) GUI.color = new Color(0.5f, 1f, 0.6f);
-                if (GUI.Button(new Rect(0, (n - 1) * (rowH + 6), w - 30, rowH), $"Practice test {n}     {result}", _rowStyle)) StartTheory(n);
+                if (GUI.Button(new Rect(0, (n - 1) * (rowH + 6), w - 30, rowH), $"Practice test {n}     {result}", _rowStyle) && !_scrollBlock) StartTheory(n);
                 GUI.color = Color.white;
             }
             GUI.EndScrollView();
@@ -95,13 +116,15 @@ namespace LToLocal.Game
             var t = _theory;
             var q = t.Current;
             Fill(new Rect(0, 0, W, H), new Color(0.05f, 0.06f, 0.08f, 0.97f));
+            GUI.enabled = !_theoryConfirmExit;
             float x = W * 0.08f, w = W * 0.84f, y = H * 0.03f;
 
             bool low = t.TimeLeftS < 300;
-            GUI.Label(new Rect(x, y, w * 0.6f, H * 0.06f), $"Question {t.Index + 1} of {t.Count}{(t.Flags[t.Index] ? "   (flagged)" : "")}", _smallStyle);
+            GUI.Label(new Rect(x, y, w * 0.4f, H * 0.06f), $"Question {t.Index + 1} of {t.Count}{(t.Flags[t.Index] ? "  (flagged)" : "")}", _smallStyle);
             if (low) GUI.color = new Color(1f, 0.5f, 0.45f);
-            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
+            GUI.Label(new Rect(x + w * 0.42f, y, w * 0.36f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
             GUI.color = Color.white;
+            DrawTheoryExitButton(x, w, y - H * 0.01f, H);
             y += H * 0.07f;
 
             float qh = _textStyle.CalcHeight(new GUIContent(q.Text), w);
@@ -121,7 +144,7 @@ namespace LToLocal.Game
             float bx = x;
             GUI.enabled = t.Index > 0;
             if (GUI.Button(new Rect(bx, by, bw, bh), "Previous", _buttonStyle)) t.Previous();
-            GUI.enabled = true;
+            GUI.enabled = !_theoryConfirmExit;
             bx += bw + gap;
             if (GUI.Button(new Rect(bx, by, bw, bh), t.Flags[t.Index] ? "Unflag" : "Flag", _buttonStyle)) t.ToggleFlag();
             bx += bw + gap;
@@ -132,15 +155,18 @@ namespace LToLocal.Game
                 if (GUI.Button(new Rect(bx, by, bw, bh), "Next", _buttonStyle)) t.Next();
             }
             else if (GUI.Button(new Rect(bx, by, bw, bh), "Finish", _buttonStyle)) { _theoryConfirmFinish = false; SetMode(Mode.TheoryReview); }
+            DrawTheoryExitDialog(W, H);
         }
 
         private void DrawTheoryReview(float W, float H)
         {
             var t = _theory;
             Fill(new Rect(0, 0, W, H), new Color(0.05f, 0.06f, 0.08f, 0.97f));
+            GUI.enabled = !_theoryConfirmExit;
             float x = W * 0.08f, w = W * 0.84f, y = H * 0.03f;
-            GUI.Label(new Rect(x, y, w * 0.6f, H * 0.08f), "Review your answers", _bigStyle);
-            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
+            GUI.Label(new Rect(x, y, w * 0.45f, H * 0.08f), "Review your answers", _bigStyle);
+            GUI.Label(new Rect(x + w * 0.46f, y, w * 0.32f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
+            DrawTheoryExitButton(x, w, y, H);
             y += H * 0.09f;
             GUI.Label(new Rect(x, y, w, H * 0.06f), $"{t.AnsweredCount} answered, {t.UnansweredCount} not answered, {t.FlaggedCount} flagged. Tap a number to go back to that question.", _smallStyle);
             y += H * 0.08f;
@@ -174,6 +200,7 @@ namespace LToLocal.Game
                 if (GUI.Button(new Rect(x + w - bw, by, bw, bh), "Yes, finish", _buttonStyle)) FinishTheory();
                 GUI.color = Color.white;
             }
+            DrawTheoryExitDialog(W, H);
         }
 
         private void DrawTheoryResult(float W, float H)
