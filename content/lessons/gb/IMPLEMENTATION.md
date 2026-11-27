@@ -153,6 +153,11 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 32 | The ring road | `GB.JCT.GIVE_WAY` | ✅ |
 | 32 | The ring road | `GB.JCT.TURN_NEAR` | ✅ |
 | 32 | The ring road | `GB.SIG.MISLEADING` | ✅ |
+| 33 | A big four-way roundabout | `GB.RBT.GIVE_WAY_RIGHT` | ✅ |
+| 33 | A big four-way roundabout | `GB.RBT.SIGNAL_EXIT` | ✅ |
+| 33 | A big four-way roundabout | `GB.SIG.TIMELY` | ✅ |
+| 33 | A big four-way roundabout | `GB.RBT.STAY_IN_LANE` | ✅ |
+| 33 | A big four-way roundabout | `GB.RBT.SIGNAL_APPROACH` | ✅ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
@@ -168,14 +173,14 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.OBS.LANE_CHANGE` | 10 | ✅ >= 2 |
 | `GB.POS.KEEP_LEFT` | 11 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 4 | ✅ >= 2 |
-| `GB.RBT.GIVE_WAY_RIGHT` | 6 | ✅ >= 2 |
-| `GB.RBT.SIGNAL_APPROACH` | 3 | ✅ >= 2 |
-| `GB.RBT.SIGNAL_EXIT` | 5 | ✅ >= 2 |
-| `GB.RBT.STAY_IN_LANE` | 4 | ✅ >= 2 |
+| `GB.RBT.GIVE_WAY_RIGHT` | 9 | ✅ >= 2 |
+| `GB.RBT.SIGNAL_APPROACH` | 4 | ✅ >= 2 |
+| `GB.RBT.SIGNAL_EXIT` | 8 | ✅ >= 2 |
+| `GB.RBT.STAY_IN_LANE` | 6 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
 | `GB.SCH.SLOW` | 5 | ✅ >= 2 |
 | `GB.SIG.MISLEADING` | 2 | ✅ >= 2 |
-| `GB.SIG.TIMELY` | 16 | ✅ >= 2 |
+| `GB.SIG.TIMELY` | 17 | ✅ >= 2 |
 | `GB.SPD.OVER_LIMIT` | 19 | ✅ >= 2 |
 | `GB.TL.AMBER` | 3 | ✅ >= 2 |
 | `GB.TL.ASL` | 2 | ✅ >= 2 |

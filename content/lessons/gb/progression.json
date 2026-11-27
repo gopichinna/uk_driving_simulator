@@ -52,7 +52,8 @@
         "gb-s4-15-overtaking-cyclists",
         "gb-s4-16-following-distance-town",
         "gb-s4-28-school-zones",
-        "gb-s4-32-coventry-ring-road"
+        "gb-s4-32-coventry-ring-road",
+        "gb-s4-33-queslett-roundabout"
       ],
       "unlockAfter": { "stage": 3, "minStars": 5 }
     },

@@ -21,7 +21,8 @@
         "suburb_practice",
         "rural_practice",
         "ring_road_practice",
-        "coventry"
+        "coventry",
+        "queslett_roundabout"
       ]
     },
     "anchor": {
