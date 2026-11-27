@@ -1,0 +1,279 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.BUS.PULLING_OUT",
+  "hcRule": "Rule 223",
+  "drives": [
+    {
+      "id": "pass_yield_to_bus",
+      "kind": "pass",
+      "description": "Ease off smoothly and let signalling bus pull out from lay-by.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "bus_stop",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 25,
+          "headingDeg": 0,
+          "speedMps": 4.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 38,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "b1",
+          "kind": "bus",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -2.5,
+              "z": 35,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "right"
+            },
+            {
+              "t": 3,
+              "x": -1.0,
+              "z": 40,
+              "headingDeg": 0,
+              "speedMps": 4.0,
+              "indicator": "right"
+            },
+            {
+              "t": 6,
+              "x": 0,
+              "z": 56,
+              "headingDeg": 0,
+              "speedMps": 7.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.BUS.PULLING_OUT",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pass_hold_behind_bus",
+      "kind": "pass",
+      "description": "Wait behind bus at stop until it moves off cleanly.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "bus_stop",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 10,
+          "headingDeg": 0,
+          "speedMps": 5.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 0,
+          "z": 22,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": 0,
+          "z": 34,
+          "headingDeg": 0,
+          "speedMps": 5.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "b2",
+          "kind": "bus",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": 30,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "right"
+            },
+            {
+              "t": 3,
+              "x": 0,
+              "z": 35,
+              "headingDeg": 0,
+              "speedMps": 4.0,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": 0,
+              "z": 50,
+              "headingDeg": 0,
+              "speedMps": 6.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.BUS.PULLING_OUT",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "minor_force_bus_wait",
+      "kind": "minor",
+      "description": "Accelerate past signalling bus 35 m ahead instead of yielding safely.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "bus_stop",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 1.5,
+          "z": 38,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "b3",
+          "kind": "bus",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -2.0,
+              "z": 35,
+              "headingDeg": 0,
+              "speedMps": 1.0,
+              "indicator": "right"
+            },
+            {
+              "t": 3,
+              "x": -2.0,
+              "z": 36,
+              "headingDeg": 0,
+              "speedMps": 0.0,
+              "indicator": "right"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.BUS.PULLING_OUT",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.5
+        }
+      ]
+    },
+    {
+      "id": "serious_cut_across_moving_bus",
+      "kind": "serious",
+      "description": "Squeeze past already-moving bus with < 1.0 m clearance.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "bus_stop",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 20,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0.8,
+          "z": 46,
+          "headingDeg": 0,
+          "speedMps": 13.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "b4",
+          "kind": "bus",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -0.5,
+              "z": 34,
+              "headingDeg": 0,
+              "speedMps": 4.0,
+              "indicator": "right"
+            },
+            {
+              "t": 2,
+              "x": 0.0,
+              "z": 38,
+              "headingDeg": 0,
+              "speedMps": 0.5,
+              "indicator": "right"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.BUS.PULLING_OUT",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 1.5
+        }
+      ]
+    }
+  ]
+}

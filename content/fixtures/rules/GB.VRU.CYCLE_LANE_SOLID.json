@@ -1,0 +1,217 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.VRU.CYCLE_LANE_SOLID",
+  "hcRule": "Rule 140",
+  "drives": [
+    {
+      "id": "pass_stay_right_of_solid",
+      "kind": "pass",
+      "description": "Keep wholly right of solid white cycle-lane line.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "mandatory_cycle_lane",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 1.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        },
+        {
+          "t": 5,
+          "x": 1.5,
+          "z": 55,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c1",
+          "kind": "cyclist",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -0.8,
+              "z": 20,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            },
+            {
+              "t": 5,
+              "x": -0.8,
+              "z": 45,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.VRU.CYCLE_LANE_SOLID",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "pass_cross_at_dashed_turn",
+      "kind": "pass",
+      "description": "Cross cycle lane only at dashed left-turn gap after checking.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "dashed_cycle_gap",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 1.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 8.0,
+          "indicator": "left"
+        },
+        {
+          "t": 3,
+          "x": 0.0,
+          "z": 24,
+          "headingDeg": 340,
+          "speedMps": 5.0,
+          "indicator": "left"
+        },
+        {
+          "t": 5,
+          "x": -6.0,
+          "z": 30,
+          "headingDeg": 270,
+          "speedMps": 5.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.VRU.CYCLE_LANE_SOLID",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 5.0
+        }
+      ]
+    },
+    {
+      "id": "minor_brief_clip_03m",
+      "kind": "minor",
+      "description": "Clip solid cycle-lane line briefly by 0.25 m with no cyclist nearby.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "mandatory_cycle_lane",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 1.2,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        },
+        {
+          "t": 1,
+          "x": -0.25,
+          "z": 10,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 1.2,
+          "z": 20,
+          "headingDeg": 0,
+          "speedMps": 10.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.VRU.CYCLE_LANE_SOLID",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 1.0
+        }
+      ]
+    },
+    {
+      "id": "dangerous_straddle_near_cyclist",
+      "kind": "dangerous",
+      "description": "Straddle solid white line by 0.5 m for 20 m with cyclist within 20 m.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "mandatory_cycle_lane",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -0.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": -0.5,
+          "z": 22,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c2",
+          "kind": "cyclist",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -0.8,
+              "z": 12,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            },
+            {
+              "t": 2,
+              "x": -0.8,
+              "z": 22,
+              "headingDeg": 0,
+              "speedMps": 5.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.VRU.CYCLE_LANE_SOLID",
+          "outcome": "fault",
+          "severity": "Dangerous",
+          "timeS": 1.5
+        }
+      ]
+    }
+  ]
+}

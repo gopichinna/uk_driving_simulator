@@ -51,3 +51,25 @@ def test_ten_balanced_theory_test_sets() -> None:
         assert diff_counts == {1: 20, 2: 20, 3: 10}, f"{p.name}: bad mix {diff_counts}"
 
     assert max(global_usage.values()) <= 3, "Question used in > 3 sets"
+
+
+def test_stages_5_6_7_implemented_rules_have_at_least_13_questions() -> None:
+    from ltl_pipeline.schema import REPO_ROOT
+
+    rules_data = yaml.safe_load(RULES_YAML.read_text(encoding="utf-8"))
+    implemented = {
+        r["id"]
+        for r in rules_data["rules"]
+        if r.get("implementation", {}).get("status") == "implemented"
+    }
+    lessons_dir = REPO_ROOT / "content" / "lessons" / "gb"
+    s567_rules: set[str] = set()
+    for lf in sorted(lessons_dir.glob("[0-9][0-9]-*.json")):
+        doc = json.loads(lf.read_text(encoding="utf-8"))
+        if doc["stage"] in (5, 6, 7):
+            s567_rules.update(doc["learnCard"]["ruleIds"])
+            for sc in doc["scenarios"]:
+                s567_rules.update(sc["rulesJudged"])
+    for rid in sorted(s567_rules & implemented):
+        items = json.loads((BANK_DIR / f"{rid}.json").read_text(encoding="utf-8"))
+        assert len(items) >= 13, f"Stage 5-7 rule {rid} has only {len(items)} questions (< 13)"

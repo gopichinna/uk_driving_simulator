@@ -1,0 +1,238 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.SPD.PROGRESS",
+  "hcRule": "Rules 125 & 144",
+  "drives": [
+    {
+      "id": "pass_hold_28_in_30",
+      "kind": "pass",
+      "description": "Hold 28 mph (12.5 m/s) on clear 30 mph town road.",
+      "environment": {
+        "pack": "town",
+        "junctionKind": "straight",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        },
+        {
+          "t": 12,
+          "x": 0,
+          "z": 150,
+          "headingDeg": 0,
+          "speedMps": 12.5,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.PROGRESS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 12.0
+        }
+      ]
+    },
+    {
+      "id": "pass_prompt_roundabout_entry",
+      "kind": "pass",
+      "description": "Enter clear roundabout promptly without pausing > 6.0 s.",
+      "environment": {
+        "pack": "roundabout",
+        "junctionKind": "roundabout",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0,
+          "z": 6,
+          "headingDeg": 0,
+          "speedMps": 2.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 0,
+          "z": 18,
+          "headingDeg": 0,
+          "speedMps": 7.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.PROGRESS",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 4.0
+        }
+      ]
+    },
+    {
+      "id": "minor_hesitate_empty_rbt_8s",
+      "kind": "minor",
+      "description": "Stop 8.0 s at empty roundabout with > 6.0 s clear gap.",
+      "environment": {
+        "pack": "roundabout",
+        "junctionKind": "roundabout",
+        "speedLimitMph": 30
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 8,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 0.0,
+          "indicator": "off"
+        },
+        {
+          "t": 10,
+          "x": 0,
+          "z": 10,
+          "headingDeg": 0,
+          "speedMps": 6.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.PROGRESS",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 6.5
+        }
+      ]
+    },
+    {
+      "id": "serious_slow_dual_queue_20s",
+      "kind": "serious",
+      "description": "Cruise at 15 mph (6.7 m/s) for 20 s on clear 40 mph dual carriageway, queuing 3 cars.",
+      "environment": {
+        "pack": "dual_carriageway",
+        "junctionKind": "straight",
+        "speedLimitMph": 40
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": 0,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 6.7,
+          "indicator": "off"
+        },
+        {
+          "t": 20,
+          "x": 0,
+          "z": 134,
+          "headingDeg": 0,
+          "speedMps": 6.7,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "q1",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": -15,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            },
+            {
+              "t": 20,
+              "x": 0,
+              "z": 124,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            }
+          ]
+        },
+        {
+          "id": "q2",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": -25,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            },
+            {
+              "t": 20,
+              "x": 0,
+              "z": 114,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            }
+          ]
+        },
+        {
+          "id": "q3",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 0,
+              "z": -35,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            },
+            {
+              "t": 20,
+              "x": 0,
+              "z": 104,
+              "headingDeg": 0,
+              "speedMps": 6.7,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.SPD.PROGRESS",
+          "outcome": "fault",
+          "severity": "Serious",
+          "timeS": 14.0
+        }
+      ]
+    }
+  ]
+}

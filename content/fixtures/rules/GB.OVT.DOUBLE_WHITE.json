@@ -1,0 +1,270 @@
+{
+  "fixtureFormatVersion": "0.1",
+  "ruleId": "GB.OVT.DOUBLE_WHITE",
+  "hcRule": "Rule 129",
+  "drives": [
+    {
+      "id": "pass_hold_behind_25mph_tractor",
+      "kind": "pass",
+      "description": "Hold behind 25 mph tractor along solid double white line.",
+      "environment": {
+        "pack": "rural_practice",
+        "junctionKind": "double_solid",
+        "speedLimitMph": 60
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -1.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": -1.5,
+          "z": 66,
+          "headingDeg": 0,
+          "speedMps": 11.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "t1",
+          "kind": "tractor",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -1.5,
+              "z": 25,
+              "headingDeg": 0,
+              "speedMps": 11.0,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": -1.5,
+              "z": 91,
+              "headingDeg": 0,
+              "speedMps": 11.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.OVT.DOUBLE_WHITE",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "pass_7mph_cyclist_safely",
+      "kind": "pass",
+      "description": "Pass 7 mph (3.1 m/s) cyclist cleanly when clear and safe.",
+      "environment": {
+        "pack": "rural_practice",
+        "junctionKind": "double_solid",
+        "speedLimitMph": 60
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -1.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 9.0,
+          "indicator": "off"
+        },
+        {
+          "t": 3,
+          "x": 1.0,
+          "z": 27,
+          "headingDeg": 0,
+          "speedMps": 9.0,
+          "indicator": "off"
+        },
+        {
+          "t": 6,
+          "x": -1.5,
+          "z": 54,
+          "headingDeg": 0,
+          "speedMps": 9.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "c1",
+          "kind": "cyclist",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -2.0,
+              "z": 20,
+              "headingDeg": 0,
+              "speedMps": 3.1,
+              "indicator": "off"
+            },
+            {
+              "t": 6,
+              "x": -2.0,
+              "z": 38.6,
+              "headingDeg": 0,
+              "speedMps": 3.1,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.OVT.DOUBLE_WHITE",
+          "outcome": "pass",
+          "severity": "none",
+          "timeS": 6.0
+        }
+      ]
+    },
+    {
+      "id": "minor_clip_centreline_briefly",
+      "kind": "minor",
+      "description": "Straddle solid centreline by 0.2 m briefly around bend without overtaking.",
+      "environment": {
+        "pack": "rural_practice",
+        "junctionKind": "double_solid",
+        "speedLimitMph": 60
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -1.2,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 15.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 0.2,
+          "z": 30,
+          "headingDeg": 0,
+          "speedMps": 15.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": -1.2,
+          "z": 60,
+          "headingDeg": 0,
+          "speedMps": 15.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.OVT.DOUBLE_WHITE",
+          "outcome": "fault",
+          "severity": "Driving",
+          "timeS": 2.0
+        }
+      ]
+    },
+    {
+      "id": "dangerous_overtake_25mph_van_oncoming",
+      "kind": "dangerous",
+      "description": "Overtake 25 mph van across double white line with oncoming car within 80 m.",
+      "environment": {
+        "pack": "rural_practice",
+        "junctionKind": "double_solid",
+        "speedLimitMph": 60
+      },
+      "playerKeyframes": [
+        {
+          "t": 0,
+          "x": -1.5,
+          "z": 0,
+          "headingDeg": 0,
+          "speedMps": 18.0,
+          "indicator": "off"
+        },
+        {
+          "t": 2,
+          "x": 1.5,
+          "z": 36,
+          "headingDeg": 0,
+          "speedMps": 18.0,
+          "indicator": "off"
+        },
+        {
+          "t": 4,
+          "x": 1.5,
+          "z": 72,
+          "headingDeg": 0,
+          "speedMps": 18.0,
+          "indicator": "off"
+        }
+      ],
+      "otherUsers": [
+        {
+          "id": "v1",
+          "kind": "van",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": -1.5,
+              "z": 25,
+              "headingDeg": 0,
+              "speedMps": 11.2,
+              "indicator": "off"
+            },
+            {
+              "t": 4,
+              "x": -1.5,
+              "z": 70,
+              "headingDeg": 0,
+              "speedMps": 11.2,
+              "indicator": "off"
+            }
+          ]
+        },
+        {
+          "id": "onc",
+          "kind": "car",
+          "keyframes": [
+            {
+              "t": 0,
+              "x": 1.5,
+              "z": 110,
+              "headingDeg": 180,
+              "speedMps": 18.0,
+              "indicator": "off"
+            },
+            {
+              "t": 4,
+              "x": 1.5,
+              "z": 38,
+              "headingDeg": 180,
+              "speedMps": 18.0,
+              "indicator": "off"
+            }
+          ]
+        }
+      ],
+      "expectedEvents": [
+        {
+          "ruleId": "GB.OVT.DOUBLE_WHITE",
+          "outcome": "fault",
+          "severity": "Dangerous",
+          "timeS": 2.0
+        }
+      ]
+    }
+  ]
+}
