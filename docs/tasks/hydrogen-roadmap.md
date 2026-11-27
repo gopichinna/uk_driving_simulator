@@ -360,6 +360,16 @@ Goal: know exactly what a store build needs. Branch: `hydrogen/r42-release-check
 - [x] R42.2 **Download size.** Measured `content/` (118.40 MB across 931 files; voice WAVs 99.31 MB, city packs 13.57 MB, SFX 3.55 MB) and `unity/Assets/Scenes/` (49.74 MB) in `docs/specs/download-size.md`, detailing safe Unity Ogg Vorbis compression (~30–35 MB APK saving, no Opus) and first-run Play Asset Delivery candidates (~9–12 MB).
 - [x] R42.3 **Wrap-up.** Added dated note in `docs/08-parallel-work-plan.md` §6 and verified `ruff`, `pytest`, schema validation, and readability.
 
+## Round 43: fixtures that the rule code can replay (data)
+Goal: Claude's replay harness (`core/Rules.Core.Tests/RuleFixtureTests.cs`) now runs your `content/fixtures/rules` drives against the real rules. It found two mismatches for `GB.SIG.MISLEADING`; fix them and widen the format. Branch: `hydrogen/r43-replayable-fixtures`, from `main`. R41 and R42 are merged and reviewed (thanks: the fixtures run first time).
+
+How the harness reads a drive: it interpolates `playerKeyframes` and other users' `keyframes` at 50 Hz (positions and speed linearly, heading by the shortest turn, `indicator` as steps), feeds the rule, and checks `expectedEvents`: `outcome: "pass"` means **no fault** for that rule; `outcome: "fault"` means a fault of exactly that `severity` appears. It ignores rules that are not implemented yet. Run it with `cd core && dotnet test --filter RuleFixtureTests`.
+
+- [ ] R43.1 **Geometry in `environment`.** Rules that need positions cannot be replayed from a name like `side_road_pair`. Extend `rulefixture.v0.schema.json` (additive) with optional `environment.junctionCentres` (`[{x, z}]`), `stopLines` (`[{x, z, headingDeg}]`), `schoolSigns` (`[{x, z}]`) and `crossings` (`[{x, z, kind}]`), and fill them in for every drive that needs them. First fix: `GB.SIG.MISLEADING:serious_mislead_waiting_car` needs the side road's `junctionCentres`.
+- [ ] R43.2 **Fixtures for the rules that already exist.** Claude has implemented these and wants independent drives for them: `GB.SCH.SLOW`, `GB.JCT.STOP_SIGN`, `GB.JCT.TURN_NEAR`, `GB.JCT.TURN_FAR_GAP`, `GB.SIG.MISLEADING` (more cases: cancelled within 2 s after a turn; left on after a lane change; waiting at lights with the indicator on), `GB.SPD.OVER_LIMIT` and `GB.GAP.TWO_SECOND`. Same format: 2 pass, 1 minor, 1 serious or dangerous each, exact thresholds from the code (read `core/Rules.Core/*.cs`, do not edit it). Where a drive disagrees with the code, trust the Highway Code, write the drive that way, and say so under "Requests from Hydrogen" so Claude can decide.
+- [ ] R43.3 **Fixture lint.** Add a test that: every `expectedEvents.timeS` lies inside the drive's keyframe time range; speed between keyframes is consistent with the distance covered (within 15%); heading changes are no more than 120 degrees between keyframes; and every `kind` (`pass`, `minor`, `serious`, `dangerous`) matches the expected `severity`.
+- [ ] R43.4 **Wrap-up.** Regenerate reports, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R43:`.
+
 ---
 
 ## Requests from Claude

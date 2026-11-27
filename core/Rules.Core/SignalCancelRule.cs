@@ -9,7 +9,8 @@ namespace LToLocal.Rules
     /// not about to turn, because other road users may think you are. Two cases, both a minor (driving) fault:
     /// (1) the car has turned more than <see cref="TurnRad"/> since the indicator went on, has been going straight for
     ///     more than <see cref="AfterTurnS"/> seconds or <see cref="AfterTurnM"/> metres, and the indicator is still on;
-    /// (2) the indicator has been on for <see cref="ForgottenS"/> seconds of straight driving with no turn at all.
+    /// (2) the indicator has been on for <see cref="ForgottenS"/> seconds of straight driving with no turn seen (for example
+    /// it was left on after a roundabout exit).
     /// Time standing still does not count (waiting to turn at lights). One report per time the indicator is switched on.
     /// Thresholds are PROPOSED values pending ADI review.
     /// </summary>
@@ -23,7 +24,7 @@ namespace LToLocal.Rules
         private bool _manoeuvreDone, _reported;
         private double _straightS, _straightM;
 
-        public double TurnRad = 0.5, AfterTurnS = 5.0, AfterTurnM = 40.0, ForgottenS = 15.0;
+        public double TurnRad = 0.5, AfterTurnS = 5.0, AfterTurnM = 40.0, ForgottenS = 9.0;
         public double StraightRateRad = 0.05, MinMovingMps = 3.0;
 
         public void Reset()

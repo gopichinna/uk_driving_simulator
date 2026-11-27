@@ -41,11 +41,11 @@ namespace LToLocal.Rules.Tests
         public void Minor_ForgottenIndicatorOnAStraightRoad()
         {
             var e = Run(t => t > 1 ? 1 : 0, turn: false);
-            Assert.That(e.Single().Time, Is.InRange(15.5, 17));
+            Assert.That(e.Single().Time, Is.InRange(10.0, 11.5));
         }
 
         [Test]
-        public void Pass_ASignalOnForTenSecondsBeforeATurnIsNotForgotten()
+        public void Pass_ASignalOnForFourSecondsBeforeATurnIsNotForgotten()
         {
             var e = Run(t => t > 0.5 && t < 5 ? 1 : 0, turn: false, seconds: 20);
             Assert.That(e, Is.Empty);
@@ -84,8 +84,8 @@ namespace LToLocal.Rules.Tests
             for (double t = 0; t < 20; t += Drive.Dt) rule.OnFrame(new DriverFrame(t, s, 1), events);
             Assert.That(events.Count, Is.EqualTo(1));
             rule.Reset();
-            for (double t = 20; t < 30; t += Drive.Dt) rule.OnFrame(new DriverFrame(t, s, 1), events);
-            Assert.That(events.Count, Is.EqualTo(1), "10 s is not yet long enough after a reset");
+            for (double t = 20; t < 25; t += Drive.Dt) rule.OnFrame(new DriverFrame(t, s, 1), events);
+            Assert.That(events.Count, Is.EqualTo(1), "5 s is not yet long enough after a reset");
         }
     }
 }
