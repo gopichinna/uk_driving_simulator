@@ -320,6 +320,72 @@ namespace LToLocal.Rules
     }
 
     /// <summary>
+    /// GB.SCH.SLOW (rule 208): slow down near schools. Within <see cref="RadiusM"/> of a school warning sign, doing more
+    /// than <see cref="LimitMph"/> (ASSUMPTION pending ADI review) for <see cref="SustainS"/> seconds is a driving fault,
+    /// or serious if anyone on foot is within <see cref="PeopleM"/> of the car. Passing through at or below the limit
+    /// earns good-practice feedback once per zone.
+    /// </summary>
+    public sealed class SchoolSlowRule
+    {
+        public const string RuleId = "GB.SCH.SLOW";
+        private const string Source = "Highway Code rule 208";
+
+        private readonly List<Vec2> _zones;
+        private int _active = -1;
+        private double _overSince = double.NaN;
+        private Severity _reported;
+        private bool _everOver;
+
+        public SchoolSlowRule(List<Vec2> zoneCentres) => _zones = zoneCentres;
+
+        public double RadiusM = 100, LimitMph = 20, SustainS = 1.5, PeopleM = 15;
+
+        public void Reset()
+        {
+            _active = -1;
+            _overSince = double.NaN;
+            _reported = Severity.None;
+            _everOver = false;
+        }
+
+        public void OnFrame(in DriverFrame f, IReadOnlyList<Pedestrian> people, List<RuleEvent> output)
+        {
+            Vec2 c = CarBody.Centre(f.Ego);
+            int inside = -1;
+            for (int i = 0; i < _zones.Count; i++)
+                if ((_zones[i] - c).Length <= RadiusM) { inside = i; break; }
+
+            if (inside != _active)
+            {
+                if (_active >= 0 && !_everOver)
+                    output.Add(new RuleEvent(RuleId, RuleOutcome.GoodPractice, Severity.None, f.Time,
+                        "You kept your speed down near the school. Children can step out without warning.", Source));
+                _active = inside;
+                _overSince = double.NaN;
+                _reported = Severity.None;
+                _everOver = false;
+            }
+            if (_active < 0) return;
+
+            if (f.Ego.SpeedMph <= LimitMph) { _overSince = double.NaN; return; }
+            _everOver = true;
+            if (double.IsNaN(_overSince)) _overSince = f.Time;
+            if (f.Time - _overSince < SustainS) return;
+
+            bool people15 = false;
+            foreach (var p in people) if ((p.Position - c).Length <= PeopleM) { people15 = true; break; }
+            Severity sev = people15 ? Severity.Serious : Severity.Driving;
+            if (sev <= _reported) return;
+            _reported = sev;
+            output.Add(new RuleEvent(RuleId, RuleOutcome.Violation, sev, f.Time,
+                people15
+                    ? $"You were doing {Math.Round(f.Ego.SpeedMph):0} mph with people close by near a school. Slow right down."
+                    : $"You were doing {Math.Round(f.Ego.SpeedMph):0} mph near a school. Slow down. Children may step out.",
+                Source));
+        }
+    }
+
+    /// <summary>
     /// GB.XNG.ZEBRA (rule 195) and GB.JCT.H2_PEDESTRIANS (rules H2, 170): give way to people waiting at a zebra or
     /// waiting to cross a side road you turn into or out of; you must stop once someone is on a zebra.
     /// </summary>

@@ -134,6 +134,55 @@ namespace LToLocal.Rules.Tests
         }
     }
 
+    public class SchoolSlowRuleTests
+    {
+        // School sign at (0, 0). The car drives north along x = 0 from z = -150 to z = 150.
+        private static List<RuleEvent> Run(double mph, bool person = false)
+        {
+            var rule = new SchoolSlowRule(new List<Vec2> { new Vec2(0, 0) });
+            var events = new List<RuleEvent>();
+            var s = Drive.At(-150, mph / 2.236936);
+            for (double t = 0; s.Z < 150; t += Drive.Dt)
+            {
+                var people = new List<Pedestrian>();
+                if (person) people.Add(new Pedestrian { Position = new Vec2(3, s.Z + 5) });
+                rule.OnFrame(new DriverFrame(t, s, 0), people, events);
+                s = Drive.Advance(s);
+            }
+            return events;
+        }
+
+        [Test]
+        public void Pass_TwentyMphGivesGoodPractice()
+        {
+            var e = Run(19);
+            Assert.That(Drive.Violations(e), Is.Empty);
+            Assert.That(e.Single().Outcome, Is.EqualTo(RuleOutcome.GoodPractice));
+        }
+
+        [Test]
+        public void Minor_ThirtyMphPastTheSchool()
+        {
+            var e = Run(30);
+            Assert.That(e.Single().RuleId, Is.EqualTo(SchoolSlowRule.RuleId));
+            Assert.That(e.Single().Severity, Is.EqualTo(Severity.Driving));
+        }
+
+        [Test]
+        public void Serious_ThirtyMphWithPeopleNearby() =>
+            Assert.That(Run(30, person: true).Last().Severity, Is.EqualTo(Severity.Serious));
+
+        [Test]
+        public void Pass_FarFromTheSchoolNothingHappens()
+        {
+            var rule = new SchoolSlowRule(new List<Vec2> { new Vec2(500, 0) });
+            var events = new List<RuleEvent>();
+            var s = Drive.At(-150, 13);
+            for (double t = 0; s.Z < 150; t += Drive.Dt) { rule.OnFrame(new DriverFrame(t, s, 0), new List<Pedestrian>(), events); s = Drive.Advance(s); }
+            Assert.That(events, Is.Empty);
+        }
+    }
+
     public class StopSignRuleTests
     {
         // Car drives north along x = 0 towards a STOP line at z = 0; the front is 2.15 m ahead of the centre.
