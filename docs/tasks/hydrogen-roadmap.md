@@ -1,6 +1,3 @@
-> ## ⏸ PAUSED by the owner (2026-11-26). Do not start any new round or open new PRs until this banner is removed.
-> Finish and push anything you have half-done (don't merge it), then stop and wait. Claude and the owner are reviewing what has already been merged and building a new test version. Rounds 28–30 stay queued here.
-
 # Hydrogen roadmap: rounds 9, 10 and 11 (do them in order without waiting)
 
 **Read first:** `AGENTS.md`, then `docs/08-parallel-work-plan.md` (§3 ownership), then this file. Ownership is unchanged:
@@ -246,6 +243,21 @@ Hydrogen may merge **its own** PRs into `main` (use `gh pr merge --merge`) when 
 - [x] Added `docs/TESTING.md` (stage-by-stage OnePlus 12 manual test checklist covering audio, controls, mirrors, star targets, review drives, mock test, and known rough edges).
 - [x] Added `docs/CONTENT_GUIDE.md` (how to add lessons, scenarios, quiz bank questions, voice lines, and OSM road packs with exact validation commands).
 - [x] Regenerated `content/lessons/gb/IMPLEMENTATION.md` and `docs/CONTENT_HEALTH.md` to reflect everything through Round 30.
+
+## Round 31: get the pipeline green again, then fill content gaps (pipeline data + audio)
+Goal: `main` is green with a clean working tree, and the gaps in `docs/CONTENT_HEALTH.md` shrink. Branch: `hydrogen/r31-green-and-gaps`.
+
+- [ ] R31.0 **Clean the working tree first (do this before anything else).** The tree has half-finished edits that break 3 tests in `pipeline/tests/test_audio.py`:
+  - `pipeline/ltl_pipeline/audio.py` and `test_audio.py` were changed so voice generation **drops the lesson learn-card and scenario-briefing lines** (R22) and writes OGG again. Restore both from `HEAD` (`git checkout -- pipeline/ltl_pipeline/audio.py pipeline/tests/test_audio.py`).
+  - **Owner decision (2026-11-27): keep the new engine sounds.** `engine_idle.mp3` and `engine_medium.mp3` replace the shipped idle and mid loops, and the owner says no licence is needed. Do **not** restore the deleted WAVs. Rename `engine_medium.mp3` to `engine_mid.mp3`, because the game loads the keys `engine_idle`, `engine_low` and `engine_mid` by name (`unity/Assets/Scripts/DriveGame.Audio.cs`, which you must not edit). Update `content/audio/sfx/manifest.json`, the engine entries in `test_audio.py` (the MP3s are not 16-bit PCM WAV, so allow MP3 for these two only and keep the other checks), `docs/TESTING.md`, `ATTRIBUTIONS.md` and `credits.md`. In `LICENCES.md` list both as `owner-supplied, no licence required (owner decision 2026-11-27)` and remove the old Freesound rows for them. `engine_low.wav` and `engine_high.wav` stay as they are; add a request for Claude to check the loop join sounds right with the new files.
+  - `content/schemas/gantry-messages.v0.schema.json` is only reformatted. Revert it with `git checkout --`.
+  - Exit check: `git status` shows only your new work; `ruff`, `pytest` (all 77) and the readability linter pass.
+- [ ] R31.1 **Check the "Quiz Questions" column in `docs/CONTENT_HEALTH.md`.** It shows 0 for every stage, but the R26 sets and bank have 182 questions. The health report counts only the per-lesson `NN-*.json` quizzes. Count the bank and the 10 test sets too (separate columns: `lesson quiz` and `bank`) and add a test.
+- [ ] R31.2 **Coach voice for Stages 4, 5, 6 and 8** (health report shows 0 lines; Stage 1 has 2 and Stage 2 has 6). Add plain-English voice lines (≤ 12 words, each with a `.v2`/`.v3` variant) for the implemented rules those stages teach, using the same Piper pipeline, manifest, `en-XA` and `LICENCES.md` count. Verify any rule wording on GOV.UK and record URL and date.
+- [ ] R31.3 **Quiz bank for Stage 6 and 7 rules** (motorway and weather/conditions). Add 13 plain-English questions per newly implemented rule in those stages, original wording, verified on GOV.UK. Rebuild the 10 test sets if the balance changes and keep `test_quiz_bank.py` green.
+- [ ] R31.4 **Wire the R29 practice areas into the game's course list.** `rural_practice` and `ring_road_practice` have 6 scenarios that are not in `progression.json`. Add them as optional "practice" entries after Stage 3 (not required for stage unlock), and update `rule_index.json`, `IMPLEMENTATION.md` and the health report. Do not touch `core/**` or `unity/**`; list what Claude must load in "Requests from Claude".
+- [ ] R31.5 **Small tidy-ups.** Remove or reference `content/lessons/gb/diagrams/_contact_sheet.png` (health item 5; if it is a review aid, move it to `docs/images/`). Add the `road_noise_motorway.wav` and `brake_squeal_soft.wav` sounds only if a **CC0** source exists and its licence is recorded; otherwise leave them out and say so.
+- [ ] R31.6 **Wrap-up.** Regenerate `docs/CONTENT_HEALTH.md`, add a dated note in `docs/08` §6, and open one PR titled `Hydrogen R31:`.
 
 ---
 
