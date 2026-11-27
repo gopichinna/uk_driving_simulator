@@ -10,6 +10,37 @@ namespace LToLocal.EditorTools
     /// Unity -batchmode -projectPath unity -executeMethod LToLocal.EditorTools.PreviewRenderer.RenderViews -quit</summary>
     public static class PreviewRenderer
     {
+        /// <summary>Chase and top-down views at each city scene's free-drive start, to check the lane layout and markings:
+        /// Unity -batchmode -projectPath unity -executeMethod LToLocal.EditorTools.PreviewRenderer.RenderCityStarts -quit (needs graphics, so no -nographics)</summary>
+        public static void RenderCityStarts()
+        {
+            Directory.CreateDirectory("Builds/Previews");
+            var scenes = new (string path, string name)[]
+            {
+                (ProjectSetup.WolverhamptonScene, "wolverhampton"), (ProjectSetup.RingRoadScene, "ringroad"),
+                (ProjectSetup.CoventryScene, "coventry"), (ProjectSetup.MotorwayScene, "m54"),
+            };
+            foreach (var (path, name) in scenes)
+            {
+                EditorSceneManager.OpenScene(path);
+                var game = Object.FindAnyObjectByType<DriveGame>();
+                if (game == null) continue;
+                var cam = game.chaseCamera;
+                Save(cam, "Builds/Previews/_warmup.png");
+                var car = game.car;
+                cam.fieldOfView = 60f;
+                cam.nearClipPlane = 0.3f;
+                cam.transform.SetPositionAndRotation(car.TransformPoint(new Vector3(0, 3.2f, -7.5f)), car.rotation * Quaternion.Euler(12, 0, 0));
+                Save(cam, $"Builds/Previews/start_{name}_chase.png");
+                cam.transform.SetPositionAndRotation(car.position + new Vector3(0, 38, 0), Quaternion.Euler(90, car.eulerAngles.y, 0));
+                Save(cam, $"Builds/Previews/start_{name}_top.png");
+                car.position += car.forward * 40f;
+                cam.transform.SetPositionAndRotation(car.position + new Vector3(0, 38, 0), Quaternion.Euler(90, car.eulerAngles.y, 0));
+                Save(cam, $"Builds/Previews/start_{name}_top_ahead.png");
+            }
+            Debug.Log("[LToLocal] City start previews written.");
+        }
+
         public static void RenderViews()
         {
             Directory.CreateDirectory("Builds/Previews");

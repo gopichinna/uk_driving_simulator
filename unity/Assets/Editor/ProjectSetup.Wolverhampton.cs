@@ -618,7 +618,7 @@ namespace LToLocal.EditorTools
                     double len = new PathPolyline(l.Geometry).Length;
                     if (len < 60) continue;
                     var mid = l.Geometry[l.Geometry.Count / 2];
-                    double score = (mid - mapCentre).Length - len * 0.5 - (l.LanesForward >= 2 ? 150 : 0); // near the middle, long, and multi-lane
+                    double score = (mid - mapCentre).Length - len * 0.5 - (l.LanesForward >= 2 ? 600 : 0); // near the middle, long, and strongly prefer multi-lane (ring roads, dual carriageways)
                     if (score < bestScore) { bestScore = score; startLink = l.Id; }
                 }
             if (startLink.Length == 0)
