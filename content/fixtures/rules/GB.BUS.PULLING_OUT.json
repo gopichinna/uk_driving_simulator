@@ -99,16 +99,16 @@
         },
         {
           "t": 3,
-          "x": 0,
-          "z": 22,
+          "x": 0.0,
+          "z": 17.5,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
         },
         {
           "t": 6,
-          "x": 0,
-          "z": 34,
+          "x": 0.0,
+          "z": 25.0,
           "headingDeg": 0,
           "speedMps": 5.0,
           "indicator": "off"

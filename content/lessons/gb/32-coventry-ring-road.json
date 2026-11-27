@@ -149,7 +149,8 @@
       "rulesJudged": [
         "GB.JCT.GIVE_WAY",
         "GB.JCT.TURN_NEAR",
-        "GB.SIG.TIMELY"
+        "GB.SIG.TIMELY",
+        "GB.SIG.MISLEADING"
       ],
       "variations": {
         "trafficDensity": [

@@ -71,7 +71,57 @@
           "properties": {
             "pack": { "type": "string", "minLength": 1 },
             "junctionKind": { "type": "string", "minLength": 1 },
-            "speedLimitMph": { "type": "integer", "minimum": 10, "maximum": 70 }
+            "speedLimitMph": { "type": "integer", "minimum": 10, "maximum": 70 },
+            "junctionCentres": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["x", "z"],
+                "additionalProperties": false,
+                "properties": {
+                  "x": { "type": "number" },
+                  "z": { "type": "number" }
+                }
+              }
+            },
+            "stopLines": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["x", "z", "headingDeg"],
+                "additionalProperties": false,
+                "properties": {
+                  "x": { "type": "number" },
+                  "z": { "type": "number" },
+                  "headingDeg": { "type": "number", "minimum": 0, "maximum": 360 }
+                }
+              }
+            },
+            "schoolSigns": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["x", "z"],
+                "additionalProperties": false,
+                "properties": {
+                  "x": { "type": "number" },
+                  "z": { "type": "number" }
+                }
+              }
+            },
+            "crossings": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["x", "z", "kind"],
+                "additionalProperties": false,
+                "properties": {
+                  "x": { "type": "number" },
+                  "z": { "type": "number" },
+                  "kind": { "type": "string", "minLength": 1 }
+                }
+              }
+            }
           }
         },
         "playerKeyframes": {

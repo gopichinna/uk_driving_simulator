@@ -83,16 +83,16 @@
         },
         {
           "t": 3,
-          "x": 0.0,
-          "z": 24,
+          "x": 0.28,
+          "z": 19.46,
           "headingDeg": 340,
           "speedMps": 5.0,
           "indicator": "left"
         },
         {
           "t": 5,
-          "x": -6.0,
-          "z": 30,
+          "x": -4.84,
+          "z": 28.05,
           "headingDeg": 270,
           "speedMps": 5.0,
           "indicator": "off"

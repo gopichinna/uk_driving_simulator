@@ -711,6 +711,18 @@
         "title": "Roads near the test centre"
       }
     ],
+    "GB.SIG.MISLEADING": [
+      {
+        "lessonId": "gb-s1-29-turning-left-right",
+        "scenarioId": "s1_29_left_early_signal",
+        "title": "Turning left and right at junctions"
+      },
+      {
+        "lessonId": "gb-s4-32-coventry-ring-road",
+        "scenarioId": "s4_32_cov_give_way",
+        "title": "The ring road"
+      }
+    ],
     "GB.SIG.TIMELY": [
       {
         "lessonId": "gb-s0-02-moving-off-msm",

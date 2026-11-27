@@ -11,7 +11,21 @@
         "pack": "town",
         "junctionKind": "puffin",
         "speedLimitMph": 30,
-        "signalPhase": "RED"
+        "signalPhase": "RED",
+        "crossings": [
+          {
+            "x": 0,
+            "z": 22,
+            "kind": "puffin"
+          }
+        ],
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -24,16 +38,16 @@
         },
         {
           "t": 3,
-          "x": 0,
-          "z": 20,
+          "x": 0.0,
+          "z": 15.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
         },
         {
           "t": 6,
-          "x": 0,
-          "z": 20,
+          "x": 0.0,
+          "z": 15.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
@@ -80,7 +94,21 @@
         "pack": "town",
         "junctionKind": "puffin",
         "speedLimitMph": 30,
-        "signalPhase": "GREEN"
+        "signalPhase": "GREEN",
+        "crossings": [
+          {
+            "x": 0,
+            "z": 22,
+            "kind": "puffin"
+          }
+        ],
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -93,8 +121,8 @@
         },
         {
           "t": 3,
-          "x": 0,
-          "z": 18,
+          "x": 0.0,
+          "z": 12.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
@@ -141,7 +169,21 @@
         "pack": "town",
         "junctionKind": "pelican",
         "speedLimitMph": 30,
-        "signalPhase": "RED"
+        "signalPhase": "RED",
+        "crossings": [
+          {
+            "x": 0,
+            "z": 22,
+            "kind": "puffin"
+          }
+        ],
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -154,16 +196,16 @@
         },
         {
           "t": 2,
-          "x": 0,
-          "z": 20.4,
+          "x": 0.0,
+          "z": 19.8,
           "headingDeg": 0,
           "speedMps": 0.8,
           "indicator": "off"
         },
         {
           "t": 4,
-          "x": 0,
-          "z": 20.4,
+          "x": 0.0,
+          "z": 20.6,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
@@ -187,7 +229,21 @@
         "pack": "town",
         "junctionKind": "puffin",
         "speedLimitMph": 30,
-        "signalPhase": "RED"
+        "signalPhase": "RED",
+        "crossings": [
+          {
+            "x": 0,
+            "z": 22,
+            "kind": "puffin"
+          }
+        ],
+        "stopLines": [
+          {
+            "x": 0,
+            "z": 20,
+            "headingDeg": 0
+          }
+        ]
       },
       "playerKeyframes": [
         {

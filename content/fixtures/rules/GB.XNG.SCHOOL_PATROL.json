@@ -10,7 +10,20 @@
       "environment": {
         "pack": "wolverhampton-test-area",
         "junctionKind": "school_patrol",
-        "speedLimitMph": 20
+        "speedLimitMph": 20,
+        "crossings": [
+          {
+            "x": 0,
+            "z": 20,
+            "kind": "school_patrol"
+          }
+        ],
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 20
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -23,24 +36,24 @@
         },
         {
           "t": 2,
-          "x": 0,
-          "z": 17,
+          "x": 0.0,
+          "z": 8.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
         },
         {
           "t": 6,
-          "x": 0,
-          "z": 17,
+          "x": 0.0,
+          "z": 8.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
         },
         {
           "t": 9,
-          "x": 0,
-          "z": 30,
+          "x": 0.0,
+          "z": 17.0,
           "headingDeg": 0,
           "speedMps": 6.0,
           "indicator": "off"
@@ -86,7 +99,20 @@
       "environment": {
         "pack": "town",
         "junctionKind": "school_patrol",
-        "speedLimitMph": 20
+        "speedLimitMph": 20,
+        "crossings": [
+          {
+            "x": 0,
+            "z": 20,
+            "kind": "school_patrol"
+          }
+        ],
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 20
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -99,16 +125,16 @@
         },
         {
           "t": 2,
-          "x": 0,
-          "z": 17,
+          "x": 0.0,
+          "z": 15.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
         },
         {
           "t": 7,
-          "x": 0,
-          "z": 17,
+          "x": 0.0,
+          "z": 15.0,
           "headingDeg": 0,
           "speedMps": 0.0,
           "indicator": "off"
@@ -154,7 +180,20 @@
       "environment": {
         "pack": "town",
         "junctionKind": "school_patrol",
-        "speedLimitMph": 20
+        "speedLimitMph": 20,
+        "crossings": [
+          {
+            "x": 0,
+            "z": 20,
+            "kind": "school_patrol"
+          }
+        ],
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 20
+          }
+        ]
       },
       "playerKeyframes": [
         {
@@ -167,8 +206,8 @@
         },
         {
           "t": 3,
-          "x": 0,
-          "z": 19.5,
+          "x": 0.0,
+          "z": 18.5,
           "headingDeg": 0,
           "speedMps": 1.0,
           "indicator": "off"
@@ -214,7 +253,20 @@
       "environment": {
         "pack": "wolverhampton-test-area",
         "junctionKind": "school_patrol",
-        "speedLimitMph": 20
+        "speedLimitMph": 20,
+        "crossings": [
+          {
+            "x": 0,
+            "z": 20,
+            "kind": "school_patrol"
+          }
+        ],
+        "schoolSigns": [
+          {
+            "x": 0,
+            "z": 20
+          }
+        ]
       },
       "playerKeyframes": [
         {
