@@ -1,0 +1,122 @@
+[
+  {
+    "id": "qb_pos_kl_1",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "Which side of the road should you normally drive on in the UK?",
+    "options": [
+      "The left",
+      "The right",
+      "The middle",
+      "Whichever is quieter"
+    ],
+    "answer": 0,
+    "explain": "Highway Code Rule 160 says you should keep to the left unless overtaking or turning right.",
+    "hc_rule": "160",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_pos_kl_2",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "When may you move onto the right-hand side of a two-way road?",
+    "options": [
+      "Never",
+      "When overtaking or passing a parked vehicle safely",
+      "Whenever the road is straight",
+      "At night only"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: you only move right when overtaking, passing an obstruction, or turning right, and when it is safe.",
+    "hc_rule": "160",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_pos_kl_3",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "What should you do after you finish overtaking on a two-way road?",
+    "options": [
+      "Stay in the right lane",
+      "Move back to the left as soon as it is safe",
+      "Stop and check",
+      "Flash your headlights"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: return to the left side smoothly once you are safely past.",
+    "hc_rule": "160",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_pos_kl_4",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "Which lane should you use on a multi-lane dual carriageway when you are not overtaking?",
+    "options": [
+      "The right lane",
+      "The middle lane",
+      "The left lane",
+      "Any lane"
+    ],
+    "answer": 2,
+    "explain": "Rule 160: highway Code Rule 264 says keep in the left lane unless overtaking.",
+    "hc_rule": "160",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_pos_kl_5",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "After turning left or right into a side road, where should your car end up?",
+    "options": [
+      "In the middle of the road",
+      "On the left side of that road",
+      "On the right side",
+      "On the kerb"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: always finish your turn on the left side of the new road.",
+    "hc_rule": "160",
+    "difficulty": 1
+  },
+  {
+    "id": "qb_pos_kl_6",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "Why should you not hug the centre line on a bend?",
+    "options": [
+      "It wears the tyres",
+      "An oncoming vehicle could hit you",
+      "It is illegal to steer left",
+      "You will miss signs"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: keeping left gives oncoming traffic room, especially where you cannot see round a bend.",
+    "hc_rule": "160",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_pos_kl_7",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "If you pass a row of parked cars on your left, what should you do afterwards?",
+    "options": [
+      "Stay near the centre line",
+      "Return to the left when there is room",
+      "Speed up",
+      "Sound your horn"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: move back to the left once past the parked cars so oncoming traffic has space.",
+    "hc_rule": "160",
+    "difficulty": 2
+  },
+  {
+    "id": "qb_pos_kl_8",
+    "rule": "GB.POS.KEEP_LEFT",
+    "question": "What does keeping left help prevent on narrow residential streets?",
+    "options": [
+      "Fuel use",
+      "Head-on conflicts with oncoming traffic",
+      "Traffic lights changing",
+      "Speed bumps"
+    ],
+    "answer": 1,
+    "explain": "Rule 160: staying on your side leaves a clear path for oncoming drivers and cyclists.",
+    "hc_rule": "160",
+    "difficulty": 2
+  }
+]

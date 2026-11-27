@@ -26,7 +26,9 @@
       "goal": "Stop before the first white line of the cyclist box on red.",
       "rulesJudged": [
         "GB.TL.ASL",
-        "GB.TL.RED"
+        "GB.TL.RED",
+        "GB.TL.AMBER",
+        "GB.TL.RED_AMBER"
       ],
       "variations": {
         "trafficDensity": [

@@ -1,19 +1,13 @@
 {
   "scenarioFormatVersion": "0.1",
-  "scenarioId": "draft_tl_asl",
+  "scenarioId": "draft_jct_opposite_right",
   "course": "town",
   "anchor": "crossroads_signals",
   "durationS": 90,
   "events": [
     {
       "type": "traffic_density",
-      "value": 0.35
-    },
-    {
-      "type": "cyclist_ahead",
-      "anchor": "crossroads_signals",
-      "offsetM": 25,
-      "speedMph": 11
+      "value": 0.5
     },
     {
       "type": "finish_after_s",

@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_pos_lane_for_route",
+  "course": "wolverhampton-test-area",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "independent_driving",
+      "minutes": 2,
+      "mode": "signs"
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    }
+  ]
+}

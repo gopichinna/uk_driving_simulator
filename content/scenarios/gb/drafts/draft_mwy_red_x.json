@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_mwy_red_x",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "red_x",
+      "lane": 0,
+      "whenPlayerWithinM": 150
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    }
+  ]
+}

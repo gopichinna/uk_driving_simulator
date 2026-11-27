@@ -1,13 +1,13 @@
 {
   "scenarioFormatVersion": "0.1",
-  "scenarioId": "draft_tl_red_amber",
-  "course": "town",
-  "anchor": "crossroads_signals",
+  "scenarioId": "draft_gap_cut_in",
+  "course": "dual_carriageway",
+  "anchor": "start",
   "durationS": 90,
   "events": [
     {
       "type": "traffic_density",
-      "value": 0.4
+      "value": 0.45
     },
     {
       "type": "finish_after_s",

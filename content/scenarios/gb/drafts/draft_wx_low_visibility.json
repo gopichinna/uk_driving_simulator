@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_wx_low_visibility",
+  "course": "town",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "fog",
+      "visibilityM": 75
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.35
+    }
+  ]
+}

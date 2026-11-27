@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_rbt_long_vehicles",
+  "course": "two_lane_roundabout",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.55
+    },
+    {
+      "type": "take_exit",
+      "exitNumber": 3
+    }
+  ]
+}

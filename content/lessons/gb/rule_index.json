@@ -128,6 +128,18 @@
         "title": "Advanced stop lines"
       }
     ],
+    "GB.JCT.STOP_SIGN": [
+      {
+        "lessonId": "gb-s1-04-give-way-tjunctions",
+        "scenarioId": "s1_04_tjunction_north",
+        "title": "Give way at T-junctions"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
+      }
+    ],
     "GB.JCT.TURN_FAR_GAP": [
       {
         "lessonId": "gb-s1-04-give-way-tjunctions",
@@ -547,6 +559,11 @@
         "lessonId": "gb-s0-03-speed-limits",
         "scenarioId": "s0_03_school_street",
         "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s8-20-roads-near-test-centre",
+        "scenarioId": "s8_20_test_centre_mix",
+        "title": "Roads near the test centre"
       }
     ],
     "GB.SIG.TIMELY": [
@@ -705,6 +722,11 @@
         "lessonId": "gb-s2-07-traffic-lights-amber",
         "scenarioId": "s2_07_signals_stop",
         "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
       }
     ],
     "GB.TL.ASL": [
@@ -760,6 +782,11 @@
         "lessonId": "gb-s2-07-traffic-lights-amber",
         "scenarioId": "s2_07_signals_stop",
         "title": "Traffic lights and amber"
+      },
+      {
+        "lessonId": "gb-s2-08-advanced-stop-lines",
+        "scenarioId": "s2_08_asl_stop",
+        "title": "Advanced stop lines"
       }
     ],
     "GB.VRU.PASS_CYCLIST": [

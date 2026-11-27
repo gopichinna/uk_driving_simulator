@@ -1,0 +1,19 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_gap_wet_icy",
+  "course": "dual_carriageway",
+  "anchor": "start",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "rain",
+      "visibilityM": 250
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.45
+    }
+  ]
+}

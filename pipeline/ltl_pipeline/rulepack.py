@@ -16,7 +16,8 @@ RULES_CORE_DIR = REPO_ROOT / "core" / "Rules.Core"
 VERSION_TXT_PATH = REPO_ROOT / "content" / "countries" / "gb" / "highway-code-version.txt"
 
 RULE_ID_RE = re.compile(r"^GB\.[A-Z]+\.[A-Z0-9_]+$")
-CODE_RULE_RE = re.compile(r'public\s+const\s+string\s+Rule\w*\s*=\s*"(GB\.[A-Z]+\.[A-Z0-9_]+)"')
+CONST_STMT_RE = re.compile(r"public\s+const\s+string\s+([^;]+);")
+CONST_RULE_LITERAL_RE = re.compile(r'"(GB\.[A-Z]+\.[A-Z0-9_]+)"')
 NAMESPACE_RE = re.compile(r"namespace\s+([A-Za-z0-9_.]+)")
 CLASS_RE = re.compile(r"class\s+([A-Za-z0-9_]+)")
 
@@ -30,20 +31,25 @@ def scan_implemented_rules(rules_core_dir: Path = RULES_CORE_DIR) -> dict[str, d
     for cs_path in sorted(rules_core_dir.glob("*.cs")):
         text = cs_path.read_text(encoding="utf-8")
         ns_match = NAMESPACE_RE.search(text)
-        cls_match = CLASS_RE.search(text)
-        full_class = (
-            f"{ns_match.group(1)}.{cls_match.group(1)}"
-            if ns_match and cls_match
-            else (cls_match.group(1) if cls_match else cs_path.stem)
-        )
+        ns = ns_match.group(1) if ns_match else ""
+        classes = [(m.start(), m.group(1)) for m in CLASS_RE.finditer(text)]
         rel_file = cs_path.relative_to(REPO_ROOT).as_posix()
-        for m in CODE_RULE_RE.finditer(text):
-            rule_id = m.group(1)
-            found[rule_id] = {
-                "status": "implemented",
-                "class": full_class,
-                "file": rel_file,
-            }
+        for stmt in CONST_STMT_RE.finditer(text):
+            pos = stmt.start()
+            cls_name = ""
+            for cls_pos, name in classes:
+                if cls_pos < pos:
+                    cls_name = name
+                else:
+                    break
+            full_class = f"{ns}.{cls_name}" if ns and cls_name else (cls_name or cs_path.stem)
+            for lit in CONST_RULE_LITERAL_RE.finditer(stmt.group(1)):
+                rule_id = lit.group(1)
+                found[rule_id] = {
+                    "status": "implemented",
+                    "class": full_class,
+                    "file": rel_file,
+                }
     return found
 
 

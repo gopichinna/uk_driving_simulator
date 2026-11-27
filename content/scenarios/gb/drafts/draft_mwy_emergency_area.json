@@ -1,0 +1,17 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "draft_mwy_emergency_area",
+  "course": "motorway",
+  "anchor": "start",
+  "durationS": 120,
+  "events": [
+    {
+      "type": "breakdown",
+      "atM": 300
+    },
+    {
+      "type": "traffic_density",
+      "value": 0.4
+    }
+  ]
+}
