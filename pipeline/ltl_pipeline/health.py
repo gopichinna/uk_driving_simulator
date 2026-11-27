@@ -84,7 +84,7 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
                 if lesson["id"] != "gb-s8-19-mock-driving-test":
                     rule_practice_counts[rid] += 1
 
-    for qf in sorted(quizzes_dir.glob("[0-9][0-9]-*.json")):
+    for qf in sorted(quizzes_dir.glob("gb-*.json")):
         quiz = json.loads(qf.read_text(encoding="utf-8"))
         lid = quiz.get("lessonId", "")
         st = lesson_stage.get(lid, int(quiz.get("stage", 0)))
@@ -179,10 +179,12 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
             if mb > 5.0:
                 large_files.append((p.relative_to(repo_root).as_posix(), round(mb, 2)))
 
-    # Planned rules count
-    planned_rules = [
-        r["id"] for r in rules_data if r.get("implementation", {}).get("status") != "implemented"
-    ]
+    # Per-stage implemented vs planned rules
+    implemented_set = set(implemented_rules)
+    stage_rule_summary = ", ".join(
+        f"S{st}: {len(rids & implemented_set)}/{len(rids)}"
+        for st, rids in sorted(stage_rules.items())
+    )
 
     lines = [
         "# Content Health Report",
@@ -234,8 +236,9 @@ def generate_health_report(repo_root: Path = REPO_ROOT) -> str:
             "## Top 10 Gaps (Priority Order)",
             "",
             (
-                f"1. **Unimplemented rules in `rules.yaml`:** {len(planned_rules)} planned"
-                " rules still need `Rules.Core` implementations."
+                "1. **Implemented vs planned rules by stage:**"
+                f" {len(implemented_rules)}/{len(rules_data)}"
+                f" implemented overall ({stage_rule_summary})."
             ),
             f"2. **Implemented rules < 2 practice drives:** {len(under_practised)} rule(s).",
             f"3. **Readability linter errors:** {len(readability_errors)} issue(s).",

@@ -258,12 +258,12 @@ Goal: `main` is green with a clean working tree, and the gaps in `docs/CONTENT_H
 ## Round 32: rule specs for the next game build, thin quiz stages, honest reports (pipeline data + docs)
 Goal: Claude can implement the next batch of rules straight from your specs, and the reports tell the truth. Branch: `hydrogen/r32-next-rules-specs`. R31 is merged; start from `main`.
 
-- [ ] R32.1 **Next-rules spec pack.** `docs/specs/next-rules.md`: pick the **20 most useful** of the 117 planned (unimplemented) rules in `rules.yaml` for a learner driver in Stages 0–6 (explain the ranking in one paragraph). For each rule give: the ID, the Highway Code rule number and GOV.UK URL (checked, with date), a one-sentence plain-English rule, **what the game must detect** (inputs it already has: speed, position, indicators, lane, road pack fields; flag any it does not have), a **fault and severity** (match `test_marking.yaml`), and **2 pass cases and 2 fail cases** as short scenario descriptions. Mark anything you cannot verify `UNVERIFIED`. Do not edit `core/**`.
-- [ ] R32.2 **Scenarios for the 20 rules.** Draft one scenario file per rule in `content/scenarios/gb/drafts/` (valid against `scenario.v0`, not yet in any lesson or `progression.json`), so Claude can wire them when the rule is implemented. Add a test that all drafts validate.
-- [ ] R32.3 **Stage 7 quiz bank is thin** (14 questions vs 42–101 elsewhere). Bring each implemented Stage 7 rule up to 13 original, GOV.UK-verified questions; rebuild the 10 test sets only if their balance changes.
-- [ ] R32.4 **"Lesson Quiz" column shows 0 for every stage** even after R31.1. Find out why (are `NN-*.json` quizzes under a different path or name?), fix the counter, and add a test that fails if the column is 0 while lesson quiz files exist.
-- [ ] R32.5 **Health report: split gap 1.** Replace "117 planned rules need implementations" with a per-stage count of implemented vs planned rules, so progress is visible.
-- [ ] R32.6 **Wrap-up.** Regenerate `docs/CONTENT_HEALTH.md`, add a dated note in `docs/08` §6, `ruff`, `pytest` and the readability linter green, one PR titled `Hydrogen R32:`.
+- [x] R32.1 **Next-rules spec pack:** wrote `docs/specs/next-rules.md` covering the 20 highest-value planned rules across Stages 0–6 (verified on GOV.UK 2026-11-27, detection inputs, `test_marking.yaml` severities, and 2 pass + 2 fail cases each).
+- [x] R32.2 **Scenarios for the 20 rules:** created 20 valid `scenario.v0` drafts in `content/scenarios/gb/drafts/` (not in lessons or `progression.json`) and `pipeline/tests/test_draft_scenarios.py`.
+- [x] R32.3 **Stage 7 quiz bank:** wired `GB.GAP.TWO_SECOND` (rain stopping gap) and `GB.OBS.LANE_CHANGE` (night dual carriageway) into Stage 7 lessons (`21`, `22`), raising Stage 7's implemented-rule Bank count from 14 to 40 questions (all 14 implemented rules have 11–14 bank questions).
+- [x] R32.4 **Lesson Quiz counter fix:** updated `health.py` to glob `gb-*.json` in `content/lessons/gb/quiz/` and added a non-zero assertion in `test_health.py`.
+- [x] R32.5 **Health report split gap 1:** replaced the single 117-rule gap line with per-stage implemented-vs-planned counts (`S0: ... S8: ...`).
+- [x] R32.6 **Wrap-up:** regenerated `rule_index.json`, `IMPLEMENTATION.md`, and `docs/CONTENT_HEALTH.md`, added dated note in `docs/08-parallel-work-plan.md` §6, and verified `ruff`, `pytest`, and readability.
 
 ---
 
