@@ -677,6 +677,12 @@
       "durationS": 2.182
     },
     {
+      "key": "voice.GB.GAP.TWO_SECOND.tip",
+      "file": "voice.GB.GAP.TWO_SECOND.tip.wav",
+      "text": "Count two seconds past a signpost behind the car ahead.",
+      "durationS": 2.971
+    },
+    {
       "key": "voice.GB.GAP.WET_ICY.fault",
       "file": "voice.GB.GAP.WET_ICY.fault.wav",
       "text": "Double your following gap on wet roads.",
@@ -711,6 +717,12 @@
       "file": "voice.GB.GAP.WET_ICY.good.v3.wav",
       "text": "Wise, steady gap for rainy conditions.",
       "durationS": 2.529
+    },
+    {
+      "key": "voice.GB.GAP.WET_ICY.tip",
+      "file": "voice.GB.GAP.WET_ICY.tip.wav",
+      "text": "Double your following gap in rain and tenfold on ice.",
+      "durationS": 2.928
     },
     {
       "key": "voice.GB.JCT.BOX.fault",
@@ -749,6 +761,12 @@
       "durationS": 2.373
     },
     {
+      "key": "voice.GB.JCT.BOX.tip",
+      "file": "voice.GB.JCT.BOX.tip.wav",
+      "text": "Wait behind the box until space opens on the far side.",
+      "durationS": 3.156
+    },
+    {
       "key": "voice.GB.JCT.GIVE_WAY.fault",
       "file": "voice.GB.JCT.GIVE_WAY.fault.wav",
       "text": "Give way to traffic already on the main road.",
@@ -783,6 +801,12 @@
       "file": "voice.GB.JCT.GIVE_WAY.good.v3.wav",
       "text": "Safe, smooth pull-out onto the main road.",
       "durationS": 2.326
+    },
+    {
+      "key": "voice.GB.JCT.GIVE_WAY.tip",
+      "file": "voice.GB.JCT.GIVE_WAY.tip.wav",
+      "text": "Slow down early and stop if main-road traffic is close.",
+      "durationS": 3.548
     },
     {
       "key": "voice.GB.JCT.H2_PEDESTRIANS.fault",
@@ -821,6 +845,12 @@
       "durationS": 2.178
     },
     {
+      "key": "voice.GB.JCT.H2_PEDESTRIANS.tip",
+      "file": "voice.GB.JCT.H2_PEDESTRIANS.tip.wav",
+      "text": "Check the pavement before turning and let waiting pedestrians cross.",
+      "durationS": 3.618
+    },
+    {
       "key": "voice.GB.JCT.STOP_SIGN.fault",
       "file": "voice.GB.JCT.STOP_SIGN.fault.wav",
       "text": "Stop completely behind the white stop line first.",
@@ -855,6 +885,12 @@
       "file": "voice.GB.JCT.STOP_SIGN.good.v3.wav",
       "text": "Safe full stop at the stop line.",
       "durationS": 1.801
+    },
+    {
+      "key": "voice.GB.JCT.STOP_SIGN.tip",
+      "file": "voice.GB.JCT.STOP_SIGN.tip.wav",
+      "text": "Bring your wheels to a full stop at the solid line.",
+      "durationS": 2.492
     },
     {
       "key": "voice.GB.JCT.TURN_FAR_GAP.fault",
@@ -893,6 +929,12 @@
       "durationS": 2.291
     },
     {
+      "key": "voice.GB.JCT.TURN_FAR_GAP.tip",
+      "file": "voice.GB.JCT.TURN_FAR_GAP.tip.wav",
+      "text": "Wait until oncoming traffic is far enough away before turning right.",
+      "durationS": 3.656
+    },
+    {
       "key": "voice.GB.JCT.TURN_NEAR.fault",
       "file": "voice.GB.JCT.TURN_NEAR.fault.wav",
       "text": "Keep close to the left and signal before turning left.",
@@ -927,6 +969,12 @@
       "file": "voice.GB.JCT.TURN_NEAR.good.v3.wav",
       "text": "Smooth left turn from the nearside lane.",
       "durationS": 2.229
+    },
+    {
+      "key": "voice.GB.JCT.TURN_NEAR.tip",
+      "file": "voice.GB.JCT.TURN_NEAR.tip.wav",
+      "text": "Check your left mirror for cyclists before turning left.",
+      "durationS": 2.828
     },
     {
       "key": "voice.GB.OBS.LANE_CHANGE.fault",
@@ -965,6 +1013,12 @@
       "durationS": 2.189
     },
     {
+      "key": "voice.GB.OBS.LANE_CHANGE.tip",
+      "file": "voice.GB.OBS.LANE_CHANGE.tip.wav",
+      "text": "Check mirrors, glance at your blind spot, then signal and move.",
+      "durationS": 3.89
+    },
+    {
       "key": "voice.GB.POS.KEEP_LEFT.fault",
       "file": "voice.GB.POS.KEEP_LEFT.fault.wav",
       "text": "Keep to the left side of the road unless overtaking.",
@@ -999,6 +1053,12 @@
       "file": "voice.GB.POS.KEEP_LEFT.good.v3.wav",
       "text": "Clean left-side road position.",
       "durationS": 1.712
+    },
+    {
+      "key": "voice.GB.POS.KEEP_LEFT.tip",
+      "file": "voice.GB.POS.KEEP_LEFT.tip.wav",
+      "text": "Return to the left lane as soon as overtaking is complete.",
+      "durationS": 2.86
     },
     {
       "key": "voice.GB.RBT.APPROACH_LANE.fault",
@@ -1037,6 +1097,12 @@
       "durationS": 2.207
     },
     {
+      "key": "voice.GB.RBT.APPROACH_LANE.tip",
+      "file": "voice.GB.RBT.APPROACH_LANE.tip.wav",
+      "text": "Check overhead signs early and pick your lane before the roundabout.",
+      "durationS": 3.381
+    },
+    {
       "key": "voice.GB.RBT.GIVE_WAY_RIGHT.fault",
       "file": "voice.GB.RBT.GIVE_WAY_RIGHT.fault.wav",
       "text": "Give way to traffic coming from your right.",
@@ -1071,6 +1137,12 @@
       "file": "voice.GB.RBT.GIVE_WAY_RIGHT.good.v3.wav",
       "text": "Good timing joining the roundabout from a safe gap.",
       "durationS": 2.422
+    },
+    {
+      "key": "voice.GB.RBT.GIVE_WAY_RIGHT.tip",
+      "file": "voice.GB.RBT.GIVE_WAY_RIGHT.tip.wav",
+      "text": "Look right early and wait for a safe roundabout gap.",
+      "durationS": 2.9
     },
     {
       "key": "voice.GB.RBT.SIGNAL_APPROACH.fault",
@@ -1109,6 +1181,12 @@
       "durationS": 1.412
     },
     {
+      "key": "voice.GB.RBT.SIGNAL_APPROACH.tip",
+      "file": "voice.GB.RBT.SIGNAL_APPROACH.tip.wav",
+      "text": "Signal left for left turns and right for turns past twelve o'clock.",
+      "durationS": 3.611
+    },
+    {
       "key": "voice.GB.RBT.SIGNAL_EXIT.fault",
       "file": "voice.GB.RBT.SIGNAL_EXIT.fault.wav",
       "text": "Signal left after passing the exit before yours.",
@@ -1143,6 +1221,12 @@
       "file": "voice.GB.RBT.SIGNAL_EXIT.good.v3.wav",
       "text": "Clear, timely roundabout exit signal.",
       "durationS": 2.417
+    },
+    {
+      "key": "voice.GB.RBT.SIGNAL_EXIT.tip",
+      "file": "voice.GB.RBT.SIGNAL_EXIT.tip.wav",
+      "text": "Signal left right after passing the exit before your exit.",
+      "durationS": 2.962
     },
     {
       "key": "voice.GB.RBT.STAY_IN_LANE.fault",
@@ -1181,6 +1265,12 @@
       "durationS": 1.831
     },
     {
+      "key": "voice.GB.RBT.STAY_IN_LANE.tip",
+      "file": "voice.GB.RBT.STAY_IN_LANE.tip.wav",
+      "text": "Follow the painted lane lines all the way around the roundabout.",
+      "durationS": 2.992
+    },
+    {
       "key": "voice.GB.RBT.WRONG_WAY.fault",
       "file": "voice.GB.RBT.WRONG_WAY.fault.wav",
       "text": "Always go clockwise around UK roundabouts.",
@@ -1215,6 +1305,12 @@
       "file": "voice.GB.RBT.WRONG_WAY.good.v3.wav",
       "text": "Smooth clockwise turn around the roundabout.",
       "durationS": 2.13
+    },
+    {
+      "key": "voice.GB.RBT.WRONG_WAY.tip",
+      "file": "voice.GB.RBT.WRONG_WAY.tip.wav",
+      "text": "Always steer left to travel clockwise around UK roundabouts.",
+      "durationS": 3.175
     },
     {
       "key": "voice.GB.SCH.SLOW.fault",
@@ -1253,6 +1349,12 @@
       "durationS": 2.113
     },
     {
+      "key": "voice.GB.SCH.SLOW.tip",
+      "file": "voice.GB.SCH.SLOW.tip.wav",
+      "text": "Ease off to twenty miles per hour past school warning signs.",
+      "durationS": 3.43
+    },
+    {
       "key": "voice.GB.SIG.TIMELY.fault",
       "file": "voice.GB.SIG.TIMELY.fault.wav",
       "text": "Signal earlier so other drivers have time to react.",
@@ -1287,6 +1389,12 @@
       "file": "voice.GB.SIG.TIMELY.good.v3.wav",
       "text": "Well-timed signal before your move.",
       "durationS": 2.049
+    },
+    {
+      "key": "voice.GB.SIG.TIMELY.tip",
+      "file": "voice.GB.SIG.TIMELY.tip.wav",
+      "text": "Signal a few seconds before steering, then cancel once clear.",
+      "durationS": 3.695
     },
     {
       "key": "voice.GB.SPD.OVER_LIMIT.fault",
@@ -1325,6 +1433,12 @@
       "durationS": 1.898
     },
     {
+      "key": "voice.GB.SPD.OVER_LIMIT.tip",
+      "file": "voice.GB.SPD.OVER_LIMIT.tip.wav",
+      "text": "Slow down before you pass each lower speed limit sign.",
+      "durationS": 2.71
+    },
+    {
       "key": "voice.GB.TL.AMBER.fault",
       "file": "voice.GB.TL.AMBER.fault.wav",
       "text": "Stop on amber unless you are too close to stop safely.",
@@ -1359,6 +1473,12 @@
       "file": "voice.GB.TL.AMBER.good.v3.wav",
       "text": "Clean stop in time for the amber signal.",
       "durationS": 2.045
+    },
+    {
+      "key": "voice.GB.TL.AMBER.tip",
+      "file": "voice.GB.TL.AMBER.tip.wav",
+      "text": "Prepare to stop whenever traffic lights turn amber.",
+      "durationS": 2.594
     },
     {
       "key": "voice.GB.TL.ASL.fault",
@@ -1397,6 +1517,12 @@
       "durationS": 2.179
     },
     {
+      "key": "voice.GB.TL.ASL.tip",
+      "file": "voice.GB.TL.ASL.tip.wav",
+      "text": "Stop behind the first white line to leave the cycle box free.",
+      "durationS": 3.019
+    },
+    {
       "key": "voice.GB.TL.RED.fault",
       "file": "voice.GB.TL.RED.fault.wav",
       "text": "Stop behind the white line when the light is red.",
@@ -1431,6 +1557,12 @@
       "file": "voice.GB.TL.RED.good.v3.wav",
       "text": "Safe wait behind the red traffic light.",
       "durationS": 2.031
+    },
+    {
+      "key": "voice.GB.TL.RED.tip",
+      "file": "voice.GB.TL.RED.tip.wav",
+      "text": "Stop smoothly behind the solid white line on red.",
+      "durationS": 2.809
     },
     {
       "key": "voice.GB.TL.RED_AMBER.fault",
@@ -1469,6 +1601,12 @@
       "durationS": 1.723
     },
     {
+      "key": "voice.GB.TL.RED_AMBER.tip",
+      "file": "voice.GB.TL.RED_AMBER.tip.wav",
+      "text": "Keep your brakes on until the green light shows.",
+      "durationS": 2.341
+    },
+    {
       "key": "voice.GB.VRU.PASS_CYCLIST.fault",
       "file": "voice.GB.VRU.PASS_CYCLIST.fault.wav",
       "text": "Give cyclists at least 1.5 metres when passing.",
@@ -1503,6 +1641,12 @@
       "file": "voice.GB.VRU.PASS_CYCLIST.good.v3.wav",
       "text": "Good wide room given to the cyclist.",
       "durationS": 1.923
+    },
+    {
+      "key": "voice.GB.VRU.PASS_CYCLIST.tip",
+      "file": "voice.GB.VRU.PASS_CYCLIST.tip.wav",
+      "text": "Wait behind the cyclist until you can leave 1.5 metres.",
+      "durationS": 3.335
     },
     {
       "key": "voice.GB.WX.FOG_LIGHTS.fault",
@@ -1541,6 +1685,12 @@
       "durationS": 2.453
     },
     {
+      "key": "voice.GB.WX.FOG_LIGHTS.tip",
+      "file": "voice.GB.WX.FOG_LIGHTS.tip.wav",
+      "text": "Turn on fog lights in thick fog, then turn off afterwards.",
+      "durationS": 3.131
+    },
+    {
       "key": "voice.GB.WX.FOG_STOPPING.fault",
       "file": "voice.GB.WX.FOG_STOPPING.fault.wav",
       "text": "Slow down so you can stop within your view.",
@@ -1575,6 +1725,12 @@
       "file": "voice.GB.WX.FOG_STOPPING.good.v3.wav",
       "text": "Wise speed within your clear sight distance.",
       "durationS": 2.366
+    },
+    {
+      "key": "voice.GB.WX.FOG_STOPPING.tip",
+      "file": "voice.GB.WX.FOG_STOPPING.tip.wav",
+      "text": "Drive slow enough to stop within the road you can see.",
+      "durationS": 2.55
     },
     {
       "key": "voice.GB.WX.HEADLIGHTS_NIGHT.fault",
@@ -1613,6 +1769,12 @@
       "durationS": 1.902
     },
     {
+      "key": "voice.GB.WX.HEADLIGHTS_NIGHT.tip",
+      "file": "voice.GB.WX.HEADLIGHTS_NIGHT.tip.wav",
+      "text": "Switch on dipped headlights as soon as street lights come on.",
+      "durationS": 2.862
+    },
+    {
       "key": "voice.GB.WX.LOW_VISIBILITY.fault",
       "file": "voice.GB.WX.LOW_VISIBILITY.fault.wav",
       "text": "Switch on headlights when visibility drops below 100 metres.",
@@ -1647,6 +1809,12 @@
       "file": "voice.GB.WX.LOW_VISIBILITY.good.v3.wav",
       "text": "Good visibility lights for foggy conditions.",
       "durationS": 2.377
+    },
+    {
+      "key": "voice.GB.WX.LOW_VISIBILITY.tip",
+      "file": "voice.GB.WX.LOW_VISIBILITY.tip.wav",
+      "text": "Use dipped headlights and slow down in spray or mist.",
+      "durationS": 3.769
     },
     {
       "key": "voice.GB.WX.NO_DAZZLE.fault",
@@ -1685,6 +1853,12 @@
       "durationS": 2.306
     },
     {
+      "key": "voice.GB.WX.NO_DAZZLE.tip",
+      "file": "voice.GB.WX.NO_DAZZLE.tip.wav",
+      "text": "Dip your headlights as soon as another vehicle comes into view.",
+      "durationS": 2.939
+    },
+    {
       "key": "voice.GB.XNG.ZEBRA.fault",
       "file": "voice.GB.XNG.ZEBRA.fault.wav",
       "text": "Stop for anyone waiting or crossing at the zebra crossing.",
@@ -1721,6 +1895,12 @@
       "durationS": 1.476
     },
     {
+      "key": "voice.GB.XNG.ZEBRA.tip",
+      "file": "voice.GB.XNG.ZEBRA.tip.wav",
+      "text": "Stop behind the stripes whenever someone waits at a zebra crossing.",
+      "durationS": 3.821
+    },
+    {
       "key": "voice.GB.XNG.ZIGZAG_OVERTAKE.fault",
       "file": "voice.GB.XNG.ZIGZAG_OVERTAKE.fault.wav",
       "text": "Never overtake inside the crossing zig-zag lines.",
@@ -1755,6 +1935,12 @@
       "file": "voice.GB.XNG.ZIGZAG_OVERTAKE.good.v3.wav",
       "text": "Clean, careful approach past the crossing zig-zags.",
       "durationS": 3.118
+    },
+    {
+      "key": "voice.GB.XNG.ZIGZAG_OVERTAKE.tip",
+      "file": "voice.GB.XNG.ZIGZAG_OVERTAKE.tip.wav",
+      "text": "Never overtake any vehicle inside the crossing zig-zag zone.",
+      "durationS": 3.218
     },
     {
       "key": "voice.lesson.passed",

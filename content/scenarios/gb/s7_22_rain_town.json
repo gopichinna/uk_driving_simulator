@@ -5,8 +5,20 @@
   "anchor": "start",
   "durationS": 90,
   "events": [
-    { "type": "traffic_density", "value": 0.5 },
-    { "type": "conditions", "timeOfDay": "day", "weather": "rain", "visibilityM": 200 },
-    { "type": "finish_after_s", "seconds": 85 }
-  ]
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    },
+    {
+      "type": "conditions",
+      "timeOfDay": "day",
+      "weather": "rain",
+      "visibilityM": 200
+    },
+    {
+      "type": "finish_after_s",
+      "seconds": 85
+    }
+  ],
+  "difficulty": 1
 }

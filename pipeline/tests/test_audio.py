@@ -57,6 +57,15 @@ def test_every_voice_key_has_audio_and_valid_duration() -> None:
             vkey = f"{base}{suffix}"
             assert vkey in voice_keys, f"Missing voice variety key {vkey} in voice.json"
             assert vkey in by_key, f"Missing voice variety key {vkey} in manifest.json"
+    voice_entries = json.loads(VOICE_JSON.read_text(encoding="utf-8"))["entries"]
+    rule_prefixes = sorted(
+        {k.rsplit(".", 1)[0] for k in base_rule_keys}
+    )
+    for prefix in rule_prefixes:
+        tkey = f"{prefix}.tip"
+        assert tkey in voice_entries, f"Missing {tkey} in voice.json"
+        assert len(voice_entries[tkey].split()) <= 12, f"{tkey} exceeds 12 words"
+        assert tkey in by_key, f"Missing {tkey} in manifest.json"
     for key, entry in by_key.items():
         assert entry["text"] == expected_entries[key], f"Text mismatch for {key}"
         clip = VOICE_MANIFEST.parent / entry["file"]

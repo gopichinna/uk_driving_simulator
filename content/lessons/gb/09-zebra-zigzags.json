@@ -71,5 +71,55 @@
   "recap": [
     "Check both pavements as soon as you see flashing orange beacons.",
     "Never overtake or stop on a zebra crossing in queuing traffic."
+  ],
+  "variants": [
+    {
+      "id": "s2_09_zebra_yield_b",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Replay variant: Slow down and stop smoothly for pedestrians at the zebra crossing.",
+      "rulesJudged": [
+        "GB.XNG.ZEBRA",
+        "GB.XNG.KEEP_CLEAR",
+        "GB.XNG.ZIGZAG_OVERTAKE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.35,
+          0.55
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s2_09_zebra_yield_c",
+      "course": "town",
+      "anchor": "zebra",
+      "goal": "Replay variant: Slow down and stop smoothly for pedestrians at the zebra crossing.",
+      "rulesJudged": [
+        "GB.XNG.ZEBRA",
+        "GB.XNG.KEEP_CLEAR",
+        "GB.XNG.ZIGZAG_OVERTAKE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

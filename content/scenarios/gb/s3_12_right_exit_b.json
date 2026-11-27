@@ -1,0 +1,18 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s3_12_right_exit_b",
+  "course": "two_lane_roundabout",
+  "anchor": "start",
+  "durationS": 100,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.6
+    },
+    {
+      "type": "take_exit",
+      "exitNumber": 3
+    }
+  ],
+  "difficulty": 1
+}

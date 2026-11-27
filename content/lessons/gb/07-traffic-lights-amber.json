@@ -73,5 +73,55 @@
   "recap": [
     "In the UK, there is no turning on a red light.",
     "Anticipate green lights turning amber so you can brake smoothly."
+  ],
+  "variants": [
+    {
+      "id": "s2_07_signals_stop_b",
+      "course": "town",
+      "anchor": "start",
+      "goal": "Replay variant: Stop cleanly behind the white line on amber and red.",
+      "rulesJudged": [
+        "GB.TL.RED",
+        "GB.TL.AMBER",
+        "GB.TL.RED_AMBER"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.65
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s2_07_signals_stop_c",
+      "course": "town",
+      "anchor": "crossroads_signals",
+      "goal": "Replay variant: Stop cleanly behind the white line on amber and red.",
+      "rulesJudged": [
+        "GB.TL.RED",
+        "GB.TL.AMBER",
+        "GB.TL.RED_AMBER"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.55,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
   ]
 }

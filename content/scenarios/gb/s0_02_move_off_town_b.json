@@ -1,0 +1,24 @@
+{
+  "scenarioFormatVersion": "0.1",
+  "scenarioId": "s0_02_move_off_town_b",
+  "course": "town",
+  "anchor": "school_street",
+  "durationS": 90,
+  "events": [
+    {
+      "type": "traffic_density",
+      "value": 0.5
+    },
+    {
+      "type": "parked_car",
+      "anchor": "start",
+      "offsetM": 15
+    },
+    {
+      "type": "finish_at",
+      "anchor": "start",
+      "offsetM": 140
+    }
+  ],
+  "difficulty": 1
+}

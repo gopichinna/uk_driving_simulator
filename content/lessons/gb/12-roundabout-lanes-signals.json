@@ -96,5 +96,55 @@
   "recap": [
     "Choose your roundabout lane early and follow any painted arrows.",
     "Signal left right after passing the exit before the one you want."
+  ],
+  "variants": [
+    {
+      "id": "s3_12_right_exit_b",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Replay variant: Use the right approach lane, signal right, then signal left to exit.",
+      "rulesJudged": [
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.45,
+          0.75
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "dusk"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s3_12_right_exit_c",
+      "course": "two_lane_roundabout",
+      "anchor": "start",
+      "goal": "Replay variant: Use the right approach lane, signal right, then signal left to exit.",
+      "rulesJudged": [
+        "GB.RBT.APPROACH_LANE",
+        "GB.RBT.SIGNAL_APPROACH",
+        "GB.RBT.SIGNAL_EXIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.55,
+          0.85
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "cross",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 2,
+        "maxSerious": 0
+      }
+    }
   ]
 }
