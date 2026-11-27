@@ -47,7 +47,7 @@
   {
     "id": "qb_jct_h2_4",
     "rule": "GB.JCT.H2_PEDESTRIANS",
-    "question": "If a pedestrian has already stepped into the road you are turning into, what MUST you do?",
+    "question": "If a pedestrian has already stepped into the road you are turning into, what must you do?",
     "options": [
       "Drive around them",
       "Give way to them",
@@ -55,7 +55,7 @@
       "Brake only if they run"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 170 says you MUST give way to pedestrians already crossing the road you are turning into.",
+    "explain": "Highway Code Rule 170 says you must give way to pedestrians already crossing the road you are turning into.",
     "hc_rule": "170",
     "difficulty": 1
   },

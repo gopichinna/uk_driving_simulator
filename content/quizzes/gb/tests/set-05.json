@@ -242,7 +242,7 @@
         "Wait for red"
       ],
       "answer": 1,
-      "explain": "Highway Code Rule 175 says AMBER means stop at the stop line, unless you are so close that stopping might cause a collision.",
+      "explain": "Highway Code Rule 175 says amber means stop at the stop line, unless you are so close that stopping might cause a collision.",
       "hc_rule": "175",
       "difficulty": 1
     },
@@ -399,7 +399,7 @@
     {
       "id": "qb_jct_stop_7",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "If the car ahead of you stops at a STOP line and moves off, what must you do when you reach the line?",
+      "question": "If the car ahead of you stops at a stop line and moves off, what must you do when you reach the line?",
       "options": [
         "Follow straight behind it",
         "Stop again at the white line yourself",
@@ -564,15 +564,15 @@
     {
       "id": "qb_jct_stop_8",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "What kind of road marking goes with a STOP sign?",
+      "question": "What kind of road marking goes with a stop sign?",
       "options": [
         "Broken double white lines",
-        "A solid white line and STOP painted on the road",
+        "A solid white line and stop painted on the road",
         "Yellow zig-zags",
         "Red dashed lines"
       ],
       "answer": 1,
-      "explain": "Rule 171: a STOP sign is paired with a solid white stop line across your lane.",
+      "explain": "Rule 171: a stop sign is paired with a solid white stop line across your lane.",
       "hc_rule": "171",
       "difficulty": 2
     },

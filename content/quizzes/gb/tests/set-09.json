@@ -294,7 +294,7 @@
     {
       "id": "qb_jct_stop_3",
       "rule": "GB.JCT.STOP_SIGN",
-      "question": "Where should you stop at a STOP sign?",
+      "question": "Where should you stop at a stop sign?",
       "options": [
         "In the middle of the junction",
         "Behind the solid white stop line",

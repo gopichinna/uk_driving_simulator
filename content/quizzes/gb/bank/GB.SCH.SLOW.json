@@ -32,7 +32,7 @@
   {
     "id": "qb_sch_slow_3",
     "rule": "GB.SCH.SLOW",
-    "question": "What MUST you do when a school crossing patrol holds up a red and yellow Stop sign?",
+    "question": "What must you do when a school crossing patrol holds up a red and yellow Stop sign?",
     "options": [
       "Slow down and weave past",
       "Stop and wait until they lower the sign",
@@ -40,7 +40,7 @@
       "Only stop if children are in your lane"
     ],
     "answer": 1,
-    "explain": "Highway Code Rule 210 says you MUST stop when signalled by a school crossing patrol.",
+    "explain": "Highway Code Rule 210 says you must stop when signalled by a school crossing patrol.",
     "hc_rule": "210",
     "difficulty": 1
   },
