@@ -25,7 +25,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 5 | Pedestrians at junctions (H2) | `GB.JCT.GIVE_WAY` | ✅ |
 | 6 | Road position after turning | `GB.POS.AFTER_TURN` | ⏳ |
 | 6 | Road position after turning | `GB.POS.KEEP_LEFT` | ✅ |
-| 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ⏳ |
+| 6 | Road position after turning | `GB.JCT.TURN_NEAR` | ✅ |
 | 6 | Road position after turning | `GB.JCT.TURN_FAR_POSITION` | ⏳ |
 | 6 | Road position after turning | `GB.JCT.TURN_FAR_GAP` | ⏳ |
 | 7 | Traffic lights and amber | `GB.TL.RED` | ✅ |
@@ -115,6 +115,9 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | 27 | Breakdowns and emergency areas | `GB.MWY.KEEP_LEFT` | ⏳ |
 | 27 | Breakdowns and emergency areas | `GB.MWY.EMERGENCY_AREA` | ⏳ |
 | 27 | Breakdowns and emergency areas | `GB.BRK.NO_TRIANGLE_MWY` | ⏳ |
+| 28 | School zones | `GB.SCH.SLOW` | ✅ |
+| 28 | School zones | `GB.SPD.OVER_LIMIT` | ✅ |
+| 28 | School zones | `GB.SPD.APPROPRIATE` | ⏳ |
 
 ## Implemented Rule Practice Coverage (excluding mock test)
 
@@ -125,6 +128,7 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.JCT.GIVE_WAY` | 3 | ✅ >= 2 |
 | `GB.JCT.H2_PEDESTRIANS` | 2 | ✅ >= 2 |
 | `GB.JCT.STOP_SIGN` | 2 | ✅ >= 2 |
+| `GB.JCT.TURN_NEAR` | 2 | ✅ >= 2 |
 | `GB.OBS.LANE_CHANGE` | 9 | ✅ >= 2 |
 | `GB.POS.KEEP_LEFT` | 6 | ✅ >= 2 |
 | `GB.RBT.APPROACH_LANE` | 3 | ✅ >= 2 |
@@ -133,9 +137,9 @@ Generated from `content/lessons/gb/*.json` and `content/countries/gb/rules.yaml`
 | `GB.RBT.SIGNAL_EXIT` | 5 | ✅ >= 2 |
 | `GB.RBT.STAY_IN_LANE` | 3 | ✅ >= 2 |
 | `GB.RBT.WRONG_WAY` | 3 | ✅ >= 2 |
-| `GB.SCH.SLOW` | 2 | ✅ >= 2 |
+| `GB.SCH.SLOW` | 5 | ✅ >= 2 |
 | `GB.SIG.TIMELY` | 11 | ✅ >= 2 |
-| `GB.SPD.OVER_LIMIT` | 13 | ✅ >= 2 |
+| `GB.SPD.OVER_LIMIT` | 15 | ✅ >= 2 |
 | `GB.TL.AMBER` | 2 | ✅ >= 2 |
 | `GB.TL.ASL` | 2 | ✅ >= 2 |
 | `GB.TL.RED` | 4 | ✅ >= 2 |

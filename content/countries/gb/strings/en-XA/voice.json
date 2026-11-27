@@ -180,6 +180,12 @@
     "voice.GB.SCH.SLOW.fault.v3": "[Drívé slówér néár thé schóól ánd wátch fór chíldrén. ~~~~~~~~~~~~~~~~~~~~~]",
     "voice.GB.SCH.SLOW.good": "[Sáfé slów spééd pást thé schóól. ~~~~~~~~~~~~~]",
     "voice.GB.SCH.SLOW.good.v2": "[Góód cáréfúl pácé óútsídé thé schóól. ~~~~~~~~~~~~~~~]",
-    "voice.GB.SCH.SLOW.good.v3": "[Nícé géntlé spééd pást thé schóól gáté. ~~~~~~~~~~~~~~~~]"
+    "voice.GB.SCH.SLOW.good.v3": "[Nícé géntlé spééd pást thé schóól gáté. ~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.fault": "[Kéép clósé tó thé léft ánd sígnál béfóré túrníng léft. ~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.fault.v2": "[Sígnál léft éárly ánd húg thé léft kérb béfóré túrníng. ~~~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.fault.v3": "[Dó nót swíng wídé ríght béfóré mákíng á léft túrn. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.good": "[Cléán léft túrn pósítíón ánd éárly sígnál. ~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.good.v2": "[Nícé éárly léft índícátór ánd néát kérb pósítíón. ~~~~~~~~~~~~~~~~~~~~]",
+    "voice.GB.JCT.TURN_NEAR.good.v3": "[Smóóth léft túrn fróm thé néársídé láné. ~~~~~~~~~~~~~~~~]"
   }
 }

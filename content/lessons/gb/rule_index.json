@@ -169,6 +169,11 @@
         "lessonId": "gb-s1-06-position-after-turning",
         "scenarioId": "s1_06_turn_north",
         "title": "Road position after turning"
+      },
+      {
+        "lessonId": "gb-s1-06-position-after-turning",
+        "scenarioId": "s1_06_turn_south",
+        "title": "Road position after turning"
       }
     ],
     "GB.MWY.AMBER_FLASH": [
@@ -561,6 +566,21 @@
         "title": "Speed limits"
       },
       {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_pass",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_minor_30",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_serious_ped",
+        "title": "School zones"
+      },
+      {
         "lessonId": "gb-s8-20-roads-near-test-centre",
         "scenarioId": "s8_20_test_centre_mix",
         "title": "Roads near the test centre"
@@ -638,6 +658,11 @@
         "lessonId": "gb-s0-03-speed-limits",
         "scenarioId": "s0_03_school_street",
         "title": "Speed limits"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_serious_ped",
+        "title": "School zones"
       }
     ],
     "GB.SPD.OVER_LIMIT": [
@@ -660,6 +685,16 @@
         "lessonId": "gb-s4-16-following-distance-town",
         "scenarioId": "s4_16_town_traffic",
         "title": "Following distance in town"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_pass",
+        "title": "School zones"
+      },
+      {
+        "lessonId": "gb-s4-28-school-zones",
+        "scenarioId": "s4_28_school_minor_30",
+        "title": "School zones"
       },
       {
         "lessonId": "gb-s5-17-dual-carriageway-lanes",

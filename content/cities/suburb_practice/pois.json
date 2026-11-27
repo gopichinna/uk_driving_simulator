@@ -8,7 +8,7 @@
   "source": {
     "kind": "osm",
     "extract": "geofabrik west-midlands-latest.osm.pbf",
-    "extractTimestamp": "2026-11-25T21:22:46Z",
+    "extractTimestamp": "2026-11-26T21:21:01Z",
     "bbox": [
       -2.202,
       52.588,

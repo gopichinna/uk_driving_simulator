@@ -92,14 +92,14 @@ All 20 rules below are **genuinely unimplemented** in `core/Rules.Core/*.cs` (ve
 - **Pass cases:** (1) Hold back behind a cyclist for `2.0 s` until they pass the side road, then turn left. (2) Wait for an oncoming cyclist to clear the junction before turning right.
 - **Fail cases:** (1) Overtake a cyclist and turn left immediately `4.0 m` ahead of them ("left hook"). (2) Turn right across an oncoming cyclist `10.0 m` away, forcing `cyclist_decel_req = 3.5 m/s²`.
 
-## 10. `GB.JCT.TURN_NEAR` — Left turn positioning and signal
-- **Highway Code:** Rules 182–183 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
-- **Rule:** Keep well to the left and signal left in good time before turning left.
-- **Game detection & thresholds:** Within `30.0 m` (`PROPOSED`) before a left turn at `nodes[]`: flag if `PlayerState.lateralOffsetM` from left kerb exceeds `1.5 m` (`PROPOSED`, swinging wide right) or left indicator was not active `>= 2.0 s` (`PROPOSED`) before turn entry.
+## 10. `GB.JCT.UNMARKED` — Approach unmarked junctions with equal care
+- **Highway Code:** Rule 170 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)
+- **Rule:** Nobody has priority at an unmarked junction; slow down, look both ways, and be ready to stop.
+- **Game detection & thresholds:** At `junctionPriority[]` (`controlledBy == "uncontrolled"`) when another `TrafficAgent` is approaching on a crossing arm within `30.0 m` (`PROPOSED`): flag if player enters the junction at `> 15.0 mph` (`6.7 m/s`, `PROPOSED`) or forces `other_decel_req > 2.0 m/s²` (`PROPOSED`).
 - **Base severity:** `Driving`
-- **Escalates to:** `Serious` if swinging wide crosses the centreline or cuts across a nearside lane.
-- **Pass cases:** (1) Signal left `3.0 s` early and keep within `0.8 m` of the left lane edge into the turn. (2) Slow smoothly to 12 mph in the left lane before turning.
-- **Fail cases:** (1) Swing `1.8 m` right toward the centreline before turning left. (2) Turn left with no signal until steering starts.
+- **Escalates to:** `Serious` if `other_decel_req > 3.5 m/s²` (`PROPOSED`) or `ttc < 1.5 s` (`PROPOSED`).
+- **Pass cases:** (1) Slow to `12.0 mph` approaching an unmarked residential crossroads and check both ways. (2) Yield smoothly when another car reaches the unmarked junction first.
+- **Fail cases:** (1) Cross an unmarked side-street junction at `25.0 mph` without slowing. (2) Pull across an approaching car at an unmarked junction (`other_decel_req = 3.8 m/s²`).
 
 ## 11. `GB.JCT.TURN_FAR_POSITION` — Right turn approach position
 - **Highway Code:** Rules 179–180 (`https://www.gov.uk/guidance/the-highway-code/using-the-road-159-to-203`, checked 2026-11-27)

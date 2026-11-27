@@ -38,7 +38,7 @@ ALLOWED_COURSE_ANCHORS: dict[str, set[str]] = {
 
 def test_lessons_validate_and_match_constraints() -> None:
     lesson_files = sorted(LESSONS_DIR.glob("[0-9][0-9]-*.json"))
-    assert len(lesson_files) == 27
+    assert len(lesson_files) == 28
 
     rules_data = yaml.safe_load(RULES_YAML.read_text(encoding="utf-8"))
     valid_rule_ids = {r["id"] for r in rules_data["rules"]}
@@ -83,5 +83,5 @@ def test_lessons_validate_and_match_constraints() -> None:
             for rid in sc["rulesJudged"]:
                 assert rid in valid_rule_ids, f"{lf.name}/{sc['id']}: unknown rule {rid}"
 
-    assert sorted(all_orders) == list(range(1, 28))
+    assert sorted(all_orders) == list(range(1, 29))
     assert sorted(free_orders) == [1, 2, 3]

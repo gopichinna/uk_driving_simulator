@@ -49,7 +49,8 @@
       "title": "Busy town",
       "lessonIds": [
         "gb-s4-15-overtaking-cyclists",
-        "gb-s4-16-following-distance-town"
+        "gb-s4-16-following-distance-town",
+        "gb-s4-28-school-zones"
       ],
       "unlockAfter": { "stage": 3, "minStars": 5 }
     },

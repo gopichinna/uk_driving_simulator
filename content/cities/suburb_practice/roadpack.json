@@ -12,7 +12,7 @@
   "source": {
     "kind": "osm",
     "extract": "geofabrik west-midlands-latest.osm.pbf",
-    "extractTimestamp": "2026-11-25T21:22:46Z",
+    "extractTimestamp": "2026-11-26T21:21:01Z",
     "bbox": [
       -2.202,
       52.588,
@@ -26176,6 +26176,36 @@
       "confidenceNotes": "equal roadClass; no clear major street"
     },
     {
+      "nodeId": "n_13737587848",
+      "majorLinks": [
+        "l_86128112_0",
+        "l_86128112_1"
+      ],
+      "controlledBy": "give_way",
+      "confidence": 0.85,
+      "confidenceNotes": "give_way node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_13737587850",
+      "majorLinks": [
+        "l_23486317_10",
+        "l_23486317_11"
+      ],
+      "controlledBy": "give_way",
+      "confidence": 0.85,
+      "confidenceNotes": "give_way node; equal roadClass; no clear major street"
+    },
+    {
+      "nodeId": "n_13737594022",
+      "majorLinks": [
+        "l_643936657_1",
+        "l_643936657_2"
+      ],
+      "controlledBy": "give_way",
+      "confidence": 0.85,
+      "confidenceNotes": "give_way node; equal roadClass; no clear major street"
+    },
+    {
       "nodeId": "n_1623762395",
       "majorLinks": [
         "l_43140272_2",
@@ -26744,6 +26774,16 @@
       "controlledBy": "uncontrolled",
       "confidence": 0.65,
       "confidenceNotes": "inferred from roadClass hierarchy"
+    },
+    {
+      "nodeId": "n_4506177992",
+      "majorLinks": [
+        "l_23389071_0",
+        "l_23389071_1"
+      ],
+      "controlledBy": "stop",
+      "confidence": 0.85,
+      "confidenceNotes": "stop node; equal roadClass; no clear major street"
     },
     {
       "nodeId": "n_4568993913",
