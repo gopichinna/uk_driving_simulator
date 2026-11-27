@@ -27,7 +27,8 @@
       "goal": "Slow down and stop smoothly for pedestrians at the zebra crossing.",
       "rulesJudged": [
         "GB.XNG.ZEBRA",
-        "GB.XNG.KEEP_CLEAR"
+        "GB.XNG.KEEP_CLEAR",
+        "GB.XNG.ZIGZAG_OVERTAKE"
       ],
       "variations": {
         "trafficDensity": [

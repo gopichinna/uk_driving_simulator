@@ -26,6 +26,7 @@
       "goal": "Give way to main-road traffic and pull out into a safe gap.",
       "rulesJudged": [
         "GB.JCT.GIVE_WAY",
+        "GB.JCT.STOP_SIGN",
         "GB.JCT.EMERGE_LOOK"
       ],
       "variations": {

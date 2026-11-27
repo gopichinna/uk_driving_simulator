@@ -58,7 +58,7 @@ namespace LToLocal.Game
             SetMode(Mode.TheoryResult);
         }
 
-        private static string Clock(double s)
+        private static string TheoryClock(double s)
         {
             int t = Mathf.Max(0, Mathf.CeilToInt((float)s));
             return $"{t / 60}:{t % 60:00}";
@@ -100,7 +100,7 @@ namespace LToLocal.Game
             bool low = t.TimeLeftS < 300;
             GUI.Label(new Rect(x, y, w * 0.6f, H * 0.06f), $"Question {t.Index + 1} of {t.Count}{(t.Flags[t.Index] ? "   (flagged)" : "")}", _smallStyle);
             if (low) GUI.color = new Color(1f, 0.5f, 0.45f);
-            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {Clock(t.TimeLeftS)}", _smallStyle);
+            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
             GUI.color = Color.white;
             y += H * 0.07f;
 
@@ -140,7 +140,7 @@ namespace LToLocal.Game
             Fill(new Rect(0, 0, W, H), new Color(0.05f, 0.06f, 0.08f, 0.97f));
             float x = W * 0.08f, w = W * 0.84f, y = H * 0.03f;
             GUI.Label(new Rect(x, y, w * 0.6f, H * 0.08f), "Review your answers", _bigStyle);
-            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {Clock(t.TimeLeftS)}", _smallStyle);
+            GUI.Label(new Rect(x + w * 0.7f, y, w * 0.3f, H * 0.06f), $"Time left {TheoryClock(t.TimeLeftS)}", _smallStyle);
             y += H * 0.09f;
             GUI.Label(new Rect(x, y, w, H * 0.06f), $"{t.AnsweredCount} answered, {t.UnansweredCount} not answered, {t.FlaggedCount} flagged. Tap a number to go back to that question.", _smallStyle);
             y += H * 0.08f;

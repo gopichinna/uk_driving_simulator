@@ -1,0 +1,96 @@
+{
+  "lessonFormatVersion": "0.1",
+  "id": "gb-s4-28-school-zones",
+  "stage": 4,
+  "order": 28,
+  "title": "School zones",
+  "freeTier": false,
+  "learnCard": {
+    "blocks": [
+      "Slow down when you pass a triangular school warning sign and watch for children.",
+      "Hold 20 mph or less past the school. This cap is pending ADI review.",
+      "Be ready to stop if children step out from between parked cars."
+    ],
+    "ruleIds": [
+      "GB.SCH.SLOW",
+      "GB.SPD.APPROPRIATE"
+    ],
+    "govUkUrl": "https://www.gov.uk/guidance/the-highway-code/road-users-requiring-extra-care-204-to-225",
+    "diagram": "content/lessons/gb/diagrams/gb-s4-28-school-zones.png"
+  },
+  "scenarios": [
+    {
+      "id": "s4_28_school_pass",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Hold 20 mph or less past school signs. (Game assumption pending ADI review.)",
+      "rulesJudged": [
+        "GB.SCH.SLOW",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.25,
+          0.4
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_28_school_minor_30",
+      "course": "wolverhampton",
+      "anchor": "start",
+      "goal": "Notice how doing 30 mph past an empty school sign gives a minor fault.",
+      "rulesJudged": [
+        "GB.SCH.SLOW",
+        "GB.SPD.OVER_LIMIT"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.2,
+          0.3
+        ],
+        "cyclistShare": 0.05,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    },
+    {
+      "id": "s4_28_school_serious_ped",
+      "course": "wolverhampton-test-area",
+      "anchor": "start",
+      "goal": "Hold 20 mph or less when people are near the school gate.",
+      "rulesJudged": [
+        "GB.SCH.SLOW",
+        "GB.SPD.APPROPRIATE"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.3,
+          0.5
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "random",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
+    }
+  ],
+  "recap": [
+    "Slow down early when you spot a school warning sign.",
+    "Expect children near parked cars and school crossings at any time of day."
+  ]
+}

@@ -64,6 +64,29 @@
         "maxMinor": 1,
         "maxSerious": 0
       }
+    },
+    {
+      "id": "s3_11_wolverhampton_rbt_give_way",
+      "course": "wolverhampton",
+      "anchor": "start",
+      "goal": "Give way to traffic from the right at a wet town roundabout.",
+      "rulesJudged": [
+        "GB.RBT.GIVE_WAY_RIGHT",
+        "GB.RBT.WRONG_WAY"
+      ],
+      "variations": {
+        "trafficDensity": [
+          0.4,
+          0.6
+        ],
+        "cyclistShare": 0.1,
+        "pedestrianIntent": "wait",
+        "timeOfDay": "day"
+      },
+      "passCriteria": {
+        "maxMinor": 1,
+        "maxSerious": 0
+      }
     }
   ],
   "recap": [

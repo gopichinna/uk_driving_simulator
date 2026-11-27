@@ -129,6 +129,7 @@ namespace LToLocal.EditorTools
                 if (!keep(f)) continue;
                 string outPath = Path.Combine(to, Path.GetFileNameWithoutExtension(f) + ".wav");
                 if (f.EndsWith(".wav")) { File.Copy(f, outPath, overwrite: true); ok++; continue; } // already Unity-friendly
+                if (f.EndsWith(".mp3")) { File.Copy(f, Path.ChangeExtension(outPath, ".mp3"), overwrite: true); ok++; continue; } // Unity imports MP3 directly
                 if (!f.EndsWith(".ogg")) continue;
                 var psi = new System.Diagnostics.ProcessStartInfo(ffmpeg, $"-y -loglevel error -i \"{Path.GetFullPath(f)}\" -ar 44100 -ac 1 -c:a pcm_s16le \"{Path.GetFullPath(outPath)}\"")
                 { UseShellExecute = false, RedirectStandardError = true, CreateNoWindow = true };

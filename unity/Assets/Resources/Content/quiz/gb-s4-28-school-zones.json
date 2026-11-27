@@ -1,0 +1,42 @@
+{
+  "quizFormatVersion": "0.1",
+  "lessonId": "gb-s4-28-school-zones",
+  "questions": [
+    {
+      "id": "q_28_speed",
+      "question": "What should you do when you see a triangular school warning sign ahead?",
+      "options": [
+        "Slow down and watch carefully for children",
+        "Keep driving at 30 mph if the road is straight",
+        "Sound your horn to warn children"
+      ],
+      "answerIndex": 0,
+      "explanation": "Highway Code Rule 208 says to drive slowly near schools and watch for children.",
+      "ruleId": "GB.SCH.SLOW"
+    },
+    {
+      "id": "q_28_parked",
+      "question": "Why should you drop your speed past parked cars outside a school?",
+      "options": [
+        "Children are small and can step out without warning",
+        "Parked cars always open their right doors",
+        "Speed cameras only work below 20 mph"
+      ],
+      "answerIndex": 0,
+      "explanation": "Slower speed gives you room to stop if a child steps out.",
+      "ruleId": "GB.SCH.SLOW"
+    },
+    {
+      "id": "q_28_peds",
+      "question": "What happens if you pass a school sign at 30 mph with pedestrians nearby?",
+      "options": [
+        "It counts as a serious fault",
+        "It counts as a pass",
+        "It gives bonus points"
+      ],
+      "answerIndex": 0,
+      "explanation": "Speeding past a school with pedestrians nearby is a serious fault.",
+      "ruleId": "GB.SCH.SLOW"
+    }
+  ]
+}

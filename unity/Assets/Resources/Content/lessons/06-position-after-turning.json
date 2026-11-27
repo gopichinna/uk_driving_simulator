@@ -51,6 +51,7 @@
       "goal": "Position neatly near the centre line and turn into the left lane.",
       "rulesJudged": [
         "GB.POS.AFTER_TURN",
+        "GB.JCT.TURN_NEAR",
         "GB.JCT.TURN_FAR_POSITION",
         "GB.JCT.TURN_FAR_GAP"
       ],

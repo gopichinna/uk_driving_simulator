@@ -26,6 +26,7 @@
       "goal": "Hold at least a four-second gap in heavy rain through town.",
       "rulesJudged": [
         "GB.GAP.WET_ICY",
+        "GB.GAP.TWO_SECOND",
         "GB.SPD.OVER_LIMIT"
       ],
       "variations": {
